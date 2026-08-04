@@ -1,0 +1,1 @@
+ALTER TABLE `leiloes` ADD `tipoOrigem` enum('comum','investidor','banco') DEFAULT 'comum' NOT NULL;

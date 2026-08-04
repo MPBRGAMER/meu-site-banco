@@ -1,0 +1,52 @@
+# Project TODO
+
+- [x] Migrar para full-stack: criar schema do banco de dados com todas as tabelas
+- [x] Criar procedures tRPC para todas as operações do banco
+- [x] Conectar frontend ao backend via tRPC hooks
+- [x] Remover localStorage do BankContext e usar apenas tRPC
+- [x] Remover cards inúteis de Total Gasto/Ganho na aba Compras e Vendas
+- [x] Dashboard limpo (sem cards inúteis de itens/totais/saldo/lucro)
+- [x] Empréstimos com taxas descritivas e juros automáticos
+- [x] Investidores com aviso sobre tag de investidor
+- [x] Trocas - registro com tabelas configuráveis + calculadora automática
+- [x] Config Trocas - página para configurar tabelas de troca
+- [x] Compras & Vendas - sem cards de total, com item de pagamento
+- [x] Caixa + Estoque unificados na mesma aba
+- [x] Doadores integrados ao caixa
+- [x] Registro manual do caixa com item de pagamento
+- [x] Trocas - apenas lucro retido (10%/15%) entra no estoque, nada sai
+- [x] Adicionar botão de reset para zerar dados
+- [x] Testar todas as abas com dados salvos no banco
+- [x] Testar CRUD/persistência real em todas as abas com dados gravados no banco
+- [x] Corrigir conversão de datas (string → Date) nos routers para drizzle
+- [x] Salvar checkpoint final
+- [x] Proteger edição: apenas admin pode criar/editar/deletar registros
+- [x] Visualização pública sem login para todos os membros
+- [x] Ocultar botões de edição para não-administradores (useCanEdit em todas as páginas)
+- [x] Proteger rotas tRPC (mutations) com adminProcedure para admin
+- [x] Tornar queries públicas (visualização para todos)
+- [x] Aba de Leilões com timer, lances, regras e proteção de criação (só admin)
+- [x] Dashboard: Investidores com ranking visual e medalhas, botão info "como virar investidor"
+- [x] Dashboard: Estoque Atual pequeno e organizado
+- [x] Ocultar aba Investidores para não-admin
+- [x] Ocultar aba Config Trocas para não-admin
+- [x] Ocultar aba Estoque & Caixa para não-admin
+- [x] Investidores: ordenação manual (posições editáveis)
+- [x] Doadores: ordenação manual (posições editáveis)
+- [x] Leilões: status "finalizado em espera", taxa da casa 15%/10%, lucro pro caixa ao finalizar
+- [x] Nova aba Sorteios: ficha, temporizador, inscrição, ganhador aleatório
+- [x] Nova aba Lotérica: 1000 números, ficha de compra, temporizador, start manual, 20% pro caixa, prêmio acumulativo, valor mínimo
+- [x] Dashboard: mudar Top Investidores para Top 10 Doadores (nome + ranking, pequeno e bonito)
+- [x] Dashboard: Estoque em retângulos/quadrados com nome+quantidade + campo de pesquisa
+- [x] Doadores: corrigir reorder para organizar DOADORES (pessoas), não doações individuais
+- [x] Leilões: auto status "espera" quando timer acabar, botão para finalizar manualmente
+- [x] Investidores: remover "fazendo trocas" do texto "como virar investidor", adicionar botão visível perto do ranking dos doadores na Dashboard
+- [x] Lotérica: padronizar números de 1 a 1000, remover "80% do arrecadado", colocar "quanto mais venderem, maior o prêmio", corrigir texto do sorteio aleatório (pode sair número não vendido = prêmio acumula)
+- [x] Timer discreto de sorteios ativos na Dashboard (contagem regressiva)
+- [x] Dashboard: Últimos Movimentos do Caixa completo (entradas e saídas, tudo)
+- [x] Leilões: corrigir texto - timer encerra automaticamente, remover texto sobre admin finalizar
+- [x] Lotérica: corrigir texto - sorteio inicia automaticamente, remover texto 20% caixa, remover texto prêmio mínimo acumulando
+- [x] Configurar cron heartbeat para auto-finalizar sorteios e auto-sortear lotérica
+- [x] Leilões: adicionar tipo "item do banco" (taxa 100%), além de investidor (10%) e comum (15%)
+- [ ] Sorteios: histórico de ganhadores na própria página de Sorteios
+- [ ] Lotérica: histórico de sorteios anteriores na própria página de Lotérica

@@ -1,0 +1,117 @@
+# Lista de Itens Day R Survival
+
+## Comida, Bebidas e Ingredientes
+- Açúcar
+- Banha / Gordura
+- Canja Enlatada
+- Carne Salgada
+- Carne de Cozido (Enlatado)
+- Chocolate
+- Farinha
+- Geleia
+- Grãos de Arroz
+- Leite
+- Leite Condensado
+- Massa / Macarrão
+- Mel
+- Ovos
+- Peixe Salgado
+- Petisco de Cobra
+- Queijo
+- Sal
+- Salada Russa
+- Salsicha
+- Tigela de Arroz
+- Torrada Seca
+- Toucinho Defumado
+- Trigo-sarraceno
+- Água Limpa
+- Água Suja
+
+## Medicina, Bebidas Alcoólicas e Químicos
+- Aguardente / Moonshine
+- Analgésico
+- Antibióticos
+- Antirad
+- Atadura Esterilizada
+- Briocarmo
+- Café
+- Carvão Ativado
+- Charuto Cubano
+- Chá
+- Cigarros
+- Cigarros Russos
+- Clorcistamina
+- IR-190
+- Kompot
+- Kvass
+- Licor Diluído
+- Licor de Maçã
+- Lidiacida-34
+- Metocaína
+- Poção Desintoxicante
+- Poção Energizante
+- Refrigerante
+- Suco de Besouro
+- Unguento Curativo
+- Uísque
+- Veneno
+- Vinho Caseiro
+- Vodka
+- Ácido Sulfúrico
+- Álcool
+
+## Componentes, Materiais e Construção
+- Alumínio
+- Autopeças
+- Aço
+- Bateria de Carro
+- Bateria de Carro Quebrada
+- Cabo Elétrico
+- Carvão Infernal
+- Carvão Preto
+- Carvão Vegetal
+- Chumbo
+- Cimento
+- Cobre
+- Cola de Osso
+- Corda
+- Couro Cozido
+- Couro Curtido
+- Couro Grosso
+- Couro de Qualidade
+- Enxofre
+- Ferro
+- Filtro de Máscara de Gás
+- Fita Isolante
+- Graveto
+- Lata
+- Lenha
+- Linhas / Fio
+- Lixa
+- Mola
+- Motor a Diesel Quebrado
+- Motor a Gasolina Quebrado
+- Motor de Serra Elétrica
+- Parafuso
+- Pederneira
+- Peças Elétricas
+- Peças Extras de Arma
+- Peças de Máquina
+- Placa de Metal
+- Pneus
+- Pregos
+- Sabão
+- Sabão em Pó
+- Salitre
+- Sucata de Alumínio
+- Sucata de Cobre
+- Sucata de Ferro
+- Tecido / Pano
+- Tijolo
+- Tijolo Refratário
+- Trapos
+- Tronco
+- Tábua
+- Vela de Ignição
+- Óleo de Máquina
