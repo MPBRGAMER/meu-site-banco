@@ -83,10 +83,10 @@ export default function DashboardTab() {
     <div className="space-y-4">
       <div className="rounded-lg border border-primary/20 bg-card p-4 relative overflow-hidden">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-3xl">💀</span>
+          <span className="text-3xl">☢️</span>
           <div>
-            <h2 className="text-xl font-extrabold text-primary tracking-tight uppercase">Terminal de Controle - Banco do Clã</h2>
-            <p className="text-xs text-muted-foreground">Sistema de gestão centralizada Day R Survival</p>
+            <h2 className="text-xl font-extrabold text-primary tracking-tight uppercase">Posto de Trocas</h2>
+            <p className="text-xs text-muted-foreground">Sistema de gestao para sobreviventes</p>
           </div>
         </div>
       </div>

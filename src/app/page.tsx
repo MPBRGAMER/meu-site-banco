@@ -72,17 +72,14 @@ export default function HomePage() {
             </svg>
             <div>
               <h1 className="text-lg md:text-xl font-extrabold text-primary tracking-tight">
-                BANCO DO CLÃ
+                Day R Survival
               </h1>
               <p className="text-xs text-muted-foreground hidden sm:block">
-                Day R Survival - Terminal de Comércio Sobrevivente
+                Posto de Trocas - Sobreviventes
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-muted-foreground hidden md:block">
-              Moeda Amaldiçoada 💀
-            </span>
             <button
               onClick={() => setIsAdmin(!isAdmin)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border ${
@@ -132,7 +129,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-border py-4 text-center text-xs text-muted-foreground">
-        Banco do Clã - Day R Survival © 2026
+        Day R Survival - Posto de Trocas
       </footer>
     </div>
   );
