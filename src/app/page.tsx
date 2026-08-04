@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
   Wallet, Heart, Settings, Gavel, Dices, Shield,
@@ -38,7 +38,46 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isAdmin, setIsAdmin] = useState(false);
   const { isLoading } = useBank();
-  const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
+    const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
+  const navRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!navRef.current) return;
+    isDragging.current = true;
+    startX.current = e.pageX - navRef.current.offsetLeft;
+    scrollLeft.current = navRef.current.scrollLeft;
+    navRef.current.style.cursor = "grabbing";
+    navRef.current.style.userSelect = "none";
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging.current || !navRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - navRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    navRef.current.scrollLeft = scrollLeft.current - walk;
+  }, []);
+
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false;
+    if (navRef.current) {
+      navRef.current.style.cursor = "grab";
+      navRef.current.style.userSelect = "";
+    }
+  }, []);
+
+  const onMouseLeave = useCallback(() => {
+    if (isDragging.current) {
+      isDragging.current = false;
+      if (navRef.current) {
+        navRef.current.style.cursor = "grab";
+        navRef.current.style.userSelect = "";
+      }
+    }
+  }, []);
 
   const renderTab = () => {
     switch (activeTab) {
@@ -99,7 +138,14 @@ export default function HomePage() {
       {/* Nav Tabs */}
       <nav className="border-b border-border bg-card/40 backdrop-blur-sm sticky top-[61px] z-40">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex overflow-x-auto gap-1 py-1 scrollbar-hide">
+          <div
+            ref={navRef}
+            className="flex overflow-x-auto gap-1 py-1 scrollbar-hide cursor-grab"
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseLeave}
+          >
             {allTabs.map((tab) => {
               const isActive = activeTab === tab.id;
               const Icon = tab.icon;
