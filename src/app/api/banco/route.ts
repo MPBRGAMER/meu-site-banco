@@ -83,6 +83,21 @@ export async function GET(req: NextRequest) {
         });
         return json(data);
       }
+      case "getHistoricoSorteios": {
+        const sorteios = await db.sorteio.findMany({
+          where: { status: "finalizado" },
+          orderBy: { dataCriacao: "desc" },
+        });
+        const historico = await Promise.all(
+          sorteios.map(async (s) => {
+            const count = await db.participanteSorteio.count({
+              where: { sorteioId: s.id },
+            });
+            return { ...s, totalParticipantes: count };
+          })
+        );
+        return json(historico);
+      }
       case "listParticipantes": {
         const sorteioId = searchParams.get("sorteioId");
         if (!sorteioId) return err("sorteioId obrigatório");
@@ -103,7 +118,15 @@ export async function GET(req: NextRequest) {
         const data = await db.loterica.findMany({
           orderBy: { dataCriacao: "desc" },
         });
-        return json(data);
+        const historico = await Promise.all(
+          data.map(async (l) => {
+            const numsVendidos = await db.numeroLoterica.count({
+              where: { lotericaId: l.id, comprador: { not: null } },
+            });
+            return { ...l, totalVendidos: numsVendidos };
+          })
+        );
+        return json(historico);
       }
       case "getNumerosLoterica": {
         const lotericaId = searchParams.get("lotericaId");

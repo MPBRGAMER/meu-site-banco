@@ -146,6 +146,14 @@ export interface NumeroLoterica {
   dataCompra: string | null;
 }
 
+export interface SorteioHistorico extends Sorteio {
+  totalParticipantes: number;
+}
+
+export interface LotericaHistorico extends LotericaData {
+  totalVendidos: number;
+}
+
 function dateStr(d: string | Date): string {
   if (!d) return "";
   return d instanceof Date ? d.toISOString() : d;
@@ -206,12 +214,14 @@ export function useBank() {
   const [sorteios, setSorteios] = useState<Sorteio[]>([]);
   const [loterica, setLoterica] = useState<LotericaData | null>(null);
   const [lotericaNumeros, setLotericaNumeros] = useState<NumeroLoterica[]>([]);
+  const [historicoSorteios, setHistoricoSorteios] = useState<SorteioHistorico[]>([]);
+  const [historicoLoterica, setHistoricoLoterica] = useState<LotericaHistorico[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const mountedRef = useRef(true);
 
   const loadAll = useCallback(async () => {
     try {
-      const [emps, invs, tabs, troc, cvs, cai, doa, lei, lan, sor, lot] =
+      const [emps, invs, tabs, troc, cvs, cai, doa, lei, lan, sor, lot, histSor, histLot] =
         await Promise.all([
           apiGet("listEmprestimos"),
           apiGet("listInvestidores"),
@@ -224,6 +234,8 @@ export function useBank() {
           apiGet("listAllLances"),
           apiGet("listSorteios"),
           apiGet("getLoterica"),
+          apiGet("getHistoricoSorteios"),
+          apiGet("getAllLoterica"),
         ]);
 
       if (!mountedRef.current) return;
@@ -249,6 +261,12 @@ export function useBank() {
       setLances(parseDates(lan as Lance[], ["data"]));
       setSorteios(
         parseDates(sor as Sorteio[], ["dataCriacao", "dataFim"])
+      );
+      setHistoricoSorteios(
+        parseDates(histSor as SorteioHistorico[], ["dataCriacao", "dataFim"])
+      );
+      setHistoricoLoterica(
+        parseDates(histLot as LotericaHistorico[], ["dataCriacao", "dataFimVendas", "dataSorteio"])
       );
 
       const lotArr = lot as LotericaData[];
@@ -723,6 +741,8 @@ export function useBank() {
     sorteios,
     loterica,
     lotericaNumeros,
+    historicoSorteios,
+    historicoLoterica,
     inventory,
     isLoading,
     addEmprestimo,
