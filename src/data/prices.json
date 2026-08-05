@@ -1,0 +1,1514 @@
+{
+  "metadata": {
+    "version": "2026-07-21",
+    "game_version": "v.827+",
+    "last_updated": "2026-07-21",
+    "exchange_rate": "1 Aço ($) = 2 Cimentos (€)",
+    "note": "Preços baseados em pesquisa de comunidades (Reddit, Discord, Facebook, Fóruns) - Mercado entre players"
+  },
+  "categories": [
+    {
+      "id": "food",
+      "name": "🍖 Comida, Bebidas e Ingredientes",
+      "items": [
+        {
+          "id": "clean_water",
+          "name": "Água Limpa",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Essencial para sobrevivência"
+        },
+        {
+          "id": "dirty_water",
+          "name": "Água Suja",
+          "steel": "20:1",
+          "cement": "40:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Requer purificação"
+        },
+        {
+          "id": "salt",
+          "name": "Sal",
+          "steel": "7:1",
+          "cement": "14:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Base para conservas e carne salgada"
+        },
+        {
+          "id": "sugar",
+          "name": "Açúcar",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "flour",
+          "name": "Farinha",
+          "steel": "5:2",
+          "cement": "5:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "pasta",
+          "name": "Massa / Macarrão",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento pronto"
+        },
+        {
+          "id": "eggs",
+          "name": "Ovos",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "milk",
+          "name": "Leite",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "condensed_milk",
+          "name": "Leite Condensado",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "rice_grains",
+          "name": "Grãos de Arroz",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "buckwheat",
+          "name": "Trigo-sarraceno",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "lard",
+          "name": "Banha / Gordura",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas"
+        },
+        {
+          "id": "honey",
+          "name": "Mel",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Ingrediente raro de receitas"
+        },
+        {
+          "id": "canned_meat",
+          "name": "Carne de Cozido (Enlatado)",
+          "steel": "2:5",
+          "cement": "4:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Alimento enlatado"
+        },
+        {
+          "id": "canned_soup",
+          "name": "Canja Enlatada",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento enlatado"
+        },
+        {
+          "id": "sausage",
+          "name": "Salsicha",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento pronto"
+        },
+        {
+          "id": "jelly",
+          "name": "Geleia",
+          "steel": "2:5",
+          "cement": "4:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Conserva"
+        },
+        {
+          "id": "chocolate",
+          "name": "Chocolate",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Doce/Ingrediente"
+        },
+        {
+          "id": "cheese",
+          "name": "Queijo",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento"
+        },
+        {
+          "id": "rice_bowl",
+          "name": "Tigela de Arroz",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento pronto"
+        },
+        {
+          "id": "smoked_bacon",
+          "name": "Toucinho Defumado",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento"
+        },
+        {
+          "id": "dried_toast",
+          "name": "Torrada Seca",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento"
+        },
+        {
+          "id": "salted_fish",
+          "name": "Peixe Salgado",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Ótimo para lucro inicial"
+        },
+        {
+          "id": "salted_meat",
+          "name": "Carne Salgada",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Ótimo para lucro inicial"
+        },
+        {
+          "id": "russian_salad",
+          "name": "Salada Russa",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Alimento pronto"
+        },
+        {
+          "id": "snake_snack",
+          "name": "Petisco de Cobra",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Alimento"
+        }
+      ]
+    },
+    {
+      "id": "herbs",
+      "name": "🌿 Ervas, Cogumelos e Cultivos",
+      "items": [
+        {
+          "id": "wheat",
+          "name": "Trigo",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cultivo"
+        },
+        {
+          "id": "corn",
+          "name": "Milho",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cultivo"
+        },
+        {
+          "id": "potatoes",
+          "name": "Batatas",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cultivo"
+        },
+        {
+          "id": "pumpkin",
+          "name": "Abóbora",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Cultivo"
+        },
+        {
+          "id": "apple",
+          "name": "Maçã",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Fruta"
+        },
+        {
+          "id": "strawberry",
+          "name": "Morango",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Fruta"
+        },
+        {
+          "id": "cranberry",
+          "name": "Cranberry / Oxicoco",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Fruta"
+        },
+        {
+          "id": "tangerine",
+          "name": "Tangerina",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Fruta"
+        },
+        {
+          "id": "vegetables",
+          "name": "Legumes",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Vegetal"
+        },
+        {
+          "id": "chanterelle",
+          "name": "Cantarela",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cogumelo"
+        },
+        {
+          "id": "radioactive_mushroom",
+          "name": "Cogumelo Radioativo",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Cogumelo radioativo"
+        },
+        {
+          "id": "fly_agaric",
+          "name": "Agário-das-moscas",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Cogumelo venenoso"
+        },
+        {
+          "id": "moss",
+          "name": "Musgo",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Planta"
+        },
+        {
+          "id": "dandelion",
+          "name": "Dente-de-leão",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Erva"
+        },
+        {
+          "id": "deer_ear",
+          "name": "Orelha-de-veado",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Planta"
+        },
+        {
+          "id": "nettle",
+          "name": "Urtiga",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Erva"
+        },
+        {
+          "id": "belladonna",
+          "name": "Beladona",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Planta venenosa"
+        },
+        {
+          "id": "serrated_grass",
+          "name": "Capim-serrilhado",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Planta"
+        },
+        {
+          "id": "bloody_mold",
+          "name": "Mofo Sangrento",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Mofo radioativo"
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "name": "⚙️ Componentes, Materiais e Construção",
+      "items": [
+        {
+          "id": "steel",
+          "name": "Aço",
+          "steel": "1:1",
+          "cement": "1:2",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Moeda principal de troca"
+        },
+        {
+          "id": "cement",
+          "name": "Cimento",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Moeda secundária de troca"
+        },
+        {
+          "id": "iron",
+          "name": "Ferro",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "lead",
+          "name": "Chumbo",
+          "steel": "50:1",
+          "cement": "100:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material raro"
+        },
+        {
+          "id": "copper",
+          "name": "Cobre",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "aluminum",
+          "name": "Alumínio",
+          "steel": "2:3",
+          "cement": "4:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "iron_scrap",
+          "name": "Sucata de Ferro",
+          "steel": "20:1",
+          "cement": "40:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Sucata reciclável"
+        },
+        {
+          "id": "copper_scrap",
+          "name": "Sucata de Cobre",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Sucata reciclável"
+        },
+        {
+          "id": "aluminum_scrap",
+          "name": "Sucata de Alumínio",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Sucata reciclável"
+        },
+        {
+          "id": "saltpeter",
+          "name": "Salitre",
+          "steel": "30:1",
+          "cement": "60:1",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Ingrediente para pólvora"
+        },
+        {
+          "id": "sulfur",
+          "name": "Enxofre",
+          "steel": "30:1",
+          "cement": "60:1",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Ingrediente para pólvora"
+        },
+        {
+          "id": "charcoal",
+          "name": "Carvão Vegetal",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Combustível"
+        },
+        {
+          "id": "coal",
+          "name": "Carvão Preto",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Combustível"
+        },
+        {
+          "id": "hellish_coal",
+          "name": "Carvão Infernal",
+          "steel": "1:7",
+          "cement": "2:7",
+          "rarity": "rare",
+          "demand": "medium",
+          "notes": "Combustível raro"
+        },
+        {
+          "id": "firewood",
+          "name": "Lenha",
+          "steel": "8:1",
+          "cement": "16:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Combustível"
+        },
+        {
+          "id": "stick",
+          "name": "Graveto",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Combustível"
+        },
+        {
+          "id": "log",
+          "name": "Tronco",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "board",
+          "name": "Tábua",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "brick",
+          "name": "Tijolo",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material de construção"
+        },
+        {
+          "id": "refractory_brick",
+          "name": "Tijolo Refratário",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material de construção especial"
+        },
+        {
+          "id": "flint",
+          "name": "Pederneira",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Material"
+        },
+        {
+          "id": "electrical_tape",
+          "name": "Fita Isolante",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "nails",
+          "name": "Pregos",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "screws",
+          "name": "Parafuso",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "spring",
+          "name": "Mola",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "electrical_wire",
+          "name": "Cabo Elétrico",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "metal_plate",
+          "name": "Placa de Metal",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "soap",
+          "name": "Sabão",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Item de higiene"
+        },
+        {
+          "id": "soap_powder",
+          "name": "Sabão em Pó",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Item de higiene"
+        },
+        {
+          "id": "sandpaper",
+          "name": "Lixa",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Material"
+        },
+        {
+          "id": "bone_glue",
+          "name": "Cola de Osso",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "fabric",
+          "name": "Tecido / Pano",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "rags",
+          "name": "Trapos",
+          "steel": "20:1",
+          "cement": "40:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Material"
+        },
+        {
+          "id": "thread",
+          "name": "Linhas / Fio",
+          "steel": "8:1",
+          "cement": "16:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "rope",
+          "name": "Corda",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "cooked_leather",
+          "name": "Couro Cozido",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "tanned_leather",
+          "name": "Couro Curtido",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material de qualidade"
+        },
+        {
+          "id": "thick_leather",
+          "name": "Couro Grosso",
+          "steel": "1:20",
+          "cement": "1:10",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro"
+        },
+        {
+          "id": "quality_leather",
+          "name": "Couro de Qualidade",
+          "steel": "1:30",
+          "cement": "1:15",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro"
+        },
+        {
+          "id": "can",
+          "name": "Lata",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Recipiente"
+        },
+        {
+          "id": "spark_plug",
+          "name": "Vela de Ignição",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de motor"
+        },
+        {
+          "id": "tires",
+          "name": "Pneus",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de veículo"
+        },
+        {
+          "id": "machine_parts",
+          "name": "Peças de Máquina",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de máquina"
+        },
+        {
+          "id": "electrical_parts",
+          "name": "Peças Elétricas",
+          "steel": "1:10",
+          "cement": "1:5",
+          "rarity": "rare",
+          "demand": "medium",
+          "notes": "Peça elétrica"
+        },
+        {
+          "id": "gun_parts",
+          "name": "Peças Extras de Arma",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de arma"
+        },
+        {
+          "id": "gas_mask_filter",
+          "name": "Filtro de Máscara de Gás",
+          "steel": "1:10",
+          "cement": "1:5",
+          "rarity": "rare",
+          "demand": "medium",
+          "notes": "Item de proteção"
+        },
+        {
+          "id": "autoparts",
+          "name": "Autopeças",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Peça de veículo"
+        },
+        {
+          "id": "chainsaw_motor",
+          "name": "Motor de Serra Elétrica",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Motor"
+        },
+        {
+          "id": "car_battery",
+          "name": "Bateria de Carro",
+          "steel": "1:20",
+          "cement": "1:10",
+          "rarity": "rare",
+          "demand": "high",
+          "notes": "Item de alto valor"
+        },
+        {
+          "id": "broken_car_battery",
+          "name": "Bateria de Carro Quebrada",
+          "steel": "2:3",
+          "cement": "4:3",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bateria danificada"
+        },
+        {
+          "id": "broken_gas_engine",
+          "name": "Motor a Gasolina Quebrado",
+          "steel": "1:30",
+          "cement": "1:15",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Motor danificado"
+        },
+        {
+          "id": "broken_diesel_engine",
+          "name": "Motor a Diesel Quebrado",
+          "steel": "1:30",
+          "cement": "1:15",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Motor danificado"
+        },
+        {
+          "id": "machine_oil",
+          "name": "Óleo de Máquina",
+          "steel": "50:1",
+          "cement": "100:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Óleo"
+        }
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": "💉 Medicina, Bebidas Alcoólicas e Químicos",
+      "items": [
+        {
+          "id": "sterile_bandage",
+          "name": "Atadura Esterilizada",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Item médico"
+        },
+        {
+          "id": "healing_ointment",
+          "name": "Unguento Curativo",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Item médico"
+        },
+        {
+          "id": "briocarmo",
+          "name": "Briocarmo",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "metocaine",
+          "name": "Metocaína",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Anestésico"
+        },
+        {
+          "id": "lidiacida34",
+          "name": "Lidiacida-34",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "antibiotics",
+          "name": "Antibióticos",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "painkillers",
+          "name": "Analgésico",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "chlorcistamine",
+          "name": "Clorcistamina",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "ir190",
+          "name": "IR-190",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Medicamento"
+        },
+        {
+          "id": "antirad",
+          "name": "Antirad",
+          "steel": "1:6",
+          "cement": "1:3",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Proteção contra radiação"
+        },
+        {
+          "id": "activated_charcoal",
+          "name": "Carvão Ativado",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Desintoxicante"
+        },
+        {
+          "id": "alcohol",
+          "name": "Álcool",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Desinfetante/Combustível"
+        },
+        {
+          "id": "sulfuric_acid",
+          "name": "Ácido Sulfúrico",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Química/Bateria"
+        },
+        {
+          "id": "energy_potion",
+          "name": "Poção Energizante",
+          "steel": "2:5",
+          "cement": "4:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "detox_potion",
+          "name": "Poção Desintoxicante",
+          "steel": "2:5",
+          "cement": "4:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "coffee",
+          "name": "Café",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Bebida"
+        },
+        {
+          "id": "tea",
+          "name": "Chá",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Bebida"
+        },
+        {
+          "id": "beetle_juice",
+          "name": "Suco de Besouro",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "cigarettes",
+          "name": "Cigarros",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Tabaco"
+        },
+        {
+          "id": "russian_cigarettes",
+          "name": "Cigarros Russos",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Tabaco"
+        },
+        {
+          "id": "cuban_cigar",
+          "name": "Charuto Cubano",
+          "steel": "1:10",
+          "cement": "1:5",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Tabaco raro"
+        },
+        {
+          "id": "vodka",
+          "name": "Vodka",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "whiskey",
+          "name": "Uísque",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "homemade_wine",
+          "name": "Vinho Caseiro",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "moonshine",
+          "name": "Aguardente / Moonshine",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "apple_liqueur",
+          "name": "Licor de Maçã",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "diluted_liqueur",
+          "name": "Licor Diluído",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "kvass",
+          "name": "Kvass",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "kompot",
+          "name": "Kompot",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "soda",
+          "name": "Refrigerante",
+          "steel": "2:3",
+          "cement": "4:3",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida"
+        },
+        {
+          "id": "poison",
+          "name": "Veneno",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Tóxico"
+        }
+      ]
+    },
+    {
+      "id": "ammo",
+      "name": "💣 Munições, Insumos e Explosivos",
+      "items": [
+        {
+          "id": "pistol_ammo",
+          "name": "Munição de Pistola",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Munição"
+        },
+        {
+          "id": "shotgun_ammo",
+          "name": "Munição de Espingarda",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Munição"
+        },
+        {
+          "id": "assault_rifle_ammo",
+          "name": "Munição de Fuzil de Assalto",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Munição de alto valor"
+        },
+        {
+          "id": "rifle_ammo",
+          "name": "Munição de Rifle",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Munição"
+        },
+        {
+          "id": "empty_pistol_cartridge",
+          "name": "Cartucho de Pistola (Vazio)",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho para recarga"
+        },
+        {
+          "id": "empty_shotgun_cartridge",
+          "name": "Cartucho de Espingarda (Vazio)",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho para recarga"
+        },
+        {
+          "id": "empty_assault_cartridge",
+          "name": "Cartucho de Rifle de Assalto (Vazio)",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho para recarga"
+        },
+        {
+          "id": "empty_rifle_cartridge",
+          "name": "Cartucho de Rifle (Vazio)",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho para recarga"
+        },
+        {
+          "id": "blank_cartridge",
+          "name": "Cartucho em Branco",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Cartucho"
+        },
+        {
+          "id": "handmade_cartridge",
+          "name": "Cartucho Artesanal",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho caseiro"
+        },
+        {
+          "id": "crossbow_bolt",
+          "name": "Virote de Besta",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Munição de besta"
+        },
+        {
+          "id": "training_ammo",
+          "name": "Munição de Treinamento",
+          "steel": "1:6",
+          "cement": "1:3",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Munição de treinamento"
+        },
+        {
+          "id": "gunpowder",
+          "name": "Pólvora",
+          "steel": "25:1",
+          "cement": "50:1",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Ingrediente para munição"
+        },
+        {
+          "id": "primer",
+          "name": "Primer (Espoleta)",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Componente de munição"
+        },
+        {
+          "id": "plastic_explosive",
+          "name": "Explosivos Plásticos",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Explosivo"
+        },
+        {
+          "id": "molotov",
+          "name": "Coquetel Molotov",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Explosivo"
+        },
+        {
+          "id": "powder_grenade",
+          "name": "Granada de Pólvora",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Explosivo"
+        },
+        {
+          "id": "stun_grenade",
+          "name": "Granada Atordoadora",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Explosivo"
+        }
+      ]
+    },
+    {
+      "id": "animal",
+      "name": "🐺 Produtos Animais e Peças Mutantes",
+      "items": [
+        {
+          "id": "contaminated_meat",
+          "name": "Carne Contaminada",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Carne radioativa"
+        },
+        {
+          "id": "tough_meat",
+          "name": "Carne Dura",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Carne"
+        },
+        {
+          "id": "fatty_meat",
+          "name": "Carne Gorda",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Carne"
+        },
+        {
+          "id": "snake_meat",
+          "name": "Carne de Cobra",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Carne"
+        },
+        {
+          "id": "ground_meat",
+          "name": "Carne Moída",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Carne"
+        },
+        {
+          "id": "mutant_meat",
+          "name": "Carne Mutante",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Carne mutante"
+        },
+        {
+          "id": "raw_bacon",
+          "name": "Toucinho Cru",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Carne"
+        },
+        {
+          "id": "raw_fish",
+          "name": "Peixe Cru",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Peixe"
+        },
+        {
+          "id": "caviar",
+          "name": "Caviar",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Iguaria"
+        },
+        {
+          "id": "lymph",
+          "name": "Linfa",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Fluido mutante"
+        },
+        {
+          "id": "acid_glands",
+          "name": "Glândulas Ácidas",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Órgão mutante"
+        },
+        {
+          "id": "raw_skin",
+          "name": "Pele Crua",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        },
+        {
+          "id": "thick_skin",
+          "name": "Pele Grossa",
+          "steel": "1:8",
+          "cement": "1:4",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro"
+        },
+        {
+          "id": "quality_skin",
+          "name": "Pele de Qualidade",
+          "steel": "1:18",
+          "cement": "1:9",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro"
+        },
+        {
+          "id": "chitin",
+          "name": "Quitina",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material mutante"
+        },
+        {
+          "id": "bones",
+          "name": "Ossos",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material"
+        }
+      ]
+    }
+  ]
+}

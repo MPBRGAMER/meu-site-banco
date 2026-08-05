@@ -2,7 +2,7 @@
 import { useState, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2,
 } from "lucide-react";
 import { useBank } from "@/lib/useBank";
 import DashboardTab from "@/components/banco/DashboardTab";
@@ -16,6 +16,7 @@ import DoadoresTab from "@/components/banco/DoadoresTab";
 import LeiloesTab from "@/components/banco/LeiloesTab";
 import SorteiosTab from "@/components/banco/SorteiosTab";
 import LotericaTab from "@/components/banco/LotericaTab";
+import TabelaTab from "@/components/banco/TabelaTab";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -25,6 +26,7 @@ const publicTabs = [
   { id: "leiloes", label: "Leilões", icon: Gavel },
   { id: "sorteios", label: "Sorteios", icon: Dices },
   { id: "loterica", label: "Lotérica", icon: Dices },
+  { id: "tabela", label: "Tabela", icon: Table2 },
 ];
 
 const adminTabs = [
@@ -92,6 +94,7 @@ export default function HomePage() {
       case "leiloes": return <LeiloesTab />;
       case "sorteios": return <SorteiosTab />;
       case "loterica": return <LotericaTab />;
+      case "tabela": return <TabelaTab />;
       default: return <DashboardTab />;
     }
   };
