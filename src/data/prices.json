@@ -434,7 +434,7 @@
         },
         {
           "id": "corn",
-          "name": "Corn",
+          "name": "Milho",
           "img": "/items/corn.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -494,7 +494,7 @@
         },
         {
           "id": "egg",
-          "name": "Egg",
+          "name": "Ovo",
           "img": "/items/egg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -564,7 +564,7 @@
         },
         {
           "id": "flour",
-          "name": "Flour",
+          "name": "Farinha",
           "img": "/items/flour.png",
           "steel": "5:2",
           "cement": "5:1",
@@ -694,7 +694,7 @@
         },
         {
           "id": "honey",
-          "name": "Honey",
+          "name": "Mel",
           "img": "/items/honey.png",
           "steel": "1:5",
           "cement": "2:5",
@@ -704,7 +704,7 @@
         },
         {
           "id": "jam",
-          "name": "Jam",
+          "name": "Geleia",
           "img": "/items/jam.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -804,7 +804,7 @@
         },
         {
           "id": "milk",
-          "name": "Milk",
+          "name": "Leite",
           "img": "/items/milk.png",
           "steel": "2:1",
           "cement": "4:1",
@@ -1054,7 +1054,7 @@
         },
         {
           "id": "pineapple",
-          "name": "Pineapple",
+          "name": "Abacaxi",
           "img": "/items/pineapple.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1074,7 +1074,7 @@
         },
         {
           "id": "potato",
-          "name": "Potato",
+          "name": "Batata",
           "img": "/items/potato.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1104,7 +1104,7 @@
         },
         {
           "id": "pumpkin",
-          "name": "Pumpkin",
+          "name": "Abobora",
           "img": "/items/pumpkin.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -1154,7 +1154,7 @@
         },
         {
           "id": "rice_grains",
-          "name": "Rice grains",
+          "name": "Graos de Arroz",
           "img": "/items/rice_grains.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -1184,7 +1184,7 @@
         },
         {
           "id": "tailed_rissole",
-          "name": "Risole de Carne",
+          "name": "Risole",
           "img": "/items/tailed_rissole.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1224,7 +1224,7 @@
         },
         {
           "id": "salt",
-          "name": "Salt",
+          "name": "Sal",
           "img": "/items/salt.png",
           "steel": "7:1",
           "cement": "14:1",
@@ -1344,7 +1344,7 @@
         },
         {
           "id": "stew_meat",
-          "name": "Stew meat",
+          "name": "Carne para Ensopado",
           "img": "/items/stew_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1454,7 +1454,7 @@
         },
         {
           "id": "sugar",
-          "name": "Sugar",
+          "name": "Acucar",
           "img": "/items/sugar.png",
           "steel": "5:1",
           "cement": "10:1",
@@ -1474,7 +1474,7 @@
         },
         {
           "id": "tea",
-          "name": "Tea",
+          "name": "Cha",
           "img": "/items/tea.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -1581,6 +1581,16 @@
           "rarity": "uncommon",
           "demand": "medium",
           "notes": "Bebida alcoólica"
+        },
+        {
+          "id": "bowl_of_rice",
+          "name": "Tigela de Arroz",
+          "img": "/items/bowl_of_rice.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": ""
         }
       ]
     },
@@ -1956,7 +1966,7 @@
         },
         {
           "id": "cement",
-          "name": "Cement",
+          "name": "Cimento",
           "img": "/items/cement.png",
           "steel": "1:2",
           "cement": "1:1",
@@ -2136,7 +2146,7 @@
         },
         {
           "id": "double_barrel",
-          "name": "Estopa",
+          "name": "Escopeta de Cano Duplo",
           "img": "/items/double_barrel.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2146,7 +2156,7 @@
         },
         {
           "id": "dragon_scale",
-          "name": "Dragon Scale",
+          "name": "Escama de Dragao",
           "img": "/items/dragon_scale.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2236,7 +2246,7 @@
         },
         {
           "id": "fat",
-          "name": "Fat",
+          "name": "Gordura",
           "img": "/items/fat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2506,7 +2516,7 @@
         },
         {
           "id": "iron",
-          "name": "Iron",
+          "name": "Ferro",
           "img": "/items/iron.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -2696,7 +2706,7 @@
         },
         {
           "id": "matches",
-          "name": "Matches",
+          "name": "Fosforos",
           "img": "/items/matches.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2755,16 +2765,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "mining_permit",
-          "name": "Licenca de Mineracao",
-          "img": "/items/mining_permit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "mosinka",
           "name": "Mosinka",
           "img": "/items/mosinka.png",
@@ -2806,7 +2806,7 @@
         },
         {
           "id": "nail",
-          "name": "Nail",
+          "name": "Prego",
           "img": "/items/nail.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2816,7 +2816,7 @@
         },
         {
           "id": "nailed_box",
-          "name": "Nailed box",
+          "name": "Caixa Pregada",
           "img": "/items/nailed_box.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2886,7 +2886,7 @@
         },
         {
           "id": "pkm_broken",
-          "name": "PKM (broken)",
+          "name": "PKM (Quebrado)",
           "img": "/items/pkm_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3136,7 +3136,7 @@
         },
         {
           "id": "svd_broken",
-          "name": "SVD (broken)",
+          "name": "SVD (Quebrado)",
           "img": "/items/svd_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3296,7 +3296,7 @@
         },
         {
           "id": "spark_plug",
-          "name": "Spark plug",
+          "name": "Vela de Ignicao",
           "img": "/items/spark_plug.png",
           "steel": "1:4",
           "cement": "1:2",
@@ -3326,7 +3326,7 @@
         },
         {
           "id": "steel",
-          "name": "Steel",
+          "name": "Aco",
           "img": "/items/steel.png",
           "steel": "1:1",
           "cement": "1:2",
@@ -3396,7 +3396,7 @@
         },
         {
           "id": "support_box",
-          "name": "Support Box",
+          "name": "Caixa de Suporte",
           "img": "/items/support_box.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3446,7 +3446,7 @@
         },
         {
           "id": "tangerine",
-          "name": "Tangerine",
+          "name": "Tangerina",
           "img": "/items/tangerine.png",
           "steel": "3:1",
           "cement": "6:1",
@@ -3516,7 +3516,7 @@
         },
         {
           "id": "threads",
-          "name": "Threads",
+          "name": "Linhas",
           "img": "/items/threads.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3676,7 +3676,7 @@
         },
         {
           "id": "wheat",
-          "name": "Wheat",
+          "name": "Trigo",
           "img": "/items/wheat.png",
           "steel": "3:1",
           "cement": "6:1",
@@ -3723,6 +3723,86 @@
           "rarity": "common",
           "demand": "medium",
           "notes": ""
+        },
+        {
+          "id": "broken_car_battery",
+          "name": "Bateria de Carro Quebrada",
+          "img": "/items/broken_car_battery.png",
+          "steel": "2:3",
+          "cement": "4:3",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bateria danificada"
+        },
+        {
+          "id": "car_battery",
+          "name": "Bateria de Carro",
+          "img": "/items/car_battery.png",
+          "steel": "1:20",
+          "cement": "1:10",
+          "rarity": "rare",
+          "demand": "high",
+          "notes": "Item de alto valor"
+        },
+        {
+          "id": "nuclear_battery",
+          "name": "Bateria Nuclear",
+          "img": "/items/nuclear_battery.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": ""
+        },
+        {
+          "id": "pistol_parts",
+          "name": "Pecas de Pistola",
+          "img": "/items/pistol_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "revolver_parts",
+          "name": "Pecas de Revolver",
+          "img": "/items/revolver_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "rifle_parts",
+          "name": "Pecas de Rifle",
+          "img": "/items/rifle_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "assault_rifle_parts",
+          "name": "Pecas de Fuzil de Assalto",
+          "img": "/items/assault_rifle_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "machine_gun_parts",
+          "name": "Pecas de Metralhadora",
+          "img": "/items/machine_gun_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
         }
       ]
     },
@@ -4027,96 +4107,6 @@
           "notes": ""
         },
         {
-          "id": "bulletproof_vest",
-          "name": "Colete Balistico",
-          "img": "/items/bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_bulletproof_vest",
-          "name": "Colete Balistico Artesanal",
-          "img": "/items/homemade_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ceramic_bulletproof_vest",
-          "name": "Colete Balistico Ceramico",
-          "img": "/items/ceramic_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chinese_bulletproof_vest",
-          "name": "Colete Balistico Chines",
-          "img": "/items/chinese_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "army_bulletproof_vest",
-          "name": "Colete Balistico Militar",
-          "img": "/items/army_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "modern_bulletproof_vest",
-          "name": "Colete Balistico Moderno",
-          "img": "/items/modern_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "primitive_bulletproof_vest",
-          "name": "Colete Balistico Primitivo",
-          "img": "/items/primitive_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "progress_bulletproof_vest",
-          "name": "Colete Balistico Progresso",
-          "img": "/items/progress_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "t_800_bulletproof_vest",
-          "name": "Colete Balistico T-800",
-          "img": "/items/t_800_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "crossbow_bolt_poison",
           "name": "Virote de Besta (Venenoso)",
           "img": "/items/crossbow_bolt_poison.png",
@@ -4178,7 +4168,7 @@
         },
         {
           "id": "pistol_ammo",
-          "name": "Pistol Ammo",
+          "name": "Municao de Pistola",
           "img": "/items/pistol_ammo.png",
           "steel": "6:1",
           "cement": "12:1",
@@ -4248,7 +4238,7 @@
         },
         {
           "id": "rifle_ammo",
-          "name": "Rifle Ammo",
+          "name": "Municao de Rifle",
           "img": "/items/rifle_ammo.png",
           "steel": "3:1",
           "cement": "6:1",
@@ -4313,16 +4303,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "assault_rifle_parts",
-          "name": "Pecas de Fuzil de Assalto",
-          "img": "/items/assault_rifle_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "berdan_rifle",
           "name": "Rifle Berdan",
           "img": "/items/berdan_rifle.png",
@@ -4343,34 +4323,14 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "broken_car_battery",
-          "name": "Bateria de Carro Quebrada",
-          "img": "/items/broken_car_battery.png",
-          "steel": "2:3",
-          "cement": "4:3",
-          "rarity": "uncommon",
-          "demand": "low",
-          "notes": "Bateria danificada"
-        },
-        {
           "id": "butterfly_knife",
-          "name": "Butterfly Knife",
+          "name": "Faca Borboleta",
           "img": "/items/butterfly_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "car_battery",
-          "name": "Bateria de Carro",
-          "img": "/items/car_battery.png",
-          "steel": "1:20",
-          "cement": "1:10",
-          "rarity": "rare",
-          "demand": "high",
-          "notes": "Item de alto valor"
         },
         {
           "id": "chemist_crossbow",
@@ -4384,7 +4344,7 @@
         },
         {
           "id": "chitin_spear",
-          "name": "Chitin spear",
+          "name": "Lanca de Quitina",
           "img": "/items/chitin_spear.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4424,7 +4384,7 @@
         },
         {
           "id": "forged_knife",
-          "name": "Forged knife",
+          "name": "Faca Forjada",
           "img": "/items/forged_knife.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4523,29 +4483,9 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "battery_flashlight",
-          "name": "Lanterha com Bateria",
-          "img": "/items/battery_flashlight.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "light_machine_gun",
           "name": "Metralhadora Leve",
           "img": "/items/light_machine_gun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "machine_gun_parts",
-          "name": "Pecas de Metralhadora",
-          "img": "/items/machine_gun_parts.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4593,16 +4533,6 @@
           "notes": ""
         },
         {
-          "id": "nuclear_battery",
-          "name": "Bateria Nuclear",
-          "img": "/items/nuclear_battery.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "physicist_crossbow",
           "name": "Besta do Fisico",
           "img": "/items/physicist_crossbow.png",
@@ -4616,16 +4546,6 @@
           "id": "pistol_silent",
           "name": "Pistola Silenciosa",
           "img": "/items/pistol_silent.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pistol_parts",
-          "name": "Pecas de Pistola",
-          "img": "/items/pistol_parts.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4653,29 +4573,9 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "revolver_parts",
-          "name": "Pecas de Revolver",
-          "img": "/items/revolver_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "revolving_gun",
           "name": "Arma Rotativa",
           "img": "/items/revolving_gun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rifle_parts",
-          "name": "Pecas de Rifle",
-          "img": "/items/rifle_parts.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4773,16 +4673,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "bowl_of_rice",
-          "name": "Tigela de Arroz",
-          "img": "/items/bowl_of_rice.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "titanium_axe",
           "name": "Machado de Titanio",
           "img": "/items/titanium_axe.png",
@@ -4804,7 +4694,7 @@
         },
         {
           "id": "tube_rifle",
-          "name": "Tube Rifle",
+          "name": "Rifle de Tubo",
           "img": "/items/tube_rifle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4940,7 +4830,7 @@
         },
         {
           "id": "chitin_armor",
-          "name": "Chitin armor",
+          "name": "Armadura de Quitina",
           "img": "/items/chitin_armor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5037,6 +4927,96 @@
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "bulletproof_vest",
+          "name": "Colete Balistico",
+          "img": "/items/bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "homemade_bulletproof_vest",
+          "name": "Colete Balistico Artesanal",
+          "img": "/items/homemade_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "ceramic_bulletproof_vest",
+          "name": "Colete Balistico Ceramico",
+          "img": "/items/ceramic_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "chinese_bulletproof_vest",
+          "name": "Colete Balistico Chines",
+          "img": "/items/chinese_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "army_bulletproof_vest",
+          "name": "Colete Balistico Militar",
+          "img": "/items/army_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "modern_bulletproof_vest",
+          "name": "Colete Balistico Moderno",
+          "img": "/items/modern_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "primitive_bulletproof_vest",
+          "name": "Colete Balistico Primitivo",
+          "img": "/items/primitive_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "progress_bulletproof_vest",
+          "name": "Colete Balistico Progresso",
+          "img": "/items/progress_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "t_800_bulletproof_vest",
+          "name": "Colete Balistico T-800",
+          "img": "/items/t_800_bulletproof_vest.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
         }
       ]
     },
@@ -5106,7 +5086,7 @@
         },
         {
           "id": "lighter",
-          "name": "Lighter",
+          "name": "Isqueiro",
           "img": "/items/lighter.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5273,6 +5253,16 @@
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "battery_flashlight",
+          "name": "Lanterna com Bateria",
+          "img": "/items/battery_flashlight.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!"
         }
       ]
     },
@@ -5372,7 +5362,7 @@
         },
         {
           "id": "sewing_needle",
-          "name": "Sewing needle",
+          "name": "Agulha de Costura",
           "img": "/items/sewing_needle.png",
           "steel": "?:?",
           "cement": "?:?",
