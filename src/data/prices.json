@@ -247,16 +247,7 @@
         },
         {
           "id": "olivier_salad",
-          "name": "Olivier Salad",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__light_blue",
-          "name": "Strange Mushroom (Light Blue)",
+          "name": "Salada Olivier",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -265,16 +256,7 @@
         },
         {
           "id": "pancakes",
-          "name": "Pancakes",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__red",
-          "name": "Strange Mushroom (Red)",
+          "name": "Panquecas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -283,7 +265,7 @@
         },
         {
           "id": "pelmeni_dumplings",
-          "name": "Pelmeni dumplings",
+          "name": "Pelmeni",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -292,7 +274,7 @@
         },
         {
           "id": "rice_bun",
-          "name": "Rice bun",
+          "name": "Pao de Arroz",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -301,7 +283,7 @@
         },
         {
           "id": "cutlet_rice",
-          "name": "Cutlet rice",
+          "name": "Arroz com Bife",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -310,7 +292,7 @@
         },
         {
           "id": "meat_loaf",
-          "name": "Meat loaf",
+          "name": "Bolo de Carne",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -319,7 +301,7 @@
         },
         {
           "id": "canned_beef",
-          "name": "Canned beef",
+          "name": "Carne Enlatada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -328,16 +310,7 @@
         },
         {
           "id": "hearty_food",
-          "name": "Hearty food",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__yellow",
-          "name": "Strange Mushroom (Yellow)",
+          "name": "Comida Sustanciosa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -346,7 +319,7 @@
         },
         {
           "id": "canned_porridge",
-          "name": "Canned porridge",
+          "name": "Papas Enlatadas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -355,7 +328,7 @@
         },
         {
           "id": "rusk",
-          "name": "Rusk",
+          "name": "Biscoito Duro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -364,7 +337,7 @@
         },
         {
           "id": "raw_meat",
-          "name": "Raw meat",
+          "name": "Carne Crua",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -382,7 +355,7 @@
         },
         {
           "id": "sanguinary_masha",
-          "name": "Sanguinary Masha",
+          "name": "Masha Sanguinaria",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -391,7 +364,7 @@
         },
         {
           "id": "dried_meat",
-          "name": "Dried meat",
+          "name": "Carne Seca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -400,7 +373,7 @@
         },
         {
           "id": "red_wine",
-          "name": "Red wine",
+          "name": "Vinho Tinto",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -409,7 +382,7 @@
         },
         {
           "id": "roasted_chanterelle",
-          "name": "Roasted Chanterelle",
+          "name": "Cantarela Assada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -427,7 +400,7 @@
         },
         {
           "id": "easter_cake",
-          "name": "Easter Cake",
+          "name": "Bolo de Pascoa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -436,7 +409,7 @@
         },
         {
           "id": "fried_tainted_meat",
-          "name": "Fried tainted meat",
+          "name": "Carne Contaminada Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -445,7 +418,7 @@
         },
         {
           "id": "canned_beans",
-          "name": "Canned Beans",
+          "name": "Feijao Enlatado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -454,7 +427,7 @@
         },
         {
           "id": "cabbage_roll",
-          "name": "Cabbage roll",
+          "name": "Rolinho de Repolho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -472,7 +445,7 @@
         },
         {
           "id": "tula_pryanik",
-          "name": "Tula pryanik",
+          "name": "Pryanik de Tula",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -481,7 +454,7 @@
         },
         {
           "id": "simple_chowder",
-          "name": "Simple chowder",
+          "name": "Caldo Simples",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -490,7 +463,7 @@
         },
         {
           "id": "knock_off_energy_drink",
-          "name": "Knock-Off Energy Drink",
+          "name": "Energetico Falsificado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -499,7 +472,7 @@
         },
         {
           "id": "dried_fish",
-          "name": "Dried fish",
+          "name": "Peixe Seco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -508,7 +481,7 @@
         },
         {
           "id": "hot_coffee",
-          "name": "Hot coffee",
+          "name": "Cafe Quente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -517,7 +490,7 @@
         },
         {
           "id": "champagne",
-          "name": "Champagne",
+          "name": "Champanhe",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -535,7 +508,7 @@
         },
         {
           "id": "rotten_porridge",
-          "name": "Rotten porridge",
+          "name": "Papas Podres",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -544,7 +517,7 @@
         },
         {
           "id": "rotten_meat",
-          "name": "Rotten meat",
+          "name": "Carne Podre",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -553,7 +526,7 @@
         },
         {
           "id": "bunny_treat",
-          "name": "Bunny Treat",
+          "name": "Guloseima de Coelho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -562,7 +535,7 @@
         },
         {
           "id": "cold_tea",
-          "name": "Cold tea",
+          "name": "Cha Frio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -580,7 +553,7 @@
         },
         {
           "id": "mysterious_fruit",
-          "name": "Mysterious Fruit",
+          "name": "Fruta Misteriosa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -589,7 +562,7 @@
         },
         {
           "id": "rainbow_easter_egg",
-          "name": "Rainbow Easter Egg",
+          "name": "Ovo de Pascoa Arco-Iris",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -598,7 +571,7 @@
         },
         {
           "id": "cold_coffee",
-          "name": "Cold coffee",
+          "name": "Cafe Frio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -607,7 +580,7 @@
         },
         {
           "id": "canned_water",
-          "name": "Canned Water",
+          "name": "Agua Enlatada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -616,7 +589,7 @@
         },
         {
           "id": "diluted_spirits",
-          "name": "Diluted spirits",
+          "name": "Bebida Espiritosa Diluida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -625,7 +598,7 @@
         },
         {
           "id": "energy_drink",
-          "name": "Energy drink",
+          "name": "Energetico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -634,7 +607,7 @@
         },
         {
           "id": "cake",
-          "name": "Cake",
+          "name": "Bolo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -643,7 +616,7 @@
         },
         {
           "id": "easter_egg",
-          "name": "Easter Egg",
+          "name": "Ovo de Pascoa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -652,16 +625,7 @@
         },
         {
           "id": "rat_meat",
-          "name": "Rat meat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__blue",
-          "name": "Strange Mushroom (Blue)",
+          "name": "Carne de Rato",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -670,7 +634,7 @@
         },
         {
           "id": "chocolate_bunny",
-          "name": "Chocolate Bunny",
+          "name": "Coelho de Chocolate",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -679,7 +643,7 @@
         },
         {
           "id": "hot_tea",
-          "name": "Hot tea",
+          "name": "Cha Quente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -688,7 +652,7 @@
         },
         {
           "id": "fried_egg",
-          "name": "Fried egg",
+          "name": "Ovo Frito",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -697,7 +661,7 @@
         },
         {
           "id": "fish_pie",
-          "name": "Fish pie",
+          "name": "Torta de Peixe",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -706,16 +670,7 @@
         },
         {
           "id": "cake_napoleon",
-          "name": "Cake napoleon",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bowl_of_rice",
-          "name": "Bowl of rice",
+          "name": "Bolo Napoleao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -724,7 +679,7 @@
         },
         {
           "id": "shashlik",
-          "name": "Shashlik",
+          "name": "Churrasco Espetado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -733,25 +688,7 @@
         },
         {
           "id": "fried_fish",
-          "name": "Fried fish",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rat_meat",
-          "name": "Rat Meat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__white",
-          "name": "Strange Mushroom (White)",
+          "name": "Peixe Frito",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -760,7 +697,7 @@
         },
         {
           "id": "egg",
-          "name": "Egg",
+          "name": "Ovo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -769,7 +706,7 @@
         },
         {
           "id": "tailed_rissole",
-          "name": "Tailed Rissole",
+          "name": "Risole de Carne",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -778,7 +715,7 @@
         },
         {
           "id": "pasta_with_ground_beef",
-          "name": "Pasta with ground beef",
+          "name": "Macarrao com Carne Moida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -787,7 +724,7 @@
         },
         {
           "id": "rich_chowder",
-          "name": "Rich chowder",
+          "name": "Caldo Rico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -796,7 +733,7 @@
         },
         {
           "id": "mushroom_pasta",
-          "name": "Mushroom pasta",
+          "name": "Macarrao com Cogumelos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -805,25 +742,7 @@
         },
         {
           "id": "infected_dried_fish",
-          "name": "Infected Dried Fish",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "jam",
-          "name": "Jam",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "raw_fatback",
-          "name": "Raw fatback",
+          "name": "Peixe Seco Infectado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -832,7 +751,7 @@
         },
         {
           "id": "toxic_water",
-          "name": "Toxic water",
+          "name": "Agua Toxica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -859,7 +778,7 @@
         },
         {
           "id": "fried_rat_meat",
-          "name": "Fried rat meat",
+          "name": "Carne de Rato Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -868,7 +787,7 @@
         },
         {
           "id": "fried_fatty_meat",
-          "name": "Fried fatty meat",
+          "name": "Carne Gorda Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -877,7 +796,7 @@
         },
         {
           "id": "dry_meat",
-          "name": "Dry meat",
+          "name": "Carne Ressecada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -886,7 +805,7 @@
         },
         {
           "id": "aqua_vitae",
-          "name": "Aqua Vitae",
+          "name": "Agua Vitae",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -895,7 +814,7 @@
         },
         {
           "id": "pure_water",
-          "name": "Pure water",
+          "name": "Agua Pura",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -904,7 +823,7 @@
         },
         {
           "id": "meat_cutlet",
-          "name": "Meat cutlet",
+          "name": "Bife de Carne",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -913,7 +832,7 @@
         },
         {
           "id": "ration_pack",
-          "name": "Ration pack",
+          "name": "Racao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -922,7 +841,7 @@
         },
         {
           "id": "flying_spaghetti_monster",
-          "name": "Flying spaghetti monster",
+          "name": "Monstro Espaguete Voador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -931,7 +850,7 @@
         },
         {
           "id": "stew_meat",
-          "name": "Stew meat",
+          "name": "Carne Ensopada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -949,7 +868,7 @@
         },
         {
           "id": "fried_snake",
-          "name": "Fried snake",
+          "name": "Cobra Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -958,7 +877,7 @@
         },
         {
           "id": "candy_cane",
-          "name": "Candy Cane",
+          "name": "Bengala Doce",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -967,7 +886,7 @@
         },
         {
           "id": "fried_tough_meat",
-          "name": "Fried Tough Meat",
+          "name": "Carne Dura Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -976,16 +895,7 @@
         },
         {
           "id": "comcon_3_paste",
-          "name": "ComCon-3 Paste",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "smoked_fatback",
-          "name": "Smoked fatback",
+          "name": "Pasta ComCon-3",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -994,7 +904,7 @@
         },
         {
           "id": "grilled_meat",
-          "name": "Grilled Meat",
+          "name": "Carne Grelhada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1003,16 +913,7 @@
         },
         {
           "id": "mulled_wine",
-          "name": "Mulled Wine",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__white",
-          "name": "Strange mushroom (white)",
+          "name": "Vinho Quente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1021,7 +922,7 @@
         },
         {
           "id": "spooky_energy_drink",
-          "name": "Spooky Energy Drink",
+          "name": "Energetico Assustador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1030,7 +931,7 @@
         },
         {
           "id": "stale_pryanik",
-          "name": "Stale Pryanik",
+          "name": "Pryanik Velho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1039,16 +940,7 @@
         },
         {
           "id": "rice_wine",
-          "name": "Rice wine",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__black",
-          "name": "Strange Mushroom (Black)",
+          "name": "Vinho de Arroz",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1057,7 +949,7 @@
         },
         {
           "id": "stuffed_cabbage",
-          "name": "Stuffed cabbage",
+          "name": "Repolho Recheado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1066,7 +958,7 @@
         },
         {
           "id": "shawarma",
-          "name": "Shawarma",
+          "name": "Churrasco Grego",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1075,16 +967,7 @@
         },
         {
           "id": "peking_duck",
-          "name": "Peking Duck",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pasta_with_ground_beef",
-          "name": "Pasta With Ground Beef",
+          "name": "Pato Pequim",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1093,7 +976,7 @@
         },
         {
           "id": "holiday_energy_drink",
-          "name": "Holiday Energy Drink",
+          "name": "Energetico Festivo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1102,7 +985,7 @@
         },
         {
           "id": "chicken_kiev",
-          "name": "Chicken kiev",
+          "name": "Frango Kiev",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1111,7 +994,7 @@
         },
         {
           "id": "infected_rusk",
-          "name": "Infected rusk",
+          "name": "Biscoito Duro Infectado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1120,7 +1003,7 @@
         },
         {
           "id": "stewed_meat",
-          "name": "Stewed meat",
+          "name": "Carne Cozida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1129,7 +1012,7 @@
         },
         {
           "id": "chinese_energy_drink",
-          "name": "Chinese energy drink",
+          "name": "Energetico Chines",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1138,16 +1021,7 @@
         },
         {
           "id": "cooked_pasta",
-          "name": "Cooked pasta",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pelmeni",
-          "name": "Pelmeni",
+          "name": "Macarrao Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1156,7 +1030,7 @@
         },
         {
           "id": "cooked_rice",
-          "name": "Cooked rice",
+          "name": "Arroz Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1174,7 +1048,7 @@
         },
         {
           "id": "rusks",
-          "name": "Rusks",
+          "name": "Biscoitos Duros",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1183,7 +1057,7 @@
         },
         {
           "id": "caustic_distillate",
-          "name": "Caustic Distillate",
+          "name": "Destilado Caustico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1192,7 +1066,7 @@
         },
         {
           "id": "hearty_chowder",
-          "name": "Hearty chowder",
+          "name": "Caldo Sustancioso",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1201,7 +1075,7 @@
         },
         {
           "id": "canned_pork",
-          "name": "Canned pork",
+          "name": "Porco Enlatado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1210,7 +1084,7 @@
         },
         {
           "id": "rotten_fish",
-          "name": "Rotten fish",
+          "name": "Peixe Podre",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1219,7 +1093,7 @@
         },
         {
           "id": "chocolate_bar",
-          "name": "Chocolate Bar",
+          "name": "Barra de Chocolate",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1228,7 +1102,7 @@
         },
         {
           "id": "minced_meat",
-          "name": "Minced Meat",
+          "name": "Carne Moida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1237,7 +1111,7 @@
         },
         {
           "id": "boiled_condensed_milk",
-          "name": "Boiled condensed milk",
+          "name": "Leite Condensado Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1246,7 +1120,7 @@
         },
         {
           "id": "radioactive_meat",
-          "name": "Radioactive meat",
+          "name": "Carne Radioativa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1255,16 +1129,7 @@
         },
         {
           "id": "blood_mold",
-          "name": "Blood mold",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom",
-          "name": "Strange Mushroom",
+          "name": "Bolor Sangrento",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1282,16 +1147,7 @@
         },
         {
           "id": "bio_energy_drink",
-          "name": "Bio-energy Drink",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__green",
-          "name": "Strange Mushroom (Green)",
+          "name": "Bioenergetico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1300,7 +1156,7 @@
         },
         {
           "id": "king_of_jokers",
-          "name": "King of Jokers",
+          "name": "Rei dos Coringas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1309,7 +1165,7 @@
         },
         {
           "id": "caviar_sandwich",
-          "name": "Caviar sandwich",
+          "name": "Sanduiche de Caviar",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1318,7 +1174,7 @@
         },
         {
           "id": "fat",
-          "name": "Fat",
+          "name": "Gordura",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1327,7 +1183,7 @@
         },
         {
           "id": "spice",
-          "name": "Spice",
+          "name": "Especiaria",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1336,7 +1192,7 @@
         },
         {
           "id": "fresh_fish",
-          "name": "Fresh fish",
+          "name": "Peixe Fresco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1345,7 +1201,7 @@
         },
         {
           "id": "fried_meat",
-          "name": "Fried meat",
+          "name": "Carne Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1354,7 +1210,7 @@
         },
         {
           "id": "smuggled_energy_drink",
-          "name": "Smuggled Energy Drink",
+          "name": "Energetico Contrabandeado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1363,7 +1219,7 @@
         },
         {
           "id": "ice_cream",
-          "name": "Ice Cream",
+          "name": "Sorvete",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1372,7 +1228,7 @@
         },
         {
           "id": "boiled_egg",
-          "name": "Boiled Egg",
+          "name": "Ovo Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1381,7 +1237,7 @@
         },
         {
           "id": "pie",
-          "name": "Pie",
+          "name": "Torta",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1390,7 +1246,7 @@
         },
         {
           "id": "mushroom_soup",
-          "name": "Mushroom soup",
+          "name": "Sopa de Cogumelos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1417,16 +1273,7 @@
         },
         {
           "id": "fried_mutant_meat",
-          "name": "Fried mutant meat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__violet",
-          "name": "Strange Mushroom (Violet)",
+          "name": "Carne Mutante Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1435,25 +1282,7 @@
         },
         {
           "id": "old_canned_meat",
-          "name": "Old Canned Meat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rice_bun",
-          "name": "Rice Bun",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "meat_rissole",
-          "name": "Meat rissole",
+          "name": "Carne Enlatada Velha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1462,7 +1291,7 @@
         },
         {
           "id": "smoked_salo",
-          "name": "Smoked salo",
+          "name": "Salo Defumado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1471,7 +1300,7 @@
         },
         {
           "id": "trophy_cognac",
-          "name": "Trophy Cognac",
+          "name": "Conhaque Trofeu",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1657,7 +1486,7 @@
         },
         {
           "id": "potato_pancakes",
-          "name": "Potato Pancakes",
+          "name": "Panquecas de Batata",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1666,7 +1495,7 @@
         },
         {
           "id": "mashed_potatoes",
-          "name": "Mashed potatoes",
+          "name": "Pure de Batatas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1675,7 +1504,7 @@
         },
         {
           "id": "boiled_corn",
-          "name": "Boiled corn",
+          "name": "Milho Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1684,7 +1513,7 @@
         },
         {
           "id": "toothgrass",
-          "name": "Toothgrass",
+          "name": "Capim-dente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1693,7 +1522,7 @@
         },
         {
           "id": "apple_cordial",
-          "name": "Apple Cordial",
+          "name": "Cordial de Maca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1702,7 +1531,7 @@
         },
         {
           "id": "potato",
-          "name": "Potato",
+          "name": "Batata",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1711,7 +1540,7 @@
         },
         {
           "id": "dandelion_tea",
-          "name": "Dandelion Tea",
+          "name": "Cha de Dente-de-leao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1720,16 +1549,7 @@
         },
         {
           "id": "cooked_buckwheat",
-          "name": "Cooked buckwheat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dandelion_tea",
-          "name": "Dandelion tea",
+          "name": "Trigo-sarraceno Cozido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1738,16 +1558,7 @@
         },
         {
           "id": "candy_apple",
-          "name": "Candy apple",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cooked_buckwheat",
-          "name": "Cooked Buckwheat",
+          "name": "Maca do Amor",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1756,16 +1567,7 @@
         },
         {
           "id": "strawberry_cake",
-          "name": "Strawberry cake",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "potato_pancakes",
-          "name": "Potato pancakes",
+          "name": "Bolo de Morango",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1774,7 +1576,7 @@
         },
         {
           "id": "buckwheat_grains",
-          "name": "Buckwheat grains",
+          "name": "Graos de Trigo-sarraceno",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1783,7 +1585,7 @@
         },
         {
           "id": "bamboo_steamer",
-          "name": "Bamboo Steamer",
+          "name": "Cesteiro de Bambu",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1792,7 +1594,7 @@
         },
         {
           "id": "pumpkin_soup",
-          "name": "Pumpkin Soup",
+          "name": "Sopa de Abobora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1801,16 +1603,7 @@
         },
         {
           "id": "fried_potato",
-          "name": "Fried potato",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "apple_cordial",
-          "name": "Apple cordial",
+          "name": "Batata Frita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1819,7 +1612,7 @@
         },
         {
           "id": "pumpkin_seeds",
-          "name": "Pumpkin seeds",
+          "name": "Sementes de Abobora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1828,7 +1621,7 @@
         },
         {
           "id": "apple_seeds",
-          "name": "Apple seeds",
+          "name": "Sementes de Maca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1837,7 +1630,7 @@
         },
         {
           "id": "corn_seeds",
-          "name": "Corn seeds",
+          "name": "Sementes de Milho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1846,16 +1639,7 @@
         },
         {
           "id": "wheat_seeds",
-          "name": "Wheat seeds",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "greenhouse",
-          "name": "Greenhouse",
+          "name": "Sementes de Trigo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1864,7 +1648,7 @@
         },
         {
           "id": "potato_seeds",
-          "name": "Potato seeds",
+          "name": "Sementes de Batata",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1873,7 +1657,7 @@
         },
         {
           "id": "tangerine_seeds",
-          "name": "Tangerine seeds",
+          "name": "Sementes de Tangerina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1882,7 +1666,7 @@
         },
         {
           "id": "strawberry_seed",
-          "name": "Strawberry seed",
+          "name": "Semente de Morango",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1891,97 +1675,7 @@
         },
         {
           "id": "mysterious_fruit_seeds",
-          "name": "Mysterious Fruit Seeds",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__white",
-          "name": "Strange Mushroom (White)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__yellow",
-          "name": "Strange Mushroom (Yellow)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__light_blue",
-          "name": "Strange Mushroom (Light Blue)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__blue",
-          "name": "Strange Mushroom (Blue)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__violet",
-          "name": "Strange Mushroom (Violet)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "amanita",
-          "name": "Amanita",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__red",
-          "name": "Strange Mushroom (Red)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__black",
-          "name": "Strange Mushroom (Black)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__green",
-          "name": "Strange Mushroom (Green)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mushroom_with_eyes",
-          "name": "Mushroom with eyes",
+          "name": "Sementes de Fruta Misteriosa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2473,7 +2167,7 @@
         },
         {
           "id": "shovel",
-          "name": "Shovel",
+          "name": "Pa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2491,7 +2185,7 @@
         },
         {
           "id": "polar_axe",
-          "name": "Polar Axe",
+          "name": "Machado Polar",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2500,7 +2194,7 @@
         },
         {
           "id": "weapon_repair_kit",
-          "name": "Weapon repair kit",
+          "name": "Kit de Reparo de Armas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2509,16 +2203,7 @@
         },
         {
           "id": "chainsaw",
-          "name": "Chainsaw",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "zil_130__disassembled",
-          "name": "ZIL-130 (Disassembled)",
+          "name": "Motosserra",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2527,25 +2212,7 @@
         },
         {
           "id": "steel_shovel",
-          "name": "Steel shovel",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kamaz__disassembled",
-          "name": "KamAZ (Disassembled)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "zaz_968__disassembled",
-          "name": "ZAZ-968 (Disassembled)",
+          "name": "Pa de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2554,7 +2221,7 @@
         },
         {
           "id": "handmade_primus_stove",
-          "name": "Handmade primus stove",
+          "name": "Fogareiro Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2563,16 +2230,7 @@
         },
         {
           "id": "matches",
-          "name": "Matches",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bicycle_spare_parts",
-          "name": "Bicycle Spare Parts",
+          "name": "Fosforos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2581,7 +2239,7 @@
         },
         {
           "id": "chemistry_set",
-          "name": "Chemistry set",
+          "name": "Kit de Quimica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2590,7 +2248,7 @@
         },
         {
           "id": "titanium_alloy",
-          "name": "Titanium Alloy",
+          "name": "Liga de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2599,7 +2257,7 @@
         },
         {
           "id": "titanium_ore",
-          "name": "Titanium ore",
+          "name": "Minerio de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2617,25 +2275,7 @@
         },
         {
           "id": "steel_needle",
-          "name": "Steel needle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "insulating_tape",
-          "name": "Insulating Tape",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "barrel",
-          "name": "Barrel",
+          "name": "Agulha de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2644,16 +2284,7 @@
         },
         {
           "id": "fists",
-          "name": "Fists",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gaz_24__disassembled",
-          "name": "GAZ-24 (Disassembled)",
+          "name": "Punos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2662,7 +2293,7 @@
         },
         {
           "id": "revolver_parts",
-          "name": "Revolver parts",
+          "name": "Pecas de Revolver",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2671,7 +2302,7 @@
         },
         {
           "id": "saucepan",
-          "name": "Saucepan",
+          "name": "Panela",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2680,7 +2311,7 @@
         },
         {
           "id": "tarp",
-          "name": "Tarp",
+          "name": "Lona",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2689,7 +2320,7 @@
         },
         {
           "id": "transport_repair_kit",
-          "name": "Transport repair kit",
+          "name": "Kit de Reparo de Transporte",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2698,16 +2329,7 @@
         },
         {
           "id": "tourist_backpack",
-          "name": "Tourist backpack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strawberry_seed",
-          "name": "Strawberry seed",
+          "name": "Mochila de Turista",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2716,7 +2338,7 @@
         },
         {
           "id": "welder",
-          "name": "Welder",
+          "name": "Soldador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2725,7 +2347,7 @@
         },
         {
           "id": "electric_motor",
-          "name": "Electric Motor",
+          "name": "Motor Eletrico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2734,7 +2356,7 @@
         },
         {
           "id": "rusted_crowbar",
-          "name": "Rusted Crowbar",
+          "name": "Pe de Cabra Enferrujado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2743,16 +2365,7 @@
         },
         {
           "id": "steel_knife",
-          "name": "Steel knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gaz_66__disassembled",
-          "name": "GAZ-66 (Disassembled)",
+          "name": "Faca de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2761,25 +2374,7 @@
         },
         {
           "id": "scrap_metal",
-          "name": "Scrap metal",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "battery",
-          "name": "Battery",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "auto_spare_parts",
-          "name": "Auto spare parts",
+          "name": "Sucata Metalica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2788,7 +2383,7 @@
         },
         {
           "id": "armor_plate",
-          "name": "Armor Plate",
+          "name": "Placa de Blindagem",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2797,7 +2392,7 @@
         },
         {
           "id": "machine_gun_parts",
-          "name": "Machine gun parts",
+          "name": "Pecas de Metralhadora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2806,7 +2401,7 @@
         },
         {
           "id": "cloth",
-          "name": "Cloth",
+          "name": "Tecido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2815,16 +2410,7 @@
         },
         {
           "id": "knife",
-          "name": "Knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "disassembled_motorcycle",
-          "name": "Disassembled motorcycle",
+          "name": "Faca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2833,7 +2419,7 @@
         },
         {
           "id": "handmade_needle",
-          "name": "Handmade needle",
+          "name": "Agulha Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2842,7 +2428,7 @@
         },
         {
           "id": "rusted_needle",
-          "name": "Rusted needle",
+          "name": "Agulha Enferrujada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2851,16 +2437,7 @@
         },
         {
           "id": "iron_pipe",
-          "name": "Iron pipe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mysterious_fruit_seeds",
-          "name": "Mysterious Fruit Seeds",
+          "name": "Cano de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2869,7 +2446,7 @@
         },
         {
           "id": "plank",
-          "name": "Plank",
+          "name": "Prancha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2878,7 +2455,7 @@
         },
         {
           "id": "mi_8_parts",
-          "name": "Mi-8 parts",
+          "name": "Pecas de Mi-8",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2887,7 +2464,7 @@
         },
         {
           "id": "knapsack",
-          "name": "Knapsack",
+          "name": "Mochila Pequena",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2896,7 +2473,7 @@
         },
         {
           "id": "nuclear_reactor_part",
-          "name": "Nuclear reactor part",
+          "name": "Peca de Reator Nuclear",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2905,16 +2482,7 @@
         },
         {
           "id": "black_coal",
-          "name": "Black coal",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "nailed_box",
-          "name": "Nailed box",
+          "name": "Carvao Negro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2923,7 +2491,7 @@
         },
         {
           "id": "rusted_shovel",
-          "name": "Rusted shovel",
+          "name": "Pa Enferrujada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2932,7 +2500,7 @@
         },
         {
           "id": "electrical_cable",
-          "name": "Electrical cable",
+          "name": "Cabo Eletrico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2941,7 +2509,7 @@
         },
         {
           "id": "spare_weapon_parts",
-          "name": "Spare weapon parts",
+          "name": "Pecas Extras de Arma",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2950,25 +2518,7 @@
         },
         {
           "id": "titanium_pot",
-          "name": "Titanium pot",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mining_permit",
-          "name": "Mining permit",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "blank",
-          "name": "Blank",
+          "name": "Panela de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2977,7 +2527,7 @@
         },
         {
           "id": "hacksaw",
-          "name": "Hacksaw",
+          "name": "Serra de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2986,7 +2536,7 @@
         },
         {
           "id": "sewing_needle",
-          "name": "Sewing Needle",
+          "name": "Agulha de Costura",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2995,7 +2545,7 @@
         },
         {
           "id": "bellows",
-          "name": "Bellows",
+          "name": "Fole",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3004,34 +2554,7 @@
         },
         {
           "id": "stimulant",
-          "name": "Stimulant",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "aqua_vitae",
-          "name": "Aqua Vitae",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ration_pack",
-          "name": "Ration pack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "apple_seeds",
-          "name": "Apple seeds",
+          "name": "Estimulante",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3040,16 +2563,7 @@
         },
         {
           "id": "survivor_27s_cache",
-          "name": "Survivor%27s Cache",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "corn_seeds",
-          "name": "Corn seeds",
+          "name": "Cache do Sobrevivente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3058,7 +2572,7 @@
         },
         {
           "id": "rifle_parts",
-          "name": "Rifle parts",
+          "name": "Pecas de Rifle",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3067,7 +2581,7 @@
         },
         {
           "id": "pistol_parts",
-          "name": "Pistol parts",
+          "name": "Pecas de Pistola",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3085,7 +2599,7 @@
         },
         {
           "id": "iron_pot",
-          "name": "Iron pot",
+          "name": "Panela de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3094,7 +2608,7 @@
         },
         {
           "id": "lighter",
-          "name": "Lighter",
+          "name": "Isqueiro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3103,7 +2617,7 @@
         },
         {
           "id": "broadleaf_plantain",
-          "name": "Broadleaf plantain",
+          "name": "Tanchagem",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3112,16 +2626,7 @@
         },
         {
           "id": "rubber",
-          "name": "Rubber",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "vaz_2101__disassembled",
-          "name": "VAZ-2101 (Disassembled)",
+          "name": "Borracha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3130,7 +2635,7 @@
         },
         {
           "id": "flint_axe",
-          "name": "Flint axe",
+          "name": "Machado de Sillex",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3139,7 +2644,7 @@
         },
         {
           "id": "steel_axe",
-          "name": "Steel axe",
+          "name": "Machado de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3148,7 +2653,7 @@
         },
         {
           "id": "kitchen_knife",
-          "name": "Kitchen knife",
+          "name": "Faca de Cozinha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3157,7 +2662,7 @@
         },
         {
           "id": "electrodes",
-          "name": "Electrodes",
+          "name": "Eletrodos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3166,16 +2671,7 @@
         },
         {
           "id": "gasoline",
-          "name": "Gasoline",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "uaz_452__disassembled",
-          "name": "UAZ-452 (Disassembled)",
+          "name": "Gasolina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3184,7 +2680,7 @@
         },
         {
           "id": "steel_crowbar",
-          "name": "Steel crowbar",
+          "name": "Pe de Cabra de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3193,7 +2689,7 @@
         },
         {
           "id": "gasoline_engine",
-          "name": "Gasoline Engine",
+          "name": "Motor a Gasolina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3202,7 +2698,7 @@
         },
         {
           "id": "primus_stove",
-          "name": "Primus stove",
+          "name": "Fogareiro Primus",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3211,7 +2707,7 @@
         },
         {
           "id": "dusty_book",
-          "name": "Dusty book",
+          "name": "Livro Empoeirado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3220,25 +2716,7 @@
         },
         {
           "id": "wire",
-          "name": "Wire",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "furniture",
-          "name": "Furniture",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pumpkin_seeds",
-          "name": "Pumpkin seeds",
+          "name": "Fio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3247,7 +2725,7 @@
         },
         {
           "id": "rusted_hacksaw",
-          "name": "Rusted hacksaw",
+          "name": "Serra de Ferro Enferrujada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3256,7 +2734,7 @@
         },
         {
           "id": "tanning_mixture",
-          "name": "Tanning mixture",
+          "name": "Mistura de Curtimento",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3265,7 +2743,7 @@
         },
         {
           "id": "handmade_lighter",
-          "name": "Handmade lighter",
+          "name": "Isqueiro Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3274,7 +2752,7 @@
         },
         {
           "id": "crowbar",
-          "name": "Crowbar",
+          "name": "Pe de Cabra",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3283,16 +2761,7 @@
         },
         {
           "id": "fire_brick",
-          "name": "Fire brick",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "motorcycle_spare_parts",
-          "name": "Motorcycle spare parts",
+          "name": "Tijolo Refratario",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3301,7 +2770,7 @@
         },
         {
           "id": "high_performance_capacitor",
-          "name": "High-performance Capacitor",
+          "name": "Capacitor de Alta Performance",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3310,7 +2779,7 @@
         },
         {
           "id": "paper",
-          "name": "Paper",
+          "name": "Papel",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3319,7 +2788,7 @@
         },
         {
           "id": "sack",
-          "name": "Sack",
+          "name": "Saco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3328,34 +2797,7 @@
         },
         {
           "id": "rubber_parts",
-          "name": "Rubber parts",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "blood_mold",
-          "name": "Blood mold",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tent__taken_down",
-          "name": "Tent (taken down)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "support_box",
-          "name": "Support Box",
+          "name": "Pecas de Borracha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3364,7 +2806,7 @@
         },
         {
           "id": "tool_kit",
-          "name": "Tool Kit",
+          "name": "Kit de Ferramentas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3373,16 +2815,7 @@
         },
         {
           "id": "steel_pot",
-          "name": "Steel pot",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "weapon_box",
-          "name": "Weapon box",
+          "name": "Panela de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3391,7 +2824,7 @@
         },
         {
           "id": "rusted_axe",
-          "name": "Rusted axe",
+          "name": "Machado Enferrujado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3400,16 +2833,7 @@
         },
         {
           "id": "axe",
-          "name": "Axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "wheat_seeds",
-          "name": "Wheat seeds",
+          "name": "Machado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3418,34 +2842,7 @@
         },
         {
           "id": "schoolbag",
-          "name": "Schoolbag",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "growfast",
-          "name": "GrowFast",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "potato_seeds",
-          "name": "Potato seeds",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ice",
-          "name": "Ice",
+          "name": "Lancheira",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3454,7 +2851,7 @@
         },
         {
           "id": "glue_tape",
-          "name": "Glue/tape",
+          "name": "Cola/Fita",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3463,16 +2860,7 @@
         },
         {
           "id": "assault_rifle_parts",
-          "name": "Assault rifle parts",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "uaz_469__disassembled",
-          "name": "UAZ-469 (Disassembled)",
+          "name": "Pecas de Fuzil de Assalto",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3481,34 +2869,7 @@
         },
         {
           "id": "infernal_coal",
-          "name": "Infernal Coal",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "nuclear_battery",
-          "name": "Nuclear battery",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sewing_needle__tool",
-          "name": "Sewing needle (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_crowbar",
-          "name": "Rusted Crowbar",
+          "name": "Carvao Infernal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3517,34 +2878,7 @@
         },
         {
           "id": "superfilter",
-          "name": "Superfilter",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "workbench",
-          "name": "Workbench",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tool_kit__tool",
-          "name": "Tool kit (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "smelter",
-          "name": "Smelter",
+          "name": "Superfiltro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3553,52 +2887,7 @@
         },
         {
           "id": "sapper_shovel",
-          "name": "Sapper shovel",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemistry_set__tool",
-          "name": "Chemistry set (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemistry_lab",
-          "name": "Chemistry lab",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "extractor",
-          "name": "Extractor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chainsaw",
-          "name": "Chainsaw",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "saucepan__tool",
-          "name": "Saucepan (tool)",
+          "name": "Pa de Sapador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3607,16 +2896,7 @@
         },
         {
           "id": "delta_g_radio",
-          "name": "Delta G Radio",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hand_mill",
-          "name": "Hand mill",
+          "name": "Radio Delta G",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3625,7 +2905,7 @@
         },
         {
           "id": "homemade_explosive",
-          "name": "Homemade Explosive",
+          "name": "Explosivo Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3634,7 +2914,7 @@
         },
         {
           "id": "reykjavik_chainsaw",
-          "name": "Reykjavik Chainsaw",
+          "name": "Motosserra de Reykjavik",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3643,25 +2923,7 @@
         },
         {
           "id": "taiga_machete",
-          "name": "Taiga Machete",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemical_reactor",
-          "name": "Chemical Reactor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "knife",
-          "name": "Knife",
+          "name": "Facao Taiga",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3670,7 +2932,7 @@
         },
         {
           "id": "sturdy_needle",
-          "name": "Sturdy needle",
+          "name": "Agulha Resistente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3679,25 +2941,7 @@
         },
         {
           "id": "22silage_22_mincer",
-          "name": "%22Silage%22 Mincer",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "axe__tool",
-          "name": "Axe (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kitchen_knife",
-          "name": "Kitchen knife",
+          "name": "\"Silage\" Mincer",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3706,7 +2950,7 @@
         },
         {
           "id": "forged_knife",
-          "name": "Forged knife",
+          "name": "Faca Forjada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3715,34 +2959,7 @@
         },
         {
           "id": "smuggler_27s_lantern",
-          "name": "Smuggler%27s Lantern",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "biosynthesizer",
-          "name": "Biosynthesizer",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "drying_rack",
-          "name": "Drying rack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tool_kit",
-          "name": "Tool Kit",
+          "name": "Lanterna do Contrabandista",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3751,7 +2968,7 @@
         },
         {
           "id": "14k_lantern",
-          "name": "14k Lantern",
+          "name": "Lanterna 14K",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3760,7 +2977,7 @@
         },
         {
           "id": "flint_knife",
-          "name": "Flint knife",
+          "name": "Faca de Sillex",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3769,34 +2986,7 @@
         },
         {
           "id": "paper_lantern",
-          "name": "Paper Lantern",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "welder",
-          "name": "Welder",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "knife__tool",
-          "name": "Knife (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemistry_set",
-          "name": "Chemistry set",
+          "name": "Lanterna de Papel",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3805,7 +2995,7 @@
         },
         {
           "id": "iron_anvil",
-          "name": "Iron Anvil",
+          "name": "Bigorna de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3814,7 +3004,7 @@
         },
         {
           "id": "22diy_nets_22",
-          "name": "%22DIY Nets%22",
+          "name": "\"DIY Nets\"",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3823,7 +3013,7 @@
         },
         {
           "id": "floodlight",
-          "name": "Floodlight",
+          "name": "Refletor",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3832,7 +3022,7 @@
         },
         {
           "id": "chitin_torch",
-          "name": "Chitin torch",
+          "name": "Tocha de Quitina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3841,61 +3031,7 @@
         },
         {
           "id": "steel_anvil",
-          "name": "Steel Anvil",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "generator",
-          "name": "Generator",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hacksaw__tool",
-          "name": "Hacksaw (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sewing_needle",
-          "name": "Sewing needle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "water_filter",
-          "name": "Water Filter",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "glue_tape",
-          "name": "Glue/tape",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "biodetector",
-          "name": "Biodetector",
+          "name": "Bigorna de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3904,25 +3040,7 @@
         },
         {
           "id": "titanium_crowbar",
-          "name": "Titanium crowbar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_hacksaw",
-          "name": "Rusted hacksaw",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "shovel__tool",
-          "name": "Shovel (tool)",
+          "name": "Pe de Cabra de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3939,35 +3057,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "hacksaw",
-          "name": "Hacksaw",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "crowbar__tool",
-          "name": "Crowbar (tool)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "crowbar",
-          "name": "Crowbar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "blowtorch",
-          "name": "Blowtorch",
+          "name": "Macarico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3976,187 +3067,7 @@
         },
         {
           "id": "quads_glowstick",
-          "name": "Quads Glowstick",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "workbench",
-          "name": "Workbench",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "forge_chimney",
-          "name": "Forge chimney",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "draw_well",
-          "name": "Draw well",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemistry_lab",
-          "name": "Chemistry lab",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "brick_house",
-          "name": "Brick house",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cellar",
-          "name": "Cellar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rice_field",
-          "name": "Rice Field",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "drying_rack",
-          "name": "Drying rack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "abandoned_house",
-          "name": "Abandoned house",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steelmaking_furnace",
-          "name": "Steelmaking furnace",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "wooden_house",
-          "name": "Wooden house",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "christmas_tree",
-          "name": "Christmas tree",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hut",
-          "name": "Hut",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "barrel",
-          "name": "Barrel",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "water_purifier",
-          "name": "Water purifier",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tent__pitched",
-          "name": "Tent (Pitched)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "greenhouse",
-          "name": "Greenhouse",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "brick_oven",
-          "name": "Brick oven",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_primus_stove",
-          "name": "Handmade primus stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "fire",
-          "name": "Fire",
+          "name": "Bastao Quâdrico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4165,34 +3076,7 @@
         },
         {
           "id": "thermonuclear_camping_stove",
-          "name": "Thermonuclear Camping Stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "source_of_fire",
-          "name": "Source of fire",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "primus_stove",
-          "name": "Primus stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "brick_oven",
-          "name": "Brick oven",
+          "name": "Fogao de Acampamento",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4485,17 +3369,8 @@
           "notes": "Tóxico"
         },
         {
-          "id": "charcoal_pile__burning",
-          "name": "Charcoal pile (burning)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "acid_gland",
-          "name": "Acid gland",
+          "name": "Glandula Acida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4504,16 +3379,7 @@
         },
         {
           "id": "injector",
-          "name": "Injector",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "charcoal_pile__burned",
-          "name": "Charcoal pile (burned)",
+          "name": "Injetor",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4522,7 +3388,7 @@
         },
         {
           "id": "antidote",
-          "name": "Antidote",
+          "name": "Antidoto",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4531,7 +3397,7 @@
         },
         {
           "id": "biotonic",
-          "name": "Biotonic",
+          "name": "Biotonico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4540,7 +3406,7 @@
         },
         {
           "id": "vial_of__22___amine_22",
-          "name": "Vial of %22...amine%22",
+          "name": "Vial of \"...amine\"",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4549,16 +3415,7 @@
         },
         {
           "id": "energizing_potion",
-          "name": "Energizing potion",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "amanita",
-          "name": "Amanita",
+          "name": "Pocao Energizante",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4567,25 +3424,7 @@
         },
         {
           "id": "deadly_nightshade",
-          "name": "Deadly nightshade",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "lidiacid_34",
-          "name": "Lidiacid-34",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "positive_effects",
-          "name": "Positive effects",
+          "name": "Beladona Mortal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4594,34 +3433,7 @@
         },
         {
           "id": "v_injector",
-          "name": "V Injector",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dandelion_tea",
-          "name": "Dandelion Tea",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bryocarm",
-          "name": "Bryocarm",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__red",
-          "name": "Strange Mushroom (Red)",
+          "name": "Injetor V",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4630,7 +3442,7 @@
         },
         {
           "id": "detoxifying_potion",
-          "name": "Detoxifying Potion",
+          "name": "Pocao Desintoxicante",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4639,7 +3451,7 @@
         },
         {
           "id": "bioblocade_inhaler",
-          "name": "Bioblocade Inhaler",
+          "name": "Inalador Bioblocada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4648,7 +3460,7 @@
         },
         {
           "id": "psychostimulation",
-          "name": "Psychostimulation",
+          "name": "Psicoestimulacao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4657,16 +3469,7 @@
         },
         {
           "id": "healing_salve",
-          "name": "Healing Salve",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "injector",
-          "name": "Injector",
+          "name": "Balsamo Curativo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4675,52 +3478,7 @@
         },
         {
           "id": "bye_bye_rad",
-          "name": "Bye-Bye Rad",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "blood_mold",
-          "name": "Blood mold",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "broadleaf_plantain",
-          "name": "Broadleaf plantain",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "food_poisoning",
-          "name": "Food Poisoning",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dysentery",
-          "name": "Dysentery",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "aqua_vitae",
-          "name": "Aqua Vitae",
+          "name": "Tchau-Rad",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4729,52 +3487,7 @@
         },
         {
           "id": "painkiller",
-          "name": "Painkiller",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "fairy_dust",
-          "name": "Fairy dust",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "parasitic_worms",
-          "name": "Parasitic worms",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "poisoning",
-          "name": "Poisoning",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "clinic",
-          "name": "Clinic",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "vital_signs",
-          "name": "Vital signs",
+          "name": "Analgésico Comum",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4783,34 +3496,7 @@
         },
         {
           "id": "c_3_cologne",
-          "name": "C-3 Cologne",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strange_mushroom__green",
-          "name": "Strange mushroom (green)",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "lidiacide_34",
-          "name": "Lidiacide-34",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chlorcystamine",
-          "name": "Chlorcystamine",
+          "name": "Colonia C-3",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4819,7 +3505,7 @@
         },
         {
           "id": "alphacelone",
-          "name": "Alphacelone",
+          "name": "Alfacelona",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4828,7 +3514,7 @@
         },
         {
           "id": "pill_of_immortality",
-          "name": "Pill of Immortality",
+          "name": "Pilula da Imortalidade",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4837,7 +3523,7 @@
         },
         {
           "id": "first_aid_kit",
-          "name": "First Aid Kit",
+          "name": "Kit de Primeiros Socorros",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4846,16 +3532,7 @@
         },
         {
           "id": "o_injector",
-          "name": "O Injector",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hospital",
-          "name": "Hospital",
+          "name": "Injetor O",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4864,7 +3541,7 @@
         },
         {
           "id": "b_injector",
-          "name": "B Injector",
+          "name": "Injetor B",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4873,43 +3550,7 @@
         },
         {
           "id": "eurekognasol_stimulant",
-          "name": "Eurekognasol Stimulant",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "game_updates",
-          "name": "Game Updates",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "toothgrass",
-          "name": "Toothgrass",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "blood_poisoning",
-          "name": "Blood poisoning",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "stimulant",
-          "name": "Stimulant",
+          "name": "Estimulante Eurekognasol",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -4918,25 +3559,7 @@
         },
         {
           "id": "g_injector",
-          "name": "G Injector",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pharmacy",
-          "name": "Pharmacy",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "healing_salve",
-          "name": "Healing salve",
+          "name": "Injetor G",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5113,7 +3736,7 @@
         },
         {
           "id": "rifle_shell",
-          "name": "Rifle shell",
+          "name": "Cartucho de Rifle",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5122,7 +3745,7 @@
         },
         {
           "id": "assault_rifle_shell",
-          "name": "Assault rifle shell",
+          "name": "Cartucho de Fuzil de Assalto",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5131,7 +3754,7 @@
         },
         {
           "id": "plastic_explosives",
-          "name": "Plastic explosives",
+          "name": "Explosivos Plasticos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5140,7 +3763,7 @@
         },
         {
           "id": "7_62x25mm_tt_shell",
-          "name": "7.62x25mm TT Shell",
+          "name": "Cartucho 7.62x25mm TT",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5149,7 +3772,7 @@
         },
         {
           "id": "pistol_shell",
-          "name": "Pistol shell",
+          "name": "Cartucho de Pistola",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5158,16 +3781,7 @@
         },
         {
           "id": "revolver_shell",
-          "name": "Revolver shell",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "molotov_cocktail",
-          "name": "Molotov Cocktail",
+          "name": "Cartucho de Revolver",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5176,7 +3790,7 @@
         },
         {
           "id": "gunpowder_grenade",
-          "name": "Gunpowder grenade",
+          "name": "Granada de Polvora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5185,7 +3799,7 @@
         },
         {
           "id": "lead_bullet",
-          "name": "Lead bullet",
+          "name": "Bala de Chumbo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5194,25 +3808,7 @@
         },
         {
           "id": "pyrolytic_grenade",
-          "name": "Pyrolytic Grenade",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "thermodiffusive_grenade_launcher",
-          "name": "Thermodiffusive Grenade Launcher",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rocket_propelled_grenade_launcher",
-          "name": "Rocket-Propelled Grenade Launcher",
+          "name": "Granada Pirolitica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5227,7 +3823,7 @@
       "items": [
         {
           "id": "hand_held_railgun",
-          "name": "Hand-held Railgun",
+          "name": "Railgun Portatil",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5236,7 +3832,7 @@
         },
         {
           "id": "pas_weaver",
-          "name": "PAS Weaver",
+          "name": "Tecela PAS",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5245,7 +3841,7 @@
         },
         {
           "id": "collector",
-          "name": "Collector",
+          "name": "Colecionador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5254,16 +3850,7 @@
         },
         {
           "id": "sniper_27s_mosin",
-          "name": "Sniper%27s Mosin",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "polar_axe",
-          "name": "Polar Axe",
+          "name": "Sniper's Mosin",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5272,7 +3859,7 @@
         },
         {
           "id": "light_machine_gun",
-          "name": "Light Machine Gun",
+          "name": "Metralhadora Leve",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5281,7 +3868,7 @@
         },
         {
           "id": "forward_27s_stick",
-          "name": "Forward%27s Stick",
+          "name": "Forward's Stick",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5290,7 +3877,7 @@
         },
         {
           "id": "standard_crossbow",
-          "name": "Standard crossbow",
+          "name": "Besta Padrao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5308,7 +3895,7 @@
         },
         {
           "id": "titanium_knife",
-          "name": "Titanium Knife",
+          "name": "Faca de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5317,7 +3904,7 @@
         },
         {
           "id": "homemade_smg",
-          "name": "Homemade SMG",
+          "name": "SMG Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5326,7 +3913,7 @@
         },
         {
           "id": "popgun",
-          "name": "Popgun",
+          "name": "Arma de Rolha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5335,7 +3922,7 @@
         },
         {
           "id": "revolving_gun",
-          "name": "Revolving Gun",
+          "name": "Arma Rotativa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5344,7 +3931,7 @@
         },
         {
           "id": "handmade_rifle",
-          "name": "Handmade rifle",
+          "name": "Rifle Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5353,7 +3940,7 @@
         },
         {
           "id": "berdan_rifle",
-          "name": "Berdan Rifle",
+          "name": "Rifle Berdan",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5389,16 +3976,7 @@
         },
         {
           "id": "party_popper",
-          "name": "Party Popper",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "forged_knife",
-          "name": "Forged knife",
+          "name": "Estalinho de Festa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5416,7 +3994,7 @@
         },
         {
           "id": "sr_delirium",
-          "name": "SR Delirium",
+          "name": "SR Delirio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5433,17 +4011,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "standard_crossbow",
-          "name": "Standard Crossbow",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "pistol_silent",
-          "name": "Pistol Silent",
+          "name": "Pistola Silenciosa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5452,7 +4021,7 @@
         },
         {
           "id": "chitin_spear",
-          "name": "Chitin spear",
+          "name": "Lanca de Quitina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5461,7 +4030,7 @@
         },
         {
           "id": "sawed_off_izh_18",
-          "name": "Sawed-off IZh-18",
+          "name": "IZh-18 Serrada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5470,7 +4039,7 @@
         },
         {
           "id": "bad_santa",
-          "name": "Bad Santa",
+          "name": "Papai Noel Malvado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5479,7 +4048,7 @@
         },
         {
           "id": "pumpkin_bomb",
-          "name": "Pumpkin bomb",
+          "name": "Bomba de Abobora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5488,7 +4057,7 @@
         },
         {
           "id": "musket",
-          "name": "Musket",
+          "name": "Mosquete",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5497,7 +4066,7 @@
         },
         {
           "id": "stearin",
-          "name": "Stearin",
+          "name": "Estearina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5506,7 +4075,7 @@
         },
         {
           "id": "lmg__22qilin_22",
-          "name": "LMG %22Qilin%22",
+          "name": "LMG \"Qilin\"",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5532,17 +4101,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "fists",
-          "name": "Fists",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "heavy_machine_gun",
-          "name": "Heavy Machine Gun",
+          "name": "Metralhadora Pesada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5551,7 +4111,7 @@
         },
         {
           "id": "crane",
-          "name": "Crane",
+          "name": "Grua",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5578,7 +4138,7 @@
         },
         {
           "id": "law_guardian",
-          "name": "Law Guardian",
+          "name": "Guardiao da Lei",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5587,7 +4147,7 @@
         },
         {
           "id": "double_barrel",
-          "name": "Double-Barrel",
+          "name": "Duplo Cano",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5596,7 +4156,7 @@
         },
         {
           "id": "frosthorn",
-          "name": "Frosthorn",
+          "name": "Chifre de Gelo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5605,7 +4165,7 @@
         },
         {
           "id": "gehenna",
-          "name": "Gehenna",
+          "name": "Geena",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5614,7 +4174,7 @@
         },
         {
           "id": "sawed_off_toz_34",
-          "name": "Sawed-off TOZ-34",
+          "name": "TOZ-34 Serrada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5623,16 +4183,7 @@
         },
         {
           "id": "nagant_revolver",
-          "name": "Nagant Revolver",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_knife",
-          "name": "Steel knife",
+          "name": "Revolver Nagant",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5641,7 +4192,7 @@
         },
         {
           "id": "pineapple",
-          "name": "Pineapple",
+          "name": "Abacaxi",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5659,7 +4210,7 @@
         },
         {
           "id": "homemade_revolver",
-          "name": "Homemade Revolver",
+          "name": "Revolver Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5668,7 +4219,7 @@
         },
         {
           "id": "erebus_273",
-          "name": "Erebus-273",
+          "name": "Erebo-273",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5686,7 +4237,7 @@
         },
         {
           "id": "reaper_27s_scythe",
-          "name": "Reaper%27s Scythe",
+          "name": "Foice do Ceifador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5695,7 +4246,7 @@
         },
         {
           "id": "revenge",
-          "name": "Revenge",
+          "name": "Vinganca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5704,7 +4255,7 @@
         },
         {
           "id": "posh",
-          "name": "Posh",
+          "name": "Chique",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5713,7 +4264,7 @@
         },
         {
           "id": "steel_spear",
-          "name": "Steel spear",
+          "name": "Lanca de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5731,7 +4282,7 @@
         },
         {
           "id": "stake_thrower",
-          "name": "Stake Thrower",
+          "name": "Lancador de Estacas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5740,7 +4291,7 @@
         },
         {
           "id": "icicle_thrower",
-          "name": "Icicle Thrower",
+          "name": "Lancador de Icicles",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5757,17 +4308,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "mysterious_fruit",
-          "name": "Mysterious Fruit",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "skorpion",
-          "name": "Skorpion",
+          "name": "Escorpiao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5776,7 +4318,7 @@
         },
         {
           "id": "sabre",
-          "name": "Sabre",
+          "name": "Sabra",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5795,15 +4337,6 @@
         {
           "id": "ho_ho_ho",
           "name": "Ho Ho Ho",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "knife",
-          "name": "Knife",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5839,7 +4372,7 @@
         },
         {
           "id": "iron_spear",
-          "name": "Iron spear",
+          "name": "Lanca de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5858,15 +4391,6 @@
         {
           "id": "kalash_m",
           "name": "Kalash-M",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flint_knife",
-          "name": "Flint knife",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5893,7 +4417,7 @@
         },
         {
           "id": "handmade_machine_gun",
-          "name": "Handmade Machine Gun",
+          "name": "Metralhadora Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5902,7 +4426,7 @@
         },
         {
           "id": "hunter_27s_chain",
-          "name": "Hunter%27s chain",
+          "name": "Corrente do Cacador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5911,7 +4435,7 @@
         },
         {
           "id": "strong_bat",
-          "name": "Strong bat",
+          "name": "Taco Forte",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5920,7 +4444,7 @@
         },
         {
           "id": "twilight_shotgun",
-          "name": "Twilight Shotgun",
+          "name": "Escopeta do Crepusculo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5929,7 +4453,7 @@
         },
         {
           "id": "ulcer_amr",
-          "name": "Ulcer AMR",
+          "name": "AMR Ulcera",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5938,7 +4462,7 @@
         },
         {
           "id": "fist_of_the_sky",
-          "name": "Fist of the Sky",
+          "name": "Punho do Ceu",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5947,7 +4471,7 @@
         },
         {
           "id": "handmade_rocket_launcher",
-          "name": "Handmade rocket launcher",
+          "name": "Lancador de Foguetes Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5956,7 +4480,7 @@
         },
         {
           "id": "handmade_pistol",
-          "name": "Handmade pistol",
+          "name": "Pistola Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5965,7 +4489,7 @@
         },
         {
           "id": "executioner_27s_sword",
-          "name": "Executioner%27s Sword",
+          "name": "Espada do Carrasco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5974,7 +4498,7 @@
         },
         {
           "id": "murmur",
-          "name": "Murmur",
+          "name": "Murmurio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5992,7 +4516,7 @@
         },
         {
           "id": "titanium_axe",
-          "name": "Titanium Axe",
+          "name": "Machado de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6010,7 +4534,7 @@
         },
         {
           "id": "crouching_tiger",
-          "name": "Crouching Tiger",
+          "name": "Tigre Agachado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6019,16 +4543,7 @@
         },
         {
           "id": "geologist_rc",
-          "name": "Geologist RC",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "game_updates",
-          "name": "Game Updates",
+          "name": "Geologo RC",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6037,7 +4552,7 @@
         },
         {
           "id": "flint_spear",
-          "name": "Flint Spear",
+          "name": "Lanca de Sillex",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6055,7 +4570,7 @@
         },
         {
           "id": "vector_a",
-          "name": "Vector-A",
+          "name": "Vetor-A",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6064,7 +4579,7 @@
         },
         {
           "id": "fear",
-          "name": "Fear",
+          "name": "Medo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6100,7 +4615,7 @@
         },
         {
           "id": "handmade_assault_rifle",
-          "name": "Handmade Assault Rifle",
+          "name": "Fuzil de Assalto Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6109,7 +4624,7 @@
         },
         {
           "id": "grouse",
-          "name": "Grouse",
+          "name": "Faisao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6136,7 +4651,7 @@
         },
         {
           "id": "infernal_prophet",
-          "name": "Infernal Prophet",
+          "name": "Profeta Infernal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6154,7 +4669,7 @@
         },
         {
           "id": "joker",
-          "name": "Joker",
+          "name": "Coringa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6172,7 +4687,7 @@
         },
         {
           "id": "jack_o_27_launcher",
-          "name": "Jack O%27 Launcher",
+          "name": "Lancador Jack O",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6190,16 +4705,7 @@
         },
         {
           "id": "d_eagle",
-          "name": "D-Eagle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "taiga_machete",
-          "name": "Taiga Machete",
+          "name": "D-Aguia",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6208,7 +4714,7 @@
         },
         {
           "id": "handmade_spear",
-          "name": "Handmade spear",
+          "name": "Lanca Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6217,7 +4723,7 @@
         },
         {
           "id": "formalin_gas_pistol",
-          "name": "Formalin Gas Pistol",
+          "name": "Pistola a Gas Formalina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6235,7 +4741,7 @@
         },
         {
           "id": "all_in",
-          "name": "All-In",
+          "name": "Tudo ou Nada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6244,43 +4750,7 @@
         },
         {
           "id": "chinese_fireworks",
-          "name": "Chinese fireworks",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flint_axe",
-          "name": "Flint axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_rocket_launcher",
-          "name": "Homemade rocket launcher",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kitchen_knife",
-          "name": "Kitchen knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_axe",
-          "name": "Steel axe",
+          "name": "Fogos Chineses",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6289,7 +4759,7 @@
         },
         {
           "id": "physicist_crossbow",
-          "name": "Physicist Crossbow",
+          "name": "Besta do Fisico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6298,7 +4768,7 @@
         },
         {
           "id": "cypress_smg",
-          "name": "Cypress SMG",
+          "name": "SMG Cipreste",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6307,7 +4777,7 @@
         },
         {
           "id": "iron_felix",
-          "name": "Iron Felix",
+          "name": "Felix de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6316,16 +4786,7 @@
         },
         {
           "id": "improved_crossbow",
-          "name": "Improved crossbow",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_pistol",
-          "name": "Homemade Pistol",
+          "name": "Besta Melhorada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6334,7 +4795,7 @@
         },
         {
           "id": "single_shot_rifle",
-          "name": "Single-Shot Rifle",
+          "name": "Rifle de Tiro Único",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6352,7 +4813,7 @@
         },
         {
           "id": "hunting_bow",
-          "name": "Hunting Bow",
+          "name": "Arco de Caca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6361,7 +4822,7 @@
         },
         {
           "id": "shock_bludgeon",
-          "name": "Shock bludgeon",
+          "name": "Tacape Eletrico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6370,7 +4831,7 @@
         },
         {
           "id": "santa_27s_staff",
-          "name": "Santa%27s Staff",
+          "name": "Cajado do Papai Noel",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6379,7 +4840,7 @@
         },
         {
           "id": "oar",
-          "name": "Oar",
+          "name": "Remo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6388,7 +4849,7 @@
         },
         {
           "id": "kettlebell",
-          "name": "Kettlebell",
+          "name": "Peso Russo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6397,7 +4858,7 @@
         },
         {
           "id": "shotgun_round",
-          "name": "Shotgun Round",
+          "name": "Cartucho de Espingarda",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6406,7 +4867,7 @@
         },
         {
           "id": "armorpiercer",
-          "name": "Armorpiercer",
+          "name": "Perfurador de Blindagem",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6415,7 +4876,7 @@
         },
         {
           "id": "snowball",
-          "name": "Snowball",
+          "name": "Bola de Neve",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6424,7 +4885,7 @@
         },
         {
           "id": "chimney",
-          "name": "Chimney",
+          "name": "Chamine",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6433,7 +4894,7 @@
         },
         {
           "id": "nail_club",
-          "name": "Nail club",
+          "name": "Taco com Pregos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6442,16 +4903,7 @@
         },
         {
           "id": "chemist_crossbow",
-          "name": "Chemist Crossbow",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sapper_shovel",
-          "name": "Sapper shovel",
+          "name": "Besta do Quimico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6460,7 +4912,7 @@
         },
         {
           "id": "lotus_of_death",
-          "name": "Lotus of Death",
+          "name": "Loto da Morte",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6469,7 +4921,7 @@
         },
         {
           "id": "catalysis_e",
-          "name": "Catalysis-E",
+          "name": "Catalise-E",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6478,7 +4930,7 @@
         },
         {
           "id": "borschevik_flamethrower",
-          "name": "Borschevik Flamethrower",
+          "name": "Lança-chamas Borschevik",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6487,7 +4939,7 @@
         },
         {
           "id": "multi_shot_rifle",
-          "name": "Multi-Shot Rifle",
+          "name": "Rifle Multi-Tiro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6496,7 +4948,7 @@
         },
         {
           "id": "flamethrower",
-          "name": "Flamethrower",
+          "name": "Lança-chamas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6505,7 +4957,7 @@
         },
         {
           "id": "mosin_sawn_off_shotgun",
-          "name": "Mosin sawn-off shotgun",
+          "name": "Mosin Serrada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6514,7 +4966,7 @@
         },
         {
           "id": "butterfly_knife",
-          "name": "Butterfly Knife",
+          "name": "Facąo Borboleta",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6541,7 +4993,7 @@
         },
         {
           "id": "wolfsbane_1",
-          "name": "Wolfsbane-1",
+          "name": "Acônito-1",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6550,7 +5002,7 @@
         },
         {
           "id": "alien_blaster",
-          "name": "Alien Blaster",
+          "name": "Blaster Alienigena",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6559,7 +5011,7 @@
         },
         {
           "id": "rpg_vesuvius",
-          "name": "RPG Vesuvius",
+          "name": "RPG Vesuvio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6568,7 +5020,7 @@
         },
         {
           "id": "acidoemitter",
-          "name": "Acidoemitter",
+          "name": "Emissor Acido",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6577,7 +5029,7 @@
         },
         {
           "id": "strychnine_gas_revolver",
-          "name": "Strychnine Gas Revolver",
+          "name": "Revolver a Gas Estricnina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6586,7 +5038,7 @@
         },
         {
           "id": "antelope",
-          "name": "Antelope",
+          "name": "Antilope",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6595,16 +5047,7 @@
         },
         {
           "id": "storm_snowball_launcher",
-          "name": "Storm Snowball Launcher",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "terrarium",
-          "name": "Terrarium",
+          "name": "Lancador de Bolas de Neve",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6613,7 +5056,7 @@
         },
         {
           "id": "heavy_crossbow",
-          "name": "Heavy crossbow",
+          "name": "Besta Pesada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6622,7 +5065,7 @@
         },
         {
           "id": "tube_rifle",
-          "name": "Tube Rifle",
+          "name": "Rifle de Tubo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6631,7 +5074,7 @@
         },
         {
           "id": "firework",
-          "name": "Firework",
+          "name": "Foguete",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6648,26 +5091,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "rusted_axe",
-          "name": "Rusted axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "axe",
-          "name": "Axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "flesh",
-          "name": "Flesh",
+          "name": "Carne",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6684,26 +5109,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "chitin_torch",
-          "name": "Chitin torch",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "punch_in_the_box",
-          "name": "Punch-in-the-Box",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ice_cream",
-          "name": "Ice Cream",
+          "name": "Soco-na-Caixa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6712,7 +5119,7 @@
         },
         {
           "id": "hunter_27s_rifle",
-          "name": "Hunter%27s Rifle",
+          "name": "Rifle do Cacador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6730,7 +5137,7 @@
         },
         {
           "id": "snowman_ball",
-          "name": "Snowman Ball",
+          "name": "Bola de Boneco de Neve",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6745,16 +5152,7 @@
       "items": [
         {
           "id": "merry_lantern",
-          "name": "Merry Lantern",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "shovel",
-          "name": "Shovel",
+          "name": "Lanterna Festiva",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6763,16 +5161,7 @@
         },
         {
           "id": "wolf_talisman",
-          "name": "Wolf Talisman",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "polar_axe",
-          "name": "Polar Axe",
+          "name": "Talisma de Lobo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6781,7 +5170,7 @@
         },
         {
           "id": "chinese_bulletproof_vest",
-          "name": "Chinese bulletproof vest",
+          "name": "Colete Balistico Chines",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6790,7 +5179,7 @@
         },
         {
           "id": "ermak_backpack",
-          "name": "Ermak backpack",
+          "name": "Mochila Ermak",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6799,16 +5188,7 @@
         },
         {
           "id": "ceramic_bulletproof_vest",
-          "name": "Ceramic bulletproof vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_knife",
-          "name": "Titanium Knife",
+          "name": "Colete Balistico Ceramico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6817,7 +5197,7 @@
         },
         {
           "id": "antiquarian_27s_feedbag",
-          "name": "Antiquarian%27s Feedbag",
+          "name": "Alforje do Antiquario",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6826,16 +5206,7 @@
         },
         {
           "id": "chitin_armor",
-          "name": "Chitin armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bait",
-          "name": "Bait",
+          "name": "Armadura de Quitina",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6844,7 +5215,7 @@
         },
         {
           "id": "cpe_leader",
-          "name": "CPE Leader",
+          "name": "Lider CPE",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6853,52 +5224,7 @@
         },
         {
           "id": "t_800_bulletproof_vest",
-          "name": "T-800 Bulletproof Vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_shovel",
-          "name": "Steel shovel",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chitin_torch",
-          "name": "Chitin Torch",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "forged_knife",
-          "name": "Forged knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_primus_stove",
-          "name": "Handmade primus stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "14k_lantern",
-          "name": "14k Lantern",
+          "name": "Colete Balistico T-800",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6907,7 +5233,7 @@
         },
         {
           "id": "monstrous_bag",
-          "name": "Monstrous bag",
+          "name": "Mochila Monstruosa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6916,7 +5242,7 @@
         },
         {
           "id": "chemical_suit",
-          "name": "Chemical suit",
+          "name": "Traje Quimico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6934,16 +5260,7 @@
         },
         {
           "id": "tactical_armor",
-          "name": "Tactical Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sewing_needle",
-          "name": "Sewing needle",
+          "name": "Armadura Tatica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6952,7 +5269,7 @@
         },
         {
           "id": "cybermitten",
-          "name": "Cybermitten",
+          "name": "Luva Cybernetica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6961,25 +5278,7 @@
         },
         {
           "id": "gp_2000_gas_mask",
-          "name": "GP-2000 Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_needle",
-          "name": "Steel needle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_needle",
-          "name": "Handmade Needle",
+          "name": "Mascara de Gas GP-2000",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6988,7 +5287,7 @@
         },
         {
           "id": "sparkler",
-          "name": "Sparkler",
+          "name": "Vela Romanesca",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -6997,7 +5296,7 @@
         },
         {
           "id": "tank_armor",
-          "name": "Tank armor",
+          "name": "Armadura de Tanque",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7006,16 +5305,7 @@
         },
         {
           "id": "santa_27s_sack",
-          "name": "Santa%27s Sack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_crowbar",
-          "name": "Titanium crowbar",
+          "name": "Saco do Papai Noel",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7033,7 +5323,7 @@
         },
         {
           "id": "gp_4_gas_mask",
-          "name": "GP-4 gas mask",
+          "name": "Mascara de Gas GP-4",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7042,7 +5332,7 @@
         },
         {
           "id": "pmg_gas_mask",
-          "name": "PMG gas mask",
+          "name": "Mascara de Gas PMG",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7051,16 +5341,7 @@
         },
         {
           "id": "ea_spectrum",
-          "name": "EA Spectrum",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tourist_backpack",
-          "name": "Tourist backpack",
+          "name": "Espectro EA",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7069,7 +5350,7 @@
         },
         {
           "id": "normal_clothes",
-          "name": "Normal clothes",
+          "name": "Roupa Normal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7078,16 +5359,7 @@
         },
         {
           "id": "steel_armor",
-          "name": "Steel armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "frosthorn",
-          "name": "Frosthorn",
+          "name": "Armadura de Aco",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7104,26 +5376,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "rusted_crowbar",
-          "name": "Rusted Crowbar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_knife",
-          "name": "Steel knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "master_27s_garb",
-          "name": "Master%27s Garb",
+          "name": "Traje do Mestre",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7132,7 +5386,7 @@
         },
         {
           "id": "handmade_clothes",
-          "name": "Handmade clothes",
+          "name": "Roupa Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7141,7 +5395,7 @@
         },
         {
           "id": "iron_gas_mask",
-          "name": "Iron Gas Mask",
+          "name": "Mascara de Gas de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7150,7 +5404,7 @@
         },
         {
           "id": "ghost_suit",
-          "name": "Ghost suit",
+          "name": "Traje Fantasma",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7159,7 +5413,7 @@
         },
         {
           "id": "flashlight__10_25",
-          "name": "Flashlight (10%25)",
+          "name": "Lanterna (10%)",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7168,16 +5422,7 @@
         },
         {
           "id": "arctic_armor",
-          "name": "Arctic Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_armor",
-          "name": "Steel Armor",
+          "name": "Armadura Artica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7186,7 +5431,7 @@
         },
         {
           "id": "racer_set",
-          "name": "Racer Set",
+          "name": "Conjunto de Corredor",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7204,16 +5449,7 @@
         },
         {
           "id": "tin_can_candle",
-          "name": "Tin can candle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "knife",
-          "name": "Knife",
+          "name": "Vela de Lata",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7222,7 +5458,7 @@
         },
         {
           "id": "mm_1_gas_mask",
-          "name": "MM-1 Gas Mask",
+          "name": "Mascara de Gas MM-1",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7231,7 +5467,7 @@
         },
         {
           "id": "scarf_of_18_provinces",
-          "name": "Scarf of 18 Provinces",
+          "name": "Cachecol das 18 Provincias",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7240,52 +5476,7 @@
         },
         {
           "id": "modern_bulletproof_vest",
-          "name": "Modern bulletproof vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flint_knife",
-          "name": "Flint knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_needle",
-          "name": "Handmade needle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_needle",
-          "name": "Rusted needle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "yamal",
-          "name": "Yamal",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "player_outfit",
-          "name": "Player Outfit",
+          "name": "Colete Balistico Moderno",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7294,16 +5485,7 @@
         },
         {
           "id": "butcher_27s_backpack",
-          "name": "Butcher%27s Backpack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "knapsack",
-          "name": "Knapsack",
+          "name": "Mochila do Açougueiro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7312,7 +5494,7 @@
         },
         {
           "id": "spotlight",
-          "name": "Spotlight",
+          "name": "Holofote",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7321,7 +5503,7 @@
         },
         {
           "id": "toxic_lamp",
-          "name": "Toxic lamp",
+          "name": "Lampada Toxica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7330,34 +5512,7 @@
         },
         {
           "id": "jack_o_27_lantern",
-          "name": "Jack-O%27-Lantern",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "thermonuclear_camping_stove",
-          "name": "Thermonuclear Camping Stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chitin_armor",
-          "name": "Chitin Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_shovel",
-          "name": "Rusted shovel",
+          "name": "Abobora de Halloween",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7366,16 +5521,7 @@
         },
         {
           "id": "dust_mask",
-          "name": "Dust mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "daily_reward",
-          "name": "Daily reward",
+          "name": "Mascara de Poeira",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7384,16 +5530,7 @@
         },
         {
           "id": "highway_armor",
-          "name": "Highway Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_pot",
-          "name": "Titanium pot",
+          "name": "Armadura de Estrada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7402,25 +5539,7 @@
         },
         {
           "id": "bulletproof_vest",
-          "name": "Bulletproof vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "torch",
-          "name": "Torch",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_axe",
-          "name": "Titanium Axe",
+          "name": "Colete Balistico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7429,25 +5548,7 @@
         },
         {
           "id": "army_bulletproof_vest",
-          "name": "Army Bulletproof Vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "game_updates",
-          "name": "Game Updates",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hacksaw",
-          "name": "Hacksaw",
+          "name": "Colete Balistico Militar",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7456,7 +5557,7 @@
         },
         {
           "id": "battery_flashlight",
-          "name": "Battery Flashlight",
+          "name": "Lanterha a Bateria",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7465,7 +5566,7 @@
         },
         {
           "id": "magic_sweater",
-          "name": "Magic Sweater",
+          "name": "Suéter Magico",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7474,7 +5575,7 @@
         },
         {
           "id": "iron_armor",
-          "name": "Iron Armor",
+          "name": "Armadura de Ferro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7483,7 +5584,7 @@
         },
         {
           "id": "old_faithful_gas_mask",
-          "name": "Old Faithful Gas Mask",
+          "name": "Mascara de Gas Fiel Velha",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7492,7 +5593,7 @@
         },
         {
           "id": "flashlight__20_25",
-          "name": "Flashlight (20%25)",
+          "name": "Lanterna (20%)",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7501,7 +5602,7 @@
         },
         {
           "id": "highway_backpack",
-          "name": "Highway backpack",
+          "name": "Mochila de Estrada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7510,7 +5611,7 @@
         },
         {
           "id": "homemade_respirator",
-          "name": "Homemade respirator",
+          "name": "Respirador Artesanal",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7519,7 +5620,7 @@
         },
         {
           "id": "santa_27s_flask",
-          "name": "Santa%27s Flask",
+          "name": "Frasco do Papai Noel",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7528,7 +5629,7 @@
         },
         {
           "id": "reinforced_uniform",
-          "name": "Reinforced Uniform",
+          "name": "Uniforme Reforçado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7537,7 +5638,7 @@
         },
         {
           "id": "hunter_27s_garb",
-          "name": "Hunter%27s Garb",
+          "name": "Traje do Cacador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7546,16 +5647,7 @@
         },
         {
           "id": "bone_vest",
-          "name": "Bone Vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "survivor_27s_cache",
-          "name": "Survivor%27s Cache",
+          "name": "Colete de Osso",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7564,16 +5656,7 @@
         },
         {
           "id": "progress_bulletproof_vest",
-          "name": "Progress Bulletproof Vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pets",
-          "name": "Pets",
+          "name": "Colete Balistico Progresso",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7591,7 +5674,7 @@
         },
         {
           "id": "poisoned_flask",
-          "name": "Poisoned Flask",
+          "name": "Frasco Envenenado",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7600,7 +5683,7 @@
         },
         {
           "id": "kevlar_vest",
-          "name": "Kevlar Vest",
+          "name": "Colete Kevlar",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7609,7 +5692,7 @@
         },
         {
           "id": "possessed_lantern",
-          "name": "Possessed lantern",
+          "name": "Lanterna Possuida",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7618,25 +5701,7 @@
         },
         {
           "id": "glutton_27s_bag",
-          "name": "Glutton%27s Bag",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "d_eagle",
-          "name": "D-Eagle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "taiga_machete",
-          "name": "Taiga Machete",
+          "name": "Mochila do Guloso",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7645,34 +5710,7 @@
         },
         {
           "id": "dynamo_flashlight",
-          "name": "Dynamo flashlight",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flint_axe",
-          "name": "Flint axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kitchen_knife",
-          "name": "Kitchen knife",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_axe",
-          "name": "Steel axe",
+          "name": "Lanterha a Dynamo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7681,7 +5719,7 @@
         },
         {
           "id": "tattered_clothes",
-          "name": "Tattered clothes",
+          "name": "Roupa Esfarrapada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7690,7 +5728,7 @@
         },
         {
           "id": "refrigerator_backpack",
-          "name": "Refrigerator Backpack",
+          "name": "Mochila Geladeira",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7699,7 +5737,7 @@
         },
         {
           "id": "bunny_costume",
-          "name": "Bunny Costume",
+          "name": "Fantasia de Coelho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7708,7 +5746,7 @@
         },
         {
           "id": "witch_27s_quill",
-          "name": "Witch%27s Quill",
+          "name": "Pena da Bruxa",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7717,16 +5755,7 @@
         },
         {
           "id": "ghillie_suit",
-          "name": "Ghillie suit",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_crowbar",
-          "name": "Steel crowbar",
+          "name": "Traje de Camuflagem",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7735,7 +5764,7 @@
         },
         {
           "id": "pumpkin_chump",
-          "name": "Pumpkin Chump",
+          "name": "Tonto de Abobora",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7744,7 +5773,7 @@
         },
         {
           "id": "great_fishing_rod",
-          "name": "Great fishing rod",
+          "name": "Vara de Pescar Grande",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7753,43 +5782,7 @@
         },
         {
           "id": "leather_armor",
-          "name": "Leather Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "primus_stove",
-          "name": "Primus stove",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_crowbar",
-          "name": "Rusted crowbar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "battery_flashlight",
-          "name": "Battery flashlight",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_hacksaw",
-          "name": "Rusted hacksaw",
+          "name": "Armadura de Couro",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7798,7 +5791,7 @@
         },
         {
           "id": "demon_mask",
-          "name": "Demon mask",
+          "name": "Mascara de Demônio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7807,7 +5800,7 @@
         },
         {
           "id": "plague_doctor_27s_mask",
-          "name": "Plague Doctor%27s Mask",
+          "name": "Mascara do Medico da Peste",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7816,7 +5809,7 @@
         },
         {
           "id": "medical_backpack",
-          "name": "Medical Backpack",
+          "name": "Mochila Medica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7833,44 +5826,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "chimney",
-          "name": "Chimney",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "respirator",
-          "name": "Respirator",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_lighter",
-          "name": "Handmade lighter",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "crowbar",
-          "name": "Crowbar",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sapper_shovel",
-          "name": "Sapper shovel",
+          "name": "Respirador",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7879,7 +5836,7 @@
         },
         {
           "id": "field_uniform",
-          "name": "Field Uniform",
+          "name": "Uniforme de Campo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7888,7 +5845,7 @@
         },
         {
           "id": "sturdy_fishing_rod",
-          "name": "Sturdy Fishing Rod",
+          "name": "Vara de Pescar Resistente",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7897,7 +5854,7 @@
         },
         {
           "id": "gp_7_gas_mask",
-          "name": "GP-7 gas mask",
+          "name": "Mascara de Gas GP-7",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7906,7 +5863,7 @@
         },
         {
           "id": "prospector_27s_armor",
-          "name": "Prospector%27s armor",
+          "name": "Armadura do Prospetor",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7915,25 +5872,7 @@
         },
         {
           "id": "smuggler_27s_armor",
-          "name": "Smuggler%27s Armor",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mayhem",
-          "name": "Mayhem",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sack",
-          "name": "Sack",
+          "name": "Armadura do Contrabandista",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7942,16 +5881,7 @@
         },
         {
           "id": "rucksack",
-          "name": "Rucksack",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tent__taken_down",
-          "name": "Tent (taken down)",
+          "name": "Mochila Grande",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7960,7 +5890,7 @@
         },
         {
           "id": "titanium_shovel",
-          "name": "Titanium Shovel",
+          "name": "Pa de Titanio",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7969,16 +5899,7 @@
         },
         {
           "id": "gas_mask",
-          "name": "Gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "alien_blaster",
-          "name": "Alien Blaster",
+          "name": "Mascara de Gas",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7987,7 +5908,7 @@
         },
         {
           "id": "cotton_wool_beard",
-          "name": "Cotton-wool Beard",
+          "name": "Barba de Algodao",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -7996,25 +5917,7 @@
         },
         {
           "id": "rusted_saucepan",
-          "name": "Rusted Saucepan",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tool_kit",
-          "name": "Tool kit",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "terrarium",
-          "name": "Terrarium",
+          "name": "Panela Enferrujada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8023,79 +5926,7 @@
         },
         {
           "id": "primitive_bulletproof_vest",
-          "name": "Primitive Bulletproof Vest",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tube_rifle",
-          "name": "Tube Rifle",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_pot",
-          "name": "Steel pot",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusted_axe",
-          "name": "Rusted axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "axe",
-          "name": "Axe",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flesh",
-          "name": "Flesh",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "floodlight",
-          "name": "Floodlight",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chitin_torch",
-          "name": "Chitin torch",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "schoolbag",
-          "name": "Schoolbag",
+          "name": "Colete Balistico Primitivo",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8104,7 +5935,7 @@
         },
         {
           "id": "tester_armor",
-          "name": "Tester Armor",
+          "name": "Armadura de Teste",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8113,25 +5944,7 @@
         },
         {
           "id": "black_and_red",
-          "name": "Black-and-Red",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ghillie_suit",
-          "name": "Ghillie Suit",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hunter_27s_rifle",
-          "name": "Hunter%27s Rifle",
+          "name": "Preto-e-Vermelho",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8140,16 +5953,7 @@
         },
         {
           "id": "lazy_elf",
-          "name": "Lazy Elf",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_knife",
-          "name": "Titanium knife",
+          "name": "Elfo Preguicoso",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8158,16 +5962,7 @@
         },
         {
           "id": "gp_5_gas_mask",
-          "name": "GP-5 gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "titanium_shovel",
-          "name": "Titanium shovel",
+          "name": "Mascara de Gas GP-5",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8176,7 +5971,7 @@
         },
         {
           "id": "military_uniform",
-          "name": "Military uniform",
+          "name": "Uniforme Militar",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8185,7 +5980,7 @@
         },
         {
           "id": "ionica_gas_mask",
-          "name": "Ionica Gas Mask",
+          "name": "Mascara de Gas Ionica",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8194,7 +5989,7 @@
         },
         {
           "id": "flashlight__30_25",
-          "name": "Flashlight (30%25)",
+          "name": "Lanterna (30%)",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8203,7 +5998,7 @@
         },
         {
           "id": "combined_armor",
-          "name": "Combined armor",
+          "name": "Armadura Combinada",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8212,151 +6007,7 @@
         },
         {
           "id": "invisibility_cloak",
-          "name": "Invisibility Cloak",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_4_gas_mask",
-          "name": "GP-4 gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pmg_gas_mask",
-          "name": "PMG gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "demon_mask",
-          "name": "Demon mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "iron_gas_mask",
-          "name": "Iron Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_5_gas_mask",
-          "name": "GP-5 gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "plague_doctor_27s_mask",
-          "name": "Plague Doctor%27s Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "respirator",
-          "name": "Respirator",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mm_1_gas_mask",
-          "name": "MM-1 Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "scarf_of_18_provinces",
-          "name": "Scarf of 18 Provinces",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_7_gas_mask",
-          "name": "GP-7 gas mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ionica_gas_mask",
-          "name": "Ionica Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dust_mask",
-          "name": "Dust mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "old_faithful_gas_mask",
-          "name": "Old Faithful Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "radiation",
-          "name": "Radiation",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_2000_gas_mask",
-          "name": "GP-2000 Gas Mask",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_respirator",
-          "name": "Homemade respirator",
+          "name": "Manta de Invisibilidade",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8514,17 +6165,8 @@
           "notes": "Material"
         },
         {
-          "id": "boiled_leather",
-          "name": "Boiled Leather",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "wax",
-          "name": "Wax",
+          "name": "Cera",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8533,88 +6175,7 @@
         },
         {
           "id": "fresh_bones",
-          "name": "Fresh bones",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bait",
-          "name": "Bait",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "coast",
-          "name": "Coast",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rusks",
-          "name": "Rusks",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sturdy_fishing_rod",
-          "name": "Sturdy Fishing Rod",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "radioactive_swamp",
-          "name": "Radioactive Swamp",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "swamp",
-          "name": "Swamp",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rotten_meat",
-          "name": "Rotten meat",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "great_fishing_rod",
-          "name": "Great fishing rod",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "handmade_fishing_rod",
-          "name": "Handmade fishing rod",
+          "name": "Ossos Frescos",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -8623,16 +6184,7 @@
         },
         {
           "id": "eternal_rod",
-          "name": "Eternal Rod",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "raw_meat",
-          "name": "Raw meat",
+          "name": "Vara Eterna",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",

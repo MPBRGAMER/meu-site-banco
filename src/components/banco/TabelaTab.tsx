@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { pricesData } from "@/data/prices";
 import { priceTrends } from "@/data/price-trends";
-import { getItemIcon } from "@/data/item-icons";
+import { getItemImageUrlAuto, getFallbackEmoji } from "@/data/item-icons";
 import { useBank } from "@/lib/useBank";
 import { toast } from "sonner";
 
@@ -103,6 +103,24 @@ function Sparkline({ itemId }: { itemId: string }) {
         </span>
       )}
     </div>
+  );
+}
+
+function ItemIcon({ itemId }: { itemId: string }) {
+  const [imgError, setImgError] = useState(false);
+  const imgUrl = getItemImageUrlAuto(itemId);
+  if (imgError || !imgUrl) {
+    return <span className="text-base leading-none">{getFallbackEmoji(itemId)}</span>;
+  }
+  return (
+    <img
+      src={imgUrl}
+      alt={itemId}
+      className="w-6 h-6 object-contain pixelated"
+      style={{ imageRendering: "pixelated" }}
+      onError={() => setImgError(true)}
+      loading="lazy"
+    />
   );
 }
 
@@ -552,7 +570,7 @@ export default function TabelaTab() {
                     const rep = reportMap[item.id];
                     return (
                       <div key={item.id} className={`grid grid-cols-12 gap-1 px-3 py-2 border-b border-border/50 hover:bg-muted/20 transition-colors text-xs ${idx % 2 === 0 ? "" : "bg-muted/5"} ${missing ? "opacity-70" : ""}`}>
-                        <div className="col-span-1 text-center text-base leading-6">{getItemIcon(item.id)}</div>
+                        <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} /></div>
                         <div className="col-span-3 min-w-0">
                           <p className="font-semibold text-foreground truncate">{item.name}</p>
                           {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block">{item.notes}</p>}

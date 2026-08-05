@@ -1,0 +1,2002 @@
+     1→{
+     2→  "metadata": {
+     3→    "version": "2026-08-05",
+     4→    "game_version": "v.827+",
+     5→    "last_updated": "2026-08-05",
+     6→    "exchange_rate": "1 Aço ($) = 2 Cimentos (€)",
+     7→    "note": "Preços baseados em pesquisa de comunidades (Reddit, Discord, Facebook, Foruns) - Mercado entre players. Itens com ?:? precisam de preços reportados pela comunidade."
+     8→  },
+     9→  "categories": [
+    10→    {
+    11→      "id": "food",
+    12→      "name": "🍖 Comida, Bebidas e Ingredientes",
+    13→      "items": [
+    14→        {
+    15→          "id": "clean_water",
+    16→          "name": "Água Limpa",
+    17→          "steel": "5:1",
+    18→          "cement": "10:1",
+    19→          "rarity": "common",
+    20→          "demand": "high",
+    21→          "notes": "Essencial para sobrevivência"
+    22→        },
+    23→        {
+    24→          "id": "dirty_water",
+    25→          "name": "Água Suja",
+    26→          "steel": "20:1",
+    27→          "cement": "40:1",
+    28→          "rarity": "common",
+    29→          "demand": "low",
+    30→          "notes": "Requer purificação"
+    31→        },
+    32→        {
+    33→          "id": "salt",
+    34→          "name": "Sal",
+    35→          "steel": "7:1",
+    36→          "cement": "14:1",
+    37→          "rarity": "common",
+    38→          "demand": "high",
+    39→          "notes": "Base para conservas e carne salgada"
+    40→        },
+    41→        {
+    42→          "id": "sugar",
+    43→          "name": "Açúcar",
+    44→          "steel": "5:1",
+    45→          "cement": "10:1",
+    46→          "rarity": "common",
+    47→          "demand": "medium",
+    48→          "notes": "Ingrediente de receitas"
+    49→        },
+    50→        {
+    51→          "id": "flour",
+    52→          "name": "Farinha",
+    53→          "steel": "5:2",
+    54→          "cement": "5:1",
+    55→          "rarity": "common",
+    56→          "demand": "medium",
+    57→          "notes": "Ingrediente de receitas"
+    58→        },
+    59→        {
+    60→          "id": "pasta",
+    61→          "name": "Massa / Macarrão",
+    62→          "steel": "1:1",
+    63→          "cement": "2:1",
+    64→          "rarity": "common",
+    65→          "demand": "medium",
+    66→          "notes": "Alimento pronto"
+    67→        },
+    68→        {
+    69→          "id": "eggs",
+    70→          "name": "Ovos",
+    71→          "steel": "1:1",
+    72→          "cement": "2:1",
+    73→          "rarity": "common",
+    74→          "demand": "medium",
+    75→          "notes": "Ingrediente de receitas"
+    76→        },
+    77→        {
+    78→          "id": "milk",
+    79→          "name": "Leite",
+    80→          "steel": "2:1",
+    81→          "cement": "4:1",
+    82→          "rarity": "common",
+    83→          "demand": "medium",
+    84→          "notes": "Ingrediente de receitas"
+    85→        },
+    86→        {
+    87→          "id": "condensed_milk",
+    88→          "name": "Leite Condensado",
+    89→          "steel": "2:1",
+    90→          "cement": "4:1",
+    91→          "rarity": "common",
+    92→          "demand": "medium",
+    93→          "notes": "Ingrediente de receitas"
+    94→        },
+    95→        {
+    96→          "id": "rice_grains",
+    97→          "name": "Grãos de Arroz",
+    98→          "steel": "1:1",
+    99→          "cement": "2:1",
+   100→          "rarity": "common",
+   101→          "demand": "medium",
+   102→          "notes": "Ingrediente de receitas"
+   103→        },
+   104→        {
+   105→          "id": "buckwheat",
+   106→          "name": "Trigo-sarraceno",
+   107→          "steel": "2:1",
+   108→          "cement": "4:1",
+   109→          "rarity": "common",
+   110→          "demand": "medium",
+   111→          "notes": "Ingrediente de receitas"
+   112→        },
+   113→        {
+   114→          "id": "lard",
+   115→          "name": "Banha / Gordura",
+   116→          "steel": "2:1",
+   117→          "cement": "4:1",
+   118→          "rarity": "common",
+   119→          "demand": "medium",
+   120→          "notes": "Ingrediente de receitas"
+   121→        },
+   122→        {
+   123→          "id": "honey",
+   124→          "name": "Mel",
+   125→          "steel": "1:5",
+   126→          "cement": "2:5",
+   127→          "rarity": "uncommon",
+   128→          "demand": "medium",
+   129→          "notes": "Ingrediente raro de receitas"
+   130→        },
+   131→        {
+   132→          "id": "canned_meat",
+   133→          "name": "Carne de Cozido (Enlatado)",
+   134→          "steel": "2:5",
+   135→          "cement": "4:5",
+   136→          "rarity": "uncommon",
+   137→          "demand": "medium",
+   138→          "notes": "Alimento enlatado"
+   139→        },
+   140→        {
+   141→          "id": "canned_soup",
+   142→          "name": "Canja Enlatada",
+   143→          "steel": "2:1",
+   144→          "cement": "4:1",
+   145→          "rarity": "common",
+   146→          "demand": "medium",
+   147→          "notes": "Alimento enlatado"
+   148→        },
+   149→        {
+   150→          "id": "sausage",
+   151→          "name": "Salsicha",
+   152→          "steel": "5:1",
+   153→          "cement": "10:1",
+   154→          "rarity": "common",
+   155→          "demand": "medium",
+   156→          "notes": "Alimento pronto"
+   157→        },
+   158→        {
+   159→          "id": "jelly",
+   160→          "name": "Geleia",
+   161→          "steel": "2:5",
+   162→          "cement": "4:5",
+   163→          "rarity": "uncommon",
+   164→          "demand": "low",
+   165→          "notes": "Conserva"
+   166→        },
+   167→        {
+   168→          "id": "chocolate",
+   169→          "name": "Chocolate",
+   170→          "steel": "1:3",
+   171→          "cement": "2:3",
+   172→          "rarity": "uncommon",
+   173→          "demand": "medium",
+   174→          "notes": "Doce/Ingrediente"
+   175→        },
+   176→        {
+   177→          "id": "cheese",
+   178→          "name": "Queijo",
+   179→          "steel": "1:2",
+   180→          "cement": "1:1",
+   181→          "rarity": "common",
+   182→          "demand": "medium",
+   183→          "notes": "Alimento"
+   184→        },
+   185→        {
+   186→          "id": "rice_bowl",
+   187→          "name": "Tigela de Arroz",
+   188→          "steel": "1:2",
+   189→          "cement": "1:1",
+   190→          "rarity": "common",
+   191→          "demand": "medium",
+   192→          "notes": "Alimento pronto"
+   193→        },
+   194→        {
+   195→          "id": "smoked_bacon",
+   196→          "name": "Toucinho Defumado",
+   197→          "steel": "1:1",
+   198→          "cement": "2:1",
+   199→          "rarity": "common",
+   200→          "demand": "medium",
+   201→          "notes": "Alimento"
+   202→        },
+   203→        {
+   204→          "id": "dried_toast",
+   205→          "name": "Torrada Seca",
+   206→          "steel": "4:1",
+   207→          "cement": "8:1",
+   208→          "rarity": "common",
+   209→          "demand": "medium",
+   210→          "notes": "Alimento"
+   211→        },
+   212→        {
+   213→          "id": "salted_fish",
+   214→          "name": "Peixe Salgado",
+   215→          "steel": "4:1",
+   216→          "cement": "8:1",
+   217→          "rarity": "common",
+   218→          "demand": "high",
+   219→          "notes": "Ótimo para lucro inicial"
+   220→        },
+   221→        {
+   222→          "id": "salted_meat",
+   223→          "name": "Carne Salgada",
+   224→          "steel": "4:1",
+   225→          "cement": "8:1",
+   226→          "rarity": "common",
+   227→          "demand": "high",
+   228→          "notes": "Ótimo para lucro inicial"
+   229→        },
+   230→        {
+   231→          "id": "russian_salad",
+   232→          "name": "Salada Russa",
+   233→          "steel": "1:3",
+   234→          "cement": "2:3",
+   235→          "rarity": "uncommon",
+   236→          "demand": "low",
+   237→          "notes": "Alimento pronto"
+   238→        },
+   239→        {
+   240→          "id": "snake_snack",
+   241→          "name": "Petisco de Cobra",
+   242→          "steel": "1:1",
+   243→          "cement": "2:1",
+   244→          "rarity": "common",
+   245→          "demand": "low",
+   246→          "notes": "Alimento"
+   247→        },
+   248→        {
+   249→          "id": "olivier_salad",
+   250→          "name": "Olivier Salad",
+   251→          "steel": "?:?",
+   252→          "cement": "?:?",
+   253→          "rarity": "common",
+   254→          "demand": "medium",
+   255→          "notes": "Preco pendente - reporte para ajudar!"
+   256→        },
+   257→        {
+   258→          "id": "strange_mushroom__light_blue",
+   259→          "name": "Strange Mushroom (Light Blue)",
+   260→          "steel": "?:?",
+   261→          "cement": "?:?",
+   262→          "rarity": "common",
+   263→          "demand": "medium",
+   264→          "notes": "Preco pendente - reporte para ajudar!"
+   265→        },
+   266→        {
+   267→          "id": "pancakes",
+   268→          "name": "Pancakes",
+   269→          "steel": "?:?",
+   270→          "cement": "?:?",
+   271→          "rarity": "common",
+   272→          "demand": "medium",
+   273→          "notes": "Preco pendente - reporte para ajudar!"
+   274→        },
+   275→        {
+   276→          "id": "strange_mushroom__red",
+   277→          "name": "Strange Mushroom (Red)",
+   278→          "steel": "?:?",
+   279→          "cement": "?:?",
+   280→          "rarity": "common",
+   281→          "demand": "medium",
+   282→          "notes": "Preco pendente - reporte para ajudar!"
+   283→        },
+   284→        {
+   285→          "id": "pelmeni_dumplings",
+   286→          "name": "Pelmeni dumplings",
+   287→          "steel": "?:?",
+   288→          "cement": "?:?",
+   289→          "rarity": "common",
+   290→          "demand": "medium",
+   291→          "notes": "Preco pendente - reporte para ajudar!"
+   292→        },
+   293→        {
+   294→          "id": "rice_bun",
+   295→          "name": "Rice bun",
+   296→          "steel": "?:?",
+   297→          "cement": "?:?",
+   298→          "rarity": "common",
+   299→          "demand": "medium",
+   300→          "notes": "Preco pendente - reporte para ajudar!"
+   301→        },
+   302→        {
+   303→          "id": "cutlet_rice",
+   304→          "name": "Cutlet rice",
+   305→          "steel": "?:?",
+   306→          "cement": "?:?",
+   307→          "rarity": "common",
+   308→          "demand": "medium",
+   309→          "notes": "Preco pendente - reporte para ajudar!"
+   310→        },
+   311→        {
+   312→          "id": "meat_loaf",
+   313→          "name": "Meat loaf",
+   314→          "steel": "?:?",
+   315→          "cement": "?:?",
+   316→          "rarity": "common",
+   317→          "demand": "medium",
+   318→          "notes": "Preco pendente - reporte para ajudar!"
+   319→        },
+   320→        {
+   321→          "id": "canned_beef",
+   322→          "name": "Canned beef",
+   323→          "steel": "?:?",
+   324→          "cement": "?:?",
+   325→          "rarity": "common",
+   326→          "demand": "medium",
+   327→          "notes": "Preco pendente - reporte para ajudar!"
+   328→        },
+   329→        {
+   330→          "id": "hearty_food",
+   331→          "name": "Hearty food",
+   332→          "steel": "?:?",
+   333→          "cement": "?:?",
+   334→          "rarity": "common",
+   335→          "demand": "medium",
+   336→          "notes": "Preco pendente - reporte para ajudar!"
+   337→        },
+   338→        {
+   339→          "id": "strange_mushroom__yellow",
+   340→          "name": "Strange Mushroom (Yellow)",
+   341→          "steel": "?:?",
+   342→          "cement": "?:?",
+   343→          "rarity": "common",
+   344→          "demand": "medium",
+   345→          "notes": "Preco pendente - reporte para ajudar!"
+   346→        },
+   347→        {
+   348→          "id": "canned_porridge",
+   349→          "name": "Canned porridge",
+   350→          "steel": "?:?",
+   351→          "cement": "?:?",
+   352→          "rarity": "common",
+   353→          "demand": "medium",
+   354→          "notes": "Preco pendente - reporte para ajudar!"
+   355→        },
+   356→        {
+   357→          "id": "rusk",
+   358→          "name": "Rusk",
+   359→          "steel": "?:?",
+   360→          "cement": "?:?",
+   361→          "rarity": "common",
+   362→          "demand": "medium",
+   363→          "notes": "Preco pendente - reporte para ajudar!"
+   364→        },
+   365→        {
+   366→          "id": "raw_meat",
+   367→          "name": "Raw meat",
+   368→          "steel": "?:?",
+   369→          "cement": "?:?",
+   370→          "rarity": "common",
+   371→          "demand": "medium",
+   372→          "notes": "Preco pendente - reporte para ajudar!"
+   373→        },
+   374→        {
+   375→          "id": "pepsi",
+   376→          "name": "Pepsi",
+   377→          "steel": "?:?",
+   378→          "cement": "?:?",
+   379→          "rarity": "common",
+   380→          "demand": "medium",
+   381→          "notes": "Preco pendente - reporte para ajudar!"
+   382→        },
+   383→        {
+   384→          "id": "sanguinary_masha",
+   385→          "name": "Sanguinary Masha",
+   386→          "steel": "?:?",
+   387→          "cement": "?:?",
+   388→          "rarity": "common",
+   389→          "demand": "medium",
+   390→          "notes": "Preco pendente - reporte para ajudar!"
+   391→        },
+   392→        {
+   393→          "id": "dried_meat",
+   394→          "name": "Dried meat",
+   395→          "steel": "?:?",
+   396→          "cement": "?:?",
+   397→          "rarity": "common",
+   398→          "demand": "medium",
+   399→          "notes": "Preco pendente - reporte para ajudar!"
+   400→        },
+   401→        {
+   402→          "id": "red_wine",
+   403→          "name": "Red wine",
+   404→          "steel": "?:?",
+   405→          "cement": "?:?",
+   406→          "rarity": "common",
+   407→          "demand": "medium",
+   408→          "notes": "Preco pendente - reporte para ajudar!"
+   409→        },
+   410→        {
+   411→          "id": "roasted_chanterelle",
+   412→          "name": "Roasted Chanterelle",
+   413→          "steel": "?:?",
+   414→          "cement": "?:?",
+   415→          "rarity": "common",
+   416→          "demand": "medium",
+   417→          "notes": "Preco pendente - reporte para ajudar!"
+   418→        },
+   419→        {
+   420→          "id": "sushi",
+   421→          "name": "Sushi",
+   422→          "steel": "?:?",
+   423→          "cement": "?:?",
+   424→          "rarity": "common",
+   425→          "demand": "medium",
+   426→          "notes": "Preco pendente - reporte para ajudar!"
+   427→        },
+   428→        {
+   429→          "id": "easter_cake",
+   430→          "name": "Easter Cake",
+   431→          "steel": "?:?",
+   432→          "cement": "?:?",
+   433→          "rarity": "common",
+   434→          "demand": "medium",
+   435→          "notes": "Preco pendente - reporte para ajudar!"
+   436→        },
+   437→        {
+   438→          "id": "fried_tainted_meat",
+   439→          "name": "Fried tainted meat",
+   440→          "steel": "?:?",
+   441→          "cement": "?:?",
+   442→          "rarity": "common",
+   443→          "demand": "medium",
+   444→          "notes": "Preco pendente - reporte para ajudar!"
+   445→        },
+   446→        {
+   447→          "id": "canned_beans",
+   448→          "name": "Canned Beans",
+   449→          "steel": "?:?",
+   450→          "cement": "?:?",
+   451→          "rarity": "common",
+   452→          "demand": "medium",
+   453→          "notes": "Preco pendente - reporte para ajudar!"
+   454→        },
+   455→        {
+   456→          "id": "cabbage_roll",
+   457→          "name": "Cabbage roll",
+   458→          "steel": "?:?",
+   459→          "cement": "?:?",
+   460→          "rarity": "common",
+   461→          "demand": "medium",
+   462→          "notes": "Preco pendente - reporte para ajudar!"
+   463→        },
+   464→        {
+   465→          "id": "pizza",
+   466→          "name": "Pizza",
+   467→          "steel": "?:?",
+   468→          "cement": "?:?",
+   469→          "rarity": "common",
+   470→          "demand": "medium",
+   471→          "notes": "Preco pendente - reporte para ajudar!"
+   472→        },
+   473→        {
+   474→          "id": "tula_pryanik",
+   475→          "name": "Tula pryanik",
+   476→          "steel": "?:?",
+   477→          "cement": "?:?",
+   478→          "rarity": "common",
+   479→          "demand": "medium",
+   480→          "notes": "Preco pendente - reporte para ajudar!"
+   481→        },
+   482→        {
+   483→          "id": "simple_chowder",
+   484→          "name": "Simple chowder",
+   485→          "steel": "?:?",
+   486→          "cement": "?:?",
+   487→          "rarity": "common",
+   488→          "demand": "medium",
+   489→          "notes": "Preco pendente - reporte para ajudar!"
+   490→        },
+   491→        {
+   492→          "id": "knock_off_energy_drink",
+   493→          "name": "Knock-Off Energy Drink",
+   494→          "steel": "?:?",
+   495→          "cement": "?:?",
+   496→          "rarity": "common",
+   497→          "demand": "medium",
+   498→          "notes": "Preco pendente - reporte para ajudar!"
+   499→        },
+   500→        {
+   501→          "id": "dried_fish",
+   502→          "name": "Dried fish",
+   503→          "steel": "?:?",
+   504→          "cement": "?:?",
+   505→          "rarity": "common",
+   506→          "demand": "medium",
+   507→          "notes": "Preco pendente - reporte para ajudar!"
+   508→        },
+   509→        {
+   510→          "id": "hot_coffee",
+   511→          "name": "Hot coffee",
+   512→          "steel": "?:?",
+   513→          "cement": "?:?",
+   514→          "rarity": "common",
+   515→          "demand": "medium",
+   516→          "notes": "Preco pendente - reporte para ajudar!"
+   517→        },
+   518→        {
+   519→          "id": "champagne",
+   520→          "name": "Champagne",
+   521→          "steel": "?:?",
+   522→          "cement": "?:?",
+   523→          "rarity": "common",
+   524→          "demand": "medium",
+   525→          "notes": "Preco pendente - reporte para ajudar!"
+   526→        },
+   527→        {
+   528→          "id": "amanita",
+   529→          "name": "Amanita",
+   530→          "steel": "?:?",
+   531→          "cement": "?:?",
+   532→          "rarity": "common",
+   533→          "demand": "medium",
+   534→          "notes": "Preco pendente - reporte para ajudar!"
+   535→        },
+   536→        {
+   537→          "id": "rotten_porridge",
+   538→          "name": "Rotten porridge",
+   539→          "steel": "?:?",
+   540→          "cement": "?:?",
+   541→          "rarity": "common",
+   542→          "demand": "medium",
+   543→          "notes": "Preco pendente - reporte para ajudar!"
+   544→        },
+   545→        {
+   546→          "id": "rotten_meat",
+   547→          "name": "Rotten meat",
+   548→          "steel": "?:?",
+   549→          "cement": "?:?",
+   550→          "rarity": "common",
+   551→          "demand": "medium",
+   552→          "notes": "Preco pendente - reporte para ajudar!"
+   553→        },
+   554→        {
+   555→          "id": "bunny_treat",
+   556→          "name": "Bunny Treat",
+   557→          "steel": "?:?",
+   558→          "cement": "?:?",
+   559→          "rarity": "common",
+   560→          "demand": "medium",
+   561→          "notes": "Preco pendente - reporte para ajudar!"
+   562→        },
+   563→        {
+   564→          "id": "cold_tea",
+   565→          "name": "Cold tea",
+   566→          "steel": "?:?",
+   567→          "cement": "?:?",
+   568→          "rarity": "common",
+   569→          "demand": "medium",
+   570→          "notes": "Preco pendente - reporte para ajudar!"
+   571→        },
+   572→        {
+   573→          "id": "shchi",
+   574→          "name": "Shchi",
+   575→          "steel": "?:?",
+   576→          "cement": "?:?",
+   577→          "rarity": "common",
+   578→          "demand": "medium",
+   579→          "notes": "Preco pendente - reporte para ajudar!"
+   580→        },
+   581→        {
+   582→          "id": "mysterious_fruit",
+   583→          "name": "Mysterious Fruit",
+   584→          "steel": "?:?",
+   585→          "cement": "?:?",
+   586→          "rarity": "common",
+   587→          "demand": "medium",
+   588→          "notes": "Preco pendente - reporte para ajudar!"
+   589→        },
+   590→        {
+   591→          "id": "rainbow_easter_egg",
+   592→          "name": "Rainbow Easter Egg",
+   593→          "steel": "?:?",
+   594→          "cement": "?:?",
+   595→          "rarity": "common",
+   596→          "demand": "medium",
+   597→          "notes": "Preco pendente - reporte para ajudar!"
+   598→        },
+   599→        {
+   600→          "id": "cold_coffee",
+   601→          "name": "Cold coffee",
+   602→          "steel": "?:?",
+   603→          "cement": "?:?",
+   604→          "rarity": "common",
+   605→          "demand": "medium",
+   606→          "notes": "Preco pendente - reporte para ajudar!"
+   607→        },
+   608→        {
+   609→          "id": "canned_water",
+   610→          "name": "Canned Water",
+   611→          "steel": "?:?",
+   612→          "cement": "?:?",
+   613→          "rarity": "common",
+   614→          "demand": "medium",
+   615→          "notes": "Preco pendente - reporte para ajudar!"
+   616→        },
+   617→        {
+   618→          "id": "diluted_spirits",
+   619→          "name": "Diluted spirits",
+   620→          "steel": "?:?",
+   621→          "cement": "?:?",
+   622→          "rarity": "common",
+   623→          "demand": "medium",
+   624→          "notes": "Preco pendente - reporte para ajudar!"
+   625→        },
+   626→        {
+   627→          "id": "energy_drink",
+   628→          "name": "Energy drink",
+   629→          "steel": "?:?",
+   630→          "cement": "?:?",
+   631→          "rarity": "common",
+   632→          "demand": "medium",
+   633→          "notes": "Preco pendente - reporte para ajudar!"
+   634→        },
+   635→        {
+   636→          "id": "cake",
+   637→          "name": "Cake",
+   638→          "steel": "?:?",
+   639→          "cement": "?:?",
+   640→          "rarity": "common",
+   641→          "demand": "medium",
+   642→          "notes": "Preco pendente - reporte para ajudar!"
+   643→        },
+   644→        {
+   645→          "id": "easter_egg",
+   646→          "name": "Easter Egg",
+   647→          "steel": "?:?",
+   648→          "cement": "?:?",
+   649→          "rarity": "common",
+   650→          "demand": "medium",
+   651→          "notes": "Preco pendente - reporte para ajudar!"
+   652→        },
+   653→        {
+   654→          "id": "rat_meat",
+   655→          "name": "Rat meat",
+   656→          "steel": "?:?",
+   657→          "cement": "?:?",
+   658→          "rarity": "common",
+   659→          "demand": "medium",
+   660→          "notes": "Preco pendente - reporte para ajudar!"
+   661→        },
+   662→        {
+   663→          "id": "strange_mushroom__blue",
+   664→          "name": "Strange Mushroom (Blue)",
+   665→          "steel": "?:?",
+   666→          "cement": "?:?",
+   667→          "rarity": "common",
+   668→          "demand": "medium",
+   669→          "notes": "Preco pendente - reporte para ajudar!"
+   670→        },
+   671→        {
+   672→          "id": "chocolate_bunny",
+   673→          "name": "Chocolate Bunny",
+   674→          "steel": "?:?",
+   675→          "cement": "?:?",
+   676→          "rarity": "common",
+   677→          "demand": "medium",
+   678→          "notes": "Preco pendente - reporte para ajudar!"
+   679→        },
+   680→        {
+   681→          "id": "hot_tea",
+   682→          "name": "Hot tea",
+   683→          "steel": "?:?",
+   684→          "cement": "?:?",
+   685→          "rarity": "common",
+   686→          "demand": "medium",
+   687→          "notes": "Preco pendente - reporte para ajudar!"
+   688→        },
+   689→        {
+   690→          "id": "fried_egg",
+   691→          "name": "Fried egg",
+   692→          "steel": "?:?",
+   693→          "cement": "?:?",
+   694→          "rarity": "common",
+   695→          "demand": "medium",
+   696→          "notes": "Preco pendente - reporte para ajudar!"
+   697→        },
+   698→        {
+   699→          "id": "fish_pie",
+   700→          "name": "Fish pie",
+   701→          "steel": "?:?",
+   702→          "cement": "?:?",
+   703→          "rarity": "common",
+   704→          "demand": "medium",
+   705→          "notes": "Preco pendente - reporte para ajudar!"
+   706→        },
+   707→        {
+   708→          "id": "cake_napoleon",
+   709→          "name": "Cake napoleon",
+   710→          "steel": "?:?",
+   711→          "cement": "?:?",
+   712→          "rarity": "common",
+   713→          "demand": "medium",
+   714→          "notes": "Preco pendente - reporte para ajudar!"
+   715→        },
+   716→        {
+   717→          "id": "bowl_of_rice",
+   718→          "name": "Bowl of rice",
+   719→          "steel": "?:?",
+   720→          "cement": "?:?",
+   721→          "rarity": "common",
+   722→          "demand": "medium",
+   723→          "notes": "Preco pendente - reporte para ajudar!"
+   724→        },
+   725→        {
+   726→          "id": "shashlik",
+   727→          "name": "Shashlik",
+   728→          "steel": "?:?",
+   729→          "cement": "?:?",
+   730→          "rarity": "common",
+   731→          "demand": "medium",
+   732→          "notes": "Preco pendente - reporte para ajudar!"
+   733→        },
+   734→        {
+   735→          "id": "fried_fish",
+   736→          "name": "Fried fish",
+   737→          "steel": "?:?",
+   738→          "cement": "?:?",
+   739→          "rarity": "common",
+   740→          "demand": "medium",
+   741→          "notes": "Preco pendente - reporte para ajudar!"
+   742→        },
+   743→        {
+   744→          "id": "rat_meat",
+   745→          "name": "Rat Meat",
+   746→          "steel": "?:?",
+   747→          "cement": "?:?",
+   748→          "rarity": "common",
+   749→          "demand": "medium",
+   750→          "notes": "Preco pendente - reporte para ajudar!"
+   751→        },
+   752→        {
+   753→          "id": "strange_mushroom__white",
+   754→          "name": "Strange Mushroom (White)",
+   755→          "steel": "?:?",
+   756→          "cement": "?:?",
+   757→          "rarity": "common",
+   758→          "demand": "medium",
+   759→          "notes": "Preco pendente - reporte para ajudar!"
+   760→        },
+   761→        {
+   762→          "id": "egg",
+   763→          "name": "Egg",
+   764→          "steel": "?:?",
+   765→          "cement": "?:?",
+   766→          "rarity": "common",
+   767→          "demand": "medium",
+   768→          "notes": "Preco pendente - reporte para ajudar!"
+   769→        },
+   770→        {
+   771→          "id": "tailed_rissole",
+   772→          "name": "Tailed Rissole",
+   773→          "steel": "?:?",
+   774→          "cement": "?:?",
+   775→          "rarity": "common",
+   776→          "demand": "medium",
+   777→          "notes": "Preco pendente - reporte para ajudar!"
+   778→        },
+   779→        {
+   780→          "id": "pasta_with_ground_beef",
+   781→          "name": "Pasta with ground beef",
+   782→          "steel": "?:?",
+   783→          "cement": "?:?",
+   784→          "rarity": "common",
+   785→          "demand": "medium",
+   786→          "notes": "Preco pendente - reporte para ajudar!"
+   787→        },
+   788→        {
+   789→          "id": "rich_chowder",
+   790→          "name": "Rich chowder",
+   791→          "steel": "?:?",
+   792→          "cement": "?:?",
+   793→          "rarity": "common",
+   794→          "demand": "medium",
+   795→          "notes": "Preco pendente - reporte para ajudar!"
+   796→        },
+   797→        {
+   798→          "id": "mushroom_pasta",
+   799→          "name": "Mushroom pasta",
+   800→          "steel": "?:?",
+   801→          "cement": "?:?",
+   802→          "rarity": "common",
+   803→          "demand": "medium",
+   804→          "notes": "Preco pendente - reporte para ajudar!"
+   805→        },
+   806→        {
+   807→          "id": "infected_dried_fish",
+   808→          "name": "Infected Dried Fish",
+   809→          "steel": "?:?",
+   810→          "cement": "?:?",
+   811→          "rarity": "common",
+   812→          "demand": "medium",
+   813→          "notes": "Preco pendente - reporte para ajudar!"
+   814→        },
+   815→        {
+   816→          "id": "jam",
+   817→          "name": "Jam",
+   818→          "steel": "?:?",
+   819→          "cement": "?:?",
+   820→          "rarity": "common",
+   821→          "demand": "medium",
+   822→          "notes": "Preco pendente - reporte para ajudar!"
+   823→        },
+   824→        {
+   825→          "id": "raw_fatback",
+   826→          "name": "Raw fatback",
+   827→          "steel": "?:?",
+   828→          "cement": "?:?",
+   829→          "rarity": "common",
+   830→          "demand": "medium",
+   831→          "notes": "Preco pendente - reporte para ajudar!"
+   832→        },
+   833→        {
+   834→          "id": "toxic_water",
+   835→          "name": "Toxic water",
+   836→          "steel": "?:?",
+   837→          "cement": "?:?",
+   838→          "rarity": "common",
+   839→          "demand": "medium",
+   840→          "notes": "Preco pendente - reporte para ajudar!"
+   841→        },
+   842→        {
+   843→          "id": "ukha",
+   844→          "name": "Ukha",
+   845→          "steel": "?:?",
+   846→          "cement": "?:?",
+   847→          "rarity": "common",
+   848→          "demand": "medium",
+   849→          "notes": "Preco pendente - reporte para ajudar!"
+   850→        },
+   851→        {
+   852→          "id": "kholodets",
+   853→          "name": "Kholodets",
+   854→          "steel": "?:?",
+   855→          "cement": "?:?",
+   856→          "rarity": "common",
+   857→          "demand": "medium",
+   858→          "notes": "Preco pendente - reporte para ajudar!"
+   859→        },
+   860→        {
+   861→          "id": "fried_rat_meat",
+   862→          "name": "Fried rat meat",
+   863→          "steel": "?:?",
+   864→          "cement": "?:?",
+   865→          "rarity": "common",
+   866→          "demand": "medium",
+   867→          "notes": "Preco pendente - reporte para ajudar!"
+   868→        },
+   869→        {
+   870→          "id": "fried_fatty_meat",
+   871→          "name": "Fried fatty meat",
+   872→          "steel": "?:?",
+   873→          "cement": "?:?",
+   874→          "rarity": "common",
+   875→          "demand": "medium",
+   876→          "notes": "Preco pendente - reporte para ajudar!"
+   877→        },
+   878→        {
+   879→          "id": "dry_meat",
+   880→          "name": "Dry meat",
+   881→          "steel": "?:?",
+   882→          "cement": "?:?",
+   883→          "rarity": "common",
+   884→          "demand": "medium",
+   885→          "notes": "Preco pendente - reporte para ajudar!"
+   886→        },
+   887→        {
+   888→          "id": "aqua_vitae",
+   889→          "name": "Aqua Vitae",
+   890→          "steel": "?:?",
+   891→          "cement": "?:?",
+   892→          "rarity": "common",
+   893→          "demand": "medium",
+   894→          "notes": "Preco pendente - reporte para ajudar!"
+   895→        },
+   896→        {
+   897→          "id": "pure_water",
+   898→          "name": "Pure water",
+   899→          "steel": "?:?",
+   900→          "cement": "?:?",
+   901→          "rarity": "common",
+   902→          "demand": "medium",
+   903→          "notes": "Preco pendente - reporte para ajudar!"
+   904→        },
+   905→        {
+   906→          "id": "meat_cutlet",
+   907→          "name": "Meat cutlet",
+   908→          "steel": "?:?",
+   909→          "cement": "?:?",
+   910→          "rarity": "common",
+   911→          "demand": "medium",
+   912→          "notes": "Preco pendente - reporte para ajudar!"
+   913→        },
+   914→        {
+   915→          "id": "ration_pack",
+   916→          "name": "Ration pack",
+   917→          "steel": "?:?",
+   918→          "cement": "?:?",
+   919→          "rarity": "common",
+   920→          "demand": "medium",
+   921→          "notes": "Preco pendente - reporte para ajudar!"
+   922→        },
+   923→        {
+   924→          "id": "flying_spaghetti_monster",
+   925→          "name": "Flying spaghetti monster",
+   926→          "steel": "?:?",
+   927→          "cement": "?:?",
+   928→          "rarity": "common",
+   929→          "demand": "medium",
+   930→          "notes": "Preco pendente - reporte para ajudar!"
+   931→        },
+   932→        {
+   933→          "id": "stew_meat",
+   934→          "name": "Stew meat",
+   935→          "steel": "?:?",
+   936→          "cement": "?:?",
+   937→          "rarity": "common",
+   938→          "demand": "medium",
+   939→          "notes": "Preco pendente - reporte para ajudar!"
+   940→        },
+   941→        {
+   942→          "id": "salo",
+   943→          "name": "Salo",
+   944→          "steel": "?:?",
+   945→          "cement": "?:?",
+   946→          "rarity": "common",
+   947→          "demand": "medium",
+   948→          "notes": "Preco pendente - reporte para ajudar!"
+   949→        },
+   950→        {
+   951→          "id": "fried_snake",
+   952→          "name": "Fried snake",
+   953→          "steel": "?:?",
+   954→          "cement": "?:?",
+   955→          "rarity": "common",
+   956→          "demand": "medium",
+   957→          "notes": "Preco pendente - reporte para ajudar!"
+   958→        },
+   959→        {
+   960→          "id": "candy_cane",
+   961→          "name": "Candy Cane",
+   962→          "steel": "?:?",
+   963→          "cement": "?:?",
+   964→          "rarity": "common",
+   965→          "demand": "medium",
+   966→          "notes": "Preco pendente - reporte para ajudar!"
+   967→        },
+   968→        {
+   969→          "id": "fried_tough_meat",
+   970→          "name": "Fried Tough Meat",
+   971→          "steel": "?:?",
+   972→          "cement": "?:?",
+   973→          "rarity": "common",
+   974→          "demand": "medium",
+   975→          "notes": "Preco pendente - reporte para ajudar!"
+   976→        },
+   977→        {
+   978→          "id": "comcon_3_paste",
+   979→          "name": "ComCon-3 Paste",
+   980→          "steel": "?:?",
+   981→          "cement": "?:?",
+   982→          "rarity": "common",
+   983→          "demand": "medium",
+   984→          "notes": "Preco pendente - reporte para ajudar!"
+   985→        },
+   986→        {
+   987→          "id": "smoked_fatback",
+   988→          "name": "Smoked fatback",
+   989→          "steel": "?:?",
+   990→          "cement": "?:?",
+   991→          "rarity": "common",
+   992→          "demand": "medium",
+   993→          "notes": "Preco pendente - reporte para ajudar!"
+   994→        },
+   995→        {
+   996→          "id": "grilled_meat",
+   997→          "name": "Grilled Meat",
+   998→          "steel": "?:?",
+   999→          "cement": "?:?",
+  1000→          "rarity": "common",
+  1001→          "demand": "medium",
+  1002→          "notes": "Preco pendente - reporte para ajudar!"
+  1003→        },
+  1004→        {
+  1005→          "id": "mulled_wine",
+  1006→          "name": "Mulled Wine",
+  1007→          "steel": "?:?",
+  1008→          "cement": "?:?",
+  1009→          "rarity": "common",
+  1010→          "demand": "medium",
+  1011→          "notes": "Preco pendente - reporte para ajudar!"
+  1012→        },
+  1013→        {
+  1014→          "id": "strange_mushroom__white",
+  1015→          "name": "Strange mushroom (white)",
+  1016→          "steel": "?:?",
+  1017→          "cement": "?:?",
+  1018→          "rarity": "common",
+  1019→          "demand": "medium",
+  1020→          "notes": "Preco pendente - reporte para ajudar!"
+  1021→        },
+  1022→        {
+  1023→          "id": "spooky_energy_drink",
+  1024→          "name": "Spooky Energy Drink",
+  1025→          "steel": "?:?",
+  1026→          "cement": "?:?",
+  1027→          "rarity": "common",
+  1028→          "demand": "medium",
+  1029→          "notes": "Preco pendente - reporte para ajudar!"
+  1030→        },
+  1031→        {
+  1032→          "id": "stale_pryanik",
+  1033→          "name": "Stale Pryanik",
+  1034→          "steel": "?:?",
+  1035→          "cement": "?:?",
+  1036→          "rarity": "common",
+  1037→          "demand": "medium",
+  1038→          "notes": "Preco pendente - reporte para ajudar!"
+  1039→        },
+  1040→        {
+  1041→          "id": "rice_wine",
+  1042→          "name": "Rice wine",
+  1043→          "steel": "?:?",
+  1044→          "cement": "?:?",
+  1045→          "rarity": "common",
+  1046→          "demand": "medium",
+  1047→          "notes": "Preco pendente - reporte para ajudar!"
+  1048→        },
+  1049→        {
+  1050→          "id": "strange_mushroom__black",
+  1051→          "name": "Strange Mushroom (Black)",
+  1052→          "steel": "?:?",
+  1053→          "cement": "?:?",
+  1054→          "rarity": "common",
+  1055→          "demand": "medium",
+  1056→          "notes": "Preco pendente - reporte para ajudar!"
+  1057→        },
+  1058→        {
+  1059→          "id": "stuffed_cabbage",
+  1060→          "name": "Stuffed cabbage",
+  1061→          "steel": "?:?",
+  1062→          "cement": "?:?",
+  1063→          "rarity": "common",
+  1064→          "demand": "medium",
+  1065→          "notes": "Preco pendente - reporte para ajudar!"
+  1066→        },
+  1067→        {
+  1068→          "id": "shawarma",
+  1069→          "name": "Shawarma",
+  1070→          "steel": "?:?",
+  1071→          "cement": "?:?",
+  1072→          "rarity": "common",
+  1073→          "demand": "medium",
+  1074→          "notes": "Preco pendente - reporte para ajudar!"
+  1075→        },
+  1076→        {
+  1077→          "id": "peking_duck",
+  1078→          "name": "Peking Duck",
+  1079→          "steel": "?:?",
+  1080→          "cement": "?:?",
+  1081→          "rarity": "common",
+  1082→          "demand": "medium",
+  1083→          "notes": "Preco pendente - reporte para ajudar!"
+  1084→        },
+  1085→        {
+  1086→          "id": "pasta_with_ground_beef",
+  1087→          "name": "Pasta With Ground Beef",
+  1088→          "steel": "?:?",
+  1089→          "cement": "?:?",
+  1090→          "rarity": "common",
+  1091→          "demand": "medium",
+  1092→          "notes": "Preco pendente - reporte para ajudar!"
+  1093→        },
+  1094→        {
+  1095→          "id": "holiday_energy_drink",
+  1096→          "name": "Holiday Energy Drink",
+  1097→          "steel": "?:?",
+  1098→          "cement": "?:?",
+  1099→          "rarity": "common",
+  1100→          "demand": "medium",
+  1101→          "notes": "Preco pendente - reporte para ajudar!"
+  1102→        },
+  1103→        {
+  1104→          "id": "chicken_kiev",
+  1105→          "name": "Chicken kiev",
+  1106→          "steel": "?:?",
+  1107→          "cement": "?:?",
+  1108→          "rarity": "common",
+  1109→          "demand": "medium",
+  1110→          "notes": "Preco pendente - reporte para ajudar!"
+  1111→        },
+  1112→        {
+  1113→          "id": "infected_rusk",
+  1114→          "name": "Infected rusk",
+  1115→          "steel": "?:?",
+  1116→          "cement": "?:?",
+  1117→          "rarity": "common",
+  1118→          "demand": "medium",
+  1119→          "notes": "Preco pendente - reporte para ajudar!"
+  1120→        },
+  1121→        {
+  1122→          "id": "stewed_meat",
+  1123→          "name": "Stewed meat",
+  1124→          "steel": "?:?",
+  1125→          "cement": "?:?",
+  1126→          "rarity": "common",
+  1127→          "demand": "medium",
+  1128→          "notes": "Preco pendente - reporte para ajudar!"
+  1129→        },
+  1130→        {
+  1131→          "id": "chinese_energy_drink",
+  1132→          "name": "Chinese energy drink",
+  1133→          "steel": "?:?",
+  1134→          "cement": "?:?",
+  1135→          "rarity": "common",
+  1136→          "demand": "medium",
+  1137→          "notes": "Preco pendente - reporte para ajudar!"
+  1138→        },
+  1139→        {
+  1140→          "id": "cooked_pasta",
+  1141→          "name": "Cooked pasta",
+  1142→          "steel": "?:?",
+  1143→          "cement": "?:?",
+  1144→          "rarity": "common",
+  1145→          "demand": "medium",
+  1146→          "notes": "Preco pendente - reporte para ajudar!"
+  1147→        },
+  1148→        {
+  1149→          "id": "pelmeni",
+  1150→          "name": "Pelmeni",
+  1151→          "steel": "?:?",
+  1152→          "cement": "?:?",
+  1153→          "rarity": "common",
+  1154→          "demand": "medium",
+  1155→          "notes": "Preco pendente - reporte para ajudar!"
+  1156→        },
+  1157→        {
+  1158→          "id": "cooked_rice",
+  1159→          "name": "Cooked rice",
+  1160→          "steel": "?:?",
+  1161→          "cement": "?:?",
+  1162→          "rarity": "common",
+  1163→          "demand": "medium",
+  1164→          "notes": "Preco pendente - reporte para ajudar!"
+  1165→        },
+  1166→        {
+  1167→          "id": "pilaf",
+  1168→          "name": "Pilaf",
+  1169→          "steel": "?:?",
+  1170→          "cement": "?:?",
+  1171→          "rarity": "common",
+  1172→          "demand": "medium",
+  1173→          "notes": "Preco pendente - reporte para ajudar!"
+  1174→        },
+  1175→        {
+  1176→          "id": "rusks",
+  1177→          "name": "Rusks",
+  1178→          "steel": "?:?",
+  1179→          "cement": "?:?",
+  1180→          "rarity": "common",
+  1181→          "demand": "medium",
+  1182→          "notes": "Preco pendente - reporte para ajudar!"
+  1183→        },
+  1184→        {
+  1185→          "id": "caustic_distillate",
+  1186→          "name": "Caustic Distillate",
+  1187→          "steel": "?:?",
+  1188→          "cement": "?:?",
+  1189→          "rarity": "common",
+  1190→          "demand": "medium",
+  1191→          "notes": "Preco pendente - reporte para ajudar!"
+  1192→        },
+  1193→        {
+  1194→          "id": "hearty_chowder",
+  1195→          "name": "Hearty chowder",
+  1196→          "steel": "?:?",
+  1197→          "cement": "?:?",
+  1198→          "rarity": "common",
+  1199→          "demand": "medium",
+  1200→          "notes": "Preco pendente - reporte para ajudar!"
+  1201→        },
+  1202→        {
+  1203→          "id": "canned_pork",
+  1204→          "name": "Canned pork",
+  1205→          "steel": "?:?",
+  1206→          "cement": "?:?",
+  1207→          "rarity": "common",
+  1208→          "demand": "medium",
+  1209→          "notes": "Preco pendente - reporte para ajudar!"
+  1210→        },
+  1211→        {
+  1212→          "id": "rotten_fish",
+  1213→          "name": "Rotten fish",
+  1214→          "steel": "?:?",
+  1215→          "cement": "?:?",
+  1216→          "rarity": "common",
+  1217→          "demand": "medium",
+  1218→          "notes": "Preco pendente - reporte para ajudar!"
+  1219→        },
+  1220→        {
+  1221→          "id": "chocolate_bar",
+  1222→          "name": "Chocolate Bar",
+  1223→          "steel": "?:?",
+  1224→          "cement": "?:?",
+  1225→          "rarity": "common",
+  1226→          "demand": "medium",
+  1227→          "notes": "Preco pendente - reporte para ajudar!"
+  1228→        },
+  1229→        {
+  1230→          "id": "minced_meat",
+  1231→          "name": "Minced Meat",
+  1232→          "steel": "?:?",
+  1233→          "cement": "?:?",
+  1234→          "rarity": "common",
+  1235→          "demand": "medium",
+  1236→          "notes": "Preco pendente - reporte para ajudar!"
+  1237→        },
+  1238→        {
+  1239→          "id": "boiled_condensed_milk",
+  1240→          "name": "Boiled condensed milk",
+  1241→          "steel": "?:?",
+  1242→          "cement": "?:?",
+  1243→          "rarity": "common",
+  1244→          "demand": "medium",
+  1245→          "notes": "Preco pendente - reporte para ajudar!"
+  1246→        },
+  1247→        {
+  1248→          "id": "radioactive_meat",
+  1249→          "name": "Radioactive meat",
+  1250→          "steel": "?:?",
+  1251→          "cement": "?:?",
+  1252→          "rarity": "common",
+  1253→          "demand": "medium",
+  1254→          "notes": "Preco pendente - reporte para ajudar!"
+  1255→        },
+  1256→        {
+  1257→          "id": "blood_mold",
+  1258→          "name": "Blood mold",
+  1259→          "steel": "?:?",
+  1260→          "cement": "?:?",
+  1261→          "rarity": "common",
+  1262→          "demand": "medium",
+  1263→          "notes": "Preco pendente - reporte para ajudar!"
+  1264→        },
+  1265→        {
+  1266→          "id": "strange_mushroom",
+  1267→          "name": "Strange Mushroom",
+  1268→          "steel": "?:?",
+  1269→          "cement": "?:?",
+  1270→          "rarity": "common",
+  1271→          "demand": "medium",
+  1272→          "notes": "Preco pendente - reporte para ajudar!"
+  1273→        },
+  1274→        {
+  1275→          "id": "coulibiac",
+  1276→          "name": "Coulibiac",
+  1277→          "steel": "?:?",
+  1278→          "cement": "?:?",
+  1279→          "rarity": "common",
+  1280→          "demand": "medium",
+  1281→          "notes": "Preco pendente - reporte para ajudar!"
+  1282→        },
+  1283→        {
+  1284→          "id": "bio_energy_drink",
+  1285→          "name": "Bio-energy Drink",
+  1286→          "steel": "?:?",
+  1287→          "cement": "?:?",
+  1288→          "rarity": "common",
+  1289→          "demand": "medium",
+  1290→          "notes": "Preco pendente - reporte para ajudar!"
+  1291→        },
+  1292→        {
+  1293→          "id": "strange_mushroom__green",
+  1294→          "name": "Strange Mushroom (Green)",
+  1295→          "steel": "?:?",
+  1296→          "cement": "?:?",
+  1297→          "rarity": "common",
+  1298→          "demand": "medium",
+  1299→          "notes": "Preco pendente - reporte para ajudar!"
+  1300→        },
+  1301→        {
+  1302→          "id": "king_of_jokers",
+  1303→          "name": "King of Jokers",
+  1304→          "steel": "?:?",
+  1305→          "cement": "?:?",
+  1306→          "rarity": "common",
+  1307→          "demand": "medium",
+  1308→          "notes": "Preco pendente - reporte para ajudar!"
+  1309→        },
+  1310→        {
+  1311→          "id": "caviar_sandwich",
+  1312→          "name": "Caviar sandwich",
+  1313→          "steel": "?:?",
+  1314→          "cement": "?:?",
+  1315→          "rarity": "common",
+  1316→          "demand": "medium",
+  1317→          "notes": "Preco pendente - reporte para ajudar!"
+  1318→        },
+  1319→        {
+  1320→          "id": "fat",
+  1321→          "name": "Fat",
+  1322→          "steel": "?:?",
+  1323→          "cement": "?:?",
+  1324→          "rarity": "common",
+  1325→          "demand": "medium",
+  1326→          "notes": "Preco pendente - reporte para ajudar!"
+  1327→        },
+  1328→        {
+  1329→          "id": "spice",
+  1330→          "name": "Spice",
+  1331→          "steel": "?:?",
+  1332→          "cement": "?:?",
+  1333→          "rarity": "common",
+  1334→          "demand": "medium",
+  1335→          "notes": "Preco pendente - reporte para ajudar!"
+  1336→        },
+  1337→        {
+  1338→          "id": "fresh_fish",
+  1339→          "name": "Fresh fish",
+  1340→          "steel": "?:?",
+  1341→          "cement": "?:?",
+  1342→          "rarity": "common",
+  1343→          "demand": "medium",
+  1344→          "notes": "Preco pendente - reporte para ajudar!"
+  1345→        },
+  1346→        {
+  1347→          "id": "fried_meat",
+  1348→          "name": "Fried meat",
+  1349→          "steel": "?:?",
+  1350→          "cement": "?:?",
+  1351→          "rarity": "common",
+  1352→          "demand": "medium",
+  1353→          "notes": "Preco pendente - reporte para ajudar!"
+  1354→        },
+  1355→        {
+  1356→          "id": "smuggled_energy_drink",
+  1357→          "name": "Smuggled Energy Drink",
+  1358→          "steel": "?:?",
+  1359→          "cement": "?:?",
+  1360→          "rarity": "common",
+  1361→          "demand": "medium",
+  1362→          "notes": "Preco pendente - reporte para ajudar!"
+  1363→        },
+  1364→        {
+  1365→          "id": "ice_cream",
+  1366→          "name": "Ice Cream",
+  1367→          "steel": "?:?",
+  1368→          "cement": "?:?",
+  1369→          "rarity": "common",
+  1370→          "demand": "medium",
+  1371→          "notes": "Preco pendente - reporte para ajudar!"
+  1372→        },
+  1373→        {
+  1374→          "id": "boiled_egg",
+  1375→          "name": "Boiled Egg",
+  1376→          "steel": "?:?",
+  1377→          "cement": "?:?",
+  1378→          "rarity": "common",
+  1379→          "demand": "medium",
+  1380→          "notes": "Preco pendente - reporte para ajudar!"
+  1381→        },
+  1382→        {
+  1383→          "id": "pie",
+  1384→          "name": "Pie",
+  1385→          "steel": "?:?",
+  1386→          "cement": "?:?",
+  1387→          "rarity": "common",
+  1388→          "demand": "medium",
+  1389→          "notes": "Preco pendente - reporte para ajudar!"
+  1390→        },
+  1391→        {
+  1392→          "id": "mushroom_soup",
+  1393→          "name": "Mushroom soup",
+  1394→          "steel": "?:?",
+  1395→          "cement": "?:?",
+  1396→          "rarity": "common",
+  1397→          "demand": "medium",
+  1398→          "notes": "Preco pendente - reporte para ajudar!"
+  1399→        },
+  1400→        {
+  1401→          "id": "mushroom_with_eyes",
+  1402→          "name": "Mushroom with eyes",
+  1403→          "steel": "?:?",
+  1404→          "cement": "?:?",
+  1405→          "rarity": "common",
+  1406→          "demand": "medium",
+  1407→          "notes": "Preco pendente - reporte para ajudar!"
+  1408→        },
+  1409→        {
+  1410→          "id": "blini",
+  1411→          "name": "Blini",
+  1412→          "steel": "?:?",
+  1413→          "cement": "?:?",
+  1414→          "rarity": "common",
+  1415→          "demand": "medium",
+  1416→          "notes": "Preco pendente - reporte para ajudar!"
+  1417→        },
+  1418→        {
+  1419→          "id": "fried_mutant_meat",
+  1420→          "name": "Fried mutant meat",
+  1421→          "steel": "?:?",
+  1422→          "cement": "?:?",
+  1423→          "rarity": "common",
+  1424→          "demand": "medium",
+  1425→          "notes": "Preco pendente - reporte para ajudar!"
+  1426→        },
+  1427→        {
+  1428→          "id": "strange_mushroom__violet",
+  1429→          "name": "Strange Mushroom (Violet)",
+  1430→          "steel": "?:?",
+  1431→          "cement": "?:?",
+  1432→          "rarity": "common",
+  1433→          "demand": "medium",
+  1434→          "notes": "Preco pendente - reporte para ajudar!"
+  1435→        },
+  1436→        {
+  1437→          "id": "old_canned_meat",
+  1438→          "name": "Old Canned Meat",
+  1439→          "steel": "?:?",
+  1440→          "cement": "?:?",
+  1441→          "rarity": "common",
+  1442→          "demand": "medium",
+  1443→          "notes": "Preco pendente - reporte para ajudar!"
+  1444→        },
+  1445→        {
+  1446→          "id": "rice_bun",
+  1447→          "name": "Rice Bun",
+  1448→          "steel": "?:?",
+  1449→          "cement": "?:?",
+  1450→          "rarity": "common",
+  1451→          "demand": "medium",
+  1452→          "notes": "Preco pendente - reporte para ajudar!"
+  1453→        },
+  1454→        {
+  1455→          "id": "meat_rissole",
+  1456→          "name": "Meat rissole",
+  1457→          "steel": "?:?",
+  1458→          "cement": "?:?",
+  1459→          "rarity": "common",
+  1460→          "demand": "medium",
+  1461→          "notes": "Preco pendente - reporte para ajudar!"
+  1462→        },
+  1463→        {
+  1464→          "id": "smoked_salo",
+  1465→          "name": "Smoked salo",
+  1466→          "steel": "?:?",
+  1467→          "cement": "?:?",
+  1468→          "rarity": "common",
+  1469→          "demand": "medium",
+  1470→          "notes": "Preco pendente - reporte para ajudar!"
+  1471→        },
+  1472→        {
+  1473→          "id": "trophy_cognac",
+  1474→          "name": "Trophy Cognac",
+  1475→          "steel": "?:?",
+  1476→          "cement": "?:?",
+  1477→          "rarity": "common",
+  1478→          "demand": "medium",
+  1479→          "notes": "Preco pendente - reporte para ajudar!"
+  1480→        }
+  1481→      ]
+  1482→    },
+  1483→    {
+  1484→      "id": "herbs",
+  1485→      "name": "🌿 Ervas, Sementes e Cogumelos",
+  1486→      "items": [
+  1487→        {
+  1488→          "id": "wheat",
+  1489→          "name": "Trigo",
+  1490→          "steel": "3:1",
+  1491→          "cement": "6:1",
+  1492→          "rarity": "common",
+  1493→          "demand": "medium",
+  1494→          "notes": "Cultivo"
+  1495→        },
+  1496→        {
+  1497→          "id": "corn",
+  1498→          "name": "Milho",
+  1499→          "steel": "4:1",
+  1500→          "cement": "8:1",
+  1501→          "rarity": "common",
+  1502→          "demand": "medium",
+  1503→          "notes": "Cultivo"
+  1504→        },
+  1505→        {
+  1506→          "id": "potatoes",
+  1507→          "name": "Batatas",
+  1508→          "steel": "4:1",
+  1509→          "cement": "8:1",
+  1510→          "rarity": "common",
+  1511→          "demand": "medium",
+  1512→          "notes": "Cultivo"
+  1513→        },
+  1514→        {
+  1515→          "id": "pumpkin",
+  1516→          "name": "Abóbora",
+  1517→          "steel": "1:1",
+  1518→          "cement": "2:1",
+  1519→          "rarity": "common",
+  1520→          "demand": "low",
+  1521→          "notes": "Cultivo"
+  1522→        },
+  1523→        {
+  1524→          "id": "apple",
+  1525→          "name": "Maçã",
+  1526→          "steel": "5:1",
+  1527→          "cement": "10:1",
+  1528→          "rarity": "common",
+  1529→          "demand": "medium",
+  1530→          "notes": "Fruta"
+  1531→        },
+  1532→        {
+  1533→          "id": "strawberry",
+  1534→          "name": "Morango",
+  1535→          "steel": "5:1",
+  1536→          "cement": "10:1",
+  1537→          "rarity": "common",
+  1538→          "demand": "medium",
+  1539→          "notes": "Fruta"
+  1540→        },
+  1541→        {
+  1542→          "id": "cranberry",
+  1543→          "name": "Cranberry / Oxicoco",
+  1544→          "steel": "4:1",
+  1545→          "cement": "8:1",
+  1546→          "rarity": "common",
+  1547→          "demand": "medium",
+  1548→          "notes": "Fruta"
+  1549→        },
+  1550→        {
+  1551→          "id": "tangerine",
+  1552→          "name": "Tangerina",
+  1553→          "steel": "3:1",
+  1554→          "cement": "6:1",
+  1555→          "rarity": "common",
+  1556→          "demand": "low",
+  1557→          "notes": "Fruta"
+  1558→        },
+  1559→        {
+  1560→          "id": "vegetables",
+  1561→          "name": "Legumes",
+  1562→          "steel": "4:1",
+  1563→          "cement": "8:1",
+  1564→          "rarity": "common",
+  1565→          "demand": "medium",
+  1566→          "notes": "Vegetal"
+  1567→        },
+  1568→        {
+  1569→          "id": "chanterelle",
+  1570→          "name": "Cantarela",
+  1571→          "steel": "4:1",
+  1572→          "cement": "8:1",
+  1573→          "rarity": "common",
+  1574→          "demand": "medium",
+  1575→          "notes": "Cogumelo"
+  1576→        },
+  1577→        {
+  1578→          "id": "radioactive_mushroom",
+  1579→          "name": "Cogumelo Radioativo",
+  1580→          "steel": "2:1",
+  1581→          "cement": "4:1",
+  1582→          "rarity": "uncommon",
+  1583→          "demand": "low",
+  1584→          "notes": "Cogumelo radioativo"
+  1585→        },
+  1586→        {
+  1587→          "id": "fly_agaric",
+  1588→          "name": "Agário-das-moscas",
+  1589→          "steel": "4:1",
+  1590→          "cement": "8:1",
+  1591→          "rarity": "uncommon",
+  1592→          "demand": "low",
+  1593→          "notes": "Cogumelo venenoso"
+  1594→        },
+  1595→        {
+  1596→          "id": "moss",
+  1597→          "name": "Musgo",
+  1598→          "steel": "3:1",
+  1599→          "cement": "6:1",
+  1600→          "rarity": "common",
+  1601→          "demand": "low",
+  1602→          "notes": "Planta"
+  1603→        },
+  1604→        {
+  1605→          "id": "dandelion",
+  1606→          "name": "Dente-de-leão",
+  1607→          "steel": "5:1",
+  1608→          "cement": "10:1",
+  1609→          "rarity": "common",
+  1610→          "demand": "low",
+  1611→          "notes": "Erva"
+  1612→        },
+  1613→        {
+  1614→          "id": "deer_ear",
+  1615→          "name": "Orelha-de-veado",
+  1616→          "steel": "3:1",
+  1617→          "cement": "6:1",
+  1618→          "rarity": "common",
+  1619→          "demand": "low",
+  1620→          "notes": "Planta"
+  1621→        },
+  1622→        {
+  1623→          "id": "nettle",
+  1624→          "name": "Urtiga",
+  1625→          "steel": "5:1",
+  1626→          "cement": "10:1",
+  1627→          "rarity": "common",
+  1628→          "demand": "low",
+  1629→          "notes": "Erva"
+  1630→        },
+  1631→        {
+  1632→          "id": "belladonna",
+  1633→          "name": "Beladona",
+  1634→          "steel": "5:1",
+  1635→          "cement": "10:1",
+  1636→          "rarity": "uncommon",
+  1637→          "demand": "low",
+  1638→          "notes": "Planta venenosa"
+  1639→        },
+  1640→        {
+  1641→          "id": "serrated_grass",
+  1642→          "name": "Capim-serrilhado",
+  1643→          "steel": "2:1",
+  1644→          "cement": "4:1",
+  1645→          "rarity": "common",
+  1646→          "demand": "low",
+  1647→          "notes": "Planta"
+  1648→        },
+  1649→        {
+  1650→          "id": "bloody_mold",
+  1651→          "name": "Mofo Sangrento",
+  1652→          "steel": "2:1",
+  1653→          "cement": "4:1",
+  1654→          "rarity": "uncommon",
+  1655→          "demand": "low",
+  1656→          "notes": "Mofo radioativo"
+  1657→        },
+  1658→        {
+  1659→          "id": "potato_pancakes",
+  1660→          "name": "Potato Pancakes",
+  1661→          "steel": "?:?",
+  1662→          "cement": "?:?",
+  1663→          "rarity": "common",
+  1664→          "demand": "medium",
+  1665→          "notes": "Preco pendente - reporte para ajudar!"
+  1666→        },
+  1667→        {
+  1668→          "id": "mashed_potatoes",
+  1669→          "name": "Mashed potatoes",
+  1670→          "steel": "?:?",
+  1671→          "cement": "?:?",
+  1672→          "rarity": "common",
+  1673→          "demand": "medium",
+  1674→          "notes": "Preco pendente - reporte para ajudar!"
+  1675→        },
+  1676→        {
+  1677→          "id": "boiled_corn",
+  1678→          "name": "Boiled corn",
+  1679→          "steel": "?:?",
+  1680→          "cement": "?:?",
+  1681→          "rarity": "common",
+  1682→          "demand": "medium",
+  1683→          "notes": "Preco pendente - reporte para ajudar!"
+  1684→        },
+  1685→        {
+  1686→          "id": "toothgrass",
+  1687→          "name": "Toothgrass",
+  1688→          "steel": "?:?",
+  1689→          "cement": "?:?",
+  1690→          "rarity": "common",
+  1691→          "demand": "medium",
+  1692→          "notes": "Preco pendente - reporte para ajudar!"
+  1693→        },
+  1694→        {
+  1695→          "id": "apple_cordial",
+  1696→          "name": "Apple Cordial",
+  1697→          "steel": "?:?",
+  1698→          "cement": "?:?",
+  1699→          "rarity": "common",
+  1700→          "demand": "medium",
+  1701→          "notes": "Preco pendente - reporte para ajudar!"
+  1702→        },
+  1703→        {
+  1704→          "id": "potato",
+  1705→          "name": "Potato",
+  1706→          "steel": "?:?",
+  1707→          "cement": "?:?",
+  1708→          "rarity": "common",
+  1709→          "demand": "medium",
+  1710→          "notes": "Preco pendente - reporte para ajudar!"
+  1711→        },
+  1712→        {
+  1713→          "id": "dandelion_tea",
+  1714→          "name": "Dandelion Tea",
+  1715→          "steel": "?:?",
+  1716→          "cement": "?:?",
+  1717→          "rarity": "common",
+  1718→          "demand": "medium",
+  1719→          "notes": "Preco pendente - reporte para ajudar!"
+  1720→        },
+  1721→        {
+  1722→          "id": "cooked_buckwheat",
+  1723→          "name": "Cooked buckwheat",
+  1724→          "steel": "?:?",
+  1725→          "cement": "?:?",
+  1726→          "rarity": "common",
+  1727→          "demand": "medium",
+  1728→          "notes": "Preco pendente - reporte para ajudar!"
+  1729→        },
+  1730→        {
+  1731→          "id": "dandelion_tea",
+  1732→          "name": "Dandelion tea",
+  1733→          "steel": "?:?",
+  1734→          "cement": "?:?",
+  1735→          "rarity": "common",
+  1736→          "demand": "medium",
+  1737→          "notes": "Preco pendente - reporte para ajudar!"
+  1738→        },
+  1739→        {
+  1740→          "id": "candy_apple",
+  1741→          "name": "Candy apple",
+  1742→          "steel": "?:?",
+  1743→          "cement": "?:?",
+  1744→          "rarity": "common",
+  1745→          "demand": "medium",
+  1746→          "notes": "Preco pendente - reporte para ajudar!"
+  1747→        },
+  1748→        {
+  1749→          "id": "cooked_buckwheat",
+  1750→          "name": "Cooked Buckwheat",
+  1751→          "steel": "?:?",
+  1752→          "cement": "?:?",
+  1753→          "rarity": "common",
+  1754→          "demand": "medium",
+  1755→          "notes": "Preco pendente - reporte para ajudar!"
+  1756→        },
+  1757→        {
+  1758→          "id": "strawberry_cake",
+  1759→          "name": "Strawberry cake",
+  1760→          "steel": "?:?",
+  1761→          "cement": "?:?",
+  1762→          "rarity": "common",
+  1763→          "demand": "medium",
+  1764→          "notes": "Preco pendente - reporte para ajudar!"
+  1765→        },
+  1766→        {
+  1767→          "id": "potato_pancakes",
+  1768→          "name": "Potato pancakes",
+  1769→          "steel": "?:?",
+  1770→          "cement": "?:?",
+  1771→          "rarity": "common",
+  1772→          "demand": "medium",
+  1773→          "notes": "Preco pendente - reporte para ajudar!"
+  1774→        },
+  1775→        {
+  1776→          "id": "buckwheat_grains",
+  1777→          "name": "Buckwheat grains",
+  1778→          "steel": "?:?",
+  1779→          "cement": "?:?",
+  1780→          "rarity": "common",
+  1781→          "demand": "medium",
+  1782→          "notes": "Preco pendente - reporte para ajudar!"
+  1783→        },
+  1784→        {
+  1785→          "id": "bamboo_steamer",
+  1786→          "name": "Bamboo Steamer",
+  1787→          "steel": "?:?",
+  1788→          "cement": "?:?",
+  1789→          "rarity": "common",
+  1790→          "demand": "medium",
+  1791→          "notes": "Preco pendente - reporte para ajudar!"
+  1792→        },
+  1793→        {
+  1794→          "id": "pumpkin_soup",
+  1795→          "name": "Pumpkin Soup",
+  1796→          "steel": "?:?",
+  1797→          "cement": "?:?",
+  1798→          "rarity": "common",
+  1799→          "demand": "medium",
+  1800→          "notes": "Preco pendente - reporte para ajudar!"
+  1801→        },
+  1802→        {
+  1803→          "id": "fried_potato",
+  1804→          "name": "Fried potato",
+  1805→          "steel": "?:?",
+  1806→          "cement": "?:?",
+  1807→          "rarity": "common",
+  1808→          "demand": "medium",
+  1809→          "notes": "Preco pendente - reporte para ajudar!"
+  1810→        },
+  1811→        {
+  1812→          "id": "apple_cordial",
+  1813→          "name": "Apple cordial",
+  1814→          "steel": "?:?",
+  1815→          "cement": "?:?",
+  1816→          "rarity": "common",
+  1817→          "demand": "medium",
+  1818→          "notes": "Preco pendente - reporte para ajudar!"
+  1819→        },
+  1820→        {
+  1821→          "id": "pumpkin_seeds",
+  1822→          "name": "Pumpkin seeds",
+  1823→          "steel": "?:?",
+  1824→          "cement": "?:?",
+  1825→          "rarity": "common",
+  1826→          "demand": "medium",
+  1827→          "notes": "Preco pendente - reporte para ajudar!"
+  1828→        },
+  1829→        {
+  1830→          "id": "apple_seeds",
+  1831→          "name": "Apple seeds",
+  1832→          "steel": "?:?",
+  1833→          "cement": "?:?",
+  1834→          "rarity": "common",
+  1835→          "demand": "medium",
+  1836→          "notes": "Preco pendente - reporte para ajudar!"
+  1837→        },
+  1838→        {
+  1839→          "id": "corn_seeds",
+  1840→          "name": "Corn seeds",
+  1841→          "steel": "?:?",
+  1842→          "cement": "?:?",
+  1843→          "rarity": "common",
+  1844→          "demand": "medium",
+  1845→          "notes": "Preco pendente - reporte para ajudar!"
+  1846→        },
+  1847→        {
+  1848→          "id": "wheat_seeds",
+  1849→          "name": "Wheat seeds",
+  1850→          "steel": "?:?",
+  1851→          "cement": "?:?",
+  1852→          "rarity": "common",
+  1853→          "demand": "medium",
+  1854→          "notes": "Preco pendente - reporte para ajudar!"
+  1855→        },
+  1856→        {
+  1857→          "id": "greenhouse",
+  1858→          "name": "Greenhouse",
+  1859→          "steel": "?:?",
+  1860→          "cement": "?:?",
+  1861→          "rarity": "common",
+  1862→          "demand": "medium",
+  1863→          "notes": "Preco pendente - reporte para ajudar!"
+  1864→        },
+  1865→        {
+  1866→          "id": "potato_seeds",
+  1867→          "name": "Potato seeds",
+  1868→          "steel": "?:?",
+  1869→          "cement": "?:?",
+  1870→          "rarity": "common",
+  1871→          "demand": "medium",
+  1872→          "notes": "Preco pendente - reporte para ajudar!"
+  1873→        },
+  1874→        {
+  1875→          "id": "tangerine_seeds",
+  1876→          "name": "Tangerine seeds",
+  1877→          "steel": "?:?",
+  1878→          "cement": "?:?",
+  1879→          "rarity": "common",
+  1880→          "demand": "medium",
+  1881→          "notes": "Preco pendente - reporte para ajudar!"
+  1882→        },
+  1883→        {
+  1884→          "id": "strawberry_seed",
+  1885→          "name": "Strawberry seed",
+  1886→          "steel": "?:?",
+  1887→          "cement": "?:?",
+  1888→          "rarity": "common",
+  1889→          "demand": "medium",
+  1890→          "notes": "Preco pendente - reporte para ajudar!"
+  1891→        },
+  1892→        {
+  1893→          "id": "mysterious_fruit_seeds",
+  1894→          "name": "Mysterious Fruit Seeds",
+  1895→          "steel": "?:?",
+  1896→          "cement": "?:?",
+  1897→          "rarity": "common",
+  1898→          "demand": "medium",
+  1899→          "notes": "Preco pendente - reporte para ajudar!"
+  1900→        },
+  1901→        {
+  1902→          "id": "strange_mushroom__white",
+  1903→          "name": "Strange Mushroom (White)",
+  1904→          "steel": "?:?",
+  1905→          "cement": "?:?",
+  1906→          "rarity": "common",
+  1907→          "demand": "medium",
+  1908→          "notes": "Preco pendente - reporte para ajudar!"
+  1909→        },
+  1910→        {
+  1911→          "id": "strange_mushroom__yellow",
+  1912→          "name": "Strange Mushroom (Yellow)",
+  1913→          "steel": "?:?",
+  1914→          "cement": "?:?",
+  1915→          "rarity": "common",
+  1916→          "demand": "medium",
+  1917→          "notes": "Preco pendente - reporte para ajudar!"
+  1918→        },
+  1919→        {
+  1920→          "id": "strange_mushroom__light_blue",
+  1921→          "name": "Strange Mushroom (Light Blue)",
+  1922→          "steel": "?:?",
+  1923→          "cement": "?:?",
+  1924→          "rarity": "common",
+  1925→          "demand": "medium",
+  1926→          "notes": "Preco pendente - reporte para ajudar!"
+  1927→        },
+  1928→        {
+  1929→          "id": "strange_mushroom__blue",
+  1930→          "name": "Strange Mushroom (Blue)",
+  1931→          "steel": "?:?",
+  1932→          "cement": "?:?",
+  1933→          "rarity": "common",
+  1934→          "demand": "medium",
+  1935→          "notes": "Preco pendente - reporte para ajudar!"
+  1936→        },
+  1937→        {
+  1938→          "id": "strange_mushroom__violet",
+  1939→          "name": "Strange Mushroom (Violet)",
+  1940→          "steel": "?:?",
+  1941→          "cement": "?:?",
+  1942→          "rarity": "common",
+  1943→          "demand": "medium",
+  1944→          "notes": "Preco pendente - reporte para ajudar!"
+  1945→        },
+  1946→        {
+  1947→          "id": "amanita",
+  1948→          "name": "Amanita",
+  1949→          "steel": "?:?",
+  1950→          "cement": "?:?",
+  1951→          "rarity": "common",
+  1952→          "demand": "medium",
+  1953→          "notes": "Preco pendente - reporte para ajudar!"
+  1954→        },
+  1955→        {
+  1956→          "id": "strange_mushroom__red",
+  1957→          "name": "Strange Mushroom (Red)",
+  1958→          "steel": "?:?",
+  1959→          "cement": "?:?",
+  1960→          "rarity": "common",
+  1961→          "demand": "medium",
+  1962→          "notes": "Preco pendente - reporte para ajudar!"
+  1963→        },
+  1964→        {
+  1965→          "id": "strange_mushroom__black",
+  1966→          "name": "Strange Mushroom (Black)",
+  1967→          "steel": "?:?",
+  1968→          "cement": "?:?",
+  1969→          "rarity": "common",
+  1970→          "demand": "medium",
+  1971→          "notes": "Preco pendente - reporte para ajudar!"
+  1972→        },
+  1973→        {
+  1974→          "id": "strange_mushroom__green",
+  1975→          "name": "Strange Mushroom (Green)",
+  1976→          "steel": "?:?",
+  1977→          "cement": "?:?",
+  1978→          "rarity": "common",
+  1979→          "demand": "medium",
+  1980→          "notes": "Preco pendente - reporte para ajudar!"
+  1981→        },
+  1982→        {
+  1983→          "id": "mushroom_with_eyes",
+  1984→          "name": "Mushroom with eyes",
+  1985→          "steel": "?:?",
+  1986→          "cement": "?:?",
+  1987→          "rarity": "common",
+  1988→          "demand": "medium",
+  1989→          "notes": "Preco pendente - reporte para ajudar!"
+  1990→        }
+  1991→      ]
+  1992→    },
+  1993→    {
+  1994→      "id": "components",
+  1995→      "name": "⚙️ Componentes e Materiais",
+  1996→      "items": [
+  1997→        {
+  1998→          "id": "steel",
+  1999→          "name": "Aço",
+  2000→          "steel": "1:1",
+
+[showing lines 1-2000 of 8645; use offset=2001 with limit to continue reading]
