@@ -156,3 +156,13 @@ model NumeroLoterica {
   dataCompra DateTime?
   loterica   Loterica @relation(fields: [lotericaId], references: [id], onDelete: Cascade)
 }
+
+model PriceReport {
+  id         String   @id @default(cuid())
+  itemId     String
+  itemName   String
+  nickname   String
+  steelPrice Int
+  cementPrice Int
+  data       DateTime @default(now())
+}

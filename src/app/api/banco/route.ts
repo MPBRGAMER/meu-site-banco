@@ -137,6 +137,36 @@ export async function GET(req: NextRequest) {
         });
         return json(data);
       }
+      case "getPriceReports": {
+        const itemId = searchParams.get("itemId");
+        const where = itemId ? { itemId } : {};
+        const data = await db.priceReport.findMany({
+          where,
+          orderBy: { data: "desc" },
+          take: 200,
+        });
+        return json(data);
+      }
+      case "getReporterRanking": {
+        const reports = await db.priceReport.findMany({
+          orderBy: { data: "desc" },
+        });
+        const grouped: Record<string, { nickname: string; count: number; lastReport: string }> = {};
+        for (const r of reports) {
+          const key = r.nickname.toLowerCase();
+          if (!grouped[key]) {
+            grouped[key] = { nickname: r.nickname, count: 0, lastReport: r.data.toISOString() };
+          }
+          grouped[key].count++;
+          if (r.data > new Date(grouped[key].lastReport)) {
+            grouped[key].lastReport = r.data.toISOString();
+          }
+        }
+        const ranking = Object.values(grouped)
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 10);
+        return json(ranking);
+      }
       default:
         return err("Ação GET desconhecida: " + action);
     }
@@ -554,6 +584,24 @@ export async function POST(req: NextRequest) {
           numeroSorteado,
           ganhador: ganhador ? ganhador.comprador : null,
         });
+      }
+
+      // === PRICE REPORTS ===
+      case "reportPrice": {
+        const { itemId, itemName, nickname, steelPrice, cementPrice } = data;
+        if (!itemId || !itemName || !nickname || steelPrice === undefined || cementPrice === undefined) {
+          return err("Campos obrigatórios: itemId, itemName, nickname, steelPrice, cementPrice");
+        }
+        const report = await db.priceReport.create({
+          data: {
+            itemId,
+            itemName,
+            nickname,
+            steelPrice: Number(steelPrice),
+            cementPrice: Number(cementPrice),
+          },
+        });
+        return json(report);
       }
 
       default:

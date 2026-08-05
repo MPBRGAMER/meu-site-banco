@@ -1,0 +1,3110 @@
+[
+  [
+    "%22DIY Nets%22",
+    "tools"
+  ],
+  [
+    "%22Silage%22 Mincer",
+    "tools"
+  ],
+  [
+    "14k Lantern",
+    "equipment"
+  ],
+  [
+    "7.62x25mm TT Shell",
+    "material"
+  ],
+  [
+    "AKM-C",
+    "weapons"
+  ],
+  [
+    "AKS-74U (broken)",
+    "material"
+  ],
+  [
+    "APS (Broken)",
+    "material"
+  ],
+  [
+    "Abakan",
+    "weapons"
+  ],
+  [
+    "Abandoned house",
+    "constructions"
+  ],
+  [
+    "Acid gland",
+    "material"
+  ],
+  [
+    "Acidoemitter",
+    "weapons"
+  ],
+  [
+    "Activated charcoal",
+    "medicine"
+  ],
+  [
+    "Alcohol",
+    "food"
+  ],
+  [
+    "Alien Blaster",
+    "weapons"
+  ],
+  [
+    "All-In",
+    "weapons"
+  ],
+  [
+    "Alphacelone",
+    "medicine"
+  ],
+  [
+    "Aluminum",
+    "material"
+  ],
+  [
+    "Aluminum Scrap",
+    "material"
+  ],
+  [
+    "Amanita",
+    "food"
+  ],
+  [
+    "Antelope",
+    "weapons"
+  ],
+  [
+    "Antibiotics",
+    "medicine"
+  ],
+  [
+    "Antidote",
+    "material"
+  ],
+  [
+    "Antiquarian%27s Feedbag",
+    "equipment"
+  ],
+  [
+    "Apple",
+    "food"
+  ],
+  [
+    "Apple Cordial",
+    "food"
+  ],
+  [
+    "Apple seeds",
+    "material"
+  ],
+  [
+    "Aqua Vitae",
+    "food"
+  ],
+  [
+    "Arctic Armor",
+    "equipment"
+  ],
+  [
+    "Armor Plate",
+    "material"
+  ],
+  [
+    "Armored Uniform",
+    "equipment"
+  ],
+  [
+    "Armorpiercer",
+    "weapons"
+  ],
+  [
+    "Army Bulletproof Vest",
+    "equipment"
+  ],
+  [
+    "Assault Rifle Ammo",
+    "weapons"
+  ],
+  [
+    "Assault rifle parts",
+    "material"
+  ],
+  [
+    "Assault rifle shell",
+    "material"
+  ],
+  [
+    "Auto spare parts",
+    "material"
+  ],
+  [
+    "Ave Maria",
+    "weapons"
+  ],
+  [
+    "Axe",
+    "material"
+  ],
+  [
+    "Axe (tool)",
+    "tools"
+  ],
+  [
+    "B Injector",
+    "medicine"
+  ],
+  [
+    "BS-4 Power Armor",
+    "equipment"
+  ],
+  [
+    "Bad Santa",
+    "weapons"
+  ],
+  [
+    "Bait",
+    "equipment"
+  ],
+  [
+    "Bamboo Steamer",
+    "food"
+  ],
+  [
+    "Bardiche",
+    "weapons"
+  ],
+  [
+    "Barrel",
+    "material"
+  ],
+  [
+    "Battery",
+    "material"
+  ],
+  [
+    "Battery Flashlight",
+    "equipment"
+  ],
+  [
+    "Beetle Juice",
+    "food"
+  ],
+  [
+    "Bellows",
+    "material"
+  ],
+  [
+    "Berdan Rifle",
+    "weapons"
+  ],
+  [
+    "Biathlon-84",
+    "weapons"
+  ],
+  [
+    "Bicycle Spare Parts",
+    "material"
+  ],
+  [
+    "Bingo",
+    "weapons"
+  ],
+  [
+    "Bio-energy Drink",
+    "food"
+  ],
+  [
+    "Bioblocade Inhaler",
+    "medicine"
+  ],
+  [
+    "Biocontainer",
+    "equipment"
+  ],
+  [
+    "Biodetector",
+    "tools"
+  ],
+  [
+    "Biosynthesizer",
+    "tools"
+  ],
+  [
+    "Biotonic",
+    "medicine"
+  ],
+  [
+    "Black coal",
+    "material"
+  ],
+  [
+    "Black-and-Red",
+    "equipment"
+  ],
+  [
+    "Blackjack",
+    "weapons"
+  ],
+  [
+    "Blank",
+    "material"
+  ],
+  [
+    "Blank Cartridge",
+    "material"
+  ],
+  [
+    "Blini",
+    "food"
+  ],
+  [
+    "Blood mold",
+    "food"
+  ],
+  [
+    "Blood poisoning",
+    "medicine"
+  ],
+  [
+    "Blowtorch",
+    "tools"
+  ],
+  [
+    "Boiled Egg",
+    "food"
+  ],
+  [
+    "Boiled Leather",
+    "material"
+  ],
+  [
+    "Boiled condensed milk",
+    "food"
+  ],
+  [
+    "Boiled corn",
+    "food"
+  ],
+  [
+    "Bone Vest",
+    "equipment"
+  ],
+  [
+    "Bone glue",
+    "material"
+  ],
+  [
+    "Borschevik Flamethrower",
+    "weapons"
+  ],
+  [
+    "Bowl of rice",
+    "food"
+  ],
+  [
+    "Bread",
+    "food"
+  ],
+  [
+    "Brick",
+    "material"
+  ],
+  [
+    "Brick house",
+    "constructions"
+  ],
+  [
+    "Brick oven",
+    "constructions"
+  ],
+  [
+    "Broadleaf plantain",
+    "material"
+  ],
+  [
+    "Broken Mosin-Nagant",
+    "material"
+  ],
+  [
+    "Broken bav-485",
+    "material"
+  ],
+  [
+    "Broken bicycle",
+    "material"
+  ],
+  [
+    "Broken car battery",
+    "material"
+  ],
+  [
+    "Broken mi-8",
+    "material"
+  ],
+  [
+    "Broken motorcycle",
+    "material"
+  ],
+  [
+    "Broken vehicles",
+    "material"
+  ],
+  [
+    "Bryocarm",
+    "medicine"
+  ],
+  [
+    "Buckwheat",
+    "food"
+  ],
+  [
+    "Buckwheat grains",
+    "food"
+  ],
+  [
+    "Bulletproof vest",
+    "equipment"
+  ],
+  [
+    "Bunny Costume",
+    "equipment"
+  ],
+  [
+    "Bunny Treat",
+    "food"
+  ],
+  [
+    "Butcher%27s Backpack",
+    "equipment"
+  ],
+  [
+    "Butterfly Knife",
+    "weapons"
+  ],
+  [
+    "Bye-Bye Rad",
+    "medicine"
+  ],
+  [
+    "C-3 Cologne",
+    "medicine"
+  ],
+  [
+    "CPE Leader",
+    "equipment"
+  ],
+  [
+    "Cabbage roll",
+    "food"
+  ],
+  [
+    "Cake",
+    "food"
+  ],
+  [
+    "Cake napoleon",
+    "food"
+  ],
+  [
+    "Can",
+    "material"
+  ],
+  [
+    "Candy Cane",
+    "food"
+  ],
+  [
+    "Candy apple",
+    "food"
+  ],
+  [
+    "Canned Beans",
+    "food"
+  ],
+  [
+    "Canned Water",
+    "food"
+  ],
+  [
+    "Canned beef",
+    "food"
+  ],
+  [
+    "Canned pork",
+    "food"
+  ],
+  [
+    "Canned porridge",
+    "food"
+  ],
+  [
+    "Car battery",
+    "material"
+  ],
+  [
+    "Catalysis-E",
+    "weapons"
+  ],
+  [
+    "Category talk:Material",
+    "material"
+  ],
+  [
+    "Caustic Distillate",
+    "food"
+  ],
+  [
+    "Caviar sandwich",
+    "food"
+  ],
+  [
+    "Cellar",
+    "constructions"
+  ],
+  [
+    "Cement",
+    "material"
+  ],
+  [
+    "Ceramic bulletproof vest",
+    "equipment"
+  ],
+  [
+    "Chainsaw",
+    "material"
+  ],
+  [
+    "Chainsaw motor",
+    "material"
+  ],
+  [
+    "Champagne",
+    "food"
+  ],
+  [
+    "Chanterelle",
+    "food"
+  ],
+  [
+    "Charcoal pile (burned)",
+    "material"
+  ],
+  [
+    "Charcoal pile (burning)",
+    "material"
+  ],
+  [
+    "Cheese",
+    "food"
+  ],
+  [
+    "Chemical Reactor",
+    "tools"
+  ],
+  [
+    "Chemical suit",
+    "equipment"
+  ],
+  [
+    "Chemist Crossbow",
+    "weapons"
+  ],
+  [
+    "Chemistry lab",
+    "tools"
+  ],
+  [
+    "Chemistry set",
+    "material"
+  ],
+  [
+    "Chemistry set (tool)",
+    "tools"
+  ],
+  [
+    "Chicken kiev",
+    "food"
+  ],
+  [
+    "Chimney",
+    "weapons"
+  ],
+  [
+    "Chinese bulletproof vest",
+    "equipment"
+  ],
+  [
+    "Chinese energy drink",
+    "food"
+  ],
+  [
+    "Chinese fireworks",
+    "weapons"
+  ],
+  [
+    "Chitin",
+    "material"
+  ],
+  [
+    "Chitin armor",
+    "equipment"
+  ],
+  [
+    "Chitin spear",
+    "weapons"
+  ],
+  [
+    "Chitin torch",
+    "weapons"
+  ],
+  [
+    "Chlorcystamine",
+    "medicine"
+  ],
+  [
+    "Cho-ko-nu",
+    "weapons"
+  ],
+  [
+    "Chocolate Bar",
+    "food"
+  ],
+  [
+    "Chocolate Bunny",
+    "food"
+  ],
+  [
+    "Christmas tree",
+    "constructions"
+  ],
+  [
+    "Cigarettes",
+    "medicine"
+  ],
+  [
+    "Clean Water",
+    "food"
+  ],
+  [
+    "Clinic",
+    "medicine"
+  ],
+  [
+    "Cloth",
+    "material"
+  ],
+  [
+    "Coal",
+    "material"
+  ],
+  [
+    "Coast",
+    "fishing"
+  ],
+  [
+    "Coffee",
+    "food"
+  ],
+  [
+    "Cold coffee",
+    "food"
+  ],
+  [
+    "Cold tea",
+    "food"
+  ],
+  [
+    "Collector",
+    "weapons"
+  ],
+  [
+    "ComCon-3 Paste",
+    "food"
+  ],
+  [
+    "Combined armor",
+    "equipment"
+  ],
+  [
+    "Comfortable Gas Mask",
+    "equipment"
+  ],
+  [
+    "Condensed milk",
+    "food"
+  ],
+  [
+    "Contaminated meat",
+    "food"
+  ],
+  [
+    "Cooked buckwheat",
+    "food"
+  ],
+  [
+    "Cooked pasta",
+    "food"
+  ],
+  [
+    "Cooked rice",
+    "food"
+  ],
+  [
+    "Cooking recipe",
+    "material"
+  ],
+  [
+    "Copper Scrap",
+    "material"
+  ],
+  [
+    "Corn",
+    "food"
+  ],
+  [
+    "Corn seeds",
+    "material"
+  ],
+  [
+    "Cotton-wool Beard",
+    "equipment"
+  ],
+  [
+    "Coulibiac",
+    "food"
+  ],
+  [
+    "Cranberry",
+    "food"
+  ],
+  [
+    "Crane",
+    "weapons"
+  ],
+  [
+    "Crossbow bolt",
+    "weapons"
+  ],
+  [
+    "Crouching Tiger",
+    "weapons"
+  ],
+  [
+    "Crowbar",
+    "material"
+  ],
+  [
+    "Crowbar (tool)",
+    "tools"
+  ],
+  [
+    "Cuban cigar",
+    "medicine"
+  ],
+  [
+    "Cutlet rice",
+    "food"
+  ],
+  [
+    "Cybermitten",
+    "equipment"
+  ],
+  [
+    "Cypress SMG",
+    "weapons"
+  ],
+  [
+    "D-Eagle",
+    "weapons"
+  ],
+  [
+    "DP-27 (broken)",
+    "material"
+  ],
+  [
+    "Daily reward",
+    "equipment"
+  ],
+  [
+    "Dandelion Tea",
+    "food"
+  ],
+  [
+    "Deadly nightshade",
+    "medicine"
+  ],
+  [
+    "Degtyar",
+    "weapons"
+  ],
+  [
+    "Delta G Radio",
+    "tools"
+  ],
+  [
+    "Demon mask",
+    "equipment"
+  ],
+  [
+    "Detoxifying Potion",
+    "medicine"
+  ],
+  [
+    "Diesel",
+    "material"
+  ],
+  [
+    "Diluted spirits",
+    "food"
+  ],
+  [
+    "Dirty water",
+    "food"
+  ],
+  [
+    "Disassembled motorcycle",
+    "material"
+  ],
+  [
+    "Double-Barrel",
+    "weapons"
+  ],
+  [
+    "Dragon Scale",
+    "equipment"
+  ],
+  [
+    "Dragon%27s Roar",
+    "weapons"
+  ],
+  [
+    "Draw well",
+    "constructions"
+  ],
+  [
+    "Dried fish",
+    "food"
+  ],
+  [
+    "Dried meat",
+    "food"
+  ],
+  [
+    "Dry meat",
+    "food"
+  ],
+  [
+    "Drying rack",
+    "tools"
+  ],
+  [
+    "Dust mask",
+    "equipment"
+  ],
+  [
+    "Dusty book",
+    "material"
+  ],
+  [
+    "Dynamo flashlight",
+    "equipment"
+  ],
+  [
+    "Dysentery",
+    "medicine"
+  ],
+  [
+    "EA Spectrum",
+    "equipment"
+  ],
+  [
+    "Easter Cake",
+    "food"
+  ],
+  [
+    "Easter Egg",
+    "food"
+  ],
+  [
+    "Egg",
+    "food"
+  ],
+  [
+    "EkRan protective suit",
+    "equipment"
+  ],
+  [
+    "Electric Motor",
+    "material"
+  ],
+  [
+    "Electrical cable",
+    "material"
+  ],
+  [
+    "Electrodes",
+    "material"
+  ],
+  [
+    "Energizing potion",
+    "medicine"
+  ],
+  [
+    "Energy drink",
+    "food"
+  ],
+  [
+    "Erebus-273",
+    "weapons"
+  ],
+  [
+    "Ermak backpack",
+    "equipment"
+  ],
+  [
+    "Eternal Rod",
+    "fishing"
+  ],
+  [
+    "Eurekognasol Stimulant",
+    "medicine"
+  ],
+  [
+    "Executioner%27s Sword",
+    "weapons"
+  ],
+  [
+    "Expeditionary Ration",
+    "food"
+  ],
+  [
+    "Extractor",
+    "tools"
+  ],
+  [
+    "FATUM E-93",
+    "equipment"
+  ],
+  [
+    "Fairy dust",
+    "medicine"
+  ],
+  [
+    "Fat",
+    "food"
+  ],
+  [
+    "Fatty Meat",
+    "food"
+  ],
+  [
+    "Fear",
+    "weapons"
+  ],
+  [
+    "Field Uniform",
+    "equipment"
+  ],
+  [
+    "Fire",
+    "fire"
+  ],
+  [
+    "Fire brick",
+    "material"
+  ],
+  [
+    "Firewood",
+    "material"
+  ],
+  [
+    "Firework",
+    "weapons"
+  ],
+  [
+    "First Aid Kit",
+    "medicine"
+  ],
+  [
+    "Fish pie",
+    "food"
+  ],
+  [
+    "Fist of the Sky",
+    "weapons"
+  ],
+  [
+    "Fists",
+    "material"
+  ],
+  [
+    "Flamethrower",
+    "weapons"
+  ],
+  [
+    "Flashlight (10%25)",
+    "equipment"
+  ],
+  [
+    "Flashlight (20%25)",
+    "equipment"
+  ],
+  [
+    "Flashlight (30%25)",
+    "equipment"
+  ],
+  [
+    "Flatbread",
+    "food"
+  ],
+  [
+    "Flesh",
+    "weapons"
+  ],
+  [
+    "Flint",
+    "material"
+  ],
+  [
+    "Flint Spear",
+    "weapons"
+  ],
+  [
+    "Flint axe",
+    "material"
+  ],
+  [
+    "Flint knife",
+    "weapons"
+  ],
+  [
+    "Floodlight",
+    "equipment"
+  ],
+  [
+    "Flour",
+    "food"
+  ],
+  [
+    "Flying spaghetti monster",
+    "food"
+  ],
+  [
+    "Food Poisoning",
+    "medicine"
+  ],
+  [
+    "Forge chimney",
+    "constructions"
+  ],
+  [
+    "Forged knife",
+    "weapons"
+  ],
+  [
+    "Formalin Gas Pistol",
+    "weapons"
+  ],
+  [
+    "Forward%27s Stick",
+    "weapons"
+  ],
+  [
+    "Fresh bones",
+    "material"
+  ],
+  [
+    "Fresh fish",
+    "food"
+  ],
+  [
+    "Fried Tough Meat",
+    "food"
+  ],
+  [
+    "Fried egg",
+    "food"
+  ],
+  [
+    "Fried fatty meat",
+    "food"
+  ],
+  [
+    "Fried fish",
+    "food"
+  ],
+  [
+    "Fried meat",
+    "food"
+  ],
+  [
+    "Fried mutant meat",
+    "food"
+  ],
+  [
+    "Fried potato",
+    "food"
+  ],
+  [
+    "Fried rat meat",
+    "food"
+  ],
+  [
+    "Fried snake",
+    "food"
+  ],
+  [
+    "Fried tainted meat",
+    "food"
+  ],
+  [
+    "Frosthorn",
+    "weapons"
+  ],
+  [
+    "Furniture",
+    "material"
+  ],
+  [
+    "G Injector",
+    "medicine"
+  ],
+  [
+    "GAZ-24 (Broken)",
+    "material"
+  ],
+  [
+    "GAZ-24 (Disassembled)",
+    "material"
+  ],
+  [
+    "GAZ-66 (Disassembled)",
+    "material"
+  ],
+  [
+    "GP-2000 Gas Mask",
+    "equipment"
+  ],
+  [
+    "GP-4 gas mask",
+    "equipment"
+  ],
+  [
+    "GP-5 gas mask",
+    "equipment"
+  ],
+  [
+    "GP-7 gas mask",
+    "equipment"
+  ],
+  [
+    "Game Updates",
+    "medicine"
+  ],
+  [
+    "Gangster",
+    "weapons"
+  ],
+  [
+    "Gas Mask Filter",
+    "material"
+  ],
+  [
+    "Gas mask",
+    "equipment"
+  ],
+  [
+    "Gasoline",
+    "material"
+  ],
+  [
+    "Gasoline Engine",
+    "material"
+  ],
+  [
+    "Gehenna",
+    "weapons"
+  ],
+  [
+    "Generator",
+    "tools"
+  ],
+  [
+    "Geologist RC",
+    "weapons"
+  ],
+  [
+    "Gerin Flycatcher",
+    "tools"
+  ],
+  [
+    "Ghillie suit",
+    "equipment"
+  ],
+  [
+    "Ghost suit",
+    "equipment"
+  ],
+  [
+    "Gigawattor",
+    "weapons"
+  ],
+  [
+    "Gingerbread",
+    "food"
+  ],
+  [
+    "Glue/tape",
+    "material"
+  ],
+  [
+    "Glutton%27s Bag",
+    "equipment"
+  ],
+  [
+    "Golden Easter Egg",
+    "food"
+  ],
+  [
+    "Great fishing rod",
+    "equipment"
+  ],
+  [
+    "Greenhouse",
+    "constructions"
+  ],
+  [
+    "Grilled Meat",
+    "food"
+  ],
+  [
+    "Grouse",
+    "weapons"
+  ],
+  [
+    "GrowFast",
+    "material"
+  ],
+  [
+    "Guandao",
+    "weapons"
+  ],
+  [
+    "Gunpowder",
+    "material"
+  ],
+  [
+    "Gunpowder grenade",
+    "weapons"
+  ],
+  [
+    "Hacksaw",
+    "material"
+  ],
+  [
+    "Hacksaw (tool)",
+    "tools"
+  ],
+  [
+    "Hammer",
+    "weapons"
+  ],
+  [
+    "Hand mill",
+    "tools"
+  ],
+  [
+    "Hand-held Railgun",
+    "weapons"
+  ],
+  [
+    "Handmade Assault Rifle",
+    "weapons"
+  ],
+  [
+    "Handmade Machine Gun",
+    "weapons"
+  ],
+  [
+    "Handmade clothes",
+    "equipment"
+  ],
+  [
+    "Handmade fishing rod",
+    "equipment"
+  ],
+  [
+    "Handmade lighter",
+    "material"
+  ],
+  [
+    "Handmade needle",
+    "material"
+  ],
+  [
+    "Handmade pistol",
+    "weapons"
+  ],
+  [
+    "Handmade primus stove",
+    "material"
+  ],
+  [
+    "Handmade rifle",
+    "weapons"
+  ],
+  [
+    "Handmade rocket launcher",
+    "weapons"
+  ],
+  [
+    "Handmade spear",
+    "weapons"
+  ],
+  [
+    "Healing Salve",
+    "medicine"
+  ],
+  [
+    "Hearty chowder",
+    "food"
+  ],
+  [
+    "Hearty food",
+    "food"
+  ],
+  [
+    "Heavy Machine Gun",
+    "weapons"
+  ],
+  [
+    "Heavy crossbow",
+    "weapons"
+  ],
+  [
+    "Helsing",
+    "weapons"
+  ],
+  [
+    "Hidden Dragon",
+    "weapons"
+  ],
+  [
+    "High-performance Capacitor",
+    "material"
+  ],
+  [
+    "Highway Armor",
+    "equipment"
+  ],
+  [
+    "Highway backpack",
+    "equipment"
+  ],
+  [
+    "Ho Ho Ho",
+    "weapons"
+  ],
+  [
+    "Holiday Energy Drink",
+    "food"
+  ],
+  [
+    "Homemade Bulletproof Vest",
+    "equipment"
+  ],
+  [
+    "Homemade Explosive",
+    "tools"
+  ],
+  [
+    "Homemade Pistol",
+    "weapons"
+  ],
+  [
+    "Homemade Revolver",
+    "weapons"
+  ],
+  [
+    "Homemade SMG",
+    "weapons"
+  ],
+  [
+    "Homemade respirator",
+    "equipment"
+  ],
+  [
+    "Homemade rocket launcher",
+    "weapons"
+  ],
+  [
+    "Homemade wine",
+    "food"
+  ],
+  [
+    "Honey",
+    "food"
+  ],
+  [
+    "Hospital",
+    "medicine"
+  ],
+  [
+    "Hot coffee",
+    "food"
+  ],
+  [
+    "Hot tea",
+    "food"
+  ],
+  [
+    "Hunter%27s Garb",
+    "equipment"
+  ],
+  [
+    "Hunter%27s Rifle",
+    "weapons"
+  ],
+  [
+    "Hunter%27s chain",
+    "weapons"
+  ],
+  [
+    "Hunting Bow",
+    "weapons"
+  ],
+  [
+    "Hut",
+    "constructions"
+  ],
+  [
+    "Ice",
+    "material"
+  ],
+  [
+    "Ice Cream",
+    "food"
+  ],
+  [
+    "Iceberg",
+    "equipment"
+  ],
+  [
+    "Icicle Thrower",
+    "weapons"
+  ],
+  [
+    "Improved crossbow",
+    "weapons"
+  ],
+  [
+    "Infected Dried Fish",
+    "food"
+  ],
+  [
+    "Infected rusk",
+    "food"
+  ],
+  [
+    "Infernal Coal",
+    "material"
+  ],
+  [
+    "Infernal Prophet",
+    "weapons"
+  ],
+  [
+    "Injector",
+    "material"
+  ],
+  [
+    "Insulating Tape",
+    "material"
+  ],
+  [
+    "Invisibility Cloak",
+    "equipment"
+  ],
+  [
+    "Ionica Gas Mask",
+    "equipment"
+  ],
+  [
+    "Iron",
+    "material"
+  ],
+  [
+    "Iron Anvil",
+    "tools"
+  ],
+  [
+    "Iron Armor",
+    "equipment"
+  ],
+  [
+    "Iron Felix",
+    "weapons"
+  ],
+  [
+    "Iron Gas Mask",
+    "equipment"
+  ],
+  [
+    "Iron pipe",
+    "material"
+  ],
+  [
+    "Iron pot",
+    "material"
+  ],
+  [
+    "Iron spear",
+    "weapons"
+  ],
+  [
+    "Jack O%27 Launcher",
+    "weapons"
+  ],
+  [
+    "Jack-O%27-Lantern",
+    "equipment"
+  ],
+  [
+    "Jam",
+    "food"
+  ],
+  [
+    "Joker",
+    "weapons"
+  ],
+  [
+    "Kalash-M",
+    "weapons"
+  ],
+  [
+    "Kalash-S",
+    "weapons"
+  ],
+  [
+    "KamAZ (Broken)",
+    "material"
+  ],
+  [
+    "KamAZ (Disassembled)",
+    "material"
+  ],
+  [
+    "Kettlebell",
+    "weapons"
+  ],
+  [
+    "Kevlar Vest",
+    "equipment"
+  ],
+  [
+    "Kholodets",
+    "food"
+  ],
+  [
+    "King of Jokers",
+    "food"
+  ],
+  [
+    "Kitchen knife",
+    "material"
+  ],
+  [
+    "Knapsack",
+    "material"
+  ],
+  [
+    "Knife",
+    "material"
+  ],
+  [
+    "Knife (tool)",
+    "tools"
+  ],
+  [
+    "Knock-Off Energy Drink",
+    "food"
+  ],
+  [
+    "Ksyukha",
+    "weapons"
+  ],
+  [
+    "LMG %22Qilin%22",
+    "weapons"
+  ],
+  [
+    "Law Guardian",
+    "weapons"
+  ],
+  [
+    "Lazy Elf",
+    "equipment"
+  ],
+  [
+    "Lead bullet",
+    "weapons"
+  ],
+  [
+    "Leather Armor",
+    "equipment"
+  ],
+  [
+    "Lidiacid-34",
+    "medicine"
+  ],
+  [
+    "Lidiacide-34",
+    "medicine"
+  ],
+  [
+    "Light Machine Gun",
+    "weapons"
+  ],
+  [
+    "Lighter",
+    "material"
+  ],
+  [
+    "Liquidator Special Forces Armor",
+    "equipment"
+  ],
+  [
+    "Log",
+    "material"
+  ],
+  [
+    "Lotus of Death",
+    "weapons"
+  ],
+  [
+    "Lymph",
+    "food"
+  ],
+  [
+    "MM-1 Gas Mask",
+    "equipment"
+  ],
+  [
+    "Machine gun parts",
+    "material"
+  ],
+  [
+    "Machine oil",
+    "material"
+  ],
+  [
+    "Magic Sweater",
+    "equipment"
+  ],
+  [
+    "Makar",
+    "weapons"
+  ],
+  [
+    "Makarov handgun (broken)",
+    "material"
+  ],
+  [
+    "Mashed potatoes",
+    "food"
+  ],
+  [
+    "Master%27s Garb",
+    "equipment"
+  ],
+  [
+    "Matches",
+    "material"
+  ],
+  [
+    "Mauser",
+    "weapons"
+  ],
+  [
+    "Mayhem",
+    "weapons"
+  ],
+  [
+    "Meat cutlet",
+    "food"
+  ],
+  [
+    "Meat loaf",
+    "food"
+  ],
+  [
+    "Meat rissole",
+    "food"
+  ],
+  [
+    "Medical Backpack",
+    "equipment"
+  ],
+  [
+    "Merry Lantern",
+    "equipment"
+  ],
+  [
+    "Metal Plate",
+    "material"
+  ],
+  [
+    "Metocaine",
+    "medicine"
+  ],
+  [
+    "Mi-8 parts",
+    "material"
+  ],
+  [
+    "Midas",
+    "weapons"
+  ],
+  [
+    "Military uniform",
+    "equipment"
+  ],
+  [
+    "Milk",
+    "food"
+  ],
+  [
+    "Minced Meat",
+    "food"
+  ],
+  [
+    "Mining permit",
+    "material"
+  ],
+  [
+    "Modern bulletproof vest",
+    "equipment"
+  ],
+  [
+    "Molotov Cocktail",
+    "weapons"
+  ],
+  [
+    "Monstrous bag",
+    "equipment"
+  ],
+  [
+    "Moonshine",
+    "food"
+  ],
+  [
+    "Mosin sawn-off shotgun",
+    "weapons"
+  ],
+  [
+    "Mosin-Nagant rifle (broken)",
+    "material"
+  ],
+  [
+    "Mosinka",
+    "weapons"
+  ],
+  [
+    "Moss",
+    "food"
+  ],
+  [
+    "Motorcycle spare parts",
+    "material"
+  ],
+  [
+    "Mukha",
+    "weapons"
+  ],
+  [
+    "Mulled Wine",
+    "food"
+  ],
+  [
+    "Multi-Shot Rifle",
+    "weapons"
+  ],
+  [
+    "Murmur",
+    "weapons"
+  ],
+  [
+    "Mushroom pasta",
+    "food"
+  ],
+  [
+    "Mushroom soup",
+    "food"
+  ],
+  [
+    "Mushroom with eyes",
+    "food"
+  ],
+  [
+    "Musket",
+    "weapons"
+  ],
+  [
+    "Mutant Meat",
+    "food"
+  ],
+  [
+    "Mysterious Fruit",
+    "food"
+  ],
+  [
+    "Mysterious Fruit Seeds",
+    "material"
+  ],
+  [
+    "Nagant",
+    "weapons"
+  ],
+  [
+    "Nagant Revolver",
+    "weapons"
+  ],
+  [
+    "Nagant Revolver (Broken)",
+    "material"
+  ],
+  [
+    "Nail",
+    "material"
+  ],
+  [
+    "Nail club",
+    "weapons"
+  ],
+  [
+    "Nailed box",
+    "material"
+  ],
+  [
+    "Nettle",
+    "material"
+  ],
+  [
+    "Normal clothes",
+    "equipment"
+  ],
+  [
+    "Nuclear battery",
+    "material"
+  ],
+  [
+    "Nuclear reactor part",
+    "material"
+  ],
+  [
+    "O Injector",
+    "medicine"
+  ],
+  [
+    "Oar",
+    "weapons"
+  ],
+  [
+    "Old Canned Meat",
+    "food"
+  ],
+  [
+    "Old Faithful Gas Mask",
+    "equipment"
+  ],
+  [
+    "Olivier Salad",
+    "food"
+  ],
+  [
+    "PAS Weaver",
+    "weapons"
+  ],
+  [
+    "PK 7.62 Kraken",
+    "weapons"
+  ],
+  [
+    "PKM (broken)",
+    "material"
+  ],
+  [
+    "PMG gas mask",
+    "equipment"
+  ],
+  [
+    "PPS-43 (broken)",
+    "material"
+  ],
+  [
+    "PPSh-41 (broken)",
+    "material"
+  ],
+  [
+    "Painkiller",
+    "medicine"
+  ],
+  [
+    "Pancakes",
+    "food"
+  ],
+  [
+    "Paper",
+    "material"
+  ],
+  [
+    "Paper Lantern",
+    "tools"
+  ],
+  [
+    "Parasitic worms",
+    "medicine"
+  ],
+  [
+    "Party Popper",
+    "weapons"
+  ],
+  [
+    "Pasta",
+    "food"
+  ],
+  [
+    "Pasta with ground beef",
+    "food"
+  ],
+  [
+    "Peking Duck",
+    "food"
+  ],
+  [
+    "Pelmeni",
+    "food"
+  ],
+  [
+    "Pelmeni dumplings",
+    "food"
+  ],
+  [
+    "Pepperbox",
+    "weapons"
+  ],
+  [
+    "Pepsi",
+    "food"
+  ],
+  [
+    "Pets",
+    "equipment"
+  ],
+  [
+    "Pharmacy",
+    "medicine"
+  ],
+  [
+    "Physicist Crossbow",
+    "weapons"
+  ],
+  [
+    "Pickled Vegetable",
+    "food"
+  ],
+  [
+    "Pickled vegetables",
+    "food"
+  ],
+  [
+    "Pie",
+    "food"
+  ],
+  [
+    "Pilaf",
+    "food"
+  ],
+  [
+    "Pill of Immortality",
+    "medicine"
+  ],
+  [
+    "Pineapple",
+    "weapons"
+  ],
+  [
+    "Pistol Ammo",
+    "weapons"
+  ],
+  [
+    "Pistol Silent",
+    "weapons"
+  ],
+  [
+    "Pistol parts",
+    "material"
+  ],
+  [
+    "Pistol shell",
+    "material"
+  ],
+  [
+    "Pizza",
+    "food"
+  ],
+  [
+    "Plague Doctor%27s Mask",
+    "equipment"
+  ],
+  [
+    "Plank",
+    "material"
+  ],
+  [
+    "Plastic explosives",
+    "material"
+  ],
+  [
+    "Player Outfit",
+    "equipment"
+  ],
+  [
+    "Poison",
+    "material"
+  ],
+  [
+    "Poisoned Flask",
+    "equipment"
+  ],
+  [
+    "Poisoning",
+    "medicine"
+  ],
+  [
+    "Polar Axe",
+    "material"
+  ],
+  [
+    "Popgun",
+    "weapons"
+  ],
+  [
+    "Posh",
+    "weapons"
+  ],
+  [
+    "Positive effects",
+    "medicine"
+  ],
+  [
+    "Possessed lantern",
+    "equipment"
+  ],
+  [
+    "Potato",
+    "food"
+  ],
+  [
+    "Potato Pancakes",
+    "food"
+  ],
+  [
+    "Potato seeds",
+    "material"
+  ],
+  [
+    "Power Scalpel",
+    "weapons"
+  ],
+  [
+    "Powerful Flashlight",
+    "equipment"
+  ],
+  [
+    "Primer",
+    "material"
+  ],
+  [
+    "Primitive Bulletproof Vest",
+    "equipment"
+  ],
+  [
+    "Primus stove",
+    "material"
+  ],
+  [
+    "Progress Bulletproof Vest",
+    "equipment"
+  ],
+  [
+    "Prospector%27s armor",
+    "equipment"
+  ],
+  [
+    "Protection Potion",
+    "medicine"
+  ],
+  [
+    "Psychostimulation",
+    "medicine"
+  ],
+  [
+    "Pumpkin",
+    "food"
+  ],
+  [
+    "Pumpkin Chump",
+    "equipment"
+  ],
+  [
+    "Pumpkin Soup",
+    "food"
+  ],
+  [
+    "Pumpkin bomb",
+    "weapons"
+  ],
+  [
+    "Pumpkin seeds",
+    "material"
+  ],
+  [
+    "Punch-in-the-Box",
+    "weapons"
+  ],
+  [
+    "Pure water",
+    "food"
+  ],
+  [
+    "Pyrolytic Grenade",
+    "weapons"
+  ],
+  [
+    "Quads Glowstick",
+    "tools"
+  ],
+  [
+    "Quality Hide",
+    "material"
+  ],
+  [
+    "Quality Leather",
+    "material"
+  ],
+  [
+    "RPG Vesuvius",
+    "weapons"
+  ],
+  [
+    "RPK-74 (broken)",
+    "material"
+  ],
+  [
+    "RPO-M Eye of the Storm",
+    "weapons"
+  ],
+  [
+    "Racer Set",
+    "equipment"
+  ],
+  [
+    "Radiation",
+    "gas_mask"
+  ],
+  [
+    "Radioactive Swamp",
+    "fishing"
+  ],
+  [
+    "Radioactive meat",
+    "food"
+  ],
+  [
+    "Radioactive mushroom",
+    "food"
+  ],
+  [
+    "Rags",
+    "material"
+  ],
+  [
+    "Rainbow Easter Egg",
+    "food"
+  ],
+  [
+    "Rat meat",
+    "food"
+  ],
+  [
+    "Ration pack",
+    "food"
+  ],
+  [
+    "Raw Hide",
+    "material"
+  ],
+  [
+    "Raw fatback",
+    "food"
+  ],
+  [
+    "Raw meat",
+    "food"
+  ],
+  [
+    "Rawhide",
+    "material"
+  ],
+  [
+    "Reaper%27s Scythe",
+    "weapons"
+  ],
+  [
+    "Red wine",
+    "food"
+  ],
+  [
+    "Refrigerator Backpack",
+    "equipment"
+  ],
+  [
+    "Reinforced Uniform",
+    "equipment"
+  ],
+  [
+    "Respirator",
+    "equipment"
+  ],
+  [
+    "Revenge",
+    "weapons"
+  ],
+  [
+    "Revolver parts",
+    "material"
+  ],
+  [
+    "Revolver shell",
+    "material"
+  ],
+  [
+    "Revolving Gun",
+    "weapons"
+  ],
+  [
+    "Reykjavik Chainsaw",
+    "tools"
+  ],
+  [
+    "Rice Field",
+    "constructions"
+  ],
+  [
+    "Rice bun",
+    "food"
+  ],
+  [
+    "Rice grains",
+    "food"
+  ],
+  [
+    "Rice wine",
+    "food"
+  ],
+  [
+    "Rich chowder",
+    "food"
+  ],
+  [
+    "Rifle Ammo",
+    "weapons"
+  ],
+  [
+    "Rifle parts",
+    "material"
+  ],
+  [
+    "Rifle shell",
+    "material"
+  ],
+  [
+    "Roasted Chanterelle",
+    "food"
+  ],
+  [
+    "Rocket-Propelled Grenade Launcher",
+    "weapons"
+  ],
+  [
+    "Rodkin",
+    "material"
+  ],
+  [
+    "Rope",
+    "material"
+  ],
+  [
+    "Rotten fish",
+    "food"
+  ],
+  [
+    "Rotten meat",
+    "food"
+  ],
+  [
+    "Rotten porridge",
+    "food"
+  ],
+  [
+    "Rotten vegetables",
+    "food"
+  ],
+  [
+    "Rubber",
+    "material"
+  ],
+  [
+    "Rubber parts",
+    "material"
+  ],
+  [
+    "Rucksack",
+    "equipment"
+  ],
+  [
+    "Rudolph",
+    "weapons"
+  ],
+  [
+    "Rusk",
+    "food"
+  ],
+  [
+    "Rusks",
+    "food"
+  ],
+  [
+    "Russian Cigarettes",
+    "medicine"
+  ],
+  [
+    "Rusted Crowbar",
+    "material"
+  ],
+  [
+    "Rusted Saucepan",
+    "equipment"
+  ],
+  [
+    "Rusted axe",
+    "material"
+  ],
+  [
+    "Rusted hacksaw",
+    "material"
+  ],
+  [
+    "Rusted needle",
+    "material"
+  ],
+  [
+    "Rusted shovel",
+    "material"
+  ],
+  [
+    "Rusted tools",
+    "material"
+  ],
+  [
+    "SR Delirium",
+    "weapons"
+  ],
+  [
+    "SVD (broken)",
+    "material"
+  ],
+  [
+    "SVT-40 (broken)",
+    "material"
+  ],
+  [
+    "Sabre",
+    "weapons"
+  ],
+  [
+    "Sack",
+    "material"
+  ],
+  [
+    "Salo",
+    "food"
+  ],
+  [
+    "Salt",
+    "food"
+  ],
+  [
+    "Salted Fish",
+    "food"
+  ],
+  [
+    "Salted meat",
+    "food"
+  ],
+  [
+    "Saltpeter",
+    "material"
+  ],
+  [
+    "Sanguinary Masha",
+    "food"
+  ],
+  [
+    "Santa%27s Flask",
+    "equipment"
+  ],
+  [
+    "Santa%27s Sack",
+    "equipment"
+  ],
+  [
+    "Santa%27s Staff",
+    "weapons"
+  ],
+  [
+    "Sapper shovel",
+    "weapons"
+  ],
+  [
+    "Saucepan",
+    "material"
+  ],
+  [
+    "Saucepan (tool)",
+    "tools"
+  ],
+  [
+    "Sausage",
+    "food"
+  ],
+  [
+    "Sawed-off IZh-18",
+    "weapons"
+  ],
+  [
+    "Sawed-off TOZ-34",
+    "weapons"
+  ],
+  [
+    "Scarf of 18 Provinces",
+    "equipment"
+  ],
+  [
+    "Schmeisser",
+    "weapons"
+  ],
+  [
+    "Schoolbag",
+    "material"
+  ],
+  [
+    "Scrap metal",
+    "material"
+  ],
+  [
+    "Searcher%27s Flashlight",
+    "equipment"
+  ],
+  [
+    "Sewing Needle",
+    "material"
+  ],
+  [
+    "Sewing needle (tool)",
+    "tools"
+  ],
+  [
+    "Shashlik",
+    "food"
+  ],
+  [
+    "Shawarma",
+    "food"
+  ],
+  [
+    "Shchi",
+    "food"
+  ],
+  [
+    "Shmel",
+    "weapons"
+  ],
+  [
+    "Shock bludgeon",
+    "weapons"
+  ],
+  [
+    "Shotgun Round",
+    "weapons"
+  ],
+  [
+    "Shovel",
+    "material"
+  ],
+  [
+    "Shovel (tool)",
+    "tools"
+  ],
+  [
+    "Simple chowder",
+    "food"
+  ],
+  [
+    "Single-Shot Rifle",
+    "weapons"
+  ],
+  [
+    "Sipuha",
+    "weapons"
+  ],
+  [
+    "Skorpion",
+    "weapons"
+  ],
+  [
+    "Smelter",
+    "tools"
+  ],
+  [
+    "Smoked fatback",
+    "food"
+  ],
+  [
+    "Smoked salo",
+    "food"
+  ],
+  [
+    "Smuggled Energy Drink",
+    "food"
+  ],
+  [
+    "Smuggler%27s Armor",
+    "equipment"
+  ],
+  [
+    "Smuggler%27s Lantern",
+    "tools"
+  ],
+  [
+    "Snake meat",
+    "food"
+  ],
+  [
+    "Sniper%27s Mosin",
+    "weapons"
+  ],
+  [
+    "Snowball",
+    "weapons"
+  ],
+  [
+    "Snowman Ball",
+    "weapons"
+  ],
+  [
+    "Soap",
+    "material"
+  ],
+  [
+    "Source of fire",
+    "fire"
+  ],
+  [
+    "Spare weapon parts",
+    "material"
+  ],
+  [
+    "Spark plug",
+    "material"
+  ],
+  [
+    "Sparkler",
+    "equipment"
+  ],
+  [
+    "Special Ops Tactical Vest",
+    "equipment"
+  ],
+  [
+    "Spice",
+    "food"
+  ],
+  [
+    "Spooky Energy Drink",
+    "food"
+  ],
+  [
+    "Spotlight",
+    "equipment"
+  ],
+  [
+    "Stake Thrower",
+    "weapons"
+  ],
+  [
+    "Stale Pryanik",
+    "food"
+  ],
+  [
+    "Stalk Glowstick",
+    "tools"
+  ],
+  [
+    "Standard crossbow",
+    "weapons"
+  ],
+  [
+    "Stearin",
+    "weapons"
+  ],
+  [
+    "Stecha",
+    "weapons"
+  ],
+  [
+    "Steel",
+    "material"
+  ],
+  [
+    "Steel Anvil",
+    "tools"
+  ],
+  [
+    "Steel armor",
+    "equipment"
+  ],
+  [
+    "Steel axe",
+    "material"
+  ],
+  [
+    "Steel crowbar",
+    "material"
+  ],
+  [
+    "Steel knife",
+    "material"
+  ],
+  [
+    "Steel needle",
+    "material"
+  ],
+  [
+    "Steel pot",
+    "material"
+  ],
+  [
+    "Steel shovel",
+    "material"
+  ],
+  [
+    "Steel spear",
+    "weapons"
+  ],
+  [
+    "Steel tools",
+    "material"
+  ],
+  [
+    "Steelmaking furnace",
+    "constructions"
+  ],
+  [
+    "Sterile bandage",
+    "material"
+  ],
+  [
+    "Stew meat",
+    "food"
+  ],
+  [
+    "Stewed meat",
+    "food"
+  ],
+  [
+    "Stick",
+    "material"
+  ],
+  [
+    "Stimulant",
+    "material"
+  ],
+  [
+    "Storm Snowball Launcher",
+    "weapons"
+  ],
+  [
+    "Strange Mushroom",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Black)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Blue)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Green)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Light Blue)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Red)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Violet)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (White)",
+    "food"
+  ],
+  [
+    "Strange Mushroom (Yellow)",
+    "food"
+  ],
+  [
+    "Strawberry",
+    "food"
+  ],
+  [
+    "Strawberry cake",
+    "food"
+  ],
+  [
+    "Strawberry seed",
+    "material"
+  ],
+  [
+    "Strong bat",
+    "weapons"
+  ],
+  [
+    "Strychnine Gas Revolver",
+    "weapons"
+  ],
+  [
+    "Stuffed cabbage",
+    "food"
+  ],
+  [
+    "Stun Grenade",
+    "weapons"
+  ],
+  [
+    "Sturdy Fishing Rod",
+    "equipment"
+  ],
+  [
+    "Sturdy needle",
+    "tools"
+  ],
+  [
+    "Sudayev",
+    "weapons"
+  ],
+  [
+    "Sugar",
+    "food"
+  ],
+  [
+    "Sulfur",
+    "material"
+  ],
+  [
+    "Sulfuric Acid",
+    "material"
+  ],
+  [
+    "Superfilter",
+    "tools"
+  ],
+  [
+    "Support Box",
+    "material"
+  ],
+  [
+    "Survivor%27s Cache",
+    "material"
+  ],
+  [
+    "Sushi",
+    "food"
+  ],
+  [
+    "Svetka",
+    "weapons"
+  ],
+  [
+    "Svyokr",
+    "weapons"
+  ],
+  [
+    "Swamp",
+    "fishing"
+  ],
+  [
+    "T-800 Bulletproof Vest",
+    "equipment"
+  ],
+  [
+    "TT-33 (Broken)",
+    "material"
+  ],
+  [
+    "Tactical Armor",
+    "equipment"
+  ],
+  [
+    "Taiga Machete",
+    "weapons"
+  ],
+  [
+    "Tailed Rissole",
+    "food"
+  ],
+  [
+    "Tangerine",
+    "food"
+  ],
+  [
+    "Tangerine seeds",
+    "seeds"
+  ],
+  [
+    "Tank armor",
+    "equipment"
+  ],
+  [
+    "Tanned leather",
+    "material"
+  ],
+  [
+    "Tanning mixture",
+    "material"
+  ],
+  [
+    "Tarp",
+    "material"
+  ],
+  [
+    "Tattered clothes",
+    "equipment"
+  ],
+  [
+    "Tea",
+    "food"
+  ],
+  [
+    "Tent (Pitched)",
+    "constructions"
+  ],
+  [
+    "Tent (taken down)",
+    "material"
+  ],
+  [
+    "Termite",
+    "weapons"
+  ],
+  [
+    "Terrarium",
+    "weapons"
+  ],
+  [
+    "Tester Armor",
+    "equipment"
+  ],
+  [
+    "Thermodiffusive Grenade Launcher",
+    "weapons"
+  ],
+  [
+    "Thick Hide",
+    "material"
+  ],
+  [
+    "Thick Leather",
+    "material"
+  ],
+  [
+    "Threads",
+    "material"
+  ],
+  [
+    "Tin can candle",
+    "equipment"
+  ],
+  [
+    "Tires",
+    "material"
+  ],
+  [
+    "Titanium Alloy",
+    "material"
+  ],
+  [
+    "Titanium Axe",
+    "weapons"
+  ],
+  [
+    "Titanium Knife",
+    "weapons"
+  ],
+  [
+    "Titanium Shovel",
+    "equipment"
+  ],
+  [
+    "Titanium Tools",
+    "equipment"
+  ],
+  [
+    "Titanium crowbar",
+    "equipment"
+  ],
+  [
+    "Titanium ore",
+    "material"
+  ],
+  [
+    "Titanium pot",
+    "material"
+  ],
+  [
+    "Tokar",
+    "weapons"
+  ],
+  [
+    "Tool Kit",
+    "material"
+  ],
+  [
+    "Tool kit (tool)",
+    "tools"
+  ],
+  [
+    "Toothgrass",
+    "food"
+  ],
+  [
+    "Torch",
+    "weapons"
+  ],
+  [
+    "Tough Meat",
+    "food"
+  ],
+  [
+    "Tourist backpack",
+    "material"
+  ],
+  [
+    "Toxic lamp",
+    "equipment"
+  ],
+  [
+    "Toxic water",
+    "food"
+  ],
+  [
+    "Toxigen",
+    "weapons"
+  ],
+  [
+    "Training Ammo",
+    "material"
+  ],
+  [
+    "Transport repair kit",
+    "material"
+  ],
+  [
+    "Trophy Cognac",
+    "food"
+  ],
+  [
+    "Tube Rifle",
+    "weapons"
+  ],
+  [
+    "Tula pryanik",
+    "food"
+  ],
+  [
+    "Twilight Shotgun",
+    "weapons"
+  ],
+  [
+    "UAZ-452 (Broken)",
+    "material"
+  ],
+  [
+    "UAZ-452 (Disassembled)",
+    "material"
+  ],
+  [
+    "UAZ-469 (Broken)",
+    "material"
+  ],
+  [
+    "UAZ-469 (Disassembled)",
+    "material"
+  ],
+  [
+    "Ukha",
+    "food"
+  ],
+  [
+    "Ulcer AMR",
+    "weapons"
+  ],
+  [
+    "V Injector",
+    "medicine"
+  ],
+  [
+    "VAZ-2101 (Broken)",
+    "material"
+  ],
+  [
+    "VAZ-2101 (Disassembled)",
+    "material"
+  ],
+  [
+    "Vector-A",
+    "weapons"
+  ],
+  [
+    "Vegetable seeds",
+    "material"
+  ],
+  [
+    "Vegetables",
+    "food"
+  ],
+  [
+    "Vehicle repair kit",
+    "material"
+  ],
+  [
+    "Vial of %22...amine%22",
+    "medicine"
+  ],
+  [
+    "Vintage lighter",
+    "equipment"
+  ],
+  [
+    "Vintorez",
+    "weapons"
+  ],
+  [
+    "Vital signs",
+    "medicine"
+  ],
+  [
+    "Water Filter",
+    "tools"
+  ],
+  [
+    "Water purifier",
+    "constructions"
+  ],
+  [
+    "Wax",
+    "material"
+  ],
+  [
+    "Weapon box",
+    "material"
+  ],
+  [
+    "Weapon repair kit",
+    "material"
+  ],
+  [
+    "Welder",
+    "material"
+  ],
+  [
+    "Wheat",
+    "food"
+  ],
+  [
+    "Wheat seeds",
+    "material"
+  ],
+  [
+    "Whiskey",
+    "food"
+  ],
+  [
+    "Wire",
+    "material"
+  ],
+  [
+    "Witch%27s Quill",
+    "equipment"
+  ],
+  [
+    "Wolf Talisman",
+    "equipment"
+  ],
+  [
+    "Wolfsbane-1",
+    "weapons"
+  ],
+  [
+    "Wooden house",
+    "constructions"
+  ],
+  [
+    "Workbench",
+    "tools"
+  ],
+  [
+    "Yamal",
+    "weapons"
+  ],
+  [
+    "ZAZ-968 (Broken)",
+    "material"
+  ],
+  [
+    "ZAZ-968 (Disassembled)",
+    "material"
+  ],
+  [
+    "ZIL-130 (Broken)",
+    "material"
+  ],
+  [
+    "ZIL-130 (Disassembled)",
+    "material"
+  ]
+]

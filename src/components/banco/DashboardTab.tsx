@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useBank } from "@/lib/useBank";
 import {
   HandCoins, Users, ArrowLeftRight, Wallet, TrendingUp, Clock,
-  ShoppingCart, Crown, Medal, Package, Trophy, Gavel, Dices, Search, Timer,
+  ShoppingCart, Crown, Medal, Package, Trophy, Gavel, Dices, Search, Timer, MessageSquarePlus, Flame,
 } from "lucide-react";
 
 function DiscreetTimer({ dataFim }: { dataFim: string }) {
@@ -27,7 +27,7 @@ function DiscreetTimer({ dataFim }: { dataFim: string }) {
 }
 
 export default function DashboardTab() {
-  const { emprestimos, investidores, trocas, caixa, doadores, comprasVendas, leiloes, sorteios, loterica, inventory, isLoading } = useBank();
+  const { emprestimos, investidores, trocas, caixa, doadores, comprasVendas, leiloes, sorteios, loterica, inventory, reporterRanking, isLoading } = useBank();
   const [inventorySearch, setInventorySearch] = useState("");
 
   if (isLoading) return <div className="flex items-center justify-center h-64 text-muted-foreground">Carregando dados do banco...</div>;
@@ -140,6 +140,30 @@ export default function DashboardTab() {
                 <p className="text-[11px] font-semibold text-foreground truncate">{d.nome}</p>
               </div>
             ))}
+          </div>
+        )}
+      </div>
+
+      <div className="rounded-md border border-border bg-card p-3">
+        <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><MessageSquarePlus className="w-3.5 h-3.5 text-green-400" /> Top 10 Reportadores de Precos</h3>
+        {reporterRanking.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Nenhum report ainda. Reporte precos na aba Tabela!</p>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1.5">
+            {reporterRanking.slice(0, 10).map((r, idx) => {
+              const isRecent = Date.now() - new Date(r.lastReport).getTime() < 86400000;
+              return (
+                <div key={r.nickname} className={`flex items-center gap-1.5 py-1.5 px-2 rounded-md border transition-colors ${idx === 0 ? "border-green-500/40 bg-green-500/5" : idx === 1 ? "border-blue-400/30 bg-blue-400/5" : idx === 2 ? "border-cyan-400/30 bg-cyan-400/5" : "border-border/50 bg-muted/20"}`}>
+                  <div className="w-4 h-4 flex items-center justify-center shrink-0">
+                    {idx === 0 ? <Crown className="w-3 h-3 text-green-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-blue-400" /> : idx === 2 ? <Medal className="w-3 h-3 text-cyan-400" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1">{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
+                    <p className="text-[9px] text-muted-foreground font-mono">{r.count} reports</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

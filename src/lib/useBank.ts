@@ -154,6 +154,22 @@ export interface LotericaHistorico extends LotericaData {
   totalVendidos: number;
 }
 
+export interface PriceReportData {
+  id: string;
+  itemId: string;
+  itemName: string;
+  nickname: string;
+  steelPrice: number;
+  cementPrice: number;
+  data: string;
+}
+
+export interface ReporterRanking {
+  nickname: string;
+  count: number;
+  lastReport: string;
+}
+
 function dateStr(d: string | Date): string {
   if (!d) return "";
   return d instanceof Date ? d.toISOString() : d;
@@ -216,12 +232,13 @@ export function useBank() {
   const [lotericaNumeros, setLotericaNumeros] = useState<NumeroLoterica[]>([]);
   const [historicoSorteios, setHistoricoSorteios] = useState<SorteioHistorico[]>([]);
   const [historicoLoterica, setHistoricoLoterica] = useState<LotericaHistorico[]>([]);
+  const [reporterRanking, setReporterRanking] = useState<ReporterRanking[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const mountedRef = useRef(true);
 
   const loadAll = useCallback(async () => {
     try {
-      const [emps, invs, tabs, troc, cvs, cai, doa, lei, lan, sor, lot, histSor, histLot] =
+      const [emps, invs, tabs, troc, cvs, cai, doa, lei, lan, sor, lot, histSor, histLot, repRank] =
         await Promise.all([
           apiGet("listEmprestimos"),
           apiGet("listInvestidores"),
@@ -236,6 +253,7 @@ export function useBank() {
           apiGet("getLoterica"),
           apiGet("getHistoricoSorteios"),
           apiGet("getAllLoterica"),
+          apiGet("getReporterRanking"),
         ]);
 
       if (!mountedRef.current) return;
@@ -268,6 +286,7 @@ export function useBank() {
       setHistoricoLoterica(
         parseDates(histLot as LotericaHistorico[], ["dataCriacao", "dataFimVendas", "dataSorteio"])
       );
+      setReporterRanking(repRank as ReporterRanking[]);
 
       const lotArr = lot as LotericaData[];
       const lotParsed = lotArr.length > 0
@@ -743,6 +762,7 @@ export function useBank() {
     lotericaNumeros,
     historicoSorteios,
     historicoLoterica,
+    reporterRanking,
     inventory,
     isLoading,
     addEmprestimo,
@@ -772,5 +792,9 @@ export function useBank() {
     criarLoterica,
     comprarNumero,
     iniciarSorteioLoterica,
+    reportPrice: async (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number }) => {
+      await apiPost("reportPrice", d);
+      loadAll();
+    },
   };
 }

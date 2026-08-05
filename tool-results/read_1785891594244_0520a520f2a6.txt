@@ -1,0 +1,1515 @@
+     1→{
+     2→  "metadata": {
+     3→    "version": "2026-07-21",
+     4→    "game_version": "v.827+",
+     5→    "last_updated": "2026-07-21",
+     6→    "exchange_rate": "1 Aço ($) = 2 Cimentos (€)",
+     7→    "note": "Preços baseados em pesquisa de comunidades (Reddit, Discord, Facebook, Fóruns) - Mercado entre players"
+     8→  },
+     9→  "categories": [
+    10→    {
+    11→      "id": "food",
+    12→      "name": "🍖 Comida, Bebidas e Ingredientes",
+    13→      "items": [
+    14→        {
+    15→          "id": "clean_water",
+    16→          "name": "Água Limpa",
+    17→          "steel": "5:1",
+    18→          "cement": "10:1",
+    19→          "rarity": "common",
+    20→          "demand": "high",
+    21→          "notes": "Essencial para sobrevivência"
+    22→        },
+    23→        {
+    24→          "id": "dirty_water",
+    25→          "name": "Água Suja",
+    26→          "steel": "20:1",
+    27→          "cement": "40:1",
+    28→          "rarity": "common",
+    29→          "demand": "low",
+    30→          "notes": "Requer purificação"
+    31→        },
+    32→        {
+    33→          "id": "salt",
+    34→          "name": "Sal",
+    35→          "steel": "7:1",
+    36→          "cement": "14:1",
+    37→          "rarity": "common",
+    38→          "demand": "high",
+    39→          "notes": "Base para conservas e carne salgada"
+    40→        },
+    41→        {
+    42→          "id": "sugar",
+    43→          "name": "Açúcar",
+    44→          "steel": "5:1",
+    45→          "cement": "10:1",
+    46→          "rarity": "common",
+    47→          "demand": "medium",
+    48→          "notes": "Ingrediente de receitas"
+    49→        },
+    50→        {
+    51→          "id": "flour",
+    52→          "name": "Farinha",
+    53→          "steel": "5:2",
+    54→          "cement": "5:1",
+    55→          "rarity": "common",
+    56→          "demand": "medium",
+    57→          "notes": "Ingrediente de receitas"
+    58→        },
+    59→        {
+    60→          "id": "pasta",
+    61→          "name": "Massa / Macarrão",
+    62→          "steel": "1:1",
+    63→          "cement": "2:1",
+    64→          "rarity": "common",
+    65→          "demand": "medium",
+    66→          "notes": "Alimento pronto"
+    67→        },
+    68→        {
+    69→          "id": "eggs",
+    70→          "name": "Ovos",
+    71→          "steel": "1:1",
+    72→          "cement": "2:1",
+    73→          "rarity": "common",
+    74→          "demand": "medium",
+    75→          "notes": "Ingrediente de receitas"
+    76→        },
+    77→        {
+    78→          "id": "milk",
+    79→          "name": "Leite",
+    80→          "steel": "2:1",
+    81→          "cement": "4:1",
+    82→          "rarity": "common",
+    83→          "demand": "medium",
+    84→          "notes": "Ingrediente de receitas"
+    85→        },
+    86→        {
+    87→          "id": "condensed_milk",
+    88→          "name": "Leite Condensado",
+    89→          "steel": "2:1",
+    90→          "cement": "4:1",
+    91→          "rarity": "common",
+    92→          "demand": "medium",
+    93→          "notes": "Ingrediente de receitas"
+    94→        },
+    95→        {
+    96→          "id": "rice_grains",
+    97→          "name": "Grãos de Arroz",
+    98→          "steel": "1:1",
+    99→          "cement": "2:1",
+   100→          "rarity": "common",
+   101→          "demand": "medium",
+   102→          "notes": "Ingrediente de receitas"
+   103→        },
+   104→        {
+   105→          "id": "buckwheat",
+   106→          "name": "Trigo-sarraceno",
+   107→          "steel": "2:1",
+   108→          "cement": "4:1",
+   109→          "rarity": "common",
+   110→          "demand": "medium",
+   111→          "notes": "Ingrediente de receitas"
+   112→        },
+   113→        {
+   114→          "id": "lard",
+   115→          "name": "Banha / Gordura",
+   116→          "steel": "2:1",
+   117→          "cement": "4:1",
+   118→          "rarity": "common",
+   119→          "demand": "medium",
+   120→          "notes": "Ingrediente de receitas"
+   121→        },
+   122→        {
+   123→          "id": "honey",
+   124→          "name": "Mel",
+   125→          "steel": "1:5",
+   126→          "cement": "2:5",
+   127→          "rarity": "uncommon",
+   128→          "demand": "medium",
+   129→          "notes": "Ingrediente raro de receitas"
+   130→        },
+   131→        {
+   132→          "id": "canned_meat",
+   133→          "name": "Carne de Cozido (Enlatado)",
+   134→          "steel": "2:5",
+   135→          "cement": "4:5",
+   136→          "rarity": "uncommon",
+   137→          "demand": "medium",
+   138→          "notes": "Alimento enlatado"
+   139→        },
+   140→        {
+   141→          "id": "canned_soup",
+   142→          "name": "Canja Enlatada",
+   143→          "steel": "2:1",
+   144→          "cement": "4:1",
+   145→          "rarity": "common",
+   146→          "demand": "medium",
+   147→          "notes": "Alimento enlatado"
+   148→        },
+   149→        {
+   150→          "id": "sausage",
+   151→          "name": "Salsicha",
+   152→          "steel": "5:1",
+   153→          "cement": "10:1",
+   154→          "rarity": "common",
+   155→          "demand": "medium",
+   156→          "notes": "Alimento pronto"
+   157→        },
+   158→        {
+   159→          "id": "jelly",
+   160→          "name": "Geleia",
+   161→          "steel": "2:5",
+   162→          "cement": "4:5",
+   163→          "rarity": "uncommon",
+   164→          "demand": "low",
+   165→          "notes": "Conserva"
+   166→        },
+   167→        {
+   168→          "id": "chocolate",
+   169→          "name": "Chocolate",
+   170→          "steel": "1:3",
+   171→          "cement": "2:3",
+   172→          "rarity": "uncommon",
+   173→          "demand": "medium",
+   174→          "notes": "Doce/Ingrediente"
+   175→        },
+   176→        {
+   177→          "id": "cheese",
+   178→          "name": "Queijo",
+   179→          "steel": "1:2",
+   180→          "cement": "1:1",
+   181→          "rarity": "common",
+   182→          "demand": "medium",
+   183→          "notes": "Alimento"
+   184→        },
+   185→        {
+   186→          "id": "rice_bowl",
+   187→          "name": "Tigela de Arroz",
+   188→          "steel": "1:2",
+   189→          "cement": "1:1",
+   190→          "rarity": "common",
+   191→          "demand": "medium",
+   192→          "notes": "Alimento pronto"
+   193→        },
+   194→        {
+   195→          "id": "smoked_bacon",
+   196→          "name": "Toucinho Defumado",
+   197→          "steel": "1:1",
+   198→          "cement": "2:1",
+   199→          "rarity": "common",
+   200→          "demand": "medium",
+   201→          "notes": "Alimento"
+   202→        },
+   203→        {
+   204→          "id": "dried_toast",
+   205→          "name": "Torrada Seca",
+   206→          "steel": "4:1",
+   207→          "cement": "8:1",
+   208→          "rarity": "common",
+   209→          "demand": "medium",
+   210→          "notes": "Alimento"
+   211→        },
+   212→        {
+   213→          "id": "salted_fish",
+   214→          "name": "Peixe Salgado",
+   215→          "steel": "4:1",
+   216→          "cement": "8:1",
+   217→          "rarity": "common",
+   218→          "demand": "high",
+   219→          "notes": "Ótimo para lucro inicial"
+   220→        },
+   221→        {
+   222→          "id": "salted_meat",
+   223→          "name": "Carne Salgada",
+   224→          "steel": "4:1",
+   225→          "cement": "8:1",
+   226→          "rarity": "common",
+   227→          "demand": "high",
+   228→          "notes": "Ótimo para lucro inicial"
+   229→        },
+   230→        {
+   231→          "id": "russian_salad",
+   232→          "name": "Salada Russa",
+   233→          "steel": "1:3",
+   234→          "cement": "2:3",
+   235→          "rarity": "uncommon",
+   236→          "demand": "low",
+   237→          "notes": "Alimento pronto"
+   238→        },
+   239→        {
+   240→          "id": "snake_snack",
+   241→          "name": "Petisco de Cobra",
+   242→          "steel": "1:1",
+   243→          "cement": "2:1",
+   244→          "rarity": "common",
+   245→          "demand": "low",
+   246→          "notes": "Alimento"
+   247→        }
+   248→      ]
+   249→    },
+   250→    {
+   251→      "id": "herbs",
+   252→      "name": "🌿 Ervas, Cogumelos e Cultivos",
+   253→      "items": [
+   254→        {
+   255→          "id": "wheat",
+   256→          "name": "Trigo",
+   257→          "steel": "3:1",
+   258→          "cement": "6:1",
+   259→          "rarity": "common",
+   260→          "demand": "medium",
+   261→          "notes": "Cultivo"
+   262→        },
+   263→        {
+   264→          "id": "corn",
+   265→          "name": "Milho",
+   266→          "steel": "4:1",
+   267→          "cement": "8:1",
+   268→          "rarity": "common",
+   269→          "demand": "medium",
+   270→          "notes": "Cultivo"
+   271→        },
+   272→        {
+   273→          "id": "potatoes",
+   274→          "name": "Batatas",
+   275→          "steel": "4:1",
+   276→          "cement": "8:1",
+   277→          "rarity": "common",
+   278→          "demand": "medium",
+   279→          "notes": "Cultivo"
+   280→        },
+   281→        {
+   282→          "id": "pumpkin",
+   283→          "name": "Abóbora",
+   284→          "steel": "1:1",
+   285→          "cement": "2:1",
+   286→          "rarity": "common",
+   287→          "demand": "low",
+   288→          "notes": "Cultivo"
+   289→        },
+   290→        {
+   291→          "id": "apple",
+   292→          "name": "Maçã",
+   293→          "steel": "5:1",
+   294→          "cement": "10:1",
+   295→          "rarity": "common",
+   296→          "demand": "medium",
+   297→          "notes": "Fruta"
+   298→        },
+   299→        {
+   300→          "id": "strawberry",
+   301→          "name": "Morango",
+   302→          "steel": "5:1",
+   303→          "cement": "10:1",
+   304→          "rarity": "common",
+   305→          "demand": "medium",
+   306→          "notes": "Fruta"
+   307→        },
+   308→        {
+   309→          "id": "cranberry",
+   310→          "name": "Cranberry / Oxicoco",
+   311→          "steel": "4:1",
+   312→          "cement": "8:1",
+   313→          "rarity": "common",
+   314→          "demand": "medium",
+   315→          "notes": "Fruta"
+   316→        },
+   317→        {
+   318→          "id": "tangerine",
+   319→          "name": "Tangerina",
+   320→          "steel": "3:1",
+   321→          "cement": "6:1",
+   322→          "rarity": "common",
+   323→          "demand": "low",
+   324→          "notes": "Fruta"
+   325→        },
+   326→        {
+   327→          "id": "vegetables",
+   328→          "name": "Legumes",
+   329→          "steel": "4:1",
+   330→          "cement": "8:1",
+   331→          "rarity": "common",
+   332→          "demand": "medium",
+   333→          "notes": "Vegetal"
+   334→        },
+   335→        {
+   336→          "id": "chanterelle",
+   337→          "name": "Cantarela",
+   338→          "steel": "4:1",
+   339→          "cement": "8:1",
+   340→          "rarity": "common",
+   341→          "demand": "medium",
+   342→          "notes": "Cogumelo"
+   343→        },
+   344→        {
+   345→          "id": "radioactive_mushroom",
+   346→          "name": "Cogumelo Radioativo",
+   347→          "steel": "2:1",
+   348→          "cement": "4:1",
+   349→          "rarity": "uncommon",
+   350→          "demand": "low",
+   351→          "notes": "Cogumelo radioativo"
+   352→        },
+   353→        {
+   354→          "id": "fly_agaric",
+   355→          "name": "Agário-das-moscas",
+   356→          "steel": "4:1",
+   357→          "cement": "8:1",
+   358→          "rarity": "uncommon",
+   359→          "demand": "low",
+   360→          "notes": "Cogumelo venenoso"
+   361→        },
+   362→        {
+   363→          "id": "moss",
+   364→          "name": "Musgo",
+   365→          "steel": "3:1",
+   366→          "cement": "6:1",
+   367→          "rarity": "common",
+   368→          "demand": "low",
+   369→          "notes": "Planta"
+   370→        },
+   371→        {
+   372→          "id": "dandelion",
+   373→          "name": "Dente-de-leão",
+   374→          "steel": "5:1",
+   375→          "cement": "10:1",
+   376→          "rarity": "common",
+   377→          "demand": "low",
+   378→          "notes": "Erva"
+   379→        },
+   380→        {
+   381→          "id": "deer_ear",
+   382→          "name": "Orelha-de-veado",
+   383→          "steel": "3:1",
+   384→          "cement": "6:1",
+   385→          "rarity": "common",
+   386→          "demand": "low",
+   387→          "notes": "Planta"
+   388→        },
+   389→        {
+   390→          "id": "nettle",
+   391→          "name": "Urtiga",
+   392→          "steel": "5:1",
+   393→          "cement": "10:1",
+   394→          "rarity": "common",
+   395→          "demand": "low",
+   396→          "notes": "Erva"
+   397→        },
+   398→        {
+   399→          "id": "belladonna",
+   400→          "name": "Beladona",
+   401→          "steel": "5:1",
+   402→          "cement": "10:1",
+   403→          "rarity": "uncommon",
+   404→          "demand": "low",
+   405→          "notes": "Planta venenosa"
+   406→        },
+   407→        {
+   408→          "id": "serrated_grass",
+   409→          "name": "Capim-serrilhado",
+   410→          "steel": "2:1",
+   411→          "cement": "4:1",
+   412→          "rarity": "common",
+   413→          "demand": "low",
+   414→          "notes": "Planta"
+   415→        },
+   416→        {
+   417→          "id": "bloody_mold",
+   418→          "name": "Mofo Sangrento",
+   419→          "steel": "2:1",
+   420→          "cement": "4:1",
+   421→          "rarity": "uncommon",
+   422→          "demand": "low",
+   423→          "notes": "Mofo radioativo"
+   424→        }
+   425→      ]
+   426→    },
+   427→    {
+   428→      "id": "components",
+   429→      "name": "⚙️ Componentes, Materiais e Construção",
+   430→      "items": [
+   431→        {
+   432→          "id": "steel",
+   433→          "name": "Aço",
+   434→          "steel": "1:1",
+   435→          "cement": "1:2",
+   436→          "rarity": "common",
+   437→          "demand": "very_high",
+   438→          "notes": "Moeda principal de troca"
+   439→        },
+   440→        {
+   441→          "id": "cement",
+   442→          "name": "Cimento",
+   443→          "steel": "1:2",
+   444→          "cement": "1:1",
+   445→          "rarity": "common",
+   446→          "demand": "very_high",
+   447→          "notes": "Moeda secundária de troca"
+   448→        },
+   449→        {
+   450→          "id": "iron",
+   451→          "name": "Ferro",
+   452→          "steel": "1:1",
+   453→          "cement": "2:1",
+   454→          "rarity": "common",
+   455→          "demand": "high",
+   456→          "notes": "Material de construção"
+   457→        },
+   458→        {
+   459→          "id": "lead",
+   460→          "name": "Chumbo",
+   461→          "steel": "50:1",
+   462→          "cement": "100:1",
+   463→          "rarity": "uncommon",
+   464→          "demand": "medium",
+   465→          "notes": "Material raro"
+   466→        },
+   467→        {
+   468→          "id": "copper",
+   469→          "name": "Cobre",
+   470→          "steel": "1:5",
+   471→          "cement": "2:5",
+   472→          "rarity": "uncommon",
+   473→          "demand": "medium",
+   474→          "notes": "Material de construção"
+   475→        },
+   476→        {
+   477→          "id": "aluminum",
+   478→          "name": "Alumínio",
+   479→          "steel": "2:3",
+   480→          "cement": "4:3",
+   481→          "rarity": "uncommon",
+   482→          "demand": "medium",
+   483→          "notes": "Material de construção"
+   484→        },
+   485→        {
+   486→          "id": "iron_scrap",
+   487→          "name": "Sucata de Ferro",
+   488→          "steel": "20:1",
+   489→          "cement": "40:1",
+   490→          "rarity": "common",
+   491→          "demand": "medium",
+   492→          "notes": "Sucata reciclável"
+   493→        },
+   494→        {
+   495→          "id": "copper_scrap",
+   496→          "name": "Sucata de Cobre",
+   497→          "steel": "5:1",
+   498→          "cement": "10:1",
+   499→          "rarity": "common",
+   500→          "demand": "medium",
+   501→          "notes": "Sucata reciclável"
+   502→        },
+   503→        {
+   504→          "id": "aluminum_scrap",
+   505→          "name": "Sucata de Alumínio",
+   506→          "steel": "5:1",
+   507→          "cement": "10:1",
+   508→          "rarity": "common",
+   509→          "demand": "medium",
+   510→          "notes": "Sucata reciclável"
+   511→        },
+   512→        {
+   513→          "id": "saltpeter",
+   514→          "name": "Salitre",
+   515→          "steel": "30:1",
+   516→          "cement": "60:1",
+   517→          "rarity": "uncommon",
+   518→          "demand": "high",
+   519→          "notes": "Ingrediente para pólvora"
+   520→        },
+   521→        {
+   522→          "id": "sulfur",
+   523→          "name": "Enxofre",
+   524→          "steel": "30:1",
+   525→          "cement": "60:1",
+   526→          "rarity": "uncommon",
+   527→          "demand": "high",
+   528→          "notes": "Ingrediente para pólvora"
+   529→        },
+   530→        {
+   531→          "id": "charcoal",
+   532→          "name": "Carvão Vegetal",
+   533→          "steel": "5:1",
+   534→          "cement": "10:1",
+   535→          "rarity": "common",
+   536→          "demand": "medium",
+   537→          "notes": "Combustível"
+   538→        },
+   539→        {
+   540→          "id": "coal",
+   541→          "name": "Carvão Preto",
+   542→          "steel": "3:2",
+   543→          "cement": "3:1",
+   544→          "rarity": "common",
+   545→          "demand": "medium",
+   546→          "notes": "Combustível"
+   547→        },
+   548→        {
+   549→          "id": "hellish_coal",
+   550→          "name": "Carvão Infernal",
+   551→          "steel": "1:7",
+   552→          "cement": "2:7",
+   553→          "rarity": "rare",
+   554→          "demand": "medium",
+   555→          "notes": "Combustível raro"
+   556→        },
+   557→        {
+   558→          "id": "firewood",
+   559→          "name": "Lenha",
+   560→          "steel": "8:1",
+   561→          "cement": "16:1",
+   562→          "rarity": "common",
+   563→          "demand": "high",
+   564→          "notes": "Combustível"
+   565→        },
+   566→        {
+   567→          "id": "stick",
+   568→          "name": "Graveto",
+   569→          "steel": "4:1",
+   570→          "cement": "8:1",
+   571→          "rarity": "common",
+   572→          "demand": "medium",
+   573→          "notes": "Combustível"
+   574→        },
+   575→        {
+   576→          "id": "log",
+   577→          "name": "Tronco",
+   578→          "steel": "3:1",
+   579→          "cement": "6:1",
+   580→          "rarity": "common",
+   581→          "demand": "medium",
+   582→          "notes": "Material de construção"
+   583→        },
+   584→        {
+   585→          "id": "board",
+   586→          "name": "Tábua",
+   587→          "steel": "1:1",
+   588→          "cement": "2:1",
+   589→          "rarity": "common",
+   590→          "demand": "medium",
+   591→          "notes": "Material de construção"
+   592→        },
+   593→        {
+   594→          "id": "brick",
+   595→          "name": "Tijolo",
+   596→          "steel": "6:1",
+   597→          "cement": "12:1",
+   598→          "rarity": "common",
+   599→          "demand": "medium",
+   600→          "notes": "Material de construção"
+   601→        },
+   602→        {
+   603→          "id": "refractory_brick",
+   604→          "name": "Tijolo Refratário",
+   605→          "steel": "3:1",
+   606→          "cement": "6:1",
+   607→          "rarity": "uncommon",
+   608→          "demand": "medium",
+   609→          "notes": "Material de construção especial"
+   610→        },
+   611→        {
+   612→          "id": "flint",
+   613→          "name": "Pederneira",
+   614→          "steel": "3:1",
+   615→          "cement": "6:1",
+   616→          "rarity": "common",
+   617→          "demand": "low",
+   618→          "notes": "Material"
+   619→        },
+   620→        {
+   621→          "id": "electrical_tape",
+   622→          "name": "Fita Isolante",
+   623→          "steel": "3:1",
+   624→          "cement": "6:1",
+   625→          "rarity": "common",
+   626→          "demand": "medium",
+   627→          "notes": "Material"
+   628→        },
+   629→        {
+   630→          "id": "nails",
+   631→          "name": "Pregos",
+   632→          "steel": "3:1",
+   633→          "cement": "6:1",
+   634→          "rarity": "common",
+   635→          "demand": "medium",
+   636→          "notes": "Material"
+   637→        },
+   638→        {
+   639→          "id": "screws",
+   640→          "name": "Parafuso",
+   641→          "steel": "3:1",
+   642→          "cement": "6:1",
+   643→          "rarity": "common",
+   644→          "demand": "medium",
+   645→          "notes": "Material"
+   646→        },
+   647→        {
+   648→          "id": "spring",
+   649→          "name": "Mola",
+   650→          "steel": "1:1",
+   651→          "cement": "2:1",
+   652→          "rarity": "common",
+   653→          "demand": "medium",
+   654→          "notes": "Material"
+   655→        },
+   656→        {
+   657→          "id": "electrical_wire",
+   658→          "name": "Cabo Elétrico",
+   659→          "steel": "1:1",
+   660→          "cement": "2:1",
+   661→          "rarity": "common",
+   662→          "demand": "medium",
+   663→          "notes": "Material"
+   664→        },
+   665→        {
+   666→          "id": "metal_plate",
+   667→          "name": "Placa de Metal",
+   668→          "steel": "3:2",
+   669→          "cement": "3:1",
+   670→          "rarity": "common",
+   671→          "demand": "medium",
+   672→          "notes": "Material"
+   673→        },
+   674→        {
+   675→          "id": "soap",
+   676→          "name": "Sabão",
+   677→          "steel": "1:2",
+   678→          "cement": "1:1",
+   679→          "rarity": "common",
+   680→          "demand": "low",
+   681→          "notes": "Item de higiene"
+   682→        },
+   683→        {
+   684→          "id": "soap_powder",
+   685→          "name": "Sabão em Pó",
+   686→          "steel": "4:1",
+   687→          "cement": "8:1",
+   688→          "rarity": "common",
+   689→          "demand": "low",
+   690→          "notes": "Item de higiene"
+   691→        },
+   692→        {
+   693→          "id": "sandpaper",
+   694→          "name": "Lixa",
+   695→          "steel": "4:1",
+   696→          "cement": "8:1",
+   697→          "rarity": "common",
+   698→          "demand": "low",
+   699→          "notes": "Material"
+   700→        },
+   701→        {
+   702→          "id": "bone_glue",
+   703→          "name": "Cola de Osso",
+   704→          "steel": "3:1",
+   705→          "cement": "6:1",
+   706→          "rarity": "common",
+   707→          "demand": "medium",
+   708→          "notes": "Material"
+   709→        },
+   710→        {
+   711→          "id": "fabric",
+   712→          "name": "Tecido / Pano",
+   713→          "steel": "1:2",
+   714→          "cement": "1:1",
+   715→          "rarity": "common",
+   716→          "demand": "medium",
+   717→          "notes": "Material"
+   718→        },
+   719→        {
+   720→          "id": "rags",
+   721→          "name": "Trapos",
+   722→          "steel": "20:1",
+   723→          "cement": "40:1",
+   724→          "rarity": "common",
+   725→          "demand": "low",
+   726→          "notes": "Material"
+   727→        },
+   728→        {
+   729→          "id": "thread",
+   730→          "name": "Linhas / Fio",
+   731→          "steel": "8:1",
+   732→          "cement": "16:1",
+   733→          "rarity": "common",
+   734→          "demand": "medium",
+   735→          "notes": "Material"
+   736→        },
+   737→        {
+   738→          "id": "rope",
+   739→          "name": "Corda",
+   740→          "steel": "1:2",
+   741→          "cement": "1:1",
+   742→          "rarity": "common",
+   743→          "demand": "medium",
+   744→          "notes": "Material"
+   745→        },
+   746→        {
+   747→          "id": "cooked_leather",
+   748→          "name": "Couro Cozido",
+   749→          "steel": "1:2",
+   750→          "cement": "1:1",
+   751→          "rarity": "common",
+   752→          "demand": "medium",
+   753→          "notes": "Material"
+   754→        },
+   755→        {
+   756→          "id": "tanned_leather",
+   757→          "name": "Couro Curtido",
+   758→          "steel": "1:3",
+   759→          "cement": "2:3",
+   760→          "rarity": "uncommon",
+   761→          "demand": "medium",
+   762→          "notes": "Material de qualidade"
+   763→        },
+   764→        {
+   765→          "id": "thick_leather",
+   766→          "name": "Couro Grosso",
+   767→          "steel": "1:20",
+   768→          "cement": "1:10",
+   769→          "rarity": "rare",
+   770→          "demand": "low",
+   771→          "notes": "Material raro"
+   772→        },
+   773→        {
+   774→          "id": "quality_leather",
+   775→          "name": "Couro de Qualidade",
+   776→          "steel": "1:30",
+   777→          "cement": "1:15",
+   778→          "rarity": "rare",
+   779→          "demand": "low",
+   780→          "notes": "Material raro"
+   781→        },
+   782→        {
+   783→          "id": "can",
+   784→          "name": "Lata",
+   785→          "steel": "3:1",
+   786→          "cement": "6:1",
+   787→          "rarity": "common",
+   788→          "demand": "medium",
+   789→          "notes": "Recipiente"
+   790→        },
+   791→        {
+   792→          "id": "spark_plug",
+   793→          "name": "Vela de Ignição",
+   794→          "steel": "1:4",
+   795→          "cement": "1:2",
+   796→          "rarity": "uncommon",
+   797→          "demand": "medium",
+   798→          "notes": "Peça de motor"
+   799→        },
+   800→        {
+   801→          "id": "tires",
+   802→          "name": "Pneus",
+   803→          "steel": "1:4",
+   804→          "cement": "1:2",
+   805→          "rarity": "uncommon",
+   806→          "demand": "medium",
+   807→          "notes": "Peça de veículo"
+   808→        },
+   809→        {
+   810→          "id": "machine_parts",
+   811→          "name": "Peças de Máquina",
+   812→          "steel": "1:4",
+   813→          "cement": "1:2",
+   814→          "rarity": "uncommon",
+   815→          "demand": "medium",
+   816→          "notes": "Peça de máquina"
+   817→        },
+   818→        {
+   819→          "id": "electrical_parts",
+   820→          "name": "Peças Elétricas",
+   821→          "steel": "1:10",
+   822→          "cement": "1:5",
+   823→          "rarity": "rare",
+   824→          "demand": "medium",
+   825→          "notes": "Peça elétrica"
+   826→        },
+   827→        {
+   828→          "id": "gun_parts",
+   829→          "name": "Peças Extras de Arma",
+   830→          "steel": "1:2",
+   831→          "cement": "1:1",
+   832→          "rarity": "uncommon",
+   833→          "demand": "medium",
+   834→          "notes": "Peça de arma"
+   835→        },
+   836→        {
+   837→          "id": "gas_mask_filter",
+   838→          "name": "Filtro de Máscara de Gás",
+   839→          "steel": "1:10",
+   840→          "cement": "1:5",
+   841→          "rarity": "rare",
+   842→          "demand": "medium",
+   843→          "notes": "Item de proteção"
+   844→        },
+   845→        {
+   846→          "id": "autoparts",
+   847→          "name": "Autopeças",
+   848→          "steel": "4:1",
+   849→          "cement": "8:1",
+   850→          "rarity": "common",
+   851→          "demand": "medium",
+   852→          "notes": "Peça de veículo"
+   853→        },
+   854→        {
+   855→          "id": "chainsaw_motor",
+   856→          "name": "Motor de Serra Elétrica",
+   857→          "steel": "1:2",
+   858→          "cement": "1:1",
+   859→          "rarity": "uncommon",
+   860→          "demand": "low",
+   861→          "notes": "Motor"
+   862→        },
+   863→        {
+   864→          "id": "car_battery",
+   865→          "name": "Bateria de Carro",
+   866→          "steel": "1:20",
+   867→          "cement": "1:10",
+   868→          "rarity": "rare",
+   869→          "demand": "high",
+   870→          "notes": "Item de alto valor"
+   871→        },
+   872→        {
+   873→          "id": "broken_car_battery",
+   874→          "name": "Bateria de Carro Quebrada",
+   875→          "steel": "2:3",
+   876→          "cement": "4:3",
+   877→          "rarity": "uncommon",
+   878→          "demand": "low",
+   879→          "notes": "Bateria danificada"
+   880→        },
+   881→        {
+   882→          "id": "broken_gas_engine",
+   883→          "name": "Motor a Gasolina Quebrado",
+   884→          "steel": "1:30",
+   885→          "cement": "1:15",
+   886→          "rarity": "rare",
+   887→          "demand": "low",
+   888→          "notes": "Motor danificado"
+   889→        },
+   890→        {
+   891→          "id": "broken_diesel_engine",
+   892→          "name": "Motor a Diesel Quebrado",
+   893→          "steel": "1:30",
+   894→          "cement": "1:15",
+   895→          "rarity": "rare",
+   896→          "demand": "low",
+   897→          "notes": "Motor danificado"
+   898→        },
+   899→        {
+   900→          "id": "machine_oil",
+   901→          "name": "Óleo de Máquina",
+   902→          "steel": "50:1",
+   903→          "cement": "100:1",
+   904→          "rarity": "uncommon",
+   905→          "demand": "medium",
+   906→          "notes": "Óleo"
+   907→        }
+   908→      ]
+   909→    },
+   910→    {
+   911→      "id": "medicine",
+   912→      "name": "💉 Medicina, Bebidas Alcoólicas e Químicos",
+   913→      "items": [
+   914→        {
+   915→          "id": "sterile_bandage",
+   916→          "name": "Atadura Esterilizada",
+   917→          "steel": "1:1",
+   918→          "cement": "2:1",
+   919→          "rarity": "common",
+   920→          "demand": "high",
+   921→          "notes": "Item médico"
+   922→        },
+   923→        {
+   924→          "id": "healing_ointment",
+   925→          "name": "Unguento Curativo",
+   926→          "steel": "1:2",
+   927→          "cement": "1:1",
+   928→          "rarity": "common",
+   929→          "demand": "high",
+   930→          "notes": "Item médico"
+   931→        },
+   932→        {
+   933→          "id": "briocarmo",
+   934→          "name": "Briocarmo",
+   935→          "steel": "1:4",
+   936→          "cement": "1:2",
+   937→          "rarity": "uncommon",
+   938→          "demand": "medium",
+   939→          "notes": "Medicamento"
+   940→        },
+   941→        {
+   942→          "id": "metocaine",
+   943→          "name": "Metocaína",
+   944→          "steel": "1:5",
+   945→          "cement": "2:5",
+   946→          "rarity": "uncommon",
+   947→          "demand": "medium",
+   948→          "notes": "Anestésico"
+   949→        },
+   950→        {
+   951→          "id": "lidiacida34",
+   952→          "name": "Lidiacida-34",
+   953→          "steel": "1:2",
+   954→          "cement": "1:1",
+   955→          "rarity": "common",
+   956→          "demand": "medium",
+   957→          "notes": "Medicamento"
+   958→        },
+   959→        {
+   960→          "id": "antibiotics",
+   961→          "name": "Antibióticos",
+   962→          "steel": "1:2",
+   963→          "cement": "1:1",
+   964→          "rarity": "common",
+   965→          "demand": "high",
+   966→          "notes": "Medicamento"
+   967→        },
+   968→        {
+   969→          "id": "painkillers",
+   970→          "name": "Analgésico",
+   971→          "steel": "1:2",
+   972→          "cement": "1:1",
+   973→          "rarity": "common",
+   974→          "demand": "high",
+   975→          "notes": "Medicamento"
+   976→        },
+   977→        {
+   978→          "id": "chlorcistamine",
+   979→          "name": "Clorcistamina",
+   980→          "steel": "1:2",
+   981→          "cement": "1:1",
+   982→          "rarity": "common",
+   983→          "demand": "medium",
+   984→          "notes": "Medicamento"
+   985→        },
+   986→        {
+   987→          "id": "ir190",
+   988→          "name": "IR-190",
+   989→          "steel": "1:1",
+   990→          "cement": "2:1",
+   991→          "rarity": "common",
+   992→          "demand": "medium",
+   993→          "notes": "Medicamento"
+   994→        },
+   995→        {
+   996→          "id": "antirad",
+   997→          "name": "Antirad",
+   998→          "steel": "1:6",
+   999→          "cement": "1:3",
+  1000→          "rarity": "uncommon",
+  1001→          "demand": "high",
+  1002→          "notes": "Proteção contra radiação"
+  1003→        },
+  1004→        {
+  1005→          "id": "activated_charcoal",
+  1006→          "name": "Carvão Ativado",
+  1007→          "steel": "10:1",
+  1008→          "cement": "20:1",
+  1009→          "rarity": "common",
+  1010→          "demand": "medium",
+  1011→          "notes": "Desintoxicante"
+  1012→        },
+  1013→        {
+  1014→          "id": "alcohol",
+  1015→          "name": "Álcool",
+  1016→          "steel": "1:1",
+  1017→          "cement": "2:1",
+  1018→          "rarity": "common",
+  1019→          "demand": "high",
+  1020→          "notes": "Desinfetante/Combustível"
+  1021→        },
+  1022→        {
+  1023→          "id": "sulfuric_acid",
+  1024→          "name": "Ácido Sulfúrico",
+  1025→          "steel": "1:1",
+  1026→          "cement": "2:1",
+  1027→          "rarity": "common",
+  1028→          "demand": "high",
+  1029→          "notes": "Química/Bateria"
+  1030→        },
+  1031→        {
+  1032→          "id": "energy_potion",
+  1033→          "name": "Poção Energizante",
+  1034→          "steel": "2:5",
+  1035→          "cement": "4:5",
+  1036→          "rarity": "uncommon",
+  1037→          "demand": "low",
+  1038→          "notes": "Bebida"
+  1039→        },
+  1040→        {
+  1041→          "id": "detox_potion",
+  1042→          "name": "Poção Desintoxicante",
+  1043→          "steel": "2:5",
+  1044→          "cement": "4:5",
+  1045→          "rarity": "uncommon",
+  1046→          "demand": "low",
+  1047→          "notes": "Bebida"
+  1048→        },
+  1049→        {
+  1050→          "id": "coffee",
+  1051→          "name": "Café",
+  1052→          "steel": "1:1",
+  1053→          "cement": "2:1",
+  1054→          "rarity": "common",
+  1055→          "demand": "medium",
+  1056→          "notes": "Bebida"
+  1057→        },
+  1058→        {
+  1059→          "id": "tea",
+  1060→          "name": "Chá",
+  1061→          "steel": "1:1",
+  1062→          "cement": "2:1",
+  1063→          "rarity": "common",
+  1064→          "demand": "medium",
+  1065→          "notes": "Bebida"
+  1066→        },
+  1067→        {
+  1068→          "id": "beetle_juice",
+  1069→          "name": "Suco de Besouro",
+  1070→          "steel": "1:2",
+  1071→          "cement": "1:1",
+  1072→          "rarity": "uncommon",
+  1073→          "demand": "low",
+  1074→          "notes": "Bebida"
+  1075→        },
+  1076→        {
+  1077→          "id": "cigarettes",
+  1078→          "name": "Cigarros",
+  1079→          "steel": "2:1",
+  1080→          "cement": "4:1",
+  1081→          "rarity": "common",
+  1082→          "demand": "medium",
+  1083→          "notes": "Tabaco"
+  1084→        },
+  1085→        {
+  1086→          "id": "russian_cigarettes",
+  1087→          "name": "Cigarros Russos",
+  1088→          "steel": "1:2",
+  1089→          "cement": "1:1",
+  1090→          "rarity": "common",
+  1091→          "demand": "low",
+  1092→          "notes": "Tabaco"
+  1093→        },
+  1094→        {
+  1095→          "id": "cuban_cigar",
+  1096→          "name": "Charuto Cubano",
+  1097→          "steel": "1:10",
+  1098→          "cement": "1:5",
+  1099→          "rarity": "rare",
+  1100→          "demand": "low",
+  1101→          "notes": "Tabaco raro"
+  1102→        },
+  1103→        {
+  1104→          "id": "vodka",
+  1105→          "name": "Vodka",
+  1106→          "steel": "1:4",
+  1107→          "cement": "1:2",
+  1108→          "rarity": "uncommon",
+  1109→          "demand": "medium",
+  1110→          "notes": "Bebida alcoólica"
+  1111→        },
+  1112→        {
+  1113→          "id": "whiskey",
+  1114→          "name": "Uísque",
+  1115→          "steel": "1:4",
+  1116→          "cement": "1:2",
+  1117→          "rarity": "uncommon",
+  1118→          "demand": "medium",
+  1119→          "notes": "Bebida alcoólica"
+  1120→        },
+  1121→        {
+  1122→          "id": "homemade_wine",
+  1123→          "name": "Vinho Caseiro",
+  1124→          "steel": "1:5",
+  1125→          "cement": "2:5",
+  1126→          "rarity": "uncommon",
+  1127→          "demand": "low",
+  1128→          "notes": "Bebida alcoólica"
+  1129→        },
+  1130→        {
+  1131→          "id": "moonshine",
+  1132→          "name": "Aguardente / Moonshine",
+  1133→          "steel": "1:2",
+  1134→          "cement": "1:1",
+  1135→          "rarity": "common",
+  1136→          "demand": "medium",
+  1137→          "notes": "Bebida alcoólica"
+  1138→        },
+  1139→        {
+  1140→          "id": "apple_liqueur",
+  1141→          "name": "Licor de Maçã",
+  1142→          "steel": "1:2",
+  1143→          "cement": "1:1",
+  1144→          "rarity": "common",
+  1145→          "demand": "low",
+  1146→          "notes": "Bebida alcoólica"
+  1147→        },
+  1148→        {
+  1149→          "id": "diluted_liqueur",
+  1150→          "name": "Licor Diluído",
+  1151→          "steel": "1:1",
+  1152→          "cement": "2:1",
+  1153→          "rarity": "common",
+  1154→          "demand": "low",
+  1155→          "notes": "Bebida alcoólica"
+  1156→        },
+  1157→        {
+  1158→          "id": "kvass",
+  1159→          "name": "Kvass",
+  1160→          "steel": "1:1",
+  1161→          "cement": "2:1",
+  1162→          "rarity": "common",
+  1163→          "demand": "low",
+  1164→          "notes": "Bebida"
+  1165→        },
+  1166→        {
+  1167→          "id": "kompot",
+  1168→          "name": "Kompot",
+  1169→          "steel": "1:1",
+  1170→          "cement": "2:1",
+  1171→          "rarity": "common",
+  1172→          "demand": "low",
+  1173→          "notes": "Bebida"
+  1174→        },
+  1175→        {
+  1176→          "id": "soda",
+  1177→          "name": "Refrigerante",
+  1178→          "steel": "2:3",
+  1179→          "cement": "4:3",
+  1180→          "rarity": "common",
+  1181→          "demand": "low",
+  1182→          "notes": "Bebida"
+  1183→        },
+  1184→        {
+  1185→          "id": "poison",
+  1186→          "name": "Veneno",
+  1187→          "steel": "3:1",
+  1188→          "cement": "6:1",
+  1189→          "rarity": "uncommon",
+  1190→          "demand": "low",
+  1191→          "notes": "Tóxico"
+  1192→        }
+  1193→      ]
+  1194→    },
+  1195→    {
+  1196→      "id": "ammo",
+  1197→      "name": "💣 Munições, Insumos e Explosivos",
+  1198→      "items": [
+  1199→        {
+  1200→          "id": "pistol_ammo",
+  1201→          "name": "Munição de Pistola",
+  1202→          "steel": "6:1",
+  1203→          "cement": "12:1",
+  1204→          "rarity": "common",
+  1205→          "demand": "high",
+  1206→          "notes": "Munição"
+  1207→        },
+  1208→        {
+  1209→          "id": "shotgun_ammo",
+  1210→          "name": "Munição de Espingarda",
+  1211→          "steel": "2:1",
+  1212→          "cement": "4:1",
+  1213→          "rarity": "common",
+  1214→          "demand": "high",
+  1215→          "notes": "Munição"
+  1216→        },
+  1217→        {
+  1218→          "id": "assault_rifle_ammo",
+  1219→          "name": "Munição de Fuzil de Assalto",
+  1220→          "steel": "6:1",
+  1221→          "cement": "12:1",
+  1222→          "rarity": "common",
+  1223→          "demand": "very_high",
+  1224→          "notes": "Munição de alto valor"
+  1225→        },
+  1226→        {
+  1227→          "id": "rifle_ammo",
+  1228→          "name": "Munição de Rifle",
+  1229→          "steel": "3:1",
+  1230→          "cement": "6:1",
+  1231→          "rarity": "common",
+  1232→          "demand": "high",
+  1233→          "notes": "Munição"
+  1234→        },
+  1235→        {
+  1236→          "id": "empty_pistol_cartridge",
+  1237→          "name": "Cartucho de Pistola (Vazio)",
+  1238→          "steel": "10:1",
+  1239→          "cement": "20:1",
+  1240→          "rarity": "common",
+  1241→          "demand": "medium",
+  1242→          "notes": "Cartucho para recarga"
+  1243→        },
+  1244→        {
+  1245→          "id": "empty_shotgun_cartridge",
+  1246→          "name": "Cartucho de Espingarda (Vazio)",
+  1247→          "steel": "4:1",
+  1248→          "cement": "8:1",
+  1249→          "rarity": "common",
+  1250→          "demand": "medium",
+  1251→          "notes": "Cartucho para recarga"
+  1252→        },
+  1253→        {
+  1254→          "id": "empty_assault_cartridge",
+  1255→          "name": "Cartucho de Rifle de Assalto (Vazio)",
+  1256→          "steel": "10:1",
+  1257→          "cement": "20:1",
+  1258→          "rarity": "common",
+  1259→          "demand": "medium",
+  1260→          "notes": "Cartucho para recarga"
+  1261→        },
+  1262→        {
+  1263→          "id": "empty_rifle_cartridge",
+  1264→          "name": "Cartucho de Rifle (Vazio)",
+  1265→          "steel": "6:1",
+  1266→          "cement": "12:1",
+  1267→          "rarity": "common",
+  1268→          "demand": "medium",
+  1269→          "notes": "Cartucho para recarga"
+  1270→        },
+  1271→        {
+  1272→          "id": "blank_cartridge",
+  1273→          "name": "Cartucho em Branco",
+  1274→          "steel": "10:1",
+  1275→          "cement": "20:1",
+  1276→          "rarity": "common",
+  1277→          "demand": "low",
+  1278→          "notes": "Cartucho"
+  1279→        },
+  1280→        {
+  1281→          "id": "handmade_cartridge",
+  1282→          "name": "Cartucho Artesanal",
+  1283→          "steel": "3:1",
+  1284→          "cement": "6:1",
+  1285→          "rarity": "common",
+  1286→          "demand": "medium",
+  1287→          "notes": "Cartucho caseiro"
+  1288→        },
+  1289→        {
+  1290→          "id": "crossbow_bolt",
+  1291→          "name": "Virote de Besta",
+  1292→          "steel": "4:1",
+  1293→          "cement": "8:1",
+  1294→          "rarity": "common",
+  1295→          "demand": "low",
+  1296→          "notes": "Munição de besta"
+  1297→        },
+  1298→        {
+  1299→          "id": "training_ammo",
+  1300→          "name": "Munição de Treinamento",
+  1301→          "steel": "1:6",
+  1302→          "cement": "1:3",
+  1303→          "rarity": "common",
+  1304→          "demand": "low",
+  1305→          "notes": "Munição de treinamento"
+  1306→        },
+  1307→        {
+  1308→          "id": "gunpowder",
+  1309→          "name": "Pólvora",
+  1310→          "steel": "25:1",
+  1311→          "cement": "50:1",
+  1312→          "rarity": "uncommon",
+  1313→          "demand": "high",
+  1314→          "notes": "Ingrediente para munição"
+  1315→        },
+  1316→        {
+  1317→          "id": "primer",
+  1318→          "name": "Primer (Espoleta)",
+  1319→          "steel": "10:1",
+  1320→          "cement": "20:1",
+  1321→          "rarity": "common",
+  1322→          "demand": "high",
+  1323→          "notes": "Componente de munição"
+  1324→        },
+  1325→        {
+  1326→          "id": "plastic_explosive",
+  1327→          "name": "Explosivos Plásticos",
+  1328→          "steel": "1:3",
+  1329→          "cement": "2:3",
+  1330→          "rarity": "uncommon",
+  1331→          "demand": "medium",
+  1332→          "notes": "Explosivo"
+  1333→        },
+  1334→        {
+  1335→          "id": "molotov",
+  1336→          "name": "Coquetel Molotov",
+  1337→          "steel": "1:2",
+  1338→          "cement": "1:1",
+  1339→          "rarity": "uncommon",
+  1340→          "demand": "medium",
+  1341→          "notes": "Explosivo"
+  1342→        },
+  1343→        {
+  1344→          "id": "powder_grenade",
+  1345→          "name": "Granada de Pólvora",
+  1346→          "steel": "1:3",
+  1347→          "cement": "2:3",
+  1348→          "rarity": "uncommon",
+  1349→          "demand": "medium",
+  1350→          "notes": "Explosivo"
+  1351→        },
+  1352→        {
+  1353→          "id": "stun_grenade",
+  1354→          "name": "Granada Atordoadora",
+  1355→          "steel": "1:5",
+  1356→          "cement": "2:5",
+  1357→          "rarity": "uncommon",
+  1358→          "demand": "low",
+  1359→          "notes": "Explosivo"
+  1360→        }
+  1361→      ]
+  1362→    },
+  1363→    {
+  1364→      "id": "animal",
+  1365→      "name": "🐺 Produtos Animais e Peças Mutantes",
+  1366→      "items": [
+  1367→        {
+  1368→          "id": "contaminated_meat",
+  1369→          "name": "Carne Contaminada",
+  1370→          "steel": "5:1",
+  1371→          "cement": "10:1",
+  1372→          "rarity": "common",
+  1373→          "demand": "low",
+  1374→          "notes": "Carne radioativa"
+  1375→        },
+  1376→        {
+  1377→          "id": "tough_meat",
+  1378→          "name": "Carne Dura",
+  1379→          "steel": "3:1",
+  1380→          "cement": "6:1",
+  1381→          "rarity": "common",
+  1382→          "demand": "medium",
+  1383→          "notes": "Carne"
+  1384→        },
+  1385→        {
+  1386→          "id": "fatty_meat",
+  1387→          "name": "Carne Gorda",
+  1388→          "steel": "3:2",
+  1389→          "cement": "3:1",
+  1390→          "rarity": "common",
+  1391→          "demand": "medium",
+  1392→          "notes": "Carne"
+  1393→        },
+  1394→        {
+  1395→          "id": "snake_meat",
+  1396→          "name": "Carne de Cobra",
+  1397→          "steel": "3:2",
+  1398→          "cement": "3:1",
+  1399→          "rarity": "common",
+  1400→          "demand": "low",
+  1401→          "notes": "Carne"
+  1402→        },
+  1403→        {
+  1404→          "id": "ground_meat",
+  1405→          "name": "Carne Moída",
+  1406→          "steel": "4:1",
+  1407→          "cement": "8:1",
+  1408→          "rarity": "common",
+  1409→          "demand": "medium",
+  1410→          "notes": "Carne"
+  1411→        },
+  1412→        {
+  1413→          "id": "mutant_meat",
+  1414→          "name": "Carne Mutante",
+  1415→          "steel": "4:1",
+  1416→          "cement": "8:1",
+  1417→          "rarity": "uncommon",
+  1418→          "demand": "low",
+  1419→          "notes": "Carne mutante"
+  1420→        },
+  1421→        {
+  1422→          "id": "raw_bacon",
+  1423→          "name": "Toucinho Cru",
+  1424→          "steel": "2:1",
+  1425→          "cement": "4:1",
+  1426→          "rarity": "common",
+  1427→          "demand": "medium",
+  1428→          "notes": "Carne"
+  1429→        },
+  1430→        {
+  1431→          "id": "raw_fish",
+  1432→          "name": "Peixe Cru",
+  1433→          "steel": "2:1",
+  1434→          "cement": "4:1",
+  1435→          "rarity": "common",
+  1436→          "demand": "medium",
+  1437→          "notes": "Peixe"
+  1438→        },
+  1439→        {
+  1440→          "id": "caviar",
+  1441→          "name": "Caviar",
+  1442→          "steel": "5:1",
+  1443→          "cement": "10:1",
+  1444→          "rarity": "uncommon",
+  1445→          "demand": "low",
+  1446→          "notes": "Iguaria"
+  1447→        },
+  1448→        {
+  1449→          "id": "lymph",
+  1450→          "name": "Linfa",
+  1451→          "steel": "10:1",
+  1452→          "cement": "20:1",
+  1453→          "rarity": "uncommon",
+  1454→          "demand": "medium",
+  1455→          "notes": "Fluido mutante"
+  1456→        },
+  1457→        {
+  1458→          "id": "acid_glands",
+  1459→          "name": "Glândulas Ácidas",
+  1460→          "steel": "3:1",
+  1461→          "cement": "6:1",
+  1462→          "rarity": "uncommon",
+  1463→          "demand": "medium",
+  1464→          "notes": "Órgão mutante"
+  1465→        },
+  1466→        {
+  1467→          "id": "raw_skin",
+  1468→          "name": "Pele Crua",
+  1469→          "steel": "4:1",
+  1470→          "cement": "8:1",
+  1471→          "rarity": "common",
+  1472→          "demand": "medium",
+  1473→          "notes": "Material"
+  1474→        },
+  1475→        {
+  1476→          "id": "thick_skin",
+  1477→          "name": "Pele Grossa",
+  1478→          "steel": "1:8",
+  1479→          "cement": "1:4",
+  1480→          "rarity": "rare",
+  1481→          "demand": "low",
+  1482→          "notes": "Material raro"
+  1483→        },
+  1484→        {
+  1485→          "id": "quality_skin",
+  1486→          "name": "Pele de Qualidade",
+  1487→          "steel": "1:18",
+  1488→          "cement": "1:9",
+  1489→          "rarity": "rare",
+  1490→          "demand": "low",
+  1491→          "notes": "Material raro"
+  1492→        },
+  1493→        {
+  1494→          "id": "chitin",
+  1495→          "name": "Quitina",
+  1496→          "steel": "3:2",
+  1497→          "cement": "3:1",
+  1498→          "rarity": "uncommon",
+  1499→          "demand": "medium",
+  1500→          "notes": "Material mutante"
+  1501→        },
+  1502→        {
+  1503→          "id": "bones",
+  1504→          "name": "Ossos",
+  1505→          "steel": "5:1",
+  1506→          "cement": "10:1",
+  1507→          "rarity": "common",
+  1508→          "demand": "medium",
+  1509→          "notes": "Material"
+  1510→        }
+  1511→      ]
+  1512→    }
+  1513→  ]
+  1514→}
+  1515→

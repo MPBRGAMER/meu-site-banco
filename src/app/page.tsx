@@ -27,7 +27,6 @@ const publicTabs = [
   { id: "leiloes", label: "Leilões", icon: Gavel },
   { id: "sorteios", label: "Sorteios", icon: Dices },
   { id: "loterica", label: "Lotérica", icon: Dices },
-  { id: "tabela", label: "Tabela", icon: Table2 },
 ];
 
 const adminTabs = [
