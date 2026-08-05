@@ -8,13 +8,14 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { pricesData } from "@/data/prices";
 import { priceTrends } from "@/data/price-trends";
-import { getItemImageUrlAuto, getFallbackEmoji } from "@/data/item-icons";
+import { getFallbackEmoji } from "@/data/item-icons";
 import { useBank } from "@/lib/useBank";
 import { toast } from "sonner";
 
 interface PriceItem {
   id: string;
   name: string;
+  img?: string;
   steel: string;
   cement: string;
   rarity: string;
@@ -106,17 +107,16 @@ function Sparkline({ itemId }: { itemId: string }) {
   );
 }
 
-function ItemIcon({ itemId }: { itemId: string }) {
+function ItemIcon({ itemId, imgPath }: { itemId: string; imgPath?: string }) {
   const [imgError, setImgError] = useState(false);
-  const imgUrl = getItemImageUrlAuto(itemId);
-  if (imgError || !imgUrl) {
+  if (imgError || !imgPath) {
     return <span className="text-base leading-none">{getFallbackEmoji(itemId)}</span>;
   }
   return (
     <img
-      src={imgUrl}
+      src={imgPath}
       alt={itemId}
-      className="w-6 h-6 object-contain pixelated"
+      className="w-6 h-6 object-contain"
       style={{ imageRendering: "pixelated" }}
       onError={() => setImgError(true)}
       loading="lazy"
@@ -204,7 +204,7 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
               <div className="mt-1 max-h-32 overflow-y-auto rounded-md border border-border bg-muted/20">
                 {filteredItems.map((item) => (
                   <button key={item.id} onClick={() => { setSelectedItem(item.name); }} className={`w-full text-left px-3 py-1.5 text-xs hover:bg-primary/10 transition-colors flex items-center gap-2 ${item.name === selectedItem ? "bg-primary/10 text-primary" : "text-foreground"}`}>
-                    <span>{getItemIcon(item.id)}</span>
+                    <ItemIcon itemId={item.id} imgPath={item.img} />
                     <span className="truncate">{item.name}</span>
                     {isPriceUnknown(item.steel) && <span className="ml-auto text-[9px] text-orange-400 shrink-0">sem preco</span>}
                   </button>
@@ -290,7 +290,7 @@ function EditarModal({ isOpen, onClose, items }: {
               {editId === item.id ? (
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span>{getItemIcon(item.id)}</span>
+                    <ItemIcon itemId={item.id} imgPath={item.img} />
                     <span className="text-xs font-semibold text-foreground truncate">{item.name}</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
@@ -319,7 +319,7 @@ function EditarModal({ isOpen, onClose, items }: {
               ) : (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="shrink-0">{getItemIcon(item.id)}</span>
+                    <ItemIcon itemId={item.id} imgPath={item.img} />
                     <span className="text-xs text-foreground truncate">{item.name}</span>
                     {isPriceUnknown(item.steel) && <span className="text-[9px] text-orange-400 shrink-0">sem preco</span>}
                   </div>
@@ -570,7 +570,7 @@ export default function TabelaTab() {
                     const rep = reportMap[item.id];
                     return (
                       <div key={item.id} className={`grid grid-cols-12 gap-1 px-3 py-2 border-b border-border/50 hover:bg-muted/20 transition-colors text-xs ${idx % 2 === 0 ? "" : "bg-muted/5"} ${missing ? "opacity-70" : ""}`}>
-                        <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} /></div>
+                        <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} imgPath={item.img} /></div>
                         <div className="col-span-3 min-w-0">
                           <p className="font-semibold text-foreground truncate">{item.name}</p>
                           {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block">{item.notes}</p>}

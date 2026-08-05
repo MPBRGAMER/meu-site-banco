@@ -1,0 +1,2797 @@
+{
+  "Amanita": {
+    "id": "amanita",
+    "img": "/items/amanita.png",
+    "success": true
+  },
+  "Apple": {
+    "id": "apple",
+    "img": "/items/apple.png",
+    "success": true
+  },
+  "Apple Cordial": {
+    "id": "apple_cordial",
+    "img": "/items/apple_cordial.png",
+    "success": true
+  },
+  "Aqua Vitae": {
+    "id": "aqua_vitae",
+    "img": "/items/aqua_vitae.png",
+    "success": true
+  },
+  "Bamboo Steamer": {
+    "id": "bamboo_steamer",
+    "img": "/items/bamboo_steamer.png",
+    "success": true
+  },
+  "Beetle Juice": {
+    "id": "beetle_juice",
+    "img": "/items/beetle_juice.png",
+    "success": true
+  },
+  "Blini": {
+    "id": "blini",
+    "img": "/items/blini.png",
+    "success": true
+  },
+  "Boiled corn": {
+    "id": "boiled_corn",
+    "img": "/items/boiled_corn.png",
+    "success": true
+  },
+  "Boiled condensed milk": {
+    "id": "boiled_condensed_milk",
+    "img": "/items/boiled_condensed_milk.png",
+    "success": true
+  },
+  "Bio-energy Drink": {
+    "id": "bio_energy_drink",
+    "img": "/items/bio_energy_drink.png",
+    "success": true
+  },
+  "Buckwheat grains": {
+    "id": "buckwheat_grains",
+    "img": "/items/buckwheat_grains.png",
+    "success": true
+  },
+  "Bunny Treat": {
+    "id": "bunny_treat",
+    "img": "/items/bunny_treat.png",
+    "success": true
+  },
+  "Boiled Egg": {
+    "id": "boiled_egg",
+    "img": "/items/boiled_egg.png",
+    "success": true
+  },
+  "Bowl of rice": {
+    "id": "bowl_of_rice",
+    "img": "/items/bowl_of_rice.png",
+    "success": true
+  },
+  "Bread": {
+    "id": "bread",
+    "img": "/items/bread.png",
+    "success": true
+  },
+  "Cake": {
+    "id": "cake",
+    "img": "/items/cake.png",
+    "success": true
+  },
+  "Candy apple": {
+    "id": "candy_apple",
+    "img": "/items/candy_apple.png",
+    "success": true
+  },
+  "Canned Beans": {
+    "id": "canned_beans",
+    "img": "/items/canned_beans.png",
+    "success": true
+  },
+  "Candy Cane": {
+    "id": "candy_cane",
+    "img": "/items/candy_cane.png",
+    "success": true
+  },
+  "Cabbage roll": {
+    "id": "cabbage_roll",
+    "img": "/items/cabbage_roll.png",
+    "success": true
+  },
+  "Caustic Distillate": {
+    "id": "caustic_distillate",
+    "img": "/items/caustic_distillate.png",
+    "success": true
+  },
+  "Canned beef": {
+    "id": "canned_beef",
+    "img": "/items/canned_beef.png",
+    "success": true
+  },
+  "Canned Water": {
+    "id": "canned_water",
+    "img": "/items/canned_water.png",
+    "success": true
+  },
+  "Canned porridge": {
+    "id": "canned_porridge",
+    "img": "/items/canned_porridge.png",
+    "success": true
+  },
+  "Canned pork": {
+    "id": "canned_pork",
+    "img": "/items/canned_pork.png",
+    "success": true
+  },
+  "Chanterelle": {
+    "id": "chanterelle",
+    "img": "/items/chanterelle.png",
+    "success": true
+  },
+  "Champagne": {
+    "id": "champagne",
+    "img": "/items/champagne.png",
+    "success": true
+  },
+  "Caviar sandwich": {
+    "id": "caviar_sandwich",
+    "img": "/items/caviar_sandwich.png",
+    "success": true
+  },
+  "Caviar": {
+    "id": "caviar",
+    "img": "/items/caviar.png",
+    "success": true
+  },
+  "Cheese": {
+    "id": "cheese",
+    "img": "/items/cheese.png",
+    "success": true
+  },
+  "Chocolate Bar": {
+    "id": "chocolate_bar",
+    "img": "/items/chocolate_bar.png",
+    "success": true
+  },
+  "Chocolate Bunny": {
+    "id": "chocolate_bunny",
+    "img": "/items/chocolate_bunny.png",
+    "success": true
+  },
+  "Clean Water": {
+    "id": "clean_water",
+    "img": "/items/clean_water.png",
+    "success": true
+  },
+  "Chocolate": {
+    "id": "chocolate",
+    "img": "/items/chocolate.png",
+    "success": true
+  },
+  "Chinese energy drink": {
+    "id": "chinese_energy_drink",
+    "img": "/items/chinese_energy_drink.png",
+    "success": true
+  },
+  "Cold coffee": {
+    "id": "cold_coffee",
+    "img": "/items/cold_coffee.png",
+    "success": true
+  },
+  "Condensed milk": {
+    "id": "condensed_milk",
+    "img": "/items/condensed_milk.png",
+    "success": true
+  },
+  "Cold tea": {
+    "id": "cold_tea",
+    "img": "/items/cold_tea.png",
+    "success": true
+  },
+  "Coffee": {
+    "id": "coffee",
+    "img": "/items/coffee.png",
+    "success": true
+  },
+  "ComCon-3 Paste": {
+    "id": "comcon_3_paste",
+    "img": "/items/comcon_3_paste.png",
+    "success": true
+  },
+  "Cooked rice": {
+    "id": "cooked_rice",
+    "img": "/items/cooked_rice.png",
+    "success": true
+  },
+  "Contaminated meat": {
+    "id": "contaminated_meat",
+    "img": "/items/contaminated_meat.png",
+    "success": true
+  },
+  "Corn": {
+    "id": "corn",
+    "img": "/items/corn.png",
+    "success": true
+  },
+  "Cooked Buckwheat": {
+    "id": "cooked_buckwheat",
+    "img": "/items/cooked_buckwheat.png",
+    "success": true
+  },
+  "Cooked pasta": {
+    "id": "cooked_pasta",
+    "img": "/items/cooked_pasta.png",
+    "success": true
+  },
+  "Cranberry": {
+    "id": "cranberry",
+    "img": "/items/cranberry.png",
+    "success": true
+  },
+  "Dandelion Tea": {
+    "id": "dandelion_tea",
+    "img": "/items/dandelion_tea.png",
+    "success": true
+  },
+  "Dirty Water": {
+    "id": "dirty_water",
+    "img": "/items/dirty_water.png",
+    "success": true
+  },
+  "Coulibiac": {
+    "id": "coulibiac",
+    "img": "/items/coulibiac.png",
+    "success": true
+  },
+  "Diluted spirits": {
+    "id": "diluted_spirits",
+    "img": "/items/diluted_spirits.png",
+    "success": true
+  },
+  "Dried fish": {
+    "id": "dried_fish",
+    "img": "/items/dried_fish.png",
+    "success": true
+  },
+  "Egg": {
+    "id": "egg",
+    "img": "/items/egg.png",
+    "success": true
+  },
+  "Dried meat": {
+    "id": "dried_meat",
+    "img": "/items/dried_meat.png",
+    "success": true
+  },
+  "Easter Cake": {
+    "id": "easter_cake",
+    "img": "/items/easter_cake.png",
+    "success": true
+  },
+  "Easter Egg": {
+    "id": "easter_egg",
+    "img": "/items/easter_egg.png",
+    "success": true
+  },
+  "Fat": {
+    "id": "fat",
+    "img": "/items/fat.png",
+    "success": true
+  },
+  "Fatty Meat": {
+    "id": "fatty_meat",
+    "img": "/items/fatty_meat.png",
+    "success": true
+  },
+  "Flatbread": {
+    "id": "flatbread",
+    "img": "/items/flatbread.png",
+    "success": true
+  },
+  "Expeditionary Ration": {
+    "id": "expeditionary_ration",
+    "img": "/items/expeditionary_ration.png",
+    "success": true
+  },
+  "Energy drink": {
+    "id": "energy_drink",
+    "img": "/items/energy_drink.png",
+    "success": true
+  },
+  "Fried egg": {
+    "id": "fried_egg",
+    "img": "/items/fried_egg.png",
+    "success": true
+  },
+  "Fresh fish": {
+    "id": "fresh_fish",
+    "img": "/items/fresh_fish.png",
+    "success": true
+  },
+  "Flour": {
+    "id": "flour",
+    "img": "/items/flour.png",
+    "success": true
+  },
+  "Flying spaghetti monster": {
+    "id": "flying_spaghetti_monster",
+    "img": "/items/flying_spaghetti_monster.png",
+    "success": true
+  },
+  "Fried rat meat": {
+    "id": "fried_rat_meat",
+    "img": "/items/fried_rat_meat.png",
+    "success": true
+  },
+  "Fried fatty meat": {
+    "id": "fried_fatty_meat",
+    "img": "/items/fried_fatty_meat.png",
+    "success": true
+  },
+  "Fried fish": {
+    "id": "fried_fish",
+    "img": "/items/fried_fish.png",
+    "success": true
+  },
+  "Fried potato": {
+    "id": "fried_potato",
+    "img": "/items/fried_potato.png",
+    "success": true
+  },
+  "Fried mutant meat": {
+    "id": "fried_mutant_meat",
+    "img": "/items/fried_mutant_meat.png",
+    "success": true
+  },
+  "Gingerbread": {
+    "id": "gingerbread",
+    "img": "/items/gingerbread.png",
+    "success": true
+  },
+  "Fried snake": {
+    "id": "fried_snake",
+    "img": "/items/fried_snake.png",
+    "success": true
+  },
+  "Fried tainted meat": {
+    "id": "fried_tainted_meat",
+    "img": "/items/fried_tainted_meat.png",
+    "success": true
+  },
+  "Golden Easter Egg": {
+    "id": "golden_easter_egg",
+    "img": "/items/golden_easter_egg.png",
+    "success": true
+  },
+  "Fried Tough Meat": {
+    "id": "fried_tough_meat",
+    "img": "/items/fried_tough_meat.png",
+    "success": true
+  },
+  "Hearty chowder": {
+    "id": "hearty_chowder",
+    "img": "/items/hearty_chowder.png",
+    "success": true
+  },
+  "Grilled Meat": {
+    "id": "grilled_meat",
+    "img": "/items/grilled_meat.png",
+    "success": true
+  },
+  "Holiday Energy Drink": {
+    "id": "holiday_energy_drink",
+    "img": "/items/holiday_energy_drink.png",
+    "success": true
+  },
+  "Honey": {
+    "id": "honey",
+    "img": "/items/honey.png",
+    "success": true
+  },
+  "Homemade Wine": {
+    "id": "homemade_wine",
+    "img": "/items/homemade_wine.png",
+    "success": true
+  },
+  "Ice Cream": {
+    "id": "ice_cream",
+    "img": "/items/ice_cream.png",
+    "success": true
+  },
+  "Infected Dried Fish": {
+    "id": "infected_dried_fish",
+    "img": "/items/infected_dried_fish.png",
+    "success": true
+  },
+  "Hot tea": {
+    "id": "hot_tea",
+    "img": "/items/hot_tea.png",
+    "success": true
+  },
+  "Infected rusk": {
+    "id": "infected_rusk",
+    "img": "/items/infected_rusk.png",
+    "success": true
+  },
+  "Hot coffee": {
+    "id": "hot_coffee",
+    "img": "/items/hot_coffee.png",
+    "success": true
+  },
+  "Kholodets": {
+    "id": "kholodets",
+    "img": "/items/kholodets.png",
+    "success": true
+  },
+  "Knock-Off Energy Drink": {
+    "id": "knock_off_energy_drink",
+    "img": "/items/knock_off_energy_drink.png",
+    "success": true
+  },
+  "Kvass": {
+    "id": "kvass",
+    "img": "/items/kvass.png",
+    "success": true
+  },
+  "Jam": {
+    "id": "jam",
+    "img": "/items/jam.png",
+    "success": true
+  },
+  "King of Jokers": {
+    "id": "king_of_jokers",
+    "img": "/items/king_of_jokers.png",
+    "success": true
+  },
+  "Moonshine": {
+    "id": "moonshine",
+    "img": "/items/moonshine.png",
+    "success": true
+  },
+  "Minced Meat": {
+    "id": "minced_meat",
+    "img": "/items/minced_meat.png",
+    "success": true
+  },
+  "Milk": {
+    "id": "milk",
+    "img": "/items/milk.png",
+    "success": true
+  },
+  "Mashed potatoes": {
+    "id": "mashed_potatoes",
+    "img": "/items/mashed_potatoes.png",
+    "success": true
+  },
+  "Meat rissole": {
+    "id": "meat_rissole",
+    "img": "/items/meat_rissole.png",
+    "success": true
+  },
+  "Mulled Wine": {
+    "id": "mulled_wine",
+    "img": "/items/mulled_wine.png",
+    "success": true
+  },
+  "Mushroom soup": {
+    "id": "mushroom_soup",
+    "img": "/items/mushroom_soup.png",
+    "success": true
+  },
+  "Mushroom pasta": {
+    "id": "mushroom_pasta",
+    "img": "/items/mushroom_pasta.png",
+    "success": true
+  },
+  "Moss": {
+    "id": "moss",
+    "img": "/items/moss.png",
+    "success": true
+  },
+  "Mushroom with eyes": {
+    "id": "mushroom_with_eyes",
+    "img": "/items/mushroom_with_eyes.png",
+    "success": true
+  },
+  "Old Canned Meat": {
+    "id": "old_canned_meat",
+    "img": "/items/old_canned_meat.png",
+    "success": true
+  },
+  "Olivier Salad": {
+    "id": "olivier_salad",
+    "img": "/items/olivier_salad.png",
+    "success": true
+  },
+  "Mysterious Fruit": {
+    "id": "mysterious_fruit",
+    "img": "/items/mysterious_fruit.png",
+    "success": true
+  },
+  "Pasta": {
+    "id": "pasta",
+    "img": "/items/pasta.png",
+    "success": true
+  },
+  "Mutant Meat": {
+    "id": "mutant_meat",
+    "img": "/items/mutant_meat.png",
+    "success": true
+  },
+  "Pickled vegetables": {
+    "id": "pickled_vegetables",
+    "img": "/items/pickled_vegetables.png",
+    "success": true
+  },
+  "Pepsi": {
+    "id": "pepsi",
+    "img": "/items/pepsi.png",
+    "success": true
+  },
+  "Peking Duck": {
+    "id": "peking_duck",
+    "img": "/items/peking_duck.png",
+    "success": true
+  },
+  "Pasta With Ground Beef": {
+    "id": "pasta_with_ground_beef",
+    "img": "/items/pasta_with_ground_beef.png",
+    "success": true
+  },
+  "Pelmeni": {
+    "id": "pelmeni",
+    "img": "/items/pelmeni.png",
+    "success": true
+  },
+  "Potato": {
+    "id": "potato",
+    "img": "/items/potato.png",
+    "success": true
+  },
+  "Potato Pancakes": {
+    "id": "potato_pancakes",
+    "img": "/items/potato_pancakes.png",
+    "success": true
+  },
+  "Pumpkin": {
+    "id": "pumpkin",
+    "img": "/items/pumpkin.png",
+    "success": true
+  },
+  "Pie": {
+    "id": "pie",
+    "img": "/items/pie.png",
+    "success": true
+  },
+  "Pilaf": {
+    "id": "pilaf",
+    "img": "/items/pilaf.png",
+    "success": true
+  },
+  "Ration pack": {
+    "id": "ration_pack",
+    "img": "/items/ration_pack.png",
+    "success": true
+  },
+  "Pumpkin Soup": {
+    "id": "pumpkin_soup",
+    "img": "/items/pumpkin_soup.png",
+    "success": true
+  },
+  "Rat Meat": {
+    "id": "rat_meat",
+    "img": "/items/rat_meat.png",
+    "success": true
+  },
+  "Rainbow Easter Egg": {
+    "id": "rainbow_easter_egg",
+    "img": "/items/rainbow_easter_egg.png",
+    "success": true
+  },
+  "Radioactive mushroom": {
+    "id": "radioactive_mushroom",
+    "img": "/items/radioactive_mushroom.png",
+    "success": true
+  },
+  "Raw fatback": {
+    "id": "raw_fatback",
+    "img": "/items/raw_fatback.png",
+    "success": true
+  },
+  "Rice grains": {
+    "id": "rice_grains",
+    "img": "/items/rice_grains.png",
+    "success": true
+  },
+  "Rice Bun": {
+    "id": "rice_bun",
+    "img": "/items/rice_bun.png",
+    "success": true
+  },
+  "Red wine": {
+    "id": "red_wine",
+    "img": "/items/red_wine.png",
+    "success": true
+  },
+  "Rice wine": {
+    "id": "rice_wine",
+    "img": "/items/rice_wine.png",
+    "success": true
+  },
+  "Rotten fish": {
+    "id": "rotten_fish",
+    "img": "/items/rotten_fish.png",
+    "success": true
+  },
+  "Rotten meat": {
+    "id": "rotten_meat",
+    "img": "/items/rotten_meat.png",
+    "success": true
+  },
+  "Rotten porridge": {
+    "id": "rotten_porridge",
+    "img": "/items/rotten_porridge.png",
+    "success": true
+  },
+  "Rich chowder": {
+    "id": "rich_chowder",
+    "img": "/items/rich_chowder.png",
+    "success": true
+  },
+  "Roasted Chanterelle": {
+    "id": "roasted_chanterelle",
+    "img": "/items/roasted_chanterelle.png",
+    "success": true
+  },
+  "Rusks": {
+    "id": "rusks",
+    "img": "/items/rusks.png",
+    "success": true
+  },
+  "Sanguinary Masha": {
+    "id": "sanguinary_masha",
+    "img": "/items/sanguinary_masha.png",
+    "success": true
+  },
+  "Salted Fish": {
+    "id": "salted_fish",
+    "img": "/items/salted_fish.png",
+    "success": true
+  },
+  "Salted meat": {
+    "id": "salted_meat",
+    "img": "/items/salted_meat.png",
+    "success": true
+  },
+  "Rotten vegetables": {
+    "id": "rotten_vegetables",
+    "img": "/items/rotten_vegetables.png",
+    "success": true
+  },
+  "Sausage": {
+    "id": "sausage",
+    "img": "/items/sausage.png",
+    "success": true
+  },
+  "Shchi": {
+    "id": "shchi",
+    "img": "/items/shchi.png",
+    "success": true
+  },
+  "Shawarma": {
+    "id": "shawarma",
+    "img": "/items/shawarma.png",
+    "success": true
+  },
+  "Shashlik": {
+    "id": "shashlik",
+    "img": "/items/shashlik.png",
+    "success": true
+  },
+  "Simple chowder": {
+    "id": "simple_chowder",
+    "img": "/items/simple_chowder.png",
+    "success": true
+  },
+  "Snake Meat": {
+    "id": "snake_meat",
+    "img": "/items/snake_meat.png",
+    "success": true
+  },
+  "Smuggled Energy Drink": {
+    "id": "smuggled_energy_drink",
+    "img": "/items/smuggled_energy_drink.png",
+    "success": true
+  },
+  "Spice": {
+    "id": "spice",
+    "img": "/items/spice.png",
+    "success": true
+  },
+  "Smoked fatback": {
+    "id": "smoked_fatback",
+    "img": "/items/smoked_fatback.png",
+    "success": true
+  },
+  "Smuggler's Flask": {
+    "id": "smuggler_s_flask",
+    "img": "/items/smuggler_s_flask.png",
+    "success": true
+  },
+  "Strange Mushroom": {
+    "id": "strange_mushroom",
+    "img": null,
+    "success": false
+  },
+  "Spooky Energy Drink": {
+    "id": "spooky_energy_drink",
+    "img": "/items/spooky_energy_drink.png",
+    "success": true
+  },
+  "Stale Pryanik": {
+    "id": "stale_pryanik",
+    "img": "/items/stale_pryanik.png",
+    "success": true
+  },
+  "Stew meat": {
+    "id": "stew_meat",
+    "img": "/items/stew_meat.png",
+    "success": true
+  },
+  "Strange Mushroom (Black)": {
+    "id": "strange_mushroom_black",
+    "img": "/items/strange_mushroom_black.png",
+    "success": true
+  },
+  "Strange Mushroom (Red)": {
+    "id": "strange_mushroom_red",
+    "img": "/items/strange_mushroom_red.png",
+    "success": true
+  },
+  "Strange Mushroom (Blue)": {
+    "id": "strange_mushroom_blue",
+    "img": "/items/strange_mushroom_blue.png",
+    "success": true
+  },
+  "Strange Mushroom (Green)": {
+    "id": "strange_mushroom_green",
+    "img": "/items/strange_mushroom_green.png",
+    "success": true
+  },
+  "Strange Mushroom (Violet)": {
+    "id": "strange_mushroom_violet",
+    "img": "/items/strange_mushroom_violet.png",
+    "success": true
+  },
+  "Strange Mushroom (Light Blue)": {
+    "id": "strange_mushroom_light_blue",
+    "img": "/items/strange_mushroom_light_blue.png",
+    "success": true
+  },
+  "Strawberry cake": {
+    "id": "strawberry_cake",
+    "img": "/items/strawberry_cake.png",
+    "success": true
+  },
+  "Strange Mushroom (Yellow)": {
+    "id": "strange_mushroom_yellow",
+    "img": "/items/strange_mushroom_yellow.png",
+    "success": true
+  },
+  "Sugar": {
+    "id": "sugar",
+    "img": "/items/sugar.png",
+    "success": true
+  },
+  "Strawberry": {
+    "id": "strawberry",
+    "img": "/items/strawberry.png",
+    "success": true
+  },
+  "Strange Mushroom (White)": {
+    "id": "strange_mushroom_white",
+    "img": "/items/strange_mushroom_white.png",
+    "success": true
+  },
+  "Tangerine": {
+    "id": "tangerine",
+    "img": "/items/tangerine.png",
+    "success": true
+  },
+  "Tea": {
+    "id": "tea",
+    "img": "/items/tea.png",
+    "success": true
+  },
+  "Tough Meat": {
+    "id": "tough_meat",
+    "img": "/items/tough_meat.png",
+    "success": true
+  },
+  "Sushi": {
+    "id": "sushi",
+    "img": "/items/sushi.png",
+    "success": true
+  },
+  "Tailed Rissole": {
+    "id": "tailed_rissole",
+    "img": "/items/tailed_rissole.png",
+    "success": true
+  },
+  "Trophy Cognac": {
+    "id": "trophy_cognac",
+    "img": "/items/trophy_cognac.png",
+    "success": true
+  },
+  "Treats": {
+    "id": "treats",
+    "img": "/items/treats.png",
+    "success": true
+  },
+  "Toxic water": {
+    "id": "toxic_water",
+    "img": "/items/toxic_water.png",
+    "success": true
+  },
+  "Vegetables": {
+    "id": "vegetables",
+    "img": "/items/vegetables.png",
+    "success": true
+  },
+  "Ukha": {
+    "id": "ukha",
+    "img": "/items/ukha.png",
+    "success": true
+  },
+  "Vodka": {
+    "id": "vodka",
+    "img": "/items/vodka.png",
+    "success": true
+  },
+  "Wheat": {
+    "id": "wheat",
+    "img": "/items/wheat.png",
+    "success": true
+  },
+  "Witch's punch": {
+    "id": "witch_s_punch",
+    "img": "/items/witch_s_punch.png",
+    "success": true
+  },
+  "Apple seeds": {
+    "id": "apple_seeds",
+    "img": "/items/apple_seeds.png",
+    "success": true
+  },
+  "Whiskey": {
+    "id": "whiskey",
+    "img": "/items/whiskey.png",
+    "success": true
+  },
+  "Potato seeds": {
+    "id": "potato_seeds",
+    "img": "/items/potato_seeds.png",
+    "success": true
+  },
+  "Mysterious Fruit Seeds": {
+    "id": "mysterious_fruit_seeds",
+    "img": "/items/mysterious_fruit_seeds.png",
+    "success": true
+  },
+  "Pumpkin seeds": {
+    "id": "pumpkin_seeds",
+    "img": "/items/pumpkin_seeds.png",
+    "success": true
+  },
+  "Strawberry seed": {
+    "id": "strawberry_seed",
+    "img": "/items/strawberry_seed.png",
+    "success": true
+  },
+  "Corn seeds": {
+    "id": "corn_seeds",
+    "img": "/items/corn_seeds.png",
+    "success": true
+  },
+  "Tangerine seeds": {
+    "id": "tangerine_seeds",
+    "img": "/items/tangerine_seeds.png",
+    "success": true
+  },
+  "Wheat seeds": {
+    "id": "wheat_seeds",
+    "img": "/items/wheat_seeds.png",
+    "success": true
+  },
+  "Vegetable seeds": {
+    "id": "vegetable_seeds",
+    "img": "/items/vegetable_seeds.png",
+    "success": true
+  },
+  "Acid gland": {
+    "id": "acid_gland",
+    "img": "/items/acid_gland.png",
+    "success": true
+  },
+  "7.62x25mm TT Shell": {
+    "id": "7_62x25mm_tt_shell",
+    "img": "/items/7_62x25mm_tt_shell.png",
+    "success": true
+  },
+  "Aluminum": {
+    "id": "aluminum",
+    "img": "/items/aluminum.png",
+    "success": true
+  },
+  "Aluminum Scrap": {
+    "id": "aluminum_scrap",
+    "img": "/items/aluminum_scrap.png",
+    "success": true
+  },
+  "Antidote": {
+    "id": "antidote",
+    "img": "/items/antidote.png",
+    "success": true
+  },
+  "Armor Plate": {
+    "id": "armor_plate",
+    "img": "/items/armor_plate.png",
+    "success": true
+  },
+  "Assault rifle parts": {
+    "id": "assault_rifle_parts",
+    "img": "/items/assault_rifle_parts.png",
+    "success": true
+  },
+  "Barrel": {
+    "id": "barrel",
+    "img": "/items/barrel.png",
+    "success": true
+  },
+  "Bellows": {
+    "id": "bellows",
+    "img": "/items/bellows.png",
+    "success": true
+  },
+  "Assault rifle shell": {
+    "id": "assault_rifle_shell",
+    "img": "/items/assault_rifle_shell.png",
+    "success": true
+  },
+  "Boiled Leather": {
+    "id": "boiled_leather",
+    "img": "/items/boiled_leather.png",
+    "success": true
+  },
+  "Blank": {
+    "id": "blank",
+    "img": "/items/blank.png",
+    "success": true
+  },
+  "Black coal": {
+    "id": "black_coal",
+    "img": "/items/black_coal.png",
+    "success": true
+  },
+  "Blood mold": {
+    "id": "blood_mold",
+    "img": "/items/blood_mold.png",
+    "success": true
+  },
+  "Blank Cartridge": {
+    "id": "blank_cartridge",
+    "img": "/items/blank_cartridge.png",
+    "success": true
+  },
+  "Bone glue": {
+    "id": "bone_glue",
+    "img": "/items/bone_glue.png",
+    "success": true
+  },
+  "Brick": {
+    "id": "brick",
+    "img": "/items/brick.png",
+    "success": true
+  },
+  "Broadleaf plantain": {
+    "id": "broadleaf_plantain",
+    "img": "/items/broadleaf_plantain.png",
+    "success": true
+  },
+  "Broken car battery": {
+    "id": "broken_car_battery",
+    "img": "/items/broken_car_battery.png",
+    "success": true
+  },
+  "Chainsaw motor": {
+    "id": "chainsaw_motor",
+    "img": "/items/chainsaw_motor.png",
+    "success": true
+  },
+  "Can": {
+    "id": "can",
+    "img": "/items/can.png",
+    "success": true
+  },
+  "Chainsaw": {
+    "id": "chainsaw",
+    "img": "/items/chainsaw.png",
+    "success": true
+  },
+  "Car battery": {
+    "id": "car_battery",
+    "img": "/items/car_battery.png",
+    "success": true
+  },
+  "Cement": {
+    "id": "cement",
+    "img": "/items/cement.png",
+    "success": true
+  },
+  "Chitin": {
+    "id": "chitin",
+    "img": "/items/chitin.png",
+    "success": true
+  },
+  "Cloth": {
+    "id": "cloth",
+    "img": "/items/cloth.png",
+    "success": true
+  },
+  "Chemistry set": {
+    "id": "chemistry_set",
+    "img": "/items/chemistry_set.png",
+    "success": true
+  },
+  "Diesel": {
+    "id": "diesel",
+    "img": "/items/diesel.png",
+    "success": true
+  },
+  "Copper Scrap": {
+    "id": "copper_scrap",
+    "img": "/items/copper_scrap.png",
+    "success": true
+  },
+  "Coal": {
+    "id": "coal",
+    "img": "/items/coal.png",
+    "success": true
+  },
+  "Electrodes": {
+    "id": "electrodes",
+    "img": "/items/electrodes.png",
+    "success": true
+  },
+  "Electric Motor": {
+    "id": "electric_motor",
+    "img": "/items/electric_motor.png",
+    "success": true
+  },
+  "Electrical cable": {
+    "id": "electrical_cable",
+    "img": "/items/electrical_cable.png",
+    "success": true
+  },
+  "Fire brick": {
+    "id": "fire_brick",
+    "img": "/items/fire_brick.png",
+    "success": true
+  },
+  "Firewood": {
+    "id": "firewood",
+    "img": "/items/firewood.png",
+    "success": true
+  },
+  "Gasoline": {
+    "id": "gasoline",
+    "img": "/items/gasoline.png",
+    "success": true
+  },
+  "Flint": {
+    "id": "flint",
+    "img": "/items/flint.png",
+    "success": true
+  },
+  "Fresh bones": {
+    "id": "fresh_bones",
+    "img": "/items/fresh_bones.png",
+    "success": true
+  },
+  "Gas Mask Filter": {
+    "id": "gas_mask_filter",
+    "img": "/items/gas_mask_filter.png",
+    "success": true
+  },
+  "Gunpowder": {
+    "id": "gunpowder",
+    "img": "/items/gunpowder.png",
+    "success": true
+  },
+  "Glue/tape": {
+    "id": "glue_tape",
+    "img": "/items/glue_tape.png",
+    "success": true
+  },
+  "Gasoline Engine": {
+    "id": "gasoline_engine",
+    "img": "/items/gasoline_engine.png",
+    "success": true
+  },
+  "GAZ-24 (Broken)": {
+    "id": "gaz_24_broken",
+    "img": "/items/gaz_24_broken.png",
+    "success": true
+  },
+  "Handmade needle": {
+    "id": "handmade_needle",
+    "img": "/items/handmade_needle.png",
+    "success": true
+  },
+  "Injector": {
+    "id": "injector",
+    "img": "/items/injector.png",
+    "success": true
+  },
+  "Iron": {
+    "id": "iron",
+    "img": "/items/iron.png",
+    "success": true
+  },
+  "High-performance Capacitor": {
+    "id": "high_performance_capacitor",
+    "img": "/items/high_performance_capacitor.png",
+    "success": true
+  },
+  "Insulating Tape": {
+    "id": "insulating_tape",
+    "img": "/items/insulating_tape.png",
+    "success": true
+  },
+  "Infernal Coal": {
+    "id": "infernal_coal",
+    "img": "/items/infernal_coal.png",
+    "success": true
+  },
+  "Lighter": {
+    "id": "lighter",
+    "img": "/items/lighter.png",
+    "success": true
+  },
+  "Log": {
+    "id": "log",
+    "img": "/items/log.png",
+    "success": true
+  },
+  "Iron pipe": {
+    "id": "iron_pipe",
+    "img": "/items/iron_pipe.png",
+    "success": true
+  },
+  "KamAZ (Broken)": {
+    "id": "kamaz_broken",
+    "img": "/items/kamaz_broken.png",
+    "success": true
+  },
+  "Iron pot": {
+    "id": "iron_pot",
+    "img": "/items/iron_pot.png",
+    "success": true
+  },
+  "Machine gun parts": {
+    "id": "machine_gun_parts",
+    "img": "/items/machine_gun_parts.png",
+    "success": true
+  },
+  "Lymph": {
+    "id": "lymph",
+    "img": "/items/lymph.png",
+    "success": true
+  },
+  "Matches": {
+    "id": "matches",
+    "img": "/items/matches.png",
+    "success": true
+  },
+  "Machine oil": {
+    "id": "machine_oil",
+    "img": "/items/machine_oil.png",
+    "success": true
+  },
+  "Makarov handgun (broken)": {
+    "id": "makarov_handgun_broken",
+    "img": "/items/makarov_handgun_broken.png",
+    "success": true
+  },
+  "Mining permit": {
+    "id": "mining_permit",
+    "img": "/items/mining_permit.png",
+    "success": true
+  },
+  "Mosin-Nagant rifle (broken)": {
+    "id": "mosin_nagant_rifle_broken",
+    "img": "/items/mosin_nagant_rifle_broken.png",
+    "success": true
+  },
+  "Motorcycle spare parts": {
+    "id": "motorcycle_spare_parts",
+    "img": "/items/motorcycle_spare_parts.png",
+    "success": true
+  },
+  "Metal Plate": {
+    "id": "metal_plate",
+    "img": "/items/metal_plate.png",
+    "success": true
+  },
+  "Nagant Revolver (Broken)": {
+    "id": "nagant_revolver_broken",
+    "img": "/items/nagant_revolver_broken.png",
+    "success": true
+  },
+  "Nettle": {
+    "id": "nettle",
+    "img": "/items/nettle.png",
+    "success": true
+  },
+  "Pistol parts": {
+    "id": "pistol_parts",
+    "img": "/items/pistol_parts.png",
+    "success": true
+  },
+  "Nail": {
+    "id": "nail",
+    "img": "/items/nail.png",
+    "success": true
+  },
+  "Nailed box": {
+    "id": "nailed_box",
+    "img": "/items/nailed_box.png",
+    "success": true
+  },
+  "Nuclear battery": {
+    "id": "nuclear_battery",
+    "img": "/items/nuclear_battery.png",
+    "success": true
+  },
+  "Plank": {
+    "id": "plank",
+    "img": "/items/plank.png",
+    "success": true
+  },
+  "PKM (broken)": {
+    "id": "pkm_broken",
+    "img": "/items/pkm_broken.png",
+    "success": true
+  },
+  "Poison": {
+    "id": "poison",
+    "img": "/items/poison.png",
+    "success": true
+  },
+  "Pistol shell": {
+    "id": "pistol_shell",
+    "img": "/items/pistol_shell.png",
+    "success": true
+  },
+  "Plastic explosives": {
+    "id": "plastic_explosives",
+    "img": "/items/plastic_explosives.png",
+    "success": true
+  },
+  "Primer": {
+    "id": "primer",
+    "img": "/items/primer.png",
+    "success": true
+  },
+  "PPS-43 (broken)": {
+    "id": "pps_43_broken",
+    "img": "/items/pps_43_broken.png",
+    "success": true
+  },
+  "PPSh-41 (broken)": {
+    "id": "ppsh_41_broken",
+    "img": "/items/ppsh_41_broken.png",
+    "success": true
+  },
+  "Quality Hide": {
+    "id": "quality_hide",
+    "img": "/items/quality_hide.png",
+    "success": true
+  },
+  "Quality Leather": {
+    "id": "quality_leather",
+    "img": "/items/quality_leather.png",
+    "success": true
+  },
+  "Rawhide": {
+    "id": "rawhide",
+    "img": "/items/rawhide.png",
+    "success": true
+  },
+  "Revolver parts": {
+    "id": "revolver_parts",
+    "img": "/items/revolver_parts.png",
+    "success": true
+  },
+  "Rags": {
+    "id": "rags",
+    "img": "/items/rags.png",
+    "success": true
+  },
+  "Raw Hide": {
+    "id": "raw_hide",
+    "img": "/items/raw_hide.png",
+    "success": true
+  },
+  "Revolver shell": {
+    "id": "revolver_shell",
+    "img": "/items/revolver_shell.png",
+    "success": true
+  },
+  "Rodkin": {
+    "id": "rodkin",
+    "img": "/items/rodkin.png",
+    "success": true
+  },
+  "Rope": {
+    "id": "rope",
+    "img": "/items/rope.png",
+    "success": true
+  },
+  "Rifle shell": {
+    "id": "rifle_shell",
+    "img": "/items/rifle_shell.png",
+    "success": true
+  },
+  "Rifle parts": {
+    "id": "rifle_parts",
+    "img": "/items/rifle_parts.png",
+    "success": true
+  },
+  "RPK-74 (broken)": {
+    "id": "rpk_74_broken",
+    "img": "/items/rpk_74_broken.png",
+    "success": true
+  },
+  "Saltpeter": {
+    "id": "saltpeter",
+    "img": "/items/saltpeter.png",
+    "success": true
+  },
+  "Rubber": {
+    "id": "rubber",
+    "img": "/items/rubber.png",
+    "success": true
+  },
+  "Salt": {
+    "id": "salt",
+    "img": "/items/salt.png",
+    "success": true
+  },
+  "Rubber parts": {
+    "id": "rubber_parts",
+    "img": "/items/rubber_parts.png",
+    "success": true
+  },
+  "Saucepan": {
+    "id": "saucepan",
+    "img": "/items/saucepan.png",
+    "success": true
+  },
+  "Soap": {
+    "id": "soap",
+    "img": "/items/soap.png",
+    "success": true
+  },
+  "Spare weapon parts": {
+    "id": "spare_weapon_parts",
+    "img": "/items/spare_weapon_parts.png",
+    "success": true
+  },
+  "Spark plug": {
+    "id": "spark_plug",
+    "img": "/items/spark_plug.png",
+    "success": true
+  },
+  "Steel": {
+    "id": "steel",
+    "img": "/items/steel.png",
+    "success": true
+  },
+  "Scrap metal": {
+    "id": "scrap_metal",
+    "img": "/items/scrap_metal.png",
+    "success": true
+  },
+  "Steel needle": {
+    "id": "steel_needle",
+    "img": "/items/steel_needle.png",
+    "success": true
+  },
+  "Stimulant": {
+    "id": "stimulant",
+    "img": "/items/stimulant.png",
+    "success": true
+  },
+  "Stick": {
+    "id": "stick",
+    "img": "/items/stick.png",
+    "success": true
+  },
+  "Sterile bandage": {
+    "id": "sterile_bandage",
+    "img": "/items/sterile_bandage.png",
+    "success": true
+  },
+  "Steel pot": {
+    "id": "steel_pot",
+    "img": "/items/steel_pot.png",
+    "success": true
+  },
+  "Sulfur": {
+    "id": "sulfur",
+    "img": "/items/sulfur.png",
+    "success": true
+  },
+  "Survivor's Cache": {
+    "id": "survivor_s_cache",
+    "img": "/items/survivor_s_cache.png",
+    "success": true
+  },
+  "Sulfuric Acid": {
+    "id": "sulfuric_acid",
+    "img": "/items/sulfuric_acid.png",
+    "success": true
+  },
+  "SVD (broken)": {
+    "id": "svd_broken",
+    "img": "/items/svd_broken.png",
+    "success": true
+  },
+  "Support Box": {
+    "id": "support_box",
+    "img": "/items/support_box.png",
+    "success": true
+  },
+  "Thick Leather": {
+    "id": "thick_leather",
+    "img": "/items/thick_leather.png",
+    "success": true
+  },
+  "Tanning mixture": {
+    "id": "tanning_mixture",
+    "img": "/items/tanning_mixture.png",
+    "success": true
+  },
+  "Thick Hide": {
+    "id": "thick_hide",
+    "img": "/items/thick_hide.png",
+    "success": true
+  },
+  "SVT-40 (broken)": {
+    "id": "svt_40_broken",
+    "img": "/items/svt_40_broken.png",
+    "success": true
+  },
+  "Tanned leather": {
+    "id": "tanned_leather",
+    "img": "/items/tanned_leather.png",
+    "success": true
+  },
+  "Tires": {
+    "id": "tires",
+    "img": "/items/tires.png",
+    "success": true
+  },
+  "Titanium pot": {
+    "id": "titanium_pot",
+    "img": "/items/titanium_pot.png",
+    "success": true
+  },
+  "Threads": {
+    "id": "threads",
+    "img": "/items/threads.png",
+    "success": true
+  },
+  "Titanium Alloy": {
+    "id": "titanium_alloy",
+    "img": "/items/titanium_alloy.png",
+    "success": true
+  },
+  "Titanium ore": {
+    "id": "titanium_ore",
+    "img": "/items/titanium_ore.png",
+    "success": true
+  },
+  "Training Ammo": {
+    "id": "training_ammo",
+    "img": "/items/training_ammo.png",
+    "success": true
+  },
+  "Tool Kit": {
+    "id": "tool_kit",
+    "img": "/items/tool_kit.png",
+    "success": true
+  },
+  "Transport repair kit": {
+    "id": "transport_repair_kit",
+    "img": "/items/transport_repair_kit.png",
+    "success": true
+  },
+  "TT-33 (Broken)": {
+    "id": "tt_33_broken",
+    "img": "/items/tt_33_broken.png",
+    "success": true
+  },
+  "UAZ-452 (Broken)": {
+    "id": "uaz_452_broken",
+    "img": "/items/uaz_452_broken.png",
+    "success": true
+  },
+  "Wax": {
+    "id": "wax",
+    "img": "/items/wax.png",
+    "success": true
+  },
+  "Weapon box": {
+    "id": "weapon_box",
+    "img": "/items/weapon_box.png",
+    "success": true
+  },
+  "VAZ-2101 (Broken)": {
+    "id": "vaz_2101_broken",
+    "img": "/items/vaz_2101_broken.png",
+    "success": true
+  },
+  "UAZ-469 (Broken)": {
+    "id": "uaz_469_broken",
+    "img": "/items/uaz_469_broken.png",
+    "success": true
+  },
+  "Vehicle repair kit": {
+    "id": "vehicle_repair_kit",
+    "img": "/items/vehicle_repair_kit.png",
+    "success": true
+  },
+  "Weapon repair kit": {
+    "id": "weapon_repair_kit",
+    "img": "/items/weapon_repair_kit.png",
+    "success": true
+  },
+  "ZIL-130 (Broken)": {
+    "id": "zil_130_broken",
+    "img": "/items/zil_130_broken.png",
+    "success": true
+  },
+  "ZAZ-968 (Broken)": {
+    "id": "zaz_968_broken",
+    "img": "/items/zaz_968_broken.png",
+    "success": true
+  },
+  "Welder": {
+    "id": "welder",
+    "img": "/items/welder.png",
+    "success": true
+  },
+  "Wire": {
+    "id": "wire",
+    "img": "/items/wire.png",
+    "success": true
+  },
+  "Alphacelone": {
+    "id": "alphacelone",
+    "img": "/items/alphacelone.png",
+    "success": true
+  },
+  "Activated charcoal": {
+    "id": "activated_charcoal",
+    "img": "/items/activated_charcoal.png",
+    "success": true
+  },
+  "Antibiotics": {
+    "id": "antibiotics",
+    "img": "/items/antibiotics.png",
+    "success": true
+  },
+  "Antirad": {
+    "id": "antirad",
+    "img": "/items/antirad.png",
+    "success": true
+  },
+  "Alcohol": {
+    "id": "alcohol",
+    "img": "/items/alcohol.png",
+    "success": true
+  },
+  "Bryocarm": {
+    "id": "bryocarm",
+    "img": "/items/bryocarm.png",
+    "success": true
+  },
+  "Bye-Bye Rad": {
+    "id": "bye_bye_rad",
+    "img": "/items/bye_bye_rad.png",
+    "success": true
+  },
+  "Bioblocade Inhaler": {
+    "id": "bioblocade_inhaler",
+    "img": "/items/bioblocade_inhaler.png",
+    "success": true
+  },
+  "Biotonic": {
+    "id": "biotonic",
+    "img": "/items/biotonic.png",
+    "success": true
+  },
+  "C-3 Cologne": {
+    "id": "c_3_cologne",
+    "img": "/items/c_3_cologne.png",
+    "success": true
+  },
+  "Chlorcystamine": {
+    "id": "chlorcystamine",
+    "img": "/items/chlorcystamine.png",
+    "success": true
+  },
+  "Detoxifying Potion": {
+    "id": "detoxifying_potion",
+    "img": "/items/detoxifying_potion.png",
+    "success": true
+  },
+  "Energizing potion": {
+    "id": "energizing_potion",
+    "img": "/items/energizing_potion.png",
+    "success": true
+  },
+  "Cigarettes": {
+    "id": "cigarettes",
+    "img": "/items/cigarettes.png",
+    "success": true
+  },
+  "Cuban cigar": {
+    "id": "cuban_cigar",
+    "img": "/items/cuban_cigar.png",
+    "success": true
+  },
+  "Lidiacide-34": {
+    "id": "lidiacide_34",
+    "img": "/items/lidiacide_34.png",
+    "success": true
+  },
+  "Eurekognasol Stimulant": {
+    "id": "eurekognasol_stimulant",
+    "img": "/items/eurekognasol_stimulant.png",
+    "success": true
+  },
+  "Healing Salve": {
+    "id": "healing_salve",
+    "img": "/items/healing_salve.png",
+    "success": true
+  },
+  "First Aid Kit": {
+    "id": "first_aid_kit",
+    "img": "/items/first_aid_kit.png",
+    "success": true
+  },
+  "IR-190": {
+    "id": "ir_190",
+    "img": "/items/ir_190.png",
+    "success": true
+  },
+  "Russian Cigarettes": {
+    "id": "russian_cigarettes",
+    "img": "/items/russian_cigarettes.png",
+    "success": true
+  },
+  "Metocaine": {
+    "id": "metocaine",
+    "img": "/items/metocaine.png",
+    "success": true
+  },
+  "Painkiller": {
+    "id": "painkiller",
+    "img": "/items/painkiller.png",
+    "success": true
+  },
+  "Protection Potion": {
+    "id": "protection_potion",
+    "img": "/items/protection_potion.png",
+    "success": true
+  },
+  "Pill of Immortality": {
+    "id": "pill_of_immortality",
+    "img": "/items/pill_of_immortality.png",
+    "success": true
+  },
+  "Fear": {
+    "id": "fear",
+    "img": "/items/fear.png",
+    "success": true
+  },
+  "Crossbow bolt (poison)": {
+    "id": "crossbow_bolt_poison",
+    "img": "/items/crossbow_bolt_poison.png",
+    "success": true
+  },
+  "Crossbow bolt": {
+    "id": "crossbow_bolt",
+    "img": "/items/crossbow_bolt.png",
+    "success": true
+  },
+  "Vial of \"...amine\"": {
+    "id": "vial_of_amine",
+    "img": "/items/vial_of_amine.png",
+    "success": true
+  },
+  "Assault Rifle Ammo": {
+    "id": "assault_rifle_ammo",
+    "img": "/items/assault_rifle_ammo.png",
+    "success": true
+  },
+  "Handmade rocket": {
+    "id": "handmade_rocket",
+    "img": "/items/handmade_rocket.png",
+    "success": true
+  },
+  "Handmade cartridge": {
+    "id": "handmade_cartridge",
+    "img": "/items/handmade_cartridge.png",
+    "success": true
+  },
+  "Lead bullet": {
+    "id": "lead_bullet",
+    "img": "/items/lead_bullet.png",
+    "success": true
+  },
+  "Joy": {
+    "id": "joy",
+    "img": "/items/joy.png",
+    "success": true
+  },
+  "Grenade Launcher Round": {
+    "id": "grenade_launcher_round",
+    "img": "/items/grenade_launcher_round.png",
+    "success": true
+  },
+  "Revolver ammo": {
+    "id": "revolver_ammo",
+    "img": "/items/revolver_ammo.png",
+    "success": true
+  },
+  "Abakan": {
+    "id": "abakan",
+    "img": "/items/abakan.png",
+    "success": true
+  },
+  "Pistol Ammo": {
+    "id": "pistol_ammo",
+    "img": "/items/pistol_ammo.png",
+    "success": true
+  },
+  "Shotgun Round": {
+    "id": "shotgun_round",
+    "img": "/items/shotgun_round.png",
+    "success": true
+  },
+  "Rifle Ammo": {
+    "id": "rifle_ammo",
+    "img": "/items/rifle_ammo.png",
+    "success": true
+  },
+  "All-In": {
+    "id": "all_in",
+    "img": "/items/all_in.png",
+    "success": true
+  },
+  "Acidoemitter": {
+    "id": "acidoemitter",
+    "img": "/items/acidoemitter.png",
+    "success": true
+  },
+  "AKM-C": {
+    "id": "akm_c",
+    "img": "/items/akm_c.png",
+    "success": true
+  },
+  "Antelope": {
+    "id": "antelope",
+    "img": "/items/antelope.png",
+    "success": true
+  },
+  "Alien Blaster": {
+    "id": "alien_blaster",
+    "img": "/items/alien_blaster.png",
+    "success": true
+  },
+  "Biathlon-84": {
+    "id": "biathlon_84",
+    "img": "/items/biathlon_84.png",
+    "success": true
+  },
+  "Berdan Rifle": {
+    "id": "berdan_rifle",
+    "img": "/items/berdan_rifle.png",
+    "success": true
+  },
+  "Ave Maria": {
+    "id": "ave_maria",
+    "img": "/items/ave_maria.png",
+    "success": true
+  },
+  "Armorpiercer": {
+    "id": "armorpiercer",
+    "img": "/items/armorpiercer.png",
+    "success": true
+  },
+  "Borschevik Flamethrower": {
+    "id": "borschevik_flamethrower",
+    "img": "/items/borschevik_flamethrower.png",
+    "success": true
+  },
+  "Catalysis-E": {
+    "id": "catalysis_e",
+    "img": "/items/catalysis_e.png",
+    "success": true
+  },
+  "Bingo": {
+    "id": "bingo",
+    "img": "/items/bingo.png",
+    "success": true
+  },
+  "Blackjack": {
+    "id": "blackjack",
+    "img": "/items/blackjack.png",
+    "success": true
+  },
+  "Butterfly Knife": {
+    "id": "butterfly_knife",
+    "img": "/items/butterfly_knife.png",
+    "success": true
+  },
+  "Chitin torch": {
+    "id": "chitin_torch",
+    "img": "/items/chitin_torch.png",
+    "success": true
+  },
+  "Chinese fireworks": {
+    "id": "chinese_fireworks",
+    "img": "/items/chinese_fireworks.png",
+    "success": true
+  },
+  "Chimney": {
+    "id": "chimney",
+    "img": "/items/chimney.png",
+    "success": true
+  },
+  "Chemist Crossbow": {
+    "id": "chemist_crossbow",
+    "img": "/items/chemist_crossbow.png",
+    "success": true
+  },
+  "Chitin spear": {
+    "id": "chitin_spear",
+    "img": "/items/chitin_spear.png",
+    "success": true
+  },
+  "Crane": {
+    "id": "crane",
+    "img": "/items/crane.png",
+    "success": true
+  },
+  "Crouching Tiger": {
+    "id": "crouching_tiger",
+    "img": "/items/crouching_tiger.png",
+    "success": true
+  },
+  "Cypress SMG": {
+    "id": "cypress_smg",
+    "img": "/items/cypress_smg.png",
+    "success": true
+  },
+  "Collector": {
+    "id": "collector",
+    "img": "/items/collector.png",
+    "success": true
+  },
+  "Cho-ko-nu": {
+    "id": "cho_ko_nu",
+    "img": "/items/cho_ko_nu.png",
+    "success": true
+  },
+  "D-Eagle": {
+    "id": "d_eagle",
+    "img": "/items/d_eagle.png",
+    "success": true
+  },
+  "Degtyar": {
+    "id": "degtyar",
+    "img": "/items/degtyar.png",
+    "success": true
+  },
+  "Erebus-273": {
+    "id": "erebus_273",
+    "img": "/items/erebus_273.png",
+    "success": true
+  },
+  "Double-Barrel": {
+    "id": "double_barrel",
+    "img": "/items/double_barrel.png",
+    "success": true
+  },
+  "Dragon's Roar": {
+    "id": "dragon_s_roar",
+    "img": "/items/dragon_s_roar.png",
+    "success": true
+  },
+  "Fist of the Sky": {
+    "id": "fist_of_the_sky",
+    "img": "/items/fist_of_the_sky.png",
+    "success": true
+  },
+  "Flamethrower": {
+    "id": "flamethrower",
+    "img": "/items/flamethrower.png",
+    "success": true
+  },
+  "Flesh": {
+    "id": "flesh",
+    "img": "/items/flesh.png",
+    "success": true
+  },
+  "Forward's Stick": {
+    "id": "forward_s_stick",
+    "img": "/items/forward_s_stick.png",
+    "success": true
+  },
+  "Formalin Gas Pistol": {
+    "id": "formalin_gas_pistol",
+    "img": "/items/formalin_gas_pistol.png",
+    "success": true
+  },
+  "Guandao": {
+    "id": "guandao",
+    "img": "/items/guandao.png",
+    "success": true
+  },
+  "Gangster": {
+    "id": "gangster",
+    "img": "/items/gangster.png",
+    "success": true
+  },
+  "Gehenna": {
+    "id": "gehenna",
+    "img": "/items/gehenna.png",
+    "success": true
+  },
+  "Grouse": {
+    "id": "grouse",
+    "img": "/items/grouse.png",
+    "success": true
+  },
+  "Gigawattor": {
+    "id": "gigawattor",
+    "img": "/items/gigawattor.png",
+    "success": true
+  },
+  "Hand-held Railgun": {
+    "id": "hand_held_railgun",
+    "img": "/items/hand_held_railgun.png",
+    "success": true
+  },
+  "Hidden Dragon": {
+    "id": "hidden_dragon",
+    "img": "/items/hidden_dragon.png",
+    "success": true
+  },
+  "Heavy Machine Gun": {
+    "id": "heavy_machine_gun",
+    "img": "/items/heavy_machine_gun.png",
+    "success": true
+  },
+  "Homemade Pistol": {
+    "id": "homemade_pistol",
+    "img": "/items/homemade_pistol.png",
+    "success": true
+  },
+  "Homemade Revolver": {
+    "id": "homemade_revolver",
+    "img": "/items/homemade_revolver.png",
+    "success": true
+  },
+  "Hunter's Rifle": {
+    "id": "hunter_s_rifle",
+    "img": "/items/hunter_s_rifle.png",
+    "success": true
+  },
+  "Homemade rocket launcher": {
+    "id": "homemade_rocket_launcher",
+    "img": "/items/homemade_rocket_launcher.png",
+    "success": true
+  },
+  "Homemade SMG": {
+    "id": "homemade_smg",
+    "img": "/items/homemade_smg.png",
+    "success": true
+  },
+  "Hunting Bow": {
+    "id": "hunting_bow",
+    "img": "/items/hunting_bow.png",
+    "success": true
+  },
+  "Iron Felix": {
+    "id": "iron_felix",
+    "img": "/items/iron_felix.png",
+    "success": true
+  },
+  "Jack O' Launcher": {
+    "id": "jack_o_launcher",
+    "img": "/items/jack_o_launcher.png",
+    "success": true
+  },
+  "Infernal Prophet": {
+    "id": "infernal_prophet",
+    "img": "/items/infernal_prophet.png",
+    "success": true
+  },
+  "Icicle Thrower": {
+    "id": "icicle_thrower",
+    "img": "/items/icicle_thrower.png",
+    "success": true
+  },
+  "Joker": {
+    "id": "joker",
+    "img": "/items/joker.png",
+    "success": true
+  },
+  "Ksyukha": {
+    "id": "ksyukha",
+    "img": "/items/ksyukha.png",
+    "success": true
+  },
+  "Kalash-M": {
+    "id": "kalash_m",
+    "img": "/items/kalash_m.png",
+    "success": true
+  },
+  "Kalash-S": {
+    "id": "kalash_s",
+    "img": "/items/kalash_s.png",
+    "success": true
+  },
+  "Kettlebell": {
+    "id": "kettlebell",
+    "img": "/items/kettlebell.png",
+    "success": true
+  },
+  "Law Guardian": {
+    "id": "law_guardian",
+    "img": "/items/law_guardian.png",
+    "success": true
+  },
+  "Mauser": {
+    "id": "mauser",
+    "img": "/items/mauser.png",
+    "success": true
+  },
+  "Lotus of Death": {
+    "id": "lotus_of_death",
+    "img": "/items/lotus_of_death.png",
+    "success": true
+  },
+  "LMG \"Qilin\"": {
+    "id": "lmg_qilin",
+    "img": "/items/lmg_qilin.png",
+    "success": true
+  },
+  "Makar": {
+    "id": "makar",
+    "img": "/items/makar.png",
+    "success": true
+  },
+  "Light Machine Gun": {
+    "id": "light_machine_gun",
+    "img": "/items/light_machine_gun.png",
+    "success": true
+  },
+  "Multi-Shot Rifle": {
+    "id": "multi_shot_rifle",
+    "img": "/items/multi_shot_rifle.png",
+    "success": true
+  },
+  "Mosinka": {
+    "id": "mosinka",
+    "img": "/items/mosinka.png",
+    "success": true
+  },
+  "Midas": {
+    "id": "midas",
+    "img": "/items/midas.png",
+    "success": true
+  },
+  "Mukha": {
+    "id": "mukha",
+    "img": "/items/mukha.png",
+    "success": true
+  },
+  "Mayhem": {
+    "id": "mayhem",
+    "img": "/items/mayhem.png",
+    "success": true
+  },
+  "Murmur": {
+    "id": "murmur",
+    "img": "/items/murmur.png",
+    "success": true
+  },
+  "Pepperbox": {
+    "id": "pepperbox",
+    "img": "/items/pepperbox.png",
+    "success": true
+  },
+  "Oar": {
+    "id": "oar",
+    "img": "/items/oar.png",
+    "success": true
+  },
+  "Nagant": {
+    "id": "nagant",
+    "img": "/items/nagant.png",
+    "success": true
+  },
+  "PAS Weaver": {
+    "id": "pas_weaver",
+    "img": "/items/pas_weaver.png",
+    "success": true
+  },
+  "Physicist Crossbow": {
+    "id": "physicist_crossbow",
+    "img": "/items/physicist_crossbow.png",
+    "success": true
+  },
+  "Pistol Silent": {
+    "id": "pistol_silent",
+    "img": "/items/pistol_silent.png",
+    "success": true
+  },
+  "PK 7.62 Kraken": {
+    "id": "pk_7_62_kraken",
+    "img": "/items/pk_7_62_kraken.png",
+    "success": true
+  },
+  "Popgun": {
+    "id": "popgun",
+    "img": "/items/popgun.png",
+    "success": true
+  },
+  "Pineapple": {
+    "id": "pineapple",
+    "img": "/items/pineapple.png",
+    "success": true
+  },
+  "Posh": {
+    "id": "posh",
+    "img": "/items/posh.png",
+    "success": true
+  },
+  "Revenge": {
+    "id": "revenge",
+    "img": "/items/revenge.png",
+    "success": true
+  },
+  "Pyrolytic Grenade": {
+    "id": "pyrolytic_grenade",
+    "img": "/items/pyrolytic_grenade.png",
+    "success": true
+  },
+  "Revolving Gun": {
+    "id": "revolving_gun",
+    "img": "/items/revolving_gun.png",
+    "success": true
+  },
+  "RPG Vesuvius": {
+    "id": "rpg_vesuvius",
+    "img": "/items/rpg_vesuvius.png",
+    "success": true
+  },
+  "Sabre": {
+    "id": "sabre",
+    "img": "/items/sabre.png",
+    "success": true
+  },
+  "RPO-M Eye of the Storm": {
+    "id": "rpo_m_eye_of_the_storm",
+    "img": "/items/rpo_m_eye_of_the_storm.png",
+    "success": true
+  },
+  "Single-Shot Rifle": {
+    "id": "single_shot_rifle",
+    "img": "/items/single_shot_rifle.png",
+    "success": true
+  },
+  "Shmel": {
+    "id": "shmel",
+    "img": "/items/shmel.png",
+    "success": true
+  },
+  "Schmeisser": {
+    "id": "schmeisser",
+    "img": "/items/schmeisser.png",
+    "success": true
+  },
+  "Shock bludgeon": {
+    "id": "shock_bludgeon",
+    "img": "/items/shock_bludgeon.png",
+    "success": true
+  },
+  "Sniper's Mosin": {
+    "id": "sniper_s_mosin",
+    "img": "/items/sniper_s_mosin.png",
+    "success": true
+  },
+  "SR Delirium": {
+    "id": "sr_delirium",
+    "img": "/items/sr_delirium.png",
+    "success": true
+  },
+  "Skorpion": {
+    "id": "skorpion",
+    "img": "/items/skorpion.png",
+    "success": true
+  },
+  "Sipuha": {
+    "id": "sipuha",
+    "img": "/items/sipuha.png",
+    "success": true
+  },
+  "Stearin": {
+    "id": "stearin",
+    "img": "/items/stearin.png",
+    "success": true
+  },
+  "Standard Crossbow": {
+    "id": "standard_crossbow",
+    "img": "/items/standard_crossbow.png",
+    "success": true
+  },
+  "Stecha": {
+    "id": "stecha",
+    "img": "/items/stecha.png",
+    "success": true
+  },
+  "Storm Snowball Launcher": {
+    "id": "storm_snowball_launcher",
+    "img": "/items/storm_snowball_launcher.png",
+    "success": true
+  },
+  "Stake Thrower": {
+    "id": "stake_thrower",
+    "img": "/items/stake_thrower.png",
+    "success": true
+  },
+  "Sudayev": {
+    "id": "sudayev",
+    "img": "/items/sudayev.png",
+    "success": true
+  },
+  "Strychnine Gas Revolver": {
+    "id": "strychnine_gas_revolver",
+    "img": "/items/strychnine_gas_revolver.png",
+    "success": true
+  },
+  "Strong bat": {
+    "id": "strong_bat",
+    "img": "/items/strong_bat.png",
+    "success": true
+  },
+  "Svyokr": {
+    "id": "svyokr",
+    "img": "/items/svyokr.png",
+    "success": true
+  },
+  "Svetka": {
+    "id": "svetka",
+    "img": "/items/svetka.png",
+    "success": true
+  },
+  "Termite": {
+    "id": "termite",
+    "img": "/items/termite.png",
+    "success": true
+  },
+  "Tokar": {
+    "id": "tokar",
+    "img": "/items/tokar.png",
+    "success": true
+  },
+  "Tube Rifle": {
+    "id": "tube_rifle",
+    "img": "/items/tube_rifle.png",
+    "success": true
+  },
+  "Ulcer AMR": {
+    "id": "ulcer_amr",
+    "img": "/items/ulcer_amr.png",
+    "success": true
+  },
+  "Vector-A": {
+    "id": "vector_a",
+    "img": "/items/vector_a.png",
+    "success": true
+  },
+  "Vintorez": {
+    "id": "vintorez",
+    "img": "/items/vintorez.png",
+    "success": true
+  },
+  "Toxigen": {
+    "id": "toxigen",
+    "img": "/items/toxigen.png",
+    "success": true
+  },
+  "BS-4 Power Armor": {
+    "id": "bs_4_power_armor",
+    "img": "/items/bs_4_power_armor.png",
+    "success": true
+  },
+  "Armored Uniform": {
+    "id": "armored_uniform",
+    "img": "/items/armored_uniform.png",
+    "success": true
+  },
+  "Wolfsbane-1": {
+    "id": "wolfsbane_1",
+    "img": "/items/wolfsbane_1.png",
+    "success": true
+  },
+  "Arctic Armor": {
+    "id": "arctic_armor",
+    "img": "/items/arctic_armor.png",
+    "success": true
+  },
+  "Chitin armor": {
+    "id": "chitin_armor",
+    "img": "/items/chitin_armor.png",
+    "success": true
+  },
+  "Combined armor": {
+    "id": "combined_armor",
+    "img": "/items/combined_armor.png",
+    "success": true
+  },
+  "Chemical suit": {
+    "id": "chemical_suit",
+    "img": "/items/chemical_suit.png",
+    "success": true
+  },
+  "CPE Leader": {
+    "id": "cpe_leader",
+    "img": "/items/cpe_leader.png",
+    "success": true
+  },
+  "Dragon Scale": {
+    "id": "dragon_scale",
+    "img": "/items/dragon_scale.png",
+    "success": true
+  },
+  "Field Uniform": {
+    "id": "field_uniform",
+    "img": "/items/field_uniform.png",
+    "success": true
+  },
+  "EA Spectrum": {
+    "id": "ea_spectrum",
+    "img": "/items/ea_spectrum.png",
+    "success": true
+  },
+  "FATUM E-93": {
+    "id": "fatum_e_93",
+    "img": "/items/fatum_e_93.png",
+    "success": true
+  },
+  "Ghillie Suit": {
+    "id": "ghillie_suit",
+    "img": "/items/ghillie_suit.png",
+    "success": true
+  },
+  "Highway Armor": {
+    "id": "highway_armor",
+    "img": "/items/highway_armor.png",
+    "success": true
+  },
+  "Hunter's Garb": {
+    "id": "hunter_s_garb",
+    "img": "/items/hunter_s_garb.png",
+    "success": true
+  },
+  "Handmade clothes": {
+    "id": "handmade_clothes",
+    "img": "/items/handmade_clothes.png",
+    "success": true
+  },
+  "Ghost suit": {
+    "id": "ghost_suit",
+    "img": "/items/ghost_suit.png",
+    "success": true
+  },
+  "Iceberg": {
+    "id": "iceberg",
+    "img": "/items/iceberg.png",
+    "success": true
+  },
+  "Iron Armor": {
+    "id": "iron_armor",
+    "img": "/items/iron_armor.png",
+    "success": true
+  },
+  "Master's Garb": {
+    "id": "master_s_garb",
+    "img": "/items/master_s_garb.png",
+    "success": true
+  },
+  "Leather Armor": {
+    "id": "leather_armor",
+    "img": "/items/leather_armor.png",
+    "success": true
+  },
+  "Normal clothes": {
+    "id": "normal_clothes",
+    "img": "/items/normal_clothes.png",
+    "success": true
+  },
+  "Military uniform": {
+    "id": "military_uniform",
+    "img": "/items/military_uniform.png",
+    "success": true
+  },
+  "Polar Armor": {
+    "id": "polar_armor",
+    "img": "/items/polar_armor.png",
+    "success": true
+  },
+  "Smuggler's Armor": {
+    "id": "smuggler_s_armor",
+    "img": "/items/smuggler_s_armor.png",
+    "success": true
+  },
+  "Reinforced Uniform": {
+    "id": "reinforced_uniform",
+    "img": "/items/reinforced_uniform.png",
+    "success": true
+  },
+  "Prospector's armor": {
+    "id": "prospector_s_armor",
+    "img": "/items/prospector_s_armor.png",
+    "success": true
+  },
+  "Tester Armor": {
+    "id": "tester_armor",
+    "img": "/items/tester_armor.png",
+    "success": true
+  },
+  "Steel armor": {
+    "id": "steel_armor",
+    "img": "/items/steel_armor.png",
+    "success": true
+  },
+  "Tank armor": {
+    "id": "tank_armor",
+    "img": "/items/tank_armor.png",
+    "success": true
+  },
+  "Tactical Armor": {
+    "id": "tactical_armor",
+    "img": "/items/tactical_armor.png",
+    "success": true
+  },
+  "Tattered clothes": {
+    "id": "tattered_clothes",
+    "img": "/items/tattered_clothes.png",
+    "success": true
+  },
+  "Battery flashlight": {
+    "id": "battery_flashlight",
+    "img": "/items/battery_flashlight.png",
+    "success": true
+  },
+  "Army Bulletproof Vest": {
+    "id": "army_bulletproof_vest",
+    "img": "/items/army_bulletproof_vest.png",
+    "success": true
+  },
+  "Bone Vest": {
+    "id": "bone_vest",
+    "img": "/items/bone_vest.png",
+    "success": true
+  },
+  "Ceramic bulletproof vest": {
+    "id": "ceramic_bulletproof_vest",
+    "img": "/items/ceramic_bulletproof_vest.png",
+    "success": true
+  },
+  "Bulletproof vest": {
+    "id": "bulletproof_vest",
+    "img": "/items/bulletproof_vest.png",
+    "success": true
+  },
+  "Butcher's Backpack": {
+    "id": "butcher_s_backpack",
+    "img": "/items/butcher_s_backpack.png",
+    "success": true
+  },
+  "Comfortable Gas Mask": {
+    "id": "comfortable_gas_mask",
+    "img": "/items/comfortable_gas_mask.png",
+    "success": true
+  },
+  "Cybermitten": {
+    "id": "cybermitten",
+    "img": "/items/cybermitten.png",
+    "success": true
+  },
+  "Chinese bulletproof vest": {
+    "id": "chinese_bulletproof_vest",
+    "img": "/items/chinese_bulletproof_vest.png",
+    "success": true
+  },
+  "Flashlight (20%)": {
+    "id": "flashlight_20",
+    "img": "/items/flashlight_20.png",
+    "success": true
+  },
+  "Demon mask": {
+    "id": "demon_mask",
+    "img": "/items/demon_mask.png",
+    "success": true
+  },
+  "Flashlight (10%)": {
+    "id": "flashlight_10",
+    "img": "/items/flashlight_10.png",
+    "success": true
+  },
+  "Dust mask": {
+    "id": "dust_mask",
+    "img": "/items/dust_mask.png",
+    "success": true
+  },
+  "Ermak backpack": {
+    "id": "ermak_backpack",
+    "img": "/items/ermak_backpack.png",
+    "success": true
+  },
+  "GP-2000 Gas Mask": {
+    "id": "gp_2000_gas_mask",
+    "img": "/items/gp_2000_gas_mask.png",
+    "success": true
+  },
+  "Glutton's Bag": {
+    "id": "glutton_s_bag",
+    "img": "/items/glutton_s_bag.png",
+    "success": true
+  },
+  "GP-4 gas mask": {
+    "id": "gp_4_gas_mask",
+    "img": "/items/gp_4_gas_mask.png",
+    "success": true
+  },
+  "Flashlight (30%)": {
+    "id": "flashlight_30",
+    "img": "/items/flashlight_30.png",
+    "success": true
+  },
+  "GP-5 gas mask": {
+    "id": "gp_5_gas_mask",
+    "img": "/items/gp_5_gas_mask.png",
+    "success": true
+  },
+  "GP-7 gas mask": {
+    "id": "gp_7_gas_mask",
+    "img": "/items/gp_7_gas_mask.png",
+    "success": true
+  },
+  "Invisibility Cloak": {
+    "id": "invisibility_cloak",
+    "img": "/items/invisibility_cloak.png",
+    "success": true
+  },
+  "Homemade Bulletproof Vest": {
+    "id": "homemade_bulletproof_vest",
+    "img": "/items/homemade_bulletproof_vest.png",
+    "success": true
+  },
+  "Homemade respirator": {
+    "id": "homemade_respirator",
+    "img": "/items/homemade_respirator.png",
+    "success": true
+  },
+  "Iron Gas Mask": {
+    "id": "iron_gas_mask",
+    "img": "/items/iron_gas_mask.png",
+    "success": true
+  },
+  "Ionica Gas Mask": {
+    "id": "ionica_gas_mask",
+    "img": "/items/ionica_gas_mask.png",
+    "success": true
+  },
+  "Kevlar Vest": {
+    "id": "kevlar_vest",
+    "img": "/items/kevlar_vest.png",
+    "success": true
+  },
+  "MM-1 Gas Mask": {
+    "id": "mm_1_gas_mask",
+    "img": "/items/mm_1_gas_mask.png",
+    "success": true
+  },
+  "Modern bulletproof vest": {
+    "id": "modern_bulletproof_vest",
+    "img": "/items/modern_bulletproof_vest.png",
+    "success": true
+  },
+  "Medical Backpack": {
+    "id": "medical_backpack",
+    "img": "/items/medical_backpack.png",
+    "success": true
+  },
+  "Poisoned Flask": {
+    "id": "poisoned_flask",
+    "img": "/items/poisoned_flask.png",
+    "success": true
+  },
+  "PMG gas mask": {
+    "id": "pmg_gas_mask",
+    "img": "/items/pmg_gas_mask.png",
+    "success": true
+  },
+  "Plague Doctor's Mask": {
+    "id": "plague_doctor_s_mask",
+    "img": "/items/plague_doctor_s_mask.png",
+    "success": true
+  },
+  "Old Faithful Gas Mask": {
+    "id": "old_faithful_gas_mask",
+    "img": "/items/old_faithful_gas_mask.png",
+    "success": true
+  },
+  "Primitive Bulletproof Vest": {
+    "id": "primitive_bulletproof_vest",
+    "img": "/items/primitive_bulletproof_vest.png",
+    "success": true
+  },
+  "Progress Bulletproof Vest": {
+    "id": "progress_bulletproof_vest",
+    "img": "/items/progress_bulletproof_vest.png",
+    "success": true
+  },
+  "Rusted Crowbar": {
+    "id": "rusted_crowbar",
+    "img": "/items/rusted_crowbar.png",
+    "success": true
+  },
+  "Refrigerator Backpack": {
+    "id": "refrigerator_backpack",
+    "img": "/items/refrigerator_backpack.png",
+    "success": true
+  },
+  "Rusted axe": {
+    "id": "rusted_axe",
+    "img": "/items/rusted_axe.png",
+    "success": true
+  },
+  "Respirator": {
+    "id": "respirator",
+    "img": "/items/respirator.png",
+    "success": true
+  },
+  "Rucksack": {
+    "id": "rucksack",
+    "img": "/items/rucksack.png",
+    "success": true
+  },
+  "Rusted needle": {
+    "id": "rusted_needle",
+    "img": "/items/rusted_needle.png",
+    "success": true
+  },
+  "Rusted Saucepan": {
+    "id": "rusted_saucepan",
+    "img": "/items/rusted_saucepan.png",
+    "success": true
+  },
+  "Rusted shovel": {
+    "id": "rusted_shovel",
+    "img": "/items/rusted_shovel.png",
+    "success": true
+  },
+  "Steel shovel": {
+    "id": "steel_shovel",
+    "img": "/items/steel_shovel.png",
+    "success": true
+  },
+  "Steel axe": {
+    "id": "steel_axe",
+    "img": "/items/steel_axe.png",
+    "success": true
+  },
+  "Steel crowbar": {
+    "id": "steel_crowbar",
+    "img": "/items/steel_crowbar.png",
+    "success": true
+  },
+  "Steel knife": {
+    "id": "steel_knife",
+    "img": "/items/steel_knife.png",
+    "success": true
+  },
+  "T-800 Bulletproof Vest": {
+    "id": "t_800_bulletproof_vest",
+    "img": "/items/t_800_bulletproof_vest.png",
+    "success": true
+  },
+  "Titanium Axe": {
+    "id": "titanium_axe",
+    "img": "/items/titanium_axe.png",
+    "success": true
+  },
+  "Titanium crowbar": {
+    "id": "titanium_crowbar",
+    "img": "/items/titanium_crowbar.png",
+    "success": true
+  },
+  "Titanium Shovel": {
+    "id": "titanium_shovel",
+    "img": "/items/titanium_shovel.png",
+    "success": true
+  },
+  "Titanium Knife": {
+    "id": "titanium_knife",
+    "img": "/items/titanium_knife.png",
+    "success": true
+  },
+  "Tourist backpack": {
+    "id": "tourist_backpack",
+    "img": "/items/tourist_backpack.png",
+    "success": true
+  },
+  "\"Silage\" Mincer": {
+    "id": "silage_mincer",
+    "img": "/items/silage_mincer.png",
+    "success": true
+  },
+  "\"DIY Nets\"": {
+    "id": "diy_nets",
+    "img": "/items/diy_nets.png",
+    "success": true
+  },
+  "Flint knife": {
+    "id": "flint_knife",
+    "img": "/items/flint_knife.png",
+    "success": true
+  },
+  "Forged knife": {
+    "id": "forged_knife",
+    "img": "/items/forged_knife.png",
+    "success": true
+  },
+  "Kitchen knife": {
+    "id": "kitchen_knife",
+    "img": "/items/kitchen_knife.png",
+    "success": true
+  },
+  "Rusted hacksaw": {
+    "id": "rusted_hacksaw",
+    "img": "/items/rusted_hacksaw.png",
+    "success": true
+  },
+  "Sewing needle": {
+    "id": "sewing_needle",
+    "img": "/items/sewing_needle.png",
+    "success": true
+  },
+  "Sturdy needle": {
+    "id": "sturdy_needle",
+    "img": "/items/sturdy_needle.png",
+    "success": true
+  }
+}
