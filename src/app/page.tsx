@@ -20,6 +20,7 @@ import TabelaTab from "@/components/banco/TabelaTab";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "tabela", label: "Tabela", icon: Table2 },
   { id: "emprestimos", label: "Empréstimos", icon: HandCoins },
   { id: "trocas", label: "Trocas", icon: ArrowLeftRight },
   { id: "doadores", label: "Doadores", icon: Heart },
