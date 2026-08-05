@@ -94,7 +94,7 @@
         },
         {
           "id": "blood_mold",
-          "name": "Blood mold",
+          "name": "Bolor de Sangue",
           "img": "/items/blood_mold.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -334,7 +334,7 @@
         },
         {
           "id": "chinese_energy_drink",
-          "name": "Chinese energy drink",
+          "name": "Energético Chinês",
           "img": "/items/chinese_energy_drink.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -394,7 +394,7 @@
         },
         {
           "id": "condensed_milk",
-          "name": "Condensed milk",
+          "name": "Leite Condensado",
           "img": "/items/condensed_milk.png",
           "steel": "2:1",
           "cement": "4:1",
@@ -404,7 +404,7 @@
         },
         {
           "id": "cooked_pasta",
-          "name": "Cooked pasta",
+          "name": "Massa Cozida",
           "img": "/items/cooked_pasta.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -414,7 +414,7 @@
         },
         {
           "id": "cooked_rice",
-          "name": "Cooked rice",
+          "name": "Arroz Cozido",
           "img": "/items/cooked_rice.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -454,7 +454,7 @@
         },
         {
           "id": "cranberry",
-          "name": "Cranberry",
+          "name": "Oxicoco",
           "img": "/items/cranberry.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -464,7 +464,7 @@
         },
         {
           "id": "dirty_water",
-          "name": "Dirty Water",
+          "name": "Água Suja",
           "img": "/items/dirty_water.png",
           "steel": "20:1",
           "cement": "40:1",
@@ -474,7 +474,7 @@
         },
         {
           "id": "easter_cake",
-          "name": "Easter Cake",
+          "name": "Bolo de Páscoa",
           "img": "/items/easter_cake.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -484,7 +484,7 @@
         },
         {
           "id": "easter_egg",
-          "name": "Easter Egg",
+          "name": "Ovo de Páscoa",
           "img": "/items/easter_egg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -524,7 +524,7 @@
         },
         {
           "id": "energy_drink",
-          "name": "Energy drink",
+          "name": "Energético",
           "img": "/items/energy_drink.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -534,7 +534,7 @@
         },
         {
           "id": "fatty_meat",
-          "name": "Fatty Meat",
+          "name": "Carne Gordurosa",
           "img": "/items/fatty_meat.png",
           "steel": "3:2",
           "cement": "3:1",
@@ -554,7 +554,7 @@
         },
         {
           "id": "flatbread",
-          "name": "Flatbread",
+          "name": "Pao Achatado",
           "img": "/items/flatbread.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -574,7 +574,7 @@
         },
         {
           "id": "fresh_fish",
-          "name": "Fresh fish",
+          "name": "Peixe Fresco",
           "img": "/items/fresh_fish.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -584,7 +584,7 @@
         },
         {
           "id": "fried_tough_meat",
-          "name": "Fried Tough Meat",
+          "name": "Carne Dura Frita",
           "img": "/items/fried_tough_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -594,7 +594,7 @@
         },
         {
           "id": "fried_fatty_meat",
-          "name": "Fried fatty meat",
+          "name": "Carne Gordurosa Frita",
           "img": "/items/fried_fatty_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -604,7 +604,7 @@
         },
         {
           "id": "fried_mutant_meat",
-          "name": "Fried mutant meat",
+          "name": "Carne de Mutante Frita",
           "img": "/items/fried_mutant_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -614,7 +614,7 @@
         },
         {
           "id": "fried_potato",
-          "name": "Fried potato",
+          "name": "Batata Frita",
           "img": "/items/fried_potato.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -624,7 +624,7 @@
         },
         {
           "id": "gingerbread",
-          "name": "Gingerbread",
+          "name": "Bolo de Gengibre",
           "img": "/items/gingerbread.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -634,7 +634,7 @@
         },
         {
           "id": "golden_easter_egg",
-          "name": "Golden Easter Egg",
+          "name": "Ovo de Páscoa Dourado",
           "img": "/items/golden_easter_egg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -654,7 +654,7 @@
         },
         {
           "id": "grilled_meat",
-          "name": "Grilled Meat",
+          "name": "Carne Grelhada",
           "img": "/items/grilled_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -674,7 +674,7 @@
         },
         {
           "id": "holiday_energy_drink",
-          "name": "Holiday Energy Drink",
+          "name": "Energético de Feriado",
           "img": "/items/holiday_energy_drink.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -684,7 +684,7 @@
         },
         {
           "id": "homemade_wine",
-          "name": "Homemade Wine",
+          "name": "Vinho Artesanal",
           "img": "/items/homemade_wine.png",
           "steel": "1:5",
           "cement": "2:5",
@@ -824,7 +824,7 @@
         },
         {
           "id": "mulled_wine",
-          "name": "Mulled Wine",
+          "name": "Vinho Quente Especiado",
           "img": "/items/mulled_wine.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -844,7 +844,7 @@
         },
         {
           "id": "mushroom_with_eyes",
-          "name": "Mushroom with eyes",
+          "name": "Cogumelo com Olhos",
           "img": "/items/mushroom_with_eyes.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -854,7 +854,7 @@
         },
         {
           "id": "mutant_meat",
-          "name": "Mutant Meat",
+          "name": "Carne de Mutante",
           "img": "/items/mutant_meat.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -864,7 +864,7 @@
         },
         {
           "id": "mysterious_fruit",
-          "name": "Mysterious Fruit",
+          "name": "Fruta Misteriosa",
           "img": "/items/mysterious_fruit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -874,7 +874,7 @@
         },
         {
           "id": "nettle",
-          "name": "Nettle",
+          "name": "Urtiga",
           "img": "/items/nettle.png",
           "steel": "5:1",
           "cement": "10:1",
@@ -884,7 +884,7 @@
         },
         {
           "id": "old_canned_meat",
-          "name": "Old Canned Meat",
+          "name": "Carne Enlatada Velha",
           "img": "/items/old_canned_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -954,7 +954,7 @@
         },
         {
           "id": "pasta_with_ground_beef",
-          "name": "Pasta With Ground Beef",
+          "name": "Massa com Carne Moida",
           "img": "/items/pasta_with_ground_beef.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1004,7 +1004,7 @@
         },
         {
           "id": "peking_duck",
-          "name": "Peking Duck",
+          "name": "Pato Laqueado",
           "img": "/items/peking_duck.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1034,7 +1034,7 @@
         },
         {
           "id": "pickled_vegetables",
-          "name": "Pickled vegetables",
+          "name": "Legumes em Conserva",
           "img": "/items/pickled_vegetables.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1084,7 +1084,7 @@
         },
         {
           "id": "potato_pancakes",
-          "name": "Potato Pancakes",
+          "name": "Panquecas de Batata",
           "img": "/items/potato_pancakes.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1134,7 +1134,7 @@
         },
         {
           "id": "rat_meat",
-          "name": "Rat Meat",
+          "name": "Carne de Rato",
           "img": "/items/rat_meat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1144,7 +1144,7 @@
         },
         {
           "id": "rice_bun",
-          "name": "Rice Bun",
+          "name": "Pao de Arroz",
           "img": "/items/rice_bun.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1164,7 +1164,7 @@
         },
         {
           "id": "rich_chowder",
-          "name": "Rich chowder",
+          "name": "Caldo Rico",
           "img": "/items/rich_chowder.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1194,7 +1194,7 @@
         },
         {
           "id": "rotten_vegetables",
-          "name": "Rotten vegetables",
+          "name": "Legumes Podres",
           "img": "/items/rotten_vegetables.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1204,7 +1204,7 @@
         },
         {
           "id": "russian_cigarettes",
-          "name": "Russian Cigarettes",
+          "name": "Cigarros Russos",
           "img": "/items/russian_cigarettes.png",
           "steel": "1:2",
           "cement": "1:1",
@@ -1234,7 +1234,7 @@
         },
         {
           "id": "salted_fish",
-          "name": "Salted Fish",
+          "name": "Peixe Salgado",
           "img": "/items/salted_fish.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -1244,7 +1244,7 @@
         },
         {
           "id": "salted_meat",
-          "name": "Salted meat",
+          "name": "Carne Salgada",
           "img": "/items/salted_meat.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -1264,7 +1264,7 @@
         },
         {
           "id": "sausage",
-          "name": "Sausage",
+          "name": "Salsicha",
           "img": "/items/sausage.png",
           "steel": "5:1",
           "cement": "10:1",
@@ -1274,7 +1274,7 @@
         },
         {
           "id": "shawarma",
-          "name": "Shawarma",
+          "name": "Churrasco Grego",
           "img": "/items/shawarma.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1294,7 +1294,7 @@
         },
         {
           "id": "smuggled_energy_drink",
-          "name": "Smuggled Energy Drink",
+          "name": "Energético Contrabandeado",
           "img": "/items/smuggled_energy_drink.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1304,7 +1304,7 @@
         },
         {
           "id": "snake_meat",
-          "name": "Snake Meat",
+          "name": "Carne de Cobra",
           "img": "/items/snake_meat.png",
           "steel": "3:2",
           "cement": "3:1",
@@ -1334,7 +1334,7 @@
         },
         {
           "id": "stearin",
-          "name": "Stearin",
+          "name": "Estearina",
           "img": "/items/stearin.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1354,7 +1354,7 @@
         },
         {
           "id": "strange_mushroom_black",
-          "name": "Strange Mushroom (Black)",
+          "name": "Cogumelo Estranho (Preto)",
           "img": "/items/strange_mushroom_black.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1364,7 +1364,7 @@
         },
         {
           "id": "strange_mushroom_blue",
-          "name": "Strange Mushroom (Blue)",
+          "name": "Cogumelo Estranho (Azul)",
           "img": "/items/strange_mushroom_blue.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1374,7 +1374,7 @@
         },
         {
           "id": "strange_mushroom_green",
-          "name": "Strange Mushroom (Green)",
+          "name": "Cogumelo Estranho (Verde)",
           "img": "/items/strange_mushroom_green.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1384,7 +1384,7 @@
         },
         {
           "id": "strange_mushroom_light_blue",
-          "name": "Strange Mushroom (Light Blue)",
+          "name": "Cogumelo Estranho (Azul Claro)",
           "img": "/items/strange_mushroom_light_blue.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1394,7 +1394,7 @@
         },
         {
           "id": "strange_mushroom_red",
-          "name": "Strange Mushroom (Red)",
+          "name": "Cogumelo Estranho (Vermelho)",
           "img": "/items/strange_mushroom_red.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1404,7 +1404,7 @@
         },
         {
           "id": "strange_mushroom_violet",
-          "name": "Strange Mushroom (Violet)",
+          "name": "Cogumelo Estranho (Violeta)",
           "img": "/items/strange_mushroom_violet.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1414,7 +1414,7 @@
         },
         {
           "id": "strange_mushroom_white",
-          "name": "Strange Mushroom (White)",
+          "name": "Cogumelo Estranho (Branco)",
           "img": "/items/strange_mushroom_white.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1424,7 +1424,7 @@
         },
         {
           "id": "strange_mushroom_yellow",
-          "name": "Strange Mushroom (Yellow)",
+          "name": "Cogumelo Estranho (Amarelo)",
           "img": "/items/strange_mushroom_yellow.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1434,7 +1434,7 @@
         },
         {
           "id": "strawberry",
-          "name": "Strawberry",
+          "name": "Morango",
           "img": "/items/strawberry.png",
           "steel": "5:1",
           "cement": "10:1",
@@ -1494,7 +1494,7 @@
         },
         {
           "id": "tough_meat",
-          "name": "Tough Meat",
+          "name": "Carne Dura",
           "img": "/items/tough_meat.png",
           "steel": "3:1",
           "cement": "6:1",
@@ -1504,7 +1504,7 @@
         },
         {
           "id": "toxic_water",
-          "name": "Toxic water",
+          "name": "Agua Toxica",
           "img": "/items/toxic_water.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1514,7 +1514,7 @@
         },
         {
           "id": "treats",
-          "name": "Treats",
+          "name": "Guloseimas",
           "img": "/items/treats.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1590,7 +1590,7 @@
       "items": [
         {
           "id": "mysterious_fruit_seeds",
-          "name": "Mysterious Fruit Seeds",
+          "name": "Sementes de Fruta Misteriosa",
           "img": "/items/mysterious_fruit_seeds.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1600,7 +1600,7 @@
         },
         {
           "id": "potato_seeds",
-          "name": "Potato seeds",
+          "name": "Sementes de Batata",
           "img": "/items/potato_seeds.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1670,7 +1670,7 @@
         },
         {
           "id": "vegetable_seeds",
-          "name": "Vegetable seeds",
+          "name": "Sementes de Legumes",
           "img": "/items/vegetable_seeds.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1686,7 +1686,7 @@
       "items": [
         {
           "id": "diy_nets",
-          "name": "\"DIY Nets\"",
+          "name": "Redes Artesanais",
           "img": "/items/diy_nets.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1696,7 +1696,7 @@
         },
         {
           "id": "silage_mincer",
-          "name": "\"Silage\" Mincer",
+          "name": "Moidor de Silagem",
           "img": "/items/silage_mincer.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1756,7 +1756,7 @@
         },
         {
           "id": "antelope",
-          "name": "Antelope",
+          "name": "Antilope",
           "img": "/items/antelope.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1806,7 +1806,7 @@
         },
         {
           "id": "bioblocade_inhaler",
-          "name": "Bioblocade Inhaler",
+          "name": "Inalador Bioblocade",
           "img": "/items/bioblocade_inhaler.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1836,7 +1836,7 @@
         },
         {
           "id": "blank",
-          "name": "Blank",
+          "name": "Espacador",
           "img": "/items/blank.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1846,7 +1846,7 @@
         },
         {
           "id": "boiled_leather",
-          "name": "Boiled Leather",
+          "name": "Couro Fervido",
           "img": "/items/boiled_leather.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1886,7 +1886,7 @@
         },
         {
           "id": "c_3_cologne",
-          "name": "C-3 Cologne",
+          "name": "Colonia C-3",
           "img": "/items/c_3_cologne.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1976,7 +1976,7 @@
         },
         {
           "id": "chainsaw",
-          "name": "Chainsaw",
+          "name": "Motosserra",
           "img": "/items/chainsaw.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1986,7 +1986,7 @@
         },
         {
           "id": "chainsaw_motor",
-          "name": "Chainsaw motor",
+          "name": "Motor de Motosserra",
           "img": "/items/chainsaw_motor.png",
           "steel": "1:2",
           "cement": "1:1",
@@ -1996,7 +1996,7 @@
         },
         {
           "id": "chinese_fireworks",
-          "name": "Chinese fireworks",
+          "name": "Fogos de Artificio Chineses",
           "img": "/items/chinese_fireworks.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2036,7 +2036,7 @@
         },
         {
           "id": "collector",
-          "name": "Collector",
+          "name": "Colecionador",
           "img": "/items/collector.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2056,7 +2056,7 @@
         },
         {
           "id": "crane",
-          "name": "Crane",
+          "name": "Guindaste",
           "img": "/items/crane.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2066,7 +2066,7 @@
         },
         {
           "id": "crouching_tiger",
-          "name": "Crouching Tiger",
+          "name": "Tigre Agachado",
           "img": "/items/crouching_tiger.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2086,7 +2086,7 @@
         },
         {
           "id": "d_eagle",
-          "name": "D-Eagle",
+          "name": "Desert Eagle",
           "img": "/items/d_eagle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2126,7 +2126,7 @@
         },
         {
           "id": "diluted_spirits",
-          "name": "Diluted spirits",
+          "name": "Alcool Diluido",
           "img": "/items/diluted_spirits.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2136,7 +2136,7 @@
         },
         {
           "id": "double_barrel",
-          "name": "Double-Barrel",
+          "name": "Estopa",
           "img": "/items/double_barrel.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2156,7 +2156,7 @@
         },
         {
           "id": "dragon_s_roar",
-          "name": "Dragon's Roar",
+          "name": "Rugido do Dragao",
           "img": "/items/dragon_s_roar.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2176,7 +2176,7 @@
         },
         {
           "id": "electric_motor",
-          "name": "Electric Motor",
+          "name": "Motor Elétrico",
           "img": "/items/electric_motor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2216,7 +2216,7 @@
         },
         {
           "id": "expeditionary_ration",
-          "name": "Expeditionary Ration",
+          "name": "Racao de Expedicao",
           "img": "/items/expeditionary_ration.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2266,7 +2266,7 @@
         },
         {
           "id": "fire_brick",
-          "name": "Fire brick",
+          "name": "Tijolo Refratario",
           "img": "/items/fire_brick.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2276,7 +2276,7 @@
         },
         {
           "id": "fist_of_the_sky",
-          "name": "Fist of the Sky",
+          "name": "Punho do Ceo",
           "img": "/items/fist_of_the_sky.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2286,7 +2286,7 @@
         },
         {
           "id": "flesh",
-          "name": "Flesh",
+          "name": "Carne",
           "img": "/items/flesh.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2296,7 +2296,7 @@
         },
         {
           "id": "flying_spaghetti_monster",
-          "name": "Flying spaghetti monster",
+          "name": "Monstro Espaguete Voador",
           "img": "/items/flying_spaghetti_monster.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2306,7 +2306,7 @@
         },
         {
           "id": "forward_s_stick",
-          "name": "Forward's Stick",
+          "name": "Bastao do Forward",
           "img": "/items/forward_s_stick.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2316,7 +2316,7 @@
         },
         {
           "id": "gaz_24_broken",
-          "name": "GAZ-24 (Broken)",
+          "name": "GAZ-24 (Quebrado)",
           "img": "/items/gaz_24_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2346,7 +2346,7 @@
         },
         {
           "id": "gasoline_engine",
-          "name": "Gasoline Engine",
+          "name": "Motor a Gasolina",
           "img": "/items/gasoline_engine.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2376,7 +2376,7 @@
         },
         {
           "id": "glue_tape",
-          "name": "Glue/tape",
+          "name": "Fita Adesiva",
           "img": "/items/glue_tape.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2386,7 +2386,7 @@
         },
         {
           "id": "grouse",
-          "name": "Grouse",
+          "name": "Galo-da-serra",
           "img": "/items/grouse.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2406,7 +2406,7 @@
         },
         {
           "id": "healing_salve",
-          "name": "Healing Salve",
+          "name": "Balsamo Curativo",
           "img": "/items/healing_salve.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2416,7 +2416,7 @@
         },
         {
           "id": "hidden_dragon",
-          "name": "Hidden Dragon",
+          "name": "Dragao Oculto",
           "img": "/items/hidden_dragon.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2426,7 +2426,7 @@
         },
         {
           "id": "high_performance_capacitor",
-          "name": "High-performance Capacitor",
+          "name": "Capacitor de Alta Performance",
           "img": "/items/high_performance_capacitor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2456,7 +2456,7 @@
         },
         {
           "id": "icicle_thrower",
-          "name": "Icicle Thrower",
+          "name": "Lancador de Estalactites",
           "img": "/items/icicle_thrower.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2466,7 +2466,7 @@
         },
         {
           "id": "infected_rusk",
-          "name": "Infected rusk",
+          "name": "Biscoito Duro Infectado",
           "img": "/items/infected_rusk.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2486,7 +2486,7 @@
         },
         {
           "id": "infernal_prophet",
-          "name": "Infernal Prophet",
+          "name": "Profeta Infernal",
           "img": "/items/infernal_prophet.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2496,7 +2496,7 @@
         },
         {
           "id": "insulating_tape",
-          "name": "Insulating Tape",
+          "name": "Fita Isolante",
           "img": "/items/insulating_tape.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2516,7 +2516,7 @@
         },
         {
           "id": "iron_felix",
-          "name": "Iron Felix",
+          "name": "Felix de Ferro",
           "img": "/items/iron_felix.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2526,7 +2526,7 @@
         },
         {
           "id": "iron_pot",
-          "name": "Iron pot",
+          "name": "Panela de Ferro",
           "img": "/items/iron_pot.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2536,7 +2536,7 @@
         },
         {
           "id": "joker",
-          "name": "Joker",
+          "name": "Coringa",
           "img": "/items/joker.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2576,7 +2576,7 @@
         },
         {
           "id": "kamaz_broken",
-          "name": "KamAZ (Broken)",
+          "name": "KamAZ (Quebrado)",
           "img": "/items/kamaz_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2586,7 +2586,7 @@
         },
         {
           "id": "kettlebell",
-          "name": "Kettlebell",
+          "name": "Peso Russo",
           "img": "/items/kettlebell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2626,7 +2626,7 @@
         },
         {
           "id": "law_guardian",
-          "name": "Law Guardian",
+          "name": "Guardiao da Lei",
           "img": "/items/law_guardian.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2666,7 +2666,7 @@
         },
         {
           "id": "log",
-          "name": "Log",
+          "name": "Tronco",
           "img": "/items/log.png",
           "steel": "3:1",
           "cement": "6:1",
@@ -2676,7 +2676,7 @@
         },
         {
           "id": "lotus_of_death",
-          "name": "Lotus of Death",
+          "name": "Lotus da Morte",
           "img": "/items/lotus_of_death.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2726,7 +2726,7 @@
         },
         {
           "id": "metal_plate",
-          "name": "Metal Plate",
+          "name": "Chapa de Metal",
           "img": "/items/metal_plate.png",
           "steel": "3:2",
           "cement": "3:1",
@@ -2756,7 +2756,7 @@
         },
         {
           "id": "mining_permit",
-          "name": "Mining permit",
+          "name": "Licenca de Mineracao",
           "img": "/items/mining_permit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2776,7 +2776,7 @@
         },
         {
           "id": "motorcycle_spare_parts",
-          "name": "Motorcycle spare parts",
+          "name": "Pecas Sobressalentes de Moto",
           "img": "/items/motorcycle_spare_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2786,7 +2786,7 @@
         },
         {
           "id": "murmur",
-          "name": "Murmur",
+          "name": "Murmurio",
           "img": "/items/murmur.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2826,7 +2826,7 @@
         },
         {
           "id": "oar",
-          "name": "Oar",
+          "name": "Remo",
           "img": "/items/oar.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2846,7 +2846,7 @@
         },
         {
           "id": "olivier_salad",
-          "name": "Olivier Salad",
+          "name": "Salada Olivier",
           "img": "/items/olivier_salad.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2896,7 +2896,7 @@
         },
         {
           "id": "pps_43_broken",
-          "name": "PPS-43 (broken)",
+          "name": "PPS-43 (Quebrado)",
           "img": "/items/pps_43_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2906,7 +2906,7 @@
         },
         {
           "id": "ppsh_41_broken",
-          "name": "PPSh-41 (broken)",
+          "name": "PPSh-41 (Quebrado)",
           "img": "/items/ppsh_41_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2946,7 +2946,7 @@
         },
         {
           "id": "pill_of_immortality",
-          "name": "Pill of Immortality",
+          "name": "Pilula da Imortalidade",
           "img": "/items/pill_of_immortality.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2986,7 +2986,7 @@
         },
         {
           "id": "quality_hide",
-          "name": "Quality Hide",
+          "name": "Pele de Qualidade",
           "img": "/items/quality_hide.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2996,7 +2996,7 @@
         },
         {
           "id": "quality_leather",
-          "name": "Quality Leather",
+          "name": "Couro de Qualidade",
           "img": "/items/quality_leather.png",
           "steel": "1:30",
           "cement": "1:15",
@@ -3016,7 +3016,7 @@
         },
         {
           "id": "rpg_vesuvius",
-          "name": "RPG Vesuvius",
+          "name": "Lancador RPG Vesuvio",
           "img": "/items/rpg_vesuvius.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3026,7 +3026,7 @@
         },
         {
           "id": "rpk_74_broken",
-          "name": "RPK-74 (broken)",
+          "name": "RPK-74 (Quebrado)",
           "img": "/items/rpk_74_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3036,7 +3036,7 @@
         },
         {
           "id": "rpo_m_eye_of_the_storm",
-          "name": "RPO-M Eye of the Storm",
+          "name": "RPO-M Olho da Tempestade",
           "img": "/items/rpo_m_eye_of_the_storm.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3056,7 +3056,7 @@
         },
         {
           "id": "raw_hide",
-          "name": "Raw Hide",
+          "name": "Pele Crua",
           "img": "/items/raw_hide.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3066,7 +3066,7 @@
         },
         {
           "id": "raw_fatback",
-          "name": "Raw fatback",
+          "name": "Toucinho Cru",
           "img": "/items/raw_fatback.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3076,7 +3076,7 @@
         },
         {
           "id": "rawhide",
-          "name": "Rawhide",
+          "name": "Couro Cru",
           "img": "/items/rawhide.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3096,7 +3096,7 @@
         },
         {
           "id": "revenge",
-          "name": "Revenge",
+          "name": "Vinganca",
           "img": "/items/revenge.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3106,7 +3106,7 @@
         },
         {
           "id": "rubber_parts",
-          "name": "Rubber parts",
+          "name": "Peças de Borracha",
           "img": "/items/rubber_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3116,7 +3116,7 @@
         },
         {
           "id": "rusted_saucepan",
-          "name": "Rusted Saucepan",
+          "name": "Panela Enferrujada",
           "img": "/items/rusted_saucepan.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3146,7 +3146,7 @@
         },
         {
           "id": "svt_40_broken",
-          "name": "SVT-40 (broken)",
+          "name": "SVT-40 (Quebrado)",
           "img": "/items/svt_40_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3176,7 +3176,7 @@
         },
         {
           "id": "sanguinary_masha",
-          "name": "Sanguinary Masha",
+          "name": "Masha Sanguinaria",
           "img": "/items/sanguinary_masha.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3186,7 +3186,7 @@
         },
         {
           "id": "saucepan",
-          "name": "Saucepan",
+          "name": "Panela",
           "img": "/items/saucepan.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3216,7 +3216,7 @@
         },
         {
           "id": "shock_bludgeon",
-          "name": "Shock bludgeon",
+          "name": "Tacapao de Choque",
           "img": "/items/shock_bludgeon.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3246,7 +3246,7 @@
         },
         {
           "id": "smoked_fatback",
-          "name": "Smoked fatback",
+          "name": "Toucinho Defumado",
           "img": "/items/smoked_fatback.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3256,7 +3256,7 @@
         },
         {
           "id": "smuggler_s_flask",
-          "name": "Smuggler's Flask",
+          "name": "Frasco do Contrabandista",
           "img": "/items/smuggler_s_flask.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3266,7 +3266,7 @@
         },
         {
           "id": "sniper_s_mosin",
-          "name": "Sniper's Mosin",
+          "name": "Mosin do Sniper",
           "img": "/items/sniper_s_mosin.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3286,7 +3286,7 @@
         },
         {
           "id": "spare_weapon_parts",
-          "name": "Spare weapon parts",
+          "name": "Pecas Sobressalentes de Arma",
           "img": "/items/spare_weapon_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3306,7 +3306,7 @@
         },
         {
           "id": "stake_thrower",
-          "name": "Stake Thrower",
+          "name": "Lancador de Estacas",
           "img": "/items/stake_thrower.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3336,7 +3336,7 @@
         },
         {
           "id": "steel_pot",
-          "name": "Steel pot",
+          "name": "Panela de Aço",
           "img": "/items/steel_pot.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3346,7 +3346,7 @@
         },
         {
           "id": "stick",
-          "name": "Stick",
+          "name": "Graveto",
           "img": "/items/stick.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -3406,7 +3406,7 @@
         },
         {
           "id": "survivor_s_cache",
-          "name": "Survivor's Cache",
+          "name": "Cache do Sobrevivente",
           "img": "/items/survivor_s_cache.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3436,7 +3436,7 @@
         },
         {
           "id": "tt_33_broken",
-          "name": "TT-33 (Broken)",
+          "name": "TT-33 (Quebrado)",
           "img": "/items/tt_33_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3456,7 +3456,7 @@
         },
         {
           "id": "tanned_leather",
-          "name": "Tanned leather",
+          "name": "Couro Curtido",
           "img": "/items/tanned_leather.png",
           "steel": "1:3",
           "cement": "2:3",
@@ -3466,7 +3466,7 @@
         },
         {
           "id": "tanning_mixture",
-          "name": "Tanning mixture",
+          "name": "Mistura de Curtimento",
           "img": "/items/tanning_mixture.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3496,7 +3496,7 @@
         },
         {
           "id": "thick_hide",
-          "name": "Thick Hide",
+          "name": "Pele Grossa",
           "img": "/items/thick_hide.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3506,7 +3506,7 @@
         },
         {
           "id": "thick_leather",
-          "name": "Thick Leather",
+          "name": "Couro Grosso",
           "img": "/items/thick_leather.png",
           "steel": "1:20",
           "cement": "1:10",
@@ -3536,18 +3536,8 @@
         },
         {
           "id": "titanium_pot",
-          "name": "Titanium pot",
+          "name": "Panela de Titânio",
           "img": "/items/titanium_pot.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tokar",
-          "name": "Tokar",
-          "img": "/items/tokar.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3566,7 +3556,7 @@
         },
         {
           "id": "transport_repair_kit",
-          "name": "Transport repair kit",
+          "name": "Kit de Reparo de Transporte",
           "img": "/items/transport_repair_kit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3586,7 +3576,7 @@
         },
         {
           "id": "trophy_cognac",
-          "name": "Trophy Cognac",
+          "name": "Conhaque Trofeu",
           "img": "/items/trophy_cognac.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3596,7 +3586,7 @@
         },
         {
           "id": "uaz_452_broken",
-          "name": "UAZ-452 (Broken)",
+          "name": "UAZ-452 (Quebrado)",
           "img": "/items/uaz_452_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3606,7 +3596,7 @@
         },
         {
           "id": "uaz_469_broken",
-          "name": "UAZ-469 (Broken)",
+          "name": "UAZ-469 (Quebrado)",
           "img": "/items/uaz_469_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3626,7 +3616,7 @@
         },
         {
           "id": "vaz_2101_broken",
-          "name": "VAZ-2101 (Broken)",
+          "name": "VAZ-2101 (Quebrado)",
           "img": "/items/vaz_2101_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3646,7 +3636,7 @@
         },
         {
           "id": "vehicle_repair_kit",
-          "name": "Vehicle repair kit",
+          "name": "Kit de Reparo de Veículo",
           "img": "/items/vehicle_repair_kit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3666,7 +3656,7 @@
         },
         {
           "id": "weapon_box",
-          "name": "Weapon box",
+          "name": "Caixa de Armas",
           "img": "/items/weapon_box.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3676,7 +3666,7 @@
         },
         {
           "id": "weapon_repair_kit",
-          "name": "Weapon repair kit",
+          "name": "Kit de Reparo de Arma",
           "img": "/items/weapon_repair_kit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3696,7 +3686,7 @@
         },
         {
           "id": "witch_s_punch",
-          "name": "Witch's punch",
+          "name": "Soco da Bruxa",
           "img": "/items/witch_s_punch.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3716,7 +3706,7 @@
         },
         {
           "id": "zaz_968_broken",
-          "name": "ZAZ-968 (Broken)",
+          "name": "ZAZ-968 (Quebrado)",
           "img": "/items/zaz_968_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3726,7 +3716,7 @@
         },
         {
           "id": "zil_130_broken",
-          "name": "ZIL-130 (Broken)",
+          "name": "ZIL-130 (Quebrado)",
           "img": "/items/zil_130_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3752,7 +3742,7 @@
         },
         {
           "id": "activated_charcoal",
-          "name": "Activated charcoal",
+          "name": "Carvao Ativado",
           "img": "/items/activated_charcoal.png",
           "steel": "10:1",
           "cement": "20:1",
@@ -3822,7 +3812,7 @@
         },
         {
           "id": "broadleaf_plantain",
-          "name": "Broadleaf plantain",
+          "name": "Tanchagem",
           "img": "/items/broadleaf_plantain.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3832,7 +3822,7 @@
         },
         {
           "id": "detoxifying_potion",
-          "name": "Detoxifying Potion",
+          "name": "Pocao Desintoxicante",
           "img": "/items/detoxifying_potion.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3842,7 +3832,7 @@
         },
         {
           "id": "energizing_potion",
-          "name": "Energizing potion",
+          "name": "Pocao Energizante",
           "img": "/items/energizing_potion.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3852,7 +3842,7 @@
         },
         {
           "id": "eurekognasol_stimulant",
-          "name": "Eurekognasol Stimulant",
+          "name": "Estimulante Eurekognasol",
           "img": "/items/eurekognasol_stimulant.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3892,7 +3882,7 @@
         },
         {
           "id": "metocaine",
-          "name": "Metocaine",
+          "name": "Metocaina",
           "img": "/items/metocaine.png",
           "steel": "1:5",
           "cement": "2:5",
@@ -3902,7 +3892,7 @@
         },
         {
           "id": "painkiller",
-          "name": "Painkiller",
+          "name": "Analgésico",
           "img": "/items/painkiller.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3912,7 +3902,7 @@
         },
         {
           "id": "poisoned_flask",
-          "name": "Poisoned Flask",
+          "name": "Frasco Envenenado",
           "img": "/items/poisoned_flask.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3922,7 +3912,7 @@
         },
         {
           "id": "protection_potion",
-          "name": "Protection Potion",
+          "name": "Pocao de Protecao",
           "img": "/items/protection_potion.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3932,7 +3922,7 @@
         },
         {
           "id": "sterile_bandage",
-          "name": "Sterile bandage",
+          "name": "Bandagem Esteril",
           "img": "/items/sterile_bandage.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -3942,7 +3932,7 @@
         },
         {
           "id": "stimulant",
-          "name": "Stimulant",
+          "name": "Estimulante",
           "img": "/items/stimulant.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3952,7 +3942,7 @@
         },
         {
           "id": "sulfuric_acid",
-          "name": "Sulfuric Acid",
+          "name": "Acido Sulfurico",
           "img": "/items/sulfuric_acid.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -3978,7 +3968,7 @@
       "items": [
         {
           "id": "7_62x25mm_tt_shell",
-          "name": "7.62x25mm TT Shell",
+          "name": "Cartucho 7.62x25mm TT",
           "img": "/items/7_62x25mm_tt_shell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -3988,7 +3978,7 @@
         },
         {
           "id": "assault_rifle_ammo",
-          "name": "Assault Rifle Ammo",
+          "name": "Munição de Fuzil de Assalto",
           "img": "/items/assault_rifle_ammo.png",
           "steel": "6:1",
           "cement": "12:1",
@@ -3998,7 +3988,7 @@
         },
         {
           "id": "assault_rifle_shell",
-          "name": "Assault rifle shell",
+          "name": "Cartucho de Fuzil de Assalto",
           "img": "/items/assault_rifle_shell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4028,7 +4018,7 @@
         },
         {
           "id": "chlorcystamine",
-          "name": "Chlorcystamine",
+          "name": "Clorcistamina",
           "img": "/items/chlorcystamine.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4128,7 +4118,7 @@
         },
         {
           "id": "crossbow_bolt_poison",
-          "name": "Crossbow bolt (poison)",
+          "name": "Virote de Besta (Venenoso)",
           "img": "/items/crossbow_bolt_poison.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4148,7 +4138,7 @@
         },
         {
           "id": "grenade_launcher_round",
-          "name": "Grenade Launcher Round",
+          "name": "Granada de Lançador",
           "img": "/items/grenade_launcher_round.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4158,7 +4148,7 @@
         },
         {
           "id": "handmade_rocket",
-          "name": "Handmade rocket",
+          "name": "Foguete Artesanal",
           "img": "/items/handmade_rocket.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4168,7 +4158,7 @@
         },
         {
           "id": "homemade_rocket_launcher",
-          "name": "Homemade rocket launcher",
+          "name": "Lancador de Foguetes Artesanal",
           "img": "/items/homemade_rocket_launcher.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4178,7 +4168,7 @@
         },
         {
           "id": "lead_bullet",
-          "name": "Lead bullet",
+          "name": "Bala de Chumbo",
           "img": "/items/lead_bullet.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4198,7 +4188,7 @@
         },
         {
           "id": "pistol_shell",
-          "name": "Pistol shell",
+          "name": "Cartucho de Pistola",
           "img": "/items/pistol_shell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4208,7 +4198,7 @@
         },
         {
           "id": "plastic_explosives",
-          "name": "Plastic explosives",
+          "name": "Explosivos Plasticos",
           "img": "/items/plastic_explosives.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4228,7 +4218,7 @@
         },
         {
           "id": "pyrolytic_grenade",
-          "name": "Pyrolytic Grenade",
+          "name": "Granada Pirolitica",
           "img": "/items/pyrolytic_grenade.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4238,7 +4228,7 @@
         },
         {
           "id": "revolver_ammo",
-          "name": "Revolver ammo",
+          "name": "Municao de Revolver",
           "img": "/items/revolver_ammo.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4248,7 +4238,7 @@
         },
         {
           "id": "revolver_shell",
-          "name": "Revolver shell",
+          "name": "Cartucho de Revolver",
           "img": "/items/revolver_shell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4268,7 +4258,7 @@
         },
         {
           "id": "rifle_shell",
-          "name": "Rifle shell",
+          "name": "Cartucho de Rifle",
           "img": "/items/rifle_shell.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4278,7 +4268,7 @@
         },
         {
           "id": "training_ammo",
-          "name": "Training Ammo",
+          "name": "Municao de Treinamento",
           "img": "/items/training_ammo.png",
           "steel": "1:6",
           "cement": "1:3",
@@ -4288,7 +4278,7 @@
         },
         {
           "id": "vial_of_amine",
-          "name": "Vial of \"...amine\"",
+          "name": "Frasco de Amina",
           "img": "/items/vial_of_amine.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4314,7 +4304,7 @@
       "items": [
         {
           "id": "alien_blaster",
-          "name": "Alien Blaster",
+          "name": "Blaster Alienigena",
           "img": "/items/alien_blaster.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4324,7 +4314,7 @@
         },
         {
           "id": "assault_rifle_parts",
-          "name": "Assault rifle parts",
+          "name": "Pecas de Fuzil de Assalto",
           "img": "/items/assault_rifle_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4334,7 +4324,7 @@
         },
         {
           "id": "berdan_rifle",
-          "name": "Berdan Rifle",
+          "name": "Rifle Berdan",
           "img": "/items/berdan_rifle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4344,7 +4334,7 @@
         },
         {
           "id": "borschevik_flamethrower",
-          "name": "Borschevik Flamethrower",
+          "name": "Lancachamas Borschevik",
           "img": "/items/borschevik_flamethrower.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4354,7 +4344,7 @@
         },
         {
           "id": "broken_car_battery",
-          "name": "Broken car battery",
+          "name": "Bateria de Carro Quebrada",
           "img": "/items/broken_car_battery.png",
           "steel": "2:3",
           "cement": "4:3",
@@ -4374,7 +4364,7 @@
         },
         {
           "id": "car_battery",
-          "name": "Car battery",
+          "name": "Bateria de Carro",
           "img": "/items/car_battery.png",
           "steel": "1:20",
           "cement": "1:10",
@@ -4384,7 +4374,7 @@
         },
         {
           "id": "chemist_crossbow",
-          "name": "Chemist Crossbow",
+          "name": "Besta do Quimico",
           "img": "/items/chemist_crossbow.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4404,7 +4394,7 @@
         },
         {
           "id": "cypress_smg",
-          "name": "Cypress SMG",
+          "name": "SMG Cypress",
           "img": "/items/cypress_smg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4414,7 +4404,7 @@
         },
         {
           "id": "flamethrower",
-          "name": "Flamethrower",
+          "name": "Lancachamas",
           "img": "/items/flamethrower.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4424,7 +4414,7 @@
         },
         {
           "id": "flint_knife",
-          "name": "Flint knife",
+          "name": "Faca de Pedra",
           "img": "/items/flint_knife.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4444,7 +4434,7 @@
         },
         {
           "id": "formalin_gas_pistol",
-          "name": "Formalin Gas Pistol",
+          "name": "Pistola de Gás Formalina",
           "img": "/items/formalin_gas_pistol.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4453,18 +4443,8 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "hand_held_railgun",
-          "name": "Hand-held Railgun",
-          "img": "/items/hand_held_railgun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "heavy_machine_gun",
-          "name": "Heavy Machine Gun",
+          "name": "Metralhadora Pesada",
           "img": "/items/heavy_machine_gun.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4474,7 +4454,7 @@
         },
         {
           "id": "homemade_pistol",
-          "name": "Homemade Pistol",
+          "name": "Pistola Artesanal",
           "img": "/items/homemade_pistol.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4484,7 +4464,7 @@
         },
         {
           "id": "homemade_revolver",
-          "name": "Homemade Revolver",
+          "name": "Revolver Artesanal",
           "img": "/items/homemade_revolver.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4494,7 +4474,7 @@
         },
         {
           "id": "homemade_smg",
-          "name": "Homemade SMG",
+          "name": "SMG Artesanal",
           "img": "/items/homemade_smg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4504,7 +4484,7 @@
         },
         {
           "id": "hunter_s_rifle",
-          "name": "Hunter's Rifle",
+          "name": "Rifle do Cacador",
           "img": "/items/hunter_s_rifle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4514,7 +4494,7 @@
         },
         {
           "id": "hunting_bow",
-          "name": "Hunting Bow",
+          "name": "Arco de Caca",
           "img": "/items/hunting_bow.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4524,7 +4504,7 @@
         },
         {
           "id": "jack_o_launcher",
-          "name": "Jack O' Launcher",
+          "name": "Lancador Jack O'",
           "img": "/items/jack_o_launcher.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4534,7 +4514,7 @@
         },
         {
           "id": "kitchen_knife",
-          "name": "Kitchen knife",
+          "name": "Faca de Cozinha",
           "img": "/items/kitchen_knife.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4544,7 +4524,7 @@
         },
         {
           "id": "battery_flashlight",
-          "name": "Lanterna a Bateria",
+          "name": "Lanterha com Bateria",
           "img": "/items/battery_flashlight.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4554,7 +4534,7 @@
         },
         {
           "id": "light_machine_gun",
-          "name": "Light Machine Gun",
+          "name": "Metralhadora Leve",
           "img": "/items/light_machine_gun.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4564,7 +4544,7 @@
         },
         {
           "id": "machine_gun_parts",
-          "name": "Machine gun parts",
+          "name": "Pecas de Metralhadora",
           "img": "/items/machine_gun_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4574,7 +4554,7 @@
         },
         {
           "id": "makarov_handgun_broken",
-          "name": "Makarov handgun (broken)",
+          "name": "Pistola Makarov (Quebrada)",
           "img": "/items/makarov_handgun_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4584,7 +4564,7 @@
         },
         {
           "id": "mosin_nagant_rifle_broken",
-          "name": "Mosin-Nagant rifle (broken)",
+          "name": "Rifle Mosin-Nagant (Quebrado)",
           "img": "/items/mosin_nagant_rifle_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4594,7 +4574,7 @@
         },
         {
           "id": "multi_shot_rifle",
-          "name": "Multi-Shot Rifle",
+          "name": "Rifle Multi-Tiro",
           "img": "/items/multi_shot_rifle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4604,7 +4584,7 @@
         },
         {
           "id": "nagant_revolver_broken",
-          "name": "Nagant Revolver (Broken)",
+          "name": "Revolver Nagant (Quebrado)",
           "img": "/items/nagant_revolver_broken.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4614,7 +4594,7 @@
         },
         {
           "id": "nuclear_battery",
-          "name": "Nuclear battery",
+          "name": "Bateria Nuclear",
           "img": "/items/nuclear_battery.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4624,7 +4604,7 @@
         },
         {
           "id": "physicist_crossbow",
-          "name": "Physicist Crossbow",
+          "name": "Besta do Fisico",
           "img": "/items/physicist_crossbow.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4634,7 +4614,7 @@
         },
         {
           "id": "pistol_silent",
-          "name": "Pistol Silent",
+          "name": "Pistola Silenciosa",
           "img": "/items/pistol_silent.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4644,7 +4624,7 @@
         },
         {
           "id": "pistol_parts",
-          "name": "Pistol parts",
+          "name": "Pecas de Pistola",
           "img": "/items/pistol_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4654,7 +4634,7 @@
         },
         {
           "id": "popgun",
-          "name": "Popgun",
+          "name": "Arma de Brinquedo",
           "img": "/items/popgun.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4664,7 +4644,7 @@
         },
         {
           "id": "rainbow_easter_egg",
-          "name": "Rainbow Easter Egg",
+          "name": "Ovo de Pascoa Arco-Iris",
           "img": "/items/rainbow_easter_egg.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4674,7 +4654,7 @@
         },
         {
           "id": "revolver_parts",
-          "name": "Revolver parts",
+          "name": "Pecas de Revolver",
           "img": "/items/revolver_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4684,7 +4664,7 @@
         },
         {
           "id": "revolving_gun",
-          "name": "Revolving Gun",
+          "name": "Arma Rotativa",
           "img": "/items/revolving_gun.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4694,7 +4674,7 @@
         },
         {
           "id": "rifle_parts",
-          "name": "Rifle parts",
+          "name": "Pecas de Rifle",
           "img": "/items/rifle_parts.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4704,7 +4684,7 @@
         },
         {
           "id": "rusted_axe",
-          "name": "Rusted axe",
+          "name": "Machado Enferrujado",
           "img": "/items/rusted_axe.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4714,7 +4694,7 @@
         },
         {
           "id": "shotgun_round",
-          "name": "Shotgun Round",
+          "name": "Cartucho de Escopeta",
           "img": "/items/shotgun_round.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4724,7 +4704,7 @@
         },
         {
           "id": "single_shot_rifle",
-          "name": "Single-Shot Rifle",
+          "name": "Rifle de Tiro Unico",
           "img": "/items/single_shot_rifle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4734,7 +4714,7 @@
         },
         {
           "id": "standard_crossbow",
-          "name": "Standard Crossbow",
+          "name": "Besta Padrao",
           "img": "/items/standard_crossbow.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4744,7 +4724,7 @@
         },
         {
           "id": "steel_axe",
-          "name": "Steel axe",
+          "name": "Machado de Aco",
           "img": "/items/steel_axe.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4754,7 +4734,7 @@
         },
         {
           "id": "steel_knife",
-          "name": "Steel knife",
+          "name": "Faca de Aco",
           "img": "/items/steel_knife.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4764,7 +4744,7 @@
         },
         {
           "id": "storm_snowball_launcher",
-          "name": "Storm Snowball Launcher",
+          "name": "Lancador de Bolas de Neve Tempestade",
           "img": "/items/storm_snowball_launcher.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4774,7 +4754,7 @@
         },
         {
           "id": "strong_bat",
-          "name": "Strong bat",
+          "name": "Taco Forte",
           "img": "/items/strong_bat.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4784,7 +4764,7 @@
         },
         {
           "id": "strychnine_gas_revolver",
-          "name": "Strychnine Gas Revolver",
+          "name": "Revolver de Gas Estricnina",
           "img": "/items/strychnine_gas_revolver.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4804,7 +4784,7 @@
         },
         {
           "id": "titanium_axe",
-          "name": "Titanium Axe",
+          "name": "Machado de Titanio",
           "img": "/items/titanium_axe.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4814,7 +4794,7 @@
         },
         {
           "id": "titanium_knife",
-          "name": "Titanium Knife",
+          "name": "Faca de Titanio",
           "img": "/items/titanium_knife.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4930,7 +4910,7 @@
         },
         {
           "id": "armored_uniform",
-          "name": "Armored Uniform",
+          "name": "Uniforme Blindado",
           "img": "/items/armored_uniform.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4940,7 +4920,7 @@
         },
         {
           "id": "armorpiercer",
-          "name": "Armorpiercer",
+          "name": "Perfurador de Blindagem",
           "img": "/items/armorpiercer.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4950,7 +4930,7 @@
         },
         {
           "id": "bs_4_power_armor",
-          "name": "BS-4 Power Armor",
+          "name": "Armadura Energetica BS-4",
           "img": "/items/bs_4_power_armor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -4990,7 +4970,7 @@
         },
         {
           "id": "ghost_suit",
-          "name": "Ghost suit",
+          "name": "Traje Fantasma",
           "img": "/items/ghost_suit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5010,7 +4990,7 @@
         },
         {
           "id": "polar_armor",
-          "name": "Polar Armor",
+          "name": "Armadura Polar",
           "img": "/items/polar_armor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5020,7 +5000,7 @@
         },
         {
           "id": "tank_armor",
-          "name": "Tank armor",
+          "name": "Armadura de Tanque",
           "img": "/items/tank_armor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5030,7 +5010,7 @@
         },
         {
           "id": "tester_armor",
-          "name": "Tester Armor",
+          "name": "Armadura de Teste",
           "img": "/items/tester_armor.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5066,7 +5046,7 @@
       "items": [
         {
           "id": "chemistry_set",
-          "name": "Chemistry set",
+          "name": "Kit de Quimica",
           "img": "/items/chemistry_set.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5076,7 +5056,7 @@
         },
         {
           "id": "chitin_torch",
-          "name": "Chitin torch",
+          "name": "Tocha de Quitina",
           "img": "/items/chitin_torch.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5086,7 +5066,7 @@
         },
         {
           "id": "flashlight_10",
-          "name": "Flashlight (10%)",
+          "name": "Lanterna (10%)",
           "img": "/items/flashlight_10.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5096,7 +5076,7 @@
         },
         {
           "id": "flashlight_20",
-          "name": "Flashlight (20%)",
+          "name": "Lanterna (20%)",
           "img": "/items/flashlight_20.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5106,7 +5086,7 @@
         },
         {
           "id": "flashlight_30",
-          "name": "Flashlight (30%)",
+          "name": "Lanterna (30%)",
           "img": "/items/flashlight_30.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5116,7 +5096,7 @@
         },
         {
           "id": "glutton_s_bag",
-          "name": "Glutton's Bag",
+          "name": "Bolsa do Gula",
           "img": "/items/glutton_s_bag.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5286,7 +5266,7 @@
         },
         {
           "id": "field_uniform",
-          "name": "Uniforme de Campo",
+          "name": "Uniforme de Campanha",
           "img": "/items/field_uniform.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5302,7 +5282,7 @@
       "items": [
         {
           "id": "chimney",
-          "name": "Chimney",
+          "name": "Chamine",
           "img": "/items/chimney.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5332,7 +5312,7 @@
         },
         {
           "id": "handmade_needle",
-          "name": "Handmade needle",
+          "name": "Agulha Artesanal",
           "img": "/items/handmade_needle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5352,7 +5332,7 @@
         },
         {
           "id": "rusted_crowbar",
-          "name": "Rusted Crowbar",
+          "name": "Pe de Cabra Enferrujado",
           "img": "/items/rusted_crowbar.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5362,7 +5342,7 @@
         },
         {
           "id": "rusted_hacksaw",
-          "name": "Rusted hacksaw",
+          "name": "Serra Enferrujada",
           "img": "/items/rusted_hacksaw.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5372,7 +5352,7 @@
         },
         {
           "id": "rusted_needle",
-          "name": "Rusted needle",
+          "name": "Agulha Enferrujada",
           "img": "/items/rusted_needle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5382,7 +5362,7 @@
         },
         {
           "id": "rusted_shovel",
-          "name": "Rusted shovel",
+          "name": "Pa Enferrujada",
           "img": "/items/rusted_shovel.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5402,7 +5382,7 @@
         },
         {
           "id": "steel_crowbar",
-          "name": "Steel crowbar",
+          "name": "Pé de Cabra de Aço",
           "img": "/items/steel_crowbar.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5412,7 +5392,7 @@
         },
         {
           "id": "steel_needle",
-          "name": "Steel needle",
+          "name": "Agulha de Aco",
           "img": "/items/steel_needle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5422,7 +5402,7 @@
         },
         {
           "id": "steel_shovel",
-          "name": "Steel shovel",
+          "name": "Pa de Aco",
           "img": "/items/steel_shovel.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5432,7 +5412,7 @@
         },
         {
           "id": "sturdy_needle",
-          "name": "Sturdy needle",
+          "name": "Agulha Resistente",
           "img": "/items/sturdy_needle.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5442,7 +5422,7 @@
         },
         {
           "id": "titanium_shovel",
-          "name": "Titanium Shovel",
+          "name": "Pa de Titanio",
           "img": "/items/titanium_shovel.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5452,7 +5432,7 @@
         },
         {
           "id": "titanium_crowbar",
-          "name": "Titanium crowbar",
+          "name": "Pe de Cabra de Titanio",
           "img": "/items/titanium_crowbar.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5462,7 +5442,7 @@
         },
         {
           "id": "tool_kit",
-          "name": "Tool Kit",
+          "name": "Kit de Ferramentas",
           "img": "/items/tool_kit.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5472,7 +5452,7 @@
         },
         {
           "id": "welder",
-          "name": "Welder",
+          "name": "Soldador",
           "img": "/items/welder.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5488,7 +5468,7 @@
       "items": [
         {
           "id": "comfortable_gas_mask",
-          "name": "Comfortable Gas Mask",
+          "name": "Mascara de Gas Confortavel",
           "img": "/items/comfortable_gas_mask.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -5498,7 +5478,7 @@
         },
         {
           "id": "gas_mask_filter",
-          "name": "Gas Mask Filter",
+          "name": "Filtro de Mascara de Gas",
           "img": "/items/gas_mask_filter.png",
           "steel": "1:10",
           "cement": "1:5",
@@ -5508,7 +5488,7 @@
         },
         {
           "id": "demon_mask",
-          "name": "Mascara de Demônio",
+          "name": "Mascara de Demonio",
           "img": "/items/demon_mask.png",
           "steel": "?:?",
           "cement": "?:?",
