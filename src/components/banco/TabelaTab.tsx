@@ -133,7 +133,9 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   items: PriceItem[];
   onReport: (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number; quantity: number }) => void;
 }) {
-  const [selectedItem, setSelectedItem] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [selectedItemId, setSelectedItemId] = useState("");
+  const [selectedItemName, setSelectedItemName] = useState("");
   const [steelPrice, setSteelPrice] = useState("");
   const [cementPrice, setCementPrice] = useState("");
   const [quantity, setQuantity] = useState("1");
@@ -146,29 +148,31 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
     if (saved) setNickname(saved);
   }, [isOpen]);
 
+  const selectedDisplayName = selectedItemName || searchText;
+
   const handleSubmit = async () => {
-    if (!selectedItem || !steelPrice || !cementPrice || !nickname.trim()) {
-      toast.error("Preencha todos os campos!");
+    if (!selectedItemId || !steelPrice || !cementPrice || !nickname.trim()) {
+      toast.error("Preencha todos os campos e selecione um item!");
       return;
     }
     setIsSubmitting(true);
     try {
-      const item = items.find((i) => i.id === selectedItem);
-      if (!item) return;
       await onReport({
-        itemId: selectedItem,
-        itemName: item.name,
+        itemId: selectedItemId,
+        itemName: selectedDisplayName,
         nickname: nickname.trim(),
         steelPrice: parseInt(steelPrice),
         cementPrice: parseInt(cementPrice),
         quantity: parseInt(quantity) || 1,
       });
-      setSelectedItem("");
+      setSearchText("");
+      setSelectedItemId("");
+      setSelectedItemName("");
       setSteelPrice("");
       setCementPrice("");
       setQuantity("1");
       localStorage.setItem("reporterNickname", nickname.trim());
-      toast.success(`Preco de "${item.name}" reportado! Obrigado ${nickname.trim()}!`);
+      toast.success(`Preco de "${selectedDisplayName}" reportado! Obrigado ${nickname.trim()}!`);
       onClose();
     } catch {
       toast.error("Erro ao reportar. Tente novamente.");
@@ -178,9 +182,9 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   };
 
   const filteredItems = useMemo(() => {
-    if (!selectedItem) return items.slice(0, 50);
-    return items.filter((i) => i.name.toLowerCase().includes(selectedItem.toLowerCase())).slice(0, 50);
-  }, [selectedItem, items]);
+    if (!searchText) return items.slice(0, 50);
+    return items.filter((i) => i.name.toLowerCase().includes(searchText.toLowerCase())).slice(0, 50);
+  }, [searchText, items]);
 
   if (!isOpen) return null;
   return (
@@ -204,18 +208,25 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
             <label className="text-[11px] text-muted-foreground">Item</label>
             <div className="relative mt-1">
               <Search className="w-3 h-3 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2" />
-              <Input value={selectedItem} onChange={(e) => setSelectedItem(e.target.value)} placeholder="Buscar item..." className="pl-8 text-sm h-8" />
+              <Input value={selectedItemId ? selectedDisplayName : searchText} onChange={(e) => { setSearchText(e.target.value); if (selectedItemId) { setSelectedItemId(""); setSelectedItemName(""); } }} placeholder="Buscar item..." className="pl-8 text-sm h-8" />
             </div>
-            {selectedItem && (
+            {searchText && !selectedItemId && (
               <div className="mt-1 max-h-32 overflow-y-auto rounded-md border border-border bg-muted/20">
                 {filteredItems.map((item) => (
-                  <button key={item.id} onClick={() => { setSelectedItem(item.name); }} className={`w-full text-left px-3 py-1.5 text-xs hover:bg-primary/10 transition-colors flex items-center gap-2 ${item.name === selectedItem ? "bg-primary/10 text-primary" : "text-foreground"}`}>
+                  <button key={item.id} onClick={() => { setSelectedItemId(item.id); setSelectedItemName(item.name); setSearchText(item.name); }} className={`w-full text-left px-3 py-1.5 text-xs hover:bg-primary/10 transition-colors flex items-center gap-2 ${selectedItemId === item.id ? "bg-primary/10 text-primary" : "text-foreground"}`}>
                     <ItemIcon itemId={item.id} imgPath={item.img} />
                     <span className="truncate">{item.name}</span>
                     {isPriceUnknown(item.steel) && <span className="ml-auto text-[9px] text-orange-400 shrink-0">sem preco</span>}
                   </button>
                 ))}
                 {filteredItems.length === 0 && <p className="text-[10px] text-muted-foreground p-2">Nenhum item encontrado.</p>}
+              </div>
+            )}
+            {selectedItemId && (
+              <div className="mt-1 flex items-center gap-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20">
+                <Check className="w-3 h-3 text-primary shrink-0" />
+                <span className="text-xs text-primary font-medium truncate">{selectedDisplayName}</span>
+                <button onClick={() => { setSelectedItemId(""); setSelectedItemName(""); }} className="ml-auto text-muted-foreground hover:text-foreground shrink-0"><X className="w-3 h-3" /></button>
               </div>
             )}
           </div>
