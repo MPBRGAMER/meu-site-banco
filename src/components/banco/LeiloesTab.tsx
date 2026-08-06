@@ -35,6 +35,12 @@ function getTaxaFromTipo(tipo: string): number {
   return 100; // banco
 }
 
+function LeilaoImg({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  const [error, setError] = useState(false);
+  if (error) return <img src="/items/blank.png" alt={alt} className={className} style={{ imageRendering: "pixelated" }} />;
+  return <img src={src} alt={alt} className={className} style={{ imageRendering: "pixelated" }} onError={() => setError(true)} />;
+}
+
 function LeilaoTimer({ leilao }: { leilao: Leilao }) {
   const [timeLeft, setTimeLeft] = useState("");
   const [isUrgent, setIsUrgent] = useState(false);
@@ -149,11 +155,21 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const [valorInicial, setValorInicial] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
 
-  const imgPreview = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : null;
+  const [itemImageNames, setItemImageNames] = useState<string[]>([]);
+  const ITEM_IMAGE_NAMES = itemImageNames;
+
+  const imgPreview = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : (nomeItem.trim() ? `/items/${nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png` : null);
   const [tipoOrigem, setTipoOrigem] = useState("comum");
   const [duracaoIdx, setDuracaoIdx] = useState(4); // default 24h
 
   const taxaCasa = getTaxaFromTipo(tipoOrigem);
+
+  useEffect(() => {
+    fetch("/items/_index.txt")
+      .then((r) => r.text())
+      .then((t) => setItemImageNames(t.trim().split("\n")))
+      .catch(() => {});
+  }, []);
 
   const handleAdd = () => {
     if (!donoItem.trim() || !nomeItem.trim() || !valorInicial || !moedaAceita.trim()) { toast.error("Preencha os campos obrigatórios."); return; }
@@ -230,9 +246,14 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                 <div className="sm:col-span-2 lg:col-span-3">
                   <Label className="text-xs text-muted-foreground">Imagem (opcional — preenche sozinho pelo nome do item)</Label>
                   <div className="flex gap-2 items-center">
-                    <Input placeholder="Deixe vazio para usar o nome do item" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
-                    {imgPreview && <img src={imgPreview} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                    <Input list="item-images-list" placeholder="Deixe vazio para usar o nome do item" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
+                    {imgPreview && <LeilaoImg src={imgPreview} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" />}
                   </div>
+                  <datalist id="item-images-list">
+                    {ITEM_IMAGE_NAMES.slice(0, 200).map((name) => (
+                      <option key={name} value={name} />
+                    ))}
+                  </datalist>
                 </div>
               </div>
               <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Criar Leilão</Button></div>
@@ -253,7 +274,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                 <div key={leilao.id} className="rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-3">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
-                      {leilao.imagemUrl && <img src={leilao.imagemUrl} alt={leilao.nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                      <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" />
                       <div>
                         <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
                         <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
@@ -293,7 +314,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                   <div className="p-4">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        {leilao.imagemUrl && <img src={leilao.imagemUrl} alt={leilao.nomeItem} className="w-12 h-12 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                        <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-12 h-12 rounded object-contain border border-border bg-accent/50" />
                         <div>
                           <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
                           <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
@@ -352,7 +373,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                 {finalizados.map((l) => (
                   <tr key={l.id} className="border-b border-border/50 hover:bg-accent/30">
                     <td className="px-3 py-2 flex items-center gap-2">
-                      {l.imagemUrl && <img src={l.imagemUrl} alt={l.nomeItem} className="w-6 h-6 rounded object-contain" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                      <LeilaoImg src={l.imagemUrl || `/items/${l.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={l.nomeItem} className="w-6 h-6 rounded object-contain" />
                       <span className="font-semibold text-foreground">{l.nomeItem}</span>
                     </td>
                     <td className="px-3 py-2 text-muted-foreground">{l.donoItem}</td>
