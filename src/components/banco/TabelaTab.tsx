@@ -417,7 +417,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   const [newItemRarity, setNewItemRarity] = useState("common");
   const [newItemNotes, setNewItemNotes] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [editForm, setEditForm] = useState({ name: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "" });
+  const [editForm, setEditForm] = useState({ name: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "", categoryId: "" });
   const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -492,7 +492,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
 
   const startEdit = (item: typeof allItems[0]) => {
     setEditingId(item.id);
-    setEditForm({ name: item.name, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes });
+    setEditForm({ name: item.name, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes, categoryId: item.categoryId });
   };
 
   const handleSaveEdit = async () => {
@@ -665,18 +665,16 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                             <Input value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} className="text-xs h-7 mt-0.5" />
                           </div>
                           <div>
-                            <label className="text-[9px] text-muted-foreground">Wiki Link</label>
-                            <Input value={editForm.wikiLink} onChange={(e) => setEditForm({ ...editForm, wikiLink: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                            <label className="text-[9px] text-muted-foreground">Categoria</label>
+                            <select value={editForm.categoryId} onChange={(e) => setEditForm({ ...editForm, categoryId: e.target.value })} className="w-full text-xs bg-card border border-border rounded-md h-7 px-1.5 mt-0.5 text-foreground">
+                              {categories.map((c) => (<option key={c.id} value={c.id}>{c.name}</option>))}
+                            </select>
                           </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-2 gap-2">
                           <div>
-                            <label className="text-[9px] text-muted-foreground">Aco</label>
-                            <Input value={editForm.steel} onChange={(e) => setEditForm({ ...editForm, steel: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
-                          </div>
-                          <div>
-                            <label className="text-[9px] text-muted-foreground">Cimento</label>
-                            <Input value={editForm.cement} onChange={(e) => setEditForm({ ...editForm, cement: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                            <label className="text-[9px] text-muted-foreground">Wiki Link</label>
+                            <Input value={editForm.wikiLink} onChange={(e) => setEditForm({ ...editForm, wikiLink: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
                           </div>
                           <div>
                             <label className="text-[9px] text-muted-foreground">Demanda</label>
@@ -685,6 +683,16 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                               <option value="medium">Media</option>
                               <option value="low">Baixa</option>
                             </select>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Aco</label>
+                            <Input value={editForm.steel} onChange={(e) => setEditForm({ ...editForm, steel: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                          </div>
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Cimento</label>
+                            <Input value={editForm.cement} onChange={(e) => setEditForm({ ...editForm, cement: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
                           </div>
                         </div>
                         <div>
@@ -841,71 +849,130 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
     await fetchReports();
   };
 
+  const categoryColorMap: Record<string, { border: string; bg: string; text: string; glow: string }> = {
+    food: { border: "border-l-green-500", bg: "bg-green-500/5", text: "text-green-500", glow: "shadow-green-500/5" },
+    resources: { border: "border-l-amber-500", bg: "bg-amber-500/5", text: "text-amber-500", glow: "shadow-amber-500/5" },
+    medicine: { border: "border-l-red-500", bg: "bg-red-500/5", text: "text-red-500", glow: "shadow-red-500/5" },
+    ammo: { border: "border-l-orange-500", bg: "bg-orange-500/5", text: "text-orange-500", glow: "shadow-orange-500/5" },
+    weapons: { border: "border-l-purple-500", bg: "bg-purple-500/5", text: "text-purple-500", glow: "shadow-purple-500/5" },
+    tools: { border: "border-l-blue-500", bg: "bg-blue-500/5", text: "text-blue-500", glow: "shadow-blue-500/5" },
+  };
+
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between flex-wrap gap-2">
+    <div className="space-y-5">
+      {/* ═══ Header Area ═══ */}
+      <div className="flex items-end justify-between flex-wrap gap-3">
         <div>
-          <h2 className="text-lg font-bold text-primary flex items-center gap-2">Tabela de Precos</h2>
-          <p className="text-[10px] text-muted-foreground">{totalAllItems} itens | {totalMissing} sem preco | Fonte: dayr.wiki.gg + comunidade</p>
+          <h2 className="text-xl font-bold text-primary tracking-tight flex items-center gap-2.5 pb-1.5">
+            Tabela de Precos
+            <span className="block h-[2px] flex-1 min-w-[60px] max-w-[140px] rounded-full bg-gradient-to-r from-primary/60 via-primary/20 to-transparent" />
+          </h2>
+          <p className="text-[10px] text-muted-foreground pl-0.5">{totalAllItems} itens &middot; {totalMissing} sem preco &middot; Fonte: dayr.wiki.gg + comunidade</p>
         </div>
-        <div className="flex items-center gap-1.5">
-          <button onClick={() => setShowReportar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-green-500/30 text-green-400 hover:bg-green-500/10 transition-all">
+        <div className="flex items-center gap-2 flex-wrap">
+          <button onClick={() => setShowReportar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-green-500/30 text-green-400 bg-green-500/5 hover:bg-green-500/15 shadow-sm shadow-green-500/10 transition-all">
             <MessageSquarePlus className="w-3.5 h-3.5" /> Reportar
           </button>
           {isAdmin && (
-            <button onClick={() => setShowEditar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 transition-all">
+            <button onClick={() => setShowEditar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-yellow-500/30 text-yellow-400 bg-yellow-500/5 hover:bg-yellow-500/15 shadow-sm shadow-yellow-500/10 transition-all">
               <Pencil className="w-3.5 h-3.5" /> Editar
             </button>
           )}
           {isAdmin && (
-            <button onClick={() => setShowGerenciar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 transition-all">
+            <button onClick={() => setShowGerenciar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-purple-500/30 text-purple-400 bg-purple-500/5 hover:bg-purple-500/15 shadow-sm shadow-purple-500/10 transition-all">
               <Settings2 className="w-3.5 h-3.5" /> Gerenciar Itens
             </button>
           )}
-          <button onClick={() => setShowGuia(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all">
+          <button onClick={() => setShowGuia(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-blue-500/30 text-blue-400 bg-blue-500/5 hover:bg-blue-500/15 shadow-sm shadow-blue-500/10 transition-all">
             <BookOpen className="w-3.5 h-3.5" /> Guia
           </button>
         </div>
       </div>
 
-      <div className="rounded-lg border border-border bg-card p-3 grid grid-cols-3 gap-2">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-green-500/10 flex items-center justify-center"><MessageSquarePlus className="w-3.5 h-3.5 text-green-400" /></div>
-          <div><p className="text-[10px] text-muted-foreground">Reports</p><p className="text-sm font-bold font-mono text-foreground">{priceReports.length}</p></div>
+      {/* ═══ Stat Cards ═══ */}
+      <div className="grid grid-cols-3 gap-3">
+        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-green-500/5 blur-2xl" />
+          <div className="relative flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0">
+              <MessageSquarePlus className="w-5 h-5 text-green-400" />
+            </div>
+            <div>
+              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Reports</p>
+              <p className="text-lg font-bold font-mono text-foreground leading-tight">{priceReports.length}</p>
+            </div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-orange-500/10 flex items-center justify-center"><AlertCircle className="w-3.5 h-3.5 text-orange-400" /></div>
-          <div><p className="text-[10px] text-muted-foreground">Sem Preco</p><p className="text-sm font-bold font-mono text-foreground">{totalMissing}</p></div>
+        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-orange-500/5 blur-2xl" />
+          <div className="relative flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0">
+              <AlertCircle className="w-5 h-5 text-orange-400" />
+            </div>
+            <div>
+              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Sem Preco</p>
+              <p className="text-lg font-bold font-mono text-foreground leading-tight">{totalMissing}</p>
+            </div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-blue-500/10 flex items-center justify-center"><BarChart3 className="w-3.5 h-3.5 text-blue-400" /></div>
-          <div><p className="text-[10px] text-muted-foreground">Itens com Tendencia</p><p className="text-sm font-bold font-mono text-foreground">{Object.keys(priceTrends.trends).length}</p></div>
+        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-blue-500/5 blur-2xl" />
+          <div className="relative flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+              <BarChart3 className="w-5 h-5 text-blue-400" />
+            </div>
+            <div>
+              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Tendencias</p>
+              <p className="text-lg font-bold font-mono text-foreground leading-tight">{Object.keys(priceTrends.trends).length}</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* ═══ Search & Controls Bar ═══ */}
       <div className="flex items-center gap-2">
-        <div className="relative flex-1">
-          <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
-          <Input placeholder="Buscar item..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9 bg-card border-border text-sm h-9" />
+        <div className="relative flex-1 group">
+          <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2 group-focus-within:text-primary transition-colors" />
+          <Input placeholder="Buscar item..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9 pr-3 bg-card border-border text-sm h-10 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary/40 shadow-sm shadow-black/10 transition-all" />
         </div>
-        <button onClick={() => setShowOnlyMissing(!showOnlyMissing)} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border transition-all whitespace-nowrap h-9 ${showOnlyMissing ? "bg-orange-500/20 text-orange-400 border-orange-500/30" : "bg-card text-muted-foreground border-border hover:text-foreground"}`}>
-          <AlertCircle className="w-3.5 h-3.5" /> Sem Preco
-        </button>
-        <button onClick={expandAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium border border-border bg-card text-muted-foreground hover:text-foreground transition-all h-9">Abrir</button>
-        <button onClick={collapseAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium border border-border bg-card text-muted-foreground hover:text-foreground transition-all h-9">Fechar</button>
+        <div className="flex items-center gap-1.5 rounded-lg border border-border bg-card p-1 shadow-sm shadow-black/10">
+          <button onClick={() => setShowOnlyMissing(!showOnlyMissing)} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all whitespace-nowrap h-8 ${showOnlyMissing ? "bg-orange-500/20 text-orange-400 shadow-sm shadow-orange-500/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/40"}`}>
+            <AlertCircle className="w-3.5 h-3.5" /> Sem Preco
+          </button>
+          <div className="w-px h-5 bg-border" />
+          <button onClick={expandAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-all h-8">Abrir</button>
+          <button onClick={collapseAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-all h-8">Fechar</button>
+        </div>
       </div>
 
-      <div className="flex flex-wrap gap-1.5">
-        <button onClick={() => setActiveCategory(null)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-all ${activeCategory === null ? "bg-primary/20 text-primary border-primary/30" : "bg-card text-muted-foreground border-border hover:text-foreground hover:bg-accent"}`}>Todos ({totalAllItems})</button>
-        {categories.map((cat) => (
-          <button key={cat.id} onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-all whitespace-nowrap ${activeCategory === cat.id ? "bg-primary/20 text-primary border-primary/30" : "bg-card text-muted-foreground border-border hover:text-foreground hover:bg-accent"}`}>{cat.name} ({cat.items.length})</button>
-        ))}
+      {/* ═══ Category Filter Bar ═══ */}
+      <div className="overflow-x-auto scrollbar-thin -mx-1 px-1">
+        <div className="flex gap-2 min-w-max">
+          <button onClick={() => setActiveCategory(null)} className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap border-l-[3px] ${activeCategory === null ? "bg-primary/15 text-primary border-primary/30 border-l-primary shadow-sm shadow-primary/10" : "bg-card text-muted-foreground border-border border-l-border hover:text-foreground hover:bg-muted/30"}`}>
+            Todos
+            <span className="ml-1.5 text-[10px] opacity-70">{totalAllItems}</span>
+          </button>
+          {categories.map((cat) => {
+            const cc = categoryColorMap[cat.id] || categoryColorMap.resources;
+            const isActive = activeCategory === cat.id;
+            return (
+              <button key={cat.id} onClick={() => setActiveCategory(isActive ? null : cat.id)} className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap border-l-[3px] ${isActive ? `${cc.bg} ${cc.text} border-l-current shadow-sm ${cc.glow}` : "bg-card text-muted-foreground border-border border-l-border hover:text-foreground hover:bg-muted/30"}`}>
+                {cat.name}
+                <span className="ml-1.5 text-[10px] opacity-70">{cat.items.length}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <p className="text-[10px] text-muted-foreground">{totalItems} {totalItems === 1 ? "item" : "itens"}{search ? ` para "${search}"` : ""}{showOnlyMissing ? " (sem preco)" : ""}</p>
+      <p className="text-[11px] text-muted-foreground pl-0.5">
+        {totalItems} {totalItems === 1 ? "item" : "itens"}{search ? ` para "${search}"` : ""}{showOnlyMissing ? " (sem preco)" : ""}
+      </p>
 
-      <div className="rounded-lg border border-border bg-card overflow-hidden">
-        <div className="grid grid-cols-12 gap-1 px-3 py-2 border-b border-border bg-muted/30 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+      {/* ═══ Table ═══ */}
+      <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
+        {/* Table Header - Sticky */}
+        <div className="sticky top-0 z-10 grid grid-cols-12 gap-1 px-4 py-2.5 border-b border-border bg-muted/60 backdrop-blur-md text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
           <div className="col-span-1">Icone</div>
           <button onClick={() => toggleSort("name")} className="col-span-3 flex items-center gap-1 hover:text-foreground transition-colors text-left">Item <ArrowUpDown className="w-3 h-3" /></button>
           <button onClick={() => toggleSort("steel")} className="col-span-2 flex items-center gap-1 hover:text-foreground transition-colors text-left">Aco ($) <ArrowUpDown className="w-3 h-3" /></button>
@@ -916,92 +983,103 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
         </div>
 
         {filteredCategories.length === 0 ? (
-          <div className="p-8 text-center text-sm text-muted-foreground">Nenhum item encontrado.</div>
+          <div className="p-12 text-center">
+            <p className="text-sm text-muted-foreground">Nenhum item encontrado.</p>
+          </div>
         ) : (
-          filteredCategories.map((cat) => (
-            <div key={cat.id}>
-              <button onClick={() => toggleCategory(cat.id)} className="w-full px-3 py-2.5 border-b border-border bg-primary/5 hover:bg-primary/10 transition-colors text-left">
-                <div className="flex items-center gap-2">
-                  {expandedCategories.has(cat.id) ? <ChevronDown className="w-3.5 h-3.5 text-primary" /> : <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />}
-                  <span className="text-sm font-bold text-foreground">{cat.name}</span>
-                  <span className="text-[10px] text-muted-foreground font-mono">({cat.items.length})</span>
-                </div>
-              </button>
-              {expandedCategories.has(cat.id) && (
-                <div>
-                  {cat.items.map((item, idx) => {
-                    const missing = isPriceUnknown(item.steel);
-                    const rep = reportMap[item.id];
-                    return (
-                      <div key={item.id} className={`grid grid-cols-12 gap-1 px-3 py-2 border-b border-border/50 hover:bg-muted/20 transition-colors text-xs ${idx % 2 === 0 ? "" : "bg-muted/5"} ${missing ? "opacity-70" : ""}`}>
-                        <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} imgPath={item.img} /></div>
-                        <div className="col-span-3 min-w-0">
-                          {item.wikiLink ? (
-                            <a href={item.wikiLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors truncate block" title={"Ver no Wiki: " + item.name}>
-                              {item.name} <ExternalLink className="w-2.5 h-2.5 inline ml-1 opacity-50" />
-                            </a>
-                          ) : (
-                            <p className="font-semibold text-foreground truncate">{item.name}</p>
-                          )}
-                          {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block">{item.notes}</p>}
-                          {missing && <p className="text-[9px] text-orange-400 truncate">Preco pendente</p>}
+          filteredCategories.map((cat) => {
+            const cc = categoryColorMap[cat.id] || categoryColorMap.resources;
+            return (
+              <div key={cat.id}>
+                {/* Category Header */}
+                <button onClick={() => toggleCategory(cat.id)} className={`w-full px-4 py-3 border-b border-border ${cc.bg} hover:brightness-125 transition-all text-left border-l-[3px] ${cc.border}`}>
+                  <div className="flex items-center gap-2.5">
+                    {expandedCategories.has(cat.id) ? <ChevronDown className="w-3.5 h-3.5 text-primary" /> : <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />}
+                    <span className="text-sm font-bold text-foreground">{cat.name}</span>
+                    <span className="text-[10px] text-muted-foreground font-mono bg-muted/50 px-1.5 py-0.5 rounded">{cat.items.length}</span>
+                  </div>
+                </button>
+                {expandedCategories.has(cat.id) && (
+                  <div>
+                    {cat.items.map((item, idx) => {
+                      const missing = isPriceUnknown(item.steel);
+                      const rep = reportMap[item.id];
+                      return (
+                        <div key={item.id} className={`grid grid-cols-12 gap-1 px-4 py-2.5 border-b border-border/40 transition-all text-xs border-l-[3px] border-l-transparent hover:border-l-primary/40 hover:bg-muted/15 ${idx % 2 === 0 ? "" : "bg-muted/[0.03]"} ${missing ? "opacity-60" : ""}`}>
+                          <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} imgPath={item.img} /></div>
+                          <div className="col-span-3 min-w-0">
+                            {item.wikiLink ? (
+                              <a href={item.wikiLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors truncate block" title={"Ver no Wiki: " + item.name}>
+                                {item.name} <ExternalLink className="w-2.5 h-2.5 inline ml-1 opacity-40" />
+                              </a>
+                            ) : (
+                              <p className="font-semibold text-foreground truncate">{item.name}</p>
+                            )}
+                            {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block mt-0.5">{item.notes}</p>}
+                            {missing && <p className="text-[9px] text-orange-400 truncate mt-0.5">Preco pendente</p>}
+                          </div>
+                          <div className={`col-span-2 font-mono font-bold flex items-center ${missing ? "text-orange-400/60" : getSteelColor(item.demand)}`}>{item.steel}</div>
+                          <div className={`col-span-2 font-mono font-bold flex items-center ${missing ? "text-orange-400/60" : "text-foreground/80"}`}>{item.cement}</div>
+                          <div className="col-span-1 hidden sm:flex justify-center items-center">
+                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${demandColors[item.demand] || demandColors.medium}`}>{demandLabels[item.demand] || "?"}</span>
+                          </div>
+                          <div className="col-span-2 hidden sm:flex justify-center items-center">
+                            {rep ? (
+                              <div className="flex items-center gap-1">
+                                <span className={`text-[10px] font-bold ${rep.avg > 0 ? "text-primary" : "text-muted-foreground"}`}>
+                                  {rep.avg > 0 ? rep.avg + "$" : "-"}
+                                </span>
+                                <span className="text-[9px] text-muted-foreground">({rep.count})</span>
+                              </div>
+                            ) : (
+                              <Sparkline itemId={item.id} />
+                            )}
+                          </div>
+                          <div className="col-span-1 hidden md:flex justify-center items-center">
+                            {rep && rep.count > 0 ? (
+                              <span className="text-[9px] font-mono text-green-400">{rep.count}</span>
+                            ) : (
+                              <span className="text-[9px] text-muted-foreground">-</span>
+                            )}
+                          </div>
                         </div>
-                        <div className={`col-span-2 font-mono font-bold ${missing ? "text-orange-400/60" : getSteelColor(item.demand)}`}>{item.steel}</div>
-                        <div className={`col-span-2 font-mono font-bold ${missing ? "text-orange-400/60" : "text-foreground"}`}>{item.cement}</div>
-                        <div className="col-span-1 hidden sm:flex justify-center">
-                          <span className={`px-1 py-0.5 rounded text-[9px] font-bold border ${demandColors[item.demand] || demandColors.medium}`}>{demandLabels[item.demand] || "?"}</span>
-                        </div>
-                        <div className="col-span-2 hidden sm:flex justify-center items-center">
-                          {rep ? (
-                            <div className="flex items-center gap-1">
-                              <span className={`text-[10px] font-bold ${rep.avg > 0 ? "text-primary" : "text-muted-foreground"}`}>
-                                {rep.avg > 0 ? rep.avg + "$" : "-"}
-                              </span>
-                              <span className="text-[9px] text-muted-foreground">({rep.count})</span>
-                            </div>
-                          ) : (
-                            <Sparkline itemId={item.id} />
-                          )}
-                        </div>
-                        <div className="col-span-1 hidden md:flex justify-center items-center">
-                          {rep && rep.count > 0 ? (
-                            <span className="text-[9px] font-mono text-green-400">{rep.count}</span>
-                          ) : (
-                            <span className="text-[9px] text-muted-foreground">-</span>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })
         )}
       </div>
 
-      <div className="rounded-md border border-border bg-card p-3">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-xs font-bold text-foreground flex items-center gap-2"><Users className="w-3.5 h-3.5 text-primary" /> Ultimos Reports da Comunidade</h3>
+      {/* ═══ Reports Section ═══ */}
+      <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
+        <div className="px-4 py-3 border-b border-border bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
+          <h3 className="text-xs font-bold text-foreground flex items-center gap-2">
+            <Users className="w-3.5 h-3.5 text-primary" /> Ultimos Reports da Comunidade
+          </h3>
         </div>
-        {priceReports.length === 0 ? (
-          <p className="text-[11px] text-muted-foreground">Nenhum report ainda. Seja o primeiro a reportar precos!</p>
-        ) : (
-          <div className="space-y-1 max-h-48 overflow-y-auto">
-            {priceReports.slice(0, 20).map((r) => (
-              <div key={r.id} className="flex items-center justify-between py-1 px-2 rounded border-b border-border/30 text-[11px]">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-primary font-semibold shrink-0">{r.nickname}</span>
-                  <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
+        <div className="p-3">
+          {priceReports.length === 0 ? (
+            <p className="text-[11px] text-muted-foreground py-3 text-center">Nenhum report ainda. Seja o primeiro a reportar precos!</p>
+          ) : (
+            <div className="space-y-1 max-h-52 overflow-y-auto">
+              {priceReports.slice(0, 20).map((r) => (
+                <div key={r.id} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted/20 transition-colors text-[11px]">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className="text-primary font-semibold shrink-0">{r.nickname}</span>
+                    <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
+                  </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <span className="font-mono font-semibold text-foreground">{r.steelPrice}$</span>
+                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className="font-mono text-foreground">{r.steelPrice}$</span>
-                  <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
