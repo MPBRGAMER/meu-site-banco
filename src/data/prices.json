@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "2026-08-05-v2",
+    "version": "2026-08-06-v3",
     "game_version": "v.827+",
-    "last_updated": "2026-08-05",
+    "last_updated": "2026-08-06",
     "exchange_rate": "1 Aco ($) = 2 Cimentos (€)",
     "note": "Itens e imagens do wiki oficial (dayr.wiki.gg). Nomes em PT-BR. Precos atualizados pela comunidade.",
     "source": "dayr.wiki.gg"
@@ -70,7 +70,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bio-energy_Drink"
         },
         {
           "id": "blini",
@@ -100,7 +101,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry_cake"
         },
         {
           "id": "coffee",
@@ -120,7 +122,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cold_coffee"
         },
         {
           "id": "hot_coffee",
@@ -130,7 +133,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Hot_coffee"
         },
         {
           "id": "simple_chowder",
@@ -140,7 +144,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Simple_chowder"
         },
         {
           "id": "hearty_chowder",
@@ -150,7 +155,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Hearty_chowder"
         },
         {
           "id": "chanterelle",
@@ -190,7 +196,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_tainted_meat"
         },
         {
           "id": "canned_beef",
@@ -200,7 +207,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Canned_beef"
         },
         {
           "id": "minced_meat",
@@ -230,7 +238,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Dried_meat"
         },
         {
           "id": "fried_rat_meat",
@@ -240,7 +249,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_rat_meat"
         },
         {
           "id": "caviar",
@@ -260,7 +270,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cold_tea"
         },
         {
           "id": "hot_tea",
@@ -270,7 +281,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Hot_tea"
         },
         {
           "id": "dandelion_tea",
@@ -380,7 +392,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cooked_rice"
         },
         {
           "id": "apple_cordial",
@@ -414,7 +427,7 @@
         },
         {
           "id": "cranberry",
-          "name": "Oxicoco",
+          "name": "Amora",
           "img": "/items/cranberry.png",
           "steel": "4:1",
           "cement": "8:1",
@@ -490,7 +503,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Energy_drink"
         },
         {
           "id": "fatty_meat",
@@ -540,7 +554,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fresh_fish"
         },
         {
           "id": "fried_tough_meat",
@@ -560,7 +575,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_fatty_meat"
         },
         {
           "id": "fried_mutant_meat",
@@ -570,7 +586,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_mutant_meat"
         },
         {
           "id": "fried_potato",
@@ -580,7 +597,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_potato"
         },
         {
           "id": "gingerbread",
@@ -590,7 +608,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Gingerbread"
         },
         {
           "id": "golden_easter_egg",
@@ -610,7 +629,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Buckwheat_grains"
         },
         {
           "id": "grilled_meat",
@@ -710,7 +730,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_condensed_milk"
         },
         {
           "id": "apple",
@@ -730,7 +751,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Candy_apple"
         },
         {
           "id": "mushroom_pasta",
@@ -740,7 +762,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_pasta"
         },
         {
           "id": "boiled_corn",
@@ -830,7 +853,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_egg"
         },
         {
           "id": "bread",
@@ -844,27 +868,29 @@
         },
         {
           "id": "canned_porridge",
-          "name": "Papas Enlatadas",
+          "name": "Mingau Enlatado",
           "img": "/items/canned_porridge.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Canned_porridge"
         },
         {
           "id": "rotten_porridge",
-          "name": "Papas Podres",
+          "name": "Mingau Podre",
           "img": "/items/rotten_porridge.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_porridge"
         },
         {
           "id": "pasta",
-          "name": "Pasta",
+          "name": "Massa",
           "img": "/items/pasta.png",
           "steel": "1:1",
           "cement": "2:1",
@@ -890,7 +916,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_fish"
         },
         {
           "id": "rotten_fish",
@@ -900,7 +927,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_fish"
         },
         {
           "id": "dried_fish",
@@ -910,7 +938,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Dried_fish"
         },
         {
           "id": "infected_dried_fish",
@@ -980,7 +1009,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Canned_pork"
         },
         {
           "id": "potato",
@@ -1070,7 +1100,8 @@
           "cement": "2:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Ingrediente de receitas"
+          "notes": "Ingrediente de receitas",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_grains"
         },
         {
           "id": "rich_chowder",
@@ -1110,7 +1141,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_vegetables"
         },
         {
           "id": "russian_cigarettes",
@@ -1160,7 +1192,8 @@
           "cement": "8:1",
           "rarity": "common",
           "demand": "high",
-          "notes": "Ótimo para lucro inicial"
+          "notes": "Ótimo para lucro inicial",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Salted_meat"
         },
         {
           "id": "caviar_sandwich",
@@ -1240,17 +1273,19 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_soup"
         },
         {
           "id": "stew_meat",
-          "name": "Carne para Ensopado",
+          "name": "Carne Ensopada",
           "img": "/items/stew_meat.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Stew_meat"
         },
         {
           "id": "strawberry",
@@ -1380,7 +1415,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Red_wine"
         },
         {
           "id": "rice_wine",
@@ -1390,7 +1426,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_wine"
         },
         {
           "id": "vodka",
@@ -1410,17 +1447,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "flesh",
-          "name": "Carne",
-          "img": "/items/flesh.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bowl_of_rice"
         },
         {
           "id": "ice_cream",
@@ -1440,22 +1468,13 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_snake"
         },
         {
           "id": "olivier_salad",
           "name": "Salada Olivier",
           "img": "/items/olivier_salad.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "grouse",
-          "name": "Galo-da-serra",
-          "img": "/items/grouse.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -1500,11 +1519,12 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cabbage_roll"
         },
         {
           "id": "broadleaf_plantain",
-          "name": "Tanchagem",
+          "name": "Orelha-de-veado",
           "img": "/items/broadleaf_plantain.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -1540,37 +1560,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ration_pack",
-          "name": "Racao",
-          "img": "/items/ration_pack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "expeditionary_ration",
-          "name": "Racao de Expedicao",
-          "img": "/items/expeditionary_ration.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "smuggler_s_flask",
-          "name": "Frasco do Contrabandista",
-          "img": "/items/smuggler_s_flask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Infected_rusk"
         }
       ]
     },
@@ -1586,7 +1577,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Potato_seeds"
         },
         {
           "id": "strawberry_seed",
@@ -1596,7 +1588,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry_seeds"
         },
         {
           "id": "pumpkin_seeds",
@@ -1606,7 +1599,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pumpkin_seeds"
         },
         {
           "id": "apple_seeds",
@@ -1616,7 +1610,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Apple_seeds"
         },
         {
           "id": "corn_seeds",
@@ -1626,7 +1621,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Corn_seeds"
         },
         {
           "id": "tangerine_seeds",
@@ -1636,7 +1632,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine_seeds"
         },
         {
           "id": "wheat_seeds",
@@ -1646,7 +1643,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Wheat_seeds"
         },
         {
           "id": "vegetable_seeds",
@@ -1656,7 +1654,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Vegetable_seeds"
         }
       ]
     },
@@ -1664,26 +1663,6 @@
       "id": "materials",
       "name": "Materiais e Componentes",
       "items": [
-        {
-          "id": "diy_nets",
-          "name": "Redes Artesanais",
-          "img": "/items/diy_nets.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "silage_mincer",
-          "name": "Moidor de Silagem",
-          "img": "/items/silage_mincer.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
         {
           "id": "aluminum",
           "name": "Aluminio",
@@ -1693,26 +1672,6 @@
           "rarity": "uncommon",
           "demand": "medium",
           "notes": "Material de construção"
-        },
-        {
-          "id": "antelope",
-          "name": "Antilope",
-          "img": "/items/antelope.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ave_maria",
-          "name": "Ave Maria",
-          "img": "/items/ave_maria.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "barrel",
@@ -1745,26 +1704,6 @@
           "notes": ""
         },
         {
-          "id": "rubber",
-          "name": "Borracha",
-          "img": "/items/rubber.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bryocarm",
-          "name": "Bryocarm",
-          "img": "/items/bryocarm.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "c_3_cologne",
           "name": "Colonia C-3",
           "img": "/items/c_3_cologne.png",
@@ -1772,17 +1711,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cpe_leader",
-          "name": "CPE Leader",
-          "img": "/items/cpe_leader.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/C-3_Cologne"
         },
         {
           "id": "electrical_cable",
@@ -1802,17 +1732,19 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Iron_pipe"
         },
         {
           "id": "black_coal",
-          "name": "Carvao Negro",
+          "name": "Carvao Preto",
           "img": "/items/black_coal.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Black_coal"
         },
         {
           "id": "coal",
@@ -1823,16 +1755,6 @@
           "rarity": "common",
           "demand": "medium",
           "notes": "Combustível"
-        },
-        {
-          "id": "catalysis_e",
-          "name": "Catalysis-E",
-          "img": "/items/catalysis_e.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "cement",
@@ -1862,7 +1784,8 @@
           "cement": "6:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Material"
+          "notes": "Material",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bone_glue"
         },
         {
           "id": "rope",
@@ -1875,16 +1798,6 @@
           "notes": "Material"
         },
         {
-          "id": "diesel",
-          "name": "Diesel",
-          "img": "/items/diesel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "diluted_spirits",
           "name": "Alcool Diluido",
           "img": "/items/diluted_spirits.png",
@@ -1892,17 +1805,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dragon_scale",
-          "name": "Escama de Dragao",
-          "img": "/items/dragon_scale.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Diluted_spirits"
         },
         {
           "id": "sulfur",
@@ -1952,47 +1856,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gaz_24_broken",
-          "name": "GAZ-24 (Quebrado)",
-          "img": "/items/gaz_24_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "gasoline",
-          "name": "Gasolina",
-          "img": "/items/gasoline.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "glue_tape",
-          "name": "Fita Adesiva",
-          "img": "/items/glue_tape.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "high_performance_capacitor",
-          "name": "Capacitor de Alta Performance",
-          "img": "/items/high_performance_capacitor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fire_brick"
         },
         {
           "id": "ir_190",
@@ -2002,7 +1867,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/IR-190"
         },
         {
           "id": "insulating_tape",
@@ -2032,17 +1898,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kamaz_broken",
-          "name": "KamAZ (Quebrado)",
-          "img": "/items/kamaz_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Iron_pot"
         },
         {
           "id": "first_aid_kit",
@@ -2055,16 +1912,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "can",
-          "name": "Lata",
-          "img": "/items/can.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Recipiente"
-        },
-        {
           "id": "firewood",
           "name": "Lenha",
           "img": "/items/firewood.png",
@@ -2073,16 +1920,6 @@
           "rarity": "common",
           "demand": "high",
           "notes": "Combustível"
-        },
-        {
-          "id": "titanium_alloy",
-          "name": "Liga de Titanio",
-          "img": "/items/titanium_alloy.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "lymph",
@@ -2125,16 +1962,6 @@
           "notes": "Material"
         },
         {
-          "id": "titanium_ore",
-          "name": "Minerio de Titanio",
-          "img": "/items/titanium_ore.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "motorcycle_spare_parts",
           "name": "Pecas Sobressalentes de Moto",
           "img": "/items/motorcycle_spare_parts.png",
@@ -2142,7 +1969,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Motorcycle_spare_parts"
         },
         {
           "id": "nail",
@@ -2153,16 +1981,6 @@
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "nailed_box",
-          "name": "Caixa Pregada",
-          "img": "/items/nailed_box.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
         },
         {
           "id": "oar",
@@ -2192,7 +2010,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fresh_bones"
         },
         {
           "id": "flint",
@@ -2216,7 +2035,7 @@
         },
         {
           "id": "plank",
-          "name": "Prancha",
+          "name": "Tabua",
           "img": "/items/plank.png",
           "steel": "?:?",
           "cement": "?:?",
@@ -2272,7 +2091,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Raw_fatback"
         },
         {
           "id": "rawhide",
@@ -2292,32 +2112,13 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rubber_parts",
-          "name": "Peças de Borracha",
-          "img": "/items/rubber_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/King_of_Jokers"
         },
         {
           "id": "rusted_saucepan",
           "name": "Panela Enferrujada",
           "img": "/items/rusted_saucepan.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sr_delirium",
-          "name": "SR Delirium",
-          "img": "/items/sr_delirium.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -2382,7 +2183,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_pot"
         },
         {
           "id": "stick",
@@ -2396,13 +2198,14 @@
         },
         {
           "id": "scrap_metal",
-          "name": "Sucata Metalica",
+          "name": "Sucata de Metal",
           "img": "/items/scrap_metal.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Scrap_metal"
         },
         {
           "id": "aluminum_scrap",
@@ -2425,26 +2228,6 @@
           "notes": "Sucata reciclável"
         },
         {
-          "id": "support_box",
-          "name": "Caixa de Suporte",
-          "img": "/items/support_box.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "survivor_s_cache",
-          "name": "Cache do Sobrevivente",
-          "img": "/items/survivor_s_cache.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "tanned_leather",
           "name": "Couro Curtido",
           "img": "/items/tanned_leather.png",
@@ -2462,7 +2245,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tanning_mixture"
         },
         {
           "id": "cloth",
@@ -2522,17 +2306,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "toxigen",
-          "name": "Toxigen",
-          "img": "/items/toxigen.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_pot"
         },
         {
           "id": "rags",
@@ -2545,46 +2320,6 @@
           "notes": "Material"
         },
         {
-          "id": "uaz_452_broken",
-          "name": "UAZ-452 (Quebrado)",
-          "img": "/items/uaz_452_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "uaz_469_broken",
-          "name": "UAZ-469 (Quebrado)",
-          "img": "/items/uaz_469_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "vaz_2101_broken",
-          "name": "VAZ-2101 (Quebrado)",
-          "img": "/items/vaz_2101_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "weapon_box",
-          "name": "Caixa de Armas",
-          "img": "/items/weapon_box.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "wheat",
           "name": "Trigo",
           "img": "/items/wheat.png",
@@ -2595,26 +2330,6 @@
           "notes": "Cultivo"
         },
         {
-          "id": "zaz_968_broken",
-          "name": "ZAZ-968 (Quebrado)",
-          "img": "/items/zaz_968_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "zil_130_broken",
-          "name": "ZIL-130 (Quebrado)",
-          "img": "/items/zil_130_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "broken_car_battery",
           "name": "Bateria de Carro Quebrada",
           "img": "/items/broken_car_battery.png",
@@ -2622,7 +2337,8 @@
           "cement": "4:3",
           "rarity": "uncommon",
           "demand": "low",
-          "notes": "Bateria danificada"
+          "notes": "Bateria danificada",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Broken_car_battery"
         },
         {
           "id": "car_battery",
@@ -2632,17 +2348,8 @@
           "cement": "1:10",
           "rarity": "rare",
           "demand": "high",
-          "notes": "Item de alto valor"
-        },
-        {
-          "id": "nuclear_battery",
-          "name": "Bateria Nuclear",
-          "img": "/items/nuclear_battery.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
+          "notes": "Item de alto valor",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Car_battery"
         },
         {
           "id": "pistol_parts",
@@ -2652,7 +2359,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_parts"
         },
         {
           "id": "revolver_parts",
@@ -2662,7 +2370,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_parts"
         },
         {
           "id": "rifle_parts",
@@ -2672,7 +2381,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_parts"
         },
         {
           "id": "assault_rifle_parts",
@@ -2682,7 +2392,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_parts"
         },
         {
           "id": "machine_gun_parts",
@@ -2692,7 +2403,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Machine_gun_parts"
         },
         {
           "id": "bamboo_steamer",
@@ -2712,7 +2424,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_with_eyes"
         },
         {
           "id": "stearin",
@@ -2732,7 +2445,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Black)"
         },
         {
           "id": "strange_mushroom_blue",
@@ -2742,7 +2456,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Blue)"
         },
         {
           "id": "strange_mushroom_green",
@@ -2752,7 +2467,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Green)"
         },
         {
           "id": "strange_mushroom_light_blue",
@@ -2762,7 +2478,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Light_Blue)"
         },
         {
           "id": "strange_mushroom_red",
@@ -2772,7 +2489,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Red)"
         },
         {
           "id": "strange_mushroom_violet",
@@ -2782,7 +2500,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Violet)"
         },
         {
           "id": "strange_mushroom_white",
@@ -2792,7 +2511,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(White)"
         },
         {
           "id": "strange_mushroom_yellow",
@@ -2802,7 +2522,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Yellow)"
         },
         {
           "id": "acid_gland",
@@ -2812,17 +2533,19 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Acid_gland"
         },
         {
           "id": "vial_of_amine",
-          "name": "Frasco de Amina",
+          "name": "Frasco de \"...amina\"",
           "img": "/items/vial_of_amine.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Vial_of_\"...amine\""
         },
         {
           "id": "radioactive_mushroom",
@@ -2832,7 +2555,8 @@
           "cement": "4:1",
           "rarity": "uncommon",
           "demand": "low",
-          "notes": "Cogumelo radioativo"
+          "notes": "Cogumelo radioativo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Radioactive_mushroom"
         },
         {
           "id": "amanita",
@@ -2846,13 +2570,23 @@
         },
         {
           "id": "blood_mold",
-          "name": "Bolor de Sangue",
+          "name": "Mofo Sangrento",
           "img": "/items/blood_mold.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!"
+        },
+        {
+          "id": "gas_mask_filter",
+          "name": "Filtro de Mascara de Gas",
+          "img": "/items/gas_mask_filter.png",
+          "steel": "1:10",
+          "cement": "1:5",
+          "rarity": "rare",
+          "demand": "medium",
+          "notes": "Item de proteção"
         }
       ]
     },
@@ -2878,7 +2612,8 @@
           "cement": "20:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Desintoxicante"
+          "notes": "Desintoxicante",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Activated_charcoal"
         },
         {
           "id": "aqua_vitae",
@@ -2909,16 +2644,6 @@
           "rarity": "common",
           "demand": "high",
           "notes": "Medicamento"
-        },
-        {
-          "id": "antidote",
-          "name": "Antidoto",
-          "img": "/items/antidote.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "antirad",
@@ -2971,16 +2696,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "injector",
-          "name": "Injector",
-          "img": "/items/injector.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "lidiacide_34",
           "name": "Lidiacide-34",
           "img": "/items/lidiacide_34.png",
@@ -2988,7 +2703,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Lidiacide-34"
         },
         {
           "id": "metocaine",
@@ -3011,26 +2727,6 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "poisoned_flask",
-          "name": "Frasco Envenenado",
-          "img": "/items/poisoned_flask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "protection_potion",
-          "name": "Pocao de Protecao",
-          "img": "/items/protection_potion.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "sterile_bandage",
           "name": "Bandagem Esteril",
           "img": "/items/sterile_bandage.png",
@@ -3039,16 +2735,6 @@
           "rarity": "common",
           "demand": "high",
           "notes": "Item médico"
-        },
-        {
-          "id": "stimulant",
-          "name": "Estimulante",
-          "img": "/items/stimulant.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "sulfuric_acid",
@@ -3071,16 +2757,6 @@
           "notes": "Tóxico"
         },
         {
-          "id": "bioblocade_inhaler",
-          "name": "Inalador Bioblocade",
-          "img": "/items/bioblocade_inhaler.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "bye_bye_rad",
           "name": "Bye-Bye Rad",
           "img": "/items/bye_bye_rad.png",
@@ -3088,7 +2764,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bye-Bye_Rad"
         },
         {
           "id": "healing_salve",
@@ -3108,17 +2785,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pill_of_immortality",
-          "name": "Pilula da Imortalidade",
-          "img": "/items/pill_of_immortality.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/ComCon-3_Paste"
         },
         {
           "id": "caustic_distillate",
@@ -3174,7 +2842,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_shell"
         },
         {
           "id": "handmade_cartridge",
@@ -3184,7 +2853,8 @@
           "cement": "6:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Cartucho caseiro"
+          "notes": "Cartucho caseiro",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_cartridge"
         },
         {
           "id": "blank_cartridge",
@@ -3204,7 +2874,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt_(poison)"
         },
         {
           "id": "primer",
@@ -3217,16 +2888,6 @@
           "notes": "Componente de munição"
         },
         {
-          "id": "grenade_launcher_round",
-          "name": "Granada de Lançador",
-          "img": "/items/grenade_launcher_round.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "handmade_rocket",
           "name": "Foguete Artesanal",
           "img": "/items/handmade_rocket.png",
@@ -3234,7 +2895,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_rocket"
         },
         {
           "id": "lead_bullet",
@@ -3244,7 +2906,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Lead_bullet"
         },
         {
           "id": "pistol_ammo",
@@ -3264,7 +2927,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_shell"
         },
         {
           "id": "plastic_explosives",
@@ -3274,7 +2938,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Plastic_explosives"
         },
         {
           "id": "gunpowder",
@@ -3285,16 +2950,6 @@
           "rarity": "uncommon",
           "demand": "high",
           "notes": "Ingrediente para munição"
-        },
-        {
-          "id": "pyrolytic_grenade",
-          "name": "Granada Pirolitica",
-          "img": "/items/pyrolytic_grenade.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         },
         {
           "id": "revolver_ammo",
@@ -3314,7 +2969,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_shell"
         },
         {
           "id": "rifle_ammo",
@@ -3334,7 +2990,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_shell"
         },
         {
           "id": "training_ammo",
@@ -3354,32 +3011,13 @@
           "cement": "8:1",
           "rarity": "common",
           "demand": "low",
-          "notes": "Munição de besta"
-        },
-        {
-          "id": "pineapple",
-          "name": "Granada F-1 (Abacaxi)",
-          "img": "/items/pineapple.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Munição de besta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt"
         },
         {
           "id": "shotgun_round",
           "name": "Cartucho de Escopeta",
           "img": "/items/shotgun_round.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chinese_fireworks",
-          "name": "Fogos de Artificio Chineses",
-          "img": "/items/chinese_fireworks.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3403,86 +3041,6 @@
       "name": "Armas",
       "items": [
         {
-          "id": "alien_blaster",
-          "name": "Blaster Alienigena",
-          "img": "/items/alien_blaster.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "berdan_rifle",
-          "name": "Rifle Berdan",
-          "img": "/items/berdan_rifle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "borschevik_flamethrower",
-          "name": "Lancachamas Borschevik",
-          "img": "/items/borschevik_flamethrower.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "butterfly_knife",
-          "name": "Faca Borboleta",
-          "img": "/items/butterfly_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemist_crossbow",
-          "name": "Besta do Quimico",
-          "img": "/items/chemist_crossbow.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chitin_spear",
-          "name": "Lanca de Quitina",
-          "img": "/items/chitin_spear.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cypress_smg",
-          "name": "SMG Cypress",
-          "img": "/items/cypress_smg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "flamethrower",
-          "name": "Lancachamas",
-          "img": "/items/flamethrower.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "flint_knife",
           "name": "Faca de Pedra",
           "img": "/items/flint_knife.png",
@@ -3490,7 +3048,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Flint_knife"
         },
         {
           "id": "forged_knife",
@@ -3500,102 +3059,13 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "formalin_gas_pistol",
-          "name": "Pistola de Gás Formalina",
-          "img": "/items/formalin_gas_pistol.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "heavy_machine_gun",
-          "name": "Metralhadora Pesada",
-          "img": "/items/heavy_machine_gun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_pistol",
-          "name": "Pistola Artesanal",
-          "img": "/items/homemade_pistol.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "homemade_revolver",
-          "name": "Revolver Artesanal",
-          "img": "/items/homemade_revolver.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_smg",
-          "name": "SMG Artesanal",
-          "img": "/items/homemade_smg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hunter_s_rifle",
-          "name": "Rifle do Cacador",
-          "img": "/items/hunter_s_rifle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "hunting_bow",
-          "name": "Arco de Caca",
-          "img": "/items/hunting_bow.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "jack_o_launcher",
-          "name": "Lancador Jack O'",
-          "img": "/items/jack_o_launcher.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Forged_knife"
         },
         {
           "id": "kitchen_knife",
           "name": "Faca de Cozinha",
           "img": "/items/kitchen_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "light_machine_gun",
-          "name": "Metralhadora Leve",
-          "img": "/items/light_machine_gun.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3623,16 +3093,6 @@
           "notes": ""
         },
         {
-          "id": "multi_shot_rifle",
-          "name": "Rifle Multi-Tiro",
-          "img": "/items/multi_shot_rifle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "nagant_revolver_broken",
           "name": "Revolver Nagant (Quebrado)",
           "img": "/items/nagant_revolver_broken.png",
@@ -3640,47 +3100,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "physicist_crossbow",
-          "name": "Besta do Fisico",
-          "img": "/items/physicist_crossbow.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pistol_silent",
-          "name": "Pistola Silenciosa",
-          "img": "/items/pistol_silent.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "popgun",
-          "name": "Arma de Brinquedo",
-          "img": "/items/popgun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "revolving_gun",
-          "name": "Arma Rotativa",
-          "img": "/items/revolving_gun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Nagant_Revolver_(Broken)"
         },
         {
           "id": "rusted_axe",
@@ -3690,27 +3111,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "single_shot_rifle",
-          "name": "Rifle de Tiro Unico",
-          "img": "/items/single_shot_rifle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "standard_crossbow",
-          "name": "Besta Padrao",
-          "img": "/items/standard_crossbow.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_axe"
         },
         {
           "id": "steel_axe",
@@ -3720,7 +3122,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_axe"
         },
         {
           "id": "steel_knife",
@@ -3733,29 +3136,9 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "storm_snowball_launcher",
-          "name": "Lancador de Bolas de Neve Tempestade",
-          "img": "/items/storm_snowball_launcher.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "strong_bat",
           "name": "Taco Forte",
           "img": "/items/strong_bat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "strychnine_gas_revolver",
-          "name": "Revolver de Gas Estricnina",
-          "img": "/items/strychnine_gas_revolver.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3783,199 +3166,9 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "tube_rifle",
-          "name": "Rifle de Tubo",
-          "img": "/items/tube_rifle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "akm_c",
-          "name": "AKM-C",
-          "img": "/items/akm_c.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "abakan",
-          "name": "Abakan",
-          "img": "/items/abakan.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "all_in",
-          "name": "All-In",
-          "img": "/items/all_in.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "alphacelone",
-          "name": "Alphacelone",
-          "img": "/items/alphacelone.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "biathlon_84",
-          "name": "Biathlon-84",
-          "img": "/items/biathlon_84.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bingo",
-          "name": "Bingo",
-          "img": "/items/bingo.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
           "id": "blackjack",
           "name": "Blackjack",
           "img": "/items/blackjack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cho_ko_nu",
-          "name": "Cho-ko-nu",
-          "img": "/items/cho_ko_nu.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "crouching_tiger",
-          "name": "Tigre Agachado",
-          "img": "/items/crouching_tiger.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "cybermitten",
-          "name": "Cybermitten",
-          "img": "/items/cybermitten.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "d_eagle",
-          "name": "Desert Eagle",
-          "img": "/items/d_eagle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "degtyar",
-          "name": "Degtyar",
-          "img": "/items/degtyar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "double_barrel",
-          "name": "Escopeta de Cano Duplo",
-          "img": "/items/double_barrel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dragon_s_roar",
-          "name": "Rugido do Dragao",
-          "img": "/items/dragon_s_roar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "ea_spectrum",
-          "name": "EA Spectrum",
-          "img": "/items/ea_spectrum.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "erebus_273",
-          "name": "Erebus-273",
-          "img": "/items/erebus_273.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "fatum_e_93",
-          "name": "FATUM E-93",
-          "img": "/items/fatum_e_93.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "fear",
-          "name": "Fear",
-          "img": "/items/fear.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "fist_of_the_sky",
-          "name": "Punho do Ceo",
-          "img": "/items/fist_of_the_sky.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -3990,347 +3183,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gangster",
-          "name": "Gangster",
-          "img": "/items/gangster.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gehenna",
-          "name": "Gehenna",
-          "img": "/items/gehenna.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gigawattor",
-          "name": "Gigawattor",
-          "img": "/items/gigawattor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "guandao",
-          "name": "Guandao",
-          "img": "/items/guandao.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hidden_dragon",
-          "name": "Dragao Oculto",
-          "img": "/items/hidden_dragon.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "iceberg",
-          "name": "Iceberg",
-          "img": "/items/iceberg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "icicle_thrower",
-          "name": "Lancador de Estalactites",
-          "img": "/items/icicle_thrower.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "infernal_coal",
-          "name": "Infernal Coal",
-          "img": "/items/infernal_coal.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "infernal_prophet",
-          "name": "Profeta Infernal",
-          "img": "/items/infernal_prophet.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "joker",
-          "name": "Coringa",
-          "img": "/items/joker.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "joy",
-          "name": "Joy",
-          "img": "/items/joy.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "kalash_m",
-          "name": "Kalash-M",
-          "img": "/items/kalash_m.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kalash_s",
-          "name": "Kalash-S",
-          "img": "/items/kalash_s.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "law_guardian",
-          "name": "Guardiao da Lei",
-          "img": "/items/law_guardian.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "lmg_qilin",
-          "name": "LMG \"Qilin\"",
-          "img": "/items/lmg_qilin.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "lotus_of_death",
-          "name": "Lotus da Morte",
-          "img": "/items/lotus_of_death.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "makar",
-          "name": "Makar",
-          "img": "/items/makar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mauser",
-          "name": "Mauser",
-          "img": "/items/mauser.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mayhem",
-          "name": "Mayhem",
-          "img": "/items/mayhem.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "midas",
-          "name": "Midas",
-          "img": "/items/midas.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mosinka",
-          "name": "Mosinka",
-          "img": "/items/mosinka.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "murmur",
-          "name": "Murmurio",
-          "img": "/items/murmur.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "nagant",
-          "name": "Nagant",
-          "img": "/items/nagant.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pas_weaver",
-          "name": "PAS Weaver",
-          "img": "/items/pas_weaver.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pepperbox",
-          "name": "Pepperbox",
-          "img": "/items/pepperbox.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pk_7_62_kraken",
-          "name": "PK 7.62 Kraken",
-          "img": "/items/pk_7_62_kraken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "posh",
-          "name": "Posh",
-          "img": "/items/posh.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "revenge",
-          "name": "Vinganca",
-          "img": "/items/revenge.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rpg_vesuvius",
-          "name": "Lancador RPG Vesuvio",
-          "img": "/items/rpg_vesuvius.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rpo_m_eye_of_the_storm",
-          "name": "RPO-M Olho da Tempestade",
-          "img": "/items/rpo_m_eye_of_the_storm.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sabre",
-          "name": "Sabre",
-          "img": "/items/sabre.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sanguinary_masha",
-          "name": "Masha Sanguinaria",
-          "img": "/items/sanguinary_masha.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "schmeisser",
-          "name": "Schmeisser",
-          "img": "/items/schmeisser.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "shmel",
-          "name": "Shmel",
-          "img": "/items/shmel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Flying_spaghetti_monster"
         },
         {
           "id": "shock_bludgeon",
@@ -4343,134 +3197,15 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "sipuha",
-          "name": "Sipuha",
-          "img": "/items/sipuha.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "skorpion",
-          "name": "Skorpion",
-          "img": "/items/skorpion.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sniper_s_mosin",
-          "name": "Mosin do Sniper",
-          "img": "/items/sniper_s_mosin.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "stake_thrower",
-          "name": "Lancador de Estacas",
-          "img": "/items/stake_thrower.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "stecha",
-          "name": "Stecha",
-          "img": "/items/stecha.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "sudayev",
-          "name": "Sudayev",
-          "img": "/items/sudayev.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "svetka",
-          "name": "Svetka",
-          "img": "/items/svetka.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "svyokr",
-          "name": "Svyokr",
-          "img": "/items/svyokr.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ulcer_amr",
-          "name": "Ulcer AMR",
-          "img": "/items/ulcer_amr.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "vector_a",
-          "name": "Vector-A",
-          "img": "/items/vector_a.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "vintorez",
-          "name": "Vintorez",
-          "img": "/items/vintorez.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "witch_s_punch",
-          "name": "Soco da Bruxa",
+          "name": "Ponche de Bruxa",
           "img": "/items/witch_s_punch.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "wolfsbane_1",
-          "name": "Wolfsbane-1",
-          "img": "/items/wolfsbane_1.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Witch's_punch"
         },
         {
           "id": "pkm_broken",
@@ -4541,588 +3276,6 @@
           "rarity": "common",
           "demand": "medium",
           "notes": ""
-        },
-        {
-          "id": "homemade_rocket_launcher",
-          "name": "Lancador de Foguetes Artesanal",
-          "img": "/items/homemade_rocket_launcher.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "collector",
-          "name": "Colecionador",
-          "img": "/items/collector.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ksyukha",
-          "name": "Ksyukha",
-          "img": "/items/ksyukha.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mukha",
-          "name": "Mukha",
-          "img": "/items/mukha.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        }
-      ]
-    },
-    {
-      "id": "armor",
-      "name": "Armaduras",
-      "items": [
-        {
-          "id": "arctic_armor",
-          "name": "Armadura Artica",
-          "img": "/items/arctic_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "combined_armor",
-          "name": "Armadura Combinada",
-          "img": "/items/combined_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tactical_armor",
-          "name": "Armadura Tatica",
-          "img": "/items/tactical_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "steel_armor",
-          "name": "Armadura de Aco",
-          "img": "/items/steel_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "leather_armor",
-          "name": "Armadura de Couro",
-          "img": "/items/leather_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "highway_armor",
-          "name": "Armadura de Estrada",
-          "img": "/items/highway_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "iron_armor",
-          "name": "Armadura de Ferro",
-          "img": "/items/iron_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "smuggler_s_armor",
-          "name": "Armadura do Contrabandista",
-          "img": "/items/smuggler_s_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "prospector_s_armor",
-          "name": "Armadura do Prospetor",
-          "img": "/items/prospector_s_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "armored_uniform",
-          "name": "Uniforme Blindado",
-          "img": "/items/armored_uniform.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "armorpiercer",
-          "name": "Perfurador de Blindagem",
-          "img": "/items/armorpiercer.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bs_4_power_armor",
-          "name": "Armadura Energetica BS-4",
-          "img": "/items/bs_4_power_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "chitin_armor",
-          "name": "Armadura de Quitina",
-          "img": "/items/chitin_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kevlar_vest",
-          "name": "Colete Kevlar",
-          "img": "/items/kevlar_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bone_vest",
-          "name": "Colete de Osso",
-          "img": "/items/bone_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ghost_suit",
-          "name": "Traje Fantasma",
-          "img": "/items/ghost_suit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "armor_plate",
-          "name": "Placa de Blindagem",
-          "img": "/items/armor_plate.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "polar_armor",
-          "name": "Armadura Polar",
-          "img": "/items/polar_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "tank_armor",
-          "name": "Armadura de Tanque",
-          "img": "/items/tank_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tester_armor",
-          "name": "Armadura de Teste",
-          "img": "/items/tester_armor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chemical_suit",
-          "name": "Traje Quimico",
-          "img": "/items/chemical_suit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ghillie_suit",
-          "name": "Traje de Camuflagem",
-          "img": "/items/ghillie_suit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "bulletproof_vest",
-          "name": "Colete Balistico",
-          "img": "/items/bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_bulletproof_vest",
-          "name": "Colete Balistico Artesanal",
-          "img": "/items/homemade_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ceramic_bulletproof_vest",
-          "name": "Colete Balistico Ceramico",
-          "img": "/items/ceramic_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chinese_bulletproof_vest",
-          "name": "Colete Balistico Chines",
-          "img": "/items/chinese_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "army_bulletproof_vest",
-          "name": "Colete Balistico Militar",
-          "img": "/items/army_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "modern_bulletproof_vest",
-          "name": "Colete Balistico Moderno",
-          "img": "/items/modern_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "primitive_bulletproof_vest",
-          "name": "Colete Balistico Primitivo",
-          "img": "/items/primitive_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "progress_bulletproof_vest",
-          "name": "Colete Balistico Progresso",
-          "img": "/items/progress_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "t_800_bulletproof_vest",
-          "name": "Colete Balistico T-800",
-          "img": "/items/t_800_bulletproof_vest.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        }
-      ]
-    },
-    {
-      "id": "equipment",
-      "name": "Equipamentos",
-      "items": [
-        {
-          "id": "flashlight_10",
-          "name": "Lanterna (10%)",
-          "img": "/items/flashlight_10.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "flashlight_20",
-          "name": "Lanterna (20%)",
-          "img": "/items/flashlight_20.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "flashlight_30",
-          "name": "Lanterna (30%)",
-          "img": "/items/flashlight_30.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "glutton_s_bag",
-          "name": "Bolsa do Gula",
-          "img": "/items/glutton_s_bag.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "lighter",
-          "name": "Isqueiro",
-          "img": "/items/lighter.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "invisibility_cloak",
-          "name": "Manta de Invisibilidade",
-          "img": "/items/invisibility_cloak.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ermak_backpack",
-          "name": "Mochila Ermak",
-          "img": "/items/ermak_backpack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "refrigerator_backpack",
-          "name": "Mochila Geladeira",
-          "img": "/items/refrigerator_backpack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rucksack",
-          "name": "Mochila Grande",
-          "img": "/items/rucksack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "medical_backpack",
-          "name": "Mochila Medica",
-          "img": "/items/medical_backpack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tourist_backpack",
-          "name": "Mochila de Turista",
-          "img": "/items/tourist_backpack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "butcher_s_backpack",
-          "name": "Mochila do Acougueiro",
-          "img": "/items/butcher_s_backpack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "handmade_clothes",
-          "name": "Roupa Artesanal",
-          "img": "/items/handmade_clothes.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "tattered_clothes",
-          "name": "Roupa Esfarrapada",
-          "img": "/items/tattered_clothes.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "normal_clothes",
-          "name": "Roupa Normal",
-          "img": "/items/normal_clothes.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "hunter_s_garb",
-          "name": "Traje do Cacador",
-          "img": "/items/hunter_s_garb.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "master_s_garb",
-          "name": "Traje do Mestre",
-          "img": "/items/master_s_garb.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "military_uniform",
-          "name": "Uniforme Militar",
-          "img": "/items/military_uniform.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "reinforced_uniform",
-          "name": "Uniforme Reforçado",
-          "img": "/items/reinforced_uniform.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "field_uniform",
-          "name": "Uniforme de Campanha",
-          "img": "/items/field_uniform.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "battery_flashlight",
-          "name": "Lanterna com Bateria",
-          "img": "/items/battery_flashlight.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "kettlebell",
-          "name": "Peso Russo",
-          "img": "/items/kettlebell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
         }
       ]
     },
@@ -5130,16 +3283,6 @@
       "id": "tools",
       "name": "Ferramentas",
       "items": [
-        {
-          "id": "chimney",
-          "name": "Chamine",
-          "img": "/items/chimney.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
         {
           "id": "electrodes",
           "name": "Eletrodos",
@@ -5168,17 +3311,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "rodkin",
-          "name": "Rodkin",
-          "img": "/items/rodkin.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_needle"
         },
         {
           "id": "rusted_crowbar",
@@ -5198,7 +3332,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_hacksaw"
         },
         {
           "id": "rusted_needle",
@@ -5208,7 +3343,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_needle"
         },
         {
           "id": "rusted_shovel",
@@ -5218,7 +3354,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_shovel"
         },
         {
           "id": "sewing_needle",
@@ -5238,7 +3375,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_crowbar"
         },
         {
           "id": "steel_needle",
@@ -5248,7 +3386,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_needle"
         },
         {
           "id": "steel_shovel",
@@ -5258,7 +3397,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_shovel"
         },
         {
           "id": "sturdy_needle",
@@ -5278,7 +3418,8 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_shovel"
         },
         {
           "id": "titanium_crowbar",
@@ -5288,32 +3429,13 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_crowbar"
         },
         {
           "id": "tool_kit",
           "name": "Kit de Ferramentas",
           "img": "/items/tool_kit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "welder",
-          "name": "Soldador",
-          "img": "/items/welder.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "chainsaw",
-          "name": "Motosserra",
-          "img": "/items/chainsaw.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5331,66 +3453,6 @@
           "notes": "Motor"
         },
         {
-          "id": "crane",
-          "name": "Guindaste",
-          "img": "/items/crane.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "electric_motor",
-          "name": "Motor Elétrico",
-          "img": "/items/electric_motor.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gasoline_engine",
-          "name": "Motor a Gasolina",
-          "img": "/items/gasoline_engine.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "transport_repair_kit",
-          "name": "Kit de Reparo de Transporte",
-          "img": "/items/transport_repair_kit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "vehicle_repair_kit",
-          "name": "Kit de Reparo de Veículo",
-          "img": "/items/vehicle_repair_kit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "weapon_repair_kit",
-          "name": "Kit de Reparo de Arma",
-          "img": "/items/weapon_repair_kit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
           "id": "chemistry_set",
           "name": "Kit de Quimica",
           "img": "/items/chemistry_set.png",
@@ -5398,48 +3460,13 @@
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Chemistry_set"
         },
         {
-          "id": "chitin_torch",
-          "name": "Tocha de Quitina",
-          "img": "/items/chitin_torch.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        }
-      ]
-    },
-    {
-      "id": "gas_masks",
-      "name": "Mascaras de Gas",
-      "items": [
-        {
-          "id": "comfortable_gas_mask",
-          "name": "Mascara de Gas Confortavel",
-          "img": "/items/comfortable_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "gas_mask_filter",
-          "name": "Filtro de Mascara de Gas",
-          "img": "/items/gas_mask_filter.png",
-          "steel": "1:10",
-          "cement": "1:5",
-          "rarity": "rare",
-          "demand": "medium",
-          "notes": "Item de proteção"
-        },
-        {
-          "id": "demon_mask",
-          "name": "Mascara de Demonio",
-          "img": "/items/demon_mask.png",
+          "id": "lighter",
+          "name": "Isqueiro",
+          "img": "/items/lighter.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
@@ -5447,129 +3474,9 @@
           "notes": "Preco pendente - reporte para ajudar!"
         },
         {
-          "id": "old_faithful_gas_mask",
-          "name": "Mascara de Gas Fiel Velha",
-          "img": "/items/old_faithful_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_2000_gas_mask",
-          "name": "Mascara de Gas GP-2000",
-          "img": "/items/gp_2000_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_4_gas_mask",
-          "name": "Mascara de Gas GP-4",
-          "img": "/items/gp_4_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_5_gas_mask",
-          "name": "Mascara de Gas GP-5",
-          "img": "/items/gp_5_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "gp_7_gas_mask",
-          "name": "Mascara de Gas GP-7",
-          "img": "/items/gp_7_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "ionica_gas_mask",
-          "name": "Mascara de Gas Ionica",
-          "img": "/items/ionica_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "mm_1_gas_mask",
-          "name": "Mascara de Gas MM-1",
-          "img": "/items/mm_1_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "pmg_gas_mask",
-          "name": "Mascara de Gas PMG",
-          "img": "/items/pmg_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "iron_gas_mask",
-          "name": "Mascara de Gas de Ferro",
-          "img": "/items/iron_gas_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "dust_mask",
-          "name": "Mascara de Poeira",
-          "img": "/items/dust_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "plague_doctor_s_mask",
-          "name": "Mascara do Medico da Peste",
-          "img": "/items/plague_doctor_s_mask.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": ""
-        },
-        {
-          "id": "respirator",
-          "name": "Respirador",
-          "img": "/items/respirator.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!"
-        },
-        {
-          "id": "homemade_respirator",
-          "name": "Respirador Artesanal",
-          "img": "/items/homemade_respirator.png",
+          "id": "kettlebell",
+          "name": "Peso Russo",
+          "img": "/items/kettlebell.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",

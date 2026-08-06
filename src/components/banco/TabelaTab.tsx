@@ -128,11 +128,12 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   isOpen: boolean;
   onClose: () => void;
   items: PriceItem[];
-  onReport: (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number }) => void;
+  onReport: (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number; quantity: number }) => void;
 }) {
   const [selectedItem, setSelectedItem] = useState("");
   const [steelPrice, setSteelPrice] = useState("");
   const [cementPrice, setCementPrice] = useState("");
+  const [quantity, setQuantity] = useState("1");
   const [nickname, setNickname] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const selectRef = useRef<HTMLSelectElement>(null);
@@ -157,12 +158,14 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
         nickname: nickname.trim(),
         steelPrice: parseInt(steelPrice),
         cementPrice: parseInt(cementPrice),
+        quantity: parseInt(quantity) || 1,
       });
-      localStorage.setItem("reporterNickname", nickname.trim());
-      toast.success(`Preco de "${item.name}" reportado! Obrigado ${nickname.trim()}!`);
       setSelectedItem("");
       setSteelPrice("");
       setCementPrice("");
+      setQuantity("1");
+      localStorage.setItem("reporterNickname", nickname.trim());
+      toast.success(`Preco de "${item.name}" reportado! Obrigado ${nickname.trim()}!`);
       onClose();
     } catch {
       toast.error("Erro ao reportar. Tente novamente.");
@@ -213,14 +216,18 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
               </div>
             )}
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-3 gap-3">
+            <div>
+              <label className="text-[11px] text-muted-foreground">Quantidade</label>
+              <Input type="number" min={1} value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="Ex: 4" className="text-sm font-mono mt-1 h-8" />
+            </div>
             <div>
               <label className="text-[11px] text-muted-foreground">Preco em Aco ($)</label>
-              <Input type="number" value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} placeholder="Ex: 5" className="text-sm font-mono mt-1 h-8" />
+              <Input type="number" value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
             </div>
             <div>
               <label className="text-[11px] text-muted-foreground">Preco em Cimento</label>
-              <Input type="number" value={cementPrice} onChange={(e) => setCementPrice(e.target.value)} placeholder="Ex: 10" className="text-sm font-mono mt-1 h-8" />
+              <Input type="number" value={cementPrice} onChange={(e) => setCementPrice(e.target.value)} placeholder="Ex: 2" className="text-sm font-mono mt-1 h-8" />
             </div>
           </div>
           <div className="rounded-md border border-primary/20 bg-primary/5 p-2.5">

@@ -1,0 +1,573 @@
+
+=== food (Comida, Bebidas e Ingredientes) - 156 items ===
+  canned_water                             | Agua Enlatada
+  clean_water                              | Agua Limpa
+  moonshine                                | Aguardente
+  chocolate_bar                            | Barra de Chocolate
+  candy_cane                               | Bengala Doce
+  bio_energy_drink                         | Bioenergetico
+  blini                                    | Blini
+  cake                                     | Bolo
+  strawberry_cake                          | Bolo de Morango
+  coffee                                   | Cafe
+  cold_coffee                              | Cafe Frio
+  hot_coffee                               | Cafe Quente
+  simple_chowder                           | Caldo Simples
+  hearty_chowder                           | Caldo Sustancioso
+  chanterelle                              | Cantarela
+  roasted_chanterelle                      | Cantarela Assada
+  contaminated_meat                        | Carne Contaminada
+  fried_tainted_meat                       | Carne Contaminada Frita
+  canned_beef                              | Carne Enlatada
+  minced_meat                              | Carne Moida
+  rotten_meat                              | Carne Podre
+  dried_meat                               | Carne Seca
+  fried_rat_meat                           | Carne de Rato Frita
+  caviar                                   | Caviar
+  cold_tea                                 | Cha Frio
+  hot_tea                                  | Cha Quente
+  dandelion_tea                            | Cha de Dente-de-leao
+  champagne                                | Champanhe
+  cuban_cigar                              | Charuto Cubano
+  chinese_energy_drink                     | Energético Chinês
+  chocolate                                | Chocolate
+  shashlik                                 | Churrasco Espetado
+  cigarettes                               | Cigarros
+  chocolate_bunny                          | Coelho de Chocolate
+  condensed_milk                           | Leite Condensado
+  cooked_pasta                             | Massa Cozida
+  cooked_rice                              | Arroz Cozido
+  apple_cordial                            | Cordial de Maca
+  corn                                     | Milho
+  coulibiac                                | Coulibiac
+  cranberry                                | Oxicoco
+  dirty_water                              | Água Suja
+  easter_cake                              | Bolo de Páscoa
+  easter_egg                               | Ovo de Páscoa
+  egg                                      | Ovo
+  spooky_energy_drink                      | Energetico Assustador
+  knock_off_energy_drink                   | Energetico Falsificado
+  energy_drink                             | Energético
+  fatty_meat                               | Carne Gordurosa
+  canned_beans                             | Feijao Enlatado
+  flatbread                                | Pao Achatado
+  flour                                    | Farinha
+  fresh_fish                               | Peixe Fresco
+  fried_tough_meat                         | Carne Dura Frita
+  fried_fatty_meat                         | Carne Gordurosa Frita
+  fried_mutant_meat                        | Carne de Mutante Frita
+  fried_potato                             | Batata Frita
+  gingerbread                              | Bolo de Gengibre
+  golden_easter_egg                        | Ovo de Páscoa Dourado
+  buckwheat_grains                         | Graos de Trigo-sarraceno
+  grilled_meat                             | Carne Grelhada
+  bunny_treat                              | Guloseima de Coelho
+  holiday_energy_drink                     | Energético de Feriado
+  homemade_wine                            | Vinho Artesanal
+  honey                                    | Mel
+  jam                                      | Geleia
+  kholodets                                | Kholodets
+  kvass                                    | Kvass
+  vegetables                               | Legumes
+  boiled_condensed_milk                    | Leite Condensado Cozido
+  apple                                    | Maca
+  candy_apple                              | Maca do Amor
+  mushroom_pasta                           | Macarrao com Cogumelos
+  boiled_corn                              | Milho Cozido
+  milk                                     | Leite
+  mulled_wine                              | Vinho Quente Especiado
+  moss                                     | Musgo
+  mutant_meat                              | Carne de Mutante
+  nettle                                   | Urtiga
+  old_canned_meat                          | Carne Enlatada Velha
+  boiled_egg                               | Ovo Cozido
+  fried_egg                                | Ovo Frito
+  bread                                    | Pao
+  canned_porridge                          | Papas Enlatadas
+  rotten_porridge                          | Papas Podres
+  pasta                                    | Pasta
+  pasta_with_ground_beef                   | Massa com Carne Moida
+  fried_fish                               | Peixe Frito
+  rotten_fish                              | Peixe Podre
+  dried_fish                               | Peixe Seco
+  infected_dried_fish                      | Peixe Seco Infectado
+  peking_duck                              | Pato Laqueado
+  pelmeni                                  | Pelmeni
+  pepsi                                    | Pepsi
+  pickled_vegetables                       | Legumes em Conserva
+  pilaf                                    | Pilaf
+  canned_pork                              | Porco Enlatado
+  potato                                   | Batata
+  potato_pancakes                          | Panquecas de Batata
+  stale_pryanik                            | Pryanik Velho
+  pumpkin                                  | Abobora
+  mashed_potatoes                          | Pure de Batatas
+  cheese                                   | Queijo
+  rat_meat                                 | Carne de Rato
+  rice_bun                                 | Pao de Arroz
+  rice_grains                              | Graos de Arroz
+  rich_chowder                             | Caldo Rico
+  meat_rissole                             | Risole de Carne
+  tailed_rissole                           | Risole
+  rotten_vegetables                        | Legumes Podres
+  russian_cigarettes                       | Cigarros Russos
+  saltpeter                                | Salitre
+  salt                                     | Sal
+  salted_fish                              | Peixe Salgado
+  salted_meat                              | Carne Salgada
+  caviar_sandwich                          | Sanduiche de Caviar
+  sausage                                  | Salsicha
+  shawarma                                 | Churrasco Grego
+  shchi                                    | Shchi
+  smuggled_energy_drink                    | Energético Contrabandeado
+  snake_meat                               | Carne de Cobra
+  pumpkin_soup                             | Sopa de Abobora
+  mushroom_soup                            | Sopa de Cogumelos
+  stew_meat                                | Carne para Ensopado
+  strawberry                               | Morango
+  beetle_juice                             | Suco de Besouro
+  sugar                                    | Acucar
+  sushi                                    | Sushi
+  tea                                      | Cha
+  pie                                      | Torta
+  tough_meat                               | Carne Dura
+  toxic_water                              | Agua Toxica
+  treats                                   | Guloseimas
+  cooked_buckwheat                         | Trigo-sarraceno Cozido
+  ukha                                     | Ukha
+  whiskey                                  | Usque
+  red_wine                                 | Vinho Tinto
+  rice_wine                                | Vinho de Arroz
+  vodka                                    | Vodka
+  bowl_of_rice                             | Tigela de Arroz
+  flesh                                    | Carne
+  ice_cream                                | Sorvete
+  fried_snake                              | Cobra Frita
+  olivier_salad                            | Salada Olivier
+  grouse                                   | Galo-da-serra
+  trophy_cognac                            | Conhaque Trofeu
+  smoked_fatback                           | Toucinho Defumado
+  tangerine                                | Tangerina
+  cabbage_roll                             | Rolinho de Repolho
+  broadleaf_plantain                       | Tanchagem
+  rainbow_easter_egg                       | Ovo de Pascoa Arco-Iris
+  rusks                                    | Biscoitos Duros
+  infected_rusk                            | Biscoito Duro Infectado
+  ration_pack                              | Racao
+  expeditionary_ration                     | Racao de Expedicao
+  smuggler_s_flask                         | Frasco do Contrabandista
+
+=== seeds_herbs (Sementes, Ervas e Cogumelos) - 8 items ===
+  potato_seeds                             | Sementes de Batata
+  strawberry_seed                          | Semente de Morango
+  pumpkin_seeds                            | Sementes de Abobora
+  apple_seeds                              | Sementes de Maca
+  corn_seeds                               | Sementes de Milho
+  tangerine_seeds                          | Sementes de Tangerina
+  wheat_seeds                              | Sementes de Trigo
+  vegetable_seeds                          | Sementes de Legumes
+
+=== materials (Materiais e Componentes) - 119 items ===
+  diy_nets                                 | Redes Artesanais
+  silage_mincer                            | Moidor de Silagem
+  aluminum                                 | Aluminio
+  antelope                                 | Antilope
+  ave_maria                                | Ave Maria
+  barrel                                   | Barril
+  blank                                    | Espacador
+  boiled_leather                           | Couro Fervido
+  rubber                                   | Borracha
+  bryocarm                                 | Bryocarm
+  c_3_cologne                              | Colonia C-3
+  cpe_leader                               | CPE Leader
+  electrical_cable                         | Cabo Eletrico
+  iron_pipe                                | Cano de Ferro
+  black_coal                               | Carvao Negro
+  coal                                     | Carvao Preto
+  catalysis_e                              | Catalysis-E
+  cement                                   | Cimento
+  wax                                      | Cera
+  bone_glue                                | Cola de Osso
+  rope                                     | Corda
+  diesel                                   | Diesel
+  diluted_spirits                          | Alcool Diluido
+  dragon_scale                             | Escama de Dragao
+  sulfur                                   | Enxofre
+  spice                                    | Especiaria
+  fat                                      | Gordura
+  wire                                     | Fio
+  fire_brick                               | Tijolo Refratario
+  gaz_24_broken                            | GAZ-24 (Quebrado)
+  gasoline                                 | Gasolina
+  glue_tape                                | Fita Adesiva
+  high_performance_capacitor               | Capacitor de Alta Performance
+  ir_190                                   | IR-190
+  insulating_tape                          | Fita Isolante
+  iron                                     | Ferro
+  iron_pot                                 | Panela de Ferro
+  kamaz_broken                             | KamAZ (Quebrado)
+  first_aid_kit                            | Kit de Primeiros Socorros
+  can                                      | Lata
+  firewood                                 | Lenha
+  titanium_alloy                           | Liga de Titanio
+  lymph                                    | Linfa
+  log                                      | Tronco
+  matches                                  | Fosforos
+  metal_plate                              | Chapa de Metal
+  titanium_ore                             | Minerio de Titanio
+  motorcycle_spare_parts                   | Pecas Sobressalentes de Moto
+  nail                                     | Prego
+  nailed_box                               | Caixa Pregada
+  oar                                      | Remo
+  machine_oil                              | Oleo de Maquina
+  fresh_bones                              | Ossos Frescos
+  flint                                    | Pederneira
+  tires                                    | Pneus
+  plank                                    | Prancha
+  quality_hide                             | Pele de Qualidade
+  quality_leather                          | Couro de Qualidade
+  chitin                                   | Quitina
+  raw_hide                                 | Pele Crua
+  raw_fatback                              | Toucinho Cru
+  rawhide                                  | Couro Cru
+  king_of_jokers                           | Rei dos Coringas
+  rubber_parts                             | Peças de Borracha
+  rusted_saucepan                          | Panela Enferrujada
+  sr_delirium                              | SR Delirium
+  soap                                     | Sabao
+  saucepan                                 | Panela
+  spare_weapon_parts                       | Pecas Sobressalentes de Arma
+  spark_plug                               | Vela de Ignicao
+  steel                                    | Aco
+  steel_pot                                | Panela de Aço
+  stick                                    | Graveto
+  scrap_metal                              | Sucata Metalica
+  aluminum_scrap                           | Sucata de Aluminio
+  copper_scrap                             | Sucata de Cobre
+  support_box                              | Caixa de Suporte
+  survivor_s_cache                         | Cache do Sobrevivente
+  tanned_leather                           | Couro Curtido
+  tanning_mixture                          | Mistura de Curtimento
+  cloth                                    | Tecido
+  thick_hide                               | Pele Grossa
+  thick_leather                            | Couro Grosso
+  threads                                  | Linhas
+  brick                                    | Tijolo
+  titanium_pot                             | Panela de Titânio
+  toxigen                                  | Toxigen
+  rags                                     | Trapos
+  uaz_452_broken                           | UAZ-452 (Quebrado)
+  uaz_469_broken                           | UAZ-469 (Quebrado)
+  vaz_2101_broken                          | VAZ-2101 (Quebrado)
+  weapon_box                               | Caixa de Armas
+  wheat                                    | Trigo
+  zaz_968_broken                           | ZAZ-968 (Quebrado)
+  zil_130_broken                           | ZIL-130 (Quebrado)
+  broken_car_battery                       | Bateria de Carro Quebrada
+  car_battery                              | Bateria de Carro
+  nuclear_battery                          | Bateria Nuclear
+  pistol_parts                             | Pecas de Pistola
+  revolver_parts                           | Pecas de Revolver
+  rifle_parts                              | Pecas de Rifle
+  assault_rifle_parts                      | Pecas de Fuzil de Assalto
+  machine_gun_parts                        | Pecas de Metralhadora
+  bamboo_steamer                           | Cesteiro de Bambu
+  mushroom_with_eyes                       | Cogumelo com Olhos
+  stearin                                  | Estearina
+  strange_mushroom_black                   | Cogumelo Estranho (Preto)
+  strange_mushroom_blue                    | Cogumelo Estranho (Azul)
+  strange_mushroom_green                   | Cogumelo Estranho (Verde)
+  strange_mushroom_light_blue              | Cogumelo Estranho (Azul Claro)
+  strange_mushroom_red                     | Cogumelo Estranho (Vermelho)
+  strange_mushroom_violet                  | Cogumelo Estranho (Violeta)
+  strange_mushroom_white                   | Cogumelo Estranho (Branco)
+  strange_mushroom_yellow                  | Cogumelo Estranho (Amarelo)
+  acid_gland                               | Glandula Acida
+  vial_of_amine                            | Frasco de Amina
+  radioactive_mushroom                     | Cogumelo Radioativo
+  amanita                                  | Amanita
+  blood_mold                               | Bolor de Sangue
+
+=== medicine (Medicamentos e Quimicos) - 28 items ===
+  acidoemitter                             | Acidoemitter
+  activated_charcoal                       | Carvao Ativado
+  aqua_vitae                               | Agua Vitae
+  alcohol                                  | Alcool
+  antibiotics                              | Antibioticos
+  antidote                                 | Antidoto
+  antirad                                  | Antirad
+  biotonic                                 | Biotonico
+  detoxifying_potion                       | Pocao Desintoxicante
+  energizing_potion                        | Pocao Energizante
+  eurekognasol_stimulant                   | Estimulante Eurekognasol
+  injector                                 | Injector
+  lidiacide_34                             | Lidiacide-34
+  metocaine                                | Metocaina
+  painkiller                               | Analgésico
+  poisoned_flask                           | Frasco Envenenado
+  protection_potion                        | Pocao de Protecao
+  sterile_bandage                          | Bandagem Esteril
+  stimulant                                | Estimulante
+  sulfuric_acid                            | Acido Sulfurico
+  poison                                   | Veneno
+  bioblocade_inhaler                       | Inalador Bioblocade
+  bye_bye_rad                              | Bye-Bye Rad
+  healing_salve                            | Balsamo Curativo
+  comcon_3_paste                           | Pasta ComCon-3
+  pill_of_immortality                      | Pilula da Imortalidade
+  caustic_distillate                       | Destilado Caustico
+  chlorcystamine                           | Clorcistamina
+
+=== ammo (Municoes e Explosivos) - 25 items ===
+  7_62x25mm_tt_shell                       | Cartucho 7.62x25mm TT
+  assault_rifle_ammo                       | Munição de Fuzil de Assalto
+  assault_rifle_shell                      | Cartucho de Fuzil de Assalto
+  handmade_cartridge                       | Cartucho Artesanal
+  blank_cartridge                          | Cartucho em Branco
+  crossbow_bolt_poison                     | Virote de Besta (Venenoso)
+  primer                                   | Espoleta
+  grenade_launcher_round                   | Granada de Lançador
+  handmade_rocket                          | Foguete Artesanal
+  lead_bullet                              | Bala de Chumbo
+  pistol_ammo                              | Municao de Pistola
+  pistol_shell                             | Cartucho de Pistola
+  plastic_explosives                       | Explosivos Plasticos
+  gunpowder                                | Polvora
+  pyrolytic_grenade                        | Granada Pirolitica
+  revolver_ammo                            | Municao de Revolver
+  revolver_shell                           | Cartucho de Revolver
+  rifle_ammo                               | Municao de Rifle
+  rifle_shell                              | Cartucho de Rifle
+  training_ammo                            | Municao de Treinamento
+  crossbow_bolt                            | Virote de Besta
+  pineapple                                | Granada F-1 (Abacaxi)
+  shotgun_round                            | Cartucho de Escopeta
+  chinese_fireworks                        | Fogos de Artificio Chineses
+  termite                                  | Termite
+
+=== weapons (Armas) - 118 items ===
+  alien_blaster                            | Blaster Alienigena
+  berdan_rifle                             | Rifle Berdan
+  borschevik_flamethrower                  | Lancachamas Borschevik
+  butterfly_knife                          | Faca Borboleta
+  chemist_crossbow                         | Besta do Quimico
+  chitin_spear                             | Lanca de Quitina
+  cypress_smg                              | SMG Cypress
+  flamethrower                             | Lancachamas
+  flint_knife                              | Faca de Pedra
+  forged_knife                             | Faca Forjada
+  formalin_gas_pistol                      | Pistola de Gás Formalina
+  heavy_machine_gun                        | Metralhadora Pesada
+  homemade_pistol                          | Pistola Artesanal
+  homemade_revolver                        | Revolver Artesanal
+  homemade_smg                             | SMG Artesanal
+  hunter_s_rifle                           | Rifle do Cacador
+  hunting_bow                              | Arco de Caca
+  jack_o_launcher                          | Lancador Jack O'
+  kitchen_knife                            | Faca de Cozinha
+  light_machine_gun                        | Metralhadora Leve
+  makarov_handgun_broken                   | Pistola Makarov (Quebrada)
+  mosin_nagant_rifle_broken                | Rifle Mosin-Nagant (Quebrado)
+  multi_shot_rifle                         | Rifle Multi-Tiro
+  nagant_revolver_broken                   | Revolver Nagant (Quebrado)
+  physicist_crossbow                       | Besta do Fisico
+  pistol_silent                            | Pistola Silenciosa
+  popgun                                   | Arma de Brinquedo
+  revolving_gun                            | Arma Rotativa
+  rusted_axe                               | Machado Enferrujado
+  single_shot_rifle                        | Rifle de Tiro Unico
+  standard_crossbow                        | Besta Padrao
+  steel_axe                                | Machado de Aco
+  steel_knife                              | Faca de Aco
+  storm_snowball_launcher                  | Lancador de Bolas de Neve Tempestade
+  strong_bat                               | Taco Forte
+  strychnine_gas_revolver                  | Revolver de Gas Estricnina
+  titanium_axe                             | Machado de Titanio
+  titanium_knife                           | Faca de Titanio
+  tube_rifle                               | Rifle de Tubo
+  akm_c                                    | AKM-C
+  abakan                                   | Abakan
+  all_in                                   | All-In
+  alphacelone                              | Alphacelone
+  biathlon_84                              | Biathlon-84
+  bingo                                    | Bingo
+  blackjack                                | Blackjack
+  cho_ko_nu                                | Cho-ko-nu
+  crouching_tiger                          | Tigre Agachado
+  cybermitten                              | Cybermitten
+  d_eagle                                  | Desert Eagle
+  degtyar                                  | Degtyar
+  double_barrel                            | Escopeta de Cano Duplo
+  dragon_s_roar                            | Rugido do Dragao
+  ea_spectrum                              | EA Spectrum
+  erebus_273                               | Erebus-273
+  fatum_e_93                               | FATUM E-93
+  fear                                     | Fear
+  fist_of_the_sky                          | Punho do Ceo
+  flying_spaghetti_monster                 | Monstro Espaguete Voador
+  gangster                                 | Gangster
+  gehenna                                  | Gehenna
+  gigawattor                               | Gigawattor
+  guandao                                  | Guandao
+  hidden_dragon                            | Dragao Oculto
+  iceberg                                  | Iceberg
+  icicle_thrower                           | Lancador de Estalactites
+  infernal_coal                            | Infernal Coal
+  infernal_prophet                         | Profeta Infernal
+  joker                                    | Coringa
+  joy                                      | Joy
+  kalash_m                                 | Kalash-M
+  kalash_s                                 | Kalash-S
+  law_guardian                             | Guardiao da Lei
+  lmg_qilin                                | LMG "Qilin"
+  lotus_of_death                           | Lotus da Morte
+  makar                                    | Makar
+  mauser                                   | Mauser
+  mayhem                                   | Mayhem
+  midas                                    | Midas
+  mosinka                                  | Mosinka
+  murmur                                   | Murmurio
+  nagant                                   | Nagant
+  pas_weaver                               | PAS Weaver
+  pepperbox                                | Pepperbox
+  pk_7_62_kraken                           | PK 7.62 Kraken
+  posh                                     | Posh
+  revenge                                  | Vinganca
+  rpg_vesuvius                             | Lancador RPG Vesuvio
+  rpo_m_eye_of_the_storm                   | RPO-M Olho da Tempestade
+  sabre                                    | Sabre
+  sanguinary_masha                         | Masha Sanguinaria
+  schmeisser                               | Schmeisser
+  shmel                                    | Shmel
+  shock_bludgeon                           | Tacapao de Choque
+  sipuha                                   | Sipuha
+  skorpion                                 | Skorpion
+  sniper_s_mosin                           | Mosin do Sniper
+  stake_thrower                            | Lancador de Estacas
+  stecha                                   | Stecha
+  sudayev                                  | Sudayev
+  svetka                                   | Svetka
+  svyokr                                   | Svyokr
+  ulcer_amr                                | Ulcer AMR
+  vector_a                                 | Vector-A
+  vintorez                                 | Vintorez
+  witch_s_punch                            | Soco da Bruxa
+  wolfsbane_1                              | Wolfsbane-1
+  pkm_broken                               | PKM (Quebrado)
+  pps_43_broken                            | PPS-43 (Quebrado)
+  ppsh_41_broken                           | PPSh-41 (Quebrado)
+  rpk_74_broken                            | RPK-74 (Quebrado)
+  svd_broken                               | SVD (Quebrado)
+  svt_40_broken                            | SVT-40 (Quebrado)
+  tt_33_broken                             | TT-33 (Quebrado)
+  homemade_rocket_launcher                 | Lancador de Foguetes Artesanal
+  collector                                | Colecionador
+  ksyukha                                  | Ksyukha
+  mukha                                    | Mukha
+
+=== armor (Armaduras) - 31 items ===
+  arctic_armor                             | Armadura Artica
+  combined_armor                           | Armadura Combinada
+  tactical_armor                           | Armadura Tatica
+  steel_armor                              | Armadura de Aco
+  leather_armor                            | Armadura de Couro
+  highway_armor                            | Armadura de Estrada
+  iron_armor                               | Armadura de Ferro
+  smuggler_s_armor                         | Armadura do Contrabandista
+  prospector_s_armor                       | Armadura do Prospetor
+  armored_uniform                          | Uniforme Blindado
+  armorpiercer                             | Perfurador de Blindagem
+  bs_4_power_armor                         | Armadura Energetica BS-4
+  chitin_armor                             | Armadura de Quitina
+  kevlar_vest                              | Colete Kevlar
+  bone_vest                                | Colete de Osso
+  ghost_suit                               | Traje Fantasma
+  armor_plate                              | Placa de Blindagem
+  polar_armor                              | Armadura Polar
+  tank_armor                               | Armadura de Tanque
+  tester_armor                             | Armadura de Teste
+  chemical_suit                            | Traje Quimico
+  ghillie_suit                             | Traje de Camuflagem
+  bulletproof_vest                         | Colete Balistico
+  homemade_bulletproof_vest                | Colete Balistico Artesanal
+  ceramic_bulletproof_vest                 | Colete Balistico Ceramico
+  chinese_bulletproof_vest                 | Colete Balistico Chines
+  army_bulletproof_vest                    | Colete Balistico Militar
+  modern_bulletproof_vest                  | Colete Balistico Moderno
+  primitive_bulletproof_vest               | Colete Balistico Primitivo
+  progress_bulletproof_vest                | Colete Balistico Progresso
+  t_800_bulletproof_vest                   | Colete Balistico T-800
+
+=== equipment (Equipamentos) - 22 items ===
+  flashlight_10                            | Lanterna (10%)
+  flashlight_20                            | Lanterna (20%)
+  flashlight_30                            | Lanterna (30%)
+  glutton_s_bag                            | Bolsa do Gula
+  lighter                                  | Isqueiro
+  invisibility_cloak                       | Manta de Invisibilidade
+  ermak_backpack                           | Mochila Ermak
+  refrigerator_backpack                    | Mochila Geladeira
+  rucksack                                 | Mochila Grande
+  medical_backpack                         | Mochila Medica
+  tourist_backpack                         | Mochila de Turista
+  butcher_s_backpack                       | Mochila do Acougueiro
+  handmade_clothes                         | Roupa Artesanal
+  tattered_clothes                         | Roupa Esfarrapada
+  normal_clothes                           | Roupa Normal
+  hunter_s_garb                            | Traje do Cacador
+  master_s_garb                            | Traje do Mestre
+  military_uniform                         | Uniforme Militar
+  reinforced_uniform                       | Uniforme Reforçado
+  field_uniform                            | Uniforme de Campanha
+  battery_flashlight                       | Lanterna com Bateria
+  kettlebell                               | Peso Russo
+
+=== tools (Ferramentas) - 28 items ===
+  chimney                                  | Chamine
+  electrodes                               | Eletrodos
+  bellows                                  | Fole
+  handmade_needle                          | Agulha Artesanal
+  rodkin                                   | Rodkin
+  rusted_crowbar                           | Pe de Cabra Enferrujado
+  rusted_hacksaw                           | Serra Enferrujada
+  rusted_needle                            | Agulha Enferrujada
+  rusted_shovel                            | Pa Enferrujada
+  sewing_needle                            | Agulha de Costura
+  steel_crowbar                            | Pé de Cabra de Aço
+  steel_needle                             | Agulha de Aco
+  steel_shovel                             | Pa de Aco
+  sturdy_needle                            | Agulha Resistente
+  titanium_shovel                          | Pa de Titanio
+  titanium_crowbar                         | Pe de Cabra de Titanio
+  tool_kit                                 | Kit de Ferramentas
+  welder                                   | Soldador
+  chainsaw                                 | Motosserra
+  chainsaw_motor                           | Motor de Motosserra
+  crane                                    | Guindaste
+  electric_motor                           | Motor Elétrico
+  gasoline_engine                          | Motor a Gasolina
+  transport_repair_kit                     | Kit de Reparo de Transporte
+  vehicle_repair_kit                       | Kit de Reparo de Veículo
+  weapon_repair_kit                        | Kit de Reparo de Arma
+  chemistry_set                            | Kit de Quimica
+  chitin_torch                             | Tocha de Quitina
+
+=== gas_masks (Mascaras de Gas) - 16 items ===
+  comfortable_gas_mask                     | Mascara de Gas Confortavel
+  gas_mask_filter                          | Filtro de Mascara de Gas
+  demon_mask                               | Mascara de Demonio
+  old_faithful_gas_mask                    | Mascara de Gas Fiel Velha
+  gp_2000_gas_mask                         | Mascara de Gas GP-2000
+  gp_4_gas_mask                            | Mascara de Gas GP-4
+  gp_5_gas_mask                            | Mascara de Gas GP-5
+  gp_7_gas_mask                            | Mascara de Gas GP-7
+  ionica_gas_mask                          | Mascara de Gas Ionica
+  mm_1_gas_mask                            | Mascara de Gas MM-1
+  pmg_gas_mask                             | Mascara de Gas PMG
+  iron_gas_mask                            | Mascara de Gas de Ferro
+  dust_mask                                | Mascara de Poeira
+  plague_doctor_s_mask                     | Mascara do Medico da Peste
+  respirator                               | Respirador
+  homemade_respirator                      | Respirador Artesanal
+
+Total: 551 items
