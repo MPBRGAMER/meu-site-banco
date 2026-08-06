@@ -16,6 +16,7 @@ export const pricesData = pricesDataRaw as {
       id: string;
       name: string;
       img?: string;
+      wikiLink?: string;
       steel: string;
       cement: string;
       rarity: string;

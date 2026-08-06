@@ -9,12 +9,20 @@ function err(msg: string, status = 400) {
   return NextResponse.json({ error: msg }, { status });
 }
 
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
+
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const action = searchParams.get("action");
 
   try {
     switch (action) {
+      case "verifyAdmin": {
+        const pwd = searchParams.get("password");
+        if (!pwd) return err("Senha obrigatória", 401);
+        if (pwd !== ADMIN_PASSWORD) return err("Senha incorreta", 403);
+        return json({ success: true });
+      }
       case "listEmprestimos": {
         const data = await db.emprestimo.findMany({
           orderBy: { dataEmprestimo: "desc" },

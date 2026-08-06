@@ -2,8 +2,11 @@
 import { useState, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock,
 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import { useBank } from "@/lib/useBank";
 import DashboardTab from "@/components/banco/DashboardTab";
 import EmprestimosTab from "@/components/banco/EmprestimosTab";
@@ -39,8 +42,43 @@ const adminTabs = [
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isAdmin, setIsAdmin] = useState(false);
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [adminPwd, setAdminPwd] = useState("");
+  const [isVerifying, setIsVerifying] = useState(false);
   const { isLoading } = useBank();
-    const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
+  const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
+
+  const handleAdminToggle = async () => {
+    if (isAdmin) {
+      setIsAdmin(false);
+      return;
+    }
+    setShowAdminLogin(true);
+    setAdminPwd("");
+  };
+
+  const handleAdminLogin = async () => {
+    if (!adminPwd.trim()) {
+      toast.error("Digite a senha de admin!");
+      return;
+    }
+    setIsVerifying(true);
+    try {
+      const res = await fetch(`/api/banco?action=verifyAdmin&password=${encodeURIComponent(adminPwd)}`);
+      if (res.ok) {
+        setIsAdmin(true);
+        setShowAdminLogin(false);
+        setAdminPwd("");
+        toast.success("Modo Admin ativado!");
+      } else {
+        toast.error("Senha incorreta!");
+      }
+    } catch {
+      toast.error("Erro ao verificar senha.");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
   const navRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -94,7 +132,7 @@ export default function HomePage() {
       case "leiloes": return <LeiloesTab />;
       case "sorteios": return <SorteiosTab />;
       case "loterica": return <LotericaTab />;
-      case "tabela": return <TabelaTab />;
+      case "tabela": return <TabelaTab isAdmin={isAdmin} />;
       default: return <DashboardTab />;
     }
   };
@@ -123,16 +161,16 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setIsAdmin(!isAdmin)}
+              onClick={handleAdminToggle}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border ${
                 isAdmin
                   ? "bg-primary/20 text-primary border-primary/40"
-                  : "bg-muted text-muted-foreground border-border"
+                  : "bg-muted text-muted-foreground border-border hover:text-foreground"
               }`}
-              title={isAdmin ? "Modo Admin ATIVO" : "Modo Visualização"}
+              title={isAdmin ? "Clique para sair do modo Admin" : "Entrar como Admin (requer senha)"}
             >
               <Shield className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{isAdmin ? "Admin" : "Visualizar"}</span>
+              <span className="hidden sm:inline">Admin</span>
             </button>
           </div>
         </div>
@@ -180,6 +218,38 @@ export default function HomePage() {
       <footer className="border-t border-border py-4 text-center text-xs text-muted-foreground">
         Day R Survival - Posto de Trocas
       </footer>
+
+      {/* Admin Login Modal */}
+      {showAdminLogin && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60" onClick={() => setShowAdminLogin(false)}>
+          <div className="rounded-lg border border-primary/20 bg-card p-5 w-full max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+                <Lock className="w-4 h-4" /> Login Admin
+              </h3>
+              <button onClick={() => setShowAdminLogin(false)} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+            </div>
+            <p className="text-[11px] text-muted-foreground mb-3">Digite a senha de administrador para acessar o modo Admin.</p>
+            <div className="space-y-3">
+              <Input
+                type="password"
+                placeholder="Senha de admin"
+                value={adminPwd}
+                onChange={(e) => setAdminPwd(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") handleAdminLogin(); }}
+                className="text-sm h-9"
+                autoFocus
+              />
+              <div className="flex gap-2">
+                <Button variant="outline" onClick={() => setShowAdminLogin(false)} className="flex-1 text-xs h-8">Cancelar</Button>
+                <Button onClick={handleAdminLogin} disabled={isVerifying} className="flex-1 bg-primary text-primary-foreground text-xs h-8">
+                  {isVerifying ? "Verificando..." : "Entrar"}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

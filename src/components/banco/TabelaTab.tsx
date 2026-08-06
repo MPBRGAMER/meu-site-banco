@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
   MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
+  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -16,6 +17,7 @@ interface PriceItem {
   id: string;
   name: string;
   img?: string;
+  wikiLink?: string;
   steel: string;
   cement: string;
   rarity: string;
@@ -27,6 +29,7 @@ interface Category {
   id: string;
   name: string;
   items: PriceItem[];
+  wikiLink?: string;
 }
 
 const demandColors: Record<string, string> = {
@@ -400,7 +403,352 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   );
 }
 
-export default function TabelaTab() {
+function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed">("add");
+  const [gerenciarSearch, setGerenciarSearch] = useState("");
+  const [newItemName, setNewItemName] = useState("");
+  const [newItemId, setNewItemId] = useState("");
+  const [newItemCategory, setNewItemCategory] = useState("");
+  const [newItemImg, setNewItemImg] = useState("");
+  const [newItemWikiLink, setNewItemWikiLink] = useState("");
+  const [newItemSteel, setNewItemSteel] = useState("?:?");
+  const [newItemCement, setNewItemCement] = useState("?:?");
+  const [newItemDemand, setNewItemDemand] = useState("medium");
+  const [newItemRarity, setNewItemRarity] = useState("common");
+  const [newItemNotes, setNewItemNotes] = useState("");
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editForm, setEditForm] = useState({ name: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "" });
+  const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
+  const [isSaving, setIsSaving] = useState(false);
+
+  const categories = pricesData.categories as Category[];
+  const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))), [categories]);
+
+  const slugify = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+
+  useEffect(() => {
+    if (newItemName && !newItemId) {
+      setNewItemId(slugify(newItemName));
+    }
+  }, [newItemName, newItemId]);
+
+  const filteredGerenciarItems = useMemo(() => {
+    if (!gerenciarSearch) return allItems.slice(0, 100);
+    return allItems.filter((i) => i.name.toLowerCase().includes(gerenciarSearch.toLowerCase()) || i.id.includes(gerenciarSearch.toLowerCase())).slice(0, 100);
+  }, [gerenciarSearch, allItems]);
+
+  const handleAddItem = async () => {
+    if (!newItemName.trim() || !newItemId.trim() || !newItemCategory) {
+      toast.error("Preencha nome, ID e categoria!");
+      return;
+    }
+    const exists = allItems.find((i) => i.id === newItemId);
+    if (exists) {
+      toast.error(`Item com ID "${newItemId}" ja existe!`);
+      return;
+    }
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+        body: JSON.stringify({
+          action: "add",
+          item: {
+            itemId: newItemId,
+            name: newItemName.trim(),
+            categoryId: newItemCategory,
+            img: newItemImg || `/items/${newItemId}.png`,
+            wikiLink: newItemWikiLink || ``,
+            steel: newItemSteel,
+            cement: newItemCement,
+            rarity: newItemRarity,
+            demand: newItemDemand,
+            notes: newItemNotes,
+          },
+        }),
+      });
+      if (res.ok) {
+        toast.success(`Item "${newItemName}" adicionado! (salvo no banco)`);
+        setNewItemName("");
+        setNewItemId("");
+        setNewItemImg("");
+        setNewItemWikiLink("");
+        setNewItemSteel("?:?");
+        setNewItemCement("?:?");
+        setNewItemDemand("medium");
+        setNewItemRarity("common");
+        setNewItemNotes("");
+      } else {
+        const data = await res.json();
+        toast.error(data.error || "Erro ao adicionar item.");
+      }
+    } catch {
+      toast.error("Erro de conexao.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const startEdit = (item: typeof allItems[0]) => {
+    setEditingId(item.id);
+    setEditForm({ name: item.name, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes });
+  };
+
+  const handleSaveEdit = async () => {
+    if (!editingId) return;
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+        body: JSON.stringify({
+          action: "edit",
+          item: { itemId: editingId, ...editForm },
+        }),
+      });
+      if (res.ok) {
+        toast.success(`Item "${editForm.name}" atualizado!`);
+        setEditingId(null);
+      } else {
+        toast.error("Erro ao salvar.");
+      }
+    } catch {
+      toast.error("Erro de conexao.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleRemove = (item: typeof allItems[0]) => {
+    if (removedItems.find((r) => r.id === item.id)) return;
+    setRemovedItems([...removedItems, { id: item.id, name: item.name, category: item.categoryName }]);
+    toast.success(`"${item.name}" marcado para remocao.`);
+  };
+
+  const handleRestore = (id: string) => {
+    setRemovedItems(removedItems.filter((r) => r.id !== id));
+    toast.success("Item restaurado.");
+  };
+
+  const handleSaveRemoved = async () => {
+    if (removedItems.length === 0) return;
+    setIsSaving(true);
+    try {
+      for (const item of removedItems) {
+        await fetch("/api/items", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+          body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.category } }),
+        });
+      }
+      toast.success(`${removedItems.length} itens removidos!`);
+      setRemovedItems([]);
+    } catch {
+      toast.error("Erro ao remover.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
+      <div className="rounded-lg border border-primary/20 bg-card w-full max-w-2xl mx-4 max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between p-4 border-b border-border">
+          <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+            <Settings2 className="w-4 h-4" /> Gerenciar Itens
+          </h3>
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex border-b border-border px-4 pt-2 gap-1">
+          {(["add", "edit", "removed"] as const).map((tab) => (
+            <button key={tab} onClick={() => setActiveTab(tab)} className={`px-3 py-2 text-xs font-medium rounded-t-md transition-colors ${activeTab === tab ? "bg-primary/10 text-primary border-b-2 border-primary" : "text-muted-foreground hover:text-foreground"}`}>
+              {tab === "add" && <span className="flex items-center gap-1"><PlusCircle className="w-3 h-3" /> Adicionar</span>}
+              {tab === "edit" && <span className="flex items-center gap-1"><Pencil className="w-3 h-3" /> Editar/Remover</span>}
+              {tab === "removed" && <span className="flex items-center gap-1"><Trash2 className="w-3 h-3" /> Removidos ({removedItems.length})</span>}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex-1 overflow-y-auto p-4">
+          {/* ADD TAB */}
+          {activeTab === "add" && (
+            <div className="space-y-3">
+              <p className="text-[10px] text-muted-foreground">Adicione novos itens a tabela. Eles serao salvos no banco de dados como override.</p>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Nome do Item *</label>
+                  <Input value={newItemName} onChange={(e) => { setNewItemName(e.target.value); setNewItemId(""); }} placeholder="Ex: Agua Potavel" className="text-sm mt-1 h-8" />
+                </div>
+                <div>
+                  <label className="text-[11px] text-muted-foreground">ID (auto) *</label>
+                  <Input value={newItemId} onChange={(e) => setNewItemId(e.target.value)} placeholder="agua_potavel" className="text-sm mt-1 h-8 font-mono" />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Categoria *</label>
+                  <select value={newItemCategory} onChange={(e) => setNewItemCategory(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-2 mt-1 text-foreground">
+                    <option value="">Selecionar...</option>
+                    {categories.map((c) => (<option key={c.id} value={c.id}>{c.name}</option>))}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Imagem (caminho)</label>
+                  <Input value={newItemImg} onChange={(e) => setNewItemImg(e.target.value)} placeholder="/items/nome.png" className="text-sm mt-1 h-8 font-mono" />
+                </div>
+              </div>
+              <div>
+                <label className="text-[11px] text-muted-foreground">Wiki Link</label>
+                <Input value={newItemWikiLink} onChange={(e) => setNewItemWikiLink(e.target.value)} placeholder="https://dayr.wiki.gg/wiki/..." className="text-sm mt-1 h-8 font-mono" />
+              </div>
+              <div className="grid grid-cols-4 gap-3">
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Preco Aco</label>
+                  <Input value={newItemSteel} onChange={(e) => setNewItemSteel(e.target.value)} placeholder="5:1" className="text-sm mt-1 h-8 font-mono" />
+                </div>
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Preco Cimento</label>
+                  <Input value={newItemCement} onChange={(e) => setNewItemCement(e.target.value)} placeholder="10:1" className="text-sm mt-1 h-8 font-mono" />
+                </div>
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Raridade</label>
+                  <select value={newItemRarity} onChange={(e) => setNewItemRarity(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-1.5 mt-1 text-foreground">
+                    <option value="common">Comum</option>
+                    <option value="uncommon">Incomum</option>
+                    <option value="rare">Raro</option>
+                    <option value="legendary">Lendario</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[11px] text-muted-foreground">Demanda</label>
+                  <select value={newItemDemand} onChange={(e) => setNewItemDemand(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-1.5 mt-1 text-foreground">
+                    <option value="high">Alta</option>
+                    <option value="medium">Media</option>
+                    <option value="low">Baixa</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label className="text-[11px] text-muted-foreground">Notas</label>
+                <Input value={newItemNotes} onChange={(e) => setNewItemNotes(e.target.value)} placeholder="Observacoes sobre o item..." className="text-sm mt-1 h-8" />
+              </div>
+              <Button onClick={handleAddItem} disabled={isSaving} className="w-full bg-primary text-primary-foreground text-xs h-9 mt-2">
+                <PlusCircle className="w-3.5 h-3.5 mr-1" /> {isSaving ? "Salvando..." : "Adicionar Item"}
+              </Button>
+            </div>
+          )}
+
+          {/* EDIT/REMOVE TAB */}
+          {activeTab === "edit" && (
+            <div className="space-y-3">
+              <div className="relative">
+                <Search className="w-3 h-3 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2" />
+                <Input value={gerenciarSearch} onChange={(e) => setGerenciarSearch(e.target.value)} placeholder="Buscar item para editar ou remover..." className="pl-8 text-sm h-8" />
+              </div>
+              <div className="space-y-1 max-h-[50vh] overflow-y-auto">
+                {filteredGerenciarItems.map((item) => (
+                  <div key={item.id} className={`rounded-md border px-3 py-2 transition-colors ${editingId === item.id ? "border-primary/40 bg-primary/5" : "border-border/50 hover:bg-muted/20"}`}>
+                    {editingId === item.id ? (
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <ItemIcon itemId={item.id} imgPath={item.img} />
+                          <span className="text-xs font-semibold truncate">{item.name}</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Nome</label>
+                            <Input value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} className="text-xs h-7 mt-0.5" />
+                          </div>
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Wiki Link</label>
+                            <Input value={editForm.wikiLink} onChange={(e) => setEditForm({ ...editForm, wikiLink: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2">
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Aco</label>
+                            <Input value={editForm.steel} onChange={(e) => setEditForm({ ...editForm, steel: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                          </div>
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Cimento</label>
+                            <Input value={editForm.cement} onChange={(e) => setEditForm({ ...editForm, cement: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+                          </div>
+                          <div>
+                            <label className="text-[9px] text-muted-foreground">Demanda</label>
+                            <select value={editForm.demand} onChange={(e) => setEditForm({ ...editForm, demand: e.target.value })} className="w-full text-xs bg-card border border-border rounded-md h-7 px-1.5 mt-0.5 text-foreground">
+                              <option value="high">Alta</option>
+                              <option value="medium">Media</option>
+                              <option value="low">Baixa</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <label className="text-[9px] text-muted-foreground">Notas</label>
+                          <Input value={editForm.notes} onChange={(e) => setEditForm({ ...editForm, notes: e.target.value })} className="text-xs h-7 mt-0.5" />
+                        </div>
+                        <div className="flex gap-2">
+                          <button onClick={() => setEditingId(null)} className="flex-1 text-[10px] py-1 rounded border border-border hover:bg-muted/30 text-muted-foreground">Cancelar</button>
+                          <button onClick={handleSaveEdit} disabled={isSaving} className="flex-1 text-[10px] py-1 rounded bg-primary text-primary-foreground font-semibold flex items-center justify-center gap-1"><Save className="w-3 h-3" />{isSaving ? "..." : "Salvar"}</button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <ItemIcon itemId={item.id} imgPath={item.img} />
+                          <span className="text-xs text-foreground truncate">{item.name}</span>
+                          <span className="text-[9px] text-muted-foreground shrink-0">{item.categoryName}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <button onClick={() => startEdit(item)} className="text-[10px] text-yellow-400 hover:text-yellow-300">Editar</button>
+                          <button onClick={() => handleRemove(item)} className="text-[10px] text-red-400 hover:text-red-300">Remover</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* REMOVED TAB */}
+          {activeTab === "removed" && (
+            <div className="space-y-3">
+              <p className="text-[10px] text-muted-foreground">Itens marcados para remocao nesta sessao.</p>
+              {removedItems.length === 0 ? (
+                <p className="text-xs text-muted-foreground text-center py-4">Nenhum item removido.</p>
+              ) : (
+                <>
+                  <div className="space-y-1">
+                    {removedItems.map((item) => (
+                      <div key={item.id} className="flex items-center justify-between rounded-md border border-red-500/20 bg-red-500/5 px-3 py-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <Trash2 className="w-3 h-3 text-red-400 shrink-0" />
+                          <span className="text-xs text-foreground truncate">{item.name}</span>
+                          <span className="text-[9px] text-muted-foreground shrink-0">({item.category})</span>
+                        </div>
+                        <button onClick={() => handleRestore(item.id)} className="text-[10px] text-green-400 hover:text-green-300 flex items-center gap-0.5 shrink-0"><RotateCcw className="w-3 h-3" /> Restaurar</button>
+                      </div>
+                    ))}
+                  </div>
+                  <Button onClick={handleSaveRemoved} disabled={isSaving} variant="destructive" className="w-full text-xs h-8">
+                    <Trash2 className="w-3.5 h-3.5 mr-1" /> {isSaving ? "Salvando..." : `Confirmar Remocao de ${removedItems.length} itens`}
+                  </Button>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }) {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
@@ -409,9 +757,11 @@ export default function TabelaTab() {
   const [showGuia, setShowGuia] = useState(false);
   const [showReportar, setShowReportar] = useState(false);
   const [showEditar, setShowEditar] = useState(false);
+  const [showGerenciar, setShowGerenciar] = useState(false);
   const [showOnlyMissing, setShowOnlyMissing] = useState(false);
-  const [priceReports, setPriceReports] = useState<Array<{ itemId: string; steelPrice: number; cementPrice: number; nickname: string; data: string }>>([]);
-  const { reportPrice, isAdmin } = useBank();
+  const [priceReports, setPriceReports] = useState<Array<{ id?: number; itemId: string; itemName?: string; steelPrice: number; cementPrice: number; nickname: string; data: string }>>([]);
+  const { reportPrice } = useBank();
+  const isAdmin = isAdminProp;
 
   const categories = pricesData.categories as Category[];
   const metadata = pricesData.metadata;
@@ -502,9 +852,16 @@ export default function TabelaTab() {
           <button onClick={() => setShowReportar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-green-500/30 text-green-400 hover:bg-green-500/10 transition-all">
             <MessageSquarePlus className="w-3.5 h-3.5" /> Reportar
           </button>
-          <button onClick={() => setShowEditar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 transition-all">
-            <Pencil className="w-3.5 h-3.5" /> Editar
-          </button>
+          {isAdmin && (
+            <button onClick={() => setShowEditar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 transition-all">
+              <Pencil className="w-3.5 h-3.5" /> Editar
+            </button>
+          )}
+          {isAdmin && (
+            <button onClick={() => setShowGerenciar(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 transition-all">
+              <Settings2 className="w-3.5 h-3.5" /> Gerenciar Itens
+            </button>
+          )}
           <button onClick={() => setShowGuia(true)} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all">
             <BookOpen className="w-3.5 h-3.5" /> Guia
           </button>
@@ -579,7 +936,13 @@ export default function TabelaTab() {
                       <div key={item.id} className={`grid grid-cols-12 gap-1 px-3 py-2 border-b border-border/50 hover:bg-muted/20 transition-colors text-xs ${idx % 2 === 0 ? "" : "bg-muted/5"} ${missing ? "opacity-70" : ""}`}>
                         <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} imgPath={item.img} /></div>
                         <div className="col-span-3 min-w-0">
-                          <p className="font-semibold text-foreground truncate">{item.name}</p>
+                          {item.wikiLink ? (
+                            <a href={item.wikiLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors truncate block" title={"Ver no Wiki: " + item.name}>
+                              {item.name} <ExternalLink className="w-2.5 h-2.5 inline ml-1 opacity-50" />
+                            </a>
+                          ) : (
+                            <p className="font-semibold text-foreground truncate">{item.name}</p>
+                          )}
                           {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block">{item.notes}</p>}
                           {missing && <p className="text-[9px] text-orange-400 truncate">Preco pendente</p>}
                         </div>
@@ -644,6 +1007,7 @@ export default function TabelaTab() {
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
       <EditarModal isOpen={showEditar} onClose={() => setShowEditar(false)} items={allItems} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
+      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} />}
     </div>
   );
 }
