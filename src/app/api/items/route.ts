@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
             rarity: rarity || null,
             demand: demand || null,
             notes: notes || null,
-            action: "edit",
+            action: "add",
           },
           create: {
             itemId,
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
             rarity: rarity || null,
             demand: demand || null,
             notes: notes || null,
-            action: "edit",
+            action: "add",
           },
         });
         return json(override);

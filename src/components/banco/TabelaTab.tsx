@@ -131,14 +131,15 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   isOpen: boolean;
   onClose: () => void;
   items: PriceItem[];
-  onReport: (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number; quantity: number }) => void;
+  onReport: (d: { itemId: string; itemName: string; nickname: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number }) => void;
 }) {
   const [searchText, setSearchText] = useState("");
   const [selectedItemId, setSelectedItemId] = useState("");
   const [selectedItemName, setSelectedItemName] = useState("");
+  const [steelQty, setSteelQty] = useState("");
   const [steelPrice, setSteelPrice] = useState("");
+  const [cementQty, setCementQty] = useState("");
   const [cementPrice, setCementPrice] = useState("");
-  const [quantity, setQuantity] = useState("1");
   const [nickname, setNickname] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const selectRef = useRef<HTMLSelectElement>(null);
@@ -151,7 +152,7 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   const selectedDisplayName = selectedItemName || searchText;
 
   const handleSubmit = async () => {
-    if (!selectedItemId || !steelPrice || !cementPrice || !nickname.trim()) {
+    if (!selectedItemId || !steelQty || !steelPrice || !cementQty || !cementPrice || !nickname.trim()) {
       toast.error("Preencha todos os campos e selecione um item!");
       return;
     }
@@ -161,16 +162,18 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
         itemId: selectedItemId,
         itemName: selectedDisplayName,
         nickname: nickname.trim(),
+        steelQty: parseInt(steelQty),
         steelPrice: parseInt(steelPrice),
+        cementQty: parseInt(cementQty),
         cementPrice: parseInt(cementPrice),
-        quantity: parseInt(quantity) || 1,
       });
       setSearchText("");
       setSelectedItemId("");
       setSelectedItemName("");
+      setSteelQty("");
       setSteelPrice("");
+      setCementQty("");
       setCementPrice("");
-      setQuantity("1");
       localStorage.setItem("reporterNickname", nickname.trim());
       toast.success(`Preco de "${selectedDisplayName}" reportado! Obrigado ${nickname.trim()}!`);
       onClose();
@@ -230,23 +233,27 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
               </div>
             )}
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-4 gap-2">
             <div>
-              <label className="text-[11px] text-muted-foreground">Quantidade</label>
-              <Input type="number" min={1} value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="Ex: 4" className="text-sm font-mono mt-1 h-8" />
+              <label className="text-[11px] text-muted-foreground">Qtd Aco</label>
+              <Input type="number" min={1} value={steelQty} onChange={(e) => setSteelQty(e.target.value)} placeholder="Ex: 5" className="text-sm font-mono mt-1 h-8" />
             </div>
             <div>
-              <label className="text-[11px] text-muted-foreground">Preco em Aco ($)</label>
-              <Input type="number" value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
+              <label className="text-[11px] text-muted-foreground">Valor Aco ($)</label>
+              <Input type="number" min={1} value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
             </div>
             <div>
-              <label className="text-[11px] text-muted-foreground">Preco em Cimento</label>
-              <Input type="number" value={cementPrice} onChange={(e) => setCementPrice(e.target.value)} placeholder="Ex: 2" className="text-sm font-mono mt-1 h-8" />
+              <label className="text-[11px] text-muted-foreground">Qtd Cimento</label>
+              <Input type="number" min={1} value={cementQty} onChange={(e) => setCementQty(e.target.value)} placeholder="Ex: 10" className="text-sm font-mono mt-1 h-8" />
+            </div>
+            <div>
+              <label className="text-[11px] text-muted-foreground">Valor Cimento</label>
+              <Input type="number" min={1} value={cementPrice} onChange={(e) => setCementPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
             </div>
           </div>
           <div className="rounded-md border border-primary/20 bg-primary/5 p-2.5">
             <p className="text-[10px] text-muted-foreground leading-relaxed">
-              <span className="text-primary font-semibold">Como funciona:</span> Os precos reportados pela comunidade sao usados para calcular a <span className="text-primary">Tendencia</span> de cada item. Quanto mais pessoas reportam, mais precisa fica a tabela!
+              <span className="text-primary font-semibold">Formato:</span> Qtd:Valor. Ex: Agua 5:1 aco = voce da 5 aguas por 1 aco. 10:1 cimento = voce da 10 aguas por 1 cimento. Os reports calculam a media na Tendencia.
             </p>
           </div>
           <div className="flex gap-2 pt-1">
@@ -320,7 +327,7 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   );
 }
 
-function GerenciarItensModal({ isOpen, onClose, onSaved }: { isOpen: boolean; onClose: () => void; onSaved?: () => void }) {
+function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overrides: itemOverrides }: { isOpen: boolean; onClose: () => void; onSaved?: () => void; mergedCategories: Category[]; overrides: Array<{ itemId: string; action: string; name?: string; categoryId?: string }> }) {
   const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed">("add");
   const [gerenciarSearch, setGerenciarSearch] = useState("");
   const [newItemName, setNewItemName] = useState("");
@@ -338,8 +345,9 @@ function GerenciarItensModal({ isOpen, onClose, onSaved }: { isOpen: boolean; on
   const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
   const [isSaving, setIsSaving] = useState(false);
 
-  const categories = pricesData.categories as Category[];
-  const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))), [categories]);
+  const categories = mergedCategories;
+  const removeSet = new Set(itemOverrides.filter(o => o.action === "remove").map(o => o.itemId));
+  const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))));
 
   const slugify = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
 
@@ -361,7 +369,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved }: { isOpen: boolean; on
       toast.error("Preencha nome, ID e categoria!");
       return;
     }
-    const exists = allItems.find((i) => i.id === newItemId);
+    const exists = allItems.find((i) => i.id === newItemId) || removeSet.has(newItemId);
     if (exists) {
       toast.error(`Item com ID "${newItemId}" ja existe!`);
       return;
@@ -688,7 +696,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   const [showReportar, setShowReportar] = useState(false);
   const [showGerenciar, setShowGerenciar] = useState(false);
   const [showOnlyMissing, setShowOnlyMissing] = useState(false);
-  const [priceReports, setPriceReports] = useState<Array<{ id?: number; itemId: string; itemName?: string; steelPrice: number; cementPrice: number; nickname: string; data: string }>>([]);
+  const [priceReports, setPriceReports] = useState<Array<{ id?: number; itemId: string; itemName?: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number; nickname: string; data: string }>>([]);
   const [overrides, setOverrides] = useState<Array<{ itemId: string; name?: string; categoryId?: string; img?: string; wikiLink?: string; steel?: string; cement?: string; rarity?: string; demand?: string; notes?: string; action: string }>>([]);
   const { reportPrice } = useBank();
   const isAdmin = isAdminProp;
@@ -713,13 +721,10 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   const categories = useMemo(() => {
     const removeSet = new Set(overrides.filter(o => o.action === "remove").map(o => o.itemId));
     const editMap = new Map(overrides.filter(o => o.action === "edit").map(o => [o.itemId, o]));
-    // Build category move map: itemId -> new categoryId
-    const moveMap = new Map<string, string>();
-    for (const o of overrides) {
-      if (o.action === "edit" && o.categoryId) moveMap.set(o.itemId, o.categoryId);
-    }
-    // Apply edits
-    const editedItems: PriceItem[] = [];
+    const addOverrides = overrides.filter(o => o.action === "add");
+    const baseItemIds = new Set(baseCategories.flatMap(c => c.items.map(i => i.id)));
+    // Apply edits to existing items
+    const editedItems: Array<PriceItem & { _overrideCategoryId?: string }> = [];
     for (const cat of baseCategories) {
       for (const item of cat.items) {
         if (removeSet.has(item.id)) continue;
@@ -742,14 +747,30 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
         }
       }
     }
+    // Add new items from overrides that don't exist in base data
+    for (const o of addOverrides) {
+      if (removeSet.has(o.itemId)) continue;
+      if (baseItemIds.has(o.itemId)) continue;
+      editedItems.push({
+        id: o.itemId,
+        name: o.name || o.itemId,
+        img: o.img || undefined,
+        wikiLink: o.wikiLink || undefined,
+        steel: o.steel || "?:?",
+        cement: o.cement || "?:?",
+        rarity: o.rarity || "common",
+        demand: o.demand || "medium",
+        notes: o.notes || "",
+        _overrideCategoryId: o.categoryId || undefined,
+      });
+    }
     // Rebuild categories
-    const catMap = new Map<string, PriceItem[]>();
+    const catMap = new Map<string, (PriceItem & { _overrideCategoryId?: string })[]>();
     for (const cat of baseCategories) {
       catMap.set(cat.id, []);
     }
     for (const item of editedItems) {
-      const targetCat = (item as PriceItem & { _overrideCategoryId?: string })._overrideCategoryId;
-      const catId = targetCat || baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
+      const catId = item._overrideCategoryId || baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
       if (catId && catMap.has(catId)) {
         catMap.get(catId)!.push(item);
       }
@@ -775,17 +796,26 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   useEffect(() => { fetchReports(); fetchOverrides(); }, [fetchReports, fetchOverrides]);
 
   const reportMap = useMemo(() => {
-    const map: Record<string, { avgSteel: number; avgCement: number; count: number; reports: typeof priceReports }> = {};
+    const map: Record<string, { avgSteelQty: number; avgSteelPrice: number; avgCementQty: number; avgCementPrice: number; count: number; reports: typeof priceReports }> = {};
     for (const r of priceReports) {
-      if (!map[r.itemId]) map[r.itemId] = { avgSteel: 0, avgCement: 0, count: 0, reports: [] };
-      map[r.itemId].avgSteel += r.steelPrice;
-      map[r.itemId].avgCement += r.cementPrice;
+      if (!map[r.itemId]) map[r.itemId] = { avgSteelQty: 0, avgSteelPrice: 0, avgCementQty: 0, avgCementPrice: 0, count: 0, reports: [] };
+      const qty = r.steelQty || 0;
+      const price = r.steelPrice || 1;
+      const cqty = r.cementQty || 0;
+      const cprice = r.cementPrice || 1;
+      map[r.itemId].avgSteelQty += qty;
+      map[r.itemId].avgSteelPrice += price;
+      map[r.itemId].avgCementQty += cqty;
+      map[r.itemId].avgCementPrice += cprice;
       map[r.itemId].count++;
       map[r.itemId].reports.push(r);
     }
     for (const key of Object.keys(map)) {
-      map[key].avgSteel = Math.round(map[key].avgSteel / map[key].count);
-      map[key].avgCement = Math.round(map[key].avgCement / map[key].count);
+      const m = map[key];
+      m.avgSteelQty = Math.round(m.avgSteelQty / m.count);
+      m.avgSteelPrice = Math.round(m.avgSteelPrice / m.count);
+      m.avgCementQty = Math.round(m.avgCementQty / m.count);
+      m.avgCementPrice = Math.round(m.avgCementPrice / m.count);
     }
     return map;
   }, [priceReports]);
@@ -832,8 +862,23 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   const expandAll = () => setExpandedCategories(new Set(filteredCategories.map((c) => c.id)));
   const collapseAll = () => setExpandedCategories(new Set());
 
-  const handleReport = async (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number }) => {
-    await reportPrice(d);
+  const handleReport = async (d: { itemId: string; itemName: string; nickname: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number }) => {
+    try {
+      await fetch("/api/banco", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "reportPrice",
+          itemId: d.itemId,
+          itemName: d.itemName,
+          nickname: d.nickname,
+          steelQty: d.steelQty,
+          steelPrice: d.steelPrice,
+          cementQty: d.cementQty,
+          cementPrice: d.cementPrice,
+        }),
+      });
+    } catch { /* silent */ }
     await fetchReports();
   };
 
@@ -1009,9 +1054,9 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
                           <div className="col-span-2 hidden sm:flex justify-center items-center">
                             {rep ? (
                               <div className="flex items-center gap-1.5 text-[10px] font-mono">
-                                <span className="font-bold text-green-400">{rep.avgSteel}$</span>
+                                <span className="font-bold text-green-400">{rep.avgSteelQty}:{rep.avgSteelPrice}$</span>
                                 <span className="text-muted-foreground">/</span>
-                                <span className="font-bold text-foreground/80">{rep.avgCement}c</span>
+                                <span className="font-bold text-foreground/80">{rep.avgCementQty}:{rep.avgCementPrice}c</span>
                                 <span className="text-muted-foreground">({rep.count})</span>
                               </div>
                             ) : (
@@ -1055,8 +1100,8 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
                     <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
-                    <span className="font-mono font-semibold text-green-400">{r.steelPrice}$</span>
-                    <span className="font-mono font-semibold text-foreground/80">{r.cementPrice}c</span>
+                    <span className="font-mono font-semibold text-green-400">{r.steelQty}:{r.steelPrice}$</span>
+                    <span className="font-mono font-semibold text-foreground/80">{r.cementQty}:{r.cementPrice}c</span>
                     <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
                   </div>
                 </div>
@@ -1068,7 +1113,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
 
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
-      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} />}
+      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} mergedCategories={categories} overrides={overrides} />}
     </div>
   );
 }

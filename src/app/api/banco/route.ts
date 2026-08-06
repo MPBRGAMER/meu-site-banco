@@ -596,17 +596,19 @@ export async function POST(req: NextRequest) {
 
       // === PRICE REPORTS ===
       case "reportPrice": {
-        const { itemId, itemName, nickname, steelPrice, cementPrice } = data;
-        if (!itemId || !itemName || !nickname || steelPrice === undefined || cementPrice === undefined) {
-          return err("Campos obrigatórios: itemId, itemName, nickname, steelPrice, cementPrice");
+        const { itemId, itemName, nickname, steelQty, steelPrice, cementQty, cementPrice } = data;
+        if (!itemId || !itemName || !nickname || steelQty === undefined || cementQty === undefined) {
+          return err("Campos obrigatorios: itemId, itemName, nickname, steelQty, cementQty");
         }
         const report = await db.priceReport.create({
           data: {
             itemId,
             itemName,
             nickname,
-            steelPrice: Number(steelPrice),
-            cementPrice: Number(cementPrice),
+            steelQty: Number(steelQty),
+            steelPrice: Number(steelPrice) || 1,
+            cementQty: Number(cementQty),
+            cementPrice: Number(cementPrice) || 1,
           },
         });
         return json(report);

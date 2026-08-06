@@ -158,13 +158,15 @@ model NumeroLoterica {
 }
 
 model PriceReport {
-  id         String   @id @default(cuid())
-  itemId     String
-  itemName   String
-  nickname   String
-  steelPrice Int
+  id          String   @id @default(cuid())
+  itemId      String
+  itemName    String
+  nickname    String
+  steelQty    Int
+  steelPrice  Int
+  cementQty   Int
   cementPrice Int
-  data       DateTime @default(now())
+  data        DateTime @default(now())
 }
 
 model ItemOverride {
