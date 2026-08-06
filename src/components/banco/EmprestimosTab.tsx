@@ -18,11 +18,11 @@ function getTaxa(tipo: string): number {
 }
 
 function getTipoLabel(tipo: string): string {
-  if (tipo === "especial") return "\u2b50 Especial (0%)";
-  if (tipo === "top10") return "\ud83d\udc51 Top 10 Investidor (5%)";
-  if (tipo === "investidor") return "\ud83d\udc8e Investidor (10%)";
-  if (tipo === "comum") return "\ud83d\udc64 Comum (15%)";
-  return "\u26a0\ufe0f N\u00e3o Contribuinte (20%)";
+  if (tipo === "especial") return "⭐ Especial (0%)";
+  if (tipo === "top10") return "👑 Top 10 Investidor (5%)";
+  if (tipo === "investidor") return "💎 Investidor (10%)";
+  if (tipo === "comum") return "👤 Comum (15%)";
+  return "⚠️ Não Contribuinte (20%)";
 }
 
 function calcularValorCobrar(emp: Emprestimo): number {
@@ -49,7 +49,7 @@ function CalcWidget({ show }: { show: boolean }) {
       <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2"><Calculator className="w-4 h-4" /> Calculadora de Empréstimo</h4>
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-3">
         <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1000" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="font-mono text-sm" /></div>
-        <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={setTipo}><SelectTrigger className="font-mono text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="especial">Especial (0%)</SelectItem><SelectItem value="top10">Top 10 Investidor (5%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="nao_contribuinte">N\u00e3o Contribuinte (20%)</SelectItem></SelectContent></Select></div>
+        <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={setTipo}><SelectTrigger className="font-mono text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="especial">Especial (0%)</SelectItem><SelectItem value="top10">Top 10 Investidor (5%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="nao_contribuinte">Não Contribuinte (20%)</SelectItem></SelectContent></Select></div>
         <div><Label className="text-xs text-muted-foreground">Dias de Atraso</Label><Input type="number" placeholder="0" value={dias} onChange={(e) => setDias(e.target.value)} className="font-mono text-sm" /></div>
         <div><Label className="text-xs text-muted-foreground">Total a Devolver</Label><div className="rounded-md border border-border bg-background px-3 py-2 font-mono text-sm text-yellow-400 font-bold">{total} itens</div></div>
       </div>
@@ -157,7 +157,7 @@ export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
           <div className="rounded-md bg-accent p-3 border border-purple-400/20"><p className="text-xs text-muted-foreground">Top 10 Investidor</p><p className="text-lg font-bold text-purple-400 font-mono">+5%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
           <div className="rounded-md bg-accent p-3 border border-green-400/20"><p className="text-xs text-muted-foreground">Investidor</p><p className="text-lg font-bold text-green-400 font-mono">+10%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
           <div className="rounded-md bg-accent p-3 border border-yellow-400/20"><p className="text-xs text-muted-foreground">Membro Comum</p><p className="text-lg font-bold text-yellow-400 font-mono">+15%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
-          <div className="rounded-md bg-accent p-3 border border-red-400/20"><p className="text-xs text-muted-foreground">N\u00e3o Contribuinte</p><p className="text-lg font-bold text-red-400 font-mono">+20%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
+          <div className="rounded-md bg-accent p-3 border border-red-400/20"><p className="text-xs text-muted-foreground">Não Contribuinte</p><p className="text-lg font-bold text-red-400 font-mono">+20%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
         </div>
       </div>
       <CalcWidget show={showCalc} />
