@@ -2,7 +2,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
-  MessageSquarePlus, BookOpen, Users, BarChart3, AlertCircle, Check,
+  MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
   ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -1055,7 +1055,8 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
                     <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
-                    <span className="font-mono font-semibold text-foreground">{r.steelPrice}$</span>
+                    <span className="font-mono font-semibold text-green-400">{r.steelPrice}$</span>
+                    <span className="font-mono font-semibold text-foreground/80">{r.cementPrice}c</span>
                     <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
                   </div>
                 </div>
