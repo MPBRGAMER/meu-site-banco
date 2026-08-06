@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon } from "lucide-react";
 
 const DURACOES = [
+  { label: "1 minuto (teste)", ms: 60000 },
   { label: "1 hora", ms: 3600000 },
   { label: "6 horas", ms: 6 * 3600000 },
   { label: "12 horas", ms: 12 * 3600000 },
@@ -148,7 +149,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const [valorInicial, setValorInicial] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
   const [tipoOrigem, setTipoOrigem] = useState("comum");
-  const [duracaoIdx, setDuracaoIdx] = useState(3); // default 24h
+  const [duracaoIdx, setDuracaoIdx] = useState(4); // default 24h
 
   const taxaCasa = getTaxaFromTipo(tipoOrigem);
 
@@ -156,10 +157,11 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
     if (!donoItem.trim() || !nomeItem.trim() || !valorInicial || !moedaAceita.trim()) { toast.error("Preencha os campos obrigatórios."); return; }
     const duracao = DURACOES[duracaoIdx];
     const exp = new Date(Date.now() + duracao.ms);
+    const imgUrl = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : null;
     addLeilao({
       donoItem: donoItem.trim(),
       nomeItem: nomeItem.trim(),
-      imagemUrl: imagemUrl.trim() || null,
+      imagemUrl: imgUrl,
       valorInicial: parseFloat(valorInicial),
       moedaAceita: moedaAceita.trim(),
       taxaCasa,
@@ -167,7 +169,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       tipoOrigem,
     });
     toast.success(`Leilão criado! Duração: ${duracao.label}`);
-    setDonoItem(""); setNomeItem(""); setImagemUrl(""); setValorInicial(""); setMoedaAceita(""); setTipoOrigem("comum"); setDuracaoIdx(3);
+    setDonoItem(""); setNomeItem(""); setImagemUrl(""); setValorInicial(""); setMoedaAceita(""); setTipoOrigem("comum"); setDuracaoIdx(4);
     setShowForm(false);
   };
 
@@ -224,10 +226,10 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                   </Select>
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3">
-                  <Label className="text-xs text-muted-foreground">Imagem do Item (URL)</Label>
+                  <Label className="text-xs text-muted-foreground">ID da Imagem (nome do arquivo .png em /items/)</Label>
                   <div className="flex gap-2 items-center">
-                    <Input placeholder="https://... (opcional)" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} className="text-sm flex-1" />
-                    {imagemUrl && <img src={imagemUrl} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                    <Input placeholder="Ex: katana (busca /items/katana.png automaticamente)" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
+                    {imagemUrl && <img src={`/items/${imagemUrl}.png`} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
                   </div>
                 </div>
               </div>
@@ -330,22 +332,37 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       {/* Finalizados */}
       {finalizados.length > 0 && (
         <div>
-          <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Finalizados ({finalizados.length})</h3>
-          <div className="space-y-2">
-            {finalizados.map((l) => (
-              <div key={l.id} className="rounded-md border border-yellow-500/20 bg-yellow-500/5 p-3 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  {l.imagemUrl && <img src={l.imagemUrl} alt={l.nomeItem} className="w-8 h-8 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
-                  <div className="flex items-center gap-3">
-                    <Trophy className="w-5 h-5 text-yellow-400" />
-                    <div>
-                      <p className="text-sm font-bold text-foreground">{l.nomeItem}</p>
-                      <p className="text-xs text-muted-foreground">Vencedor: <span className="text-yellow-400">{l.vencedor || "Ninguém"}</span> | {l.valorVencedor || 0} {l.moedaAceita}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Histórico de Ganhadores ({finalizados.length})</h3>
+          <div className="rounded-md border border-border bg-card overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-accent/50">
+                  <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Item</th>
+                  <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Dono</th>
+                  <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Vencedor</th>
+                  <th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Valor</th>
+                  <th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Moeda</th>
+                  <th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Taxa</th>
+                  <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                {finalizados.map((l) => (
+                  <tr key={l.id} className="border-b border-border/50 hover:bg-accent/30">
+                    <td className="px-3 py-2 flex items-center gap-2">
+                      {l.imagemUrl && <img src={l.imagemUrl} alt={l.nomeItem} className="w-6 h-6 rounded object-contain" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                      <span className="font-semibold text-foreground">{l.nomeItem}</span>
+                    </td>
+                    <td className="px-3 py-2 text-muted-foreground">{l.donoItem}</td>
+                    <td className="px-3 py-2 text-yellow-400 font-semibold">{l.vencedor || "-"}</td>
+                    <td className="px-3 py-2 text-center font-mono text-primary font-bold">{l.valorVencedor || 0}</td>
+                    <td className="px-3 py-2 text-center text-foreground">{l.moedaAceita}</td>
+                    <td className="px-3 py-2 text-center text-yellow-400">{l.taxaCasa}%</td>
+                    <td className="px-3 py-2 text-xs text-muted-foreground">{l.dataCriacao ? new Date(l.dataCriacao).toLocaleDateString("pt-BR") : "-"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
