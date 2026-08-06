@@ -2,7 +2,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
-  MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
+  MessageSquarePlus, BookOpen, Users, BarChart3, AlertCircle, Check,
   ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -261,100 +261,6 @@ function ReportarModal({ isOpen, onClose, items, onReport }: {
   );
 }
 
-function EditarModal({ isOpen, onClose, items }: {
-  isOpen: boolean;
-  onClose: () => void;
-  items: PriceItem[];
-}) {
-  const [editId, setEditId] = useState<string | null>(null);
-  const [editSteel, setEditSteel] = useState("");
-  const [editCement, setEditCement] = useState("");
-  const [editDemand, setEditDemand] = useState("");
-  const [search, setSearch] = useState("");
-
-  const filteredItems = useMemo(() => {
-    if (!search) return items.slice(0, 100);
-    return items.filter((i) => i.name.toLowerCase().includes(search.toLowerCase()) || i.id.includes(search.toLowerCase())).slice(0, 100);
-  }, [search, items]);
-
-  const startEdit = (item: PriceItem) => {
-    setEditId(item.id);
-    setEditSteel(item.steel);
-    setEditCement(item.cement);
-    setEditDemand(item.demand);
-  };
-
-  const handleSave = () => {
-    if (!editId || !editSteel || !editCement) return;
-    toast.success(`Preco de "${items.find(i => i.id === editId)?.name}" atualizado! (salvo localmente)`);
-    setEditId(null);
-  };
-
-  if (!isOpen) return null;
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
-      <div className="rounded-lg border border-primary/20 bg-card p-5 w-full max-w-lg mx-4 max-h-[85vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-1">
-          <h3 className="text-sm font-bold text-primary flex items-center gap-2">
-            <Pencil className="w-4 h-4" /> Editar Precos (Admin)
-          </h3>
-          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
-        </div>
-        <p className="text-[10px] text-muted-foreground mb-3">Altere os precos base dos itens. Use formato {'"'}qty:valor{'"'} (ex: 5:1 = 5 aco por 1 item).</p>
-        <div className="relative mb-3">
-          <Search className="w-3 h-3 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2" />
-          <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar item para editar..." className="pl-8 text-sm h-8" />
-        </div>
-        <div className="flex-1 overflow-y-auto space-y-1 min-h-0">
-          {filteredItems.map((item) => (
-            <div key={item.id} className={`rounded-md border px-3 py-2 transition-colors ${editId === item.id ? "border-primary/40 bg-primary/5" : "border-border/50 hover:bg-muted/20"}`}>
-              {editId === item.id ? (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <ItemIcon itemId={item.id} imgPath={item.img} />
-                    <span className="text-xs font-semibold text-foreground truncate">{item.name}</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div>
-                      <label className="text-[9px] text-muted-foreground">Aco ($)</label>
-                      <Input value={editSteel} onChange={(e) => setEditSteel(e.target.value)} className="text-xs font-mono h-7 mt-0.5" />
-                    </div>
-                    <div>
-                      <label className="text-[9px] text-muted-foreground">Cimento</label>
-                      <Input value={editCement} onChange={(e) => setEditCement(e.target.value)} className="text-xs font-mono h-7 mt-0.5" />
-                    </div>
-                    <div>
-                      <label className="text-[9px] text-muted-foreground">Demanda</label>
-                      <select value={editDemand} onChange={(e) => setEditDemand(e.target.value)} className="w-full text-xs bg-card border border-border rounded-md h-7 px-1.5 mt-0.5 text-foreground">
-                        <option value="high">Alta</option>
-                        <option value="medium">Media</option>
-                        <option value="low">Baixa</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    <button onClick={() => setEditId(null)} className="flex-1 text-[10px] py-1 rounded border border-border hover:bg-muted/30 text-muted-foreground">Cancelar</button>
-                    <button onClick={handleSave} className="flex-1 text-[10px] py-1 rounded bg-primary text-primary-foreground font-semibold">Salvar</button>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <ItemIcon itemId={item.id} imgPath={item.img} />
-                    <span className="text-xs text-foreground truncate">{item.name}</span>
-                    {isPriceUnknown(item.steel) && <span className="text-[9px] text-orange-400 shrink-0">sem preco</span>}
-                  </div>
-                  <button onClick={() => startEdit(item)} className="text-[10px] text-primary hover:text-primary/80 shrink-0 ml-2">Editar</button>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
   return (
@@ -369,7 +275,7 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
         <div className="space-y-4 text-xs text-foreground leading-relaxed">
           <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
             <h4 className="font-bold text-primary mb-1">Como funcionam os precos?</h4>
-            <p className="text-muted-foreground">Os precos estao no formato <span className="font-mono text-foreground">quantidade:valor</span>. Por exemplo, <span className="font-mono text-foreground">5:1</span> significa que 5 unidades de Aco ($) valem 1 unidade do item. Ou seja, 1 item custa 5 Aco.</p>
+            <p className="text-muted-foreground">Os precos estao no formato <span className="font-mono text-foreground">quantidade:valor</span>. Por exemplo, <span className="font-mono text-foreground">5:1</span> significa que voce da 5 unidades do item e recebe 1 de Aco ($). Ou seja, o primeiro numero e a quantidade do item e o segundo e o valor em moeda.</p>
           </div>
           <div className="rounded-md border border-border p-3">
             <h4 className="font-bold text-foreground mb-1">Moedas do Jogo</h4>
@@ -394,7 +300,7 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
           </div>
           <div className="rounded-md border border-border p-3">
             <h4 className="font-bold text-foreground mb-1">Tendencia</h4>
-            <p className="text-muted-foreground">A tendencia mostra a variacao de preco dos ultimos 7 dias baseada nos reports da comunidade. Setas verdes indicam alta, vermelhas indicam queda. Itens sem tendencia ainda nao receberam reports suficientes.</p>
+            <p className="text-muted-foreground">A coluna Tendencia mostra a media dos precos reportados pela comunidade para cada item. Quando ha reports, aparece o valor medio em Aco ($) e Cimento seguido do numero de reports entre parenteses. Quando nao ha reports, aparece o grafico sparkline com a variacao dos ultimos 7 dias.</p>
           </div>
           <div className="rounded-md border border-border p-3">
             <h4 className="font-bold text-foreground mb-1">Reportar Precos</h4>
@@ -414,7 +320,7 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   );
 }
 
-function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+function GerenciarItensModal({ isOpen, onClose, onSaved }: { isOpen: boolean; onClose: () => void; onSaved?: () => void }) {
   const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed">("add");
   const [gerenciarSearch, setGerenciarSearch] = useState("");
   const [newItemName, setNewItemName] = useState("");
@@ -448,6 +354,8 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     return allItems.filter((i) => i.name.toLowerCase().includes(gerenciarSearch.toLowerCase()) || i.id.includes(gerenciarSearch.toLowerCase())).slice(0, 100);
   }, [gerenciarSearch, allItems]);
 
+  const getAdminPwd = () => sessionStorage.getItem("adminPwd") || "";
+
   const handleAddItem = async () => {
     if (!newItemName.trim() || !newItemId.trim() || !newItemCategory) {
       toast.error("Preencha nome, ID e categoria!");
@@ -462,7 +370,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     try {
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
         body: JSON.stringify({
           action: "add",
           item: {
@@ -490,6 +398,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
         setNewItemDemand("medium");
         setNewItemRarity("common");
         setNewItemNotes("");
+        onSaved?.();
       } else {
         const data = await res.json();
         toast.error(data.error || "Erro ao adicionar item.");
@@ -512,7 +421,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     try {
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
         body: JSON.stringify({
           action: "edit",
           item: { itemId: editingId, ...editForm },
@@ -521,6 +430,7 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       if (res.ok) {
         toast.success(`Item "${editForm.name}" atualizado!`);
         setEditingId(null);
+        onSaved?.();
       } else {
         toast.error("Erro ao salvar.");
       }
@@ -549,12 +459,13 @@ function GerenciarItensModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       for (const item of removedItems) {
         await fetch("/api/items", {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-admin-password": process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "" },
+          headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
           body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.category } }),
         });
       }
       toast.success(`${removedItems.length} itens removidos!`);
       setRemovedItems([]);
+      onSaved?.();
     } catch {
       toast.error("Erro ao remover.");
     } finally {
@@ -775,15 +686,79 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [showGuia, setShowGuia] = useState(false);
   const [showReportar, setShowReportar] = useState(false);
-  const [showEditar, setShowEditar] = useState(false);
   const [showGerenciar, setShowGerenciar] = useState(false);
   const [showOnlyMissing, setShowOnlyMissing] = useState(false);
   const [priceReports, setPriceReports] = useState<Array<{ id?: number; itemId: string; itemName?: string; steelPrice: number; cementPrice: number; nickname: string; data: string }>>([]);
+  const [overrides, setOverrides] = useState<Array<{ itemId: string; name?: string; categoryId?: string; img?: string; wikiLink?: string; steel?: string; cement?: string; rarity?: string; demand?: string; notes?: string; action: string }>>([]);
   const { reportPrice } = useBank();
   const isAdmin = isAdminProp;
 
-  const categories = pricesData.categories as Category[];
+  const baseCategories = pricesData.categories as Category[];
   const metadata = pricesData.metadata;
+
+  // Fetch item overrides from DB
+  const fetchOverrides = useCallback(async () => {
+    try {
+      const pwd = sessionStorage.getItem("adminPwd");
+      if (!pwd) return;
+      const res = await fetch("/api/items", { headers: { "x-admin-password": pwd } });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data)) setOverrides(data);
+      }
+    } catch { /* silent */ }
+  }, []);
+
+  // Merge overrides with static data
+  const categories = useMemo(() => {
+    const removeSet = new Set(overrides.filter(o => o.action === "remove").map(o => o.itemId));
+    const editMap = new Map(overrides.filter(o => o.action === "edit").map(o => [o.itemId, o]));
+    // Build category move map: itemId -> new categoryId
+    const moveMap = new Map<string, string>();
+    for (const o of overrides) {
+      if (o.action === "edit" && o.categoryId) moveMap.set(o.itemId, o.categoryId);
+    }
+    // Apply edits
+    const editedItems: PriceItem[] = [];
+    for (const cat of baseCategories) {
+      for (const item of cat.items) {
+        if (removeSet.has(item.id)) continue;
+        const override = editMap.get(item.id);
+        if (override) {
+          editedItems.push({
+            ...item,
+            ...(override.name ? { name: override.name } : {}),
+            ...(override.img ? { img: override.img } : {}),
+            ...(override.wikiLink !== undefined ? { wikiLink: override.wikiLink || undefined } : {}),
+            ...(override.steel ? { steel: override.steel } : {}),
+            ...(override.cement ? { cement: override.cement } : {}),
+            ...(override.rarity ? { rarity: override.rarity } : {}),
+            ...(override.demand ? { demand: override.demand } : {}),
+            ...(override.notes !== undefined ? { notes: override.notes || "" } : {}),
+            _overrideCategoryId: override.categoryId || undefined,
+          });
+        } else {
+          editedItems.push({ ...item });
+        }
+      }
+    }
+    // Rebuild categories
+    const catMap = new Map<string, PriceItem[]>();
+    for (const cat of baseCategories) {
+      catMap.set(cat.id, []);
+    }
+    for (const item of editedItems) {
+      const targetCat = (item as PriceItem & { _overrideCategoryId?: string })._overrideCategoryId;
+      const catId = targetCat || baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
+      if (catId && catMap.has(catId)) {
+        catMap.get(catId)!.push(item);
+      }
+    }
+    return baseCategories.map(cat => ({
+      ...cat,
+      items: catMap.get(cat.id) || [],
+    }));
+  }, [baseCategories, overrides]);
 
   const allItems = useMemo(() => {
     return categories.flatMap((c) => c.items);
@@ -797,18 +772,20 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
     } catch { /* silent */ }
   }, []);
 
-  useEffect(() => { fetchReports(); }, [fetchReports]);
+  useEffect(() => { fetchReports(); fetchOverrides(); }, [fetchReports, fetchOverrides]);
 
   const reportMap = useMemo(() => {
-    const map: Record<string, { avg: number; count: number; reports: typeof priceReports }> = {};
+    const map: Record<string, { avgSteel: number; avgCement: number; count: number; reports: typeof priceReports }> = {};
     for (const r of priceReports) {
-      if (!map[r.itemId]) map[r.itemId] = { avg: 0, count: 0, reports: [] };
-      map[r.itemId].avg += r.steelPrice;
+      if (!map[r.itemId]) map[r.itemId] = { avgSteel: 0, avgCement: 0, count: 0, reports: [] };
+      map[r.itemId].avgSteel += r.steelPrice;
+      map[r.itemId].avgCement += r.cementPrice;
       map[r.itemId].count++;
       map[r.itemId].reports.push(r);
     }
     for (const key of Object.keys(map)) {
-      map[key].avg = Math.round(map[key].avg / map[key].count);
+      map[key].avgSteel = Math.round(map[key].avgSteel / map[key].count);
+      map[key].avgCement = Math.round(map[key].avgCement / map[key].count);
     }
     return map;
   }, [priceReports]);
@@ -884,11 +861,6 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
           <button onClick={() => setShowReportar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-green-500/30 text-green-400 bg-green-500/5 hover:bg-green-500/15 shadow-sm shadow-green-500/10 transition-all">
             <MessageSquarePlus className="w-3.5 h-3.5" /> Reportar
           </button>
-          {isAdmin && (
-            <button onClick={() => setShowEditar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-yellow-500/30 text-yellow-400 bg-yellow-500/5 hover:bg-yellow-500/15 shadow-sm shadow-yellow-500/10 transition-all">
-              <Pencil className="w-3.5 h-3.5" /> Editar
-            </button>
-          )}
           {isAdmin && (
             <button onClick={() => setShowGerenciar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-purple-500/30 text-purple-400 bg-purple-500/5 hover:bg-purple-500/15 shadow-sm shadow-purple-500/10 transition-all">
               <Settings2 className="w-3.5 h-3.5" /> Gerenciar Itens
@@ -1036,11 +1008,11 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
                           </div>
                           <div className="col-span-2 hidden sm:flex justify-center items-center">
                             {rep ? (
-                              <div className="flex items-center gap-1">
-                                <span className={`text-[10px] font-bold ${rep.avg > 0 ? "text-primary" : "text-muted-foreground"}`}>
-                                  {rep.avg > 0 ? rep.avg + "$" : "-"}
-                                </span>
-                                <span className="text-[9px] text-muted-foreground">({rep.count})</span>
+                              <div className="flex items-center gap-1.5 text-[10px] font-mono">
+                                <span className="font-bold text-green-400">{rep.avgSteel}$</span>
+                                <span className="text-muted-foreground">/</span>
+                                <span className="font-bold text-foreground/80">{rep.avgCement}c</span>
+                                <span className="text-muted-foreground">({rep.count})</span>
                               </div>
                             ) : (
                               <Sparkline itemId={item.id} />
@@ -1094,9 +1066,8 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       </div>
 
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
-      <EditarModal isOpen={showEditar} onClose={() => setShowEditar(false)} items={allItems} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
-      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} />}
+      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} />}
     </div>
   );
 }

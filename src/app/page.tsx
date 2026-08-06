@@ -68,6 +68,7 @@ export default function HomePage() {
       if (res.ok) {
         setIsAdmin(true);
         setShowAdminLogin(false);
+        sessionStorage.setItem("adminPwd", adminPwd);
         setAdminPwd("");
         toast.success("Modo Admin ativado!");
       } else {

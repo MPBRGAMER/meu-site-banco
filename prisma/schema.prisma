@@ -166,3 +166,19 @@ model PriceReport {
   cementPrice Int
   data       DateTime @default(now())
 }
+
+model ItemOverride {
+  id        String  @id @default(cuid())
+  itemId    String  @unique
+  name      String?
+  categoryId String?
+  img       String?
+  wikiLink  String?
+  steel     String?
+  cement    String?
+  rarity    String?
+  demand    String?
+  notes     String?
+  action    String  // "edit" or "remove"
+  data      DateTime @default(now())
+}
