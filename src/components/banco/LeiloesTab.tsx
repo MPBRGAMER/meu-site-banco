@@ -148,6 +148,8 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const [imagemUrl, setImagemUrl] = useState("");
   const [valorInicial, setValorInicial] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
+
+  const imgPreview = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : null;
   const [tipoOrigem, setTipoOrigem] = useState("comum");
   const [duracaoIdx, setDuracaoIdx] = useState(4); // default 24h
 
@@ -157,7 +159,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
     if (!donoItem.trim() || !nomeItem.trim() || !valorInicial || !moedaAceita.trim()) { toast.error("Preencha os campos obrigatórios."); return; }
     const duracao = DURACOES[duracaoIdx];
     const exp = new Date(Date.now() + duracao.ms);
-    const imgUrl = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : null;
+    const imgUrl = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : `/items/${nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`;
     addLeilao({
       donoItem: donoItem.trim(),
       nomeItem: nomeItem.trim(),
@@ -226,10 +228,10 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                   </Select>
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3">
-                  <Label className="text-xs text-muted-foreground">ID da Imagem (nome do arquivo .png em /items/)</Label>
+                  <Label className="text-xs text-muted-foreground">Imagem (opcional — preenche sozinho pelo nome do item)</Label>
                   <div className="flex gap-2 items-center">
-                    <Input placeholder="Ex: katana (busca /items/katana.png automaticamente)" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
-                    {imagemUrl && <img src={`/items/${imagemUrl}.png`} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                    <Input placeholder="Deixe vazio para usar o nome do item" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
+                    {imgPreview && <img src={imgPreview} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" style={{ imageRendering: "pixelated" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
                   </div>
                 </div>
               </div>

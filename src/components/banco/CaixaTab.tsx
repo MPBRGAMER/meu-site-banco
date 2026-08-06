@@ -3,7 +3,7 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw } from "lucide-react";
+import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel } from "lucide-react";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
 
@@ -17,6 +17,8 @@ export default function CaixaTab() {
   const [itemPagManual, setItemPagManual] = useState("");
   const [qtdPagManual, setQtdPagManual] = useState("");
   const [tipoManual, setTipoManual] = useState<"entrada" | "saida">("entrada");
+  const [leilaoItem, setLeilaoItem] = useState("");
+  const [leilaoQtd, setLeilaoQtd] = useState("");
 
   const handleManual = () => {
     if (!descManual || !itemManual || !qtdManual) { toast.error("Preencha os obrigatórios."); return; }
@@ -28,6 +30,13 @@ export default function CaixaTab() {
     setDescManual(""); setItemManual(""); setQtdManual(""); setItemPagManual(""); setQtdPagManual("");
   };
 
+  const handleLeilaoSaida = () => {
+    if (!leilaoItem.trim() || !leilaoQtd) { toast.error("Preencha o item e a quantidade."); return; }
+    addCaixaManual({ tipo: "saida", descricao: `Leilão do Banco: ${leilaoItem.trim()}`, item: leilaoItem.trim(), quantidade: parseInt(leilaoQtd), valor: parseInt(leilaoQtd), origem: "leilao_banco" });
+    toast.success(`Saída de leilão registrada: ${leilaoQtd}x ${leilaoItem.trim()}`);
+    setLeilaoItem(""); setLeilaoQtd("");
+  };
+
   const caixaFiltrado = caixa
     .filter((c) => tipoFiltro === "todos" || c.tipo === tipoFiltro)
     .filter((c) => !filtro || c.descricao.toLowerCase().includes(filtro.toLowerCase()) || c.item.toLowerCase().includes(filtro.toLowerCase()) || c.origem.toLowerCase().includes(filtro.toLowerCase()));
@@ -37,6 +46,15 @@ export default function CaixaTab() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold text-primary">💰 Caixa do Banco</h2>
+      <div className="rounded-md border border-red-500/20 bg-red-500/5 p-4">
+        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Gavel className="w-4 h-4 text-red-400" /> Saída por Leilão do Banco (100%)</h3>
+        <p className="text-xs text-muted-foreground mb-3">Registre itens que saíram do estoque para leilões do banco.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={leilaoItem} onChange={(e) => setLeilaoItem(e.target.value)} className="text-sm" /></div>
+          <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1" value={leilaoQtd} onChange={(e) => setLeilaoQtd(e.target.value)} className="text-sm font-mono" /></div>
+          <div className="flex items-end"><Button onClick={handleLeilaoSaida} className="bg-red-600 hover:bg-red-700 text-white w-full"><Gavel className="w-4 h-4 mr-1" /> Registrar Saída</Button></div>
+        </div>
+      </div>
       <div className="rounded-md border border-border bg-card p-4">
         <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Plus className="w-4 h-4 text-primary" /> Registro Manual</h3>
         <div className={`mb-3 p-2 rounded-md text-xs border ${tipoManual === "entrada" ? "bg-green-500/10 border-green-400/20 text-green-300" : "bg-red-500/10 border-red-400/20 text-red-300"}`}>
