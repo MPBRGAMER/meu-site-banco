@@ -125,7 +125,7 @@ export default function HomePage() {
       case "dashboard": return <DashboardTab />;
       case "emprestimos": return <EmprestimosTab isAdmin={isAdmin} />;
       case "investidores": return <InvestidoresTab />;
-      case "trocas": return <TrocasTab />;
+      case "trocas": return <TrocasTab isAdmin={isAdmin} />;
       case "config-trocas": return <ConfigTrocasTab />;
       case "compras-vendas": return <ComprasVendasTab />;
       case "caixa": return <CaixaTab />;

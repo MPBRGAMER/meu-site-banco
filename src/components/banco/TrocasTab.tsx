@@ -5,13 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { ArrowLeftRight, Calculator, Plus, Clock } from "lucide-react";
+import { ArrowLeftRight, Calculator, Plus, Clock, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
-export default function TrocasTab() {
+interface TrocasTabProps {
+  isAdmin: boolean;
+}
+
+export default function TrocasTab({ isAdmin }: TrocasTabProps) {
   const { tabelasTroca, trocas, addTroca, isLoading } = useBank();
   const [player, setPlayer] = useState("");
-  const [tipoMembro, setTipoMembro] = useState<"comum" | "investidor">("comum");
+  const [tipoMembro, setTipoMembro] = useState<string>("comum");
   const [tabelaId, setTabelaId] = useState("");
   const [qtdBase, setQtdBase] = useState("");
   const tabela = tabelasTroca.find((t) => t.id === tabelaId);
@@ -21,7 +25,7 @@ export default function TrocasTab() {
     const q = parseFloat(qtdBase);
     const grupos = q / tabela.quantidadeBase;
     const vb = grupos * tabela.quantidadeResultado;
-    const taxa = tipoMembro === "comum" ? 0.15 : 0.10;
+    const taxa = tipoMembro === "especial" ? 0 : tipoMembro === "top10" ? 0.05 : tipoMembro === "investidor" ? 0.10 : tipoMembro === "comum" ? 0.15 : 0.20;
     const vd = Math.ceil(vb * taxa);
     return { taxa, valorBruto: vb, valorDesconto: vd, valorFinal: Math.floor(vb) - vd, lucroBanco: vd };
   }, [tabela, qtdBase, tipoMembro]);
@@ -37,14 +41,17 @@ export default function TrocasTab() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-primary flex items-center gap-2"><ArrowLeftRight className="w-5 h-5" /> Registro de Trocas</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-primary flex items-center gap-2"><ArrowLeftRight className="w-5 h-5" /> Registro de Trocas</h2>
+        {!isAdmin && (<span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>)}
+      </div>
+      {isAdmin && (<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="rounded-md border border-border bg-card p-4 h-full">
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Plus className="w-4 h-4 text-primary" /> Nova Troca</h3>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div><Label className="text-xs text-muted-foreground">Player</Label><Input placeholder="Nome" value={player} onChange={(e) => setPlayer(e.target.value)} className="text-sm mt-1" /></div>
-              <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipoMembro} onValueChange={(v) => setTipoMembro(v as "comum" | "investidor")}><SelectTrigger className="mt-1"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem></SelectContent></Select></div>
+              <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipoMembro} onValueChange={setTipoMembro}><SelectTrigger className="mt-1"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="especial">Especial (0%)</SelectItem><SelectItem value="top10">Top 10 (5%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="nao_contribuinte">Não Contribuinte (20%)</SelectItem></SelectContent></Select></div>
             </div>
             <div><Label className="text-xs text-muted-foreground">Item que ele entrega</Label><Select value={tabelaId} onValueChange={setTabelaId}><SelectTrigger className="mt-1"><SelectValue placeholder="Selecione" /></SelectTrigger><SelectContent>{tabelasTroca.length === 0 ? <SelectItem value="empty" disabled>Nenhuma tabela</SelectItem> : tabelasTroca.map((t) => (<SelectItem key={t.id} value={t.id}>{t.quantidadeBase}x {t.itemBase} ➜ {t.quantidadeResultado}x {t.itemResultado}</SelectItem>))}</SelectContent></Select></div>
             <div><Label className="text-xs text-muted-foreground">Quantidade (em base)</Label><Input type="number" placeholder="1000" value={qtdBase} onChange={(e) => setQtdBase(e.target.value)} className="text-sm font-mono mt-1" /></div>
@@ -65,7 +72,7 @@ export default function TrocasTab() {
             </div>
           )}
         </div>
-      </div>
+      </div>)}
       {trocas.length > 0 && (
         <div><h3 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2"><Clock className="w-4 h-4 text-muted-foreground" /> Histórico</h3>
           <div className="rounded-md border border-border bg-card overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-border bg-accent/50"><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Data</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Player</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Entregou</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Recebeu</th><th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Taxa</th><th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Lucro</th></tr></thead><tbody>{trocas.map((t) => (<tr key={t.id} className="border-b border-border/50 hover:bg-accent/30"><td className="px-3 py-2 text-xs text-muted-foreground">{new Date(t.data).toLocaleDateString("pt-BR")}</td><td className="px-3 py-2 text-foreground">{t.player}</td><td className="px-3 py-2 text-red-400 font-mono">{t.quantidadeEnviada}x {t.itemEnviado}</td><td className="px-3 py-2 text-green-400 font-mono">{t.quantidadeRecebida}x {t.itemRecebido}</td><td className="px-3 py-2 text-center text-muted-foreground">{t.taxaAplicada}%</td><td className="px-3 py-2 text-center font-mono text-primary">{t.lucroBanco}</td></tr>))}</tbody></table></div>
