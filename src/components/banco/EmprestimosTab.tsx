@@ -6,11 +6,23 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins } from "lucide-react";
+import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
+function getTaxa(tipo: string): number {
+  if (tipo === "especial") return 0;
+  if (tipo === "investidor") return 0.05;
+  return 0.20;
+}
+
+function getTaxaLabel(tipo: string): string {
+  if (tipo === "especial") return "0%";
+  if (tipo === "investidor") return "5%";
+  return "20%";
+}
+
 function calcularValorCobrar(emp: Emprestimo): number {
-  const taxa = emp.tipoMembro === "investidor" ? 0.10 : 0.15;
+  const taxa = getTaxa(emp.tipoMembro);
   const now = new Date();
   const venc = new Date(emp.dataEmprestimo);
   venc.setDate(venc.getDate() + 1);
@@ -20,10 +32,10 @@ function calcularValorCobrar(emp: Emprestimo): number {
 
 function CalcWidget({ show }: { show: boolean }) {
   const [quantidade, setQuantidade] = useState("");
-  const [tipo, setTipo] = useState<"comum" | "investidor">("comum");
+  const [tipo, setTipo] = useState<string>("comum");
   const [dias, setDias] = useState("0");
   const qtd = parseFloat(quantidade) || 0;
-  const taxa = tipo === "comum" ? 0.15 : 0.10;
+  const taxa = getTaxa(tipo);
   const d = parseInt(dias) || 0;
   const acrescimo = Math.ceil(qtd * (taxa + d * 0.01));
   const total = qtd + acrescimo;
@@ -33,7 +45,7 @@ function CalcWidget({ show }: { show: boolean }) {
       <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2"><Calculator className="w-4 h-4" /> Calculadora de Empréstimo</h4>
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-3">
         <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1000" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="font-mono text-sm" /></div>
-        <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={(v) => setTipo(v as "comum" | "investidor")}><SelectTrigger className="font-mono text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem></SelectContent></Select></div>
+        <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={setTipo}><SelectTrigger className="font-mono text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="comum">Comum (20%)</SelectItem><SelectItem value="investidor">Investidor (5%)</SelectItem><SelectItem value="especial">Especial (0%)</SelectItem></SelectContent></Select></div>
         <div><Label className="text-xs text-muted-foreground">Dias de Atraso</Label><Input type="number" placeholder="0" value={dias} onChange={(e) => setDias(e.target.value)} className="font-mono text-sm" /></div>
         <div><Label className="text-xs text-muted-foreground">Total a Devolver</Label><div className="rounded-md border border-border bg-background px-3 py-2 font-mono text-sm text-yellow-400 font-bold">{total} itens</div></div>
       </div>
@@ -44,7 +56,7 @@ function CalcWidget({ show }: { show: boolean }) {
   );
 }
 
-function EmprestimoCard({ emp }: { emp: Emprestimo }) {
+function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean }) {
   const { pagarEmprestimo } = useBank();
   const [showPayment, setShowPayment] = useState(false);
   const [itemPagamento, setItemPagamento] = useState("");
@@ -69,9 +81,9 @@ function EmprestimoCard({ emp }: { emp: Emprestimo }) {
           <span className="text-sm font-bold text-foreground">{emp.player}</span>
           <span className={`text-xs px-2 py-0.5 rounded-full border ${emp.status === "pendente" ? "text-yellow-400 border-yellow-400/30 bg-yellow-400/10" : "text-green-400 border-green-400/30 bg-green-400/10"}`}>{emp.status === "pendente" ? "Pendente" : "Pago"}</span>
           {estaAtrasado && <span className="text-xs px-2 py-0.5 rounded-full border border-red-400/30 bg-red-400/10 text-red-400">Atrasado</span>}
-          <span className="text-xs text-muted-foreground">{emp.tipoMembro === "investidor" ? "💎 Investidor" : "👤 Comum"}</span>
+          <span className="text-xs text-muted-foreground">{emp.tipoMembro === "investidor" ? "💎 Investidor (5%)" : emp.tipoMembro === "especial" ? "⭐ Especial (0%)" : "👤 Comum (20%)"}</span>
         </div>
-        {emp.status === "pendente" && (
+        {emp.status === "pendente" && isAdmin && (
           <Button size="sm" variant="outline" onClick={() => setShowPayment(!showPayment)}><CheckCircle className="w-3 h-3 mr-1" /> Pagar</Button>
         )}
       </div>
@@ -98,12 +110,16 @@ function EmprestimoCard({ emp }: { emp: Emprestimo }) {
   );
 }
 
-export default function EmprestimosTab() {
+interface EmprestimosTabProps {
+  isAdmin: boolean;
+}
+
+export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
   const { emprestimos, addEmprestimo, isLoading } = useBank();
   const [player, setPlayer] = useState("");
   const [item, setItem] = useState("");
   const [quantidade, setQuantidade] = useState("");
-  const [tipo, setTipo] = useState<"comum" | "investidor">("comum");
+  const [tipo, setTipo] = useState<string>("comum");
   const [showCalc, setShowCalc] = useState(false);
 
   const handleAdd = () => {
@@ -121,29 +137,39 @@ export default function EmprestimosTab() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary flex items-center gap-2"><HandCoins className="w-5 h-5" /> Empréstimos</h2>
-        <Button variant="outline" size="sm" onClick={() => setShowCalc(!showCalc)} className="border-primary/30 text-primary hover:bg-primary/10"><Calculator className="w-4 h-4 mr-1" /> Calculadora</Button>
+        <div className="flex items-center gap-2">
+          {isAdmin && (
+            <Button variant="outline" size="sm" onClick={() => setShowCalc(!showCalc)} className="border-primary/30 text-primary hover:bg-primary/10"><Calculator className="w-4 h-4 mr-1" /> Calculadora</Button>
+          )}
+          {!isAdmin && (
+            <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>
+          )}
+        </div>
       </div>
       <div className="rounded-md border border-primary/20 bg-card p-4">
         <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Info className="w-4 h-4 text-primary" /> Regras do Banco</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="rounded-md bg-accent p-3 border border-yellow-400/20"><p className="text-xs text-muted-foreground">Membro Comum</p><p className="text-lg font-bold text-yellow-400 font-mono">+15%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
-          <div className="rounded-md bg-accent p-3 border border-green-400/20"><p className="text-xs text-muted-foreground">Membro Investidor</p><p className="text-lg font-bold text-green-400 font-mono">+10%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <div className="rounded-md bg-accent p-3 border border-yellow-400/20"><p className="text-xs text-muted-foreground">Membro Comum</p><p className="text-lg font-bold text-yellow-400 font-mono">+20%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
+          <div className="rounded-md bg-accent p-3 border border-green-400/20"><p className="text-xs text-muted-foreground">Membro Investidor</p><p className="text-lg font-bold text-green-400 font-mono">+5%</p><p className="text-xs text-muted-foreground">de acréscimo</p></div>
+          <div className="rounded-md bg-accent p-3 border border-blue-400/20"><p className="text-xs text-muted-foreground">Membro Especial</p><p className="text-lg font-bold text-blue-400 font-mono">+0%</p><p className="text-xs text-muted-foreground">sem acréscimo</p></div>
           <div className="rounded-md bg-accent p-3 border border-red-400/20"><p className="text-xs text-muted-foreground">Juros por Atraso</p><p className="text-lg font-bold text-red-400 font-mono">+1%/dia</p><p className="text-xs text-muted-foreground">após 24h</p></div>
         </div>
       </div>
       <CalcWidget show={showCalc} />
-      <div className="rounded-md border border-border bg-card p-4">
-        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Plus className="w-4 h-4 text-primary" /> Novo Empréstimo</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-          <div><Label className="text-xs text-muted-foreground">Player</Label><Input placeholder="Nome" value={player} onChange={(e) => setPlayer(e.target.value)} className="text-sm" /></div>
-          <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Item" value={item} onChange={(e) => setItem(e.target.value)} className="text-sm" /></div>
-          <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1000" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="text-sm font-mono" /></div>
-          <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={(v) => setTipo(v as "comum" | "investidor")}><SelectTrigger className="text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="comum">Comum (15%)</SelectItem><SelectItem value="investidor">Investidor (10%)</SelectItem></SelectContent></Select></div>
-          <div className="flex items-end"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">Registrar</Button></div>
+      {isAdmin && (
+        <div className="rounded-md border border-border bg-card p-4">
+          <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Plus className="w-4 h-4 text-primary" /> Novo Empréstimo</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            <div><Label className="text-xs text-muted-foreground">Player</Label><Input placeholder="Nome" value={player} onChange={(e) => setPlayer(e.target.value)} className="text-sm" /></div>
+            <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Item" value={item} onChange={(e) => setItem(e.target.value)} className="text-sm" /></div>
+            <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1000" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="text-sm font-mono" /></div>
+            <div><Label className="text-xs text-muted-foreground">Tipo</Label><Select value={tipo} onValueChange={setTipo}><SelectTrigger className="text-sm"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="comum">Comum (20%)</SelectItem><SelectItem value="investidor">Investidor (5%)</SelectItem><SelectItem value="especial">Especial (0%)</SelectItem></SelectContent></Select></div>
+            <div className="flex items-end"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">Registrar</Button></div>
+          </div>
         </div>
-      </div>
-      <div><h3 className="text-sm font-bold text-foreground mb-2">Pendentes ({pendentes.length})</h3>{pendentes.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum empréstimo pendente.</div> : pendentes.map((emp) => <EmprestimoCard key={emp.id} emp={emp} />)}</div>
-      {pagos.length > 0 && <div><h3 className="text-sm font-bold text-foreground mb-2">Pagos ({pagos.length})</h3>{pagos.map((emp) => <EmprestimoCard key={emp.id} emp={emp} />)}</div>}
+      )}
+      <div><h3 className="text-sm font-bold text-foreground mb-2">Pendentes ({pendentes.length})</h3>{pendentes.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum empréstimo pendente.</div> : pendentes.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>
+      {pagos.length > 0 && <div><h3 className="text-sm font-bold text-foreground mb-2">Pagos ({pagos.length})</h3>{pagos.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>}
     </div>
   );
 }
