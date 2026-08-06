@@ -411,7 +411,11 @@ export async function POST(req: NextRequest) {
         }
         const leilao = await db.leilao.findUnique({ where: { id: leilaoId } });
         if (!leilao) return err("Leilão não encontrado", 404);
-        if (leilao.status !== "ativo") return err("Leilão não está mais ativo");
+        if (leilao.status === "finalizado") return err("Leilão já finalizado");
+        // Bloqueia lances em espera quando o tempo +1min já expirou
+        if (leilao.status === "espera" && new Date() >= new Date(leilao.dataExpiracao)) {
+          return err("O tempo de disputa acabou. Aguardando finalização.");
+        }
 
         const lances = await db.lance.findMany({
           where: { leilaoId },
@@ -427,10 +431,23 @@ export async function POST(req: NextRequest) {
         const lance = await db.lance.create({
           data: { leilaoId, jogador, valor: Number(valor) },
         });
-        await db.leilao.update({
-          where: { id: leilaoId },
-          data: { dataUltimoLance: new Date() },
-        });
+
+        // Se o tempo original já passou, qualquer lance adiciona +1min e vai para espera
+        const now = new Date();
+        const originalExpired = now >= new Date(leilao.dataExpiracao);
+        if (originalExpired || leilao.status === "espera") {
+          const newDeadline = new Date(now.getTime() + 60000);
+          await db.leilao.update({
+            where: { id: leilaoId },
+            data: { dataUltimoLance: new Date(), dataExpiracao: newDeadline, status: "espera" },
+          });
+        } else {
+          await db.leilao.update({
+            where: { id: leilaoId },
+            data: { dataUltimoLance: new Date() },
+          });
+        }
+
         return json(lance);
       }
 

@@ -4,25 +4,99 @@ import { useBank, type Leilao, type Lance } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle } from "lucide-react";
+import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon } from "lucide-react";
 
-function LeilaoTimer({ leilao, lancesLeilao, onTimerEnd }: { leilao: Leilao; lancesLeilao: Lance[]; onTimerEnd?: () => void }) {
+const DURACOES = [
+  { label: "1 hora", ms: 3600000 },
+  { label: "6 horas", ms: 6 * 3600000 },
+  { label: "12 horas", ms: 12 * 3600000 },
+  { label: "24 horas", ms: 24 * 3600000 },
+  { label: "48 horas", ms: 48 * 3600000 },
+];
+
+const TIPOS_ORIGEM = [
+  { value: "especial", label: "Especial (0%)" },
+  { value: "top10", label: "Top 10 (5%)" },
+  { value: "investidor", label: "Investidor (10%)" },
+  { value: "comum", label: "Comum (15%)" },
+  { value: "nao_contribuinte", label: "Não Contribuinte (20%)" },
+  { value: "banco", label: "Banco (100%)" },
+];
+
+function getTaxaFromTipo(tipo: string): number {
+  if (tipo === "especial") return 0;
+  if (tipo === "top10") return 5;
+  if (tipo === "investidor") return 10;
+  if (tipo === "comum") return 15;
+  if (tipo === "nao_contribuinte") return 20;
+  return 100; // banco
+}
+
+function LeilaoTimer({ leilao }: { leilao: Leilao }) {
   const [timeLeft, setTimeLeft] = useState("");
   const [isUrgent, setIsUrgent] = useState(false);
-  const hasEnded = useRef(false);
+  const [phase, setPhase] = useState<"contando" | "espera" | "encerrado">("contando");
+
   useEffect(() => {
-    const t = setInterval(() => {
-      const ultimo = lancesLeilao.length > 0 ? new Date(lancesLeilao[0].data) : null;
-      const deadline = ultimo ? new Date(ultimo.getTime() + 60000) : new Date(leilao.dataExpiracao);
-      const diff = deadline.getTime() - Date.now();
-      if (diff <= 0) { setTimeLeft("Encerrado"); setIsUrgent(false); if (!hasEnded.current) { hasEnded.current = true; onTimerEnd?.(); } }
-      else { const h = Math.floor(diff / 3600000); const m = Math.floor((diff % 3600000) / 60000); const s = Math.floor((diff % 60000) / 1000); setTimeLeft(h > 0 ? `${h}h ${m}m ${s}s` : m > 0 ? `${m}m ${s}s` : `${s}s`); setIsUrgent(diff < 60000); }
-    }, 1000);
+    const tick = () => {
+      const now = Date.now();
+      const exp = new Date(leilao.dataExpiracao).getTime();
+      const diff = exp - now;
+
+      if (leilao.status === "finalizado") {
+        setPhase("encerrado");
+        setTimeLeft("");
+        return;
+      }
+
+      if (leilao.status === "espera") {
+        if (diff <= 0) {
+          setPhase("espera");
+          setTimeLeft("");
+        } else {
+          setPhase("contando");
+          const m = Math.floor(diff / 60000);
+          const s = Math.floor((diff % 60000) / 1000);
+          setTimeLeft(`${m}m ${s}s`);
+          setIsUrgent(diff < 30000);
+        }
+        return;
+      }
+
+      // ativo
+      if (diff <= 0) {
+        setPhase("espera");
+        setTimeLeft("");
+        setIsUrgent(false);
+      } else {
+        setPhase("contando");
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        setTimeLeft(h > 0 ? `${h}h ${m}m ${s}s` : m > 0 ? `${m}m ${s}s` : `${s}s`);
+        setIsUrgent(diff < 300000); // urgente nos últimos 5min
+      }
+    };
+    tick();
+    const t = setInterval(tick, 1000);
     return () => clearInterval(t);
-  }, [leilao.dataExpiracao, lancesLeilao, onTimerEnd]);
-  if (timeLeft === "Encerrado") return <span className="text-xs font-bold text-yellow-400 flex items-center gap-1"><Pause className="w-3 h-3" /> EM ESPERA</span>;
-  return <span className={`text-xs font-bold font-mono flex items-center gap-1 ${isUrgent ? "text-red-400 animate-pulse" : "text-primary"}`}><Timer className="w-3 h-3" /> {timeLeft}</span>;
+  }, [leilao.dataExpiracao, leilao.status]);
+
+  if (phase === "encerrado") return null;
+  if (phase === "espera") {
+    return (
+      <span className="text-xs font-bold text-yellow-400 flex items-center gap-1">
+        <Pause className="w-3 h-3" /> EM ESPERA
+      </span>
+    );
+  }
+  return (
+    <span className={`text-xs font-bold font-mono flex items-center gap-1 ${isUrgent ? "text-red-400 animate-pulse" : "text-primary"}`}>
+      <Timer className="w-3 h-3" /> {timeLeft}
+    </span>
+  );
 }
 
 function LanceModal({ leilao, onClose }: { leilao: Leilao; onClose: () => void }) {
@@ -32,91 +106,250 @@ function LanceModal({ leilao, onClose }: { leilao: Leilao; onClose: () => void }
   const ll = getLancesByLeilao(leilao.id);
   const maior = ll.length > 0 ? ll[0] : null;
   const min = maior ? maior.valor + 1 : leilao.valorInicial;
+
+  const canBid = leilao.status === "ativo" || (leilao.status === "espera" && new Date() < new Date(leilao.dataExpiracao));
+
   const handleSubmit = async () => {
     if (!jogador.trim() || !valor) { toast.error("Preencha nome e valor."); return; }
     const v = parseFloat(valor);
     if (v <= min) { toast.error(`Lance deve ser > ${min}`); return; }
     try { await darLance(leilao.id, jogador.trim(), v); toast.success(`Lance de ${v} registrado!`); onClose(); } catch { /* handled */ }
   };
+
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="bg-card border border-border rounded-lg p-6 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2"><Gavel className="w-5 h-5 text-primary" /> Dar Lance</h3>
         <p className="text-sm text-muted-foreground mb-4">Item: <span className="text-foreground font-semibold">{leilao.nomeItem}</span> | Moeda: <span className="text-primary">{leilao.moedaAceita}</span></p>
-        <div className="space-y-3"><div><Label className="text-xs text-muted-foreground">Seu Nome</Label><Input placeholder="Player" value={jogador} onChange={(e) => setJogador(e.target.value)} className="text-sm" /></div><div><Label className="text-xs text-muted-foreground">Valor (mín: {min})</Label><Input type="number" placeholder={`${min}`} value={valor} onChange={(e) => setValor(e.target.value)} className="text-sm font-mono" /></div></div>
-        <div className="flex gap-2 mt-4"><Button onClick={onClose} variant="outline" className="flex-1">Cancelar</Button><Button onClick={handleSubmit} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Dar Lance</Button></div>
+        <div className="space-y-3">
+          <div><Label className="text-xs text-muted-foreground">Seu Nome</Label><Input placeholder="Player" value={jogador} onChange={(e) => setJogador(e.target.value)} className="text-sm" /></div>
+          <div><Label className="text-xs text-muted-foreground">Valor (mín: {min})</Label><Input type="number" placeholder={`${min}`} value={valor} onChange={(e) => setValor(e.target.value)} className="text-sm font-mono" /></div>
+        </div>
+        <div className="flex gap-2 mt-4">
+          <Button onClick={onClose} variant="outline" className="flex-1">Cancelar</Button>
+          <Button onClick={handleSubmit} disabled={!canBid} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Dar Lance</Button>
+        </div>
+        {!canBid && <p className="text-xs text-yellow-400 mt-2 text-center">O tempo de disputa acabou.</p>}
       </div>
     </div>);
 }
 
-export default function LeiloesTab() {
+interface LeiloesTabProps {
+  isAdmin: boolean;
+}
+
+export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const { leiloes, addLeilao, getLancesByLeilao, finalizarLeilao, removeLeilao } = useBank();
   const [showForm, setShowForm] = useState(false);
   const [lanceLeilao, setLanceLeilao] = useState<Leilao | null>(null);
   const [donoItem, setDonoItem] = useState("");
   const [nomeItem, setNomeItem] = useState("");
+  const [imagemUrl, setImagemUrl] = useState("");
   const [valorInicial, setValorInicial] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
-  const [taxaCasa, setTaxaCasa] = useState("15");
   const [tipoOrigem, setTipoOrigem] = useState("comum");
+  const [duracaoIdx, setDuracaoIdx] = useState(3); // default 24h
+
+  const taxaCasa = getTaxaFromTipo(tipoOrigem);
 
   const handleAdd = () => {
-    if (!donoItem.trim() || !nomeItem.trim() || !valorInicial || !moedaAceita.trim()) { toast.error("Preencha os campos."); return; }
-    const exp = new Date(Date.now() + 24 * 3600000);
-    addLeilao({ donoItem: donoItem.trim(), nomeItem: nomeItem.trim(), valorInicial: parseFloat(valorInicial), moedaAceita: moedaAceita.trim(), taxaCasa: parseFloat(taxaCasa), dataExpiracao: exp.toISOString(), tipoOrigem });
-    toast.success(`Leilão criado!`);
-    setDonoItem(""); setNomeItem(""); setValorInicial(""); setMoedaAceita(""); setShowForm(false);
+    if (!donoItem.trim() || !nomeItem.trim() || !valorInicial || !moedaAceita.trim()) { toast.error("Preencha os campos obrigatórios."); return; }
+    const duracao = DURACOES[duracaoIdx];
+    const exp = new Date(Date.now() + duracao.ms);
+    addLeilao({
+      donoItem: donoItem.trim(),
+      nomeItem: nomeItem.trim(),
+      imagemUrl: imagemUrl.trim() || null,
+      valorInicial: parseFloat(valorInicial),
+      moedaAceita: moedaAceita.trim(),
+      taxaCasa,
+      dataExpiracao: exp.toISOString(),
+      tipoOrigem,
+    });
+    toast.success(`Leilão criado! Duração: ${duracao.label}`);
+    setDonoItem(""); setNomeItem(""); setImagemUrl(""); setValorInicial(""); setMoedaAceita(""); setTipoOrigem("comum"); setDuracaoIdx(3);
+    setShowForm(false);
   };
 
   const ativos = leiloes.filter((l) => l.status === "ativo" || l.status === "espera");
+  const filaEspera = ativos.filter((l) => l.status === "espera" && new Date() >= new Date(l.dataExpiracao));
+  const emDisputa = ativos.filter((l) => !(l.status === "espera" && new Date() >= new Date(l.dataExpiracao)));
   const finalizados = leiloes.filter((l) => l.status === "finalizado");
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-primary">🔨 Leilões</h2>
-      <div className="rounded-lg border border-primary/20 bg-card p-4"><h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3><ul className="text-xs text-muted-foreground space-y-1"><li>• Leilão dura <span className="text-foreground font-semibold">24h</span>.</li><li>• Qualquer pessoa pode dar lance.</li><li>• Novo lance reinicia timer com <span className="text-primary font-semibold">1 minuto</span>.</li><li>• Taxa: 15% comum, 10% investidor, 100% banco.</li></ul></div>
-      <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Novo Leilão"}</Button>
-      {showForm && (
-        <div className="rounded-md border border-border bg-card p-4">
-          <h3 className="text-sm font-bold text-foreground mb-3"><Plus className="w-4 h-4 text-primary mr-1" /> Novo Leilão</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <div><Label className="text-xs text-muted-foreground">Dono</Label><Input placeholder="Nome" value={donoItem} onChange={(e) => setDonoItem(e.target.value)} className="text-sm" /></div>
-            <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={nomeItem} onChange={(e) => setNomeItem(e.target.value)} className="text-sm" /></div>
-            <div><Label className="text-xs text-muted-foreground">Valor Inicial</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>
-            <div><Label className="text-xs text-muted-foreground">Moeda</Label><Input placeholder="Ex: Moeda" value={moedaAceita} onChange={(e) => setMoedaAceita(e.target.value)} className="text-sm" /></div>
-            <div><Label className="text-xs text-muted-foreground">Origem</Label><select value={tipoOrigem} onChange={(e) => { setTipoOrigem(e.target.value); if (e.target.value === "comum") setTaxaCasa("15"); else if (e.target.value === "investidor") setTaxaCasa("10"); else setTaxaCasa("100"); }} className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground"><option value="comum">Comum (15%)</option><option value="investidor">Investidor (10%)</option><option value="banco">Banco (100%)</option></select></div>
-          </div>
-          <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Criar</Button></div>
-        </div>
-      )}
-      <div><h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> Ativos ({ativos.length})</h3>
-        {ativos.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum leilão ativo.</div> : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{ativos.map((leilao) => {
-            const ll = getLancesByLeilao(leilao.id);
-            const maior = ll.length > 0 ? ll[0] : null;
-            return (
-              <div key={leilao.id} className={`rounded-lg border overflow-hidden ${leilao.status === "espera" ? "border-yellow-500/30 bg-yellow-500/5" : "border-primary/20 bg-card"}`}>
-                <div className="p-4">
-                  <div className="flex items-start justify-between mb-2"><div><h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4><p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>{leilao.status === "espera" && <p className="text-xs text-yellow-400 font-semibold mt-1"><Pause className="w-3 h-3 inline" /> Aguardando finalização</p>}</div><LeilaoTimer leilao={leilao} lancesLeilao={ll} onTimerEnd={() => { if (leilao.status === "ativo") { removeLeilao(leilao.id); toast.info(`Leilão encerrado.`); } }} /></div>
-                  <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
-                    <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
-                    <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : leilao.valorInicial}</p></div>
-                    <div className="text-center"><p className="text-xs text-muted-foreground">Lances</p><p className="text-sm font-bold text-foreground">{ll.length}</p></div>
-                    <div className="text-center"><p className="text-xs text-muted-foreground">Moeda</p><p className="text-xs font-semibold text-primary">{leilao.moedaAceita}</p></div>
-                  </div>
-                  {ll.length > 0 && <div className="mb-3 max-h-24 overflow-y-auto space-y-1">{ll.slice(0, 5).map((lance) => (<div key={lance.id} className="flex items-center justify-between text-xs"><span className="text-muted-foreground flex items-center gap-1"><User className="w-3 h-3" /> {lance.jogador}</span><span className="font-mono text-foreground">{lance.valor}</span></div>))}</div>}
-                  <div className="flex gap-2">
-                    {leilao.status === "ativo" && <Button onClick={() => setLanceLeilao(leilao)} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground text-xs"><Gavel className="w-3 h-3 mr-1" /> Dar Lance</Button>}
-                    {leilao.status === "espera" && <Button onClick={() => finalizarLeilao(leilao)} className="flex-1 bg-green-600 hover:bg-green-700 text-white text-xs"><CheckCircle className="w-3 h-3 mr-1" /> Finalizar</Button>}
-                    <Button onClick={() => { if (confirm(`Remover?`)) removeLeilao(leilao.id); }} variant="destructive" className="text-xs"><Trash2 className="w-3 h-3" /></Button>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-primary">🔨 Leilões</h2>
+        {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
+      </div>
+      <div className="rounded-lg border border-primary/20 bg-card p-4">
+        <h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3>
+        <ul className="text-xs text-muted-foreground space-y-1">
+          <li>• O leilão conta o tempo escolhido (1h a 48h).</li>
+          <li>• Qualquer pessoa pode dar lance durante o tempo.</li>
+          <li>• Após o tempo acabar, cada novo lance adiciona <span className="text-primary font-semibold">+1 minuto</span> de disputa.</li>
+          <li>• Quando o tempo de disputa acaba, o leilão vai para <span className="text-yellow-400 font-semibold">fila de espera</span>.</li>
+          <li>• O admin finaliza após entregar o item e receber o pagamento.</li>
+        </ul>
+      </div>
+      {isAdmin && (
+        <>
+          <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Novo Leilão"}
+          </Button>
+          {showForm && (
+            <div className="rounded-md border border-border bg-card p-4">
+              <h3 className="text-sm font-bold text-foreground mb-3"><Plus className="w-4 h-4 text-primary mr-1" /> Novo Leilão</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div><Label className="text-xs text-muted-foreground">Dono</Label><Input placeholder="Nome" value={donoItem} onChange={(e) => setDonoItem(e.target.value)} className="text-sm" /></div>
+                <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={nomeItem} onChange={(e) => setNomeItem(e.target.value)} className="text-sm" /></div>
+                <div><Label className="text-xs text-muted-foreground">Valor Inicial</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Moeda</Label><Input placeholder="Ex: Moeda" value={moedaAceita} onChange={(e) => setMoedaAceita(e.target.value)} className="text-sm" /></div>
+                <div>
+                  <Label className="text-xs text-muted-foreground">Origem / Taxa</Label>
+                  <Select value={tipoOrigem} onValueChange={setTipoOrigem}>
+                    <SelectTrigger className="text-sm"><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {TIPOS_ORIGEM.map((t) => (<SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label className="text-xs text-muted-foreground">Duração</Label>
+                  <Select value={String(duracaoIdx)} onValueChange={(v) => setDuracaoIdx(Number(v))}>
+                    <SelectTrigger className="text-sm"><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {DURACOES.map((d, i) => (<SelectItem key={i} value={String(i)}>{d.label}</SelectItem>))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="sm:col-span-2 lg:col-span-3">
+                  <Label className="text-xs text-muted-foreground">Imagem do Item (URL)</Label>
+                  <div className="flex gap-2 items-center">
+                    <Input placeholder="https://... (opcional)" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} className="text-sm flex-1" />
+                    {imagemUrl && <img src={imagemUrl} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
                   </div>
                 </div>
               </div>
-            );
-          })}</div>
+              <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Criar Leilão</Button></div>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Fila de espera - precisa finalizar */}
+      {filaEspera.length > 0 && (
+        <div>
+          <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Pause className="w-4 h-4 text-yellow-400" /> Fila de Espera ({filaEspera.length})</h3>
+          <div className="space-y-2">
+            {filaEspera.map((leilao) => {
+              const ll = getLancesByLeilao(leilao.id);
+              const maior = ll.length > 0 ? ll[0] : null;
+              return (
+                <div key={leilao.id} className="rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      {leilao.imagemUrl && <img src={leilao.imagemUrl} alt={leilao.nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                      <div>
+                        <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
+                        <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold text-yellow-400 flex items-center gap-1"><Pause className="w-3 h-3" /> EM ESPERA</span>
+                  </div>
+                  <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : "-"}</p></div>
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Vencedor</p><p className="text-sm font-bold text-green-400">{maior?.jogador || "-"}</p></div>
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Moeda</p><p className="text-xs font-semibold text-primary">{leilao.moedaAceita}</p></div>
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Taxa</p><p className="text-sm font-bold text-yellow-400">{leilao.taxaCasa}%</p></div>
+                  </div>
+                  <div className="flex gap-2">
+                    {isAdmin && <Button onClick={() => finalizarLeilao(leilao)} className="flex-1 bg-green-600 hover:bg-green-700 text-white text-xs"><CheckCircle className="w-3 h-3 mr-1" /> Finalizar Entrega</Button>}
+                    {isAdmin && <Button onClick={() => { if (confirm("Remover?")) removeLeilao(leilao.id); }} variant="destructive" className="text-xs"><Trash2 className="w-3 h-3" /></Button>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Leilões ativos / em disputa */}
+      <div>
+        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> Ativos ({emDisputa.length})</h3>
+        {emDisputa.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum leilão ativo.</div> : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {emDisputa.map((leilao) => {
+              const ll = getLancesByLeilao(leilao.id);
+              const maior = ll.length > 0 ? ll[0] : null;
+              const canBid = leilao.status === "ativo" || (leilao.status === "espera" && new Date() < new Date(leilao.dataExpiracao));
+              return (
+                <div key={leilao.id} className={`rounded-lg border overflow-hidden ${leilao.status === "espera" ? "border-yellow-500/30 bg-yellow-500/5" : "border-primary/20 bg-card"}`}>
+                  <div className="p-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex items-center gap-3">
+                        {leilao.imagemUrl && <img src={leilao.imagemUrl} alt={leilao.nomeItem} className="w-12 h-12 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                        <div>
+                          <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
+                          <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
+                          {leilao.status === "espera" && <p className="text-xs text-yellow-400 font-semibold mt-1"><Pause className="w-3 h-3 inline" /> Disputa final!</p>}
+                        </div>
+                      </div>
+                      <LeilaoTimer leilao={leilao} />
+                    </div>
+                    <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
+                      <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
+                      <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : leilao.valorInicial}</p></div>
+                      <div className="text-center"><p className="text-xs text-muted-foreground">Lances</p><p className="text-sm font-bold text-foreground">{ll.length}</p></div>
+                      <div className="text-center"><p className="text-xs text-muted-foreground">Moeda</p><p className="text-xs font-semibold text-primary">{leilao.moedaAceita}</p></div>
+                      <div className="text-center"><p className="text-xs text-muted-foreground">Taxa</p><p className="text-sm font-bold text-yellow-400">{leilao.taxaCasa}%</p></div>
+                    </div>
+                    {ll.length > 0 && (
+                      <div className="mb-3 max-h-24 overflow-y-auto space-y-1">
+                        {ll.slice(0, 5).map((lance) => (
+                          <div key={lance.id} className="flex items-center justify-between text-xs">
+                            <span className="text-muted-foreground flex items-center gap-1"><User className="w-3 h-3" /> {lance.jogador}</span>
+                            <span className="font-mono text-foreground">{lance.valor}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex gap-2">
+                      {canBid && <Button onClick={() => setLanceLeilao(leilao)} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground text-xs"><Gavel className="w-3 h-3 mr-1" /> Dar Lance</Button>}
+                      {isAdmin && <Button onClick={() => { if (confirm("Remover?")) removeLeilao(leilao.id); }} variant="destructive" className="text-xs"><Trash2 className="w-3 h-3" /></Button>}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         )}
       </div>
-      {finalizados.length > 0 && <div><h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Finalizados ({finalizados.length})</h3><div className="space-y-2">{finalizados.map((l) => (<div key={l.id} className="rounded-md border border-yellow-500/20 bg-yellow-500/5 p-3 flex items-center justify-between"><div className="flex items-center gap-3"><Trophy className="w-5 h-5 text-yellow-400" /><div><p className="text-sm font-bold text-foreground">{l.nomeItem}</p><p className="text-xs text-muted-foreground">Vencedor: <span className="text-yellow-400">{l.vencedor || "Ninguém"}</span> | {l.valorVencedor || 0} {l.moedaAceita}</p></div></div></div>))}</div></div>}
+
+      {/* Finalizados */}
+      {finalizados.length > 0 && (
+        <div>
+          <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Finalizados ({finalizados.length})</h3>
+          <div className="space-y-2">
+            {finalizados.map((l) => (
+              <div key={l.id} className="rounded-md border border-yellow-500/20 bg-yellow-500/5 p-3 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  {l.imagemUrl && <img src={l.imagemUrl} alt={l.nomeItem} className="w-8 h-8 rounded object-contain border border-border bg-accent/50" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />}
+                  <div className="flex items-center gap-3">
+                    <Trophy className="w-5 h-5 text-yellow-400" />
+                    <div>
+                      <p className="text-sm font-bold text-foreground">{l.nomeItem}</p>
+                      <p className="text-xs text-muted-foreground">Vencedor: <span className="text-yellow-400">{l.vencedor || "Ninguém"}</span> | {l.valorVencedor || 0} {l.moedaAceita}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {lanceLeilao && <LanceModal leilao={lanceLeilao} onClose={() => setLanceLeilao(null)} />}
     </div>
   );
