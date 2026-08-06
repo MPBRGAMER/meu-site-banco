@@ -4,10 +4,12 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save } from "lucide-react";
+import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
-export default function DoadoresTab() {
+interface DoadoresTabProps { isAdmin: boolean; }
+
+export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
   const { doadores, addDoador, reorderDoadores, isLoading } = useBank();
   const [nome, setNome] = useState("");
   const [item, setItem] = useState("");
@@ -57,7 +59,10 @@ export default function DoadoresTab() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-primary">❤️ Doadores</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-primary">❤️ Doadores</h2>
+        {!isAdmin && (<span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>)}
+      </div>
       <p className="text-sm text-muted-foreground">Registre doações. Toda doação entra no estoque automaticamente.</p>
       {rankingList.length > 0 && (
         <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
@@ -75,6 +80,7 @@ export default function DoadoresTab() {
           </div>
         </div>
       )}
+      {isAdmin && (<>
       {!isReorderMode ? (
         <Button onClick={startReorder} variant="outline" className="text-sm border-primary/30 text-primary hover:bg-primary/10"><ArrowUp className="w-4 h-4 mr-1" /> Reordenar</Button>
       ) : (
@@ -98,6 +104,7 @@ export default function DoadoresTab() {
         </div>
         <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Heart className="w-4 h-4 mr-1" /> Registrar Doação</Button></div>
       </div>
+      </>)}
       <div>
         <h3 className="text-sm font-bold text-foreground mb-2">Histórico ({doadores.length})</h3>
         {doadores.length === 0 ? (<div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhuma doação.</div>) : (

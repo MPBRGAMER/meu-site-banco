@@ -129,7 +129,7 @@ export default function HomePage() {
       case "config-trocas": return <ConfigTrocasTab />;
       case "compras-vendas": return <ComprasVendasTab />;
       case "caixa": return <CaixaTab />;
-      case "doadores": return <DoadoresTab />;
+      case "doadores": return <DoadoresTab isAdmin={isAdmin} />;
       case "leiloes": return <LeiloesTab />;
       case "sorteios": return <SorteiosTab />;
       case "loterica": return <LotericaTab />;
