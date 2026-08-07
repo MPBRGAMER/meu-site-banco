@@ -24,6 +24,7 @@ import ChatTab from "@/components/banco/ChatTab";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "chat", label: "Chat", icon: MessageCircle },
   { id: "tabela", label: "Tabela", icon: Table2 },
   { id: "emprestimos", label: "Empréstimos", icon: HandCoins },
   { id: "trocas", label: "Trocas", icon: ArrowLeftRight },
@@ -31,7 +32,6 @@ const publicTabs = [
   { id: "leiloes", label: "Leilões", icon: Gavel },
   { id: "sorteios", label: "Sorteios", icon: Dices },
   { id: "loterica", label: "Lotérica", icon: Dices },
-  { id: "chat", label: "Chat", icon: MessageCircle },
 ];
 
 const adminTabs = [

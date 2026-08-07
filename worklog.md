@@ -100,3 +100,24 @@ Stage Summary:
 - 20% of sales credited to estoque ONLY when admin performs the draw
 - No-winner scenario: prize accumulates and carries to next lottery automatically
 - Non-admin users see everything in read-only mode
+
+---
+Task ID: 4
+Agent: Main Agent
+Task: Chat tab reorder + Translation popup in 12 languages
+
+Work Log:
+- Reordered publicTabs in page.tsx: Chat now sits between Dashboard and Tabela
+- Created TranslationPopup.tsx with two exports:
+  - TranslationPopup: auto-appears once on first chat visit (1.5s delay), dismissible via localStorage
+  - TranslationPopupForce: triggered by Globe icon button in chat header
+- Translation popup covers 12 languages: PT-BR, English, Russian, Spanish, French, German, Italian, Simplified Chinese, Traditional Chinese, Korean, Japanese, Indonesian, Turkish
+- Each translation explains how to right-click and use browser translate feature
+- Added Globe button in ChatTab header bar to re-show translation popup after dismissal
+- Build passes successfully
+
+Stage Summary:
+- Chat tab now between Dashboard and Tabela in navigation
+- Translation popup appears automatically on first chat visit with instructions in 12 languages
+- Globe icon in chat header lets users re-open the popup anytime
+- Messages are permanent (never auto-deleted) — only admin can manually delete individual messages
