@@ -140,7 +140,7 @@ export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
 
   return (
     <div className="space-y-4">
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="emprestimos-top" isAdmin={isAdmin} className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary flex items-center gap-2"><HandCoins className="w-5 h-5" /> Empréstimos</h2>
         <div className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
       )}
       <div><h3 className="text-sm font-bold text-foreground mb-2">Pendentes ({pendentes.length})</h3>{pendentes.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum empréstimo pendente.</div> : pendentes.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>
       {pagos.length > 0 && <div><h3 className="text-sm font-bold text-foreground mb-2">Pagos ({pagos.length})</h3>{pagos.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="emprestimos-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

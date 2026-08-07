@@ -193,7 +193,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
 
   return (
     <div className="space-y-4">
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="loterica-top" isAdmin={isAdmin} className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary flex items-center gap-2"><Dices className="w-5 h-5" /> Lotérica</h2>
         {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
@@ -382,7 +382,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
           </div>
         </div>
       )}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="loterica-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

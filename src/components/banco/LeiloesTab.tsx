@@ -214,7 +214,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
 
   return (
     <div className="space-y-4">
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="leiloes-top" isAdmin={isAdmin} className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary">🔨 Leilões</h2>
         {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
@@ -419,7 +419,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       )}
 
       {lanceLeilao && <LanceModal leilao={lanceLeilao} onClose={() => setLanceLeilao(null)} />}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="leiloes-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

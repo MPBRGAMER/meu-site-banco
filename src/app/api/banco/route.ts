@@ -176,6 +176,20 @@ export async function GET(req: NextRequest) {
           .slice(0, 10);
         return json(ranking);
       }
+      case "getAd": {
+        const slotId = searchParams.get("slotId");
+        if (!slotId) return err("slotId obrigatório");
+        const ad = await db.propaganda.findUnique({ where: { slotId } });
+        return json({ slotId, codigo: ad?.codigo || "" });
+      }
+      case "getAllAds": {
+        const ads = await db.propaganda.findMany();
+        const map: Record<string, string> = {};
+        for (const a of ads) {
+          if (a.codigo) map[a.slotId] = a.codigo;
+        }
+        return json(map);
+      }
       default:
         return err("Ação GET desconhecida: " + action);
     }
@@ -682,6 +696,28 @@ export async function POST(req: NextRequest) {
           },
         });
         return json(report);
+      }
+
+      // === PROPAGANDA ===
+      case "setAd": {
+        const { slotId, codigo } = data;
+        if (!slotId) return err("slotId obrigatório");
+        const pwd = req.headers.get("x-admin-password");
+        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+        const ad = await db.propaganda.upsert({
+          where: { slotId },
+          create: { slotId, codigo: codigo || "" },
+          update: { codigo: codigo || "" },
+        });
+        return json({ success: true, id: ad.id });
+      }
+      case "deleteAd": {
+        const { slotId } = data;
+        if (!slotId) return err("slotId obrigatório");
+        const pwd = req.headers.get("x-admin-password");
+        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+        await db.propaganda.delete({ where: { slotId } });
+        return json({ success: true });
       }
 
       default:

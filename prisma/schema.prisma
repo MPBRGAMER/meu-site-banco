@@ -206,3 +206,10 @@ model ChatSala {
   dataCriacao DateTime       @default(now())
   mensagens   ChatMensagem[]
 }
+
+model Propaganda {
+  id        String   @id @default(cuid())
+  slotId    String   @unique
+  codigo    String   @default("")
+  updatedAt DateTime @updatedAt
+}

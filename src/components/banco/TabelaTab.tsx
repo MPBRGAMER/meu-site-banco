@@ -894,7 +894,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
 
   return (
     <div className="space-y-5">
-      <AdSlot size="leaderboard" className="mb-3" />
+      <AdSlot size="leaderboard" id="tabela-top" isAdmin={isAdmin} className="mb-3" />
       {/* ═══ Header Area ═══ */}
       <div className="flex items-end justify-between flex-wrap gap-3">
         <div>
@@ -1084,7 +1084,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       </div>
 
       {/* ═══ Reports Section ═══ */}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="tabela-mid" isAdmin={isAdmin} className="my-3" />
       <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
         <div className="px-4 py-3 border-b border-border bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
           <h3 className="text-xs font-bold text-foreground flex items-center gap-2">
@@ -1116,7 +1116,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
       {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} mergedCategories={categories} overrides={overrides} />}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="tabela-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

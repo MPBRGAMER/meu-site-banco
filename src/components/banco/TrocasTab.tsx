@@ -42,7 +42,7 @@ export default function TrocasTab({ isAdmin }: TrocasTabProps) {
 
   return (
     <div className="space-y-4">
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="trocas-top" isAdmin={isAdmin} className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary flex items-center gap-2"><ArrowLeftRight className="w-5 h-5" /> Registro de Trocas</h2>
         {!isAdmin && (<span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>)}
@@ -80,7 +80,7 @@ export default function TrocasTab({ isAdmin }: TrocasTabProps) {
           <div className="rounded-md border border-border bg-card overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-border bg-accent/50"><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Data</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Player</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Entregou</th><th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Recebeu</th><th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Taxa</th><th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Lucro</th></tr></thead><tbody>{trocas.map((t) => (<tr key={t.id} className="border-b border-border/50 hover:bg-accent/30"><td className="px-3 py-2 text-xs text-muted-foreground">{new Date(t.data).toLocaleDateString("pt-BR")}</td><td className="px-3 py-2 text-foreground">{t.player}</td><td className="px-3 py-2 text-red-400 font-mono">{t.quantidadeEnviada}x {t.itemEnviado}</td><td className="px-3 py-2 text-green-400 font-mono">{t.quantidadeRecebida}x {t.itemRecebido}</td><td className="px-3 py-2 text-center text-muted-foreground">{t.taxaAplicada}%</td><td className="px-3 py-2 text-center font-mono text-primary">{t.lucroBanco}</td></tr>))}</tbody></table></div>
         </div>
       )}
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="trocas-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

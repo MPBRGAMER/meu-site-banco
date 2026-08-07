@@ -125,7 +125,7 @@ export default function HomePage() {
 
   const renderTab = () => {
     switch (activeTab) {
-      case "dashboard": return <DashboardTab />;
+      case "dashboard": return <DashboardTab isAdmin={isAdmin} />;
       case "emprestimos": return <EmprestimosTab isAdmin={isAdmin} />;
       case "investidores": return <InvestidoresTab />;
       case "trocas": return <TrocasTab isAdmin={isAdmin} />;

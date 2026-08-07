@@ -60,7 +60,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
 
   return (
     <div className="space-y-4">
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="doadores-top" isAdmin={isAdmin} className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary">❤️ Doadores</h2>
         {!isAdmin && (<span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>)}
@@ -113,7 +113,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
           <div className="space-y-2">{[...doadores].reverse().map((d) => (<div key={d.id} className="rounded-md border border-border bg-card p-3 flex items-center gap-3 hover:border-primary/20"><Heart className="w-4 h-4 text-red-400" /><div><p className="text-sm font-bold text-foreground">{d.nome}</p><p className="text-xs text-muted-foreground">{d.quantidade}x {d.item} - {new Date(d.data).toLocaleDateString("pt-BR")}</p></div></div>))}</div>
         )}
       </div>
-      <AdSlot size="banner" className="my-3" />
+      <AdSlot size="banner" id="doadores-bottom" isAdmin={isAdmin} className="my-3" />
     </div>
   );
 }

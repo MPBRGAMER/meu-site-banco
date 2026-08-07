@@ -1,0 +1,1123 @@
+     1→"use client";
+     2→import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+     3→import {
+     4→  Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
+     5→  MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
+     6→  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save,
+     7→} from "lucide-react";
+     8→import { Input } from "@/components/ui/input";
+     9→import { Button } from "@/components/ui/button";
+    10→import { pricesData } from "@/data/prices";
+    11→import { priceTrends } from "@/data/price-trends";
+    12→import { getFallbackEmoji } from "@/data/item-icons";
+    13→import { useBank } from "@/lib/useBank";
+    14→import { toast } from "sonner";
+    15→import AdSlot from "@/components/AdSlot";
+    16→
+    17→interface PriceItem {
+    18→  id: string;
+    19→  name: string;
+    20→  img?: string;
+    21→  wikiLink?: string;
+    22→  steel: string;
+    23→  cement: string;
+    24→  rarity: string;
+    25→  demand: string;
+    26→  notes: string;
+    27→}
+    28→
+    29→interface Category {
+    30→  id: string;
+    31→  name: string;
+    32→  items: PriceItem[];
+    33→  wikiLink?: string;
+    34→}
+    35→
+    36→const demandColors: Record<string, string> = {
+    37→  high: "text-green-400 bg-green-500/10 border-green-500/30",
+    38→  medium: "text-yellow-400 bg-yellow-500/10 border-yellow-500/30",
+    39→  low: "text-red-400 bg-red-500/10 border-red-500/30",
+    40→};
+    41→
+    42→const demandLabels: Record<string, string> = {
+    43→  high: "Alta",
+    44→  medium: "Media",
+    45→  low: "Baixa",
+    46→};
+    47→
+    48→const rarityLabels: Record<string, string> = {
+    49→  common: "Comum",
+    50→  uncommon: "Incomum",
+    51→  rare: "Raro",
+    52→  legendary: "Lendario",
+    53→};
+    54→
+    55→const rarityColors: Record<string, string> = {
+    56→  common: "text-muted-foreground",
+    57→  uncommon: "text-blue-400",
+    58→  rare: "text-purple-400",
+    59→  legendary: "text-yellow-400",
+    60→};
+    61→
+    62→function getSteelColor(demand: string): string {
+    63→  if (demand === "high") return "text-green-400";
+    64→  if (demand === "medium") return "text-yellow-400";
+    65→  return "text-foreground";
+    66→}
+    67→
+    68→function parsePriceValue(price: string): number {
+    69→  const parts = price.split(":");
+    70→  if (parts.length !== 2) return 9999;
+    71→  const qty = parseInt(parts[0]);
+    72→  const val = parseInt(parts[1]);
+    73→  if (val === 0) return 9999;
+    74→  return qty / val;
+    75→}
+    76→
+    77→function isPriceUnknown(price: string): boolean {
+    78→  return price === "?:?";
+    79→}
+    80→
+    81→function Sparkline({ itemId }: { itemId: string }) {
+    82→  const trend = priceTrends.trends[itemId];
+    83→  if (!trend || trend.history.length < 2) return null;
+    84→  const data = trend.history;
+    85→  const min = Math.min(...data);
+    86→  const max = Math.max(...data);
+    87→  const range = max - min || 1;
+    88→  const width = 50;
+    89→  const height = 18;
+    90→  const padding = 2;
+    91→  const points = data
+    92→    .map((value, index) => {
+    93→      const x = (index / (data.length - 1)) * (width - padding * 2) + padding;
+    94→      const y = height - ((value - min) / range) * (height - padding * 2) - padding;
+    95→      return `${x},${y}`;
+    96→    })
+    97→    .join(" ");
+    98→  const color = trend.trend === "up" ? "#22c55e" : trend.trend === "down" ? "#ef4444" : "#64748b";
+    99→  return (
+   100→    <div className="flex items-center gap-1">
+   101→      <svg width={width} height={height} className="shrink-0">
+   102→        <polyline points={points} fill="none" stroke={color} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+   103→      </svg>
+   104→      {trend.change !== 0 && (
+   105→        <span className={`text-[10px] font-bold flex items-center gap-0.5 ${trend.trend === "up" ? "text-green-400" : "text-red-400"}`}>
+   106→          {trend.trend === "up" ? <TrendingUp className="w-2.5 h-2.5" /> : <TrendingDown className="w-2.5 h-2.5" />}
+   107→          {trend.change > 0 ? "+" : ""}{trend.change}%
+   108→        </span>
+   109→      )}
+   110→    </div>
+   111→  );
+   112→}
+   113→
+   114→function ItemIcon({ itemId, imgPath }: { itemId: string; imgPath?: string }) {
+   115→  const [imgError, setImgError] = useState(false);
+   116→  if (imgError || !imgPath) {
+   117→    return <span className="text-base leading-none">{getFallbackEmoji(itemId)}</span>;
+   118→  }
+   119→  return (
+   120→    <img
+   121→      src={imgPath}
+   122→      alt={itemId}
+   123→      className="w-6 h-6 object-contain"
+   124→      style={{ imageRendering: "pixelated" }}
+   125→      onError={() => setImgError(true)}
+   126→      loading="lazy"
+   127→    />
+   128→  );
+   129→}
+   130→
+   131→function ReportarModal({ isOpen, onClose, items, onReport }: {
+   132→  isOpen: boolean;
+   133→  onClose: () => void;
+   134→  items: PriceItem[];
+   135→  onReport: (d: { itemId: string; itemName: string; nickname: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number }) => void;
+   136→}) {
+   137→  const [searchText, setSearchText] = useState("");
+   138→  const [selectedItemId, setSelectedItemId] = useState("");
+   139→  const [selectedItemName, setSelectedItemName] = useState("");
+   140→  const [steelQty, setSteelQty] = useState("");
+   141→  const [steelPrice, setSteelPrice] = useState("");
+   142→  const [cementQty, setCementQty] = useState("");
+   143→  const [cementPrice, setCementPrice] = useState("");
+   144→  const [nickname, setNickname] = useState("");
+   145→  const [isSubmitting, setIsSubmitting] = useState(false);
+   146→  const selectRef = useRef<HTMLSelectElement>(null);
+   147→
+   148→  useEffect(() => {
+   149→    const saved = localStorage.getItem("reporterNickname");
+   150→    if (saved) setNickname(saved);
+   151→  }, [isOpen]);
+   152→
+   153→  const selectedDisplayName = selectedItemName || searchText;
+   154→
+   155→  const handleSubmit = async () => {
+   156→    if (!selectedItemId || !steelQty || !steelPrice || !cementQty || !cementPrice || !nickname.trim()) {
+   157→      toast.error("Preencha todos os campos e selecione um item!");
+   158→      return;
+   159→    }
+   160→    setIsSubmitting(true);
+   161→    try {
+   162→      await onReport({
+   163→        itemId: selectedItemId,
+   164→        itemName: selectedDisplayName,
+   165→        nickname: nickname.trim(),
+   166→        steelQty: parseInt(steelQty),
+   167→        steelPrice: parseInt(steelPrice),
+   168→        cementQty: parseInt(cementQty),
+   169→        cementPrice: parseInt(cementPrice),
+   170→      });
+   171→      setSearchText("");
+   172→      setSelectedItemId("");
+   173→      setSelectedItemName("");
+   174→      setSteelQty("");
+   175→      setSteelPrice("");
+   176→      setCementQty("");
+   177→      setCementPrice("");
+   178→      localStorage.setItem("reporterNickname", nickname.trim());
+   179→      toast.success(`Preco de "${selectedDisplayName}" reportado! Obrigado ${nickname.trim()}!`);
+   180→      onClose();
+   181→    } catch {
+   182→      toast.error("Erro ao reportar. Tente novamente.");
+   183→    } finally {
+   184→      setIsSubmitting(false);
+   185→    }
+   186→  };
+   187→
+   188→  const filteredItems = useMemo(() => {
+   189→    if (!searchText) return items.slice(0, 50);
+   190→    return items.filter((i) => i.name.toLowerCase().includes(searchText.toLowerCase())).slice(0, 50);
+   191→  }, [searchText, items]);
+   192→
+   193→  if (!isOpen) return null;
+   194→  return (
+   195→    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
+   196→      <div className="rounded-lg border border-primary/20 bg-card p-5 w-full max-w-md mx-4" onClick={(e) => e.stopPropagation()}>
+   197→        <div className="flex items-center justify-between mb-1">
+   198→          <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+   199→            <MessageSquarePlus className="w-4 h-4" /> Reportar Preco
+   200→          </h3>
+   201→          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+   202→        </div>
+   203→        <p className="text-[10px] text-muted-foreground mb-4">
+   204→          Viu um preco diferente no jogo? Reporte para ajudar a comunidade a manter a tabela atualizada! Seus reports aparecem na Tendencia.
+   205→        </p>
+   206→        <div className="space-y-3">
+   207→          <div>
+   208→            <label className="text-[11px] text-muted-foreground">Seu Apelido no Jogo</label>
+   209→            <Input value={nickname} onChange={(e) => setNickname(e.target.value)} placeholder="Ex: Sobrevivente123" className="text-sm mt-1 h-8" />
+   210→          </div>
+   211→          <div>
+   212→            <label className="text-[11px] text-muted-foreground">Item</label>
+   213→            <div className="relative mt-1">
+   214→              <Search className="w-3 h-3 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2" />
+   215→              <Input value={selectedItemId ? selectedDisplayName : searchText} onChange={(e) => { setSearchText(e.target.value); if (selectedItemId) { setSelectedItemId(""); setSelectedItemName(""); } }} placeholder="Buscar item..." className="pl-8 text-sm h-8" />
+   216→            </div>
+   217→            {searchText && !selectedItemId && (
+   218→              <div className="mt-1 max-h-32 overflow-y-auto rounded-md border border-border bg-muted/20">
+   219→                {filteredItems.map((item) => (
+   220→                  <button key={item.id} onClick={() => { setSelectedItemId(item.id); setSelectedItemName(item.name); setSearchText(item.name); }} className={`w-full text-left px-3 py-1.5 text-xs hover:bg-primary/10 transition-colors flex items-center gap-2 ${selectedItemId === item.id ? "bg-primary/10 text-primary" : "text-foreground"}`}>
+   221→                    <ItemIcon itemId={item.id} imgPath={item.img} />
+   222→                    <span className="truncate">{item.name}</span>
+   223→                    {isPriceUnknown(item.steel) && <span className="ml-auto text-[9px] text-orange-400 shrink-0">sem preco</span>}
+   224→                  </button>
+   225→                ))}
+   226→                {filteredItems.length === 0 && <p className="text-[10px] text-muted-foreground p-2">Nenhum item encontrado.</p>}
+   227→              </div>
+   228→            )}
+   229→            {selectedItemId && (
+   230→              <div className="mt-1 flex items-center gap-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20">
+   231→                <Check className="w-3 h-3 text-primary shrink-0" />
+   232→                <span className="text-xs text-primary font-medium truncate">{selectedDisplayName}</span>
+   233→                <button onClick={() => { setSelectedItemId(""); setSelectedItemName(""); }} className="ml-auto text-muted-foreground hover:text-foreground shrink-0"><X className="w-3 h-3" /></button>
+   234→              </div>
+   235→            )}
+   236→          </div>
+   237→          <div className="grid grid-cols-4 gap-2">
+   238→            <div>
+   239→              <label className="text-[11px] text-muted-foreground">Qtd Aco</label>
+   240→              <Input type="number" min={1} value={steelQty} onChange={(e) => setSteelQty(e.target.value)} placeholder="Ex: 5" className="text-sm font-mono mt-1 h-8" />
+   241→            </div>
+   242→            <div>
+   243→              <label className="text-[11px] text-muted-foreground">Valor Aco ($)</label>
+   244→              <Input type="number" min={1} value={steelPrice} onChange={(e) => setSteelPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
+   245→            </div>
+   246→            <div>
+   247→              <label className="text-[11px] text-muted-foreground">Qtd Cimento</label>
+   248→              <Input type="number" min={1} value={cementQty} onChange={(e) => setCementQty(e.target.value)} placeholder="Ex: 10" className="text-sm font-mono mt-1 h-8" />
+   249→            </div>
+   250→            <div>
+   251→              <label className="text-[11px] text-muted-foreground">Valor Cimento</label>
+   252→              <Input type="number" min={1} value={cementPrice} onChange={(e) => setCementPrice(e.target.value)} placeholder="Ex: 1" className="text-sm font-mono mt-1 h-8" />
+   253→            </div>
+   254→          </div>
+   255→          <div className="rounded-md border border-primary/20 bg-primary/5 p-2.5">
+   256→            <p className="text-[10px] text-muted-foreground leading-relaxed">
+   257→              <span className="text-primary font-semibold">Formato:</span> Qtd:Valor. Ex: Agua 5:1 aco = voce da 5 aguas por 1 aco. 10:1 cimento = voce da 10 aguas por 1 cimento. Os reports calculam a media na Tendencia.
+   258→            </p>
+   259→          </div>
+   260→          <div className="flex gap-2 pt-1">
+   261→            <Button variant="outline" onClick={onClose} className="flex-1 text-xs h-8" disabled={isSubmitting}>Cancelar</Button>
+   262→            <Button onClick={handleSubmit} className="flex-1 bg-primary text-primary-foreground text-xs h-8" disabled={isSubmitting}>
+   263→              {isSubmitting ? "Enviando..." : "Reportar"}
+   264→            </Button>
+   265→          </div>
+   266→        </div>
+   267→      </div>
+   268→    </div>
+   269→  );
+   270→}
+   271→
+   272→function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+   273→  if (!isOpen) return null;
+   274→  return (
+   275→    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
+   276→      <div className="rounded-lg border border-primary/20 bg-card p-5 w-full max-w-lg mx-4 max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+   277→        <div className="flex items-center justify-between mb-4">
+   278→          <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+   279→            <BookOpen className="w-4 h-4" /> Guia da Tabela de Precos
+   280→          </h3>
+   281→          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+   282→        </div>
+   283→        <div className="space-y-4 text-xs text-foreground leading-relaxed">
+   284→          <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
+   285→            <h4 className="font-bold text-primary mb-1">Como funcionam os precos?</h4>
+   286→            <p className="text-muted-foreground">Os precos estao no formato <span className="font-mono text-foreground">quantidade:valor</span>. Por exemplo, <span className="font-mono text-foreground">5:1</span> significa que voce da 5 unidades do item e recebe 1 de Aco ($). Ou seja, o primeiro numero e a quantidade do item e o segundo e o valor em moeda.</p>
+   287→          </div>
+   288→          <div className="rounded-md border border-border p-3">
+   289→            <h4 className="font-bold text-foreground mb-1">Moedas do Jogo</h4>
+   290→            <div className="grid grid-cols-2 gap-2 mt-2">
+   291→              <div className="rounded bg-muted/30 p-2">
+   292→                <p className="font-mono font-bold text-primary">Aco ($)</p>
+   293→                <p className="text-[10px] text-muted-foreground">Moeda principal. Mais valiosa e amplamente aceita.</p>
+   294→              </div>
+   295→              <div className="rounded bg-muted/30 p-2">
+   296→                <p className="font-mono font-bold text-yellow-400">Cimento</p>
+   297→                <p className="text-[10px] text-muted-foreground">Moeda secundaria. 1 Aco = 2 Cimentos.</p>
+   298→              </div>
+   299→            </div>
+   300→          </div>
+   301→          <div className="rounded-md border border-border p-3">
+   302→            <h4 className="font-bold text-foreground mb-1">Niveis de Demanda</h4>
+   303→            <div className="space-y-1.5 mt-2">
+   304→              <div className="flex items-center gap-2"><span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border ${demandColors.high}`}>Alta</span><span className="text-muted-foreground">Itens muito procurados, precos estaveis ou em alta.</span></div>
+   305→              <div className="flex items-center gap-2"><span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border ${demandColors.medium}`}>Media</span><span className="text-muted-foreground">Demanda normal, precos razoaveis.</span></div>
+   306→              <div className="flex items-center gap-2"><span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border ${demandColors.low}`}>Baixa</span><span className="text-muted-foreground">Pouco procurados, difficeis de vender.</span></div>
+   307→            </div>
+   308→          </div>
+   309→          <div className="rounded-md border border-border p-3">
+   310→            <h4 className="font-bold text-foreground mb-1">Tendencia</h4>
+   311→            <p className="text-muted-foreground">A coluna Tendencia mostra a media dos precos reportados pela comunidade para cada item. Quando ha reports, aparece o valor medio em Aco ($) e Cimento seguido do numero de reports entre parenteses. Quando nao ha reports, aparece o grafico sparkline com a variacao dos ultimos 7 dias.</p>
+   312→          </div>
+   313→          <div className="rounded-md border border-border p-3">
+   314→            <h4 className="font-bold text-foreground mb-1">Reportar Precos</h4>
+   315→            <p className="text-muted-foreground">Clique no botao <span className="text-primary font-semibold">Reportar</span> para compartilhar os precos que voce ve no jogo. Isso ajuda toda a comunidade! Quanto mais pessoas reportam, mais precisa fica a tendencia. O ranking dos maiores contribuidores aparece no Dashboard.</p>
+   316→          </div>
+   317→          <div className="rounded-md border border-border p-3">
+   318→            <h4 className="font-bold text-foreground mb-1">Itens sem preco (?:?)</h4>
+   319→            <p className="text-muted-foreground">Alguns itens ainda nao tem preco definido. Isso acontece porque sao novos na tabela ou ninguem reportou ainda. Use o botao <span className="text-primary font-semibold">Reportar</span> para adicionar o primeiro preco!</p>
+   320→          </div>
+   321→          <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
+   322→            <h4 className="font-bold text-primary mb-1">Fonte dos Dados</h4>
+   323→            <p className="text-muted-foreground">Precos baseados em pesquisa de comunidades (Reddit, Discord, Facebook, Foruns). A lista completa de itens foi extraida do wiki oficial do jogo (dayr.wiki.gg). Os precos sao atualizados pela comunidade atraves de reports.</p>
+   324→          </div>
+   325→        </div>
+   326→      </div>
+   327→    </div>
+   328→  );
+   329→}
+   330→
+   331→function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overrides: itemOverrides }: { isOpen: boolean; onClose: () => void; onSaved?: () => void; mergedCategories: Category[]; overrides: Array<{ itemId: string; action: string; name?: string; categoryId?: string }> }) {
+   332→  const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed">("add");
+   333→  const [gerenciarSearch, setGerenciarSearch] = useState("");
+   334→  const [newItemName, setNewItemName] = useState("");
+   335→  const [newItemId, setNewItemId] = useState("");
+   336→  const [newItemCategory, setNewItemCategory] = useState("");
+   337→  const [newItemImg, setNewItemImg] = useState("");
+   338→  const [newItemWikiLink, setNewItemWikiLink] = useState("");
+   339→  const [newItemSteel, setNewItemSteel] = useState("?:?");
+   340→  const [newItemCement, setNewItemCement] = useState("?:?");
+   341→  const [newItemDemand, setNewItemDemand] = useState("medium");
+   342→  const [newItemRarity, setNewItemRarity] = useState("common");
+   343→  const [newItemNotes, setNewItemNotes] = useState("");
+   344→  const [editingId, setEditingId] = useState<string | null>(null);
+   345→  const [editForm, setEditForm] = useState({ name: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "", categoryId: "" });
+   346→  const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
+   347→  const [isSaving, setIsSaving] = useState(false);
+   348→
+   349→  const categories = mergedCategories;
+   350→  const removeSet = new Set(itemOverrides.filter(o => o.action === "remove").map(o => o.itemId));
+   351→  const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))));
+   352→
+   353→  const slugify = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+   354→
+   355→  useEffect(() => {
+   356→    if (newItemName && !newItemId) {
+   357→      setNewItemId(slugify(newItemName));
+   358→    }
+   359→  }, [newItemName, newItemId]);
+   360→
+   361→  const filteredGerenciarItems = useMemo(() => {
+   362→    if (!gerenciarSearch) return allItems.slice(0, 100);
+   363→    return allItems.filter((i) => i.name.toLowerCase().includes(gerenciarSearch.toLowerCase()) || i.id.includes(gerenciarSearch.toLowerCase())).slice(0, 100);
+   364→  }, [gerenciarSearch, allItems]);
+   365→
+   366→  const getAdminPwd = () => sessionStorage.getItem("adminPwd") || "";
+   367→
+   368→  const handleAddItem = async () => {
+   369→    if (!newItemName.trim() || !newItemId.trim() || !newItemCategory) {
+   370→      toast.error("Preencha nome, ID e categoria!");
+   371→      return;
+   372→    }
+   373→    const exists = allItems.find((i) => i.id === newItemId) || removeSet.has(newItemId);
+   374→    if (exists) {
+   375→      toast.error(`Item com ID "${newItemId}" ja existe!`);
+   376→      return;
+   377→    }
+   378→    setIsSaving(true);
+   379→    try {
+   380→      const res = await fetch("/api/items", {
+   381→        method: "POST",
+   382→        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+   383→        body: JSON.stringify({
+   384→          action: "add",
+   385→          item: {
+   386→            itemId: newItemId,
+   387→            name: newItemName.trim(),
+   388→            categoryId: newItemCategory,
+   389→            img: newItemImg || `/items/${newItemId}.png`,
+   390→            wikiLink: newItemWikiLink || ``,
+   391→            steel: newItemSteel,
+   392→            cement: newItemCement,
+   393→            rarity: newItemRarity,
+   394→            demand: newItemDemand,
+   395→            notes: newItemNotes,
+   396→          },
+   397→        }),
+   398→      });
+   399→      if (res.ok) {
+   400→        toast.success(`Item "${newItemName}" adicionado! (salvo no banco)`);
+   401→        setNewItemName("");
+   402→        setNewItemId("");
+   403→        setNewItemImg("");
+   404→        setNewItemWikiLink("");
+   405→        setNewItemSteel("?:?");
+   406→        setNewItemCement("?:?");
+   407→        setNewItemDemand("medium");
+   408→        setNewItemRarity("common");
+   409→        setNewItemNotes("");
+   410→        onSaved?.();
+   411→      } else {
+   412→        const data = await res.json();
+   413→        toast.error(data.error || "Erro ao adicionar item.");
+   414→      }
+   415→    } catch {
+   416→      toast.error("Erro de conexao.");
+   417→    } finally {
+   418→      setIsSaving(false);
+   419→    }
+   420→  };
+   421→
+   422→  const startEdit = (item: typeof allItems[0]) => {
+   423→    setEditingId(item.id);
+   424→    setEditForm({ name: item.name, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes, categoryId: item.categoryId });
+   425→  };
+   426→
+   427→  const handleSaveEdit = async () => {
+   428→    if (!editingId) return;
+   429→    setIsSaving(true);
+   430→    try {
+   431→      const res = await fetch("/api/items", {
+   432→        method: "POST",
+   433→        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+   434→        body: JSON.stringify({
+   435→          action: "edit",
+   436→          item: { itemId: editingId, ...editForm },
+   437→        }),
+   438→      });
+   439→      if (res.ok) {
+   440→        toast.success(`Item "${editForm.name}" atualizado!`);
+   441→        setEditingId(null);
+   442→        onSaved?.();
+   443→      } else {
+   444→        toast.error("Erro ao salvar.");
+   445→      }
+   446→    } catch {
+   447→      toast.error("Erro de conexao.");
+   448→    } finally {
+   449→      setIsSaving(false);
+   450→    }
+   451→  };
+   452→
+   453→  const handleRemove = (item: typeof allItems[0]) => {
+   454→    if (removedItems.find((r) => r.id === item.id)) return;
+   455→    setRemovedItems([...removedItems, { id: item.id, name: item.name, category: item.categoryName }]);
+   456→    toast.success(`"${item.name}" marcado para remocao.`);
+   457→  };
+   458→
+   459→  const handleRestore = (id: string) => {
+   460→    setRemovedItems(removedItems.filter((r) => r.id !== id));
+   461→    toast.success("Item restaurado.");
+   462→  };
+   463→
+   464→  const handleSaveRemoved = async () => {
+   465→    if (removedItems.length === 0) return;
+   466→    setIsSaving(true);
+   467→    try {
+   468→      for (const item of removedItems) {
+   469→        await fetch("/api/items", {
+   470→          method: "POST",
+   471→          headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+   472→          body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.category } }),
+   473→        });
+   474→      }
+   475→      toast.success(`${removedItems.length} itens removidos!`);
+   476→      setRemovedItems([]);
+   477→      onSaved?.();
+   478→    } catch {
+   479→      toast.error("Erro ao remover.");
+   480→    } finally {
+   481→      setIsSaving(false);
+   482→    }
+   483→  };
+   484→
+   485→  if (!isOpen) return null;
+   486→
+   487→  return (
+   488→    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
+   489→      <div className="rounded-lg border border-primary/20 bg-card w-full max-w-2xl mx-4 max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+   490→        <div className="flex items-center justify-between p-4 border-b border-border">
+   491→          <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+   492→            <Settings2 className="w-4 h-4" /> Gerenciar Itens
+   493→          </h3>
+   494→          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+   495→        </div>
+   496→
+   497→        {/* Tabs */}
+   498→        <div className="flex border-b border-border px-4 pt-2 gap-1">
+   499→          {(["add", "edit", "removed"] as const).map((tab) => (
+   500→            <button key={tab} onClick={() => setActiveTab(tab)} className={`px-3 py-2 text-xs font-medium rounded-t-md transition-colors ${activeTab === tab ? "bg-primary/10 text-primary border-b-2 border-primary" : "text-muted-foreground hover:text-foreground"}`}>
+   501→              {tab === "add" && <span className="flex items-center gap-1"><PlusCircle className="w-3 h-3" /> Adicionar</span>}
+   502→              {tab === "edit" && <span className="flex items-center gap-1"><Pencil className="w-3 h-3" /> Editar/Remover</span>}
+   503→              {tab === "removed" && <span className="flex items-center gap-1"><Trash2 className="w-3 h-3" /> Removidos ({removedItems.length})</span>}
+   504→            </button>
+   505→          ))}
+   506→        </div>
+   507→
+   508→        <div className="flex-1 overflow-y-auto p-4">
+   509→          {/* ADD TAB */}
+   510→          {activeTab === "add" && (
+   511→            <div className="space-y-3">
+   512→              <p className="text-[10px] text-muted-foreground">Adicione novos itens a tabela. Eles serao salvos no banco de dados como override.</p>
+   513→              <div className="grid grid-cols-2 gap-3">
+   514→                <div>
+   515→                  <label className="text-[11px] text-muted-foreground">Nome do Item *</label>
+   516→                  <Input value={newItemName} onChange={(e) => { setNewItemName(e.target.value); setNewItemId(""); }} placeholder="Ex: Agua Potavel" className="text-sm mt-1 h-8" />
+   517→                </div>
+   518→                <div>
+   519→                  <label className="text-[11px] text-muted-foreground">ID (auto) *</label>
+   520→                  <Input value={newItemId} onChange={(e) => setNewItemId(e.target.value)} placeholder="agua_potavel" className="text-sm mt-1 h-8 font-mono" />
+   521→                </div>
+   522→              </div>
+   523→              <div className="grid grid-cols-2 gap-3">
+   524→                <div>
+   525→                  <label className="text-[11px] text-muted-foreground">Categoria *</label>
+   526→                  <select value={newItemCategory} onChange={(e) => setNewItemCategory(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-2 mt-1 text-foreground">
+   527→                    <option value="">Selecionar...</option>
+   528→                    {categories.map((c) => (<option key={c.id} value={c.id}>{c.name}</option>))}
+   529→                  </select>
+   530→                </div>
+   531→                <div>
+   532→                  <label className="text-[11px] text-muted-foreground">Imagem (caminho)</label>
+   533→                  <Input value={newItemImg} onChange={(e) => setNewItemImg(e.target.value)} placeholder="/items/nome.png" className="text-sm mt-1 h-8 font-mono" />
+   534→                </div>
+   535→              </div>
+   536→              <div>
+   537→                <label className="text-[11px] text-muted-foreground">Wiki Link</label>
+   538→                <Input value={newItemWikiLink} onChange={(e) => setNewItemWikiLink(e.target.value)} placeholder="https://dayr.wiki.gg/wiki/..." className="text-sm mt-1 h-8 font-mono" />
+   539→              </div>
+   540→              <div className="grid grid-cols-4 gap-3">
+   541→                <div>
+   542→                  <label className="text-[11px] text-muted-foreground">Preco Aco</label>
+   543→                  <Input value={newItemSteel} onChange={(e) => setNewItemSteel(e.target.value)} placeholder="5:1" className="text-sm mt-1 h-8 font-mono" />
+   544→                </div>
+   545→                <div>
+   546→                  <label className="text-[11px] text-muted-foreground">Preco Cimento</label>
+   547→                  <Input value={newItemCement} onChange={(e) => setNewItemCement(e.target.value)} placeholder="10:1" className="text-sm mt-1 h-8 font-mono" />
+   548→                </div>
+   549→                <div>
+   550→                  <label className="text-[11px] text-muted-foreground">Raridade</label>
+   551→                  <select value={newItemRarity} onChange={(e) => setNewItemRarity(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-1.5 mt-1 text-foreground">
+   552→                    <option value="common">Comum</option>
+   553→                    <option value="uncommon">Incomum</option>
+   554→                    <option value="rare">Raro</option>
+   555→                    <option value="legendary">Lendario</option>
+   556→                  </select>
+   557→                </div>
+   558→                <div>
+   559→                  <label className="text-[11px] text-muted-foreground">Demanda</label>
+   560→                  <select value={newItemDemand} onChange={(e) => setNewItemDemand(e.target.value)} className="w-full text-sm bg-card border border-border rounded-md h-8 px-1.5 mt-1 text-foreground">
+   561→                    <option value="high">Alta</option>
+   562→                    <option value="medium">Media</option>
+   563→                    <option value="low">Baixa</option>
+   564→                  </select>
+   565→                </div>
+   566→              </div>
+   567→              <div>
+   568→                <label className="text-[11px] text-muted-foreground">Notas</label>
+   569→                <Input value={newItemNotes} onChange={(e) => setNewItemNotes(e.target.value)} placeholder="Observacoes sobre o item..." className="text-sm mt-1 h-8" />
+   570→              </div>
+   571→              <Button onClick={handleAddItem} disabled={isSaving} className="w-full bg-primary text-primary-foreground text-xs h-9 mt-2">
+   572→                <PlusCircle className="w-3.5 h-3.5 mr-1" /> {isSaving ? "Salvando..." : "Adicionar Item"}
+   573→              </Button>
+   574→            </div>
+   575→          )}
+   576→
+   577→          {/* EDIT/REMOVE TAB */}
+   578→          {activeTab === "edit" && (
+   579→            <div className="space-y-3">
+   580→              <div className="relative">
+   581→                <Search className="w-3 h-3 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2" />
+   582→                <Input value={gerenciarSearch} onChange={(e) => setGerenciarSearch(e.target.value)} placeholder="Buscar item para editar ou remover..." className="pl-8 text-sm h-8" />
+   583→              </div>
+   584→              <div className="space-y-1 max-h-[50vh] overflow-y-auto">
+   585→                {filteredGerenciarItems.map((item) => (
+   586→                  <div key={item.id} className={`rounded-md border px-3 py-2 transition-colors ${editingId === item.id ? "border-primary/40 bg-primary/5" : "border-border/50 hover:bg-muted/20"}`}>
+   587→                    {editingId === item.id ? (
+   588→                      <div className="space-y-2">
+   589→                        <div className="flex items-center gap-2">
+   590→                          <ItemIcon itemId={item.id} imgPath={item.img} />
+   591→                          <span className="text-xs font-semibold truncate">{item.name}</span>
+   592→                        </div>
+   593→                        <div className="grid grid-cols-2 gap-2">
+   594→                          <div>
+   595→                            <label className="text-[9px] text-muted-foreground">Nome</label>
+   596→                            <Input value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} className="text-xs h-7 mt-0.5" />
+   597→                          </div>
+   598→                          <div>
+   599→                            <label className="text-[9px] text-muted-foreground">Categoria</label>
+   600→                            <select value={editForm.categoryId} onChange={(e) => setEditForm({ ...editForm, categoryId: e.target.value })} className="w-full text-xs bg-card border border-border rounded-md h-7 px-1.5 mt-0.5 text-foreground">
+   601→                              {categories.map((c) => (<option key={c.id} value={c.id}>{c.name}</option>))}
+   602→                            </select>
+   603→                          </div>
+   604→                        </div>
+   605→                        <div className="grid grid-cols-2 gap-2">
+   606→                          <div>
+   607→                            <label className="text-[9px] text-muted-foreground">Wiki Link</label>
+   608→                            <Input value={editForm.wikiLink} onChange={(e) => setEditForm({ ...editForm, wikiLink: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+   609→                          </div>
+   610→                          <div>
+   611→                            <label className="text-[9px] text-muted-foreground">Demanda</label>
+   612→                            <select value={editForm.demand} onChange={(e) => setEditForm({ ...editForm, demand: e.target.value })} className="w-full text-xs bg-card border border-border rounded-md h-7 px-1.5 mt-0.5 text-foreground">
+   613→                              <option value="high">Alta</option>
+   614→                              <option value="medium">Media</option>
+   615→                              <option value="low">Baixa</option>
+   616→                            </select>
+   617→                          </div>
+   618→                        </div>
+   619→                        <div className="grid grid-cols-2 gap-2">
+   620→                          <div>
+   621→                            <label className="text-[9px] text-muted-foreground">Aco</label>
+   622→                            <Input value={editForm.steel} onChange={(e) => setEditForm({ ...editForm, steel: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+   623→                          </div>
+   624→                          <div>
+   625→                            <label className="text-[9px] text-muted-foreground">Cimento</label>
+   626→                            <Input value={editForm.cement} onChange={(e) => setEditForm({ ...editForm, cement: e.target.value })} className="text-xs h-7 mt-0.5 font-mono" />
+   627→                          </div>
+   628→                        </div>
+   629→                        <div>
+   630→                          <label className="text-[9px] text-muted-foreground">Notas</label>
+   631→                          <Input value={editForm.notes} onChange={(e) => setEditForm({ ...editForm, notes: e.target.value })} className="text-xs h-7 mt-0.5" />
+   632→                        </div>
+   633→                        <div className="flex gap-2">
+   634→                          <button onClick={() => setEditingId(null)} className="flex-1 text-[10px] py-1 rounded border border-border hover:bg-muted/30 text-muted-foreground">Cancelar</button>
+   635→                          <button onClick={handleSaveEdit} disabled={isSaving} className="flex-1 text-[10px] py-1 rounded bg-primary text-primary-foreground font-semibold flex items-center justify-center gap-1"><Save className="w-3 h-3" />{isSaving ? "..." : "Salvar"}</button>
+   636→                        </div>
+   637→                      </div>
+   638→                    ) : (
+   639→                      <div className="flex items-center justify-between">
+   640→                        <div className="flex items-center gap-2 min-w-0">
+   641→                          <ItemIcon itemId={item.id} imgPath={item.img} />
+   642→                          <span className="text-xs text-foreground truncate">{item.name}</span>
+   643→                          <span className="text-[9px] text-muted-foreground shrink-0">{item.categoryName}</span>
+   644→                        </div>
+   645→                        <div className="flex items-center gap-1.5 shrink-0">
+   646→                          <button onClick={() => startEdit(item)} className="text-[10px] text-yellow-400 hover:text-yellow-300">Editar</button>
+   647→                          <button onClick={() => handleRemove(item)} className="text-[10px] text-red-400 hover:text-red-300">Remover</button>
+   648→                        </div>
+   649→                      </div>
+   650→                    )}
+   651→                  </div>
+   652→                ))}
+   653→              </div>
+   654→            </div>
+   655→          )}
+   656→
+   657→          {/* REMOVED TAB */}
+   658→          {activeTab === "removed" && (
+   659→            <div className="space-y-3">
+   660→              <p className="text-[10px] text-muted-foreground">Itens marcados para remocao nesta sessao.</p>
+   661→              {removedItems.length === 0 ? (
+   662→                <p className="text-xs text-muted-foreground text-center py-4">Nenhum item removido.</p>
+   663→              ) : (
+   664→                <>
+   665→                  <div className="space-y-1">
+   666→                    {removedItems.map((item) => (
+   667→                      <div key={item.id} className="flex items-center justify-between rounded-md border border-red-500/20 bg-red-500/5 px-3 py-2">
+   668→                        <div className="flex items-center gap-2 min-w-0">
+   669→                          <Trash2 className="w-3 h-3 text-red-400 shrink-0" />
+   670→                          <span className="text-xs text-foreground truncate">{item.name}</span>
+   671→                          <span className="text-[9px] text-muted-foreground shrink-0">({item.category})</span>
+   672→                        </div>
+   673→                        <button onClick={() => handleRestore(item.id)} className="text-[10px] text-green-400 hover:text-green-300 flex items-center gap-0.5 shrink-0"><RotateCcw className="w-3 h-3" /> Restaurar</button>
+   674→                      </div>
+   675→                    ))}
+   676→                  </div>
+   677→                  <Button onClick={handleSaveRemoved} disabled={isSaving} variant="destructive" className="w-full text-xs h-8">
+   678→                    <Trash2 className="w-3.5 h-3.5 mr-1" /> {isSaving ? "Salvando..." : `Confirmar Remocao de ${removedItems.length} itens`}
+   679→                  </Button>
+   680→                </>
+   681→              )}
+   682→            </div>
+   683→          )}
+   684→        </div>
+   685→      </div>
+   686→    </div>
+   687→  );
+   688→}
+   689→
+   690→export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }) {
+   691→  const [search, setSearch] = useState("");
+   692→  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+   693→  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+   694→  const [sortField, setSortField] = useState<"name" | "steel" | "cement">("name");
+   695→  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+   696→  const [showGuia, setShowGuia] = useState(false);
+   697→  const [showReportar, setShowReportar] = useState(false);
+   698→  const [showGerenciar, setShowGerenciar] = useState(false);
+   699→  const [showOnlyMissing, setShowOnlyMissing] = useState(false);
+   700→  const [priceReports, setPriceReports] = useState<Array<{ id?: number; itemId: string; itemName?: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number; nickname: string; data: string }>>([]);
+   701→  const [overrides, setOverrides] = useState<Array<{ itemId: string; name?: string; categoryId?: string; img?: string; wikiLink?: string; steel?: string; cement?: string; rarity?: string; demand?: string; notes?: string; action: string }>>([]);
+   702→  const { reportPrice } = useBank();
+   703→  const isAdmin = isAdminProp;
+   704→
+   705→  const baseCategories = pricesData.categories as Category[];
+   706→  const metadata = pricesData.metadata;
+   707→
+   708→  // Fetch item overrides from DB
+   709→  const fetchOverrides = useCallback(async () => {
+   710→    try {
+   711→      const pwd = sessionStorage.getItem("adminPwd");
+   712→      if (!pwd) return;
+   713→      const res = await fetch("/api/items", { headers: { "x-admin-password": pwd } });
+   714→      if (res.ok) {
+   715→        const data = await res.json();
+   716→        if (Array.isArray(data)) setOverrides(data);
+   717→      }
+   718→    } catch { /* silent */ }
+   719→  }, []);
+   720→
+   721→  // Merge overrides with static data
+   722→  const categories = useMemo(() => {
+   723→    const removeSet = new Set(overrides.filter(o => o.action === "remove").map(o => o.itemId));
+   724→    const editMap = new Map(overrides.filter(o => o.action === "edit").map(o => [o.itemId, o]));
+   725→    const addOverrides = overrides.filter(o => o.action === "add");
+   726→    const baseItemIds = new Set(baseCategories.flatMap(c => c.items.map(i => i.id)));
+   727→    // Apply edits to existing items
+   728→    const editedItems: Array<PriceItem & { _overrideCategoryId?: string }> = [];
+   729→    for (const cat of baseCategories) {
+   730→      for (const item of cat.items) {
+   731→        if (removeSet.has(item.id)) continue;
+   732→        const override = editMap.get(item.id);
+   733→        if (override) {
+   734→          editedItems.push({
+   735→            ...item,
+   736→            ...(override.name ? { name: override.name } : {}),
+   737→            ...(override.img ? { img: override.img } : {}),
+   738→            ...(override.wikiLink !== undefined ? { wikiLink: override.wikiLink || undefined } : {}),
+   739→            ...(override.steel ? { steel: override.steel } : {}),
+   740→            ...(override.cement ? { cement: override.cement } : {}),
+   741→            ...(override.rarity ? { rarity: override.rarity } : {}),
+   742→            ...(override.demand ? { demand: override.demand } : {}),
+   743→            ...(override.notes !== undefined ? { notes: override.notes || "" } : {}),
+   744→            _overrideCategoryId: override.categoryId || undefined,
+   745→          });
+   746→        } else {
+   747→          editedItems.push({ ...item });
+   748→        }
+   749→      }
+   750→    }
+   751→    // Add new items from overrides that don't exist in base data
+   752→    for (const o of addOverrides) {
+   753→      if (removeSet.has(o.itemId)) continue;
+   754→      if (baseItemIds.has(o.itemId)) continue;
+   755→      editedItems.push({
+   756→        id: o.itemId,
+   757→        name: o.name || o.itemId,
+   758→        img: o.img || undefined,
+   759→        wikiLink: o.wikiLink || undefined,
+   760→        steel: o.steel || "?:?",
+   761→        cement: o.cement || "?:?",
+   762→        rarity: o.rarity || "common",
+   763→        demand: o.demand || "medium",
+   764→        notes: o.notes || "",
+   765→        _overrideCategoryId: o.categoryId || undefined,
+   766→      });
+   767→    }
+   768→    // Rebuild categories
+   769→    const catMap = new Map<string, (PriceItem & { _overrideCategoryId?: string })[]>();
+   770→    for (const cat of baseCategories) {
+   771→      catMap.set(cat.id, []);
+   772→    }
+   773→    for (const item of editedItems) {
+   774→      const catId = item._overrideCategoryId || baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
+   775→      if (catId && catMap.has(catId)) {
+   776→        catMap.get(catId)!.push(item);
+   777→      }
+   778→    }
+   779→    return baseCategories.map(cat => ({
+   780→      ...cat,
+   781→      items: catMap.get(cat.id) || [],
+   782→    }));
+   783→  }, [baseCategories, overrides]);
+   784→
+   785→  const allItems = useMemo(() => {
+   786→    return categories.flatMap((c) => c.items);
+   787→  }, [categories]);
+   788→
+   789→  const fetchReports = useCallback(async () => {
+   790→    try {
+   791→      const res = await fetch("/api/banco?action=getPriceReports");
+   792→      const data = await res.json();
+   793→      if (Array.isArray(data)) setPriceReports(data);
+   794→    } catch { /* silent */ }
+   795→  }, []);
+   796→
+   797→  useEffect(() => { fetchReports(); fetchOverrides(); }, [fetchReports, fetchOverrides]);
+   798→
+   799→  const reportMap = useMemo(() => {
+   800→    const map: Record<string, { avgSteelQty: number; avgSteelPrice: number; avgCementQty: number; avgCementPrice: number; count: number; reports: typeof priceReports }> = {};
+   801→    for (const r of priceReports) {
+   802→      if (!map[r.itemId]) map[r.itemId] = { avgSteelQty: 0, avgSteelPrice: 0, avgCementQty: 0, avgCementPrice: 0, count: 0, reports: [] };
+   803→      const qty = r.steelQty || 0;
+   804→      const price = r.steelPrice || 1;
+   805→      const cqty = r.cementQty || 0;
+   806→      const cprice = r.cementPrice || 1;
+   807→      map[r.itemId].avgSteelQty += qty;
+   808→      map[r.itemId].avgSteelPrice += price;
+   809→      map[r.itemId].avgCementQty += cqty;
+   810→      map[r.itemId].avgCementPrice += cprice;
+   811→      map[r.itemId].count++;
+   812→      map[r.itemId].reports.push(r);
+   813→    }
+   814→    for (const key of Object.keys(map)) {
+   815→      const m = map[key];
+   816→      m.avgSteelQty = Math.round(m.avgSteelQty / m.count);
+   817→      m.avgSteelPrice = Math.round(m.avgSteelPrice / m.count);
+   818→      m.avgCementQty = Math.round(m.avgCementQty / m.count);
+   819→      m.avgCementPrice = Math.round(m.avgCementPrice / m.count);
+   820→    }
+   821→    return map;
+   822→  }, [priceReports]);
+   823→
+   824→  const filteredCategories = useMemo(() => {
+   825→    return categories
+   826→      .map((cat) => ({
+   827→        ...cat,
+   828→        items: cat.items
+   829→          .filter((item) => {
+   830→            if (showOnlyMissing && !isPriceUnknown(item.steel)) return false;
+   831→            return item.name.toLowerCase().includes(search.toLowerCase()) || item.id.toLowerCase().includes(search.toLowerCase()) || item.notes.toLowerCase().includes(search.toLowerCase());
+   832→          })
+   833→          .sort((a, b) => {
+   834→            let cmp = 0;
+   835→            if (sortField === "name") cmp = a.name.localeCompare(b.name);
+   836→            else if (sortField === "steel") cmp = parsePriceValue(a.steel) - parsePriceValue(b.steel);
+   837→            else if (sortField === "cement") cmp = parsePriceValue(a.cement) - parsePriceValue(b.cement);
+   838→            return sortDir === "asc" ? cmp : -cmp;
+   839→          }),
+   840→      }))
+   841→      .filter((cat) => activeCategory === null || cat.id === activeCategory)
+   842→      .filter((cat) => cat.items.length > 0);
+   843→  }, [categories, search, activeCategory, sortField, sortDir, showOnlyMissing]);
+   844→
+   845→  const totalItems = filteredCategories.reduce((sum, c) => sum + c.items.length, 0);
+   846→  const totalAllItems = categories.reduce((sum, c) => sum + c.items.length, 0);
+   847→  const totalMissing = categories.reduce((sum, c) => sum + c.items.filter((i) => isPriceUnknown(i.steel)).length, 0);
+   848→
+   849→  const toggleSort = (field: "name" | "steel" | "cement") => {
+   850→    if (sortField === field) setSortDir(sortDir === "asc" ? "desc" : "asc");
+   851→    else { setSortField(field); setSortDir("asc"); }
+   852→  };
+   853→
+   854→  const toggleCategory = (id: string) => {
+   855→    setExpandedCategories((prev) => {
+   856→      const next = new Set(prev);
+   857→      if (next.has(id)) next.delete(id);
+   858→      else next.add(id);
+   859→      return next;
+   860→    });
+   861→  };
+   862→
+   863→  const expandAll = () => setExpandedCategories(new Set(filteredCategories.map((c) => c.id)));
+   864→  const collapseAll = () => setExpandedCategories(new Set());
+   865→
+   866→  const handleReport = async (d: { itemId: string; itemName: string; nickname: string; steelQty: number; steelPrice: number; cementQty: number; cementPrice: number }) => {
+   867→    try {
+   868→      await fetch("/api/banco", {
+   869→        method: "POST",
+   870→        headers: { "Content-Type": "application/json" },
+   871→        body: JSON.stringify({
+   872→          action: "reportPrice",
+   873→          itemId: d.itemId,
+   874→          itemName: d.itemName,
+   875→          nickname: d.nickname,
+   876→          steelQty: d.steelQty,
+   877→          steelPrice: d.steelPrice,
+   878→          cementQty: d.cementQty,
+   879→          cementPrice: d.cementPrice,
+   880→        }),
+   881→      });
+   882→    } catch { /* silent */ }
+   883→    await fetchReports();
+   884→  };
+   885→
+   886→  const categoryColorMap: Record<string, { border: string; bg: string; text: string; glow: string }> = {
+   887→    food: { border: "border-l-green-500", bg: "bg-green-500/5", text: "text-green-500", glow: "shadow-green-500/5" },
+   888→    resources: { border: "border-l-amber-500", bg: "bg-amber-500/5", text: "text-amber-500", glow: "shadow-amber-500/5" },
+   889→    medicine: { border: "border-l-red-500", bg: "bg-red-500/5", text: "text-red-500", glow: "shadow-red-500/5" },
+   890→    ammo: { border: "border-l-orange-500", bg: "bg-orange-500/5", text: "text-orange-500", glow: "shadow-orange-500/5" },
+   891→    weapons: { border: "border-l-purple-500", bg: "bg-purple-500/5", text: "text-purple-500", glow: "shadow-purple-500/5" },
+   892→    tools: { border: "border-l-blue-500", bg: "bg-blue-500/5", text: "text-blue-500", glow: "shadow-blue-500/5" },
+   893→  };
+   894→
+   895→  return (
+   896→    <div className="space-y-5">
+   897→      <AdSlot size="leaderboard" className="mb-3" />
+   898→      {/* ═══ Header Area ═══ */}
+   899→      <div className="flex items-end justify-between flex-wrap gap-3">
+   900→        <div>
+   901→          <h2 className="text-xl font-bold text-primary tracking-tight flex items-center gap-2.5 pb-1.5">
+   902→            Tabela de Precos
+   903→            <span className="block h-[2px] flex-1 min-w-[60px] max-w-[140px] rounded-full bg-gradient-to-r from-primary/60 via-primary/20 to-transparent" />
+   904→          </h2>
+   905→          <p className="text-[10px] text-muted-foreground pl-0.5">{totalAllItems} itens &middot; {totalMissing} sem preco &middot; Fonte: dayr.wiki.gg + comunidade</p>
+   906→        </div>
+   907→        <div className="flex items-center gap-2 flex-wrap">
+   908→          <button onClick={() => setShowReportar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-green-500/30 text-green-400 bg-green-500/5 hover:bg-green-500/15 shadow-sm shadow-green-500/10 transition-all">
+   909→            <MessageSquarePlus className="w-3.5 h-3.5" /> Reportar
+   910→          </button>
+   911→          {isAdmin && (
+   912→            <button onClick={() => setShowGerenciar(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-purple-500/30 text-purple-400 bg-purple-500/5 hover:bg-purple-500/15 shadow-sm shadow-purple-500/10 transition-all">
+   913→              <Settings2 className="w-3.5 h-3.5" /> Gerenciar Itens
+   914→            </button>
+   915→          )}
+   916→          <button onClick={() => setShowGuia(true)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-blue-500/30 text-blue-400 bg-blue-500/5 hover:bg-blue-500/15 shadow-sm shadow-blue-500/10 transition-all">
+   917→            <BookOpen className="w-3.5 h-3.5" /> Guia
+   918→          </button>
+   919→        </div>
+   920→      </div>
+   921→
+   922→      {/* ═══ Stat Cards ═══ */}
+   923→      <div className="grid grid-cols-3 gap-3">
+   924→        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+   925→          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-green-500/5 blur-2xl" />
+   926→          <div className="relative flex items-center gap-3">
+   927→            <div className="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0">
+   928→              <MessageSquarePlus className="w-5 h-5 text-green-400" />
+   929→            </div>
+   930→            <div>
+   931→              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Reports</p>
+   932→              <p className="text-lg font-bold font-mono text-foreground leading-tight">{priceReports.length}</p>
+   933→            </div>
+   934→          </div>
+   935→        </div>
+   936→        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+   937→          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-orange-500/5 blur-2xl" />
+   938→          <div className="relative flex items-center gap-3">
+   939→            <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0">
+   940→              <AlertCircle className="w-5 h-5 text-orange-400" />
+   941→            </div>
+   942→            <div>
+   943→              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Sem Preco</p>
+   944→              <p className="text-lg font-bold font-mono text-foreground leading-tight">{totalMissing}</p>
+   945→            </div>
+   946→          </div>
+   947→        </div>
+   948→        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-3.5 shadow-md shadow-black/20">
+   949→          <div className="absolute -right-2 -top-2 w-14 h-14 rounded-full bg-blue-500/5 blur-2xl" />
+   950→          <div className="relative flex items-center gap-3">
+   951→            <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+   952→              <BarChart3 className="w-5 h-5 text-blue-400" />
+   953→            </div>
+   954→            <div>
+   955→              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Tendencias</p>
+   956→              <p className="text-lg font-bold font-mono text-foreground leading-tight">{Object.keys(priceTrends.trends).length}</p>
+   957→            </div>
+   958→          </div>
+   959→        </div>
+   960→      </div>
+   961→
+   962→      {/* ═══ Search & Controls Bar ═══ */}
+   963→      <div className="flex items-center gap-2">
+   964→        <div className="relative flex-1 group">
+   965→          <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2 group-focus-within:text-primary transition-colors" />
+   966→          <Input placeholder="Buscar item..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9 pr-3 bg-card border-border text-sm h-10 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary/40 shadow-sm shadow-black/10 transition-all" />
+   967→        </div>
+   968→        <div className="flex items-center gap-1.5 rounded-lg border border-border bg-card p-1 shadow-sm shadow-black/10">
+   969→          <button onClick={() => setShowOnlyMissing(!showOnlyMissing)} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all whitespace-nowrap h-8 ${showOnlyMissing ? "bg-orange-500/20 text-orange-400 shadow-sm shadow-orange-500/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/40"}`}>
+   970→            <AlertCircle className="w-3.5 h-3.5" /> Sem Preco
+   971→          </button>
+   972→          <div className="w-px h-5 bg-border" />
+   973→          <button onClick={expandAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-all h-8">Abrir</button>
+   974→          <button onClick={collapseAll} className="px-2.5 py-1.5 rounded-md text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-all h-8">Fechar</button>
+   975→        </div>
+   976→      </div>
+   977→
+   978→      {/* ═══ Category Filter Bar ═══ */}
+   979→      <div className="overflow-x-auto scrollbar-thin -mx-1 px-1">
+   980→        <div className="flex gap-2 min-w-max">
+   981→          <button onClick={() => setActiveCategory(null)} className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap border-l-[3px] ${activeCategory === null ? "bg-primary/15 text-primary border-primary/30 border-l-primary shadow-sm shadow-primary/10" : "bg-card text-muted-foreground border-border border-l-border hover:text-foreground hover:bg-muted/30"}`}>
+   982→            Todos
+   983→            <span className="ml-1.5 text-[10px] opacity-70">{totalAllItems}</span>
+   984→          </button>
+   985→          {categories.map((cat) => {
+   986→            const cc = categoryColorMap[cat.id] || categoryColorMap.resources;
+   987→            const isActive = activeCategory === cat.id;
+   988→            return (
+   989→              <button key={cat.id} onClick={() => setActiveCategory(isActive ? null : cat.id)} className={`px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap border-l-[3px] ${isActive ? `${cc.bg} ${cc.text} border-l-current shadow-sm ${cc.glow}` : "bg-card text-muted-foreground border-border border-l-border hover:text-foreground hover:bg-muted/30"}`}>
+   990→                {cat.name}
+   991→                <span className="ml-1.5 text-[10px] opacity-70">{cat.items.length}</span>
+   992→              </button>
+   993→            );
+   994→          })}
+   995→        </div>
+   996→      </div>
+   997→
+   998→      <p className="text-[11px] text-muted-foreground pl-0.5">
+   999→        {totalItems} {totalItems === 1 ? "item" : "itens"}{search ? ` para "${search}"` : ""}{showOnlyMissing ? " (sem preco)" : ""}
+  1000→      </p>
+  1001→
+  1002→      {/* ═══ Table ═══ */}
+  1003→      <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
+  1004→        {/* Table Header - Sticky */}
+  1005→        <div className="sticky top-0 z-10 grid grid-cols-12 gap-1 px-4 py-2.5 border-b border-border bg-muted/60 backdrop-blur-md text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+  1006→          <div className="col-span-1">Icone</div>
+  1007→          <button onClick={() => toggleSort("name")} className="col-span-3 flex items-center gap-1 hover:text-foreground transition-colors text-left">Item <ArrowUpDown className="w-3 h-3" /></button>
+  1008→          <button onClick={() => toggleSort("steel")} className="col-span-2 flex items-center gap-1 hover:text-foreground transition-colors text-left">Aco ($) <ArrowUpDown className="w-3 h-3" /></button>
+  1009→          <button onClick={() => toggleSort("cement")} className="col-span-2 flex items-center gap-1 hover:text-foreground transition-colors text-left">Cimento <ArrowUpDown className="w-3 h-3" /></button>
+  1010→          <div className="col-span-1 hidden sm:flex justify-center">Dem.</div>
+  1011→          <div className="col-span-2 hidden sm:flex justify-center">Tendencia</div>
+  1012→          <div className="col-span-1 hidden md:flex justify-center">Rep.</div>
+  1013→        </div>
+  1014→
+  1015→        {filteredCategories.length === 0 ? (
+  1016→          <div className="p-12 text-center">
+  1017→            <p className="text-sm text-muted-foreground">Nenhum item encontrado.</p>
+  1018→          </div>
+  1019→        ) : (
+  1020→          filteredCategories.map((cat) => {
+  1021→            const cc = categoryColorMap[cat.id] || categoryColorMap.resources;
+  1022→            return (
+  1023→              <div key={cat.id}>
+  1024→                {/* Category Header */}
+  1025→                <button onClick={() => toggleCategory(cat.id)} className={`w-full px-4 py-3 border-b border-border ${cc.bg} hover:brightness-125 transition-all text-left border-l-[3px] ${cc.border}`}>
+  1026→                  <div className="flex items-center gap-2.5">
+  1027→                    {expandedCategories.has(cat.id) ? <ChevronDown className="w-3.5 h-3.5 text-primary" /> : <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />}
+  1028→                    <span className="text-sm font-bold text-foreground">{cat.name}</span>
+  1029→                    <span className="text-[10px] text-muted-foreground font-mono bg-muted/50 px-1.5 py-0.5 rounded">{cat.items.length}</span>
+  1030→                  </div>
+  1031→                </button>
+  1032→                {expandedCategories.has(cat.id) && (
+  1033→                  <div>
+  1034→                    {cat.items.map((item, idx) => {
+  1035→                      const missing = isPriceUnknown(item.steel);
+  1036→                      const rep = reportMap[item.id];
+  1037→                      return (
+  1038→                        <div key={item.id} className={`grid grid-cols-12 gap-1 px-4 py-2.5 border-b border-border/40 transition-all text-xs border-l-[3px] border-l-transparent hover:border-l-primary/40 hover:bg-muted/15 ${idx % 2 === 0 ? "" : "bg-muted/[0.03]"} ${missing ? "opacity-60" : ""}`}>
+  1039→                          <div className="col-span-1 text-center flex items-center justify-center"><ItemIcon itemId={item.id} imgPath={item.img} /></div>
+  1040→                          <div className="col-span-3 min-w-0">
+  1041→                            {item.wikiLink ? (
+  1042→                              <a href={item.wikiLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors truncate block" title={"Ver no Wiki: " + item.name}>
+  1043→                                {item.name} <ExternalLink className="w-2.5 h-2.5 inline ml-1 opacity-40" />
+  1044→                              </a>
+  1045→                            ) : (
+  1046→                              <p className="font-semibold text-foreground truncate">{item.name}</p>
+  1047→                            )}
+  1048→                            {item.notes && item.notes !== "Preco pendente - reporte para ajudar!" && <p className="text-[10px] text-muted-foreground truncate hidden sm:block mt-0.5">{item.notes}</p>}
+  1049→                            {missing && <p className="text-[9px] text-orange-400 truncate mt-0.5">Preco pendente</p>}
+  1050→                          </div>
+  1051→                          <div className={`col-span-2 font-mono font-bold flex items-center ${missing ? "text-orange-400/60" : getSteelColor(item.demand)}`}>{item.steel}</div>
+  1052→                          <div className={`col-span-2 font-mono font-bold flex items-center ${missing ? "text-orange-400/60" : "text-foreground/80"}`}>{item.cement}</div>
+  1053→                          <div className="col-span-1 hidden sm:flex justify-center items-center">
+  1054→                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${demandColors[item.demand] || demandColors.medium}`}>{demandLabels[item.demand] || "?"}</span>
+  1055→                          </div>
+  1056→                          <div className="col-span-2 hidden sm:flex justify-center items-center">
+  1057→                            {rep ? (
+  1058→                              <div className="flex items-center gap-1.5 text-[10px] font-mono">
+  1059→                                <span className="font-bold text-green-400">{rep.avgSteelQty}:{rep.avgSteelPrice}$</span>
+  1060→                                <span className="text-muted-foreground">/</span>
+  1061→                                <span className="font-bold text-foreground/80">{rep.avgCementQty}:{rep.avgCementPrice}c</span>
+  1062→                                <span className="text-muted-foreground">({rep.count})</span>
+  1063→                              </div>
+  1064→                            ) : (
+  1065→                              <Sparkline itemId={item.id} />
+  1066→                            )}
+  1067→                          </div>
+  1068→                          <div className="col-span-1 hidden md:flex justify-center items-center">
+  1069→                            {rep && rep.count > 0 ? (
+  1070→                              <span className="text-[9px] font-mono text-green-400">{rep.count}</span>
+  1071→                            ) : (
+  1072→                              <span className="text-[9px] text-muted-foreground">-</span>
+  1073→                            )}
+  1074→                          </div>
+  1075→                        </div>
+  1076→                      );
+  1077→                    })}
+  1078→                  </div>
+  1079→                )}
+  1080→              </div>
+  1081→            );
+  1082→          })
+  1083→        )}
+  1084→      </div>
+  1085→
+  1086→      {/* ═══ Reports Section ═══ */}
+  1087→      <AdSlot size="banner" className="my-3" />
+  1088→      <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
+  1089→        <div className="px-4 py-3 border-b border-border bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
+  1090→          <h3 className="text-xs font-bold text-foreground flex items-center gap-2">
+  1091→            <Users className="w-3.5 h-3.5 text-primary" /> Ultimos Reports da Comunidade
+  1092→          </h3>
+  1093→        </div>
+  1094→        <div className="p-3">
+  1095→          {priceReports.length === 0 ? (
+  1096→            <p className="text-[11px] text-muted-foreground py-3 text-center">Nenhum report ainda. Seja o primeiro a reportar precos!</p>
+  1097→          ) : (
+  1098→            <div className="space-y-1 max-h-52 overflow-y-auto">
+  1099→              {priceReports.slice(0, 20).map((r) => (
+  1100→                <div key={r.id} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted/20 transition-colors text-[11px]">
+  1101→                  <div className="flex items-center gap-2.5 min-w-0">
+  1102→                    <span className="text-primary font-semibold shrink-0">{r.nickname}</span>
+  1103→                    <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
+  1104→                  </div>
+  1105→                  <div className="flex items-center gap-3 shrink-0">
+  1106→                    <span className="font-mono font-semibold text-green-400">{r.steelQty}:{r.steelPrice}$</span>
+  1107→                    <span className="font-mono font-semibold text-foreground/80">{r.cementQty}:{r.cementPrice}c</span>
+  1108→                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
+  1109→                  </div>
+  1110→                </div>
+  1111→              ))}
+  1112→            </div>
+  1113→          )}
+  1114→        </div>
+  1115→      </div>
+  1116→      <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
+  1117→      <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
+  1118→      {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} mergedCategories={categories} overrides={overrides} />}
+  1119→      <AdSlot size="banner" className="my-3" />
+  1120→    </div>
+  1121→  );
+  1122→}
+  1123→
