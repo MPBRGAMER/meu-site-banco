@@ -129,6 +129,7 @@ export interface LotericaData {
   valorNumero: number;
   moedaAceita: string;
   premioMinimo: number;
+  premioAcumulado: number;
   duracaoMinutos: number;
   dataCriacao: string;
   dataFimVendas: string | null;
@@ -737,13 +738,33 @@ export function useBank() {
       try {
         const result = (await apiPost("iniciarSorteioLoterica", {
           lotericaId,
-        })) as { numeroSorteado: number; ganhador: string | null };
-        toast.success(
-          `Número sorteado: ${result.numeroSorteado} - Ganhador: ${result.ganhador || "Ninguém (não vendido)"}`
-        );
+        })) as { numeroSorteado: number; ganhador: string | null; premioFinal: number; taxaBanco: number; acumulou: boolean };
+        if (result.acumulou) {
+          toast.success(`Número sorteado: ${result.numeroSorteado} - Ninguém acertou! Prêmio de ${result.premioFinal} acumulou!`);
+        } else {
+          toast.success(`Número sorteado: ${result.numeroSorteado} - Ganhador: ${result.ganhador}! Prêmio: ${result.premioFinal}`);
+        }
         loadAll();
       } catch (e) {
         toast.error(e instanceof Error ? e.message : "Erro no sorteio");
+      }
+    },
+    [loadAll]
+  );
+  const finalizarLoterica = useCallback(
+    async (lotericaId: string) => {
+      try {
+        const result = (await apiPost("finalizarLoterica", {
+          lotericaId,
+        })) as { acumuladoProxima: number };
+        if (result.acumuladoProxima > 0) {
+          toast.success(`Lotérica finalizada! ${result.acumuladoProxima} acumulado para a próxima.`);
+        } else {
+          toast.success("Lotérica finalizada! Pode criar uma nova.");
+        }
+        loadAll();
+      } catch (e) {
+        toast.error(e instanceof Error ? e.message : "Erro ao finalizar");
       }
     },
     [loadAll]
@@ -794,6 +815,7 @@ export function useBank() {
     criarLoterica,
     comprarNumero,
     iniciarSorteioLoterica,
+    finalizarLoterica,
     reportPrice: async (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number }) => {
       await apiPost("reportPrice", d);
       loadAll();

@@ -75,3 +75,28 @@ Stage Summary:
 - Images now always show with fallback chain: stored URL -> generated from nomeItem -> blank.png
 - Search is now in pt-BR (332 items): typing "Agua Toxica" auto-fills image as "toxic_water"
 - Quantity field added: admin can set lot size, displayed throughout the UI
+---
+Task ID: 1
+Agent: main
+Task: Lotérica - admin-only, prize logic with min/accumulation, 20% bank credit on finalize
+
+Work Log:
+- Read all existing files: LotericaTab.tsx, CaixaTab.tsx, page.tsx, schema.prisma, useBank.ts, route.ts
+- Added `premioAcumulado Float @default(0)` to Loterica model in Prisma schema
+- Updated `criarLoterica` API: checks no active lottery, inherits accumulated prize from previous
+- Updated `comprarNumero` API: only tracks arrecadadoTotal, NO caixa credit during sales
+- Rewrote `iniciarSorteioLoterica` API: calculates prize (max(80%*total, min) + accumulated), credits 20% to estoque, handles accumulation when no winner
+- Added `finalizarLoterica` API: marks lottery as finalizada so new one can be created
+- Updated `getLoterica` API: only returns non-finalized lotteries as active
+- Updated LotericaData interface in useBank.ts to include premioAcumulado
+- Added `finalizarLoterica` function to useBank hook with proper toast messages
+- Completely rewrote LotericaTab.tsx: admin-only create/sell/draw, visual-only for non-admin, prize calculation display, accumulation tracking, finalizar button
+- Updated page.tsx to pass isAdmin to LotericaTab
+- Ran prisma db push + next build - all successful
+
+Stage Summary:
+- Lotérica is now fully admin-controlled: only admin can create, sell numbers, and draw
+- Prize math: 80% of total sales (min guaranteed), + accumulated from previous
+- 20% of sales credited to estoque ONLY when admin performs the draw
+- No-winner scenario: prize accumulates and carries to next lottery automatically
+- Non-admin users see everything in read-only mode

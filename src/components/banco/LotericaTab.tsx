@@ -4,7 +4,7 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Dices, Plus, Clock, Trophy, Timer, AlertCircle, PartyPopper, Search, History, ChevronDown, ChevronUp, Users, Coins, Ticket } from "lucide-react";
+import { Dices, Plus, Clock, Trophy, Timer, AlertCircle, PartyPopper, Search, History, ChevronDown, ChevronUp, Users, Coins, Ticket, Shield, TrendingUp, CheckCircle, XCircle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 function LotericaTimer({ dataFim }: { dataFim: string }) {
@@ -25,7 +25,7 @@ function LotericaTimer({ dataFim }: { dataFim: string }) {
 function HistoricoLotericaEntry({ entry, index }: {
   entry: {
     id: string; status: string; valorNumero: number; moedaAceita: string;
-    premioMinimo: number; duracaoMinutos: number; dataCriacao: string;
+    premioMinimo: number; premioAcumulado: number; duracaoMinutos: number; dataCriacao: string;
     dataFimVendas: string | null; dataSorteio: string | null;
     numeroSorteado: number | null; ganhador: string | null;
     valorPremio: number; arrecadadoTotal: number; totalVendidos: number;
@@ -35,7 +35,8 @@ function HistoricoLotericaEntry({ entry, index }: {
   const [expanded, setExpanded] = useState(false);
 
   const taxaBanco = Math.round(entry.arrecadadoTotal * 0.2);
-  const premio = entry.arrecadadoTotal - taxaBanco;
+  const premioBruto = Math.max(entry.arrecadadoTotal * 0.8, entry.premioMinimo);
+  const premioFinal = premioBruto + (entry.premioAcumulado || 0);
   const acerto = entry.ganhador ? true : false;
 
   return (
@@ -76,19 +77,20 @@ function HistoricoLotericaEntry({ entry, index }: {
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
               <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Coins className="w-3 h-3" /> Arrecadado</p>
-              <p className="text-sm font-bold font-mono text-primary">{entry.arrecadadoTotal}</p>
+              <p className="text-sm font-bold font-mono text-primary">{Math.round(entry.arrecadadoTotal)}</p>
               <p className="text-[10px] text-muted-foreground">{entry.valorNumero} {entry.moedaAceita}/num</p>
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
-              <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Trophy className="w-3 h-3" /> Premio</p>
-              <p className="text-sm font-bold font-mono text-yellow-400">{premio.toFixed(0)}</p>
+              <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Trophy className="w-3 h-3" /> Premio Final</p>
+              <p className="text-sm font-bold font-mono text-yellow-400">{Math.round(premioFinal)}</p>
+              {(entry.premioAcumulado || 0) > 0 && <p className="text-[10px] text-orange-400">+{Math.round(entry.premioAcumulado)} acumulado</p>}
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
               <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Clock className="w-3 h-3" /> Data Sorteio</p>
               <p className="text-sm font-bold text-foreground">{entry.dataSorteio ? new Date(entry.dataSorteio).toLocaleDateString("pt-BR") : "-"}</p>
             </div>
           </div>
-          <div className={`rounded-md border p-3 ${acerto ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5"}`}>
+          <div className={`rounded-md border p-3 mb-3 ${acerto ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5"}`}>
             <div className="flex items-center gap-3">
               {acerto ? <PartyPopper className="w-6 h-6 text-green-400" /> : <AlertCircle className="w-6 h-6 text-red-400" />}
               <div>
@@ -97,14 +99,28 @@ function HistoricoLotericaEntry({ entry, index }: {
                 </p>
                 {acerto ? (
                   <p className="text-xs text-foreground">
-                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400">{entry.ganhador}</span>
+                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400">{entry.ganhador}</span> - Premio: <span className="font-bold text-yellow-400">{Math.round(entry.valorPremio)} {entry.moedaAceita}</span>
                   </p>
                 ) : (
                   <p className="text-xs text-foreground">
-                    Numero sorteado: <span className="font-bold font-mono text-red-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Nao foi vendido
+                    Numero sorteado: <span className="font-bold font-mono text-red-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Nao foi vendido - <span className="font-bold text-orange-400">{Math.round(premioFinal)} {entry.moedaAceita} acumulados</span>
                   </p>
                 )}
               </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            <div className="text-center p-2 rounded-md border border-border bg-card">
+              <p className="text-[10px] text-muted-foreground">Taxa Banco (20%)</p>
+              <p className="text-xs font-bold font-mono text-primary">{taxaBanco}</p>
+            </div>
+            <div className="text-center p-2 rounded-md border border-border bg-card">
+              <p className="text-[10px] text-muted-foreground">Premio Min.</p>
+              <p className="text-xs font-bold font-mono text-foreground">{Math.round(entry.premioMinimo)}</p>
+            </div>
+            <div className="text-center p-2 rounded-md border border-border bg-card">
+              <p className="text-[10px] text-muted-foreground">Acumulado Anterior</p>
+              <p className="text-xs font-bold font-mono text-orange-400">{Math.round(entry.premioAcumulado || 0)}</p>
             </div>
           </div>
         </div>
@@ -113,8 +129,12 @@ function HistoricoLotericaEntry({ entry, index }: {
   );
 }
 
-export default function LotericaTab() {
-  const { loterica, lotericaNumeros, historicoLoterica, criarLoterica, comprarNumero, iniciarSorteioLoterica, isLoading } = useBank();
+interface LotericaTabProps {
+  isAdmin: boolean;
+}
+
+export default function LotericaTab({ isAdmin }: LotericaTabProps) {
+  const { loterica, lotericaNumeros, historicoLoterica, criarLoterica, comprarNumero, iniciarSorteioLoterica, finalizarLoterica, isLoading } = useBank();
   const [showForm, setShowForm] = useState(false);
   const [valorNumero, setValorNumero] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
@@ -125,12 +145,16 @@ export default function LotericaTab() {
   const [showComprar, setShowComprar] = useState(false);
   const [searchNumero, setSearchNumero] = useState("");
 
-  const handleCriar = () => {
+  const handleCriar = async () => {
     if (!valorNumero || !moedaAceita.trim()) { toast.error("Preencha valor e moeda."); return; }
-    if (loterica && (loterica.status === "vendas_abertas" || loterica.status === "configurando")) { toast.error("Ja existe loterica ativa."); return; }
-    criarLoterica(parseFloat(valorNumero), moedaAceita.trim(), parseInt(premioMinimo) || 0, parseInt(duracao) || 60);
-    toast.success("Loterica criada!");
-    setValorNumero(""); setMoedaAceita(""); setPremioMinimo(""); setDuracao(""); setShowForm(false);
+    if (loterica && (loterica.status === "vendas_abertas" || loterica.status === "sorteio_realizado")) { toast.error("Ja existe loterica ativa. Finalize a atual."); return; }
+    try {
+      await criarLoterica(parseFloat(valorNumero), moedaAceita.trim(), parseInt(premioMinimo) || 0, parseInt(duracao) || 60);
+      toast.success("Lotérica criada!");
+      setValorNumero(""); setMoedaAceita(""); setPremioMinimo(""); setDuracao(""); setShowForm(false);
+    } catch (e) {
+      // handled by hook
+    }
   };
 
   const handleComprar = async () => {
@@ -143,78 +167,192 @@ export default function LotericaTab() {
 
   const numerosVendidos = lotericaNumeros.filter((n) => n.comprador);
   const numerosDisp = 1000 - numerosVendidos.length;
+
+  // Calcular premio estimado: 80% do arrecadado, minimo o premioMinimo, + acumulado
+  const premioBruto = loterica ? Math.max((loterica.arrecadadoTotal || 0) * 0.8, loterica.premioMinimo) : 0;
+  const premioComAcumulado = loterica ? premioBruto + (loterica.premioAcumulado || 0) : 0;
   const taxaBanco = loterica ? Math.round((loterica.arrecadadoTotal || 0) * 0.2) : 0;
-  const premioEstimado = loterica ? (loterica.arrecadadoTotal || 0) - taxaBanco : 0;
+  const vendasSuperaramMinimo = loterica ? (loterica.arrecadadoTotal || 0) * 0.8 > loterica.premioMinimo : false;
 
   const filteredNumeros = searchNumero
     ? lotericaNumeros.filter((n) => n.numero.toString().includes(searchNumero) || (n.comprador && n.comprador.toLowerCase().includes(searchNumero.toLowerCase())))
     : [];
 
-  // Historico: todas as lotericas que ja tiveram sorteio realizado (excluindo a ativa)
+  // Historico: todas as lotericas que ja tiveram sorteio realizado ou finalizada (excluindo a ativa)
   const historico = historicoLoterica.filter(
-    (l) => l.status === "sorteio_realizado" && (!loterica || l.id !== loterica.id)
+    (l) => (l.status === "sorteio_realizado" || l.status === "finalizada") && (!loterica || l.id !== loterica.id)
   );
+
+  const vendasExpiradas = loterica && loterica.dataFimVendas && new Date(loterica.dataFimVendas).getTime() < Date.now();
 
   if (isLoading) return <div className="flex items-center justify-center h-64 text-muted-foreground">Carregando...</div>;
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-primary">Loterica</h2>
-      <div className="rounded-lg border border-primary/20 bg-card p-4"><h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3><ul className="text-xs text-muted-foreground space-y-1"><li><span className="text-foreground font-semibold">1000 numeros</span> (001-1000).</li><li>Preco fixo por numero. <span className="text-yellow-400 font-semibold">Quanto mais vender, maior o premio!</span></li><li>Se o sorteado nao foi vendido, o premio <span className="text-yellow-400 font-semibold">acumula</span>.</li></ul></div>
-      {!loterica && <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Nova Loterica"}</Button>}
-      {showForm && !loterica && (
-        <div className="rounded-md border border-border bg-card p-4">
-          <h3 className="text-sm font-bold text-foreground mb-3"><Dices className="w-4 h-4 text-primary mr-1" /> Configurar</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div><Label className="text-xs text-muted-foreground">Valor/Numero</Label><Input type="number" placeholder="10" value={valorNumero} onChange={(e) => setValorNumero(e.target.value)} className="text-sm font-mono" /></div>
-            <div><Label className="text-xs text-muted-foreground">Moeda</Label><Input placeholder="Ex: Moeda" value={moedaAceita} onChange={(e) => setMoedaAceita(e.target.value)} className="text-sm" /></div>
-            <div><Label className="text-xs text-muted-foreground">Premio Min.</Label><Input type="number" placeholder="500" value={premioMinimo} onChange={(e) => setPremioMinimo(e.target.value)} className="text-sm font-mono" /></div>
-            <div><Label className="text-xs text-muted-foreground">Duracao (min)</Label><Input type="number" placeholder="1440" value={duracao} onChange={(e) => setDuracao(e.target.value)} className="text-sm font-mono" /></div>
-          </div>
-          <div className="mt-3"><Button onClick={handleCriar} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Dices className="w-4 h-4 mr-1" /> Criar</Button></div>
-        </div>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-primary flex items-center gap-2"><Dices className="w-5 h-5" /> Lotérica</h2>
+        {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
+      </div>
+
+      {/* Como Funciona */}
+      <div className="rounded-lg border border-primary/20 bg-card p-4">
+        <h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3>
+        <ul className="text-xs text-muted-foreground space-y-1">
+          <li><span className="text-foreground font-semibold">1000 numeros</span> (001-1000), preco fixo por numero.</li>
+          <li><span className="text-red-400 font-semibold">20%</span> das vendas vai pro banco, <span className="text-yellow-400 font-semibold">80%</span> vai pro premio.</li>
+          <li>Preço minimo garantido - se as vendas nao baterem o minimo, o premio continua o minimo.</li>
+          <li>So comeca a acumular quando <span className="text-yellow-400 font-semibold">80% das vendas</span> passa do premio minimo!</li>
+          <li>Se o numero sorteado nao foi vendido, o premio <span className="text-orange-400 font-semibold">acumula</span> para a proxima.</li>
+        </ul>
+      </div>
+
+      {/* Botao Criar - so admin */}
+      {isAdmin && !loterica && (
+        <>
+          <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Nova Lotérica"}</Button>
+          {showForm && (
+            <div className="rounded-md border border-border bg-card p-4">
+              <h3 className="text-sm font-bold text-foreground mb-3"><Dices className="w-4 h-4 text-primary mr-1" /> Configurar Lotérica</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div><Label className="text-xs text-muted-foreground">Valor/Numero</Label><Input type="number" placeholder="100" value={valorNumero} onChange={(e) => setValorNumero(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Moeda</Label><Input placeholder="Ex: Aco" value={moedaAceita} onChange={(e) => setMoedaAceita(e.target.value)} className="text-sm" /></div>
+                <div><Label className="text-xs text-muted-foreground">Premio Minimo</Label><Input type="number" placeholder="800" value={premioMinimo} onChange={(e) => setPremioMinimo(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Duracao Vendas (min)</Label><Input type="number" placeholder="1440" value={duracao} onChange={(e) => setDuracao(e.target.value)} className="text-sm font-mono" /></div>
+              </div>
+              <div className="mt-3"><Button onClick={handleCriar} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Dices className="w-4 h-4 mr-1" /> Criar Lotérica</Button></div>
+            </div>
+          )}
+        </>
       )}
+
+      {/* Loterica Ativa */}
       {loterica && (
         <div className="rounded-lg border border-primary/20 bg-card overflow-hidden">
           <div className="bg-primary/10 px-4 py-3 border-b border-primary/20 flex items-center justify-between">
-            <div><h3 className="text-sm font-bold text-foreground flex items-center gap-2"><Dices className="w-4 h-4 text-primary" /> Loterica Ativa</h3><p className="text-xs text-muted-foreground">{loterica.status === "vendas_abertas" ? "Vendas abertas" : loterica.status === "sorteio_realizado" ? "Sorteio realizado" : "Configurando"}</p></div>
-            {loterica.dataFimVendas && <LotericaTimer dataFim={loterica.dataFimVendas} />}
+            <div>
+              <h3 className="text-sm font-bold text-foreground flex items-center gap-2"><Dices className="w-4 h-4 text-primary" /> Lotérica Ativa</h3>
+              <p className="text-xs text-muted-foreground">
+                {loterica.status === "vendas_abertas" ? "Vendas abertas" : loterica.status === "sorteio_realizado" ? "Sorteio realizado" : loterica.status === "finalizada" ? "Finalizada" : "Configurando"}
+              </p>
+            </div>
+            {loterica.dataFimVendas && loterica.status === "vendas_abertas" && <LotericaTimer dataFim={loterica.dataFimVendas} />}
           </div>
           <div className="p-4">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-              <div className="text-center p-2 rounded-md border border-border bg-muted/30"><p className="text-xs text-muted-foreground">Vendidos</p><p className="text-lg font-bold font-mono text-foreground">{numerosVendidos.length}</p></div>
-              <div className="text-center p-2 rounded-md border border-border bg-muted/30"><p className="text-xs text-muted-foreground">Disponiveis</p><p className="text-lg font-bold font-mono text-green-400">{numerosDisp}</p></div>
-              <div className="text-center p-2 rounded-md border border-border bg-muted/30"><p className="text-xs text-muted-foreground">Arrecadado</p><p className="text-lg font-bold font-mono text-primary">{loterica.arrecadadoTotal || 0}</p></div>
-              <div className="text-center p-2 rounded-md border border-border bg-muted/30"><p className="text-xs text-muted-foreground">Premio</p><p className="text-lg font-bold font-mono text-yellow-400">{premioEstimado.toFixed(0)}</p></div>
-            </div>
-            <div className="text-xs text-muted-foreground mb-3 flex items-center gap-4">
-              <span>Preco: <strong className="text-foreground">{loterica.valorNumero} {loterica.moedaAceita}</strong></span>
-              <span>Taxa: <strong className="text-red-400">20%</strong></span>
-            </div>
-            {loterica.status === "sorteio_realizado" && (
-              <div className="rounded-md border border-yellow-500/40 bg-yellow-500/5 p-4 mb-4">
-                <div className="flex items-center gap-3"><PartyPopper className="w-6 h-6 text-yellow-400" /><div><p className="text-sm font-bold text-yellow-400">Sorteio Realizado!</p><p className="text-xs text-foreground">Numero: <span className="font-bold font-mono text-yellow-400">{String(loterica.numeroSorteado).padStart(3, "0")}</span></p>{loterica.ganhador ? <p className="text-xs text-foreground">Ganhador: <span className="font-bold text-yellow-400">{loterica.ganhador}</span></p> : <p className="text-xs text-red-400 font-semibold">Nao vendido! Premio acumulou.</p>}</div></div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-4">
+              <div className="text-center p-2 rounded-md border border-border bg-muted/30">
+                <p className="text-xs text-muted-foreground">Vendidos</p>
+                <p className="text-lg font-bold font-mono text-foreground">{numerosVendidos.length}<span className="text-muted-foreground text-xs font-normal">/1000</span></p>
               </div>
-            )}
-            {loterica.status === "vendas_abertas" && (
-              <>
-                <Button size="sm" variant="outline" onClick={() => setShowComprar(!showComprar)} className="border-primary/30 text-primary hover:bg-primary/10"><Dices className="w-3 h-3 mr-1" /> Comprar Numero</Button>
-                {showComprar && (
-                  <div className="rounded-md border border-border bg-muted/30 p-3 mb-4">
-                    <h4 className="text-xs font-bold text-foreground mb-2">Comprar Numero</h4>
-                    <div className="flex gap-3"><div className="flex-1"><Label className="text-xs text-muted-foreground">Numero (1-1000)</Label><Input type="number" placeholder="042" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" min={1} max={1000} /></div><div className="flex-1"><Label className="text-xs text-muted-foreground">Seu Nome</Label><Input placeholder="Player" value={compradorNome} onChange={(e) => setCompradorNome(e.target.value)} className="text-sm" /></div><div className="flex items-end"><Button size="sm" onClick={handleComprar} className="bg-primary text-primary-foreground">Comprar</Button></div></div>
+              <div className="text-center p-2 rounded-md border border-border bg-muted/30">
+                <p className="text-xs text-muted-foreground">Disponiveis</p>
+                <p className="text-lg font-bold font-mono text-green-400">{numerosDisp}</p>
+              </div>
+              <div className="text-center p-2 rounded-md border border-border bg-muted/30">
+                <p className="text-xs text-muted-foreground">Arrecadado Total</p>
+                <p className="text-lg font-bold font-mono text-primary">{Math.round(loterica.arrecadadoTotal || 0)}</p>
+                <p className="text-[10px] text-muted-foreground">{loterica.valorNumero} {loterica.moedaAceita}/num</p>
+              </div>
+              <div className="text-center p-2 rounded-md border border-yellow-500/30 bg-yellow-500/5">
+                <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Trophy className="w-3 h-3" /> Premio</p>
+                <p className="text-lg font-bold font-mono text-yellow-400">{Math.round(premioComAcumulado)}</p>
+                {vendasSuperaramMinimo && <p className="text-[10px] text-green-400 flex items-center justify-center gap-0.5"><TrendingUp className="w-2.5 h-2.5" /> Acima do min.</p>}
+              </div>
+              <div className="text-center p-2 rounded-md border border-border bg-muted/30">
+                <p className="text-xs text-muted-foreground">Taxa Banco (20%)</p>
+                <p className="text-lg font-bold font-mono text-red-400">{taxaBanco}</p>
+                <p className="text-[10px] text-muted-foreground">Credita ao finalizar</p>
+              </div>
+            </div>
+
+            {/* Detalhes do premio */}
+            <div className="rounded-md border border-border bg-muted/20 p-3 mb-4">
+              <p className="text-xs font-bold text-muted-foreground mb-2">Calculo do Premio</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <div className="flex justify-between p-1.5 rounded bg-card border border-border">
+                  <span className="text-muted-foreground">80% arrecadado</span>
+                  <span className="font-mono text-foreground">{Math.round((loterica.arrecadadoTotal || 0) * 0.8)}</span>
+                </div>
+                <div className="flex justify-between p-1.5 rounded bg-card border border-border">
+                  <span className="text-muted-foreground">Premio minimo</span>
+                  <span className="font-mono text-foreground">{Math.round(loterica.premioMinimo)}</span>
+                </div>
+                <div className={`flex justify-between p-1.5 rounded bg-card border ${vendasSuperaramMinimo ? "border-green-500/30" : "border-border"}`}>
+                  <span className="text-muted-foreground">Base premio</span>
+                  <span className={`font-mono ${vendasSuperaramMinimo ? "text-green-400" : "text-foreground"}`}>{Math.round(premioBruto)}</span>
+                </div>
+                <div className={`flex justify-between p-1.5 rounded bg-card border ${(loterica.premioAcumulado || 0) > 0 ? "border-orange-500/30" : "border-border"}`}>
+                  <span className="text-muted-foreground">Acumulado</span>
+                  <span className={`font-mono ${(loterica.premioAcumulado || 0) > 0 ? "text-orange-400" : "text-foreground"}`}>+{Math.round(loterica.premioAcumulado || 0)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Resultado do sorteio */}
+            {loterica.status === "sorteio_realizado" && (
+              <div className={`rounded-md border p-4 mb-4 ${loterica.ganhador ? "border-green-500/40 bg-green-500/5" : "border-orange-500/40 bg-orange-500/5"}`}>
+                <div className="flex items-center gap-3">
+                  {loterica.ganhador ? <PartyPopper className="w-6 h-6 text-green-400" /> : <AlertCircle className="w-6 h-6 text-orange-400" />}
+                  <div>
+                    <p className={`text-sm font-bold ${loterica.ganhador ? "text-green-400" : "text-orange-400"}`}>
+                      {loterica.ganhador ? "Teve Ganhador!" : "Ninguem acertou - Premio acumulou!"}
+                    </p>
+                    <p className="text-xs text-foreground">
+                      Numero: <span className="font-bold font-mono text-primary">{String(loterica.numeroSorteado).padStart(3, "0")}</span>
+                      {loterica.ganhador && <> - Ganhador: <span className="font-bold text-green-400">{loterica.ganhador}</span></>}
+                      {!loterica.ganhador && <> - Nao foi vendido - <span className="font-bold text-orange-400">{Math.round(loterica.valorPremio || 0)} {loterica.moedaAceita} acumulados</span></>}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      20% das vendas ({taxaBanco} {loterica.moedaAceita}) creditado no estoque.
+                    </p>
+                  </div>
+                </div>
+                {/* Botao Finalizar - so admin */}
+                {isAdmin && (
+                  <div className="mt-3">
+                    <Button size="sm" onClick={() => finalizarLoterica(loterica.id)} className="bg-green-600 hover:bg-green-700 text-white"><CheckCircle className="w-3 h-3 mr-1" /> Finalizar Lotérica</Button>
                   </div>
                 )}
-                {loterica.status === "vendas_abertas" && loterica.dataFimVendas && new Date(loterica.dataFimVendas).getTime() < Date.now() && (
-                  <div className="mb-3"><Button size="sm" onClick={() => iniciarSorteioLoterica(loterica.id)} className="bg-yellow-600 hover:bg-yellow-700 text-black font-bold">Realizar Sorteio</Button></div>
+              </div>
+            )}
+
+            {/* Acoes admin - Vender e Sortear */}
+            {isAdmin && loterica.status === "vendas_abertas" && (
+              <>
+                <Button size="sm" variant="outline" onClick={() => setShowComprar(!showComprar)} className="border-primary/30 text-primary hover:bg-primary/10"><Dices className="w-3 h-3 mr-1" /> Vender Numero</Button>
+                {showComprar && (
+                  <div className="rounded-md border border-border bg-muted/30 p-3 mb-4">
+                    <h4 className="text-xs font-bold text-foreground mb-2">Vender Numero</h4>
+                    <div className="flex gap-3">
+                      <div className="flex-1"><Label className="text-xs text-muted-foreground">Numero (1-1000)</Label><Input type="number" placeholder="042" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" min={1} max={1000} /></div>
+                      <div className="flex-1"><Label className="text-xs text-muted-foreground">Nome do Comprador</Label><Input placeholder="Player" value={compradorNome} onChange={(e) => setCompradorNome(e.target.value)} className="text-sm" /></div>
+                      <div className="flex items-end"><Button size="sm" onClick={handleComprar} className="bg-primary text-primary-foreground">Vender</Button></div>
+                    </div>
+                  </div>
+                )}
+                {vendasExpiradas && numerosVendidos.length > 0 && (
+                  <div className="mb-3">
+                    <Button size="sm" onClick={() => iniciarSorteioLoterica(loterica.id)} className="bg-yellow-600 hover:bg-yellow-700 text-black font-bold"><Dices className="w-3 h-3 mr-1" /> Realizar Sorteio</Button>
+                    <p className="text-[10px] text-muted-foreground mt-1">As vendas encerraram. Sorteie para definir o ganhador.</p>
+                  </div>
+                )}
+                {vendasExpiradas && numerosVendidos.length === 0 && (
+                  <div className="rounded-md border border-red-500/30 bg-red-500/5 p-3 mb-3">
+                    <p className="text-xs text-red-400 font-semibold flex items-center gap-1"><XCircle className="w-3 h-3" /> Nenhum numero vendido! Nao e possivel sortear.</p>
+                  </div>
                 )}
               </>
             )}
+
+            {/* Busca e lista de numeros */}
             <div className="flex gap-2 mb-3"><Input placeholder="Buscar numero ou comprador..." value={searchNumero} onChange={(e) => setSearchNumero(e.target.value)} className="text-sm flex-1" /><Button variant="outline" size="sm" onClick={() => setSearchNumero("")}><Search className="w-3 h-3" /></Button></div>
             <div className="max-h-64 overflow-y-auto">
               {(filteredNumeros.length > 0 ? filteredNumeros : lotericaNumeros.slice(0, 50)).map((n) => (
                 <div key={n.id} className={`flex items-center justify-between py-1.5 px-2 rounded text-xs border-b border-border/30 ${n.comprador ? "bg-green-500/5" : ""}`}>
-                  <div className="flex items-center gap-2"><span className={`font-mono font-bold w-10 ${n.comprador ? "text-green-400" : "text-muted-foreground"}`}>{String(n.numero).padStart(3, "0")}</span>{n.comprador ? <span className="text-foreground">{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}</div>
+                  <div className="flex items-center gap-2">
+                    <span className={`font-mono font-bold w-10 ${n.comprador ? "text-green-400" : "text-muted-foreground"}`}>{String(n.numero).padStart(3, "0")}</span>
+                    {n.comprador ? <span className="text-foreground">{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}
+                  </div>
                   {n.dataCompra && <span className="text-muted-foreground">{new Date(n.dataCompra).toLocaleDateString("pt-BR")}</span>}
                 </div>
               ))}
@@ -223,7 +361,15 @@ export default function LotericaTab() {
           </div>
         </div>
       )}
-      {!loterica && historico.length === 0 && <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhuma loterica ativa.</div>}
+
+      {/* Sem loterica ativa */}
+      {!loterica && historico.length === 0 && (
+        <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">
+          {isAdmin ? "Nenhuma lotérica ativa. Crie uma nova acima." : "Nenhuma lotérica ativa no momento."}
+        </div>
+      )}
+
+      {/* Historico */}
       {historico.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><History className="w-4 h-4 text-yellow-400" /> Historico de Sorteios ({historico.length})</h3>

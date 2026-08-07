@@ -117,6 +117,7 @@ export async function GET(req: NextRequest) {
       }
       case "getLoterica": {
         const data = await db.loterica.findMany({
+          where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
           orderBy: { dataCriacao: "desc" },
           take: 1,
         });
@@ -504,14 +505,32 @@ export async function POST(req: NextRequest) {
       case "criarLoterica": {
         const { valorNumero, moedaAceita, premioMinimo, duracaoMinutos } = data;
         if (!valorNumero || !moedaAceita) return err("Campos obrigatórios: valorNumero, moedaAceita");
+        // Verificar se ja existe loterica ativa (nao finalizada)
+        const ativa = await db.loterica.findFirst({
+          where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
+        });
+        if (ativa) return err("Já existe lotérica ativa. Finalize a atual antes de criar uma nova.");
+
         const dur = Number(duracaoMinutos) || 60;
         const prem = Number(premioMinimo) || 0;
         const dataFimVendas = new Date(Date.now() + dur * 60 * 1000);
+
+        // Buscar premio acumulado da ultima loterica
+        let acumulado = 0;
+        const ultimaLoterica = await db.loterica.findFirst({
+          where: { status: "sorteio_realizado" },
+          orderBy: { dataCriacao: "desc" },
+        });
+        if (ultimaLoterica && (ultimaLoterica.premioAcumulado || 0) > 0) {
+          acumulado = ultimaLoterica.premioAcumulado || 0;
+        }
+
         const lot = await db.loterica.create({
           data: {
             valorNumero: Number(valorNumero),
             moedaAceita,
             premioMinimo: prem,
+            premioAcumulado: acumulado,
             duracaoMinutos: dur,
             dataFimVendas,
             status: "vendas_abertas",
@@ -523,7 +542,7 @@ export async function POST(req: NextRequest) {
           numero: i + 1,
         }));
         await db.numeroLoterica.createMany({ data: nums });
-        return json({ success: true, lotericaId: lot.id });
+        return json({ success: true, lotericaId: lot.id, acumulado });
       }
       case "comprarNumero": {
         const { lotericaId, numero, comprador } = data;
@@ -547,26 +566,11 @@ export async function POST(req: NextRequest) {
           data: { comprador, dataCompra: new Date() },
         });
 
-        const valorDaVenda = lotData.valorNumero;
-        const valorCaixa = valorDaVenda * 0.2;
-        const valorPremio = valorDaVenda * 0.8;
-        const novoArrecadado = (lotData.arrecadadoTotal || 0) + valorDaVenda;
-        const novoPremio = (lotData.valorPremio || 0) + valorPremio;
-
+        // Arrecadado total aumenta, mas NAO credita no estoque ainda
+        const novoArrecadado = (lotData.arrecadadoTotal || 0) + lotData.valorNumero;
         await db.loterica.update({
           where: { id: lotericaId },
-          data: { arrecadadoTotal: novoArrecadado, valorPremio: novoPremio },
-        });
-
-        await db.caixaRegistro.create({
-          data: {
-            tipo: "entrada",
-            descricao: `Venda número ${numero} - Lotérica (${comprador})`,
-            item: lotData.moedaAceita,
-            quantidade: 1,
-            valor: valorCaixa,
-            origem: "loterica",
-          },
+          data: { arrecadadoTotal: novoArrecadado },
         });
 
         return json({ success: true });
@@ -576,11 +580,18 @@ export async function POST(req: NextRequest) {
         if (!lotericaId) return err("lotericaId obrigatório");
         const numeros = await db.numeroLoterica.findMany({ where: { lotericaId } });
         const numerosVendidos = numeros.filter((n) => n.comprador);
+        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+        if (!lotData) return err("Lotérica não encontrada", 404);
         if (numerosVendidos.length === 0) return err("Nenhum número vendido");
 
         const numeroSorteado = Math.floor(Math.random() * 1000) + 1;
         const ganhador = numeros.find((n) => n.numero === numeroSorteado && n.comprador);
-        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+
+        // Calcular premio: 80% do total arrecadado, minimo garantido
+        const premioBruto = lotData.arrecadadoTotal * 0.8;
+        const premioAcumuladoAnterior = lotData.premioAcumulado || 0;
+        const premioFinal = Math.max(premioBruto, lotData.premioMinimo) + premioAcumuladoAnterior;
+        const taxaBanco = lotData.arrecadadoTotal * 0.2;
 
         await db.loterica.update({
           where: { id: lotericaId },
@@ -588,20 +599,48 @@ export async function POST(req: NextRequest) {
             status: "sorteio_realizado",
             numeroSorteado,
             ganhador: ganhador ? ganhador.comprador : null,
+            valorPremio: premioFinal,
             dataSorteio: new Date(),
           },
         });
 
-        if (lotData && ganhador) {
+        // Creditar 20% das vendas no estoque do banco
+        if (taxaBanco > 0) {
+          await db.caixaRegistro.create({
+            data: {
+              tipo: "entrada",
+              descricao: `Taxa bancária Lotérica (20% das vendas)`,
+              item: lotData.moedaAceita,
+              quantidade: Math.round(taxaBanco),
+              valor: Math.round(taxaBanco),
+              origem: "loterica",
+            },
+          });
+        }
+
+        // Se teve ganhador, registrar saida do premio
+        if (ganhador) {
           await db.caixaRegistro.create({
             data: {
               tipo: "saida",
               descricao: `Prêmio Lotérica - Número ${numeroSorteado} (${ganhador.comprador})`,
               item: lotData.moedaAceita,
-              quantidade: 1,
-              valor: lotData.valorPremio || 0,
-              origem: "loterica",
+              quantidade: Math.round(premioFinal),
+              valor: Math.round(premioFinal),
+              origem: "loterica_premio",
             },
+          });
+        } else {
+          // Ninguem acertou - premio acumula para a proxima loterica
+          // Buscar a ultima loterica anterior com acumulo ou criar registro
+          const todasLotericas = await db.loterica.findMany({
+            orderBy: { dataCriacao: "desc" },
+          });
+          // O premio acumulado fica salvo no campo premioAcumulado
+          // Quando a proxima loterica for criada, ela deve pegar esse valor
+          await db.loterica.update({
+            where: { id: lotericaId },
+            data: { premioAcumulado: Math.round(premioFinal) },
           });
         }
 
@@ -609,7 +648,25 @@ export async function POST(req: NextRequest) {
           success: true,
           numeroSorteado,
           ganhador: ganhador ? ganhador.comprador : null,
+          premioFinal: Math.round(premioFinal),
+          taxaBanco: Math.round(taxaBanco),
+          acumulou: !ganhador,
         });
+      }
+      case "finalizarLoterica": {
+        const { lotericaId } = data;
+        if (!lotericaId) return err("lotericaId obrigatório");
+        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+        if (!lotData) return err("Lotérica não encontrada", 404);
+        if (lotData.status !== "sorteio_realizado") return err("Sorteio ainda não foi realizado");
+
+        // Marca como finalizada - pronto para criar proxima
+        await db.loterica.update({
+          where: { id: lotericaId },
+          data: { status: "finalizada" },
+        });
+
+        return json({ success: true, acumuladoProxima: lotData.premioAcumulado || 0 });
       }
 
       // === PRICE REPORTS ===

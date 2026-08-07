@@ -138,6 +138,7 @@ model Loterica {
   valorNumero     Float
   moedaAceita     String
   premioMinimo    Float     @default(0)
+  premioAcumulado Float     @default(0)
   duracaoMinutos  Int       @default(60)
   dataCriacao     DateTime  @default(now())
   dataFimVendas   DateTime?

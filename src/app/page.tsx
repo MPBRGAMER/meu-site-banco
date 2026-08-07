@@ -132,7 +132,7 @@ export default function HomePage() {
       case "doadores": return <DoadoresTab isAdmin={isAdmin} />;
       case "leiloes": return <LeiloesTab isAdmin={isAdmin} />;
       case "sorteios": return <SorteiosTab isAdmin={isAdmin} />;
-      case "loterica": return <LotericaTab />;
+      case "loterica": return <LotericaTab isAdmin={isAdmin} />;
       case "tabela": return <TabelaTab isAdmin={isAdmin} />;
       default: return <DashboardTab />;
     }
