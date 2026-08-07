@@ -515,14 +515,14 @@ export async function POST(req: NextRequest) {
         const prem = Number(premioMinimo) || 0;
         const dataFimVendas = new Date(Date.now() + dur * 60 * 1000);
 
-        // Buscar premio acumulado da ultima loterica
+        // Buscar premio acumulado da ultima loterica sem ganhador
         let acumulado = 0;
-        const ultimaLoterica = await db.loterica.findFirst({
-          where: { status: "sorteio_realizado" },
+        const ultimaSemGanhador = await db.loterica.findFirst({
+          where: { ganhador: null, valorPremio: { gt: 0 } },
           orderBy: { dataCriacao: "desc" },
         });
-        if (ultimaLoterica && (ultimaLoterica.premioAcumulado || 0) > 0) {
-          acumulado = ultimaLoterica.premioAcumulado || 0;
+        if (ultimaSemGanhador) {
+          acumulado = ultimaSemGanhador.valorPremio || 0;
         }
 
         const lot = await db.loterica.create({

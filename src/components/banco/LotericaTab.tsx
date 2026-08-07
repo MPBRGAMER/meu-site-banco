@@ -36,7 +36,9 @@ function HistoricoLotericaEntry({ entry, index }: {
 
   const taxaBanco = Math.round(entry.arrecadadoTotal * 0.2);
   const premioBruto = Math.max(entry.arrecadadoTotal * 0.8, entry.premioMinimo);
-  const premioFinal = premioBruto + (entry.premioAcumulado || 0);
+  const acumuladoEntrada = entry.premioAcumulado || 0;
+  // Usa valorPremio direto (ja calculado no sorteio) para nao dobrar
+  const premioFinal = entry.valorPremio || premioBruto;
   const acerto = entry.ganhador ? true : false;
 
   return (
