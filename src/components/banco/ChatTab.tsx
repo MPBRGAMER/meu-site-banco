@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
-  MessageCircle, Hash, Lock, Plus, Trash2, Send, Shield, ChevronRight, X, LogIn, Menu, Globe,
+  MessageCircle, Hash, Lock, Plus, Trash2, Send, Shield, ChevronRight, X, LogIn, Menu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
-import { TranslationPopupSmall } from "./TranslationPopup";
 import ChatMessageContent from "./ChatMessageContent";
 
 const CANAIS = [
@@ -71,7 +70,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   const [salaParaEntrar, setSalaParaEntrar] = useState<ChatSala | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
-  const [showTranslation, setShowTranslation] = useState(false);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
@@ -311,15 +310,6 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
             )}
           </div>
           <div className="flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-7 w-7 p-0 text-muted-foreground hover:text-primary"
-              onClick={() => setShowTranslation(true)}
-              title="Como traduzir o site"
-            >
-              <Globe className="w-3.5 h-3.5" />
-            </Button>
             {isSala && (
               <Button variant="ghost" size="sm" className="text-xs text-muted-foreground" onClick={leaveSala}>
                 <X className="w-3 h-3 mr-1" /> Voltar
@@ -421,8 +411,6 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
           </>
         )}
       </div>
-
-      {showTranslation && <TranslationPopupSmall show={showTranslation} onClose={() => setShowTranslation(false)} />}
 
       {salaParaEntrar && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setSalaParaEntrar(null)}>
