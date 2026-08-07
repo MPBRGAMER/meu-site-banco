@@ -88,6 +88,30 @@
   }
 }
 
+/* Anti-cópia: permitir seleção apenas em inputs/textareas */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Bloquear arrastar imagens */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Previne print */
+@media print {
+  body {
+    display: none !important;
+  }
+}
+
 /* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
   width: 6px;
