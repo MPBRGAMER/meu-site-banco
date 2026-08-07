@@ -4,7 +4,7 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Dices, Plus, Trash2, Clock, Trophy, Users, Timer, AlertCircle, PartyPopper, History, ChevronDown, ChevronUp } from "lucide-react";
+import { Dices, Plus, Trash2, Clock, Trophy, Users, Timer, AlertCircle, PartyPopper, History, ChevronDown, ChevronUp, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import type { Participante } from "@/lib/useBank";
 
@@ -23,7 +23,11 @@ function SorteioTimer({ dataFim }: { dataFim: string }) {
   return <span className="text-xs font-bold font-mono flex items-center gap-1 text-primary"><Timer className="w-3 h-3" /> {timeLeft}</span>;
 }
 
-function SorteioCard({ sorteio }: { sorteio: { id: string; nomeItem: string; quantidade: number; dataCriacao: string; dataFim: string | null; status: string } }) {
+interface SorteiosTabProps {
+  isAdmin: boolean;
+}
+
+function SorteioCard({ sorteio, isAdmin }: { sorteio: { id: string; nomeItem: string; quantidade: number; dataCriacao: string; dataFim: string | null; status: string }; isAdmin: boolean }) {
   const { participarSorteio, sortear, removeSorteio, getParticipantes } = useBank();
   const [jogadorNome, setJogadorNome] = useState("");
   const [showPart, setShowPart] = useState(false);
@@ -63,10 +67,12 @@ function SorteioCard({ sorteio }: { sorteio: { id: string; nomeItem: string; qua
             <Button size="sm" variant="outline" onClick={() => setShowPart(true)} className="w-full border-primary/30 text-primary hover:bg-primary/10"><Dices className="w-3 h-3 mr-1" /> Participar</Button>
           )}
         </div>
-        <div className="flex gap-2 mt-2">
-          <Button size="sm" variant="ghost" onClick={() => sortear(sorteio.id)} className="text-xs text-yellow-400 hover:text-yellow-300">Sortear</Button>
-          <Button size="sm" variant="ghost" onClick={() => removeSorteio(sorteio.id)} className="text-xs text-muted-foreground hover:text-red-400"><Trash2 className="w-3 h-3 mr-1" /> Remover</Button>
-        </div>
+        {isAdmin && (
+          <div className="flex gap-2 mt-2">
+            <Button size="sm" variant="ghost" onClick={() => sortear(sorteio.id)} className="text-xs text-yellow-400 hover:text-yellow-300">Sortear</Button>
+            <Button size="sm" variant="ghost" onClick={() => removeSorteio(sorteio.id)} className="text-xs text-muted-foreground hover:text-red-400"><Trash2 className="w-3 h-3 mr-1" /> Remover</Button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -157,7 +163,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
   );
 }
 
-export default function SorteiosTab() {
+export default function SorteiosTab({ isAdmin }: SorteiosTabProps) {
   const { sorteios, historicoSorteios, addSorteio, isLoading } = useBank();
   const [showForm, setShowForm] = useState(false);
   const [nomeItem, setNomeItem] = useState("");
@@ -176,10 +182,15 @@ export default function SorteiosTab() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-primary">Sorteios</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-primary">Sorteios</h2>
+        {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
+      </div>
       <div className="rounded-lg border border-primary/20 bg-card p-4"><h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3><ul className="text-xs text-muted-foreground space-y-1"><li>Admin cria sorteio com <span className="text-foreground font-semibold">item e duracao</span>.</li><li>Qualquer membro participa com seu nome.</li><li>Timer acaba  ganhador <span className="text-yellow-400 font-semibold">sorteado</span>.</li></ul></div>
-      <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Novo Sorteio"}</Button>
-      {showForm && (
+      {isAdmin && (
+        <>
+          <Button onClick={() => setShowForm(!showForm)} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Plus className="w-4 h-4 mr-1" /> {showForm ? "Fechar" : "Novo Sorteio"}</Button>
+          {showForm && (
         <div className="rounded-md border border-border bg-card p-4">
           <h3 className="text-sm font-bold text-foreground mb-3"><Dices className="w-4 h-4 text-primary mr-1" /> Novo Sorteio</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -189,10 +200,12 @@ export default function SorteiosTab() {
           </div>
           <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Dices className="w-4 h-4 mr-1" /> Criar</Button></div>
         </div>
+          )}
+        </>
       )}
       <div><h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> Ativos ({ativos.length})</h3>
         {ativos.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum.</div> : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{ativos.map((s) => <SorteioCard key={s.id} sorteio={s} />)}</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{ativos.map((s) => <SorteioCard key={s.id} sorteio={s} isAdmin={isAdmin} />)}</div>
         )}
       </div>
       {historicoSorteios.length > 0 && (

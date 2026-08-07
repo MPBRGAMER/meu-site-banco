@@ -3,7 +3,7 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel } from "lucide-react";
+import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel, Dices } from "lucide-react";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
 
@@ -19,6 +19,9 @@ export default function CaixaTab() {
   const [tipoManual, setTipoManual] = useState<"entrada" | "saida">("entrada");
   const [leilaoItem, setLeilaoItem] = useState("");
   const [leilaoQtd, setLeilaoQtd] = useState("");
+  const [sorteioItem, setSorteioItem] = useState("");
+  const [sorteioQtd, setSorteioQtd] = useState("");
+  const [sorteioGanhador, setSorteioGanhador] = useState("");
 
   const handleManual = () => {
     if (!descManual || !itemManual || !qtdManual) { toast.error("Preencha os obrigatórios."); return; }
@@ -37,6 +40,13 @@ export default function CaixaTab() {
     setLeilaoItem(""); setLeilaoQtd("");
   };
 
+  const handleSorteioSaida = () => {
+    if (!sorteioItem.trim() || !sorteioQtd || !sorteioGanhador.trim()) { toast.error("Preencha o item, quantidade e ganhador."); return; }
+    addCaixaManual({ tipo: "saida", descricao: `Sorteio: ${sorteioItem.trim()} (ganhador: ${sorteioGanhador.trim()})`, item: sorteioItem.trim(), quantidade: parseInt(sorteioQtd), valor: parseInt(sorteioQtd), origem: "sorteio" });
+    toast.success(`Saída de sorteio registrada: ${sorteioQtd}x ${sorteioItem.trim()} para ${sorteioGanhador.trim()}`);
+    setSorteioItem(""); setSorteioQtd(""); setSorteioGanhador("");
+  };
+
   const caixaFiltrado = caixa
     .filter((c) => tipoFiltro === "todos" || c.tipo === tipoFiltro)
     .filter((c) => !filtro || c.descricao.toLowerCase().includes(filtro.toLowerCase()) || c.item.toLowerCase().includes(filtro.toLowerCase()) || c.origem.toLowerCase().includes(filtro.toLowerCase()));
@@ -53,6 +63,16 @@ export default function CaixaTab() {
           <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={leilaoItem} onChange={(e) => setLeilaoItem(e.target.value)} className="text-sm" /></div>
           <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1" value={leilaoQtd} onChange={(e) => setLeilaoQtd(e.target.value)} className="text-sm font-mono" /></div>
           <div className="flex items-end"><Button onClick={handleLeilaoSaida} className="bg-red-600 hover:bg-red-700 text-white w-full"><Gavel className="w-4 h-4 mr-1" /> Registrar Saída</Button></div>
+        </div>
+      </div>
+      <div className="rounded-md border border-purple-500/20 bg-purple-500/5 p-4">
+        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Dices className="w-4 h-4 text-purple-400" /> Saída por Sorteio (Prêmio)</h3>
+        <p className="text-xs text-muted-foreground mb-3">Registre o prêmio que saiu do estoque quando um sorteio for finalizado.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={sorteioItem} onChange={(e) => setSorteioItem(e.target.value)} className="text-sm" /></div>
+          <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder="1" value={sorteioQtd} onChange={(e) => setSorteioQtd(e.target.value)} className="text-sm font-mono" /></div>
+          <div><Label className="text-xs text-muted-foreground">Ganhador</Label><Input placeholder="Nome do jogador" value={sorteioGanhador} onChange={(e) => setSorteioGanhador(e.target.value)} className="text-sm" /></div>
+          <div className="flex items-end"><Button onClick={handleSorteioSaida} className="bg-purple-600 hover:bg-purple-700 text-white w-full"><Dices className="w-4 h-4 mr-1" /> Registrar Prêmio</Button></div>
         </div>
       </div>
       <div className="rounded-md border border-border bg-card p-4">
