@@ -35,11 +35,10 @@ function HistoricoLotericaEntry({ entry, index }: {
   const [expanded, setExpanded] = useState(false);
 
   const taxaBanco = Math.round(entry.arrecadadoTotal * 0.2);
-  const premioBruto = Math.max(entry.arrecadadoTotal * 0.8, entry.premioMinimo);
-  const acumuladoEntrada = entry.premioAcumulado || 0;
-  // Usa valorPremio direto (ja calculado no sorteio) para nao dobrar
-  const premioFinal = entry.valorPremio || premioBruto;
+  const premio80 = Math.max(entry.arrecadadoTotal * 0.8, entry.premioMinimo);
   const acerto = entry.ganhador ? true : false;
+  // Usa valorPremio direto (ja calculado no sorteio)
+  const premioFinal = entry.valorPremio || premio80;
 
   return (
     <div className="rounded-md border border-border bg-card overflow-hidden">
@@ -170,11 +169,13 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   const numerosVendidos = lotericaNumeros.filter((n) => n.comprador);
   const numerosDisp = 1000 - numerosVendidos.length;
 
-  // Calcular premio estimado: 80% do arrecadado, minimo o premioMinimo, + acumulado
-  const premioBruto = loterica ? Math.max((loterica.arrecadadoTotal || 0) * 0.8, loterica.premioMinimo) : 0;
-  const premioComAcumulado = loterica ? premioBruto + (loterica.premioAcumulado || 0) : 0;
+  // Acumulado SUBSTITUI o minimo (nao soma)
+  // Ex: minimo 100, acumulado 160 → minimo efetivo = 160
+  const premio80 = loterica ? (loterica.arrecadadoTotal || 0) * 0.8 : 0;
+  const effectiveMin = loterica ? Math.max(loterica.premioMinimo, loterica.premioAcumulado || 0) : 0;
+  const premioEstimado = Math.max(premio80, effectiveMin);
   const taxaBanco = loterica ? Math.round((loterica.arrecadadoTotal || 0) * 0.2) : 0;
-  const vendasSuperaramMinimo = loterica ? (loterica.arrecadadoTotal || 0) * 0.8 > loterica.premioMinimo : false;
+  const temAcumulado = loterica ? (loterica.premioAcumulado || 0) > loterica.premioMinimo : false;
 
   const filteredNumeros = searchNumero
     ? lotericaNumeros.filter((n) => n.numero.toString().includes(searchNumero) || (n.comprador && n.comprador.toLowerCase().includes(searchNumero.toLowerCase())))
@@ -202,9 +203,9 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
         <ul className="text-xs text-muted-foreground space-y-1">
           <li><span className="text-foreground font-semibold">1000 numeros</span> (001-1000), preco fixo por numero.</li>
           <li><span className="text-red-400 font-semibold">20%</span> das vendas vai pro banco, <span className="text-yellow-400 font-semibold">80%</span> vai pro premio.</li>
-          <li>Preço minimo garantido - se as vendas nao baterem o minimo, o premio continua o minimo.</li>
-          <li>So comeca a acumular quando <span className="text-yellow-400 font-semibold">80% das vendas</span> passa do premio minimo!</li>
-          <li>Se o numero sorteado nao foi vendido, o premio <span className="text-orange-400 font-semibold">acumula</span> para a proxima.</li>
+          <li>Premio = <span className="text-foreground font-semibold">maior entre 80% das vendas e o minimo</span>.</li>
+          <li>Se ninguem acertar, o premio <span className="text-orange-400 font-semibold">vira o novo minimo</span> da proxima.</li>
+          <li>So reseta quando sair um <span className="text-green-400 font-semibold">ganhador</span>!</li>
         </ul>
       </div>
 
@@ -257,8 +258,8 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
               </div>
               <div className="text-center p-2 rounded-md border border-yellow-500/30 bg-yellow-500/5">
                 <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Trophy className="w-3 h-3" /> Premio</p>
-                <p className="text-lg font-bold font-mono text-yellow-400">{Math.round(premioComAcumulado)}</p>
-                {vendasSuperaramMinimo && <p className="text-[10px] text-green-400 flex items-center justify-center gap-0.5"><TrendingUp className="w-2.5 h-2.5" /> Acima do min.</p>}
+                <p className="text-lg font-bold font-mono text-yellow-400">{Math.round(premioEstimado)}</p>
+                {temAcumulado && <p className="text-[10px] text-orange-400 flex items-center justify-center gap-0.5"><TrendingUp className="w-2.5 h-2.5" /> Min. acumulado</p>}
               </div>
               <div className="text-center p-2 rounded-md border border-border bg-muted/30">
                 <p className="text-xs text-muted-foreground">Taxa Banco (20%)</p>
@@ -270,24 +271,21 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
             {/* Detalhes do premio */}
             <div className="rounded-md border border-border bg-muted/20 p-3 mb-4">
               <p className="text-xs font-bold text-muted-foreground mb-2">Calculo do Premio</p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                 <div className="flex justify-between p-1.5 rounded bg-card border border-border">
                   <span className="text-muted-foreground">80% arrecadado</span>
-                  <span className="font-mono text-foreground">{Math.round((loterica.arrecadadoTotal || 0) * 0.8)}</span>
+                  <span className="font-mono text-foreground">{Math.round(premio80)}</span>
                 </div>
                 <div className="flex justify-between p-1.5 rounded bg-card border border-border">
-                  <span className="text-muted-foreground">Premio minimo</span>
+                  <span className="text-muted-foreground">Minimo original</span>
                   <span className="font-mono text-foreground">{Math.round(loterica.premioMinimo)}</span>
                 </div>
-                <div className={`flex justify-between p-1.5 rounded bg-card border ${vendasSuperaramMinimo ? "border-green-500/30" : "border-border"}`}>
-                  <span className="text-muted-foreground">Base premio</span>
-                  <span className={`font-mono ${vendasSuperaramMinimo ? "text-green-400" : "text-foreground"}`}>{Math.round(premioBruto)}</span>
-                </div>
-                <div className={`flex justify-between p-1.5 rounded bg-card border ${(loterica.premioAcumulado || 0) > 0 ? "border-orange-500/30" : "border-border"}`}>
-                  <span className="text-muted-foreground">Acumulado</span>
-                  <span className={`font-mono ${(loterica.premioAcumulado || 0) > 0 ? "text-orange-400" : "text-foreground"}`}>+{Math.round(loterica.premioAcumulado || 0)}</span>
+                <div className={`flex justify-between p-1.5 rounded bg-card border ${temAcumulado ? "border-orange-500/30" : "border-border"}`}>
+                  <span className="text-muted-foreground">Min. efetivo</span>
+                  <span className={`font-mono ${temAcumulado ? "text-orange-400 font-bold" : "text-foreground"}`}>{Math.round(effectiveMin)}</span>
                 </div>
               </div>
+              <p className="text-[10px] text-muted-foreground mt-1.5">Premio = maior entre 80% do arrecadado e o minimo efetivo{temAcumulado ? " (que veio do acumulado)" : ""}.</p>
             </div>
 
             {/* Resultado do sorteio */}

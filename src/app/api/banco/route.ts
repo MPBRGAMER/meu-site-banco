@@ -587,10 +587,11 @@ export async function POST(req: NextRequest) {
         const numeroSorteado = Math.floor(Math.random() * 1000) + 1;
         const ganhador = numeros.find((n) => n.numero === numeroSorteado && n.comprador);
 
-        // Calcular premio: 80% do total arrecadado, minimo garantido
-        const premioBruto = lotData.arrecadadoTotal * 0.8;
-        const premioAcumuladoAnterior = lotData.premioAcumulado || 0;
-        const premioFinal = Math.max(premioBruto, lotData.premioMinimo) + premioAcumuladoAnterior;
+        // Calcular premio: acumulado SUBSTITUI o minimo (nao soma)
+        // Ex: minimo 100, acumulado 160 → minimo efetivo = 160
+        const effectiveMin = Math.max(lotData.premioMinimo, lotData.premioAcumulado || 0);
+        const premio80 = lotData.arrecadadoTotal * 0.8;
+        const premioFinal = Math.max(premio80, effectiveMin);
         const taxaBanco = lotData.arrecadadoTotal * 0.2;
 
         await db.loterica.update({
@@ -631,13 +632,7 @@ export async function POST(req: NextRequest) {
             },
           });
         } else {
-          // Ninguem acertou - premio acumula para a proxima loterica
-          // Buscar a ultima loterica anterior com acumulo ou criar registro
-          const todasLotericas = await db.loterica.findMany({
-            orderBy: { dataCriacao: "desc" },
-          });
-          // O premio acumulado fica salvo no campo premioAcumulado
-          // Quando a proxima loterica for criada, ela deve pegar esse valor
+          // Ninguem acertou - o premio vira o novo minimo para a proxima
           await db.loterica.update({
             where: { id: lotericaId },
             data: { premioAcumulado: Math.round(premioFinal) },
