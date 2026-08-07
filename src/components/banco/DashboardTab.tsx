@@ -238,7 +238,6 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
-      <AdSlot size="banner" className="my-2" />
       <AdSlot size="leaderboard" className="my-2" />
     </div>
   );
