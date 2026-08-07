@@ -186,3 +186,23 @@ model ItemOverride {
   action    String  // "edit" or "remove"
   data      DateTime @default(now())
 }
+
+model ChatMensagem {
+  id        String   @id @default(cuid())
+  canal     String
+  salaId    String?
+  autor     String
+  conteudo  String
+  data      DateTime @default(now())
+  isAdmin   Boolean  @default(false)
+  sala      ChatSala? @relation(fields: [salaId], references: [id], onDelete: Cascade)
+}
+
+model ChatSala {
+  id          String         @id @default(cuid())
+  nome        String
+  criadoPor   String
+  senha       String?
+  dataCriacao DateTime       @default(now())
+  mensagens   ChatMensagem[]
+}

@@ -2,7 +2,7 @@
 import { useState, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ import LeiloesTab from "@/components/banco/LeiloesTab";
 import SorteiosTab from "@/components/banco/SorteiosTab";
 import LotericaTab from "@/components/banco/LotericaTab";
 import TabelaTab from "@/components/banco/TabelaTab";
+import ChatTab from "@/components/banco/ChatTab";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -30,6 +31,7 @@ const publicTabs = [
   { id: "leiloes", label: "Leilões", icon: Gavel },
   { id: "sorteios", label: "Sorteios", icon: Dices },
   { id: "loterica", label: "Lotérica", icon: Dices },
+  { id: "chat", label: "Chat", icon: MessageCircle },
 ];
 
 const adminTabs = [
@@ -133,6 +135,7 @@ export default function HomePage() {
       case "leiloes": return <LeiloesTab isAdmin={isAdmin} />;
       case "sorteios": return <SorteiosTab isAdmin={isAdmin} />;
       case "loterica": return <LotericaTab isAdmin={isAdmin} />;
+      case "chat": return <ChatTab isAdmin={isAdmin} />;
       case "tabela": return <TabelaTab isAdmin={isAdmin} />;
       default: return <DashboardTab />;
     }
