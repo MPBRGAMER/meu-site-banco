@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { UserPlus, Crown, Trash2, ArrowUp, ArrowDown, Save } from "lucide-react";
 import { Label } from "@/components/ui/label";
-import AdSlot from "@/components/AdSlot";
 
 export default function InvestidoresTab() {
   const { investidores, addInvestidor, removeInvestidor, reorderInvestidores, isLoading } = useBank();
@@ -75,7 +74,6 @@ export default function InvestidoresTab() {
           <div className="flex gap-2 mt-3"><Button onClick={saveOrder} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Save className="w-4 h-4 mr-1" /> Salvar</Button><Button onClick={() => setIsReorderMode(false)} variant="outline">Cancelar</Button></div>
         </div>
       )}
-      <AdSlot size="banner" className="my-3" />
       <div>
         <h3 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2"><Crown className="w-4 h-4 text-yellow-400" /> Ativos ({ativos.length})</h3>
         {ativos.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum investidor.</div> : (

@@ -6,7 +6,6 @@ import { toast } from "sonner";
 import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel, Dices } from "lucide-react";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
-import AdSlot from "@/components/AdSlot";
 
 export default function CaixaTab() {
   const { caixa, inventory, addCaixaManual, resetBanco, isLoading } = useBank();
@@ -93,7 +92,6 @@ export default function CaixaTab() {
           <div className="flex items-end"><Button onClick={handleManual} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">Registrar</Button></div>
         </div>
       </div>
-      <AdSlot size="banner" className="my-3" />
       <div className="flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-2 flex-1 min-w-48"><Search className="w-4 h-4 text-muted-foreground" /><Input placeholder="Buscar..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="text-sm" /></div>
         <div className="flex gap-2"><Button size="sm" variant={tipoFiltro === "todos" ? "default" : "outline"} onClick={() => setTipoFiltro("todos")} className="text-xs">Todos</Button><Button size="sm" variant={tipoFiltro === "entrada" ? "default" : "outline"} onClick={() => setTipoFiltro("entrada")} className="text-xs">Entrada</Button><Button size="sm" variant={tipoFiltro === "saida" ? "default" : "outline"} onClick={() => setTipoFiltro("saida")} className="text-xs">Saída</Button></div>

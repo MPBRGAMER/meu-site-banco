@@ -1084,6 +1084,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       </div>
 
       {/* ═══ Reports Section ═══ */}
+      <AdSlot size="banner" className="my-3" />
       <div className="rounded-xl border border-border bg-card overflow-hidden shadow-lg shadow-black/20">
         <div className="px-4 py-3 border-b border-border bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
           <h3 className="text-xs font-bold text-foreground flex items-center gap-2">
@@ -1112,11 +1113,10 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
           )}
         </div>
       </div>
-      <AdSlot size="banner" className="mt-3" />
-
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />
       {isAdmin && <GerenciarItensModal isOpen={showGerenciar} onClose={() => setShowGerenciar(false)} onSaved={fetchOverrides} mergedCategories={categories} overrides={overrides} />}
+      <AdSlot size="banner" className="my-3" />
     </div>
   );
 }

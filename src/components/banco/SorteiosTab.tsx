@@ -183,6 +183,7 @@ export default function SorteiosTab({ isAdmin }: SorteiosTabProps) {
 
   return (
     <div className="space-y-4">
+      <AdSlot size="banner" className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary">Sorteios</h2>
         {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
@@ -209,7 +210,6 @@ export default function SorteiosTab({ isAdmin }: SorteiosTabProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{ativos.map((s) => <SorteioCard key={s.id} sorteio={s} isAdmin={isAdmin} />)}</div>
         )}
       </div>
-      <AdSlot size="banner" className="my-3" />
       {historicoSorteios.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><History className="w-4 h-4 text-yellow-400" /> Historico de Ganhadores ({historicoSorteios.length})</h3>
@@ -220,6 +220,7 @@ export default function SorteiosTab({ isAdmin }: SorteiosTabProps) {
           </div>
         </div>
       )}
+      <AdSlot size="banner" className="my-3" />
     </div>
   );
 }

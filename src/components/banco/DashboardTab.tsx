@@ -82,6 +82,7 @@ export default function DashboardTab() {
 
   return (
     <div className="space-y-4">
+      <AdSlot size="leaderboard" className="my-2" />
       <div className="rounded-lg border border-primary/20 bg-card p-4 relative overflow-hidden">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-3xl">☢️</span>
@@ -106,8 +107,6 @@ export default function DashboardTab() {
           );
         })}
       </div>
-      <AdSlot size="leaderboard" className="my-2" />
-
       {(activeSorteios.length > 0 || activeLoterica) && (
         <div className="rounded-md border border-cyan-500/20 bg-card p-3">
           <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Dices className="w-3.5 h-3.5 text-cyan-400" /> Eventos Ativos</h3>
@@ -128,6 +127,7 @@ export default function DashboardTab() {
         </div>
       )}
 
+      <AdSlot size="banner" className="my-2" />
       <div className="rounded-md border border-border bg-card p-3">
         <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Trophy className="w-3.5 h-3.5 text-yellow-400" /> Top 10 Doadores</h3>
         {doadoresRanking.length === 0 ? (
@@ -145,8 +145,6 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
-      <AdSlot size="banner" className="my-2" />
-
       <div className="rounded-md border border-border bg-card p-3">
         <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Users className="w-3.5 h-3.5 text-blue-400" /> Top 10 Investidores</h3>
         {investidores.length === 0 ? (
@@ -197,7 +195,7 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
-
+      <AdSlot size="banner" className="my-2" />
       <div className="rounded-md border border-border bg-card p-3">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xs font-bold text-foreground flex items-center gap-2"><Package className="w-3.5 h-3.5 text-emerald-400" /> Estoque do Banco</h3>
@@ -219,8 +217,6 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
-      <AdSlot size="leaderboard" className="my-2" />
-
       <div className="rounded-md border border-border bg-card p-3">
         <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-emerald-400" /> Movimentos do Caixa <span className="text-[10px] text-muted-foreground font-normal">({caixaCompleto.length} registros)</span></h3>
         {caixaCompleto.length === 0 ? (
@@ -242,6 +238,8 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
+      <AdSlot size="banner" className="my-2" />
+      <AdSlot size="leaderboard" className="my-2" />
     </div>
   );
 }

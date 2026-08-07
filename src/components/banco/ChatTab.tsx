@@ -171,6 +171,8 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   }
 
   return (
+    <>
+      <AdSlot size="leaderboard" className="my-3" />
     <div className="flex gap-0 rounded-lg border border-border bg-card overflow-hidden" style={{ height: "calc(100vh - 180px)", minHeight: 400 }}>
       <div className={cn(
         "border-r border-border bg-muted/30 flex flex-col shrink-0 transition-all duration-200",
@@ -436,5 +438,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
         </div>
       )}
     </div>
+      <AdSlot size="leaderboard" className="my-3" />
+    </>
   );
 }

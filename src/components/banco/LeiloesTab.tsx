@@ -214,6 +214,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
 
   return (
     <div className="space-y-4">
+      <AdSlot size="banner" className="my-3" />
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-primary">🔨 Leilões</h2>
         {!isAdmin && <span className="text-xs text-muted-foreground flex items-center gap-1"><Shield className="w-3 h-3" /> Modo visual</span>}
@@ -378,7 +379,6 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       </div>
 
       {/* Finalizados */}
-      <AdSlot size="banner" className="my-3" />
       {finalizados.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Histórico de Ganhadores ({finalizados.length})</h3>
@@ -419,6 +419,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       )}
 
       {lanceLeilao && <LanceModal leilao={lanceLeilao} onClose={() => setLanceLeilao(null)} />}
+      <AdSlot size="banner" className="my-3" />
     </div>
   );
 }
