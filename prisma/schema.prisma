@@ -88,6 +88,7 @@ model Leilao {
   donoItem         String
   nomeItem         String
   imagemUrl        String?
+  quantidade       Int       @default(1)
   valorInicial     Float
   moedaAceita      String
   taxaCasa         Int       @default(15)

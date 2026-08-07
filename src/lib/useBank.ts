@@ -83,6 +83,7 @@ export interface Leilao {
   donoItem: string;
   nomeItem: string;
   imagemUrl: string | null;
+  quantidade: number;
   valorInicial: number;
   moedaAceita: string;
   taxaCasa: number;
@@ -569,6 +570,7 @@ export function useBank() {
       donoItem: string;
       nomeItem: string;
       imagemUrl?: string | null;
+      quantidade?: number;
       valorInicial: number;
       moedaAceita: string;
       taxaCasa: number;

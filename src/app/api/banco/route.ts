@@ -365,7 +365,7 @@ export async function POST(req: NextRequest) {
 
       // === LEILÕES ===
       case "addLeilao": {
-        const { donoItem, nomeItem, imagemUrl, valorInicial, moedaAceita, taxaCasa, dataExpiracao, tipoOrigem } = data;
+        const { donoItem, nomeItem, imagemUrl, quantidade, valorInicial, moedaAceita, taxaCasa, dataExpiracao, tipoOrigem } = data;
         if (!donoItem || !nomeItem || valorInicial === undefined || !moedaAceita || !dataExpiracao) {
           return err("Campos obrigatórios: donoItem, nomeItem, valorInicial, moedaAceita, dataExpiracao");
         }
@@ -374,6 +374,7 @@ export async function POST(req: NextRequest) {
             donoItem,
             nomeItem,
             imagemUrl: imagemUrl || null,
+            quantidade: Number(quantidade) || 1,
             valorInicial: Number(valorInicial),
             moedaAceita,
             taxaCasa: Number(taxaCasa) || 15,

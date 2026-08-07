@@ -6,7 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon } from "lucide-react";
+import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon, Package } from "lucide-react";
+
+interface PtItemMap { pt: string; file: string }
 
 const DURACOES = [
   { label: "1 minuto (teste)", ms: 60000 },
@@ -127,7 +129,7 @@ function LanceModal({ leilao, onClose }: { leilao: Leilao; onClose: () => void }
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="bg-card border border-border rounded-lg p-6 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2"><Gavel className="w-5 h-5 text-primary" /> Dar Lance</h3>
-        <p className="text-sm text-muted-foreground mb-4">Item: <span className="text-foreground font-semibold">{leilao.nomeItem}</span> | Moeda: <span className="text-primary">{leilao.moedaAceita}</span></p>
+        <p className="text-sm text-muted-foreground mb-4">Item: <span className="text-foreground font-semibold">{leilao.nomeItem}</span>{leilao.quantidade > 1 && <span className="text-blue-400 font-semibold"> x{leilao.quantidade}</span>} | Moeda: <span className="text-primary">{leilao.moedaAceita}</span></p>
         <div className="space-y-3">
           <div><Label className="text-xs text-muted-foreground">Seu Nome</Label><Input placeholder="Player" value={jogador} onChange={(e) => setJogador(e.target.value)} className="text-sm" /></div>
           <div><Label className="text-xs text-muted-foreground">Valor (mín: {min})</Label><Input type="number" placeholder={`${min}`} value={valor} onChange={(e) => setValor(e.target.value)} className="text-sm font-mono" /></div>
@@ -155,8 +157,8 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const [valorInicial, setValorInicial] = useState("");
   const [moedaAceita, setMoedaAceita] = useState("");
 
-  const [itemImageNames, setItemImageNames] = useState<string[]>([]);
-  const ITEM_IMAGE_NAMES = itemImageNames;
+  const [quantidade, setQuantidade] = useState("1");
+  const [ptItems, setPtItems] = useState<PtItemMap[]>([]);
 
   const imgPreview = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : (nomeItem.trim() ? `/items/${nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png` : null);
   const [tipoOrigem, setTipoOrigem] = useState("comum");
@@ -164,10 +166,21 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
 
   const taxaCasa = getTaxaFromTipo(tipoOrigem);
 
+  // Busca pt-BR: quando o nome do item muda, procura no mapa pt-BR
+  const handleNomeItemChange = (val: string) => {
+    setNomeItem(val);
+    if (!imagemUrl.trim() && val.trim()) {
+      const match = ptItems.find(
+        (p) => p.pt.toLowerCase() === val.trim().toLowerCase()
+      );
+      if (match) setImagemUrl(match.file);
+    }
+  };
+
   useEffect(() => {
-    fetch("/items/_index.txt")
-      .then((r) => r.text())
-      .then((t) => setItemImageNames(t.trim().split("\n")))
+    fetch("/items/_pt_index.json")
+      .then((r) => r.json())
+      .then((data: PtItemMap[]) => setPtItems(data))
       .catch(() => {});
   }, []);
 
@@ -176,10 +189,12 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
     const duracao = DURACOES[duracaoIdx];
     const exp = new Date(Date.now() + duracao.ms);
     const imgUrl = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : `/items/${nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`;
+    const qty = parseInt(quantidade) || 1;
     addLeilao({
       donoItem: donoItem.trim(),
       nomeItem: nomeItem.trim(),
       imagemUrl: imgUrl,
+      quantidade: qty,
       valorInicial: parseFloat(valorInicial),
       moedaAceita: moedaAceita.trim(),
       taxaCasa,
@@ -187,7 +202,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       tipoOrigem,
     });
     toast.success(`Leilão criado! Duração: ${duracao.label}`);
-    setDonoItem(""); setNomeItem(""); setImagemUrl(""); setValorInicial(""); setMoedaAceita(""); setTipoOrigem("comum"); setDuracaoIdx(4);
+    setDonoItem(""); setNomeItem(""); setImagemUrl(""); setValorInicial(""); setMoedaAceita(""); setQuantidade("1"); setTipoOrigem("comum"); setDuracaoIdx(4);
     setShowForm(false);
   };
 
@@ -222,8 +237,17 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
               <h3 className="text-sm font-bold text-foreground mb-3"><Plus className="w-4 h-4 text-primary mr-1" /> Novo Leilão</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 <div><Label className="text-xs text-muted-foreground">Dono</Label><Input placeholder="Nome" value={donoItem} onChange={(e) => setDonoItem(e.target.value)} className="text-sm" /></div>
-                <div><Label className="text-xs text-muted-foreground">Item</Label><Input placeholder="Ex: Katana" value={nomeItem} onChange={(e) => setNomeItem(e.target.value)} className="text-sm" /></div>
-                <div><Label className="text-xs text-muted-foreground">Valor Inicial</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>
+                <div>
+                  <Label className="text-xs text-muted-foreground">Item (nome em pt-BR)</Label>
+                  <Input list="pt-items-list" placeholder="Ex: Água Tóxica" value={nomeItem} onChange={(e) => handleNomeItemChange(e.target.value)} className="text-sm" />
+                  <datalist id="pt-items-list">
+                    {ptItems.map((p) => (
+                      <option key={p.file} value={p.pt} />
+                    ))}
+                  </datalist>
+                </div>
+                <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" placeholder="1" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Valor Inicial (total do lote)</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>
                 <div><Label className="text-xs text-muted-foreground">Moeda</Label><Input placeholder="Ex: Moeda" value={moedaAceita} onChange={(e) => setMoedaAceita(e.target.value)} className="text-sm" /></div>
                 <div>
                   <Label className="text-xs text-muted-foreground">Origem / Taxa</Label>
@@ -244,16 +268,11 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                   </Select>
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3">
-                  <Label className="text-xs text-muted-foreground">Imagem (opcional — preenche sozinho pelo nome do item)</Label>
+                  <Label className="text-xs text-muted-foreground">Imagem (preenche sozinho pelo nome do item)</Label>
                   <div className="flex gap-2 items-center">
-                    <Input list="item-images-list" placeholder="Deixe vazio para usar o nome do item" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
+                    <Input placeholder="Auto-preenchido" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
                     {imgPreview && <LeilaoImg src={imgPreview} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" />}
                   </div>
-                  <datalist id="item-images-list">
-                    {ITEM_IMAGE_NAMES.slice(0, 200).map((name) => (
-                      <option key={name} value={name} />
-                    ))}
-                  </datalist>
                 </div>
               </div>
               <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Criar Leilão</Button></div>
@@ -276,13 +295,17 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                     <div className="flex items-center gap-3">
                       <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" />
                       <div>
-                        <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
+                        <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem} {leilao.quantidade > 1 && <span className="text-xs font-normal text-muted-foreground">x{leilao.quantidade}</span>}</h4>
                         <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-yellow-400 flex items-center gap-1"><Pause className="w-3 h-3" /> EM ESPERA</span>
+                    <div className="flex items-center gap-2">
+                      {leilao.quantidade > 1 && <span className="text-xs font-bold text-blue-400 flex items-center gap-1"><Package className="w-3 h-3" /> x{leilao.quantidade}</span>}
+                      <span className="text-xs font-bold text-yellow-400 flex items-center gap-1"><Pause className="w-3 h-3" /> EM ESPERA</span>
+                    </div>
                   </div>
                   <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
+                    {leilao.quantidade > 1 && <div className="text-center"><p className="text-xs text-muted-foreground">Qtd</p><p className="text-sm font-bold text-blue-400">x{leilao.quantidade}</p></div>}
                     <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
                     <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : "-"}</p></div>
                     <div className="text-center"><p className="text-xs text-muted-foreground">Vencedor</p><p className="text-sm font-bold text-green-400">{maior?.jogador || "-"}</p></div>
@@ -316,7 +339,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <div className="flex items-center gap-3">
                         <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-12 h-12 rounded object-contain border border-border bg-accent/50" />
                         <div>
-                          <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem}</h4>
+                          <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem} {leilao.quantidade > 1 && <span className="text-xs font-normal text-muted-foreground">x{leilao.quantidade}</span>}</h4>
                           <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
                           {leilao.status === "espera" && <p className="text-xs text-yellow-400 font-semibold mt-1"><Pause className="w-3 h-3 inline" /> Disputa final!</p>}
                         </div>
@@ -324,6 +347,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <LeilaoTimer leilao={leilao} />
                     </div>
                     <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
+                      {leilao.quantidade > 1 && <div className="text-center"><p className="text-xs text-muted-foreground">Qtd</p><p className="text-sm font-bold text-blue-400">x{leilao.quantidade}</p></div>}
                       <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
                       <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : leilao.valorInicial}</p></div>
                       <div className="text-center"><p className="text-xs text-muted-foreground">Lances</p><p className="text-sm font-bold text-foreground">{ll.length}</p></div>
@@ -361,6 +385,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
               <thead>
                 <tr className="border-b border-border bg-accent/50">
                   <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Item</th>
+                  <th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Qtd</th>
                   <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Dono</th>
                   <th className="text-left px-3 py-2 text-xs font-bold text-muted-foreground">Vencedor</th>
                   <th className="text-center px-3 py-2 text-xs font-bold text-muted-foreground">Valor</th>
@@ -376,6 +401,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <LeilaoImg src={l.imagemUrl || `/items/${l.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={l.nomeItem} className="w-6 h-6 rounded object-contain" />
                       <span className="font-semibold text-foreground">{l.nomeItem}</span>
                     </td>
+                    <td className="px-3 py-2 text-center font-mono text-blue-400">{l.quantidade > 1 ? `x${l.quantidade}` : "-"}</td>
                     <td className="px-3 py-2 text-muted-foreground">{l.donoItem}</td>
                     <td className="px-3 py-2 text-yellow-400 font-semibold">{l.vencedor || "-"}</td>
                     <td className="px-3 py-2 text-center font-mono text-primary font-bold">{l.valorVencedor || 0}</td>

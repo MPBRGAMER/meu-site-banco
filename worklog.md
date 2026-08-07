@@ -52,3 +52,26 @@ Stage Summary:
 - 332 items total (was 549)
 - Report modal now has quantity field
 - All categories verified correct
+
+---
+Task ID: 2-a
+Agent: Main Agent
+Task: Fix image not showing in leilão cards + Add quantity field + PT-BR search
+
+Work Log:
+- Investigated image issue: `onError` was hiding images with `display:none` instead of showing fallback
+- Created `LeilaoImg` component with state-based fallback to `blank.png`
+- Changed all card img tags to always show image (even when `imagemUrl` is null, generates from `nomeItem`)
+- Generated `/public/items/_pt_index.json` mapping 332 pt-BR names to image filenames
+- Added `quantidade` field to Leilao Prisma model (default 1)
+- Updated API route to save quantidade
+- Updated Leilao interface in useBank.ts
+- Replaced English datalist with pt-BR datalist loaded from `_pt_index.json`
+- Added auto-fill: when user types item name matching pt-BR name, image field auto-fills
+- Added quantidade input field in auction form
+- Shows quantity badge (x10) in all cards, fila, modal de lance, and history table
+
+Stage Summary:
+- Images now always show with fallback chain: stored URL -> generated from nomeItem -> blank.png
+- Search is now in pt-BR (332 items): typing "Agua Toxica" auto-fills image as "toxic_water"
+- Quantity field added: admin can set lot size, displayed throughout the UI
