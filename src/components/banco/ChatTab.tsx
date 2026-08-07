@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TranslationPopupSmall } from "./TranslationPopup";
+import ChatMessageContent from "./ChatMessageContent";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -374,7 +375,9 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                           </span>
                           <span className="text-[10px] text-muted-foreground font-mono">{formatTime(msg.data)}</span>
                         </div>
-                        <p className="text-xs text-foreground/90 break-words whitespace-pre-wrap leading-relaxed">{msg.conteudo}</p>
+                        <div className="text-xs text-foreground/90 break-words whitespace-pre-wrap leading-relaxed">
+                          <ChatMessageContent content={msg.conteudo} />
+                        </div>
                       </div>
                       {isAdmin && (
                         <button

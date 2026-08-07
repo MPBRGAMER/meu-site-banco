@@ -140,3 +140,29 @@ Stage Summary:
 - Private room chat now works: messages send and load correctly
 - Big translation modal opens on first site visit with all 12 languages
 - Globe button in chat header re-opens a compact version anytime
+
+---
+Task ID: 6
+Agent: Main Agent
+Task: Add link, image and video support to chat messages
+
+Work Log:
+- Created `/src/lib/parseMessage.ts` utility that detects URLs in text and classifies them:
+  - Image URLs (png/jpg/gif/webp/svg) → type "image"
+  - YouTube URLs (youtube.com/watch?v= & youtu.be/) → type "video" with extracted videoId
+  - Other URLs → type "link"
+  - Plain text → type "text"
+- Created `/src/components/banco/ChatMessageContent.tsx` with 4 segment renderers:
+  - TextSegment: plain text
+  - LinkSegment: clickable link with domain display + ExternalLink icon, opens in new tab
+  - ImageSegment: thumbnail (200x150) with click-to-expand fullscreen, error fallback with "open" link
+  - VideoSegment: YouTube embed with click-to-play button, lazy loads iframe, opens in new tab link
+- Updated ChatTab.tsx to use ChatMessageContent instead of plain text rendering
+- No upload needed — everything works via URL pasting in messages
+- Build passes
+
+Stage Summary:
+- Chat now supports: clickable links, embedded images (via URL), YouTube video embeds
+- Just paste any URL in the message — auto-detects and renders appropriately
+- Images show as thumbnails, click to expand fullscreen
+- YouTube shows play button, click to embed with autoplay
