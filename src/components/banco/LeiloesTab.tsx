@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon, Package } from "lucide-react";
+import AdSlot from "@/components/AdSlot";
 
 interface PtItemMap { pt: string; file: string }
 
@@ -377,6 +378,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
       </div>
 
       {/* Finalizados */}
+      <AdSlot size="banner" className="my-3" />
       {finalizados.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Trophy className="w-4 h-4 text-yellow-400" /> Histórico de Ganhadores ({finalizados.length})</h3>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Plus, Trash2, Settings } from "lucide-react";
 import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
+import AdSlot from "@/components/AdSlot";
 
 export default function ConfigTrocasTab() {
   const { tabelasTroca, addTabelaTroca, removeTabelaTroca } = useBank();
@@ -33,6 +34,7 @@ export default function ConfigTrocasTab() {
         </div>
         <Button onClick={handleAdd} className="mt-4 w-full bg-primary hover:bg-primary/90"><Plus className="w-4 h-4 mr-2" /> Adicionar</Button>
       </div>
+      <AdSlot size="banner" className="my-3" />
       <div className="rounded-md border border-border bg-card overflow-hidden">
         <table className="w-full text-sm"><thead><tr className="border-b border-border bg-accent/50"><th className="text-left px-4 py-2 text-xs font-bold text-muted-foreground">Base</th><th className="text-center px-4 py-2 text-xs font-bold text-muted-foreground">Proporção</th><th className="text-left px-4 py-2 text-xs font-bold text-muted-foreground">Resultado</th><th className="text-right px-4 py-2 text-xs font-bold text-muted-foreground">Ações</th></tr></thead>
           <tbody>{tabelasTroca.length === 0 ? (<tr><td colSpan={4} className="px-4 py-8 text-center text-muted-foreground italic">Nenhuma regra configurada.</td></tr>) : tabelasTroca.map((t) => (<tr key={t.id} className="border-b border-border/50 hover:bg-accent/30"><td className="px-4 py-3"><span className="font-bold text-primary">{t.quantidadeBase}x</span> {t.itemBase}</td><td className="px-4 py-3 text-center text-muted-foreground">=</td><td className="px-4 py-3"><span className="font-bold text-green-400">{t.quantidadeResultado}x</span> {t.itemResultado}</td><td className="px-4 py-3 text-right"><Button variant="ghost" size="sm" onClick={() => removeTabelaTroca(t.id)} className="text-red-400 hover:text-red-300 hover:bg-red-400/10"><Trash2 className="w-4 h-4" /></Button></td></tr>))}</tbody>

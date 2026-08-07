@@ -12,6 +12,7 @@ import { priceTrends } from "@/data/price-trends";
 import { getFallbackEmoji } from "@/data/item-icons";
 import { useBank } from "@/lib/useBank";
 import { toast } from "sonner";
+import AdSlot from "@/components/AdSlot";
 
 interface PriceItem {
   id: string;
@@ -893,6 +894,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
 
   return (
     <div className="space-y-5">
+      <AdSlot size="leaderboard" className="mb-3" />
       {/* ═══ Header Area ═══ */}
       <div className="flex items-end justify-between flex-wrap gap-3">
         <div>
@@ -1110,6 +1112,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
           )}
         </div>
       </div>
+      <AdSlot size="banner" className="mt-3" />
 
       <ReportarModal isOpen={showReportar} onClose={() => setShowReportar(false)} items={allItems} onReport={handleReport} />
       <GuiaModal isOpen={showGuia} onClose={() => setShowGuia(false)} />

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
+import AdSlot from "@/components/AdSlot";
 
 interface DoadoresTabProps { isAdmin: boolean; }
 
@@ -80,6 +81,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
           </div>
         </div>
       )}
+      <AdSlot size="banner" className="my-3" />
       {isAdmin && (<>
       {!isReorderMode ? (
         <Button onClick={startReorder} variant="outline" className="text-sm border-primary/30 text-primary hover:bg-primary/10"><ArrowUp className="w-4 h-4 mr-1" /> Reordenar</Button>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Dices, Plus, Clock, Trophy, Timer, AlertCircle, PartyPopper, Search, History, ChevronDown, ChevronUp, Users, Coins, Ticket, Shield, TrendingUp, CheckCircle, XCircle } from "lucide-react";
 import { Label } from "@/components/ui/label";
+import AdSlot from "@/components/AdSlot";
 
 function LotericaTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -370,6 +371,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
       )}
 
       {/* Historico */}
+      <AdSlot size="leaderboard" className="my-3" />
       {historico.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><History className="w-4 h-4 text-yellow-400" /> Historico de Sorteios ({historico.length})</h3>

@@ -8,6 +8,7 @@ import {
   MessageCircle, Hash, Lock, Plus, Trash2, Send, Shield, ChevronRight, X, LogIn, Menu, Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AdSlot from "@/components/AdSlot";
 import { TranslationPopupSmall } from "./TranslationPopup";
 import ChatMessageContent from "./ChatMessageContent";
 
@@ -271,6 +272,9 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
           </div>
         )}
 
+        {sidebarOpen && (
+          <AdSlot size="mobile-banner" className="mx-1 mt-1" />
+        )}
         {sidebarOpen && (
           <div className="border-t border-border p-2">
             <div className="flex items-center gap-2">

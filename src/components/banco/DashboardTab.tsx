@@ -5,6 +5,7 @@ import {
   HandCoins, Users, ArrowLeftRight, Wallet, TrendingUp, Clock,
   ShoppingCart, Crown, Medal, Package, Trophy, Gavel, Dices, Search, Timer, MessageSquarePlus, Flame,
 } from "lucide-react";
+import AdSlot from "@/components/AdSlot";
 
 function DiscreetTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -105,6 +106,7 @@ export default function DashboardTab() {
           );
         })}
       </div>
+      <AdSlot size="leaderboard" className="my-2" />
 
       {(activeSorteios.length > 0 || activeLoterica) && (
         <div className="rounded-md border border-cyan-500/20 bg-card p-3">
@@ -143,6 +145,7 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
+      <AdSlot size="banner" className="my-2" />
 
       <div className="rounded-md border border-border bg-card p-3">
         <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Users className="w-3.5 h-3.5 text-blue-400" /> Top 10 Investidores</h3>
@@ -216,6 +219,7 @@ export default function DashboardTab() {
           </div>
         )}
       </div>
+      <AdSlot size="leaderboard" className="my-2" />
 
       <div className="rounded-md border border-border bg-card p-3">
         <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-emerald-400" /> Movimentos do Caixa <span className="text-[10px] text-muted-foreground font-normal">({caixaCompleto.length} registros)</span></h3>

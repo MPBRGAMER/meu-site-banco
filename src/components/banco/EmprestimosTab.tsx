@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { toast } from "sonner";
 import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
+import AdSlot from "@/components/AdSlot";
 
 function getTaxa(tipo: string): number {
   if (tipo === "especial") return 0;
@@ -173,6 +174,7 @@ export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
           </div>
         </div>
       )}
+      <AdSlot size="banner" className="my-3" />
       <div><h3 className="text-sm font-bold text-foreground mb-2">Pendentes ({pendentes.length})</h3>{pendentes.length === 0 ? <div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhum empréstimo pendente.</div> : pendentes.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>
       {pagos.length > 0 && <div><h3 className="text-sm font-bold text-foreground mb-2">Pagos ({pagos.length})</h3>{pagos.map((emp) => <EmprestimoCard key={emp.id} emp={emp} isAdmin={isAdmin} />)}</div>}
     </div>

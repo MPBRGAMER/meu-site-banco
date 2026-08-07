@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { Dices, Plus, Trash2, Clock, Trophy, Users, Timer, AlertCircle, PartyPopper, History, ChevronDown, ChevronUp, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import type { Participante } from "@/lib/useBank";
+import AdSlot from "@/components/AdSlot";
 
 function SorteioTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -208,6 +209,7 @@ export default function SorteiosTab({ isAdmin }: SorteiosTabProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{ativos.map((s) => <SorteioCard key={s.id} sorteio={s} isAdmin={isAdmin} />)}</div>
         )}
       </div>
+      <AdSlot size="banner" className="my-3" />
       {historicoSorteios.length > 0 && (
         <div>
           <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><History className="w-4 h-4 text-yellow-400" /> Historico de Ganhadores ({historicoSorteios.length})</h3>
