@@ -21,6 +21,7 @@ import SorteiosTab from "@/components/banco/SorteiosTab";
 import LotericaTab from "@/components/banco/LotericaTab";
 import TabelaTab from "@/components/banco/TabelaTab";
 import ChatTab from "@/components/banco/ChatTab";
+import { TranslationPopup } from "@/components/banco/TranslationPopup";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -222,6 +223,9 @@ export default function HomePage() {
       <footer className="border-t border-border py-4 text-center text-xs text-muted-foreground">
         Day R Survival - Posto de Trocas
       </footer>
+
+      {/* Translation Popup - site-wide */}
+      <TranslationPopup />
 
       {/* Admin Login Modal */}
       {showAdminLogin && (

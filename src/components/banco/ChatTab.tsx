@@ -8,7 +8,7 @@ import {
   MessageCircle, Hash, Lock, Plus, Trash2, Send, Shield, ChevronRight, X, LogIn, Menu, Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { TranslationPopup, TranslationPopupForce } from "./TranslationPopup";
+import { TranslationPopupSmall } from "./TranslationPopup";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -413,8 +413,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
         )}
       </div>
 
-      {showTranslation && <TranslationPopupForce show={showTranslation} onClose={() => setShowTranslation(false)} />}
-      <TranslationPopup />
+      {showTranslation && <TranslationPopupSmall show={showTranslation} onClose={() => setShowTranslation(false)} />}
 
       {salaParaEntrar && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setSalaParaEntrar(null)}>

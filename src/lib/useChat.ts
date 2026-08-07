@@ -63,7 +63,7 @@ export function useChat() {
 
   const loadMensagens = useCallback(async () => {
     try {
-      const params: Record<string, string> = { canal: canalAtivo };
+      const params: Record<string, string> = { canal: salaAtiva ? "sala" : canalAtivo };
       if (salaAtiva) params.salaId = salaAtiva;
       if (lastIdRef.current) params.lastId = lastIdRef.current;
 

@@ -121,3 +121,22 @@ Stage Summary:
 - Translation popup appears automatically on first chat visit with instructions in 12 languages
 - Globe icon in chat header lets users re-open the popup anytime
 - Messages are permanent (never auto-deleted) — only admin can manually delete individual messages
+
+---
+Task ID: 5
+Agent: Main Agent
+Task: Fix private room messaging + Make translation popup big site-wide
+
+Work Log:
+- Fixed critical bug in useChat.ts: loadMensagens was sending `canal: canalAtivo` (e.g. "geral") even when inside a private room. Changed to `canal: salaAtiva ? "sala" : canalAtivo` so it matches how sendMessage works
+- Rewrote TranslationPopup.tsx: now exports two components
+  - TranslationPopup: full-screen modal overlay (max-w-2xl, 85vh), appears 0.8s after first site visit, with visual instruction showing mouse right-click, grid of 12 languages, expand/collapse, "Entendi" button
+  - TranslationPopupSmall: compact popup for the Globe button in chat header
+- Moved TranslationPopup from ChatTab to page.tsx (site-wide, z-100)
+- ChatTab now only renders TranslationPopupSmall via Globe icon button
+- Build passes successfully
+
+Stage Summary:
+- Private room chat now works: messages send and load correctly
+- Big translation modal opens on first site visit with all 12 languages
+- Globe button in chat header re-opens a compact version anytime
