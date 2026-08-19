@@ -104,7 +104,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
         <DialogContent className="bg-card border-border max-w-md">
           <DialogHeader><DialogTitle className="text-primary">Registrar Pagamento</DialogTitle></DialogHeader>
           <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">Empréstimo de {emp.quantidade}x {emp.item} para {emp.player}</p>
+            <p className="text-sm text-muted-foreground">Empréstimo de {emp.quantidade}x {emp.item} para <span data-no-translate>{emp.player}</span></p>
             <div className="rounded-md bg-yellow-400/10 border border-yellow-400/30 p-3"><p className="text-xs text-yellow-300 mb-1">Valor a cobrar:</p><p className="text-xl font-bold font-mono text-yellow-400">{valorCobrar} itens</p></div>
             <div><Label className="text-xs text-muted-foreground">Item do Pagamento</Label><Input placeholder="Ex: Sal, Carne..." value={itemPagamento} onChange={(e) => setItemPagamento(e.target.value)} className="font-mono text-sm" /></div>
             <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder={valorCobrar.toString()} value={qtdPagamento} onChange={(e) => setQtdPagamento(e.target.value)} className="font-mono text-sm" /></div>

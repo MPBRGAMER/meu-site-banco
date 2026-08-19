@@ -302,7 +302,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                     </p>
                     <p className="text-xs text-foreground">
                       Numero: <span className="font-bold font-mono text-primary">{String(loterica.numeroSorteado).padStart(3, "0")}</span>
-                      {loterica.ganhador && <> - Ganhador: <span className="font-bold text-green-400">{loterica.ganhador}</span></>}
+                      {loterica.ganhador && <> - Ganhador: <span className="font-bold text-green-400" data-no-translate>{loterica.ganhador}</span></>}
                       {!loterica.ganhador && <> - Nao foi vendido - <span className="font-bold text-orange-400">{Math.round(loterica.valorPremio || 0)} {loterica.moedaAceita} acumulados</span></>}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">

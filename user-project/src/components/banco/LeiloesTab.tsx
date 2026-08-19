@@ -311,7 +311,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                     {leilao.quantidade > 1 && <div className="text-center"><p className="text-xs text-muted-foreground">Qtd</p><p className="text-sm font-bold text-blue-400">x{leilao.quantidade}</p></div>}
                     <div className="text-center"><p className="text-xs text-muted-foreground">Inicial</p><p className="text-sm font-bold text-foreground">{leilao.valorInicial}</p></div>
                     <div className="text-center"><p className="text-xs text-muted-foreground">Maior</p><p className="text-sm font-bold text-primary">{maior ? maior.valor : "-"}</p></div>
-                    <div className="text-center"><p className="text-xs text-muted-foreground">Vencedor</p><p className="text-sm font-bold text-green-400">{maior?.jogador || "-"}</p></div>
+                    <div className="text-center"><p className="text-xs text-muted-foreground">Vencedor</p><p className="text-sm font-bold text-green-400" data-no-translate>{maior?.jogador || "-"}</p></div>
                     <div className="text-center"><p className="text-xs text-muted-foreground">Moeda</p><p className="text-xs font-semibold text-primary">{leilao.moedaAceita}</p></div>
                     <div className="text-center"><p className="text-xs text-muted-foreground">Taxa</p><p className="text-sm font-bold text-yellow-400">{leilao.taxaCasa}%</p></div>
                   </div>

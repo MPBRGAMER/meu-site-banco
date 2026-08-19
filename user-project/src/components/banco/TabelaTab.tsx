@@ -1158,7 +1158,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
               {priceReports.slice(0, 20).map((r) => (
                 <div key={r.id} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted/20 transition-colors text-[11px]">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="text-primary font-semibold shrink-0">{r.nickname}</span>
+                    <span className="text-primary font-semibold shrink-0" data-no-translate>{r.nickname}</span>
                     <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
