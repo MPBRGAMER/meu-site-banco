@@ -233,6 +233,20 @@ export async function POST(req: NextRequest) {
 
     if (!action) return err("Campo 'action' é obrigatório");
 
+    // Ações públicas que não precisam de admin
+    const PUBLIC_ACTIONS = new Set([
+      "participarSorteio",
+      "comprarNumero",
+      "addLance",
+      "reportPrice",
+    ]);
+
+    // Todas as outras ações POST exigem autenticação de admin
+    if (!PUBLIC_ACTIONS.has(action)) {
+      const pwd = req.headers.get("x-admin-password");
+      if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+    }
+
     switch (action) {
       // === EMPRÉSTIMOS ===
       case "addEmprestimo": {
