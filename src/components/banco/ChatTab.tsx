@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
+import { getDateLocale } from "./TranslationPopup";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -37,7 +38,7 @@ const REGRAS_RESUMO: Record<string, string[]> = {
 
 function formatTime(dateStr: string) {
   const d = new Date(dateStr);
-  return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  return d.toLocaleTimeString(getDateLocale(), { hour: "2-digit", minute: "2-digit" });
 }
 
 function formatDate(dateStr: string) {
@@ -47,7 +48,7 @@ function formatDate(dateStr: string) {
   const yesterday = new Date(today);
   yesterday.setDate(yesterday.getDate() - 1);
   if (d.toDateString() === yesterday.toDateString()) return "Ontem";
-  return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+  return d.toLocaleDateString(getDateLocale(), { day: "2-digit", month: "2-digit" });
 }
 
 interface ChatTabProps {

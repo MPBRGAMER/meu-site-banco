@@ -13,6 +13,7 @@ import { getFallbackEmoji } from "@/data/item-icons";
 import { useBank } from "@/lib/useBank";
 import { toast } from "sonner";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 interface PriceItem {
   id: string;
@@ -1105,7 +1106,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
                   <div className="flex items-center gap-3 shrink-0">
                     <span className="font-mono font-semibold text-green-400">{r.steelQty}:{r.steelPrice}$</span>
                     <span className="font-mono font-semibold text-foreground/80">{r.cementQty}:{r.cementPrice}c</span>
-                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
+                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString(getDateLocale())}</span>
                   </div>
                 </div>
               ))}

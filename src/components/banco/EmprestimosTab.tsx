@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 function getTaxa(tipo: string): number {
   if (tipo === "especial") return 0;
@@ -96,7 +97,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
         <div><span className="text-muted-foreground">Item:</span> <span className="font-mono text-foreground">{emp.item}</span></div>
         <div><span className="text-muted-foreground">Quantidade:</span> <span className="font-mono text-foreground">{emp.quantidade}</span></div>
         <div><span className="text-muted-foreground">Valor a cobrar:</span> <span className="font-mono font-bold text-yellow-400">{valorCobrar}</span></div>
-        <div><span className="text-muted-foreground">Vencimento:</span> <span className="font-mono text-foreground">{new Date(emp.dataEmprestimo).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span></div>
+        <div><span className="text-muted-foreground">Vencimento:</span> <span className="font-mono text-foreground">{new Date(emp.dataEmprestimo).toLocaleDateString(getDateLocale(), { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span></div>
       </div>
       {estaAtrasado && <div className="mt-2 text-xs text-red-400 flex items-center gap-1"><AlertTriangle className="w-3 h-3" /> Empréstimo atrasado - Juros já incluídos</div>}
       <Dialog open={showPayment} onOpenChange={setShowPayment}>

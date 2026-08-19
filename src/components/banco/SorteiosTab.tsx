@@ -8,6 +8,7 @@ import { Dices, Plus, Trash2, Clock, Trophy, Users, Timer, AlertCircle, PartyPop
 import { Label } from "@/components/ui/label";
 import type { Participante } from "@/lib/useBank";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 function SorteioTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -58,7 +59,7 @@ function SorteioCard({ sorteio, isAdmin }: { sorteio: { id: string; nomeItem: st
       <div className="p-4">
         <div className="flex items-center gap-4 mb-3 py-2 border-t border-b border-border/50">
           <div className="text-center"><p className="text-xs text-muted-foreground">Participantes</p><p className="text-sm font-bold text-foreground flex items-center gap-1"><Users className="w-3 h-3" /> {participantes.length}</p></div>
-          <div className="text-center"><p className="text-xs text-muted-foreground">Criado</p><p className="text-xs font-mono text-foreground">{new Date(sorteio.dataCriacao).toLocaleDateString("pt-BR")}</p></div>
+          <div className="text-center"><p className="text-xs text-muted-foreground">Criado</p><p className="text-xs font-mono text-foreground">{new Date(sorteio.dataCriacao).toLocaleDateString(getDateLocale())}</p></div>
         </div>
         {participantes.length > 0 && <div className="mb-3 max-h-20 overflow-y-auto space-y-1">{participantes.map((p) => (<div key={p.id} className="flex items-center gap-2 text-xs"><Users className="w-3 h-3 text-primary" /><span className="text-foreground">{p.jogador}</span></div>))}</div>}
         <div className="mt-3">
@@ -105,7 +106,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
           <div>
             <p className="text-sm font-bold text-foreground">{entry.nomeItem} <span className="text-muted-foreground font-normal">x{entry.quantidade}</span></p>
             <p className="text-xs text-muted-foreground">
-              {new Date(entry.dataCriacao).toLocaleDateString("pt-BR")}{entry.dataFim ? ` - ${new Date(entry.dataFim).toLocaleDateString("pt-BR")}` : ""}
+              {new Date(entry.dataCriacao).toLocaleDateString(getDateLocale())}{entry.dataFim ? ` - ${new Date(entry.dataFim).toLocaleDateString(getDateLocale())}` : ""}
             </p>
           </div>
         </div>
@@ -138,7 +139,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
               <p className="text-xs text-muted-foreground">Data do Sorteio</p>
-              <p className="text-sm font-bold text-foreground">{entry.dataFim ? new Date(entry.dataFim).toLocaleDateString("pt-BR") : "-"}</p>
+              <p className="text-sm font-bold text-foreground">{entry.dataFim ? new Date(entry.dataFim).toLocaleDateString(getDateLocale()) : "-"}</p>
             </div>
           </div>
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/5 p-3 mb-3">

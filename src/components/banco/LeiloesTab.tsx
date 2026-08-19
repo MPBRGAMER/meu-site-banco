@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon, Package } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 interface PtItemMap { pt: string; file: string }
 
@@ -409,7 +410,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                     <td className="px-3 py-2 text-center font-mono text-primary font-bold">{l.valorVencedor || 0}</td>
                     <td className="px-3 py-2 text-center text-foreground">{l.moedaAceita}</td>
                     <td className="px-3 py-2 text-center text-yellow-400">{l.taxaCasa}%</td>
-                    <td className="px-3 py-2 text-xs text-muted-foreground">{l.dataCriacao ? new Date(l.dataCriacao).toLocaleDateString("pt-BR") : "-"}</td>
+                    <td className="px-3 py-2 text-xs text-muted-foreground">{l.dataCriacao ? new Date(l.dataCriacao).toLocaleDateString(getDateLocale()) : "-"}</td>
                   </tr>
                 ))}
               </tbody>

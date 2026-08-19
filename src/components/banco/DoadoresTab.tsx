@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 interface DoadoresTabProps { isAdmin: boolean; }
 
@@ -110,7 +111,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
       <div>
         <h3 className="text-sm font-bold text-foreground mb-2">Histórico ({doadores.length})</h3>
         {doadores.length === 0 ? (<div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhuma doação.</div>) : (
-          <div className="space-y-2">{[...doadores].reverse().map((d) => (<div key={d.id} className="rounded-md border border-border bg-card p-3 flex items-center gap-3 hover:border-primary/20"><Heart className="w-4 h-4 text-red-400" /><div><p className="text-sm font-bold text-foreground">{d.nome}</p><p className="text-xs text-muted-foreground">{d.quantidade}x {d.item} - {new Date(d.data).toLocaleDateString("pt-BR")}</p></div></div>))}</div>
+          <div className="space-y-2">{[...doadores].reverse().map((d) => (<div key={d.id} className="rounded-md border border-border bg-card p-3 flex items-center gap-3 hover:border-primary/20"><Heart className="w-4 h-4 text-red-400" /><div><p className="text-sm font-bold text-foreground">{d.nome}</p><p className="text-xs text-muted-foreground">{d.quantidade}x {d.item} - {new Date(d.data).toLocaleDateString(getDateLocale())}</p></div></div>))}</div>
         )}
       </div>
       <AdSlot size="banner" id="doadores-bottom" isAdmin={isAdmin} className="my-3" />
