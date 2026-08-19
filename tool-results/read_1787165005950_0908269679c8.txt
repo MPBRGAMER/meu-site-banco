@@ -1,0 +1,922 @@
+     1→import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+     2→import { toast } from "sonner";
+     3→
+     4→// === TYPES ===
+     5→export interface Emprestimo {
+     6→  id: string;
+     7→  player: string;
+     8→  item: string;
+     9→  quantidade: number;
+    10→  dataEmprestimo: string;
+    11→  tipoMembro: string;
+    12→  status: string;
+    13→  dataPagamento: string | null;
+    14→  itemPagamento: string | null;
+    15→  quantidadePaga: number | null;
+    16→}
+    17→
+    18→export interface Investidor {
+    19→  id: string;
+    20→  nome: string;
+    21→  dataEntrada: string;
+    22→  status: string;
+    23→  observacao: string | null;
+    24→  ordem: number;
+    25→}
+    26→
+    27→export interface TabelaTroca {
+    28→  id: string;
+    29→  itemBase: string;
+    30→  quantidadeBase: number;
+    31→  itemResultado: string;
+    32→  quantidadeResultado: number;
+    33→  categoria: string | null;
+    34→}
+    35→
+    36→export interface TrocaRegistro {
+    37→  id: string;
+    38→  player: string;
+    39→  itemEnviado: string;
+    40→  quantidadeEnviada: number;
+    41→  itemRecebido: string;
+    42→  quantidadeRecebida: number;
+    43→  tipoMembro: string;
+    44→  taxaAplicada: number;
+    45→  lucroBanco: number;
+    46→  data: string;
+    47→}
+    48→
+    49→export interface CompraVenda {
+    50→  id: string;
+    51→  tipo: string;
+    52→  player: string;
+    53→  item: string;
+    54→  quantidade: number;
+    55→  itemPagamento: string | null;
+    56→  valor: number;
+    57→  data: string;
+    58→  observacao: string | null;
+    59→}
+    60→
+    61→export interface CaixaRegistro {
+    62→  id: string;
+    63→  tipo: string;
+    64→  descricao: string;
+    65→  item: string;
+    66→  quantidade: number;
+    67→  valor: number | null;
+    68→  data: string;
+    69→  origem: string;
+    70→}
+    71→
+    72→export interface Doador {
+    73→  id: string;
+    74→  nome: string;
+    75→  item: string;
+    76→  quantidade: number;
+    77→  data: string;
+    78→  ordem: number;
+    79→}
+    80→
+    81→export interface Leilao {
+    82→  id: string;
+    83→  donoItem: string;
+    84→  nomeItem: string;
+    85→  imagemUrl: string | null;
+    86→  quantidade: number;
+    87→  valorInicial: number;
+    88→  moedaAceita: string;
+    89→  taxaCasa: number;
+    90→  status: string;
+    91→  dataCriacao: string;
+    92→  dataExpiracao: string;
+    93→  dataUltimoLance: string | null;
+    94→  vencedor: string | null;
+    95→  valorVencedor: number | null;
+    96→  tipoMembroVencedor: string | null;
+    97→  tipoOrigem: string;
+    98→}
+    99→
+   100→export interface Lance {
+   101→  id: string;
+   102→  leilaoId: string;
+   103→  jogador: string;
+   104→  valor: number;
+   105→  data: string;
+   106→}
+   107→
+   108→export interface Sorteio {
+   109→  id: string;
+   110→  nomeItem: string;
+   111→  quantidade: number;
+   112→  duracaoMinutos: number;
+   113→  status: string;
+   114→  dataCriacao: string;
+   115→  dataFim: string | null;
+   116→  ganhador: string | null;
+   117→}
+   118→
+   119→export interface Participante {
+   120→  id: string;
+   121→  sorteioId: string;
+   122→  jogador: string;
+   123→  data: string;
+   124→}
+   125→
+   126→export interface LotericaData {
+   127→  id: string;
+   128→  status: string;
+   129→  valorNumero: number;
+   130→  moedaAceita: string;
+   131→  premioMinimo: number;
+   132→  premioAcumulado: number;
+   133→  duracaoMinutos: number;
+   134→  dataCriacao: string;
+   135→  dataFimVendas: string | null;
+   136→  dataSorteio: string | null;
+   137→  numeroSorteado: number | null;
+   138→  ganhador: string | null;
+   139→  valorPremio: number;
+   140→  arrecadadoTotal: number;
+   141→}
+   142→
+   143→export interface NumeroLoterica {
+   144→  id: string;
+   145→  lotericaId: string;
+   146→  numero: number;
+   147→  comprador: string | null;
+   148→  dataCompra: string | null;
+   149→}
+   150→
+   151→export interface SorteioHistorico extends Sorteio {
+   152→  totalParticipantes: number;
+   153→}
+   154→
+   155→export interface LotericaHistorico extends LotericaData {
+   156→  totalVendidos: number;
+   157→}
+   158→
+   159→export interface PriceReportData {
+   160→  id: string;
+   161→  itemId: string;
+   162→  itemName: string;
+   163→  nickname: string;
+   164→  steelPrice: number;
+   165→  cementPrice: number;
+   166→  data: string;
+   167→}
+   168→
+   169→export interface ReporterRanking {
+   170→  nickname: string;
+   171→  count: number;
+   172→  lastReport: string;
+   173→}
+   174→
+   175→function dateStr(d: string | Date): string {
+   176→  if (!d) return "";
+   177→  return d instanceof Date ? d.toISOString() : d;
+   178→}
+   179→
+   180→function parseDates<T extends Record<string, unknown>>(
+   181→  items: T[],
+   182→  dateFields: string[]
+   183→): T[] {
+   184→  return items.map((item) => {
+   185→    const parsed = { ...item };
+   186→    for (const f of dateFields) {
+   187→      if (parsed[f]) {
+   188→        parsed[f] = dateStr(parsed[f] as string) as never;
+   189→      }
+   190→    }
+   191→    return parsed;
+   192→  });
+   193→}
+   194→
+   195→// === API HELPER ===
+   196→async function apiGet(action: string, params?: Record<string, string>): Promise<unknown> {
+   197→  const url = new URL("/api/banco", window.location.origin);
+   198→  url.searchParams.set("action", action);
+   199→  if (params) {
+   200→    for (const [k, v] of Object.entries(params)) {
+   201→      url.searchParams.set(k, v);
+   202→    }
+   203→  }
+   204→  const res = await fetch(url.toString());
+   205→  const data = await res.json();
+   206→  if ("error" in data) throw new Error(data.error as string);
+   207→  return data;
+   208→}
+   209→
+   210→async function apiPost(action: string, body: Record<string, unknown>): Promise<unknown> {
+   211→  const adminPassword = typeof window !== "undefined" ? sessionStorage.getItem("adminPwd") : null;
+   212→  const headers: Record<string, string> = { "Content-Type": "application/json" };
+   213→  if (adminPassword) headers["x-admin-password"] = adminPassword;
+   214→  const res = await fetch("/api/banco", {
+   215→    method: "POST",
+   216→    headers,
+   217→    body: JSON.stringify({ action, ...body }),
+   218→  });
+   219→  const data = await res.json();
+   220→  if ("error" in data) throw new Error(data.error as string);
+   221→  return data;
+   222→}
+   223→
+   224→// === HOOK ===
+   225→export function useBank() {
+   226→  const [emprestimos, setEmprestimos] = useState<Emprestimo[]>([]);
+   227→  const [investidores, setInvestidores] = useState<Investidor[]>([]);
+   228→  const [tabelasTroca, setTabelasTroca] = useState<TabelaTroca[]>([]);
+   229→  const [trocas, setTrocas] = useState<TrocaRegistro[]>([]);
+   230→  const [comprasVendas, setComprasVendas] = useState<CompraVenda[]>([]);
+   231→  const [caixa, setCaixa] = useState<CaixaRegistro[]>([]);
+   232→  const [doadores, setDoadores] = useState<Doador[]>([]);
+   233→  const [leiloes, setLeiloes] = useState<Leilao[]>([]);
+   234→  const [lances, setLances] = useState<Lance[]>([]);
+   235→  const [sorteios, setSorteios] = useState<Sorteio[]>([]);
+   236→  const [loterica, setLoterica] = useState<LotericaData | null>(null);
+   237→  const [lotericaNumeros, setLotericaNumeros] = useState<NumeroLoterica[]>([]);
+   238→  const [historicoSorteios, setHistoricoSorteios] = useState<SorteioHistorico[]>([]);
+   239→  const [historicoLoterica, setHistoricoLoterica] = useState<LotericaHistorico[]>([]);
+   240→  const [reporterRanking, setReporterRanking] = useState<ReporterRanking[]>([]);
+   241→  const [isLoading, setIsLoading] = useState(true);
+   242→  const mountedRef = useRef(true);
+   243→
+   244→  const loadAll = useCallback(async () => {
+   245→    try {
+   246→      const [emps, invs, tabs, troc, cvs, cai, doa, lei, lan, sor, lot, histSor, histLot, repRank] =
+   247→        await Promise.all([
+   248→          apiGet("listEmprestimos"),
+   249→          apiGet("listInvestidores"),
+   250→          apiGet("listTabelasTroca"),
+   251→          apiGet("listTrocas"),
+   252→          apiGet("listComprasVendas"),
+   253→          apiGet("listCaixa"),
+   254→          apiGet("listDoadores"),
+   255→          apiGet("listLeiloes"),
+   256→          apiGet("listAllLances"),
+   257→          apiGet("listSorteios"),
+   258→          apiGet("getLoterica"),
+   259→          apiGet("getHistoricoSorteios"),
+   260→          apiGet("getAllLoterica"),
+   261→          apiGet("getReporterRanking"),
+   262→        ]);
+   263→
+   264→      if (!mountedRef.current) return;
+   265→
+   266→      setEmprestimos(
+   267→        parseDates(emps as Emprestimo[], ["dataEmprestimo", "dataPagamento"])
+   268→      );
+   269→      setInvestidores(
+   270→        parseDates(invs as Investidor[], ["dataEntrada"])
+   271→      );
+   272→      setTabelasTroca(tabs as TabelaTroca[]);
+   273→      setTrocas(parseDates(troc as TrocaRegistro[], ["data"]));
+   274→      setComprasVendas(parseDates(cvs as CompraVenda[], ["data"]));
+   275→      setCaixa(parseDates(cai as CaixaRegistro[], ["data"]));
+   276→      setDoadores(parseDates(doa as Doador[], ["data"]));
+   277→      setLeiloes(
+   278→        parseDates(lei as Leilao[], [
+   279→          "dataCriacao",
+   280→          "dataExpiracao",
+   281→          "dataUltimoLance",
+   282→        ])
+   283→      );
+   284→      setLances(parseDates(lan as Lance[], ["data"]));
+   285→      setSorteios(
+   286→        parseDates(sor as Sorteio[], ["dataCriacao", "dataFim"])
+   287→      );
+   288→      setHistoricoSorteios(
+   289→        parseDates(histSor as SorteioHistorico[], ["dataCriacao", "dataFim"])
+   290→      );
+   291→      setHistoricoLoterica(
+   292→        parseDates(histLot as LotericaHistorico[], ["dataCriacao", "dataFimVendas", "dataSorteio"])
+   293→      );
+   294→      setReporterRanking(repRank as ReporterRanking[]);
+   295→
+   296→      const lotArr = lot as LotericaData[];
+   297→      const lotParsed = lotArr.length > 0
+   298→        ? parseDates([lotArr[0]], [
+   299→            "dataCriacao",
+   300→            "dataFimVendas",
+   301→            "dataSorteio",
+   302→          ])[0]
+   303→        : null;
+   304→      setLoterica(lotParsed);
+   305→
+   306→      if (lotParsed) {
+   307→        const nums = await apiGet("getNumerosLoterica", {
+   308→          lotericaId: lotParsed.id,
+   309→        });
+   310→        if (mountedRef.current) {
+   311→          setLotericaNumeros(
+   312→            parseDates(nums as NumeroLoterica[], ["dataCompra"])
+   313→          );
+   314→        }
+   315→      } else {
+   316→        setLotericaNumeros([]);
+   317→      }
+   318→    } catch {
+   319→      // silent
+   320→    } finally {
+   321→      if (mountedRef.current) setIsLoading(false);
+   322→    }
+   323→  }, []);
+   324→
+   325→  useEffect(() => {
+   326→    mountedRef.current = true;
+   327→    loadAll();
+   328→
+   329→    const source = typeof window !== "undefined" && "EventSource" in window
+   330→      ? new EventSource("/api/banco?action=events")
+   331→      : null;
+   332→    if (source) {
+   333→      source.onmessage = () => {
+   334→        void loadAll();
+   335→      };
+   336→    }
+   337→
+   338→    // Fallback para navegadores/rede que não mantenham SSE aberto.
+   339→    const fallbackInterval = setInterval(loadAll, 10000);
+   340→    return () => {
+   341→      mountedRef.current = false;
+   342→      source?.close();
+   343→      clearInterval(fallbackInterval);
+   344→    };
+   345→  }, [loadAll]);
+   346→
+   347→  // Inventory calculated from caixa
+   348→  const inventory = useMemo(() => {
+   349→    const inv: Record<string, number> = {};
+   350→    caixa.forEach((reg) => {
+   351→      if (!inv[reg.item]) inv[reg.item] = 0;
+   352→      if (reg.tipo === "entrada") inv[reg.item] += reg.quantidade;
+   353→      else inv[reg.item] -= reg.quantidade;
+   354→    });
+   355→    return inv;
+   356→  }, [caixa]);
+   357→
+   358→  // Helper: add caixa record
+   359→  const addCaixa = useCallback(
+   360→    async (data: {
+   361→      tipo: string;
+   362→      descricao: string;
+   363→      item: string;
+   364→      quantidade: number;
+   365→      valor?: number;
+   366→      origem: string;
+   367→    }) => {
+   368→      await apiPost("addCaixa", data);
+   369→    },
+   370→    []
+   371→  );
+   372→
+   373→  // === EMPRÉSTIMOS ===
+   374→  const addEmprestimo = useCallback(
+   375→    async (d: {
+   376→      player: string;
+   377→      item: string;
+   378→      quantidade: number;
+   379→      tipoMembro: string;
+   380→      dataEmprestimo: string;
+   381→      status: string;
+   382→    }) => {
+   383→      await apiPost("addEmprestimo", d);
+   384→      await addCaixa({
+   385→        tipo: "saida",
+   386→        descricao: `Empréstimo para ${d.player}`,
+   387→        item: d.item,
+   388→        quantidade: d.quantidade,
+   389→        origem: "emprestimo",
+   390→      });
+   391→      loadAll();
+   392→    },
+   393→    [addCaixa, loadAll]
+   394→  );
+   395→
+   396→  const pagarEmprestimo = useCallback(
+   397→    async (
+   398→      id: string,
+   399→      pagamento: { itemPagamento: string; quantidadePaga: number }
+   400→    ) => {
+   401→      const emp = emprestimos.find((e) => e.id === id);
+   402→      if (!emp) return;
+   403→      await apiPost("updateEmprestimo", {
+   404→        id,
+   405→        status: "pago",
+   406→        dataPagamento: new Date().toISOString(),
+   407→        ...pagamento,
+   408→      });
+   409→      await addCaixa({
+   410→        tipo: "entrada",
+   411→        descricao: `Pagamento de empréstimo - ${emp.player}`,
+   412→        item: pagamento.itemPagamento,
+   413→        quantidade: pagamento.quantidadePaga,
+   414→        origem: "emprestimo",
+   415→      });
+   416→      loadAll();
+   417→    },
+   418→    [emprestimos, addCaixa, loadAll]
+   419→  );
+   420→
+   421→  // === INVESTIDORES ===
+   422→  const addInvestidor = useCallback(
+   423→    async (nome: string, observacao?: string) => {
+   424→      await apiPost("addInvestidor", { nome, observacao });
+   425→      loadAll();
+   426→    },
+   427→    [loadAll]
+   428→  );
+   429→  const removeInvestidor = useCallback(
+   430→    async (id: string) => {
+   431→      await apiPost("removeInvestidor", { id });
+   432→      loadAll();
+   433→    },
+   434→    [loadAll]
+   435→  );
+   436→  const reorderInvestidores = useCallback(
+   437→    async (updates: { id: string; ordem: number }[]) => {
+   438→      await apiPost("reorderInvestidores", { updates });
+   439→      loadAll();
+   440→    },
+   441→    [loadAll]
+   442→  );
+   443→
+   444→  // === TABELAS DE TROCA ===
+   445→  const addTabelaTroca = useCallback(
+   446→    async (d: {
+   447→      itemBase: string;
+   448→      quantidadeBase: number;
+   449→      itemResultado: string;
+   450→      quantidadeResultado: number;
+   451→      categoria?: string;
+   452→    }) => {
+   453→      await apiPost("addTabelaTroca", d);
+   454→      loadAll();
+   455→    },
+   456→    [loadAll]
+   457→  );
+   458→  const removeTabelaTroca = useCallback(
+   459→    async (id: string) => {
+   460→      await apiPost("removeTabelaTroca", { id });
+   461→      loadAll();
+   462→    },
+   463→    [loadAll]
+   464→  );
+   465→
+   466→  // === TROCAS ===
+   467→  const addTroca = useCallback(
+   468→    async (d: {
+   469→      player: string;
+   470→      itemEnviado: string;
+   471→      quantidadeEnviada: number;
+   472→      itemRecebido: string;
+   473→      quantidadeRecebida: number;
+   474→      tipoMembro: string;
+   475→      taxaAplicada: number;
+   476→      lucroBanco: number;
+   477→    }) => {
+   478→      await apiPost("addTroca", d);
+   479→
+   480→      if (d.tipoMembro === "banco") {
+   481→        // Troca interna do banco: item sai do estoque, outro entra
+   482→        await addCaixa({
+   483→          tipo: "saida",
+   484→          descricao: `Troca interna banco: saiu ${d.quantidadeEnviada}x ${d.itemEnviado}`,
+   485→          item: d.itemEnviado,
+   486→          quantidade: d.quantidadeEnviada,
+   487→          origem: `troca_banco`,
+   488→        });
+   489→        await addCaixa({
+   490→          tipo: "entrada",
+   491→          descricao: `Troca interna banco: entrou ${d.quantidadeRecebida}x ${d.itemRecebido}`,
+   492→          item: d.itemRecebido,
+   493→          quantidade: d.quantidadeRecebida,
+   494→          origem: `troca_banco`,
+   495→        });
+   496→      } else {
+   497→        // Player entrega item para o banco (entrada)
+   498→        await addCaixa({
+   499→          tipo: "entrada",
+   500→          descricao: `Troca de ${d.player}: recebeu ${d.quantidadeEnviada}x ${d.itemEnviado}`,
+   501→          item: d.itemEnviado,
+   502→          quantidade: d.quantidadeEnviada,
+   503→          origem: `troca:${d.player}`,
+   504→        });
+   505→        // Banco entrega item para o player (saída)
+   506→        await addCaixa({
+   507→          tipo: "saida",
+   508→          descricao: `Troca para ${d.player}: entregou ${d.quantidadeRecebida}x ${d.itemRecebido}`,
+   509→          item: d.itemRecebido,
+   510→          quantidade: d.quantidadeRecebida,
+   511→          origem: `troca:${d.player}`,
+   512→        });
+   513→      }
+   514→
+   515→      loadAll();
+   516→    },
+   517→    [addCaixa, loadAll]
+   518→  );
+   519→  const removeTroca = useCallback(
+   520→    async (id: string) => {
+   521→      // Busca a troca antes de excluir para estornar o estoque
+   522→      const troca = trocas.find((t) => t.id === id);
+   523→      if (troca) {
+   524→        if (troca.tipoMembro === "banco") {
+   525→          // Estornar troca interna: reverter saída e entrada
+   526→          await addCaixa({
+   527→            tipo: "entrada",
+   528→            descricao: `Estorno troca interna: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`,
+   529→            item: troca.itemEnviado,
+   530→            quantidade: troca.quantidadeEnviada,
+   531→            origem: `estorno_troca_banco`,
+   532→          });
+   533→          await addCaixa({
+   534→            tipo: "saida",
+   535→            descricao: `Estorno troca interna: removeu ${troca.quantidadeRecebida}x ${troca.itemRecebido}`,
+   536→            item: troca.itemRecebido,
+   537→            quantidade: troca.quantidadeRecebida,
+   538→            origem: `estorno_troca_banco`,
+   539→          });
+   540→        } else {
+   541→          // Estornar troca com player: reverter entrada e saída
+   542→          await addCaixa({
+   543→            tipo: "saida",
+   544→            descricao: `Estorno troca de ${troca.player}: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`,
+   545→            item: troca.itemEnviado,
+   546→            quantidade: troca.quantidadeEnviada,
+   547→            origem: `estorno_troca:${troca.player}`,
+   548→          });
+   549→          await addCaixa({
+   550→            tipo: "entrada",
+   551→            descricao: `Estorno troca para ${troca.player}: recuperou ${troca.quantidadeRecebida}x ${troca.itemRecebido}`,
+   552→            item: troca.itemRecebido,
+   553→            quantidade: troca.quantidadeRecebida,
+   554→            origem: `estorno_troca:${troca.player}`,
+   555→          });
+   556→        }
+   557→      }
+   558→      await apiPost("removeTroca", { id });
+   559→      await loadAll();
+   560→    },
+   561→    [trocas, addCaixa, loadAll]
+   562→  );
+   563→
+   564→  // === COMPRAS VENDAS ===
+   565→  const addCompraVenda = useCallback(
+   566→    async (d: {
+   567→      tipo: string;
+   568→      player: string;
+   569→      item: string;
+   570→      quantidade: number;
+   571→      itemPagamento?: string;
+   572→      valor: number;
+   573→      observacao?: string;
+   574→    }) => {
+   575→      await apiPost("addCompraVenda", d);
+   576→      if (d.tipo === "compra") {
+   577→        await addCaixa({
+   578→          tipo: "entrada",
+   579→          descricao: `Compra de ${d.player}`,
+   580→          item: d.item,
+   581→          quantidade: d.quantidade,
+   582→          origem: "compra_venda",
+   583→        });
+   584→        await addCaixa({
+   585→          tipo: "saida",
+   586→          descricao: `Pagamento compra - ${d.player}`,
+   587→          item: d.itemPagamento || "Valor",
+   588→          quantidade: d.valor,
+   589→          origem: "compra_venda",
+   590→        });
+   591→      } else {
+   592→        await addCaixa({
+   593→          tipo: "saida",
+   594→          descricao: `Venda para ${d.player}`,
+   595→          item: d.item,
+   596→          quantidade: d.quantidade,
+   597→          origem: "compra_venda",
+   598→        });
+   599→        await addCaixa({
+   600→          tipo: "entrada",
+   601→          descricao: `Recebimento venda - ${d.player}`,
+   602→          item: d.itemPagamento || "Valor",
+   603→          quantidade: d.valor,
+   604→          origem: "compra_venda",
+   605→        });
+   606→      }
+   607→      loadAll();
+   608→    },
+   609→    [addCaixa, loadAll]
+   610→  );
+   611→
+   612→  // === DOADORES ===
+   613→  const addDoador = useCallback(
+   614→    async (nome: string, item: string, quantidade: number) => {
+   615→      const created = await apiPost("addDoador", { nome, item, quantidade }) as Doador;
+   616→      await addCaixa({
+   617→        tipo: "entrada",
+   618→        descricao: `Doação de ${nome}`,
+   619→        item,
+   620→        quantidade,
+   621→        origem: `doacao:${created.id}`,
+   622→      });
+   623→      loadAll();
+   624→    },
+   625→    [addCaixa, loadAll]
+   626→  );
+   627→  const removeDoador = useCallback(
+   628→    async (id: string) => {
+   629→      await apiPost("removeDoador", { id });
+   630→      await loadAll();
+   631→    },
+   632→    [loadAll]
+   633→  );
+   634→  const reorderDoadores = useCallback(
+   635→    async (updates: { id: string; ordem: number }[]) => {
+   636→      await apiPost("reorderDoadores", { updates });
+   637→      loadAll();
+   638→    },
+   639→    [loadAll]
+   640→  );
+   641→
+   642→  // === CAIXA ===
+   643→  const addCaixaManual = useCallback(
+   644→    async (d: {
+   645→      tipo: string;
+   646→      descricao: string;
+   647→      item: string;
+   648→      quantidade: number;
+   649→      valor?: number;
+   650→      origem: string;
+   651→    }) => {
+   652→      await addCaixa(d);
+   653→      loadAll();
+   654→    },
+   655→    [addCaixa, loadAll]
+   656→  );
+   657→  const resetBanco = useCallback(async () => {
+   658→    await apiPost("resetCaixa", {});
+   659→    toast.success("Banco resetado com sucesso!");
+   660→    loadAll();
+   661→  }, [loadAll]);
+   662→
+   663→  // === LEILÕES ===
+   664→  const addLeilao = useCallback(
+   665→    async (d: {
+   666→      donoItem: string;
+   667→      nomeItem: string;
+   668→      imagemUrl?: string | null;
+   669→      quantidade?: number;
+   670→      valorInicial: number;
+   671→      moedaAceita: string;
+   672→      taxaCasa: number;
+   673→      dataExpiracao: string;
+   674→      tipoOrigem: string;
+   675→    }) => {
+   676→      await apiPost("addLeilao", d);
+   677→      loadAll();
+   678→    },
+   679→    [loadAll]
+   680→  );
+   681→  const updateLeilao = useCallback(
+   682→    async (id: string, data: Record<string, unknown>) => {
+   683→      await apiPost("updateLeilao", { id, ...data });
+   684→      loadAll();
+   685→    },
+   686→    [loadAll]
+   687→  );
+   688→  const removeLeilao = useCallback(
+   689→    async (id: string) => {
+   690→      await apiPost("removeLeilao", { id });
+   691→      toast.success("Leilão removido!");
+   692→      loadAll();
+   693→    },
+   694→    [loadAll]
+   695→  );
+   696→  const darLance = useCallback(
+   697→    async (leilaoId: string, jogador: string, valor: number) => {
+   698→      try {
+   699→        await apiPost("addLance", { leilaoId, jogador, valor });
+   700→        loadAll();
+   701→      } catch (e) {
+   702→        toast.error(e instanceof Error ? e.message : "Erro ao dar lance");
+   703→        throw e;
+   704→      }
+   705→    },
+   706→    [loadAll]
+   707→  );
+   708→  const getLancesByLeilao = useCallback(
+   709→    (leilaoId: string): Lance[] => {
+   710→      return lances
+   711→        .filter((l) => l.leilaoId === leilaoId)
+   712→        .sort((a, b) => b.valor - a.valor);
+   713→    },
+   714→    [lances]
+   715→  );
+   716→  const finalizarLeilao = useCallback(
+   717→    async (leilao: Leilao) => {
+   718→      const lancesLeilao = getLancesByLeilao(leilao.id);
+   719→      if (lancesLeilao.length === 0) {
+   720→        toast.error("Não há lances neste leilão.");
+   721→        return;
+   722→      }
+   723→      const vencedor = lancesLeilao[0];
+   724→      const tipoOrigem = leilao.tipoOrigem || "comum";
+   725→      const lucroBanco =
+   726→        tipoOrigem === "banco"
+   727→          ? vencedor.valor
+   728→          : Math.round(vencedor.valor * ((leilao.taxaCasa || 15) / 100));
+   729→      await updateLeilao(leilao.id, {
+   730→        status: "finalizado",
+   731→        vencedor: vencedor.jogador,
+   732→        valorVencedor: vencedor.valor,
+   733→      });
+   734→      await addCaixa({
+   735→        tipo: "entrada",
+   736→        descricao:
+   737→          tipoOrigem === "banco"
+   738→            ? `Leilão do banco: ${leilao.nomeItem} (vencedor: ${vencedor.jogador})`
+   739→            : `Taxa casa leilão: ${leilao.nomeItem} (vencedor: ${vencedor.jogador})`,
+   740→        item: leilao.moedaAceita,
+   741→        quantidade: lucroBanco,
+   742→        origem: "leilao",
+   743→      });
+   744→      toast.success(
+   745→        `Leilão finalizado! Lucro do banco: ${lucroBanco} ${leilao.moedaAceita}`
+   746→      );
+   747→    },
+   748→    [getLancesByLeilao, updateLeilao, addCaixa]
+   749→  );
+   750→
+   751→  // === SORTEIOS ===
+   752→  const addSorteio = useCallback(
+   753→    async (nomeItem: string, quantidade: number, duracaoMinutos: number) => {
+   754→      await apiPost("addSorteio", { nomeItem, quantidade, duracaoMinutos });
+   755→      loadAll();
+   756→    },
+   757→    [loadAll]
+   758→  );
+   759→  const participarSorteio = useCallback(
+   760→    async (sorteioId: string, jogador: string) => {
+   761→      try {
+   762→        await apiPost("participarSorteio", { sorteioId, jogador });
+   763→        loadAll();
+   764→      } catch (e) {
+   765→        toast.error(e instanceof Error ? e.message : "Erro ao participar");
+   766→        throw e;
+   767→      }
+   768→    },
+   769→    [loadAll]
+   770→  );
+   771→  const sortear = useCallback(
+   772→    async (sorteioId: string) => {
+   773→      try {
+   774→        const result = (await apiPost("sortear", { sorteioId })) as {
+   775→          ganhador: string;
+   776→        };
+   777→        toast.success(`Sorteio finalizado! Ganhador: ${result.ganhador}`);
+   778→        loadAll();
+   779→      } catch (e) {
+   780→        toast.error(e instanceof Error ? e.message : "Erro no sorteio");
+   781→      }
+   782→    },
+   783→    [loadAll]
+   784→  );
+   785→  const removeSorteio = useCallback(
+   786→    async (id: string) => {
+   787→      await apiPost("removeSorteio", { id });
+   788→      loadAll();
+   789→    },
+   790→    [loadAll]
+   791→  );
+   792→  const getParticipantes = useCallback(
+   793→    async (sorteioId: string): Promise<Participante[]> => {
+   794→      const data = await apiGet("listParticipantes", { sorteioId });
+   795→      return parseDates(data as Participante[], ["data"]);
+   796→    },
+   797→    []
+   798→  );
+   799→
+   800→  // === LOTÉRICA ===
+   801→  const criarLoterica = useCallback(
+   802→    async (
+   803→      valorNumero: number,
+   804→      moedaAceita: string,
+   805→      premioMinimo: number,
+   806→      duracaoMinutos: number
+   807→    ) => {
+   808→      await apiPost("criarLoterica", {
+   809→        valorNumero,
+   810→        moedaAceita,
+   811→        premioMinimo,
+   812→        duracaoMinutos,
+   813→      });
+   814→      loadAll();
+   815→    },
+   816→    [loadAll]
+   817→  );
+   818→  const comprarNumero = useCallback(
+   819→    async (lotericaId: string, numero: number, comprador: string) => {
+   820→      try {
+   821→        await apiPost("comprarNumero", { lotericaId, numero, comprador });
+   822→        toast.success("Número comprado com sucesso!");
+   823→        loadAll();
+   824→      } catch (e) {
+   825→        toast.error(e instanceof Error ? e.message : "Erro ao comprar");
+   826→        throw e;
+   827→      }
+   828→    },
+   829→    [loadAll]
+   830→  );
+   831→  const iniciarSorteioLoterica = useCallback(
+   832→    async (lotericaId: string) => {
+   833→      try {
+   834→        const result = (await apiPost("iniciarSorteioLoterica", {
+   835→          lotericaId,
+   836→        })) as { numeroSorteado: number; ganhador: string | null; premioFinal: number; taxaBanco: number; acumulou: boolean };
+   837→        if (result.acumulou) {
+   838→          toast.success(`Número sorteado: ${result.numeroSorteado} - Ninguém acertou! Prêmio de ${result.premioFinal} acumulou!`);
+   839→        } else {
+   840→          toast.success(`Número sorteado: ${result.numeroSorteado} - Ganhador: ${result.ganhador}! Prêmio: ${result.premioFinal}`);
+   841→        }
+   842→        loadAll();
+   843→      } catch (e) {
+   844→        toast.error(e instanceof Error ? e.message : "Erro no sorteio");
+   845→      }
+   846→    },
+   847→    [loadAll]
+   848→  );
+   849→  const finalizarLoterica = useCallback(
+   850→    async (lotericaId: string) => {
+   851→      try {
+   852→        const result = (await apiPost("finalizarLoterica", {
+   853→          lotericaId,
+   854→        })) as { acumuladoProxima: number };
+   855→        if (result.acumuladoProxima > 0) {
+   856→          toast.success(`Lotérica finalizada! ${result.acumuladoProxima} acumulado para a próxima.`);
+   857→        } else {
+   858→          toast.success("Lotérica finalizada! Pode criar uma nova.");
+   859→        }
+   860→        loadAll();
+   861→      } catch (e) {
+   862→        toast.error(e instanceof Error ? e.message : "Erro ao finalizar");
+   863→      }
+   864→    },
+   865→    [loadAll]
+   866→  );
+   867→
+   868→  return {
+   869→    emprestimos,
+   870→    investidores,
+   871→    tabelasTroca,
+   872→    trocas,
+   873→    comprasVendas,
+   874→    caixa,
+   875→    doadores,
+   876→    leiloes,
+   877→    lances,
+   878→    sorteios,
+   879→    loterica,
+   880→    lotericaNumeros,
+   881→    historicoSorteios,
+   882→    historicoLoterica,
+   883→    reporterRanking,
+   884→    inventory,
+   885→    isLoading,
+   886→    addEmprestimo,
+   887→    pagarEmprestimo,
+   888→    addInvestidor,
+   889→    removeInvestidor,
+   890→    reorderInvestidores,
+   891→    addTabelaTroca,
+   892→    removeTabelaTroca,
+   893→    addTroca,
+   894→    removeTroca,
+   895→    addCompraVenda,
+   896→    addDoador,
+   897→    removeDoador,
+   898→    reorderDoadores,
+   899→    addCaixaManual,
+   900→    resetBanco,
+   901→    addLeilao,
+   902→    updateLeilao,
+   903→    removeLeilao,
+   904→    darLance,
+   905→    getLancesByLeilao,
+   906→    finalizarLeilao,
+   907→    addSorteio,
+   908→    participarSorteio,
+   909→    sortear,
+   910→    removeSorteio,
+   911→    getParticipantes,
+   912→    criarLoterica,
+   913→    comprarNumero,
+   914→    iniciarSorteioLoterica,
+   915→    finalizarLoterica,
+   916→    reportPrice: async (d: { itemId: string; itemName: string; nickname: string; steelPrice: number; cementPrice: number }) => {
+   917→      await apiPost("reportPrice", d);
+   918→      loadAll();
+   919→    },
+   920→  };
+   921→}
+   922→
