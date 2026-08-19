@@ -1,0 +1,104 @@
+{
+  "trends": {
+    "clean_water": {
+      "history": [5, 5, 5, 5, 5, 5, 5],
+      "trend": "stable",
+      "change": 0
+    },
+    "salt": {
+      "history": [6, 6, 7, 7, 7, 7, 7],
+      "trend": "up",
+      "change": 14
+    },
+    "salted_meat": {
+      "history": [3, 3, 4, 4, 4, 4, 4],
+      "trend": "up",
+      "change": 33
+    },
+    "salted_fish": {
+      "history": [3, 3, 4, 4, 4, 4, 4],
+      "trend": "up",
+      "change": 33
+    },
+    "steel": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "cement": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "alcohol": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "sulfuric_acid": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "antibiotics": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "sterile_bandage": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "assault_rifle_ammo": {
+      "history": [5, 5, 6, 6, 6, 6, 6],
+      "trend": "up",
+      "change": 20
+    },
+    "rifle_ammo": {
+      "history": [3, 3, 3, 3, 3, 3, 3],
+      "trend": "stable",
+      "change": 0
+    },
+    "gunpowder": {
+      "history": [20, 22, 25, 25, 25, 25, 25],
+      "trend": "up",
+      "change": 25
+    },
+    "car_battery": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "antirad": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "iron": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "firewood": {
+      "history": [8, 8, 8, 8, 8, 8, 8],
+      "trend": "stable",
+      "change": 0
+    },
+    "charcoal": {
+      "history": [5, 5, 5, 5, 5, 5, 5],
+      "trend": "stable",
+      "change": 0
+    },
+    "honey": {
+      "history": [1, 1, 1, 1, 1, 1, 1],
+      "trend": "stable",
+      "change": 0
+    },
+    "caviar": {
+      "history": [4, 4, 5, 5, 5, 5, 5],
+      "trend": "up",
+      "change": 25
+    }
+  }
+}
