@@ -18,6 +18,7 @@ const LANGUAGES = [
 const EN: Record<string, string> = {
   // ---- Page / Header ----
   "Day R Survival": "Day R Survival",
+  "Posto de Trocas": "Trading Post",
   "Posto de Trocas - Sobreviventes": "Trading Post - Survivors",
   "POSTO DE TROCAS": "TRADING POST",
   "Sistema de gestao para sobreviventes": "Management system for survivors",
@@ -770,6 +771,74 @@ const EN: Record<string, string> = {
   "Deletar sala": "Delete room",
   "Sobreviventes": "Survivors",
   "Nenhuma mensagem ainda.": "No messages yet.",
+
+  // ---- TabelaTab additional ----
+  "Reportar Preco": "Report Price",
+  "Editar/Remover": "Edit/Remove",
+  "ID (auto) *": "ID (auto) *",
+  "Categoria *": "Category *",
+  "Categoria": "Category",
+  "Prévia do novo item": "New item preview",
+  "Prévia do item": "Item preview",
+  "Observacoes sobre o item...": "Notes about the item...",
+  "Salvando...": "Saving...",
+  "Aco": "Steel",
+  "item": "item",
+  "itens": "items",
+  "sem preco": "no price",
+  "Guia": "Guide",
+  "Preco pendente - reporte para ajudar!": "Price pending - report to help!",
+  "Ex: Agua Potavel": "Ex: PotableWater",
+  "Fonte: dayr.wiki.gg + comunidade": "Source: dayr.wiki.gg + community",
+  "Os precos estao no formato quantidade:valor. Por exemplo, 5:1 significa que voce da 5 unidades do item e recebe 1 de Aco ($). Ou seja, o primeiro numero e a quantidade do item e o segundo e o valor em moeda.": "Prices are in quantity:value format. For example, 5:1 means you give 5 units of the item and receive 1 Steel ($). The first number is the item quantity and the second is the currency value.",
+  "A coluna Tendencia mostra a media dos precos reportados pela comunidade para cada item. Quando ha reports, aparece o valor medio em Aco ($) e Cimento seguido do numero de reports entre parenteses. Quando nao ha reports, aparece o grafico sparkline com a variacao dos ultimos 7 dias.": "The Trend column shows the average of community-reported prices for each item. When there are reports, the average value in Steel ($) and Cement appears followed by the number of reports in parentheses. When there are no reports, a sparkline chart shows the variation over the last 7 days.",
+  "Clique no botao Reportar para compartilhar os precos que voce ve no jogo. Isso ajuda toda a comunidade! Quanto mais pessoas reportam, mais precisa fica a tendencia. O ranking dos maiores contribuidores aparece no Dashboard.": "Click the Report button to share the prices you see in-game. This helps the whole community! The more people report, the more accurate the trend becomes. The top contributors ranking appears on the Dashboard.",
+  "Alguns itens ainda nao tem preco definido. Isso acontece porque sao novos na tabela ou ninguem reportou ainda. Use o botao Reportar para adicionar o primeiro preco!": "Some items don't have a defined price yet. This happens because they are new to the table or nobody has reported yet. Use the Report button to add the first price!",
+  "Precos baseados em pesquisa de comunidades (Reddit, Discord, Facebook, Foruns). A lista completa de itens foi extraida do wiki oficial do jogo (dayr.wiki.gg). Os precos sao atualizados pela comunidade atraves de reports.": "Prices based on community research (Reddit, Discord, Facebook, Forums). The complete item list was extracted from the official game wiki (dayr.wiki.gg). Prices are updated by the community through reports.",
+
+  // ---- EmprestimosTab additional ----
+  "⚠️ Prazo: 24 horas. Após: +1% de juros por dia.": "⚠️ Deadline: 24 hours. After: +1% interest per day.",
+  "Ex: Sal, Carne...": "Ex: Salt, Meat...",
+
+  // ---- InvestidoresTab additional ----
+  "Taxa de": "Fee of",
+  "em empréstimos e trocas (vs": "on loans and trades (vs",
+  "comum).": "common).",
+
+  // ---- LeiloesTab additional (bullet point versions) ----
+  "• O leilão conta o tempo escolhido (1h a 48h).": "• The auction counts the chosen time (1h to 48h).",
+  "• Qualquer pessoa pode dar lance durante o tempo.": "• Anyone can bid during the time.",
+  "• Após o tempo acabar, cada novo lance adiciona": "• After time runs out, each new bid adds",
+  "• Quando o tempo de disputa acaba, o leilão vai para": "• When dispute time runs out, the auction goes to",
+  "• O admin finaliza após entregar o item e receber o pagamento.": "• Admin finalizes after delivering the item and receiving payment.",
+  "Ex: Água Tóxica": "Ex: Toxic Water",
+
+  // ---- SorteiosTab additional ----
+  "Timer acaba ganhador": "Timer ends, winner",
+  "Ex: Katana": "Ex: Katana",
+
+  // ---- LotericaTab additional ----
+  "Numero:": "Number:",
+  "- Ganhador:": "- Winner:",
+  "- Premio:": "- Prize:",
+  "- Nao foi vendido -": "- Not sold -",
+  "das vendas vai pro banco,": "of sales goes to the bank,",
+  "Ex: Aco": "Ex: Steel",
+
+  // ---- ComprasVendasTab additional ----
+  "🔴 Compra": "🔴 Purchase",
+  "🟢 Venda": "🟢 Sale",
+  "Obs": "Notes",
+  "Ex: Moeda": "Ex: Currency",
+
+  // ---- CaixaTab additional ----
+  "📦 Entrada": "📦 Income",
+  "📤 Saída": "📤 Expense",
+  "Ex: Katana": "Ex: Katana",
+  "Ex: Compra": "Ex: Purchase",
+
+  // ---- ConfigTrocasTab additional ----
+  "Taxas: 15% comum / 10% investidor.": "Fees: 15% common / 10% investor.",
 };
 
 /* ============================================================
