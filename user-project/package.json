@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000 2>&1 | tee dev.log",
-    "build": "NODE_ENV=production next build && rm -rf dist && mkdir -p .next/standalone/.next dist/public/_next dist/db && cp -r .next/static .next/standalone/.next/ && cp -r .next/static dist/public/_next/ && cp -r public/. .next/standalone/ && cp -r public/. dist/public/ && cp -f db/custom.db dist/db/custom.db && printf '%s\\n' 'process.env.DATABASE_URL = process.env.DATABASE_URL || `file:${new URL(`../db/custom.db`, import.meta.url).pathname}`; await import(`../.next/standalone/server.js`);' > dist/index.js && touch dist/public/.deployment-assets",
-    "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
     "lint": "eslint .",
-    "db:push": "prisma db push --accept-data-loss",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:reset": "prisma migrate reset"
+    "db:push": "npx prisma db push",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "db:reset": "npx prisma migrate reset"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
