@@ -208,9 +208,12 @@ async function apiGet(action: string, params?: Record<string, string>): Promise<
 }
 
 async function apiPost(action: string, body: Record<string, unknown>): Promise<unknown> {
+  const adminPassword = typeof window !== "undefined" ? sessionStorage.getItem("adminPwd") : null;
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (adminPassword) headers["x-admin-password"] = adminPassword;
   const res = await fetch("/api/banco", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({ action, ...body }),
   });
   const data = await res.json();
@@ -322,10 +325,22 @@ export function useBank() {
   useEffect(() => {
     mountedRef.current = true;
     loadAll();
-    const interval = setInterval(loadAll, 8000);
+
+    const source = typeof window !== "undefined" && "EventSource" in window
+      ? new EventSource("/api/banco?action=events")
+      : null;
+    if (source) {
+      source.onmessage = () => {
+        void loadAll();
+      };
+    }
+
+    // Fallback para navegadores/rede que não mantenham SSE aberto.
+    const fallbackInterval = setInterval(loadAll, 10000);
     return () => {
       mountedRef.current = false;
-      clearInterval(interval);
+      source?.close();
+      clearInterval(fallbackInterval);
     };
   }, [loadAll]);
 
@@ -461,16 +476,89 @@ export function useBank() {
       lucroBanco: number;
     }) => {
       await apiPost("addTroca", d);
-      await addCaixa({
-        tipo: "entrada",
-        descricao: `Lucro de troca - ${d.player}`,
-        item: d.itemRecebido,
-        quantidade: d.lucroBanco,
-        origem: "troca",
-      });
+
+      if (d.tipoMembro === "banco") {
+        // Troca interna do banco: item sai do estoque, outro entra
+        await addCaixa({
+          tipo: "saida",
+          descricao: `Troca interna banco: saiu ${d.quantidadeEnviada}x ${d.itemEnviado}`,
+          item: d.itemEnviado,
+          quantidade: d.quantidadeEnviada,
+          origem: `troca_banco`,
+        });
+        await addCaixa({
+          tipo: "entrada",
+          descricao: `Troca interna banco: entrou ${d.quantidadeRecebida}x ${d.itemRecebido}`,
+          item: d.itemRecebido,
+          quantidade: d.quantidadeRecebida,
+          origem: `troca_banco`,
+        });
+      } else {
+        // Player entrega item para o banco (entrada)
+        await addCaixa({
+          tipo: "entrada",
+          descricao: `Troca de ${d.player}: recebeu ${d.quantidadeEnviada}x ${d.itemEnviado}`,
+          item: d.itemEnviado,
+          quantidade: d.quantidadeEnviada,
+          origem: `troca:${d.player}`,
+        });
+        // Banco entrega item para o player (saída)
+        await addCaixa({
+          tipo: "saida",
+          descricao: `Troca para ${d.player}: entregou ${d.quantidadeRecebida}x ${d.itemRecebido}`,
+          item: d.itemRecebido,
+          quantidade: d.quantidadeRecebida,
+          origem: `troca:${d.player}`,
+        });
+      }
+
       loadAll();
     },
     [addCaixa, loadAll]
+  );
+  const removeTroca = useCallback(
+    async (id: string) => {
+      // Busca a troca antes de excluir para estornar o estoque
+      const troca = trocas.find((t) => t.id === id);
+      if (troca) {
+        if (troca.tipoMembro === "banco") {
+          // Estornar troca interna: reverter saída e entrada
+          await addCaixa({
+            tipo: "entrada",
+            descricao: `Estorno troca interna: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`,
+            item: troca.itemEnviado,
+            quantidade: troca.quantidadeEnviada,
+            origem: `estorno_troca_banco`,
+          });
+          await addCaixa({
+            tipo: "saida",
+            descricao: `Estorno troca interna: removeu ${troca.quantidadeRecebida}x ${troca.itemRecebido}`,
+            item: troca.itemRecebido,
+            quantidade: troca.quantidadeRecebida,
+            origem: `estorno_troca_banco`,
+          });
+        } else {
+          // Estornar troca com player: reverter entrada e saída
+          await addCaixa({
+            tipo: "saida",
+            descricao: `Estorno troca de ${troca.player}: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`,
+            item: troca.itemEnviado,
+            quantidade: troca.quantidadeEnviada,
+            origem: `estorno_troca:${troca.player}`,
+          });
+          await addCaixa({
+            tipo: "entrada",
+            descricao: `Estorno troca para ${troca.player}: recuperou ${troca.quantidadeRecebida}x ${troca.itemRecebido}`,
+            item: troca.itemRecebido,
+            quantidade: troca.quantidadeRecebida,
+            origem: `estorno_troca:${troca.player}`,
+          });
+        }
+      }
+      await apiPost("removeTroca", { id });
+      await loadAll();
+    },
+    [trocas, addCaixa, loadAll]
   );
 
   // === COMPRAS VENDAS ===
@@ -524,17 +612,24 @@ export function useBank() {
   // === DOADORES ===
   const addDoador = useCallback(
     async (nome: string, item: string, quantidade: number) => {
-      await apiPost("addDoador", { nome, item, quantidade });
+      const created = await apiPost("addDoador", { nome, item, quantidade }) as Doador;
       await addCaixa({
         tipo: "entrada",
         descricao: `Doação de ${nome}`,
         item,
         quantidade,
-        origem: "doacao",
+        origem: `doacao:${created.id}`,
       });
       loadAll();
     },
     [addCaixa, loadAll]
+  );
+  const removeDoador = useCallback(
+    async (id: string) => {
+      await apiPost("removeDoador", { id });
+      await loadAll();
+    },
+    [loadAll]
   );
   const reorderDoadores = useCallback(
     async (updates: { id: string; ordem: number }[]) => {
@@ -796,8 +891,10 @@ export function useBank() {
     addTabelaTroca,
     removeTabelaTroca,
     addTroca,
+    removeTroca,
     addCompraVenda,
     addDoador,
+    removeDoador,
     reorderDoadores,
     addCaixaManual,
     resetBanco,
