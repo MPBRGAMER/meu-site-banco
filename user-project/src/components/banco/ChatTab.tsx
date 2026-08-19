@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
+import { getDateLocale } from "./TranslationPopup";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -37,7 +38,7 @@ const REGRAS_RESUMO: Record<string, string[]> = {
 
 function formatTime(dateStr: string) {
   const d = new Date(dateStr);
-  return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  return d.toLocaleTimeString(getDateLocale(), { hour: "2-digit", minute: "2-digit" });
 }
 
 function formatDate(dateStr: string) {
@@ -47,7 +48,7 @@ function formatDate(dateStr: string) {
   const yesterday = new Date(today);
   yesterday.setDate(yesterday.getDate() - 1);
   if (d.toDateString() === yesterday.toDateString()) return "Ontem";
-  return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+  return d.toLocaleDateString(getDateLocale(), { day: "2-digit", month: "2-digit" });
 }
 
 interface ChatTabProps {
@@ -283,7 +284,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                 {nomeUsuario.charAt(0).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs font-medium text-foreground truncate">{nomeUsuario}</p>
+                <p className="text-xs font-medium text-foreground truncate" data-no-translate>{nomeUsuario}</p>
                 <p className="text-[10px] text-muted-foreground">{isAdmin ? "Admin" : "Membro"}</p>
               </div>
               {isAdmin && <Shield className="w-3 h-3 text-primary" />}
@@ -299,7 +300,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               <>
                 <Lock className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm font-bold text-foreground">{currentSala?.nome || "Sala"}</span>
-                <span className="text-[10px] text-muted-foreground">por {currentSala?.criadoPor}</span>
+                <span className="text-[10px] text-muted-foreground">por <span data-no-translate>{currentSala?.criadoPor}</span></span>
               </>
             ) : (
               <>
@@ -365,7 +366,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-baseline gap-2">
-                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")}>
+                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")} data-no-translate>
                             {msg.autor}
                             {msg.isAdmin && <Shield className="w-2.5 h-2.5 inline ml-1 text-primary" />}
                           </span>

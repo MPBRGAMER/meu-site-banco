@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { Dices, Plus, Clock, Trophy, Timer, AlertCircle, PartyPopper, Search, History, ChevronDown, ChevronUp, Users, Coins, Ticket, Shield, TrendingUp, CheckCircle, XCircle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 function LotericaTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -55,7 +56,7 @@ function HistoricoLotericaEntry({ entry, index }: {
             <p className="text-sm font-bold text-foreground">
               Numero: <span className="font-mono text-primary">{String(entry.numeroSorteado || 0).padStart(3, "0")}</span>
             </p>
-            <p className="text-xs text-muted-foreground">{new Date(entry.dataCriacao).toLocaleDateString("pt-BR")}</p>
+            <p className="text-xs text-muted-foreground">{new Date(entry.dataCriacao).toLocaleDateString(getDateLocale())}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -65,7 +66,7 @@ function HistoricoLotericaEntry({ entry, index }: {
           </div>
           <div className="text-right">
             <p className="text-xs text-muted-foreground">Ganhador</p>
-            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`}>{entry.ganhador || "Acumulou"}</p>
+            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`} data-no-translate>{entry.ganhador || "Acumulou"}</p>
           </div>
           {expanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
         </div>
@@ -89,7 +90,7 @@ function HistoricoLotericaEntry({ entry, index }: {
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
               <p className="text-xs text-muted-foreground flex items-center justify-center gap-1"><Clock className="w-3 h-3" /> Data Sorteio</p>
-              <p className="text-sm font-bold text-foreground">{entry.dataSorteio ? new Date(entry.dataSorteio).toLocaleDateString("pt-BR") : "-"}</p>
+              <p className="text-sm font-bold text-foreground">{entry.dataSorteio ? new Date(entry.dataSorteio).toLocaleDateString(getDateLocale()) : "-"}</p>
             </div>
           </div>
           <div className={`rounded-md border p-3 mb-3 ${acerto ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5"}`}>
@@ -101,7 +102,7 @@ function HistoricoLotericaEntry({ entry, index }: {
                 </p>
                 {acerto ? (
                   <p className="text-xs text-foreground">
-                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400">{entry.ganhador}</span> - Premio: <span className="font-bold text-yellow-400">{Math.round(entry.valorPremio)} {entry.moedaAceita}</span>
+                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400" data-no-translate>{entry.ganhador}</span> - Premio: <span className="font-bold text-yellow-400">{Math.round(entry.valorPremio)} {entry.moedaAceita}</span>
                   </p>
                 ) : (
                   <p className="text-xs text-foreground">
@@ -353,9 +354,9 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                 <div key={n.id} className={`flex items-center justify-between py-1.5 px-2 rounded text-xs border-b border-border/30 ${n.comprador ? "bg-green-500/5" : ""}`}>
                   <div className="flex items-center gap-2">
                     <span className={`font-mono font-bold w-10 ${n.comprador ? "text-green-400" : "text-muted-foreground"}`}>{String(n.numero).padStart(3, "0")}</span>
-                    {n.comprador ? <span className="text-foreground">{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}
+                    {n.comprador ? <span className="text-foreground" data-no-translate>{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}
                   </div>
-                  {n.dataCompra && <span className="text-muted-foreground">{new Date(n.dataCompra).toLocaleDateString("pt-BR")}</span>}
+                  {n.dataCompra && <span className="text-muted-foreground">{new Date(n.dataCompra).toLocaleDateString(getDateLocale())}</span>}
                 </div>
               ))}
               {lotericaNumeros.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">Nenhum numero.</p>}

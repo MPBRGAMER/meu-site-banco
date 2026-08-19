@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 function getTaxa(tipo: string): number {
   if (tipo === "especial") return 0;
@@ -83,7 +84,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
     <div className={`rounded-md border border-border bg-card p-3 mb-2 ${estaAtrasado ? "border-red-400/30" : ""}`}>
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm font-bold text-foreground">{emp.player}</span>
+          <span className="text-sm font-bold text-foreground" data-no-translate>{emp.player}</span>
           <span className={`text-xs px-2 py-0.5 rounded-full border ${emp.status === "pendente" ? "text-yellow-400 border-yellow-400/30 bg-yellow-400/10" : "text-green-400 border-green-400/30 bg-green-400/10"}`}>{emp.status === "pendente" ? "Pendente" : "Pago"}</span>
           {estaAtrasado && <span className="text-xs px-2 py-0.5 rounded-full border border-red-400/30 bg-red-400/10 text-red-400">Atrasado</span>}
           <span className="text-xs text-muted-foreground">{getTipoLabel(emp.tipoMembro)}</span>
@@ -96,7 +97,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
         <div><span className="text-muted-foreground">Item:</span> <span className="font-mono text-foreground">{emp.item}</span></div>
         <div><span className="text-muted-foreground">Quantidade:</span> <span className="font-mono text-foreground">{emp.quantidade}</span></div>
         <div><span className="text-muted-foreground">Valor a cobrar:</span> <span className="font-mono font-bold text-yellow-400">{valorCobrar}</span></div>
-        <div><span className="text-muted-foreground">Vencimento:</span> <span className="font-mono text-foreground">{new Date(emp.dataEmprestimo).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span></div>
+        <div><span className="text-muted-foreground">Vencimento:</span> <span className="font-mono text-foreground">{new Date(emp.dataEmprestimo).toLocaleDateString(getDateLocale(), { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span></div>
       </div>
       {estaAtrasado && <div className="mt-2 text-xs text-red-400 flex items-center gap-1"><AlertTriangle className="w-3 h-3" /> Empréstimo atrasado - Juros já incluídos</div>}
       <Dialog open={showPayment} onOpenChange={setShowPayment}>

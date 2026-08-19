@@ -6,6 +6,7 @@ import {
   ShoppingCart, Crown, Medal, Package, Trophy, Gavel, Dices, Search, Timer, MessageSquarePlus, Flame,
 } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 function DiscreetTimer({ dataFim }: { dataFim: string }) {
   const [timeLeft, setTimeLeft] = useState("");
@@ -143,7 +144,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                 <div className="w-4 h-4 flex items-center justify-center shrink-0">
                   {idx === 0 ? <Crown className="w-3 h-3 text-yellow-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-gray-300" /> : idx === 2 ? <Medal className="w-3 h-3 text-orange-600" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                 </div>
-                <p className="text-[11px] font-semibold text-foreground truncate">{d.nome}</p>
+                <p className="text-[11px] font-semibold text-foreground truncate" data-no-translate>{d.nome}</p>
               </div>
             ))}
           </div>
@@ -167,8 +168,8 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                     {idx === 0 ? <Crown className="w-3 h-3 text-blue-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-indigo-400" /> : idx === 2 ? <Medal className="w-3 h-3 text-violet-400" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-semibold text-foreground truncate">{inv.nome}</p>
-                    <p className="text-[9px] text-muted-foreground font-mono">desde {new Date(inv.dataEntrada).toLocaleDateString("pt-BR")}</p>
+                    <p className="text-[11px] font-semibold text-foreground truncate" data-no-translate>{inv.nome}</p>
+                    <p className="text-[9px] text-muted-foreground font-mono">desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p>
                   </div>
                 </div>
               ))}
@@ -190,7 +191,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                     {idx === 0 ? <Crown className="w-3 h-3 text-green-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-emerald-400" /> : idx === 2 ? <Medal className="w-3 h-3 text-teal-400" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1">{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
+                    <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1" data-no-translate>{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
                     <p className="text-[9px] text-muted-foreground font-mono">{r.count} contribuicoes</p>
                   </div>
                 </div>
@@ -234,7 +235,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                   <div><span className="text-foreground text-[11px]">{c.descricao}</span><p className="text-[9px] text-muted-foreground">{c.origem}</p></div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  <span className="font-mono text-muted-foreground text-[10px]">{new Date(c.data).toLocaleDateString("pt-BR")}</span>
+                  <span className="font-mono text-muted-foreground text-[10px]">{new Date(c.data).toLocaleDateString(getDateLocale())}</span>
                   <span className={`font-mono font-bold text-[11px] ${c.tipo === "entrada" ? "text-green-400" : "text-red-400"}`}>{c.tipo === "entrada" ? "+" : "-"}{c.quantidade}</span>
                 </div>
               </div>

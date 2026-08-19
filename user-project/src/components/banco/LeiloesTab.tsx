@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { Gavel, Plus, Trash2, Clock, Trophy, User, Timer, AlertCircle, Pause, CheckCircle, Shield, ImageIcon, Package } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { getDateLocale } from "./TranslationPopup";
 
 interface PtItemMap { pt: string; file: string }
 
@@ -298,7 +299,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" />
                       <div>
                         <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem} {leilao.quantidade > 1 && <span className="text-xs font-normal text-muted-foreground">x{leilao.quantidade}</span>}</h4>
-                        <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
+                        <p className="text-xs text-muted-foreground">Dono: <span data-no-translate>{leilao.donoItem}</span></p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -342,7 +343,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                         <LeilaoImg src={leilao.imagemUrl || `/items/${leilao.nomeItem.toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png`} alt={leilao.nomeItem} className="w-12 h-12 rounded object-contain border border-border bg-accent/50" />
                         <div>
                           <h4 className="text-sm font-bold text-foreground">{leilao.nomeItem} {leilao.quantidade > 1 && <span className="text-xs font-normal text-muted-foreground">x{leilao.quantidade}</span>}</h4>
-                          <p className="text-xs text-muted-foreground">Dono: {leilao.donoItem}</p>
+                          <p className="text-xs text-muted-foreground">Dono: <span data-no-translate>{leilao.donoItem}</span></p>
                           {leilao.status === "espera" && <p className="text-xs text-yellow-400 font-semibold mt-1"><Pause className="w-3 h-3 inline" /> Disputa final!</p>}
                         </div>
                       </div>
@@ -360,7 +361,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <div className="mb-3 max-h-24 overflow-y-auto space-y-1">
                         {ll.slice(0, 5).map((lance) => (
                           <div key={lance.id} className="flex items-center justify-between text-xs">
-                            <span className="text-muted-foreground flex items-center gap-1"><User className="w-3 h-3" /> {lance.jogador}</span>
+                            <span className="text-muted-foreground flex items-center gap-1" data-no-translate><User className="w-3 h-3" /> {lance.jogador}</span>
                             <span className="font-mono text-foreground">{lance.valor}</span>
                           </div>
                         ))}
@@ -404,12 +405,12 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                       <span className="font-semibold text-foreground">{l.nomeItem}</span>
                     </td>
                     <td className="px-3 py-2 text-center font-mono text-blue-400">{l.quantidade > 1 ? `x${l.quantidade}` : "-"}</td>
-                    <td className="px-3 py-2 text-muted-foreground">{l.donoItem}</td>
-                    <td className="px-3 py-2 text-yellow-400 font-semibold">{l.vencedor || "-"}</td>
+                    <td className="px-3 py-2 text-muted-foreground" data-no-translate>{l.donoItem}</td>
+                    <td className="px-3 py-2 text-yellow-400 font-semibold" data-no-translate>{l.vencedor || "-"}</td>
                     <td className="px-3 py-2 text-center font-mono text-primary font-bold">{l.valorVencedor || 0}</td>
                     <td className="px-3 py-2 text-center text-foreground">{l.moedaAceita}</td>
                     <td className="px-3 py-2 text-center text-yellow-400">{l.taxaCasa}%</td>
-                    <td className="px-3 py-2 text-xs text-muted-foreground">{l.dataCriacao ? new Date(l.dataCriacao).toLocaleDateString("pt-BR") : "-"}</td>
+                    <td className="px-3 py-2 text-xs text-muted-foreground">{l.dataCriacao ? new Date(l.dataCriacao).toLocaleDateString(getDateLocale()) : "-"}</td>
                   </tr>
                 ))}
               </tbody>
