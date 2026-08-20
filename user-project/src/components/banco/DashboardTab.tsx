@@ -118,7 +118,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
           <div className="flex flex-wrap gap-2">
             {activeSorteios.map((s) => (
               <div key={s.id} className="flex items-center gap-2 px-2.5 py-1.5 rounded-md bg-muted/30 border border-border/50">
-                <span className="text-[11px] font-semibold text-foreground" data-no-translate translate="no">{s.nomeItem}</span>
+                <span className="text-[11px] font-semibold text-foreground">{s.nomeItem}</span>
                 {s.dataFim && <DiscreetTimer dataFim={s.dataFim} />}
               </div>
             ))}
@@ -215,7 +215,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-1.5">
             {inventoryFiltered.map(([item, qtd]) => (
               <div key={item} className={`rounded-md border px-2 py-1.5 text-center transition-colors ${qtd > 0 ? "border-green-500/20 bg-green-500/5" : "border-red-500/20 bg-red-500/5"}`}>
-                <p className="text-[10px] font-semibold text-foreground truncate leading-tight" data-no-translate translate="no">{item}</p>
+                <p className="text-[10px] font-semibold text-foreground truncate leading-tight">{item}</p>
                 <p className={`text-xs font-bold font-mono mt-0.5 ${qtd > 0 ? "text-green-400" : "text-red-400"}`}>{qtd > 0 ? "+" : ""}{qtd}</p>
               </div>
             ))}

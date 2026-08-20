@@ -85,7 +85,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   useEffect(() => {
     if (autoScrollRef.current && messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+      messagesEndRef.current.scrollIntoView({ behavior: "instant" });
     }
   }, [mensagens]);
 
@@ -191,7 +191,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               {CANAIS.map((canal) => (
                 <button
                   key={canal.id}
-                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); }}
+                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); autoScrollRef.current = true; }}
                   className={cn(
                     "w-full flex items-center gap-2 px-2 py-1.5 rounded-md text-sm transition-colors text-left",
                     canalAtivo === canal.id && !isSala
@@ -249,7 +249,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               {CANAIS.map((canal) => (
                 <button
                   key={canal.id}
-                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); }}
+                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); autoScrollRef.current = true; }}
                   title={canal.nome}
                   className={cn(
                     "w-full flex items-center justify-center p-1.5 rounded-md transition-colors",

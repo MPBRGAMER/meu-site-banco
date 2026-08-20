@@ -1,0 +1,634 @@
+   835→  "📦 Entrada": "📦 Income",
+   836→  "📤 Saída": "📤 Expense",
+   837→  "Ex: Katana": "Ex: Katana",
+   838→  "Ex: Compra": "Ex: Purchase",
+   839→
+   840→  // ---- ConfigTrocasTab additional ----
+   841→  "Taxas: 15% comum / 10% investidor.": "Fees: 15% common / 10% investor.",
+   842→
+   843→  // ---- Dynamic toast/message strings ----
+   844→  "Saída de leilão registrada:": "Auction output registered:",
+   845→  "Saída de sorteio registrada:": "Raffle output registered:",
+   846→  "para": "for",
+   847→  "PAGO COM": "PAID WITH",
+   848→  "RECEBIDO EM": "RECEIVED IN",
+   849→  "Leilão do Banco:": "Bank Auction:",
+   850→  "Sorteio:": "Raffle:",
+   851→  "(ganhador:": "(winner:",
+   852→  "Acumulou": "Accumulated",
+   853→  "Banco": "Bank",
+   854→  "1º": "1st",
+   855→  "2º": "2nd",
+   856→  "3º": "3rd",
+   857→  "Desde": "Since",
+   858→  "Nenhuma compra ou venda.": "No purchases or sales.",
+   859→  "Nenhum registro.": "No records.",
+   860→  "Disponivel": "Available",
+   861→};
+   862→
+   863→/* ============================================================
+   864→   LANGUAGE-SPECIFIC OVERRIDES
+   865→   ============================================================ */
+   866→const ES: Record<string, string> = {
+   867→  "Dashboard": "Panel", "Tabela": "Tabla de precios", "Empréstimos": "Préstamos",
+   868→  "Trocas": "Intercambios", "Doadores": "Donantes", "Leilões": "Subastas",
+   869→  "Sorteios": "Sorteos", "Lotérica": "Lotería", "Investidores": "Inversores",
+   870→  "Config Trocas": "Config. Intercambios", "Compras & Vendas": "Compras y Ventas",
+   871→  "Estoque & Caixa": "Stock y Caja", "Buscar item...": "Buscar artículo...",
+   872→  "Carregando dados do banco...": "Cargando datos del banco...",
+   873→  "Cancelar": "Cancelar", "Entrar": "Entrar", "Salvar": "Guardar",
+   874→  "Fechar": "Cerrar", "Criar": "Crear", "Remover": "Eliminar",
+   875→  "Registrar": "Registrar", "Buscar...": "Buscar...",
+   876→  "Nome": "Nombre", "Quantidade": "Cantidad", "Tipo": "Tipo",
+   877→  "Data": "Fecha", "Descrição": "Descripción", "Origem": "Origen",
+   878→  "Todos": "Todos", "Admin": "Admin", "Modo visual": "Modo visual",
+   879→  "total": "total", "registros": "registros",
+   880→  "Dono": "Dueño", "Ganhador": "Ganador", "Vencedor": "Ganador",
+   881→  "Participantes": "Participantes", "Qtd": "Cant", "Inicial": "Inicial",
+   882→  "Maior": "Mayor", "Lances": "Pujas", "Taxa": "Comisión",
+   883→  "Lucro": "Ganancia", "Bruto:": "Bruto:",
+   884→  "Empréstimos Pendentes": "Préstamos Pendientes",
+   885→  "Empréstimos Pagos": "Préstamos Pagados",
+   886→  "Investidores Ativos": "Inversores Activos",
+   887→  "Trocas Realizadas": "Intercambios Realizados",
+   888→  "Registros no Caixa": "Registros en Caja",
+   889→  "Leilões Ativos": "Subastas Activas",
+   890→  "Sorteios Ativos": "Sorteos Activos",
+   891→  "Top 10 Doadores": "Top 10 Donantes",
+   892→  "Top 10 Investidores": "Top 10 Inversores",
+   893→  "Top 10 Contribuintes": "Top 10 Contribuyentes",
+   894→  "Estoque do Banco": "Stock del Banco",
+   895→  "Movimentos do Caixa": "Movimientos de Caja",
+   896→  "Eventos Ativos": "Eventos Activos",
+   897→  "Nenhum doador cadastrado.": "Ningún donante registrado.",
+   898→  "Nenhum investidor cadastrado.": "Ningún inversor registrado.",
+   899→  "Estoque vazio.": "Stock vacío.",
+   900→  "Nenhum registro ainda.": "Ningún registro aún.",
+   901→  "desde": "desde",
+   902→  "contribuicoes": "contribuciones",
+   903→  "Canais": "Canales", "Salas Privadas": "Salas Privadas",
+   904→  "Geral": "General", "Atendimento": "Soporte", "Guias": "Guías",
+   905→  "Clãs": "Clanes", "Comércio": "Comercio",
+   906→  "Nenhuma mensagem ainda. Seja o primeiro a conversar!": "¡Aún no hay mensajes. ¡Sé el primero en chatear!",
+   907→  "Nenhuma sala criada.": "Ninguna sala creada.",
+   908→  "Hoje": "Hoy", "Ontem": "Ayer", "Membro": "Miembro",
+   909→  "Regras:": "Reglas:", "por": "por",
+   910→  "❤️ Doadores": "❤️ Donantes",
+   911→  "Ranking": "Ranking", "Reordenar": "Reordenar",
+   912→  "Nova Doação": "Nueva Donación", "Registrar Doação": "Registrar Donación",
+   913→  "Histórico": "Historial",
+   914→  "Nenhuma doação.": "Ninguna donación.",
+   915→  "💎 Membros Investidores": "💎 Miembros Inversores",
+   916→  "Benefício:": "Beneficio:",
+   917→  "Como obter a tag?": "¿Cómo obtener la etiqueta?",
+   918→  "Adicionar Investidor": "Añadir Inversor",
+   919→  "Adicionar": "Añadir",
+   920→  "Ativos": "Activos",
+   921→  "Nenhum investidor.": "Ningún inversor.",
+   922→  "Registro de Trocas": "Registro de Intercambios",
+   923→  "Nova Troca": "Nuevo Intercambio",
+   924→  "Registrar Troca": "Registrar Intercambio",
+   925→  "Calculadora": "Calculadora",
+   926→  "Como Funciona": "Cómo Funciona",
+   927→  "🛒 Compras e Vendas": "🛒 Compras y Ventas",
+   928→  "Compras": "Compras", "Vendas": "Ventas",
+   929→  "Entra": "Entra", "Sai": "Sale", "Paga": "Paga", "Recebe": "Recibe",
+   930→  "Nenhuma compra ou venda.": "Ninguna compra o venta.",
+   931→  "💰 Caixa do Banco": "💰 Caja del Banco",
+   932→  "Registro Manual": "Registro Manual",
+   933→  "ENTRADA": "INGRESO", "SAÍDA": "GASTO",
+   934→  "Entrada": "Ingreso", "Saída": "Gasto",
+   935→  "Estoque Atual": "Stock Actual",
+   936→  "BAIXO": "BAJO",
+   937→  "Resetar": "Resetear", "Resetar TUDO?": "¿Resetear TODO?",
+   938→  "🔨 Leilões": "🔨 Subastas",
+   939→  "Novo Leilão": "Nueva Subasta", "Criar Leilão": "Crear Subasta",
+   940→  "Duração": "Duración", "Fila de Espera": "Fila de Espera",
+   941→  "EM ESPERA": "EN ESPERA",
+   942→  "Nenhum leilão ativo.": "Ninguna subasta activa.",
+   943→  "Dar Lance": "Ofertar",
+   944→  "Finalizar Entrega": "Finalizar Entrega",
+   945→  "Histórico de Ganhadores": "Historial de Ganadores",
+   946→  "Sorteios": "Sorteos",
+   947→  "Novo Sorteio": "Nuevo Sorteo",
+   948→  "Nenhum.": "Ninguno.",
+   949→  "Participar": "Participar", "Sortear": "Sortear",
+   950→  "Encerrado": "Cerrado", "ENCERRADO": "CERRADO",
+   951→  "Lotérica Ativa": "Lotería Activa",
+   952→  "Vendas abertas": "Ventas abiertas",
+   953→  "Sorteio realizado": "Sorteo realizado",
+   954→  "Finalizada": "Finalizada",
+   955→  "Vendidos": "Vendidos", "Disponiveis": "Disponibles",
+   956→  "Arrecadado Total": "Total Recaudado",
+   957→  "Premio": "Premio", "Teve Ganhador!": "¡Hay Ganador!",
+   958→  "Ninguem acertou - Premio acumulou!": "Nadie acertó - ¡Premio acumulado!",
+   959→  "Finalizar Lotérica": "Finalizar Lotería",
+   960→  "Vender Numero": "Vender Número",
+   961→  "Nome do Comprador": "Nombre del Comprador",
+   962→  "Vender": "Vender",
+   963→  "Realizar Sorteio": "Realizar Sorteo",
+   964→  "Empréstimos": "Préstamos",
+   965→  "Regras do Banco": "Reglas del Banco",
+   966→  "Membro Especial": "Miembro Especial",
+   967→  "Membro Comum": "Miembro Común",
+   968→  "Não Contribuinte": "No Contribuyente",
+   969→  "Calculadora de Empréstimo": "Calculadora de Préstamo",
+   970→  "Dias de Atraso": "Días de Atraso",
+   971→  "Total a Devolver": "Total a Devolver",
+   972→  "itens": "ítems",
+   973→  "Novo Empréstimo": "Nuevo Préstamo",
+   974→  "Pendentes": "Pendientes", "Pagos": "Pagados",
+   975→  "Nenhum empréstimo pendente.": "Ningún préstamo pendiente.",
+   976→  "Pendente": "Pendiente", "Pago": "Pagado", "Atrasado": "Atrasado",
+   977→  "Pagar": "Pagar", "Confirmar Pagamento": "Confirmar Pago",
+   978→  "Alta": "Alta", "Media": "Media", "Baixa": "Baja",
+   979→  "Comum": "Común", "Incomum": "Poco común", "Raro": "Raro", "Lendario": "Legendario",
+   980→  "Login Admin": "Login Admin",
+   981→  "Verificando...": "Verificando...",
+   982→  "Backup": "Backup", "Gerando...": "Generando...",
+   983→  "Senha incorreta!": "¡Contraseña incorrecta!",
+   984→  "Continuar em Português": "Continuar en Portugués",
+   985→  "Traduzir o Site": "Traducir el Sitio",
+   986→  "Selecione seu idioma": "Seleccione su idioma",
+   987→  "Traduzir para": "Traducir a",
+   988→  "Nova Lotérica": "Nueva Lotería",
+   989→  "Configurar Lotérica": "Configurar Lotería",
+   990→  "Criar Lotérica": "Crear Lotería",
+   991→  "Historico de Sorteios": "Historial de Sorteos",
+   992→  "Observação": "Observación",
+   993→  "Opcional": "Opcional",
+   994→  "Disponível": "Disponible",
+   995→  "Disponivel": "Disponible",
+   996→};
+   997→
+   998→const FR: Record<string, string> = {
+   999→  "Dashboard": "Tableau de bord", "Tabela": "Table des prix", "Empréstimos": "Prêts",
+  1000→  "Trocas": "Échanges", "Doadores": "Donateurs", "Leilões": "Enchères",
+  1001→  "Sorteios": "Tirages", "Lotérica": "Loterie", "Investidores": "Investisseurs",
+  1002→  "Config Trocas": "Config. Échanges", "Compras & Vendas": "Achats & Ventes",
+  1003→  "Estoque & Caixa": "Stock & Caisse",
+  1004→  "Buscar item...": "Rechercher un objet...", "Cancelar": "Annuler",
+  1005→  "Entrar": "Entrer", "Salvar": "Enregistrer", "Fechar": "Fermer",
+  1006→  "Criar": "Créer", "Remover": "Supprimer", "Registrar": "Enregistrer",
+  1007→  "Buscar...": "Rechercher...", "Nome": "Nom", "Quantidade": "Quantité",
+  1008→  "Data": "Date", "Descrição": "Description", "Origem": "Origine",
+  1009→  "Todos": "Tous", "Admin": "Admin", "Modo visual": "Mode visual",
+  1010→  "total": "total", "Dono": "Propriétaire", "Ganhador": "Gagnant",
+  1011→  "Vencedor": "Gagnant", "Participantes": "Participants",
+  1012→  "Qtd": "Qté", "Inicial": "Initial", "Maior": "Plus haut",
+  1013→  "Lances": "Enchères", "Taxa": "Commission", "Lucro": "Profit",
+  1014→  "Bruto:": "Brut:",
+  1015→  "Top 10 Doadores": "Top 10 Donateurs",
+  1016→  "Top 10 Investidores": "Top 10 Investisseurs",
+  1017→  "Top 10 Contribuintes": "Top 10 Contributeurs",
+  1018→  "Estoque do Banco": "Stock de la Banque",
+  1019→  "Movimentos do Caixa": "Mouvements de Caisse",
+  1020→  "Estoque vazio.": "Stock vide.",
+  1021→  "Nenhum registro ainda.": "Aucun enregistrement.",
+  1022→  "Geral": "Général", "Atendimento": "Support", "Guias": "Guides",
+  1023→  "Clãs": "Clans", "Comércio": "Commerce",
+  1024→  "Hoje": "Aujourd'hui", "Ontem": "Hier",
+  1025→  "Regras:": "Règles:", "por": "par",
+  1026→  "Ranking": "Classement", "Histórico": "Historique",
+  1027→  "Como Funciona": "Comment ça marche",
+  1028→  "Nenhum leilão ativo.": "Aucune enchère active.",
+  1029→  "Dar Lance": "Enchérir", "Finalizar Entrega": "Finaliser la Livraison",
+  1030→  "Histórico de Ganhadores": "Historique des Gagnants",
+  1031→  "Participar": "Participer", "Sortear": "Tirer",
+  1032→  "Encerrado": "Terminé", "ENCERRADO": "TERMINÉ",
+  1033→  "Vendidos": "Vendus", "Disponiveis": "Disponibles",
+  1034→  "Arrecadado Total": "Total Collecté",
+  1035→  "Premio": "Prix", "Teve Ganhador!": "Nous avons un Gagnant !",
+  1036→  "Nenhum empréstimo pendente.": "Aucun prêt en attente.",
+  1037→  "Pendente": "En attente", "Pago": "Payé", "Atrasado": "En retard",
+  1038→  "Pagar": "Payer", "Confirmar Pagamento": "Confirmer le Paiement",
+  1039→  "Alta": "Haute", "Media": "Moyenne", "Baixa": "Basse",
+  1040→  "Comum": "Commun", "Incomum": "Peu commun", "Raro": "Rare",
+  1041→  "Lendario": "Légendaire",
+  1042→  "Login Admin": "Connexion Admin",
+  1043→  "Verificando...": "Vérification...", "Backup": "Sauvegarde",
+  1044→  "Senha incorreta!": "Mot de passe incorrect !",
+  1045→  "Continuar em Português": "Continuer en Portugais",
+  1046→  "Traduzir o Site": "Traduire le Site",
+  1047→  "Selecione seu idioma": "Sélectionnez votre langue",
+  1048→  "Traduzir para": "Traduire en",
+  1049→  "Observação": "Remarque",
+  1050→  "Disponível": "Disponible",
+  1051→  "Disponivel": "Disponible",
+  1052→};
+  1053→
+  1054→const DE: Record<string, string> = {
+  1055→  "Dashboard": "Übersicht", "Tabela": "Preistabelle", "Empréstimos": "Kredite",
+  1056→  "Trocas": "Tausch", "Doadores": "Spender", "Leilões": "Auktionen",
+  1057→  "Sorteios": "Verlosungen", "Lotérica": "Lotterie", "Investidores": "Investoren",
+  1058→  "Config Trocas": "Tausch-Einstellungen",
+  1059→  "Compras & Vendas": "Käufe & Verkäufe",
+  1060→  "Estoque & Caixa": "Bestand & Kasse",
+  1061→  "Buscar item...": "Gegenstand suchen...", "Cancelar": "Abbrechen",
+  1062→  "Entrar": "Anmelden", "Salvar": "Speichern", "Fechar": "Schließen",
+  1063→  "Criar": "Erstellen", "Remover": "Entfernen", "Registrar": "Registrieren",
+  1064→  "Buscar...": "Suchen...", "Nome": "Name", "Quantidade": "Menge",
+  1065→  "Data": "Datum", "Descrição": "Beschreibung", "Origem": "Quelle",
+  1066→  "Todos": "Alle", "Admin": "Admin", "Modo visual": "Ansichtsmodus",
+  1067→  "total": "gesamt", "Dono": "Besitzer", "Ganhador": "Gewinner",
+  1068→  "Vencedor": "Gewinner", "Participantes": "Teilnehmer",
+  1069→  "Qtd": "Menge", "Inicial": "Start", "Maior": "Höchstes",
+  1070→  "Lances": "Gebote", "Taxa": "Gebühr", "Lucro": "Gewinn",
+  1071→  "Bruto:": "Brutto:",
+  1072→  "Top 10 Doadores": "Top 10 Spender",
+  1073→  "Top 10 Investidores": "Top 10 Investoren",
+  1074→  "Top 10 Contribuintes": "Top 10 Beitragende",
+  1075→  "Estoque do Banco": "Bankbestand",
+  1076→  "Movimentos do Caixa": "Kassenbewegungen",
+  1077→  "Estoque vazio.": "Bestand leer.",
+  1078→  "Nenhum registro ainda.": "Noch keine Einträge.",
+  1079→  "Geral": "Allgemein", "Atendimento": "Support", "Guias": "Anleitungen",
+  1080→  "Clãs": "Clans", "Comércio": "Handel",
+  1081→  "Hoje": "Heute", "Ontem": "Gestern",
+  1082→  "Regras:": "Regeln:", "por": "von",
+  1083→  "Ranking": "Rangliste", "Histórico": "Verlauf",
+  1084→  "Como Funciona": "So funktioniert's",
+  1085→  "Nenhum leilão ativo.": "Keine aktiven Auktionen.",
+  1086→  "Dar Lance": "Bieten", "Finalizar Entrega": "Lieferung abschließen",
+  1087→  "Histórico de Ganhadores": "Gewinnerhistorie",
+  1088→  "Participar": "Teilnehmen", "Sortear": "Ziehen",
+  1089→  "Encerrado": "Beendet", "ENCERRADO": "BEENDET",
+  1090→  "Vendidos": "Verkauft", "Disponiveis": "Verfügbar",
+  1091→  "Arrecadado Total": "Gesamt eingenommen",
+  1092→  "Premio": "Preis", "Teve Ganhador!": "Wir haben einen Gewinner!",
+  1093→  "Nenhum empréstimo pendente.": "Keine ausstehenden Kredite.",
+  1094→  "Pendente": "Ausstehend", "Pago": "Bezahlt", "Atrasado": "Überfällig",
+  1095→  "Pagar": "Bezahlen", "Confirmar Pagamento": "Zahlung bestätigen",
+  1096→  "Alta": "Hoch", "Media": "Mittel", "Baixa": "Niedrig",
+  1097→  "Comum": "Gewöhnlich", "Incomum": "Ungewöhnlich", "Raro": "Selten",
+  1098→  "Lendario": "Legendär",
+  1099→  "Login Admin": "Admin-Anmeldung",
+  1100→  "Verificando...": "Überprüfung...", "Backup": "Sicherung",
+  1101→  "Senha incorreta!": "Falsches Passwort!",
+  1102→  "Continuar em Português": "Auf Portugiesisch fortfahren",
+  1103→  "Traduzir o Site": "Seite übersetzen",
+  1104→  "Selecione seu idioma": "Wählen Sie Ihre Sprache",
+  1105→  "Traduzir para": "Übersetzen nach",
+  1106→  "Observação": "Bemerkung",
+  1107→  "Disponível": "Verfügbar",
+  1108→  "Disponivel": "Verfügbar",
+  1109→};
+  1110→
+  1111→const RU: Record<string, string> = {
+  1112→  "Dashboard": "Панель", "Tabela": "Таблица цен", "Empréstimos": "Займы",
+  1113→  "Trocas": "Обмены", "Doadores": "Дарители", "Leilões": "Аукционы",
+  1114→  "Sorteios": "Розыгрыши", "Lotérica": "Лотерея", "Investidores": "Инвесторы",
+  1115→  "Config Trocas": "Настройки обмена",
+  1116→  "Compras & Vendas": "Покупки и Продажи",
+  1117→  "Estoque & Caixa": "Склад и Касса",
+  1118→  "Buscar item...": "Поиск предмета...", "Cancelar": "Отмена",
+  1119→  "Entrar": "Войти", "Salvar": "Сохранить", "Fechar": "Закрыть",
+  1120→  "Criar": "Создать", "Remover": "Удалить", "Registrar": "Зарегистрировать",
+  1121→  "Buscar...": "Поиск...", "Nome": "Имя", "Quantidade": "Количество",
+  1122→  "Data": "Дата", "Descrição": "Описание", "Origem": "Источник",
+  1123→  "Todos": "Все", "Admin": "Админ", "Modo visual": "Режим просмотра",
+  1124→  "total": "всего", "Dono": "Владелец", "Ganhador": "Победитель",
+  1125→  "Vencedor": "Победитель", "Participantes": "Участники",
+  1126→  "Qtd": "Кол-во", "Inicial": "Начальная", "Maior": "Наиб.",
+  1127→  "Lances": "Ставки", "Taxa": "Комиссия", "Lucro": "Прибыль",
+  1128→  "Bruto:": "Брутто:",
+  1129→  "Top 10 Doadores": "Топ-10 Дарителей",
+  1130→  "Top 10 Investidores": "Топ-10 Инвесторов",
+  1131→  "Top 10 Contribuintes": "Топ-10 Участников",
+  1132→  "Estoque do Banco": "Склад Банка",
+  1133→  "Movimentos do Caixa": "Движения Кассы",
+  1134→  "Estoque vazio.": "Склад пуст.",
+  1135→  "Nenhum registro ainda.": "Пока нет записей.",
+  1136→  "Geral": "Общий", "Atendimento": "Поддержка", "Guias": "Гайды",
+  1137→  "Clãs": "Кланы", "Comércio": "Торговля",
+  1138→  "Hoje": "Сегодня", "Ontem": "Вчера",
+  1139→  "Regras:": "Правила:", "por": "от",
+  1140→  "Ranking": "Рейтинг", "Histórico": "История",
+  1141→  "Como Funciona": "Как это работает",
+  1142→  "Nenhum leilão ativo.": "Нет активных аукционов.",
+  1143→  "Dar Lance": "Сделать ставку",
+  1144→  "Finalizar Entrega": "Завершить доставку",
+  1145→  "Histórico de Ganhadores": "История Победителей",
+  1146→  "Participar": "Участвовать", "Sortear": "Розыграть",
+  1147→  "Encerrado": "Завершено", "ENCERRADO": "ЗАВЕРШЕНО",
+  1148→  "Vendidos": "Продано", "Disponiveis": "Доступно",
+  1149→  "Arrecadado Total": "Всего собрано",
+  1150→  "Premio": "Приз", "Teve Ganhador!": "Есть Победитель!",
+  1151→  "Nenhum empréstimo pendente.": "Нет невыданных займов.",
+  1152→  "Pendente": "Ожидает", "Pago": "Выплачен", "Atrasado": "Просрочен",
+  1153→  "Pagar": "Оплатить", "Confirmar Pagamento": "Подтвердить оплату",
+  1154→  "Alta": "Высокий", "Media": "Средний", "Baixa": "Низкий",
+  1155→  "Comum": "Обычный", "Incomum": "Необычный", "Raro": "Редкий",
+  1156→  "Lendario": "Легендарный",
+  1157→  "Login Admin": "Вход Админа",
+  1158→  "Verificando...": "Проверка...", "Backup": "Бэкап",
+  1159→  "Senha incorreta!": "Неверный пароль!",
+  1160→  "Continuar em Português": "Продолжить на португальском",
+  1161→  "Traduzir o Site": "Перевести сайт",
+  1162→  "Selecione seu idioma": "Выберите язык",
+  1163→  "Traduzir para": "Перевести на",
+  1164→  "Observação": "Примечание",
+  1165→  "Disponível": "Доступно",
+  1166→  "Disponivel": "Доступно",
+  1167→};
+  1168→
+  1169→const dictionaries: Record<string, Record<string, string>> = { en: EN, es: ES, fr: FR, de: DE, ru: RU };
+  1170→
+  1171→/* ============================================================
+  1172→   TRANSLATION ENGINE
+  1173→   ============================================================ */
+  1174→const originalText = new WeakMap<Text, string>();
+  1175→let observer: MutationObserver | null = null;
+  1176→let currentLang = "pt";
+  1177→let apiDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+  1178→const apiCache = new Map<string, string>();
+  1179→let isTranslating = false;
+  1180→
+  1181→/** Strip diacritics */
+  1182→function stripAccents(str: string): string {
+  1183→  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  1184→}
+  1185→
+  1186→function hasNoTranslateAncestor(node: Node): boolean {
+  1187→  let el: Node | null = node.parentElement;
+  1188→  while (el) {
+  1189→    if (el instanceof HTMLElement && (el.hasAttribute("data-no-translate") || el.getAttribute("translate") === "no")) return true;
+  1190→    el = el.parentElement;
+  1191→  }
+  1192→  return false;
+  1193→}
+  1194→
+  1195→function lookup(text: string, langCode: string, dictionary: Record<string, string> | undefined): string | undefined {
+  1196→  const norm = stripAccents(text);
+  1197→  if (langCode === "en") {
+  1198→    return EN[text] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+  1199→  }
+  1200→  return dictionary?.[text] || EN[text] || dictionary?.[norm] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+  1201→}
+  1202→
+  1203→function translatePage(langCode: string) {
+  1204→  if (isTranslating) return;
+  1205→  isTranslating = true;
+  1206→  try {
+  1207→    currentLang = langCode;
+  1208→    const dictionary = dictionaries[langCode];
+  1209→    document.documentElement.lang = langCode === "pt" ? "pt-BR" : langCode;
+  1210→
+  1211→    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+  1212→      acceptNode(node) {
+  1213→        const parent = node.parentElement;
+  1214→        if (!parent) return NodeFilter.FILTER_REJECT;
+  1215→        if ("SCRIPT STYLE TEXTAREA INPUT".includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+  1216→        if (hasNoTranslateAncestor(node)) return NodeFilter.FILTER_REJECT;
+  1217→        return NodeFilter.FILTER_ACCEPT;
+  1218→      },
+  1219→    });
+  1220→
+  1221→    const nodes: Text[] = [];
+  1222→    let n: Node | null;
+  1223→    while ((n = walker.nextNode())) nodes.push(n as Text);
+  1224→
+  1225→    const untranslated: string[] = [];
+  1226→
+  1227→    for (const textNode of nodes) {
+  1228→      if (hasNoTranslateAncestor(textNode)) continue;
+  1229→      if (!originalText.has(textNode)) originalText.set(textNode, textNode.nodeValue || "");
+  1230→      const source = originalText.get(textNode) || "";
+  1231→      const trimmed = source.trim();
+  1232→      if (!trimmed) continue;
+  1233→
+  1234→      if (langCode === "pt") {
+  1235→        if (textNode.nodeValue !== source) textNode.nodeValue = source;
+  1236→        continue;
+  1237→      }
+  1238→
+  1239→      const translated = lookup(trimmed, langCode, dictionary);
+  1240→      if (translated) {
+  1241→        const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
+  1242→        if (textNode.nodeValue !== nextValue) textNode.nodeValue = nextValue;
+  1243→      } else if (trimmed.length > 2 && !/^\d+[\,\d]*$/.test(trimmed) && !/^[#\-+°×→←↑↓]*$/.test(trimmed)) {
+  1244→        untranslated.push(trimmed);
+  1245→      }
+  1246→    }
+  1247→
+  1248→    if (langCode !== "pt") {
+  1249→      document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((el) => {
+  1250→        const htmlEl = el as HTMLInputElement;
+  1251→        const ph = htmlEl.placeholder;
+  1252→        if (!ph) return;
+  1253→        const tr = lookup(ph, langCode, dictionary);
+  1254→        if (tr) htmlEl.placeholder = tr;
+  1255→      });
+  1256→      document.querySelectorAll("[title]").forEach((el) => {
+  1257→        const htmlEl = el as HTMLElement;
+  1258→        const t = htmlEl.getAttribute("title");
+  1259→        if (!t) return;
+  1260→        const tr = lookup(t, langCode, dictionary);
+  1261→        if (tr) htmlEl.setAttribute("title", tr);
+  1262→      });
+  1263→    }
+  1264→
+  1265→    if (untranslated.length > 0 && langCode !== "pt") {
+  1266→      queueApiTranslation(untranslated, langCode);
+  1267→    }
+  1268→  } finally {
+  1269→    isTranslating = false;
+  1270→  }
+  1271→}
+  1272→
+  1273→function queueApiTranslation(texts: string[], langCode: string) {
+  1274→  if (apiDebounceTimer) clearTimeout(apiDebounceTimer);
+  1275→  apiDebounceTimer = setTimeout(async () => {
+  1276→    const unique = [...new Set(texts)].slice(0, 30);
+  1277→    const toFetch = unique.filter((t) => !apiCache.has(t) && !apiCache.has(stripAccents(t)));
+  1278→    if (toFetch.length === 0) return;
+  1279→    try {
+  1280→      const langMap: Record<string, string> = { en: "en", es: "es", fr: "fr", de: "de", ru: "ru" };
+  1281→      const targetLang = langMap[langCode] || "en";
+  1282→      const res = await fetch("/api/translate", {
+  1283→        method: "POST",
+  1284→        headers: { "Content-Type": "application/json" },
+  1285→        body: JSON.stringify({ texts: toFetch, targetLang }),
+  1286→      });
+  1287→      if (!res.ok) return;
+  1288→      const data = await res.json();
+  1289→      const translations: Record<string, string> = data.translations || {};
+  1290→      for (const [key, val] of Object.entries(translations)) {
+  1291→        if (val && val !== key) {
+  1292→          apiCache.set(key, val);
+  1293→          const norm = stripAccents(key);
+  1294→          if (norm !== key) apiCache.set(norm, val);
+  1295→        }
+  1296→      }
+  1297→      if (Object.keys(translations).length > 0) {
+  1298→        translatePage(langCode);
+  1299→      }
+  1300→    } catch {
+  1301→      // Silently fail
+  1302→    }
+  1303→  }, 400);
+  1304→}
+  1305→
+  1306→function setLanguage(code: string) {
+  1307→  currentLang = code;
+  1308→  localStorage.setItem("dayr-language", code);
+  1309→  if (code === "pt") {
+  1310→    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  1311→    let n: Node | null;
+  1312→    while ((n = walker.nextNode())) {
+  1313→      const textNode = n as Text;
+  1314→      const orig = originalText.get(textNode);
+  1315→      if (orig !== undefined && textNode.nodeValue !== orig) textNode.nodeValue = orig;
+  1316→    }
+  1317→    document.documentElement.lang = "pt-BR";
+  1318→    if (observer) { observer.disconnect(); observer = null; }
+  1319→    apiCache.clear();
+  1320→    document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((el) => {
+  1321→      const htmlEl = el as HTMLInputElement;
+  1322→      const key = htmlEl.getAttribute("data-original-placeholder");
+  1323→      if (key) htmlEl.placeholder = key;
+  1324→    });
+  1325→    return;
+  1326→  }
+  1327→
+  1328→  translatePage(code);
+  1329→
+  1330→  if (!observer) {
+  1331→    let observerDebounce: ReturnType<typeof setTimeout> | null = null;
+  1332→    observer = new MutationObserver(() => {
+  1333→      if (observerDebounce) clearTimeout(observerDebounce);
+  1334→      observerDebounce = setTimeout(() => translatePage(currentLang), 150);
+  1335→    });
+  1336→    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  1337→  }
+  1338→}
+  1339→/* ============================================================
+  1340→   EXPORTED HELPERS
+  1341→   ============================================================ */
+  1342→export function getDateLocale(): string {
+  1343→  const lang = typeof window !== "undefined" ? (localStorage.getItem("dayr-language") || "pt") : "pt";
+  1344→  const map: Record<string, string> = {
+  1345→    pt: "pt-BR", en: "en-US", es: "es-ES", fr: "fr-FR", de: "de-DE", ru: "ru-RU",
+  1346→  };
+  1347→  return map[lang] || "pt-BR";
+  1348→}
+  1349→
+  1350→export function setTranslationLanguage(code: string) {
+  1351→  setLanguage(code);
+  1352→}
+  1353→
+  1354→/* ============================================================
+  1355→   REACT COMPONENTS
+  1356→   ============================================================ */
+  1357→export function TranslationPopup() {
+  1358→  const [showPopup, setShowPopup] = useState(false);
+  1359→  useEffect(() => {
+  1360→    const stored = localStorage.getItem("dayr-language") || "pt";
+  1361→    setLanguage(stored);
+  1362→    if (!localStorage.getItem("translation-popup-dismissed")) {
+  1363→      const timer = setTimeout(() => setShowPopup(true), 800);
+  1364→      return () => clearTimeout(timer);
+  1365→    }
+  1366→  }, []);
+  1367→  const choose = (code: string) => {
+  1368→    setLanguage(code);
+  1369→    setShowPopup(false);
+  1370→    localStorage.setItem("translation-popup-dismissed", "1");
+  1371→  };
+  1372→  return (
+  1373→    <>
+  1374→      {showPopup && (
+  1375→        <div
+  1376→          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4"
+  1377→          onClick={() => setShowPopup(false)}
+  1378→        >
+  1379→          <div
+  1380→            className="w-full max-w-md rounded-xl border border-primary/30 bg-card shadow-2xl overflow-hidden"
+  1381→            onClick={(e) => e.stopPropagation()}
+  1382→          >
+  1383→            <div className="flex items-center justify-between px-5 py-4 bg-primary/10 border-b border-border">
+  1384→              <div className="flex items-center gap-3">
+  1385→                <Globe className="w-5 h-5 text-primary" />
+  1386→                <div>
+  1387→                  <h2 className="text-sm font-bold text-foreground">Traduzir o Site</h2>
+  1388→                  <p className="text-[10px] text-muted-foreground">Selecione seu idioma</p>
+  1389→                </div>
+  1390→              </div>
+  1391→              <button onClick={() => setShowPopup(false)}>
+  1392→                <X className="w-4 h-4" />
+  1393→              </button>
+  1394→            </div>
+  1395→            <div className="grid grid-cols-2 gap-2 p-4">
+  1396→              {LANGUAGES.map((lang) => (
+  1397→                <button
+  1398→                  key={lang.code}
+  1399→                  onClick={() => choose(lang.code)}
+  1400→                  className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border border-border hover:border-primary/40 text-left"
+  1401→                >
+  1402→                  <span>{lang.flag}</span>
+  1403→                  <span className="text-xs font-medium">{lang.label}</span>
+  1404→                </button>
+  1405→              ))}
+  1406→            </div>
+  1407→            <div className="px-5 py-3 border-t border-border flex justify-end">
+  1408→              <button
+  1409→                onClick={() => setShowPopup(false)}
+  1410→                className="px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-semibold"
+  1411→              >
+  1412→                Continuar em Português
+  1413→              </button>
+  1414→            </div>
+  1415→          </div>
+  1416→        </div>
+  1417→      )}
+  1418→      <TranslateFloatButton onChoose={choose} />
+  1419→    </>
+  1420→  );
+  1421→}
+  1422→
+  1423→export function TranslationPopupSmall({ show: _show, onClose: _onClose }: { show: boolean; onClose: () => void }) {
+  1424→  return <TranslateFloatButton onChoose={setLanguage} />;
+  1425→}
+  1426→
+  1427→function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }) {
+  1428→  const [open, setOpen] = useState(false);
+  1429→  const menuRef = useRef<HTMLDivElement>(null);
+  1430→  useEffect(() => {
+  1431→    const close = (e: MouseEvent) => {
+  1432→      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
+  1433→    };
+  1434→    if (open) document.addEventListener("mousedown", close);
+  1435→    return () => document.removeEventListener("mousedown", close);
+  1436→  }, [open]);
+  1437→  return (
+  1438→    <div className="fixed bottom-4 right-4 z-[90]" ref={menuRef}>
+  1439→      <button
+  1440→        onClick={() => setOpen(!open)}
+  1441→        className="w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center border-2 border-primary/50"
+  1442→        title="Traduzir site"
+  1443→      >
+  1444→        {open ? <X className="w-5 h-5" /> : <Globe className="w-5 h-5" />}
+  1445→      </button>
+  1446→      {open && (
+  1447→        <div className="absolute bottom-14 right-0 w-52 rounded-xl border border-primary/30 bg-card shadow-2xl overflow-hidden">
+  1448→          <div className="px-3 py-2 bg-primary/10 border-b border-border">
+  1449→            <p className="text-[10px] font-bold">Traduzir para</p>
+  1450→          </div>
+  1451→          <div className="max-h-80 overflow-y-auto py-1">
+  1452→            {LANGUAGES.map((lang) => (
+  1453→              <button
+  1454→                key={lang.code}
+  1455→                onClick={() => { onChoose(lang.code); setOpen(false); }}
+  1456→                className="w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-primary/10"
+  1457→              >
+  1458→                <span>{lang.flag}</span>
+  1459→                <span className="text-xs font-medium">{lang.label}</span>
+  1460→              </button>
+  1461→            ))}
+  1462→          </div>
+  1463→        </div>
+  1464→      )}
+  1465→    </div>
+  1466→  );
+  1467→}
+  1468→

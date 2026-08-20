@@ -858,6 +858,201 @@ const EN: Record<string, string> = {
   "Nenhuma compra ou venda.": "No purchases or sales.",
   "Nenhum registro.": "No records.",
   "Disponivel": "Available",
+
+  // ---- Common game items (for inventory & cash flow) ----
+  "Aço": "Steel",
+  "Cimento": "Cement",
+  "Moeda": "Currency",
+  "Moedas": "Currencies",
+  "Munição": "Ammo",
+  "Munição de Pistola": "Pistol Ammo",
+  "Bateria Quebrada": "Broken Battery",
+  "Moedas Velhas": "Old Coins",
+  "Agua Potavel": "Potable Water",
+  "Água Potável": "Potable Water",
+  "Água": "Water",
+  "Carne": "Meat",
+  "Peixe": "Fish",
+  "Sal": "Salt",
+  "Açúcar": "Sugar",
+  "Pão": "Bread",
+  "Gelo": "Ice",
+  "Madeira": "Wood",
+  "Metal": "Metal",
+  "Ferro": "Iron",
+  "Cobre": "Copper",
+  "Ouro": "Gold",
+  "Diamante": "Diamond",
+  "Couro": "Leather",
+  "Tecido": "Fabric",
+  "Linha": "Thread",
+  "Prego": "Nail",
+  "Parafuso": "Screw",
+  "Martelo": "Hammer",
+  "Machado": "Axe",
+  "Katana": "Katana",
+  "Espada": "Sword",
+  "Arma": "Weapon",
+  "Armadura": "Armor",
+  "Roupa": "Clothing",
+  "Botas": "Boots",
+  "Capacete": "Helmet",
+  "Mochila": "Backpack",
+  "Bandeagem": "Bandage",
+  "Remédio": "Medicine",
+  "Antibiótico": "Antibiotic",
+  "Soro": "Serum",
+  "Vacina": "Vaccine",
+  "Veneno": "Poison",
+  "Bomba": "Bomb",
+  "Dinamite": "Dynamite",
+  "Isqueiro": "Lighter",
+  "Fósforo": "Match",
+  "Lanterna": "Lantern",
+  "Bateria": "Battery",
+  "Gerador": "Generator",
+  "Rádio": "Radio",
+  "Peças": "Parts",
+  "Peça": "Part",
+  "Ferramenta": "Tool",
+  "Chave": "Key",
+  "Cadeado": "Padlock",
+  "Comida enlatada": "Canned food",
+  "Comida": "Food",
+  "Bebida": "Drink",
+  "Álcool": "Alcohol",
+  "Gasolina": "Gasoline",
+  "Diesel": "Diesel",
+  "Combustível": "Fuel",
+  "Óleo": "Oil",
+  "Munição de Escopeta": "Shotgun Ammo",
+  "Munição de Rifle": "Rifle Ammo",
+  "Munição de SMG": "SMG Ammo",
+
+  // ---- Common accented words ----
+  "Preço": "Price",
+  "Preços": "Prices",
+  "preço": "price",
+  "preços": "prices",
+  "Situação": "Situation",
+  "Informação": "Information",
+  "Conexão": "Connection",
+  "Opção": "Option",
+  "Função": "Function",
+  "Integração": "Integration",
+  "Confirmação": "Confirmation",
+  "Verificação": "Verification",
+  "Localização": "Location",
+  "Duração": "Duration",
+  "Quantidade": "Quantity",
+  "Qualidade": "Quality",
+  "Possível": "Possible",
+  "Impossível": "Impossible",
+  "Disponível": "Available",
+  "Indisponível": "Unavailable",
+  "Necessário": "Necessary",
+  "Obrigatório": "Mandatory",
+  "Opcional": "Optional",
+  "Preencha": "Fill",
+  "Seleção": "Selection",
+  "Configuração": "Configuration",
+  "Manutenção": "Maintenance",
+  "Prazo": "Deadline",
+  "Prêmio": "Prize",
+  "Número": "Number",
+  "Números": "Numbers",
+  "Nível": "Level",
+  "Acúmulo": "Accumulation",
+  "Relatório": "Report",
+  "Relatórios": "Reports",
+  "Histórico": "History",
+  "Público": "Public",
+  "Privado": "Private",
+  "Vencimento": "Due date",
+  "Acumulado": "Accumulated",
+  "Calculado": "Calculated",
+  "Estimado": "Estimated",
+  "Atualizado": "Updated",
+  "Removido": "Removed",
+  "Adicionado": "Added",
+  "Registrado": "Registered",
+  "Criado": "Created",
+  "Finalizado": "Finalized",
+  "Iniciado": "Started",
+  "Encerrado": "Closed",
+  "Cancelado": "Cancelled",
+
+  // ---- Tabela tab (Reportar/Guia) ----
+  "Tabela de Preços": "Price Table",
+  "Tabela de Precos": "Price Table",
+  "Reportar Preços": "Report Prices",
+  "Reportar Precos": "Report Prices",
+  "Guia da Tabela de Preços": "Price Table Guide",
+  "Guia da Tabela de Precos": "Price Table Guide",
+  "Gerenciar Itens": "Manage Items",
+  "Viu um preço diferente no jogo?": "See a different price in-game?",
+  "Seus reports aparecem na Tendência.": "Your reports appear in Trends.",
+  "Qtd Aço": "Steel Qty",
+  "Valor Aço ($)": "Steel Value ($)",
+  "Qtd Cimento": "Cement Qty",
+  "Valor Cimento ($)": "Cement Value ($)",
+  "Níveis de Demanda": "Demand Levels",
+  "Fonte dos Dados": "Data Source",
+  "Ultimos Reports da Comunidade": "Latest Community Reports",
+  "Últimos Reports da Comunidade": "Latest Community Reports",
+  "Ver no Wiki:": "View on Wiki:",
+  "Tendência": "Trend",
+  "Tendencia": "Trend",
+  "Reportar": "Report",
+  "reportado!": "reported!",
+  "reportou": "reported",
+  "Enviando...": "Sending...",
+  "Erro ao reportar.": "Error reporting.",
+  "Nenhum report ainda.": "No reports yet.",
+  "Reportar Preco": "Report Price",
+
+  // ---- Trocas tab history ----
+  "Registro de Trocas": "Trade Register",
+  "Entrou:": "Entered:",
+  "Recebeu:": "Received:",
+  "Excluir troca e estornar estoque": "Exclude trade and reverse stock",
+  "Troca excluída e estoque estornado.": "Trade excluded and stock reversed.",
+  "Não foi possível excluir a troca.": "Could not exclude the trade.",
+
+  // ---- Leilão tab ----
+  "• O leilão conta o tempo escolhido (1h a 48h).": "• The auction counts the chosen time (1h to 48h).",
+  "• Qualquer pessoa pode dar lance durante o tempo.": "• Anyone can bid during the time.",
+  "• Após o tempo acabar, cada novo lance adiciona": "• After time runs out, each new bid adds",
+  "• Quando o tempo de disputa acaba, o leilão vai para": "• When dispute time runs out, the auction goes to",
+  "• O admin finaliza após entregar o item e receber o pagamento.": "• Admin finalizes after delivering the item and receiving payment.",
+  "Ex: Água Tóxica": "Ex: Toxic Water",
+  "Valor Inicial (total do lote)": "Initial Value (total lot)",
+  "Origem / Taxa": "Origin / Fee",
+  "Imagem (preenche sozinho pelo nome do item)": "Image (auto-filled by item name)",
+  "O tempo de disputa acabou.": "Dispute time has ended.",
+  "Disputa final!": "Final dispute!",
+  "Dono:": "Owner:",
+  "Vencedor": "Winner",
+  "Preencha nome e valor.": "Fill name and value.",
+
+  // ---- Lotérica tab ----
+  "Configurar Lotérica": "Configure Lottery",
+  "Criar Lotérica": "Create Lottery",
+  "Valor/Numero": "Value/Number",
+  "Prêmio Mínimo": "Minimum Prize",
+  "Premio Minimo": "Minimum Prize",
+  "Duração Vendas (min)": "Sales Duration (min)",
+  "1000 números": "1000 numbers",
+  "1000 numeros": "1000 numbers",
+  "preço fixo por número.": "fixed price per number.",
+  "das vendas vai pro banco": "of sales goes to the bank",
+  "vai pro prêmio": "goes to the prize",
+  "Se ninguém acertar, o prêmio": "If nobody gets it right, the prize",
+  "Só reseta quando sair um": "Only resets when a",
+  "- Ganhador:": "- Winner:",
+  "- Prêmio:": "- Prize:",
+  "- Não foi vendido -": "- Not sold -",
+  "Acumulou": "Accumulated",
 };
 
 /* ============================================================
@@ -1176,6 +1371,12 @@ let observer: MutationObserver | null = null;
 let currentLang = "pt";
 let apiDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 const apiCache = new Map<string, string>();
+let isTranslating = false;
+
+/** Strip diacritics */
+function stripAccents(str: string): string {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
 function hasNoTranslateAncestor(node: Node): boolean {
   let el: Node | null = node.parentElement;
@@ -1186,77 +1387,81 @@ function hasNoTranslateAncestor(node: Node): boolean {
   return false;
 }
 
+function lookup(text: string, langCode: string, dictionary: Record<string, string> | undefined): string | undefined {
+  const norm = stripAccents(text);
+  if (langCode === "en") {
+    return EN[text] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+  }
+  return dictionary?.[text] || EN[text] || dictionary?.[norm] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+}
+
 function translatePage(langCode: string) {
-  currentLang = langCode;
-  const dictionary = dictionaries[langCode];
-  document.documentElement.lang = langCode === "pt" ? "pt-BR" : langCode;
+  if (isTranslating) return;
+  isTranslating = true;
+  try {
+    currentLang = langCode;
+    const dictionary = dictionaries[langCode];
+    document.documentElement.lang = langCode === "pt" ? "pt-BR" : langCode;
 
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-    acceptNode(node) {
-      const parent = node.parentElement;
-      if (!parent) return NodeFilter.FILTER_REJECT;
-      if ("SCRIPT STYLE TEXTAREA INPUT".includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-      if (hasNoTranslateAncestor(node)) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    },
-  });
-
-  const nodes: Text[] = [];
-  let node: Node | null;
-  while ((node = walker.nextNode())) nodes.push(node as Text);
-
-  const untranslated: string[] = [];
-
-  for (const textNode of nodes) {
-    if (!originalText.has(textNode)) originalText.set(textNode, textNode.nodeValue || "");
-    const source = originalText.get(textNode) || "";
-    const trimmed = source.trim();
-    if (!trimmed) continue;
-
-    if (langCode === "pt") {
-      if (textNode.nodeValue !== source) textNode.nodeValue = source;
-      continue;
-    }
-
-    let translated: string | undefined;
-    if (langCode === "en") {
-      translated = EN[trimmed] || apiCache.get(trimmed);
-    } else {
-      translated = dictionary?.[trimmed] || EN[trimmed] || apiCache.get(trimmed);
-    }
-    if (translated) {
-      const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
-      if (textNode.nodeValue !== nextValue) textNode.nodeValue = nextValue;
-    } else if (trimmed.length > 2 && !/^\d+[,\d]*$/.test(trimmed) && !/^[#\-+°×→←↑↓]*$/.test(trimmed)) {
-      untranslated.push(trimmed);
-    }
-  }
-
-  // Also translate placeholders and titles
-  if (langCode !== "pt") {
-    document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((el) => {
-      const htmlEl = el as HTMLInputElement;
-      const ph = htmlEl.placeholder;
-      if (!ph) return;
-      const tr = langCode === "en"
-        ? (EN[ph] || apiCache.get(ph))
-        : (dictionary?.[ph] || EN[ph] || apiCache.get(ph));
-      if (tr) htmlEl.placeholder = tr;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        if ("SCRIPT STYLE TEXTAREA INPUT".includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        if (hasNoTranslateAncestor(node)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
     });
-    document.querySelectorAll("[title]").forEach((el) => {
-      const htmlEl = el as HTMLElement;
-      const t = htmlEl.getAttribute("title");
-      if (!t) return;
-      const tr = langCode === "en"
-        ? (EN[t] || apiCache.get(t))
-        : (dictionary?.[t] || EN[t] || apiCache.get(t));
-      if (tr) htmlEl.setAttribute("title", tr);
-    });
-  }
 
-  // Debounced API fallback
-  if (untranslated.length > 0 && langCode !== "pt") {
-    queueApiTranslation(untranslated, langCode);
+    const nodes: Text[] = [];
+    let n: Node | null;
+    while ((n = walker.nextNode())) nodes.push(n as Text);
+
+    const untranslated: string[] = [];
+
+    for (const textNode of nodes) {
+      if (hasNoTranslateAncestor(textNode)) continue;
+      if (!originalText.has(textNode)) originalText.set(textNode, textNode.nodeValue || "");
+      const source = originalText.get(textNode) || "";
+      const trimmed = source.trim();
+      if (!trimmed) continue;
+
+      if (langCode === "pt") {
+        if (textNode.nodeValue !== source) textNode.nodeValue = source;
+        continue;
+      }
+
+      const translated = lookup(trimmed, langCode, dictionary);
+      if (translated) {
+        const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
+        if (textNode.nodeValue !== nextValue) textNode.nodeValue = nextValue;
+      } else if (trimmed.length > 2 && !/^\d+[\,\d]*$/.test(trimmed) && !/^[#\-+°×→←↑↓]*$/.test(trimmed)) {
+        untranslated.push(trimmed);
+      }
+    }
+
+    if (langCode !== "pt") {
+      document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((el) => {
+        const htmlEl = el as HTMLInputElement;
+        const ph = htmlEl.placeholder;
+        if (!ph) return;
+        const tr = lookup(ph, langCode, dictionary);
+        if (tr) htmlEl.placeholder = tr;
+      });
+      document.querySelectorAll("[title]").forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        const t = htmlEl.getAttribute("title");
+        if (!t) return;
+        const tr = lookup(t, langCode, dictionary);
+        if (tr) htmlEl.setAttribute("title", tr);
+      });
+    }
+
+    if (untranslated.length > 0 && langCode !== "pt") {
+      queueApiTranslation(untranslated, langCode);
+    }
+  } finally {
+    isTranslating = false;
   }
 }
 
@@ -1264,7 +1469,7 @@ function queueApiTranslation(texts: string[], langCode: string) {
   if (apiDebounceTimer) clearTimeout(apiDebounceTimer);
   apiDebounceTimer = setTimeout(async () => {
     const unique = [...new Set(texts)].slice(0, 30);
-    const toFetch = unique.filter((t) => !apiCache.has(t));
+    const toFetch = unique.filter((t) => !apiCache.has(t) && !apiCache.has(stripAccents(t)));
     if (toFetch.length === 0) return;
     try {
       const langMap: Record<string, string> = { en: "en", es: "es", fr: "fr", de: "de", ru: "ru" };
@@ -1278,14 +1483,17 @@ function queueApiTranslation(texts: string[], langCode: string) {
       const data = await res.json();
       const translations: Record<string, string> = data.translations || {};
       for (const [key, val] of Object.entries(translations)) {
-        if (val && val !== key) apiCache.set(key, val);
+        if (val && val !== key) {
+          apiCache.set(key, val);
+          const norm = stripAccents(key);
+          if (norm !== key) apiCache.set(norm, val);
+        }
       }
-      // Re-translate with new cache entries
       if (Object.keys(translations).length > 0) {
         translatePage(langCode);
       }
     } catch {
-      // Silently fail - dictionary covers most strings
+      // Silently fail
     }
   }, 400);
 }
@@ -1293,18 +1501,17 @@ function queueApiTranslation(texts: string[], langCode: string) {
 function setLanguage(code: string) {
   currentLang = code;
   localStorage.setItem("dayr-language", code);
-  // Reset all text nodes to original before translating
   if (code === "pt") {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    let node: Node | null;
-    while ((node = walker.nextNode())) {
-      const textNode = node as Text;
+    let n: Node | null;
+    while ((n = walker.nextNode())) {
+      const textNode = n as Text;
       const orig = originalText.get(textNode);
       if (orig !== undefined && textNode.nodeValue !== orig) textNode.nodeValue = orig;
     }
     document.documentElement.lang = "pt-BR";
     if (observer) { observer.disconnect(); observer = null; }
-    // Reset placeholders
+    apiCache.clear();
     document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach((el) => {
       const htmlEl = el as HTMLInputElement;
       const key = htmlEl.getAttribute("data-original-placeholder");
@@ -1316,13 +1523,14 @@ function setLanguage(code: string) {
   translatePage(code);
 
   if (!observer) {
+    let observerDebounce: ReturnType<typeof setTimeout> | null = null;
     observer = new MutationObserver(() => {
- translatePage(currentLang);
+      if (observerDebounce) clearTimeout(observerDebounce);
+      observerDebounce = setTimeout(() => translatePage(currentLang), 150);
     });
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 }
-
 /* ============================================================
    EXPORTED HELPERS
    ============================================================ */
