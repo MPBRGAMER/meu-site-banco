@@ -946,6 +946,301 @@ const EN: Record<string, string> = {
   "combustível": "Fuel",
   "gasolina": "Gasoline",
   "óleo": "Oil",
+
+  // ---- Additional missing UI strings ----
+  "Imagem indisponível para": "Image unavailable for",
+
+  "Compras e Vendas": "Purchases & Sales",
+  "Banco (100%):": "Bank (100%):",
+  "registrada!": "registered!",
+  "adicionado!": "added!",
+
+  "excluída!": "deleted!",
+  "excluído!": "deleted!",
+
+  "Investidor adicionado!": "Investor added!",
+
+  "Empréstimo de": "Loan from",
+  "Doação de": "Donation from",
+  "marcado como pago!": "marked as paid!",
+
+
+
+
+  "+... acumulado": "+... accumulated",
+  "20% das vendas (...) creditado no estoque.": "20% of sales (...) credited to stock.",
+
+
+
+
+  "Mensagem em #": "Message in #",
+
+
+  "Mensagem": "Message",
+
+
+
+
+
+  "Sai do estoque": "Leaves stock",
+  "Entra no estoque": "Enters stock",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Loterica criada!": "Lottery created!",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Viu um preco diferente no jogo?": "See a different price in-game?",
+  "Seus reports aparecem na Tendencia.": "Your reports appear in Trends.",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Formato: Qtd:Valor. Ex: Agua 5:1 aco = voce da 5 aguas por 1 aco. 10:1 cimento = voce da 10 aguas por 1 cimento. Os reports calculam a media na Tendencia.": "Format: Qty:Value. Ex: Water 5:1 steel = you give 5 waters for 1 steel. 10:1 cement = you give 10 waters for 1 cement. Reports calculate the average in Trends.",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Excluir a doação de": "Exclude the donation from",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Preco de": "Price of",
+  "reportado! Obrigado": "reported! Thank you",
+  "Imagem enviada.": "Image uploaded.",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "Traduzir site": "Translate site",
+  "Recibido": "Received",
+  "Recibido / Entrou no estoque": "Received / Entered stock",
+
+
+  ">>> ": ">>> ",
 };
 
 /* ============================================================
@@ -1265,6 +1560,41 @@ let apiDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 const apiCache = new Map<string, string>();
 let isTranslating = false;
 
+/* ---- Dynamic item-name translation (loaded from _pt_index.json) ---- */
+let itemPtToEn: Record<string, string> | undefined;
+let itemLoaded = false;
+async function loadItemIndex() {
+  if (itemLoaded) return;
+  itemLoaded = true;
+  try {
+    const res = await fetch("/items/_pt_index.json");
+    if (!res.ok) return;
+    const data: Array<{ pt: string; file: string }> = await res.json();
+    itemPtToEn = {};
+    for (const item of data) {
+      // Convert snake_case file name to Title Case English
+      const en = item.file
+        .split("_")
+        .map((w, i) => {
+          // Keep leading number groups together (e.g. "7_62x25mm" → "7 62x25mm")
+          if (i === 0 && /^\d/.test(w)) return w.replace(/(\d+)([a-z])/, "$1 $2").replace(/\b\w/g, c => c.toUpperCase());
+          return w.charAt(0).toUpperCase() + w.slice(1);
+        })
+        .join(" ");
+      itemPtToEn[item.pt] = en;
+      const lower = item.pt.toLowerCase();
+      if (lower !== item.pt) itemPtToEn[lower] = en;
+      const stripped = stripAccents(lower);
+      if (stripped !== lower) itemPtToEn[stripped] = en;
+      // Also store the title-cased version
+      const title = item.pt.replace(/\b\w/g, c => c.toUpperCase());
+      if (title !== item.pt) itemPtToEn[title] = en;
+    }
+  } catch { /* silent */ }
+}
+// Eagerly load item index
+loadItemIndex().then(() => { if (currentLang !== "pt") translatePage(currentLang); });
+
 /** Pre-built case-insensitive EN map (lazy) */
 let _enLower: Record<string, string> | undefined;
 function getEnLower(): Record<string, string> {
@@ -1273,6 +1603,9 @@ function getEnLower(): Record<string, string> {
     for (const [k, v] of Object.entries(EN)) {
       const lk = k.toLowerCase();
       if (!_enLower[lk]) _enLower[lk] = v;
+      // Also index accent-stripped variant so "aco" matches "aço" → "Steel"
+      const sk = stripAccents(lk);
+      if (sk !== lk && !_enLower[sk]) _enLower[sk] = v;
     }
   }
   return _enLower;
@@ -1282,10 +1615,17 @@ function getEnLower(): Record<string, string> {
 function looksLikeName(text: string): boolean {
   const t = text.trim();
   if (t.length < 2 || t.length > 30) return false;
+  if (t === "Admin" || t === "Membro") return false; // real UI words
   // Contains underscore (e.g. SINGLE_PLAYER)
   if (/_/.test(t)) return true;
   // All uppercase 3+ chars (e.g. ADMIN)
   if (/^[A-Z0-9]{3,}$/.test(t)) return true;
+  // Mixed case without spaces – camelCase or PascalCase nicks (e.g. MPBRGAMER, RedFoot)
+  if (!/\s/.test(t) && /[a-z]/.test(t) && /[A-Z]/.test(t) && !/^[A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ][a-záéíóúâêîôûãõç]+/.test(t)) return true;
+  // Digits mixed with letters (e.g. Player123)
+  if (/\d/.test(t) && /[a-zA-Z]/.test(t) && t.length <= 20) return true;
+  // Parenthesized server tags (e.g. "(NES) FERNAL30")
+  if (/^\([A-Z]+\)/.test(t)) return true;
   return false;
 }
 
@@ -1307,13 +1647,13 @@ function hasNoTranslateAncestor(node: Node): boolean {
 function collectProtectedTexts(): Set<string> {
   const set = new Set<string>();
   document.querySelectorAll('[data-no-translate], [translate="no"]').forEach(el => {
-    // Collect direct text children
-    Array.from(el.childNodes).forEach(child => {
-      if (child.nodeType === Node.TEXT_NODE) {
-        const t = child.textContent?.trim();
-        if (t && t.length > 0) set.add(t);
-      }
-    });
+    // Use TreeWalker to collect ALL text nodes within protected elements (not just direct children)
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let node: Node | null;
+    while ((node = walker.nextNode())) {
+      const t = node.textContent?.trim();
+      if (t && t.length > 0) set.add(t);
+    }
   });
   return set;
 }
@@ -1322,6 +1662,11 @@ function lookup(text: string, langCode: string, dictionary: Record<string, strin
   const norm = stripAccents(text);
   const lower = text.toLowerCase();
   const el = getEnLower();
+  // Check dynamic item index first (covers 300+ game items)
+  if (itemPtToEn) {
+    const itemEn = itemPtToEn[text] || itemPtToEn[lower] || itemPtToEn[norm];
+    if (itemEn) return itemEn;
+  }
   if (langCode === "en") {
     return EN[text] || EN[norm] || el[lower] || apiCache.get(text) || apiCache.get(norm);
   }

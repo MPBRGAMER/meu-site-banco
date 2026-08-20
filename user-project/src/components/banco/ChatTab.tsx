@@ -74,6 +74,8 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const scrollLockRef = useRef(false);
+  const scrollTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const saved = localStorage.getItem("chatNickname");
@@ -84,15 +86,21 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   }, []);
 
   useEffect(() => {
-    if (autoScrollRef.current && messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "instant" });
+    if (autoScrollRef.current && messagesContainerRef.current) {
+      scrollLockRef.current = true;
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+      requestAnimationFrame(() => { scrollLockRef.current = false; });
     }
   }, [mensagens]);
 
   const handleScroll = () => {
     const el = messagesContainerRef.current;
-    if (!el) return;
-    autoScrollRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    if (!el || scrollLockRef.current) return;
+    if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+    scrollTimerRef.current = setTimeout(() => {
+      if (!el) return;
+      autoScrollRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    }, 100);
   };
 
   const handleSend = () => {
