@@ -284,7 +284,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                 {nomeUsuario.charAt(0).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs font-medium text-foreground truncate" data-no-translate>{nomeUsuario}</p>
+                <p className="text-xs font-medium text-foreground truncate" data-no-translate translate="no">{nomeUsuario}</p>
                 <p className="text-[10px] text-muted-foreground">{isAdmin ? "Admin" : "Membro"}</p>
               </div>
               {isAdmin && <Shield className="w-3 h-3 text-primary" />}
@@ -300,7 +300,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               <>
                 <Lock className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm font-bold text-foreground">{currentSala?.nome || "Sala"}</span>
-                <span className="text-[10px] text-muted-foreground">por <span data-no-translate>{currentSala?.criadoPor}</span></span>
+                <span className="text-[10px] text-muted-foreground">por <span data-no-translate translate="no">{currentSala?.criadoPor}</span></span>
               </>
             ) : (
               <>
@@ -366,7 +366,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-baseline gap-2">
-                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")} data-no-translate>
+                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")} data-no-translate translate="no">
                             {msg.autor}
                             {msg.isAdmin && <Shield className="w-2.5 h-2.5 inline ml-1 text-primary" />}
                           </span>

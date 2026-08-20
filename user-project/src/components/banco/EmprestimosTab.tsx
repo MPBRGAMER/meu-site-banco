@@ -84,7 +84,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
     <div className={`rounded-md border border-border bg-card p-3 mb-2 ${estaAtrasado ? "border-red-400/30" : ""}`}>
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm font-bold text-foreground" data-no-translate>{emp.player}</span>
+          <span className="text-sm font-bold text-foreground" data-no-translate translate="no">{emp.player}</span>
           <span className={`text-xs px-2 py-0.5 rounded-full border ${emp.status === "pendente" ? "text-yellow-400 border-yellow-400/30 bg-yellow-400/10" : "text-green-400 border-green-400/30 bg-green-400/10"}`}>{emp.status === "pendente" ? "Pendente" : "Pago"}</span>
           {estaAtrasado && <span className="text-xs px-2 py-0.5 rounded-full border border-red-400/30 bg-red-400/10 text-red-400">Atrasado</span>}
           <span className="text-xs text-muted-foreground">{getTipoLabel(emp.tipoMembro)}</span>
@@ -104,7 +104,7 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
         <DialogContent className="bg-card border-border max-w-md">
           <DialogHeader><DialogTitle className="text-primary">Registrar Pagamento</DialogTitle></DialogHeader>
           <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">Empréstimo de {emp.quantidade}x {emp.item} para <span data-no-translate>{emp.player}</span></p>
+            <p className="text-sm text-muted-foreground">Empréstimo de {emp.quantidade}x {emp.item} para <span data-no-translate translate="no">{emp.player}</span></p>
             <div className="rounded-md bg-yellow-400/10 border border-yellow-400/30 p-3"><p className="text-xs text-yellow-300 mb-1">Valor a cobrar:</p><p className="text-xl font-bold font-mono text-yellow-400">{valorCobrar} itens</p></div>
             <div><Label className="text-xs text-muted-foreground">Item do Pagamento</Label><Input placeholder="Ex: Sal, Carne..." value={itemPagamento} onChange={(e) => setItemPagamento(e.target.value)} className="font-mono text-sm" /></div>
             <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" placeholder={valorCobrar.toString()} value={qtdPagamento} onChange={(e) => setQtdPagamento(e.target.value)} className="font-mono text-sm" /></div>

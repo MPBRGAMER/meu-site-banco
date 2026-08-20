@@ -839,6 +839,25 @@ const EN: Record<string, string> = {
 
   // ---- ConfigTrocasTab additional ----
   "Taxas: 15% comum / 10% investidor.": "Fees: 15% common / 10% investor.",
+
+  // ---- Dynamic toast/message strings ----
+  "Saída de leilão registrada:": "Auction output registered:",
+  "Saída de sorteio registrada:": "Raffle output registered:",
+  "para": "for",
+  "PAGO COM": "PAID WITH",
+  "RECEBIDO EM": "RECEIVED IN",
+  "Leilão do Banco:": "Bank Auction:",
+  "Sorteio:": "Raffle:",
+  "(ganhador:": "(winner:",
+  "Acumulou": "Accumulated",
+  "Banco": "Bank",
+  "1º": "1st",
+  "2º": "2nd",
+  "3º": "3rd",
+  "Desde": "Since",
+  "Nenhuma compra ou venda.": "No purchases or sales.",
+  "Nenhum registro.": "No records.",
+  "Disponivel": "Available",
 };
 
 /* ============================================================
@@ -1161,7 +1180,7 @@ const apiCache = new Map<string, string>();
 function hasNoTranslateAncestor(node: Node): boolean {
   let el: Node | null = node.parentElement;
   while (el) {
-    if (el instanceof HTMLElement && el.hasAttribute("data-no-translate")) return true;
+    if (el instanceof HTMLElement && (el.hasAttribute("data-no-translate") || el.getAttribute("translate") === "no")) return true;
     el = el.parentElement;
   }
   return false;
@@ -1203,7 +1222,7 @@ function translatePage(langCode: string) {
     if (langCode === "en") {
       translated = EN[trimmed] || apiCache.get(trimmed);
     } else {
-      translated = dictionary?.[trimmed] || apiCache.get(trimmed);
+      translated = dictionary?.[trimmed] || EN[trimmed] || apiCache.get(trimmed);
     }
     if (translated) {
       const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
@@ -1221,7 +1240,7 @@ function translatePage(langCode: string) {
       if (!ph) return;
       const tr = langCode === "en"
         ? (EN[ph] || apiCache.get(ph))
-        : (dictionary?.[ph] || apiCache.get(ph));
+        : (dictionary?.[ph] || EN[ph] || apiCache.get(ph));
       if (tr) htmlEl.placeholder = tr;
     });
     document.querySelectorAll("[title]").forEach((el) => {
@@ -1230,7 +1249,7 @@ function translatePage(langCode: string) {
       if (!t) return;
       const tr = langCode === "en"
         ? (EN[t] || apiCache.get(t))
-        : (dictionary?.[t] || apiCache.get(t));
+        : (dictionary?.[t] || EN[t] || apiCache.get(t));
       if (tr) htmlEl.setAttribute("title", tr);
     });
   }

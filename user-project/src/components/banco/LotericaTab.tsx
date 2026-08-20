@@ -66,7 +66,7 @@ function HistoricoLotericaEntry({ entry, index }: {
           </div>
           <div className="text-right">
             <p className="text-xs text-muted-foreground">Ganhador</p>
-            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`} data-no-translate>{entry.ganhador || "Acumulou"}</p>
+            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`} data-no-translate translate="no">{entry.ganhador || "Acumulou"}</p>
           </div>
           {expanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
         </div>
@@ -102,7 +102,7 @@ function HistoricoLotericaEntry({ entry, index }: {
                 </p>
                 {acerto ? (
                   <p className="text-xs text-foreground">
-                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400" data-no-translate>{entry.ganhador}</span> - Premio: <span className="font-bold text-yellow-400">{Math.round(entry.valorPremio)} {entry.moedaAceita}</span>
+                    Numero <span className="font-bold font-mono text-green-400">{String(entry.numeroSorteado).padStart(3, "0")}</span> - Ganhador: <span className="font-bold text-green-400" data-no-translate translate="no">{entry.ganhador}</span> - Premio: <span className="font-bold text-yellow-400">{Math.round(entry.valorPremio)} {entry.moedaAceita}</span>
                   </p>
                 ) : (
                   <p className="text-xs text-foreground">
@@ -302,7 +302,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                     </p>
                     <p className="text-xs text-foreground">
                       Numero: <span className="font-bold font-mono text-primary">{String(loterica.numeroSorteado).padStart(3, "0")}</span>
-                      {loterica.ganhador && <> - Ganhador: <span className="font-bold text-green-400" data-no-translate>{loterica.ganhador}</span></>}
+                      {loterica.ganhador && <> - Ganhador: <span className="font-bold text-green-400" data-no-translate translate="no">{loterica.ganhador}</span></>}
                       {!loterica.ganhador && <> - Nao foi vendido - <span className="font-bold text-orange-400">{Math.round(loterica.valorPremio || 0)} {loterica.moedaAceita} acumulados</span></>}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
@@ -354,7 +354,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                 <div key={n.id} className={`flex items-center justify-between py-1.5 px-2 rounded text-xs border-b border-border/30 ${n.comprador ? "bg-green-500/5" : ""}`}>
                   <div className="flex items-center gap-2">
                     <span className={`font-mono font-bold w-10 ${n.comprador ? "text-green-400" : "text-muted-foreground"}`}>{String(n.numero).padStart(3, "0")}</span>
-                    {n.comprador ? <span className="text-foreground" data-no-translate>{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}
+                    {n.comprador ? <span className="text-foreground" data-no-translate translate="no">{n.comprador}</span> : <span className="text-muted-foreground italic">Disponivel</span>}
                   </div>
                   {n.dataCompra && <span className="text-muted-foreground">{new Date(n.dataCompra).toLocaleDateString(getDateLocale())}</span>}
                 </div>

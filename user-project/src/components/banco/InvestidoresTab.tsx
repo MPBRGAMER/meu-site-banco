@@ -68,7 +68,7 @@ export default function InvestidoresTab() {
                   <button onClick={() => moveUp(i)} className="text-muted-foreground hover:text-primary disabled:opacity-30" disabled={i === 0}><ArrowUp className="w-4 h-4" /></button>
                   <button onClick={() => moveDown(i)} className="text-muted-foreground hover:text-primary disabled:opacity-30" disabled={i === orderedList.length - 1}><ArrowDown className="w-4 h-4" /></button>
                 </div>
-                <div className="flex items-center gap-2 flex-1"><span className="text-sm font-bold text-muted-foreground w-6">{i + 1}º</span><Crown className="w-4 h-4 text-yellow-400" /><span className="text-sm font-semibold text-foreground" data-no-translate>{inv.nome}</span><span className="text-xs text-muted-foreground ml-auto">Desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</span></div>
+                <div className="flex items-center gap-2 flex-1"><span className="text-sm font-bold text-muted-foreground w-6">{i + 1}º</span><Crown className="w-4 h-4 text-yellow-400" /><span className="text-sm font-semibold text-foreground" data-no-translate translate="no">{inv.nome}</span><span className="text-xs text-muted-foreground ml-auto">Desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</span></div>
               </div>
             ))}
           </div>
@@ -83,7 +83,7 @@ export default function InvestidoresTab() {
               <div key={inv.id} className={`rounded-md border p-3 flex items-center justify-between transition-colors ${idx === 0 ? "border-yellow-500/40 bg-yellow-500/5" : idx === 1 ? "border-gray-300/30 bg-gray-300/5" : idx === 2 ? "border-orange-700/30 bg-orange-700/5" : "border-primary/20 bg-card hover:border-primary/40"}`}>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 flex items-center justify-center">{idx === 0 ? <Crown className="w-5 h-5 text-yellow-400" /> : idx === 1 ? <span className="text-sm font-bold text-gray-300">2</span> : idx === 2 ? <span className="text-sm font-bold text-orange-600">3</span> : <span className="text-xs font-bold text-muted-foreground">#{idx + 1}</span>}</div>
-                  <div><p className="text-sm font-bold text-foreground" data-no-translate>{inv.nome}</p><p className="text-xs text-muted-foreground">Desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p></div>
+                  <div><p className="text-sm font-bold text-foreground" data-no-translate translate="no">{inv.nome}</p><p className="text-xs text-muted-foreground">Desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p></div>
                 </div>
                 <Button variant="ghost" size="sm" onClick={() => removeInvestidor(inv.id)} className="text-xs text-muted-foreground hover:text-red-400"><Trash2 className="w-4 h-4" /></Button>
               </div>
