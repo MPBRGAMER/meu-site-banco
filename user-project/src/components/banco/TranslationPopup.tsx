@@ -85,7 +85,6 @@ const EN: Record<string, string> = {
   "Item Pagamento": "Payment Item",
   "Item Pagamento (opcional)": "Payment Item (optional)",
   "Qtd Pagamento": "Payment Qty",
-  "Observação": "Note",
   "Disponível": "Available",
   "Disponivel": "Available",
 
@@ -205,7 +204,6 @@ const EN: Record<string, string> = {
   "Sai do estoque do Banco:": "Leaves Bank stock:",
   "O item recebido entra no estoque do Banco; não há taxa nem lucro.": "The received item enters Bank stock; no fee or profit.",
   "Entra no estoque do Banco:": "Enters Bank stock:",
-  "Histórico": "History",
   "Entregou": "Handed in",
   "Recebeu / Entrou no estoque": "Received / Entered stock",
   "Especial (0%)": "Special (0%)",
@@ -223,7 +221,6 @@ const EN: Record<string, string> = {
 
   // ---- Compras & Vendas ----
   "🛒 Compras e Vendas": "🛒 Purchases & Sales",
-  "Registrar": "Register",
   "COMPRA:": "PURCHASE:",
   "Você paga → Recebe do player": "You pay → Receive from player",
   "VENDA:": "SALE:",
@@ -247,7 +244,6 @@ const EN: Record<string, string> = {
   "SAÍDA": "EXPENSE",
   "Entrada": "Income",
   "Saída": "Expense",
-  "Ganhador": "Winner",
   "Nome do jogador": "Player name",
   "Registrar Saída": "Register Output",
   "Registrar Prêmio": "Register Prize",
@@ -294,7 +290,6 @@ const EN: Record<string, string> = {
   "Histórico de Ganhadores": "Winners History",
 
   // ---- Sorteios ----
-  "Sorteios": "Raffles",
   "Admin cria sorteio com": "Admin creates raffle with",
   "item e duracao": "item and duration",
   "Qualquer membro participa com seu nome.": "Any member participates with their name.",
@@ -376,11 +371,9 @@ const EN: Record<string, string> = {
   "vira o novo minimo": "becomes the new minimum",
   "da proxima.": "of the next one.",
   "So reseta quando sair um": "Only resets when a",
-  "ganhador": "winner",
   "comes out!": "comes out!",
 
   // ---- Empréstimos ----
-  "Empréstimos": "Loans",
   "Regras do Banco": "Bank Rules",
   "Membro Especial": "Special Member",
   "Top 10 Investidor": "Top 10 Investor",
@@ -409,12 +402,7 @@ const EN: Record<string, string> = {
   "Confirmar Pagamento": "Confirm Payment",
   "Empréstimo atrasado - Juros já incluídos": "Overdue loan - Interest already included",
   "Item:": "Item:",
-  "Quantidade:": "Quantity:",
-  "Especial (0%)": "Special (0%)",
   "Top 10 Investidor (5%)": "Top 10 Investor (5%)",
-  "Investidor (10%)": "Investor (10%)",
-  "Comum (15%)": "Common (15%)",
-  "Não Contribuinte (20%)": "Non-Contributor (20%)",
 
   // ---- Tabela ----
   "Alta": "High",
@@ -543,7 +531,6 @@ const EN: Record<string, string> = {
   "Item restaurado.": "Item restored.",
   "itens removidos!": "items removed!",
   "Erro ao remover.": "Error removing.",
-  "Adicionar": "Add",
   "Removidos": "Removed",
   "Adicione novos itens a tabela. Eles serao salvos no banco de dados como override.": "Add new items to the table. They will be saved to the database as overrides.",
   "Nome do Item *": "Item Name *",
@@ -553,8 +540,6 @@ const EN: Record<string, string> = {
   "Wiki Link": "Wiki Link",
   "Preco Aco": "Steel Price",
   "Preco Cimento": "Cement Price",
-  "Raridade": "Rarity",
-  "Demanda": "Demand",
   "Notas": "Notes",
   "Escolher imagem": "Choose image",
   "Adicionar Item": "Add Item",
@@ -563,7 +548,6 @@ const EN: Record<string, string> = {
   "Itens marcados para remocao nesta sessao.": "Items marked for removal in this session.",
   "Nenhum item removido.": "No items removed.",
   "Confirmar Remocao de": "Confirm Removal of",
-  "itens": "items",
   "Reports": "Reports",
   "Sem Preco": "No Price",
   "Tendencias": "Trends",
@@ -582,187 +566,42 @@ const EN: Record<string, string> = {
   "reportou": "reported",
 
   // ---- TrocasTab additional ----
-  "Banco (100% — troca interna)": "Bank (100% — internal trade)",
-  "Item que sai do estoque do Banco": "Item leaving Bank stock",
-  "Item que ele entrega": "Item he hands in",
-  "Quantidade (em base)": "Quantity (in base)",
-  "Preencha o formulário ao lado.": "Fill the form on the side.",
-  "Sai do estoque do Banco:": "Leaves Bank stock:",
-  "Player entregou:": "Player handed in:",
-  "O item recebido entra no estoque do Banco; não há taxa nem lucro.": "The received item enters Bank stock; no fee or profit.",
-  "Entra no estoque do Banco:": "Enters Bank stock:",
-  "Player Recebe:": "Player Receives:",
   "Banco": "Bank",
   "Entrou:": "Entered:",
   "Recebeu:": "Received:",
   "Excluir troca e estornar estoque": "Exclude trade and reverse stock",
   "Troca excluída e estoque estornado.": "Trade excluded and stock reversed.",
   "Não foi possível excluir a troca.": "Could not exclude the trade.",
-  "Entregou": "Handed in",
 
   // ---- EmprestimosTab additional ----
-  "Preencha o item e a quantidade.": "Fill item and quantity.",
-  "Preencha todos os campos.": "Fill all fields.",
-  "Calculadora": "Calculator",
-  "Membro Especial": "Special Member",
-  "sem acréscimo": "no surcharge",
-  "Top 10 Investidor": "Top 10 Investor",
-  "de acréscimo": "surcharge",
-  "Investidor": "Investor",
-  "Membro Comum": "Common Member",
-  "Não Contribuinte": "Non-Contributor",
-  "Novo Empréstimo": "New Loan",
-  "Pendentes": "Pending",
-  "Pagos": "Paid",
-  "Nenhum empréstimo pendente.": "No pending loans.",
-  "Pendente": "Pending",
-  "Pago": "Paid",
-  "Atrasado": "Overdue",
-  "Pagar": "Pay",
-  "Item:": "Item:",
-  "Valor a cobrar:": "Amount to charge:",
-  "Vencimento:": "Due date:",
-  "Empréstimo atrasado - Juros já incluídos": "Overdue loan - Interest already included",
-  "Item do Pagamento": "Payment Item",
-  "Confirmar Pagamento": "Confirm Payment",
 
   // ---- DoadoresTab additional ----
-  "Preencha nome, item e quantidade.": "Fill name, item and quantity.",
   "Doação excluída e estoque estornado.": "Donation deleted and stock reversed.",
   "Não foi possível excluir a doação.": "Could not delete the donation.",
-  "Registre doações. Toda doação entra no estoque automaticamente.": "Register donations. Every donation goes into stock automatically.",
-  "Reordenar Doadores": "Reorder Donors",
 
   // ---- InvestidoresTab additional ----
   "Membros Investidores": "Investor Members",
-  "Benefício:": "Benefit:",
-  "em empréstimos e trocas": "on loans and trades",
-  "comum": "common",
-  "Como obter a tag?": "How to get the tag?",
-  "Ajude o banco — doando itens, fazendo trocas ou de qualquer outra forma.": "Help the bank — by donating items, making trades or any other way.",
-  "Adicionar Investidor": "Add Investor",
-  "Nome do investidor": "Investor name",
-  "Reordenar Investidores": "Reorder Investors",
-  "Desde": "Since",
-  "Ativos": "Active",
-  "Nenhum investidor.": "No investors.",
 
   // ---- CaixaTab additional ----
-  "Preencha os obrigatórios.": "Fill required fields.",
   "Nenhum registro.": "No records.",
 
   // ---- LeiloesTab additional ----
-  "Preencha nome e valor.": "Fill name and value.",
   "Preencha os campos obrigatórios.": "Fill required fields.",
   "Moeda:": "Currency:",
-  "Valor (mín:": "Value (min:",
-  "Disputa final!": "Final dispute!",
-  "Dono:": "Owner:",
-  "Auto-preenchido": "Auto-filled",
   "Valor": "Value",
   "Excluir a troca de": "Exclude trade from",
   "O movimento registrado no estoque será estornado.": "The stock movement will be reversed.",
 
   // ---- LotericaTab additional ----
-  "Preencha valor e moeda.": "Fill value and currency.",
-  "Ja existe loterica ativa. Finalize a atual.": "There's already an active lottery. Finalize the current one.",
-  "Lotérica criada!": "Lottery created!",
-  "Numero e nome obrigatorios.": "Number and name required.",
-  "Numero entre 1 e 1000.": "Number between 1 and 1000.",
-  "Sem loterica ativa.": "No active lottery.",
-  "Numero": "Number",
   "Numero (1-1000)": "Number (1-1000)",
   "Numero sorteado:": "Drawn number:",
-  "Configurando": "Configuring",
-  "Sorteio criado!": "Raffle created!",
-  "Preencha todos.": "Fill all.",
-  "Como Funciona": "How It Works",
-  "O leilão conta o tempo escolhido (1h a 48h).": "The auction counts the chosen time (1h to 48h).",
-  "Qualquer pessoa pode dar lance durante o tempo.": "Anyone can bid during the time.",
-  "Após o tempo acabar, cada novo lance adiciona": "After time runs out, each new bid adds",
-  "+1 minuto": "+1 minute",
-  "de disputa.": "of dispute.",
-  "Quando o tempo de disputa acaba, o leilão vai para": "When dispute time runs out, the auction goes to",
-  "fila de espera": "waiting queue",
-  "O admin finaliza após entregar o item e receber o pagamento.": "Admin finalizes after delivering the item and receiving payment.",
-  "Novo Leilão": "New Auction",
-  "Criar Leilão": "Create Auction",
-  "Item (nome em pt-BR)": "Item (name in pt-BR)",
-  "Valor Inicial (total do lote)": "Initial Value (total lot)",
-  "Origem / Taxa": "Origin / Fee",
-  "Duração": "Duration",
-  "Imagem (preenche sozinho pelo nome do item)": "Image (auto-filled by item name)",
-  "1 minuto (teste)": "1 minute (test)",
-  "1 hora": "1 hour",
-  "6 horas": "6 hours",
-  "12 horas": "12 hours",
-  "24 horas": "24 hours",
-  "48 horas": "48 hours",
-  "Dar Lance": "Place Bid",
-  "Seu Nome": "Your Name",
-  "O tempo de disputa acabou.": "Dispute time has ended.",
-  "Nenhum leilão ativo.": "No active auctions.",
-  "Remover?": "Remove?",
-  "Histórico de Ganhadores": "Winners History",
-  "Doadores": "Donors",
-  "Nenhum.": "None.",
-  "Historico de Ganhadores": "Winners History",
-  "Data do Sorteio": "Raffle Date",
-  "Todos os Participantes": "All Participants",
-  "Nenhum": "None",
-  "Admin cria sorteio com": "Admin creates raffle with",
-  "item e duracao": "item and duration",
-  "Qualquer membro participa com seu nome.": "Any member participates with their name.",
-  "Timer acaba": "Timer ends",
-  "sorteado": "drawn",
-  "Novo Sorteio": "New Raffle",
-  "Duracao (min)": "Duration (min)",
-  "Seu nome": "Your name",
   "Acumulou": "Accumulated",
   "Arrecadado": "Raised",
   "Premio Final": "Final Prize",
   "Data Sorteio": "Draw Date",
-  "1000 numeros": "1000 numbers",
-  "preco fixo por numero.": "fixed price per number.",
-  "das vendas vai pro banco": "of sales goes to the bank",
-  "vai pro premio": "goes to the prize",
-  "Premio =": "Prize =",
-  "maior entre 80% das vendas e o minimo": "max of 80% of sales and the minimum",
-  "Se ninguem acertar, o premio": "If nobody gets it right, the prize",
-  "vira o novo minimo": "becomes the new minimum",
-  "da proxima.": "of the next one.",
-  "So reseta quando sair um": "Only resets when a",
-  "ganhador": "winner",
-  "comes out!": "comes out!",
-  "Configurar Lotérica": "Configure Lottery",
-  "Criar Lotérica": "Create Lottery",
-  "Valor/Numero": "Value/Number",
-  "Premio Minimo": "Minimum Prize",
-  "Duracao Vendas (min)": "Sales Duration (min)",
-  "Vendas abertas": "Sales open",
-  "Sorteio realizado": "Draw performed",
-  "Finalizada": "Finalized",
-  "Min. acumulado": "Min. accumulated",
-  "Credita ao finalizar": "Credits on finalization",
-  "Calculo do Premio": "Prize Calculation",
-  "80% arrecadado": "80% raised",
-  "Minimo original": "Original minimum",
-  "Min. efetivo": "Effective minimum",
-  "Premio = maior entre 80% do arrecadado e o minimo efetivo": "Prize = max of 80% raised and effective minimum",
   "que veio do acumulado.": "that came from accumulated.",
-  "creditado no estoque.": "credited to stock.",
-  "Vender Numero": "Sell Number",
-  "Nome do Comprador": "Buyer Name",
-  "Realizar Sorteio": "Perform Draw",
-  "As vendas encerraram. Sorteie para definir o ganhador.": "Sales have ended. Draw to determine the winner.",
-  "Nenhum numero vendido! Nao e possivel sortear.": "No numbers sold! Cannot draw.",
-  "Nenhum numero.": "No numbers.",
-  "Nenhuma lotérica ativa. Crie uma nova acima.": "No active lottery. Create a new one above.",
-  "Nenhuma lotérica ativa no momento.": "No active lottery at the moment.",
-  "Historico de Sorteios": "Draw History",
 
   // ---- ChatTab additional ----
-  "Chat": "Chat - Trading Post",
   "Um território onde todos os sobreviventes são bem-vindos.": "A territory where all survivors are welcome.",
   "Sala": "Room",
   "Mensagem em": "Message in",
@@ -776,7 +615,6 @@ const EN: Record<string, string> = {
   "Reportar Preco": "Report Price",
   "Editar/Remover": "Edit/Remove",
   "ID (auto) *": "ID (auto) *",
-  "Categoria *": "Category *",
   "Categoria": "Category",
   "Prévia do novo item": "New item preview",
   "Prévia do item": "Item preview",
@@ -784,7 +622,6 @@ const EN: Record<string, string> = {
   "Salvando...": "Saving...",
   "Aco": "Steel",
   "item": "item",
-  "itens": "items",
   "sem preco": "no price",
   "Guia": "Guide",
   "Preco pendente - reporte para ajudar!": "Price pending - report to help!",
@@ -834,7 +671,6 @@ const EN: Record<string, string> = {
   // ---- CaixaTab additional ----
   "📦 Entrada": "📦 Income",
   "📤 Saída": "📤 Expense",
-  "Ex: Katana": "Ex: Katana",
   "Ex: Compra": "Ex: Purchase",
 
   // ---- ConfigTrocasTab additional ----
@@ -849,20 +685,12 @@ const EN: Record<string, string> = {
   "Leilão do Banco:": "Bank Auction:",
   "Sorteio:": "Raffle:",
   "(ganhador:": "(winner:",
-  "Acumulou": "Accumulated",
-  "Banco": "Bank",
   "1º": "1st",
   "2º": "2nd",
   "3º": "3rd",
-  "Desde": "Since",
-  "Nenhuma compra ou venda.": "No purchases or sales.",
-  "Nenhum registro.": "No records.",
-  "Disponivel": "Available",
 
   // ---- Common game items (for inventory & cash flow) ----
   "Aço": "Steel",
-  "Cimento": "Cement",
-  "Moeda": "Currency",
   "Moedas": "Currencies",
   "Munição": "Ammo",
   "Munição de Pistola": "Pistol Ammo",
@@ -943,16 +771,12 @@ const EN: Record<string, string> = {
   "Confirmação": "Confirmation",
   "Verificação": "Verification",
   "Localização": "Location",
-  "Duração": "Duration",
-  "Quantidade": "Quantity",
   "Qualidade": "Quality",
   "Possível": "Possible",
   "Impossível": "Impossible",
-  "Disponível": "Available",
   "Indisponível": "Unavailable",
   "Necessário": "Necessary",
   "Obrigatório": "Mandatory",
-  "Opcional": "Optional",
   "Preencha": "Fill",
   "Seleção": "Selection",
   "Configuração": "Configuration",
@@ -965,7 +789,6 @@ const EN: Record<string, string> = {
   "Acúmulo": "Accumulation",
   "Relatório": "Report",
   "Relatórios": "Reports",
-  "Histórico": "History",
   "Público": "Public",
   "Privado": "Private",
   "Vencimento": "Due date",
@@ -976,83 +799,153 @@ const EN: Record<string, string> = {
   "Removido": "Removed",
   "Adicionado": "Added",
   "Registrado": "Registered",
-  "Criado": "Created",
   "Finalizado": "Finalized",
   "Iniciado": "Started",
-  "Encerrado": "Closed",
   "Cancelado": "Cancelled",
 
   // ---- Tabela tab (Reportar/Guia) ----
   "Tabela de Preços": "Price Table",
-  "Tabela de Precos": "Price Table",
   "Reportar Preços": "Report Prices",
-  "Reportar Precos": "Report Prices",
   "Guia da Tabela de Preços": "Price Table Guide",
-  "Guia da Tabela de Precos": "Price Table Guide",
-  "Gerenciar Itens": "Manage Items",
   "Viu um preço diferente no jogo?": "See a different price in-game?",
   "Seus reports aparecem na Tendência.": "Your reports appear in Trends.",
   "Qtd Aço": "Steel Qty",
   "Valor Aço ($)": "Steel Value ($)",
-  "Qtd Cimento": "Cement Qty",
-  "Valor Cimento ($)": "Cement Value ($)",
   "Níveis de Demanda": "Demand Levels",
-  "Fonte dos Dados": "Data Source",
-  "Ultimos Reports da Comunidade": "Latest Community Reports",
   "Últimos Reports da Comunidade": "Latest Community Reports",
-  "Ver no Wiki:": "View on Wiki:",
   "Tendência": "Trend",
-  "Tendencia": "Trend",
-  "Reportar": "Report",
-  "reportado!": "reported!",
-  "reportou": "reported",
-  "Enviando...": "Sending...",
   "Erro ao reportar.": "Error reporting.",
   "Nenhum report ainda.": "No reports yet.",
-  "Reportar Preco": "Report Price",
 
   // ---- Trocas tab history ----
-  "Registro de Trocas": "Trade Register",
-  "Entrou:": "Entered:",
-  "Recebeu:": "Received:",
-  "Excluir troca e estornar estoque": "Exclude trade and reverse stock",
-  "Troca excluída e estoque estornado.": "Trade excluded and stock reversed.",
-  "Não foi possível excluir a troca.": "Could not exclude the trade.",
 
   // ---- Leilão tab ----
-  "• O leilão conta o tempo escolhido (1h a 48h).": "• The auction counts the chosen time (1h to 48h).",
-  "• Qualquer pessoa pode dar lance durante o tempo.": "• Anyone can bid during the time.",
-  "• Após o tempo acabar, cada novo lance adiciona": "• After time runs out, each new bid adds",
-  "• Quando o tempo de disputa acaba, o leilão vai para": "• When dispute time runs out, the auction goes to",
-  "• O admin finaliza após entregar o item e receber o pagamento.": "• Admin finalizes after delivering the item and receiving payment.",
-  "Ex: Água Tóxica": "Ex: Toxic Water",
-  "Valor Inicial (total do lote)": "Initial Value (total lot)",
-  "Origem / Taxa": "Origin / Fee",
-  "Imagem (preenche sozinho pelo nome do item)": "Image (auto-filled by item name)",
-  "O tempo de disputa acabou.": "Dispute time has ended.",
-  "Disputa final!": "Final dispute!",
-  "Dono:": "Owner:",
-  "Vencedor": "Winner",
-  "Preencha nome e valor.": "Fill name and value.",
 
   // ---- Lotérica tab ----
-  "Configurar Lotérica": "Configure Lottery",
-  "Criar Lotérica": "Create Lottery",
-  "Valor/Numero": "Value/Number",
   "Prêmio Mínimo": "Minimum Prize",
-  "Premio Minimo": "Minimum Prize",
   "Duração Vendas (min)": "Sales Duration (min)",
   "1000 números": "1000 numbers",
-  "1000 numeros": "1000 numbers",
   "preço fixo por número.": "fixed price per number.",
-  "das vendas vai pro banco": "of sales goes to the bank",
   "vai pro prêmio": "goes to the prize",
   "Se ninguém acertar, o prêmio": "If nobody gets it right, the prize",
   "Só reseta quando sair um": "Only resets when a",
-  "- Ganhador:": "- Winner:",
   "- Prêmio:": "- Prize:",
   "- Não foi vendido -": "- Not sold -",
-  "Acumulou": "Accumulated",
+
+  // ---- Caixa tab additional ----
+  "📦 ENTRADA": "📦 INCOME",
+  "📤 SAÍDA": "📤 EXPENSE",
+
+  // ---- Trocas tab additional ----
+  "Troca registrada!": "Trade registered!",
+  "Excluir a troca": "Exclude the trade",
+
+  // ---- Doadores tab additional ----
+  "Doação registrada!": "Donation registered!",
+  "Excluir a doação": "Exclude the donation",
+  "será estornado do estoque.": "will be reversed from stock.",
+
+  // ---- Leilão tab additional ----
+  "Lance deve ser > ": "Bid must be > ",
+  "Lance de ": "Bid of ",
+  " registrado!": " registered!",
+  "Valor (mín: ": "Value (min: ",
+  "Leilão criado!": "Auction created!",
+
+  // ---- Lotérica tab additional ----
+  "Loterica Ativa": "Active Lottery",
+  "Premio = maior entre 80% do arrecadado e o minimo efetivo...": "Prize = max of 80% collected and effective min...",
+  "Numero sorteado: ": "Drawn number: ",
+  "20% das vendas creditado no estoque.": "20% of sales credited to stock.",
+
+  // ---- Compras & Vendas tab additional ----
+  "Registrar Compra": "Register Purchase",
+  "Registrar Venda": "Register Sale",
+  "Compra registrada!": "Purchase registered!",
+  "Venda registrada!": "Sale registered!",
+
+  // ---- Chat tab additional ----
+  "Mensagem em ": "Message in ",
+  "A sala ": "The room ",
+  " requer senha.": " requires password.",
+  "Deletar sala ": "Delete room ",
+  "Evento": "Event",
+
+  // ---- Investidores tab additional ----
+  "Valor Investido": "Invested Value",
+  "Data Entrada": "Entry Date",
+  "Status Inv.": "Inv. Status",
+  "Novo Investidor": "New Investor",
+  "Editar Investidor": "Edit Investor",
+  "Valor investido": "Invested value",
+  "Data de entrada": "Entry date",
+  "Status": "Status",
+  "Ativo": "Active",
+  "Inativo": "Inactive",
+  "Investidor cadastrado!": "Investor registered!",
+  "Investidor atualizado!": "Investor updated!",
+  "Investidor excluído!": "Investor deleted!",
+  "Preencha nome e valor investido.": "Fill name and invested value.",
+
+  // ---- Emprestimos tab additional ----
+  "Empréstimo registrado!": "Loan registered!",
+  "Pagamento registrado!": "Payment registered!",
+  "Empréstimo excluído!": "Loan deleted!",
+  "Excluir empréstimo?": "Delete loan?",
+
+  // ---- Sorteios tab additional ----
+  "Sorteio finalizado!": "Raffle finalized!",
+  "Participar do Sorteio": "Join Raffle",
+  "Participação registrada!": "Participation registered!",
+  "Já participa deste sorteio.": "Already participating in this raffle.",
+
+  // ---- Config Trocas additional ----
+  "Configuração salva!": "Configuration saved!",
+
+  // ---- Additional common items (lowercase variants for case-insensitive) ----
+  "aço": "Steel",
+  "gelo": "Ice",
+  "cimento": "Cement",
+  "moeda": "Currency",
+  "moedas": "Currencies",
+  "munição": "Ammo",
+  "carne": "Meat",
+  "peixe": "Fish",
+  "sal": "Salt",
+  "açúcar": "Sugar",
+  "pão": "Bread",
+  "madeira": "Wood",
+  "metal": "Metal",
+  "ferro": "Iron",
+  "cobre": "Copper",
+  "ouro": "Gold",
+  "diamante": "Diamond",
+  "couro": "Leather",
+  "tecido": "Fabric",
+  "linha": "Thread",
+  "martelo": "Hammer",
+  "machado": "Axe",
+  "espada": "Sword",
+  "arma": "Weapon",
+  "armadura": "Armor",
+  "roupa": "Clothing",
+  "botas": "Boots",
+  "capacete": "Helmet",
+  "mochila": "Backpack",
+  "remédio": "Medicine",
+  "antibiótico": "Antibiotic",
+  "bomba": "Bomb",
+  "isqueiro": "Lighter",
+  "lanterna": "Lantern",
+  "bateria": "Battery",
+  "gerador": "Generator",
+  "rádio": "Radio",
+  "comida": "Food",
+  "bebida": "Drink",
+  "água": "Water",
+  "combustível": "Fuel",
+  "gasolina": "Gasoline",
+  "óleo": "Oil",
 };
 
 /* ============================================================
@@ -1138,7 +1031,6 @@ const ES: Record<string, string> = {
   "Dar Lance": "Ofertar",
   "Finalizar Entrega": "Finalizar Entrega",
   "Histórico de Ganhadores": "Historial de Ganadores",
-  "Sorteios": "Sorteos",
   "Novo Sorteio": "Nuevo Sorteo",
   "Nenhum.": "Ninguno.",
   "Participar": "Participar", "Sortear": "Sortear",
@@ -1373,6 +1265,30 @@ let apiDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 const apiCache = new Map<string, string>();
 let isTranslating = false;
 
+/** Pre-built case-insensitive EN map (lazy) */
+let _enLower: Record<string, string> | undefined;
+function getEnLower(): Record<string, string> {
+  if (!_enLower) {
+    _enLower = {};
+    for (const [k, v] of Object.entries(EN)) {
+      const lk = k.toLowerCase();
+      if (!_enLower[lk]) _enLower[lk] = v;
+    }
+  }
+  return _enLower;
+}
+
+/** Check if text looks like a player name (should never be translated) */
+function looksLikeName(text: string): boolean {
+  const t = text.trim();
+  if (t.length < 2 || t.length > 30) return false;
+  // Contains underscore (e.g. SINGLE_PLAYER)
+  if (/_/.test(t)) return true;
+  // All uppercase 3+ chars (e.g. ADMIN)
+  if (/^[A-Z0-9]{3,}$/.test(t)) return true;
+  return false;
+}
+
 /** Strip diacritics */
 function stripAccents(str: string): string {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -1387,21 +1303,45 @@ function hasNoTranslateAncestor(node: Node): boolean {
   return false;
 }
 
+/** Collect all text content that is protected by data-no-translate / translate=no */
+function collectProtectedTexts(): Set<string> {
+  const set = new Set<string>();
+  document.querySelectorAll('[data-no-translate], [translate="no"]').forEach(el => {
+    // Collect direct text children
+    Array.from(el.childNodes).forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const t = child.textContent?.trim();
+        if (t && t.length > 0) set.add(t);
+      }
+    });
+  });
+  return set;
+}
+
 function lookup(text: string, langCode: string, dictionary: Record<string, string> | undefined): string | undefined {
   const norm = stripAccents(text);
+  const lower = text.toLowerCase();
+  const el = getEnLower();
   if (langCode === "en") {
-    return EN[text] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+    return EN[text] || EN[norm] || el[lower] || apiCache.get(text) || apiCache.get(norm);
   }
-  return dictionary?.[text] || EN[text] || dictionary?.[norm] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
+  return dictionary?.[text] || EN[text] || el[lower] || dictionary?.[norm] || EN[norm] || apiCache.get(text) || apiCache.get(norm);
 }
 
 function translatePage(langCode: string) {
   if (isTranslating) return;
   isTranslating = true;
+
+  // Disconnect observer during translation to prevent infinite loop
+  if (observer) observer.disconnect();
+
   try {
     currentLang = langCode;
     const dictionary = dictionaries[langCode];
     document.documentElement.lang = langCode === "pt" ? "pt-BR" : langCode;
+
+    // Collect all protected texts from data-no-translate / translate=no elements
+    const protectedTexts = collectProtectedTexts();
 
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -1426,6 +1366,11 @@ function translatePage(langCode: string) {
       const trimmed = source.trim();
       if (!trimmed) continue;
 
+      // Skip protected texts (double safety for player names)
+      if (protectedTexts.has(trimmed)) continue;
+      // Skip texts that look like player names
+      if (looksLikeName(trimmed)) continue;
+
       if (langCode === "pt") {
         if (textNode.nodeValue !== source) textNode.nodeValue = source;
         continue;
@@ -1435,7 +1380,7 @@ function translatePage(langCode: string) {
       if (translated) {
         const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
         if (textNode.nodeValue !== nextValue) textNode.nodeValue = nextValue;
-      } else if (trimmed.length > 2 && !/^\d+[\,\d]*$/.test(trimmed) && !/^[#\-+°×→←↑↓]*$/.test(trimmed)) {
+      } else if (trimmed.length > 2 && !/^\d+[\,\d]*$/.test(trimmed) && !/^[#\-+°×→←↑↓]*$/.test(trimmed) && !looksLikeName(trimmed)) {
         untranslated.push(trimmed);
       }
     }
@@ -1445,6 +1390,7 @@ function translatePage(langCode: string) {
         const htmlEl = el as HTMLInputElement;
         const ph = htmlEl.placeholder;
         if (!ph) return;
+        if (protectedTexts.has(ph)) return;
         const tr = lookup(ph, langCode, dictionary);
         if (tr) htmlEl.placeholder = tr;
       });
@@ -1452,16 +1398,23 @@ function translatePage(langCode: string) {
         const htmlEl = el as HTMLElement;
         const t = htmlEl.getAttribute("title");
         if (!t) return;
+        if (protectedTexts.has(t)) return;
         const tr = lookup(t, langCode, dictionary);
         if (tr) htmlEl.setAttribute("title", tr);
       });
     }
 
-    if (untranslated.length > 0 && langCode !== "pt") {
-      queueApiTranslation(untranslated, langCode);
+    // Filter out protected texts and name-like texts from API queue
+    const filtered = untranslated.filter(t => !protectedTexts.has(t) && !looksLikeName(t));
+    if (filtered.length > 0 && langCode !== "pt") {
+      queueApiTranslation(filtered, langCode);
     }
   } finally {
     isTranslating = false;
+    // Reconnect observer after translation
+    if (observer && currentLang !== "pt") {
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
   }
 }
 
@@ -1469,7 +1422,7 @@ function queueApiTranslation(texts: string[], langCode: string) {
   if (apiDebounceTimer) clearTimeout(apiDebounceTimer);
   apiDebounceTimer = setTimeout(async () => {
     const unique = [...new Set(texts)].slice(0, 30);
-    const toFetch = unique.filter((t) => !apiCache.has(t) && !apiCache.has(stripAccents(t)));
+    const toFetch = unique.filter((t) => !apiCache.has(t) && !apiCache.has(stripAccents(t)) && !looksLikeName(t));
     if (toFetch.length === 0) return;
     try {
       const langMap: Record<string, string> = { en: "en", es: "es", fr: "fr", de: "de", ru: "ru" };

@@ -144,7 +144,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
           </div>
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/5 p-3 mb-3">
             <p className="text-xs text-muted-foreground mb-1">Ganhador</p>
-            <p className="text-base font-bold text-yellow-400 flex items-center gap-2" data-no-translate translate="no"><Trophy className="w-4 h-4" /> {entry.ganhador || "Nenhum"}</p>
+            <p className="text-base font-bold text-yellow-400 flex items-center gap-2"><Trophy className="w-4 h-4" /> {entry.ganhador ? <span data-no-translate translate="no">{entry.ganhador}</span> : "Nenhum"}</p>
           </div>
           {participantes.length > 0 && (
             <div>

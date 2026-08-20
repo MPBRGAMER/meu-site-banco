@@ -66,7 +66,7 @@ function HistoricoLotericaEntry({ entry, index }: {
           </div>
           <div className="text-right">
             <p className="text-xs text-muted-foreground">Ganhador</p>
-            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`} data-no-translate translate="no">{entry.ganhador || "Acumulou"}</p>
+            <p className={`text-sm font-bold ${acerto ? "text-green-400" : "text-red-400"}`}>{entry.ganhador ? <span data-no-translate translate="no">{entry.ganhador}</span> : <span>Acumulou</span>}</p>
           </div>
           {expanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
         </div>
