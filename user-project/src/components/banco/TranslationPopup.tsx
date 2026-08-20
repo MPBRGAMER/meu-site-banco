@@ -1199,7 +1199,12 @@ function translatePage(langCode: string) {
       continue;
     }
 
-    const translated = dictionary?.[trimmed] || (langCode !== "en" ? EN[trimmed] : null) || apiCache.get(trimmed);
+    let translated: string | undefined;
+    if (langCode === "en") {
+      translated = EN[trimmed] || apiCache.get(trimmed);
+    } else {
+      translated = dictionary?.[trimmed] || apiCache.get(trimmed);
+    }
     if (translated) {
       const nextValue = source === trimmed ? translated : source.replace(trimmed, translated);
       if (textNode.nodeValue !== nextValue) textNode.nodeValue = nextValue;
@@ -1214,14 +1219,18 @@ function translatePage(langCode: string) {
       const htmlEl = el as HTMLInputElement;
       const ph = htmlEl.placeholder;
       if (!ph) return;
-      const tr = dictionary?.[ph] || (langCode !== "en" ? EN[ph] : null) || apiCache.get(ph);
+      const tr = langCode === "en"
+        ? (EN[ph] || apiCache.get(ph))
+        : (dictionary?.[ph] || apiCache.get(ph));
       if (tr) htmlEl.placeholder = tr;
     });
     document.querySelectorAll("[title]").forEach((el) => {
       const htmlEl = el as HTMLElement;
       const t = htmlEl.getAttribute("title");
       if (!t) return;
-      const tr = dictionary?.[t] || (langCode !== "en" ? EN[t] : null) || apiCache.get(t);
+      const tr = langCode === "en"
+        ? (EN[t] || apiCache.get(t))
+        : (dictionary?.[t] || apiCache.get(t));
       if (tr) htmlEl.setAttribute("title", tr);
     });
   }
