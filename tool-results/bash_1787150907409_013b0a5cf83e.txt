@@ -1,0 +1,426 @@
+Backup caixa entries: 245
+Backup caixa IDs: 245
+
+Current DB caixa entries: 249
+
+Extra entries (NOT in backup): 249
+  ID:27814abb-4ba5-41ed-bf38-250b3d0351ce | entrada | Massa                          | qty:100000 | origem:doacao                                   | 2026-08-08 00:32:00.452000
+  ID:db74eabe-ee5b-4ea0-8359-bbdc8a48b53c | entrada | Bigorna de aço                 | qty:    34 | origem:doacao                                   | 2026-08-08 00:35:31.693000
+  ID:f81ef0bd-025c-4444-99c7-7494e3479b47 | entrada | Panela Enferrujada             | qty:   500 | origem:doacao                                   | 2026-08-08 00:38:04.505000
+  ID:a56f6d87-52c5-4960-8eb4-f615cc8b5539 | entrada | Agulha Artesanal               | qty:     1 | origem:doacao                                   | 2026-08-08 00:39:46.907000
+  ID:10c83cee-8b0d-4cbf-896b-b5d3f3d6b6e4 | entrada | Agulha de Aço                  | qty:     1 | origem:doacao                                   | 2026-08-08 00:40:52.368000
+  ID:5d3f1c3b-a043-4605-ad03-a19c0a5bb5fa | entrada | Fole                           | qty:   100 | origem:doacao                                   | 2026-08-08 00:41:43.932000
+  ID:13a2dc08-77a3-4f9c-8eeb-0007009fd96f | entrada | Agulha Enferrujada             | qty:     1 | origem:doacao                                   | 2026-08-08 00:42:45.317000
+  ID:b178a0b3-e124-406b-b613-b26de865ea84 | entrada | Fundidor                       | qty:     9 | origem:doacao                                   | 2026-08-08 00:43:22.299000
+  ID:b33c6d01-227b-4c83-abb0-72a630bcb4f7 | entrada | Aço                            | qty: 30000 | origem:doacao                                   | 2026-08-08 00:44:04.923000
+  ID:1df48460-f1d3-4b4a-880b-10ce78fde3a9 | entrada | Cimento                        | qty: 50000 | origem:doacao                                   | 2026-08-08 00:44:52.807000
+  ID:3253c304-69d9-4adb-aac4-64c222f5cf39 | entrada | Urso Mau                       | qty:     2 | origem:doacao                                   | 2026-08-08 00:45:34.294000
+  ID:98f3dd4a-7b8e-4ff9-ae28-8274ba90a78c | entrada | Solução de Curtimento          | qty:    10 | origem:doacao                                   | 2026-08-08 00:46:49.777000
+  ID:c06cde66-091c-4134-8a33-3cb18fd0aa89 | entrada | Uísque                         | qty:   462 | origem:doacao                                   | 2026-08-08 00:49:11.740000
+  ID:9cd08c06-36d3-468e-bbb6-3cc770be7c28 | entrada | Cobre                          | qty:  2061 | origem:doacao                                   | 2026-08-08 00:49:59.169000
+  ID:3c6d9cfb-b92d-4e07-ba04-9b45ef0ec488 | entrada | Ração Expedicionária           | qty:   100 | origem:doacao                                   | 2026-08-08 00:50:55.827000
+  ID:89890566-d83c-4952-995b-7e5daec87888 | entrada | Carvão Preto                   | qty:  2000 | origem:doacao                                   | 2026-08-08 00:52:08.221000
+  ID:3ec43d84-0781-4888-9f0f-bcc4e8e7ce43 | entrada | Uísque XL                      | qty:   100 | origem:doacao                                   | 2026-08-08 00:53:13.705000
+  ID:0e1835f0-7358-4f1d-86ae-c780754de05a | entrada | Autopeças                      | qty:   350 | origem:doacao                                   | 2026-08-08 00:53:58.391000
+  ID:0d155cc5-ac03-4389-9595-6ff91f2efa28 | entrada | Cobre                          | qty:  2000 | origem:doacao                                   | 2026-08-08 00:54:49.124000
+  ID:5b76fe5a-ea95-4edb-aab1-8ee5212d40d4 | entrada | Lidiacida-34                   | qty:  1000 | origem:doacao                                   | 2026-08-08 00:56:19.910000
+  ID:189f836f-c6e5-45d8-a242-66783f085b52 | entrada | Linfa                          | qty:  1000 | origem:doacao                                   | 2026-08-08 00:57:16.272000
+  ID:0086dd74-f336-4a09-809e-481d93a910bb | entrada | Veneno                         | qty:  1012 | origem:doacao                                   | 2026-08-08 00:57:52.153000
+  ID:ed6eadad-12d5-4c39-9689-67e8a2f1c7e3 | entrada | Sucatear                       | qty:  5442 | origem:doacao                                   | 2026-08-08 00:58:26.441000
+  ID:a0f00f62-a17a-464c-947d-b74667e42777 | entrada | Pólvora                        | qty:  2000 | origem:doacao                                   | 2026-08-08 00:59:03.644000
+  ID:ed16bd19-ae65-44a8-b13d-8e3c8d3792dd | entrada | Carvão                         | qty:  3000 | origem:doacao                                   | 2026-08-08 00:59:38.103000
+  ID:0d88f2c4-77d8-4ebf-bb48-e3552aa99e4f | entrada | Salitre                        | qty: 10000 | origem:doacao                                   | 2026-08-08 01:00:19.053000
+  ID:2ce5660a-0757-492a-ad84-0f412babb906 | entrada | Fole                           | qty:     1 | origem:doacao                                   | 2026-08-08 01:01:47.436000
+  ID:6daa2581-acce-48e3-acb1-cf7782491923 | entrada | Barril                         | qty:     1 | origem:doacao                                   | 2026-08-08 01:02:12.473000
+  ID:fe7056a6-b7a1-4f80-86e8-cc3f15bc8b1e | entrada | Fundidor                       | qty:     1 | origem:doacao                                   | 2026-08-08 01:02:42.626000
+  ID:2c047820-3009-4734-a9bf-d667151b4f73 | entrada | Sucata de Cobre                | qty: 80000 | origem:doacao                                   | 2026-08-08 01:03:31.154000
+  ID:277ef062-8e99-49fc-94d6-8a62d72dfe2b | entrada | Barril                         | qty:     1 | origem:doacao                                   | 2026-08-08 01:04:42.965000
+  ID:5b21beeb-221e-4c93-ab00-dc3325184b88 | entrada | Vinho Caseiro V                | qty:  1000 | origem:doacao                                   | 2026-08-08 01:05:29.090000
+  ID:1f265354-7efe-4f7a-a802-f9a75c45fb13 | entrada | Água Limpa                     | qty: 30000 | origem:doacao                                   | 2026-08-08 01:06:39.075000
+  ID:68099422-ac43-420c-a8ae-0fd8e35ac0d3 | entrada | Torradinha                     | qty:  1000 | origem:doacao                                   | 2026-08-08 01:07:06.257000
+  ID:175417de-1547-490c-8d5b-758b1e7e2315 | entrada | Açúcar                         | qty: 10000 | origem:doacao                                   | 2026-08-08 01:07:44.557000
+  ID:7fab922b-951c-4052-a83f-d8f4b09e566f | entrada | Agulha Artesanal               | qty:     2 | origem:doacao                                   | 2026-08-08 01:08:44.182000
+  ID:a15958a5-258a-4fb3-a311-fe8fdcd65f78 | entrada | Panela de Ferro                | qty:     1 | origem:doacao                                   | 2026-08-08 01:09:15.296000
+  ID:e7030edd-8995-41e6-98e2-a64e3432320f | entrada | Reator Químico                 | qty:     1 | origem:doacao                                   | 2026-08-08 01:09:51.405000
+  ID:1a58bd4e-b26e-4385-90f8-dc7e26325893 | entrada | Fole                           | qty:     1 | origem:doacao                                   | 2026-08-08 01:10:19.323000
+  ID:f597941f-b37e-41bf-9d35-7e8240ca3ab5 | entrada | Bigorna de Aço                 | qty:    51 | origem:doacao                                   | 2026-08-08 01:11:10.296000
+  ID:a1b66572-3c6e-4fa9-b4ca-17425202cb17 | entrada | Fundidor                       | qty:     2 | origem:doacao                                   | 2026-08-08 01:13:30.528000
+  ID:9cee6ff2-4210-4b25-aea1-43000d5bbfdb | entrada | Fogareiro                      | qty:     1 | origem:doacao                                   | 2026-08-08 01:14:44.889000
+  ID:f975f0b7-3bb0-46b0-aaed-bcc9ad055a60 | entrada | Fogareiro Artesanal            | qty:     1 | origem:doacao                                   | 2026-08-08 01:15:18.760000
+  ID:091b7db4-484d-4c94-99e9-2bf7f985927d | entrada | Fogareiro Artesanal (sem combustível) | qty:     1 | origem:doacao                                   | 2026-08-08 01:16:25.134000
+  ID:6f236099-a526-49b9-8e8e-9abae541f37b | entrada | Maçarico                       | qty:     1 | origem:doacao                                   | 2026-08-08 01:17:04.200000
+  ID:8fb6315f-2f0b-4f11-bde3-5363bf748ec5 | entrada | Banha                          | qty:  1000 | origem:doacao                                   | 2026-08-08 01:17:32.374000
+  ID:4c241b5c-ff8b-47cb-9848-1fc5b1519ea1 | entrada | Sal                            | qty: 29933 | origem:doacao                                   | 2026-08-08 01:18:09.532000
+  ID:b45ccacc-bbb5-4af9-ad6a-c96009a0f23c | entrada | Isqueiro                       | qty:   100 | origem:doacao                                   | 2026-08-08 01:18:42.589000
+  ID:e7e73390-6378-4b1c-bdc0-94d94c929070 | entrada | Cimento                        | qty:  5000 | origem:doacao                                   | 2026-08-08 01:20:22.757000
+  ID:33ad367c-5563-4623-aad7-164ed553548f | entrada | Moedas Velhas                  | qty: 10000 | origem:doacao                                   | 2026-08-08 01:21:40.140000
+  ID:16b141a5-7756-425f-ba98-2ac2ccfdbe55 | entrada | Tronco                         | qty: 10000 | origem:doacao                                   | 2026-08-08 01:22:55.716000
+  ID:5d1e44d1-85d3-404e-b93e-f294a2ff9593 | entrada | Carvão Infernal                | qty:  1368 | origem:doacao                                   | 2026-08-08 01:23:38.615000
+  ID:5dcbf416-767f-4f3e-963e-9c43bfb4ef4e | entrada | Enxofre                        | qty: 10000 | origem:doacao                                   | 2026-08-08 01:27:25.513000
+  ID:6248767d-0929-47bb-8934-24ab1170a262 | entrada | Sucata de Cobre                | qty: 10000 | origem:doacao                                   | 2026-08-08 01:27:58.931000
+  ID:725f2f09-ac57-4059-8966-18ec4a44f733 | entrada | Sucata de Alumínio             | qty: 10000 | origem:doacao                                   | 2026-08-08 01:28:43.742000
+  ID:4d25bfdb-c5af-4418-b1b2-43bbb454b411 | entrada | Aço                            | qty: 30000 | origem:doacao                                   | 2026-08-08 01:29:05.403000
+  ID:97bc2873-73b1-4705-ae74-41ca6e8327d0 | entrada | Mola                           | qty:  1000 | origem:doacao                                   | 2026-08-08 01:29:36.953000
+  ID:3646d705-e1d5-4d12-9704-44edceaf935b | entrada | Primer                         | qty: 10000 | origem:doacao                                   | 2026-08-08 01:30:11.436000
+  ID:657b6948-1046-4a75-a59f-11fd3c1ef025 | entrada | Solução de Curtimento          | qty:     1 | origem:doacao                                   | 2026-08-08 01:31:19.947000
+  ID:38d35a9c-4b6e-422b-ad8a-7034969877fc | entrada | Quitina                        | qty: 50000 | origem:doacao                                   | 2026-08-08 01:31:47.546000
+  ID:f115b39f-57ab-43fc-b9cd-2776cdf1cbaf | entrada | Sabão em Pó                    | qty:  1000 | origem:doacao                                   | 2026-08-08 01:32:24.413000
+  ID:c02b72af-a49d-4c32-a887-7de01c3ea6fc | entrada | Óleo de Máquina                | qty: 10000 | origem:doacao                                   | 2026-08-08 01:34:23.938000
+  ID:3ded6072-37f8-4aa4-b750-c60122430a39 | entrada | Urso Mau                       | qty:     2 | origem:doacao                                   | 2026-08-08 01:34:57.837000
+  ID:9b0305f6-5f48-4a5b-8a68-34f1d8007d90 | entrada | Esqueleto Humano               | qty:   100 | origem:doacao                                   | 2026-08-08 01:36:01.410000
+  ID:021bb3b9-f7a0-40b0-aab4-f5c7dddc83c3 | saida   | Bigorna de aço                 | qty:    34 | origem:estorno-doacao:cmsjn70o90002s601sacynl95 | 2026-08-08 02:39:18.598000
+  ID:470b2792-a433-47d1-8e53-73c8fb2ea6ef | entrada | Bigorna de Aço                 | qty:    34 | origem:doacao:cmsjrmsks0003s601bbdrzvw7         | 2026-08-08 02:39:46.500000
+  ID:960388ae-5e78-427d-86e1-55b0a0261006 | entrada | Munição de Pistola             | qty: 10000 | origem:doacao                                   | 2026-08-08 02:55:56.788000
+  ID:2b4f77bc-a0df-45d9-b838-45bce2b1dc79 | entrada | Munição de Fuzil de Assalto    | qty: 10000 | origem:doacao                                   | 2026-08-08 03:04:11.615000
+  ID:0cd50317-5cfa-442c-a0f0-675f8b4d32d2 | entrada | Kompot                         | qty:   100 | origem:doacao                                   | 2026-08-08 03:04:46.553000
+  ID:a8d099dd-b203-4cac-a25c-adb6cec47fef | entrada | Refrigerante                   | qty:   100 | origem:doacao                                   | 2026-08-08 03:05:21.927000
+  ID:a05263ec-f02c-4603-a74f-1e1950d36301 | entrada | Poção Energizante              | qty:   100 | origem:doacao                                   | 2026-08-08 03:06:15.658000
+  ID:4f9a7fdd-79bf-4bc9-a87e-72af94820088 | entrada | Poção Desintoxicante           | qty:   100 | origem:doacao                                   | 2026-08-08 03:07:06.999000
+  ID:d956e856-1467-45f2-97c4-5193f5010671 | entrada | Geleia                         | qty:   100 | origem:doacao                                   | 2026-08-08 03:07:46.619000
+  ID:93875f0e-babf-4a14-882a-36bea0f2ded2 | entrada | Canja Enlatada                 | qty:   100 | origem:doacao                                   | 2026-08-08 03:08:18.927000
+  ID:7f448d47-3757-484c-ba7c-7a0fcc8dba36 | entrada | Carne Enlatada                 | qty:   100 | origem:doacao                                   | 2026-08-08 03:09:05.146000
+  ID:707201e7-84f4-45e0-a090-7c9dc44bf584 | entrada | Barra de Chocolate             | qty:   100 | origem:doacao                                   | 2026-08-08 03:10:48.245000
+  ID:aaabfbed-b8b2-4810-9a73-426d51aca812 | entrada | Álcool                         | qty: 10000 | origem:doacao                                   | 2026-08-08 03:12:00.291000
+  ID:c8c5761f-5630-4378-aea1-63a818ab00c8 | entrada | Faca de Aço                    | qty:    10 | origem:doacao                                   | 2026-08-08 03:12:37.371000
+  ID:6229d348-7196-4d06-a34a-5ecab8bbd7ba | entrada | Machado de Aço                 | qty:    10 | origem:doacao                                   | 2026-08-08 03:13:14.518000
+  ID:f93a8a3f-d2df-41e7-8b73-c5a956671a94 | entrada | Pá de Aço                      | qty:    10 | origem:doacao                                   | 2026-08-08 03:13:44.962000
+  ID:cc25452c-01bb-4eed-87fa-fc60057e83ba | entrada | Pé de Cabra de Aço             | qty:    10 | origem:doacao                                   | 2026-08-08 03:14:21.566000
+  ID:d389215a-3087-4da8-8d39-e05adfb456a4 | entrada | Ferramentas de Aço             | qty:    10 | origem:doacao                                   | 2026-08-08 03:15:01.603000
+  ID:dbd2a70b-428b-48f5-acc6-7085bf858385 | entrada | Serrinha                       | qty:    10 | origem:doacao                                   | 2026-08-08 03:15:27.958000
+  ID:74816486-37de-4952-a521-4fe58a59bb2c | entrada | Sal                            | qty:  7300 | origem:doacao                                   | 2026-08-08 03:16:01.387000
+  ID:dd85caca-c1b1-4f24-83d2-75bcb11ccf9f | entrada | Salitre                        | qty:  1000 | origem:doacao                                   | 2026-08-08 03:16:33.639000
+  ID:5d51abb7-9b95-4580-81a9-3b3c028c7d1e | entrada | Enxofre                        | qty: 58000 | origem:doacao                                   | 2026-08-08 03:17:12.444000
+  ID:3924f47c-e4a0-4134-91b2-a4d90d093627 | entrada | Pólvora                        | qty:  1000 | origem:doacao                                   | 2026-08-08 03:17:55.728000
+  ID:89959f73-7fcb-4256-b3b8-1a5febd1ab2f | entrada | Sucatear                       | qty:  1000 | origem:doacao                                   | 2026-08-08 03:18:20.176000
+  ID:4af9892b-d2f6-4d09-86a2-9710e7d9fc4d | entrada | Sucata de Cobre                | qty:  1000 | origem:doacao                                   | 2026-08-08 03:19:03.327000
+  ID:4b33474b-d136-402b-90bf-7d88c6366c21 | entrada | Sucata de Alumínio             | qty:  1000 | origem:doacao                                   | 2026-08-08 03:19:42.541000
+  ID:44bbb55f-1c0f-4fe6-a209-91d78ff181de | entrada | Chumbo                         | qty: 10000 | origem:doacao                                   | 2026-08-08 03:20:28.427000
+  ID:ceea7c40-3626-4eee-81c6-570937a31df2 | entrada | Alumínio                       | qty:   100 | origem:doacao                                   | 2026-08-08 03:22:30.427000
+  ID:5f3086ba-36e8-4dd0-856b-ed0540488d67 | entrada | Ferro                          | qty:   100 | origem:doacao                                   | 2026-08-08 03:22:53.944000
+  ID:eb4a5ee3-311e-4ab7-a0b5-e5fc0ef3098a | entrada | Cobre                          | qty:   100 | origem:doacao                                   | 2026-08-08 03:23:26.567000
+  ID:c1de95e1-fe90-46ed-9059-01ef5fbf6a1a | entrada | Aço                            | qty:   100 | origem:doacao                                   | 2026-08-08 03:23:55.191000
+  ID:84d44bf0-8511-4de5-9e10-ee5c0817d873 | entrada | Cano de Ferro                  | qty:  3427 | origem:doacao                                   | 2026-08-08 03:24:47.506000
+  ID:07556121-5d04-43b5-96b8-738b57b3a847 | entrada | Prego                          | qty: 11000 | origem:doacao                                   | 2026-08-08 03:25:28.653000
+  ID:6436b939-aeab-4e9e-ab45-88fd99bfdd00 | entrada | Parafuso                       | qty:  1000 | origem:doacao                                   | 2026-08-08 03:26:05.269000
+  ID:f9fe225b-fa24-457f-8c91-677d678b9a75 | entrada | Mola                           | qty:  1000 | origem:doacao                                   | 2026-08-08 03:26:30.483000
+  ID:f547ebee-e87f-48df-b0fb-04e8d7a1bdf7 | entrada | Couro Curtido                  | qty:   100 | origem:doacao                                   | 2026-08-08 03:27:13.569000
+  ID:184c14cb-7ef8-47a0-a2c3-be9049882c40 | entrada | Couro Grosso                   | qty:   100 | origem:doacao                                   | 2026-08-08 03:27:47.499000
+  ID:5b59d607-5517-4903-bcf6-0653b868f87b | entrada | Couro de Qualidade             | qty:   100 | origem:doacao                                   | 2026-08-08 03:28:27.723000
+  ID:b004bb38-aae1-4efd-9db0-b2ed498f4629 | entrada | Cabo Eletrico                  | qty:   100 | origem:doacao                                   | 2026-08-08 03:29:10.601000
+  ID:c5079d6b-c8b1-4249-8897-f05fd8fe5aa6 | entrada | Eletrodos                      | qty:  2000 | origem:doacao                                   | 2026-08-08 03:30:03.173000
+  ID:b85d0143-5370-4694-80fc-3d6cc681451a | entrada | Óleo de Máquina                | qty: 10000 | origem:doacao                                   | 2026-08-08 03:30:47.781000
+  ID:4e84c078-dfc7-4f75-9f8d-eb3749dcd3d0 | entrada | Pneus                          | qty:  2000 | origem:doacao                                   | 2026-08-08 03:31:25.568000
+  ID:55d4ca55-5837-4603-99b3-cf12d7cbe0a2 | entrada | Cartucho de Escopeta           | qty: 10000 | origem:doacao                                   | 2026-08-08 03:32:53.458000
+  ID:a2871aa6-385a-4003-80ac-5ebe71adaf9b | entrada | Vinho Tinto                    | qty:  1000 | origem:doacao                                   | 2026-08-08 03:33:29.869000
+  ID:b6ecf0c4-00b0-4aa5-93d7-7d12bbd264e6 | entrada | Bengala Doce                   | qty:  1000 | origem:doacao                                   | 2026-08-08 03:34:02.677000
+  ID:25f364ce-9d07-4648-b225-cbcd0c7a8e6d | entrada | Chocolate                      | qty:  2000 | origem:doacao                                   | 2026-08-08 03:34:36.584000
+  ID:8ee3c5b1-c3fc-4db0-ba65-1e7fce5061d4 | entrada | Ovo de Páscoa                  | qty:     4 | origem:doacao                                   | 2026-08-08 03:35:42.468000
+  ID:d9e8fec9-e9b3-41a3-9291-863aa12756d6 | entrada | Agulha de Aço                  | qty:     2 | origem:doacao:cmsjtuzx1002ys6017o00vjyi         | 2026-08-08 03:42:08.140000
+  ID:e6de8e70-9acc-4bb5-a8ed-6daaa05b8bfc | entrada | Festim                         | qty:  1300 | origem:doacao:cmsjtvv200030s601sjz9oze1         | 2026-08-08 03:42:48.497000
+  ID:b93a75b3-a906-457f-b332-f24afd492d99 | entrada | Cartucho em Branco             | qty:  1000 | origem:doacao:cmsjtwqw70032s601d9n2yo1l         | 2026-08-08 03:43:29.749000
+  ID:ed175c8e-b5be-4e5a-8280-e35edbfb97fc | entrada | Munição de Treinamento         | qty:  1000 | origem:doacao:cmsjty3ij0034s601b6hxhzn5         | 2026-08-08 03:44:32.774000
+  ID:bb02fe66-4c59-4005-8839-aeff756a4c09 | entrada | Bateria de Carro Quebrada      | qty:   376 | origem:doacao:cmsjtz3mn0036s6011t6kz7tk         | 2026-08-08 03:45:19.581000
+  ID:5105cd01-610c-4da6-8372-a57039fc73cc | entrada | Tijolo                         | qty: 10000 | origem:doacao:cmsju01qe0038s601p34kxq5k         | 2026-08-08 03:46:03.777000
+  ID:a0a1f699-957f-416a-b710-24f29fcaa943 | entrada | Tijolo Refratário              | qty: 10000 | origem:doacao:cmsju13ds003as6014ipebl2a         | 2026-08-08 03:46:52.556000
+  ID:78b51be4-5746-4139-8e3c-90e1c66e2538 | entrada | Moedas Velhas                  | qty: 10000 | origem:doacao:cmsju1yto003cs601rusqtxpn         | 2026-08-08 03:47:33.341000
+  ID:76fa05e2-d17c-4bff-9bcb-884aa30df77b | entrada | Ouro                           | qty:    10 | origem:doacao:cmsju30zo003es60121kfyo2o         | 2026-08-08 03:48:22.765000
+  ID:8d545fb7-3952-4a5e-9f85-8b938b7d6a34 | entrada | Carvão Infernal                | qty:  1224 | origem:doacao:cmsju3vlx003gs601dyxx6dqf         | 2026-08-08 03:49:02.468000
+  ID:f384e9f7-a996-42d2-806b-723a49e182ef | entrada | Parafuso                       | qty: 10000 | origem:doacao:cmsju4qcy003is60143uijyfy         | 2026-08-08 03:49:42.321000
+  ID:a5b3157e-b817-457c-9f48-aea32ebab96e | entrada | Primer                         | qty:  1189 | origem:doacao:cmsju64mm003ks601j9zg55u5         | 2026-08-08 03:50:47.460000
+  ID:0a2023d7-3a92-4075-81d6-7827b1c21c89 | entrada | Trapos                         | qty: 10000 | origem:doacao:cmsju74nv003ms6010c5sgtrd         | 2026-08-08 03:51:34.163000
+  ID:a0120799-df06-4bd6-8c5a-dcafc2a24e18 | entrada | Cabo Eletrico                  | qty:  1000 | origem:doacao:cmsju87h5003os601ul3o36s0         | 2026-08-08 03:52:24.777000
+  ID:2bf16f1c-b974-402a-b89e-4afe72e52a5f | entrada | Peças Elétricas                | qty:   100 | origem:doacao:cmsju9qdf003qs6018d3fl85g         | 2026-08-08 03:53:35.928000
+  ID:b85d8964-8277-469c-8d11-906546afde61 | entrada | Sementes (Tangerina)           | qty: 10000 | origem:doacao:cmsjub6rk003ss6017t6hapr3         | 2026-08-08 03:54:43.827000
+  ID:3959e796-7c7c-443e-8216-57e5c7c3bd8d | entrada | Moinho Manual                  | qty:     1 | origem:doacao:cmsjuc1t7003us601jwmolzkx         | 2026-08-08 03:55:24.044000
+  ID:ac48f99e-f0c0-4e25-b898-1a4c2d4efbdc | entrada | Colher de Gelo                 | qty:     1 | origem:doacao:cmsjucx8a003ws601cbs2vgye         | 2026-08-08 03:56:04.785000
+  ID:6cf4438b-b514-4ab1-a428-b7f5f801fed3 | entrada | Cartucho de Escopeta           | qty: 10000 | origem:doacao:cmsjue0au003ys60123ywl1er         | 2026-08-08 03:56:55.502000
+  ID:c23bf0dc-6040-4360-bd8f-28796d003d6b | entrada | Analgésico                     | qty:  1000 | origem:doacao:cmsjueww30040s601rzwkh8p3         | 2026-08-08 03:57:37.646000
+  ID:59e3975f-6201-4cc6-8b88-479130c27bd7 | entrada | Projétil de Pistola            | qty:     2 | origem:doacao:cmsjufymz0042s6013yqce4a3         | 2026-08-08 03:58:26.578000
+  ID:5610f26d-eeaa-47ba-8775-f6478849cc86 | entrada | Projétil de Escopeta           | qty:    18 | origem:doacao:cmsjuh0zm0044s601txrhfirv         | 2026-08-08 03:59:16.263000
+  ID:2c39e014-6712-4620-b402-1c5d8502d0e4 | entrada | Projétil de Fuzil de Assalto   | qty:  4758 | origem:doacao:cmsjuiqhd0046s601du56zqeo         | 2026-08-08 04:00:36.638000
+  ID:43b163e2-fdd3-4e79-ab2a-c4885ba2cd85 | entrada | Projétil de Fuzil              | qty:    80 | origem:doacao:cmsjujk4y0048s601xcir0q4u         | 2026-08-08 04:01:14.405000
+  ID:11d784a2-9599-40ef-a854-4025a17e5179 | entrada | Lata                           | qty:  1000 | origem:doacao:cmsjuk3n4004as601qctuj4vj         | 2026-08-08 04:01:39.664000
+  ID:04ac5335-cb98-4295-9334-3eceb3b339e2 | entrada | Tijolo                         | qty: 10000 | origem:doacao:cmsjukmb6004cs601r0a8ejqt         | 2026-08-08 04:02:03.579000
+  ID:36fd7694-e266-4ad4-b27b-665967ab02ff | entrada | Moedas Velhas                  | qty:  5770 | origem:doacao:cmsjulf3d004es601burv0vmq         | 2026-08-08 04:02:40.987000
+  ID:7b5c79ba-49c6-44cd-b34c-8e14411875ac | entrada | Dados de Jogo                  | qty:   239 | origem:doacao:cmsjuma73004gs6015vqgfrc3         | 2026-08-08 04:03:21.172000
+  ID:79fd73eb-fca6-48b4-b385-5a564ea2665b | entrada | Dados de Jogo Raros            | qty:    10 | origem:doacao:cmsjun2ml004is601fbg72tdm         | 2026-08-08 04:03:58.022000
+  ID:e1bdf4d4-2200-42f7-b7e7-15c4c5c4ce36 | entrada | Cartas de Jogo                 | qty:   130 | origem:doacao:cmsjunrml004ks601mnejxvbi         | 2026-08-08 04:04:30.414000
+  ID:94489441-53dd-4824-8f72-61f37461d59d | entrada | Cartas de Jogo Raras           | qty:    73 | origem:doacao:cmsjuosvk004ms601marnweca         | 2026-08-08 04:05:18.703000
+  ID:bb3b5195-ee47-4d5b-817d-9fa99b1cc1b7 | entrada | Relógio de Pulso               | qty:   233 | origem:doacao:cmsjupn2v004os601gqzjkex9         | 2026-08-08 04:05:57.867000
+  ID:8ac294e1-e581-4c6e-9992-9a92f1f83f28 | entrada | Relógio Raro                   | qty:    14 | origem:doacao:cmsjuqfl1004qs601konbcotw         | 2026-08-08 04:06:34.810000
+  ID:075332cd-6025-48f2-9f2d-c970f571c21f | entrada | Joias                          | qty:     7 | origem:doacao:cmsjur2vn004ss601aayajxd8         | 2026-08-08 04:07:04.975000
+  ID:781e34e5-7d1b-479a-b197-6791c642fc77 | entrada | Espelho                        | qty:    14 | origem:doacao:cmsjurvtw004us601x4fjgzog         | 2026-08-08 04:07:42.504000
+  ID:ea679194-9206-45f3-be34-35fe94de2e53 | entrada | Samovar                        | qty:    22 | origem:doacao:cmsjusetf004ws60128spt7f0         | 2026-08-08 04:08:07.101000
+  ID:9cbcbc80-2cbc-42e4-ae40-68cd978fafed | entrada | Colchão                        | qty:    47 | origem:doacao:cmsjut2hg004ys6010smujkpc         | 2026-08-08 04:08:37.783000
+  ID:828d4f5b-bf61-47fc-9d56-4cc5f4560d22 | entrada | Tapete                         | qty:   146 | origem:doacao:cmsjuti5m0050s601uzzubgu7         | 2026-08-08 04:08:58.076000
+  ID:856ab83c-a068-480c-8c03-3d314038d00a | entrada | Bayan                          | qty:    24 | origem:doacao:cmsjuu4tw0052s6012ntfdxkv         | 2026-08-08 04:09:28.087000
+  ID:f3f1f8da-4d4b-4a7a-9b77-7dff1ff1b7f1 | entrada | Violão                         | qty:    26 | origem:doacao:cmsjuukw10054s601pb1bhtfm         | 2026-08-08 04:09:48.375000
+  ID:ea576fd7-7213-400e-b30e-d4b52e1be086 | entrada | Aspirador de Pó                | qty:    34 | origem:doacao:cmsjuv5xg0056s6015amhmcg4         | 2026-08-08 04:10:15.552000
+  ID:955427bf-1108-4d94-82f5-188715452a5d | entrada | Poltrona                       | qty:    45 | origem:doacao:cmsjuvrnv0058s6012iyj3rs9         | 2026-08-08 04:10:43.728000
+  ID:5d44e4bf-4126-4178-b312-22dc56d854ca | entrada | Máquina de Costura             | qty:    20 | origem:doacao:cmsjuwl0p005as6011utwuit3         | 2026-08-08 04:11:21.776000
+  ID:0f9cc1ee-a544-48f4-b7e5-dd1156ead38a | entrada | Balança                        | qty:     6 | origem:doacao:cmsjux0ip005cs601vw8rfhiw         | 2026-08-08 04:11:41.866000
+  ID:cd3f40e3-3806-41f7-b882-643d613b240a | entrada | Máquina de Escrever            | qty:   215 | origem:doacao:cmsjuxvqy005es601zhso9w2g         | 2026-08-08 04:12:22.622000
+  ID:c992635e-a0eb-420d-a240-3f033a7c9a84 | entrada | Sofá                           | qty:    88 | origem:doacao:cmsjuybn1005gs601niyukzyv         | 2026-08-08 04:12:43.312000
+  ID:f2a4ccbc-97e3-4145-bae7-1c030fdd560c | entrada | Máquina de Lavar Roupa         | qty:    30 | origem:doacao:cmsjuz5h1005is601xzl51flc         | 2026-08-08 04:13:21.897000
+  ID:41c8b361-d278-423a-be2d-7993ce225c40 | entrada | Piano                          | qty:    14 | origem:doacao:cmsjuzv3k005ks601bs84n2uh         | 2026-08-08 04:13:55.093000
+  ID:c559ec83-7edf-456c-a62e-9f92ea674399 | entrada | Fogão Elétrico                 | qty:    37 | origem:doacao:cmsjv0qin005ms601hfererb4         | 2026-08-08 04:14:35.864000
+  ID:77320571-38a7-48f6-ba2e-fbec5d3d7763 | entrada | Geladeira                      | qty:    20 | origem:doacao:cmsjv16os005os601spqf7nj9         | 2026-08-08 04:14:56.774000
+  ID:6b80f188-fdfc-476c-9749-e7fc79cac599 | entrada | Móveis                         | qty:  1700 | origem:doacao:cmsjv1u9i005qs601xk1xlp0s         | 2026-08-08 04:15:27.351000
+  ID:6b472d8d-23af-4c77-8099-6bbfc98072f3 | entrada | Parafuso                       | qty: 10000 | origem:doacao:cmsjv2ttf005ss601g9qz4gzs         | 2026-08-08 04:16:13.420000
+  ID:c0dee7b1-741c-41be-9646-3ce2e1199b1b | entrada | Tijolo                         | qty: 10000 | origem:doacao:cmsjv3cdg005us60120mxpbpx         | 2026-08-08 04:16:37.454000
+  ID:cc3a8fc0-3d51-464a-93a4-3e2ec7642799 | entrada | Tronco                         | qty:   234 | origem:doacao:cmsjv40th005ws601m2q8hoz5         | 2026-08-08 04:17:09.132000
+  ID:a4afaa1d-be61-4c4f-88b4-6eeaec587151 | entrada | Lenha                          | qty:   213 | origem:doacao:cmsjv4h1t005ys601soqsygrb         | 2026-08-08 04:17:30.183000
+  ID:78506fcc-1e72-4fed-bd64-5e253456f53e | entrada | Munição de Fuzil               | qty:   300 | origem:doacao:cmsjv98eg0060s601aeag4dlb         | 2026-08-08 04:21:12.261000
+  ID:b5354212-52fd-4016-ab61-157beeeb8f88 | entrada | Barra de Chocolate             | qty:    24 | origem:doacao:cmsjva3y70062s6010qvz581t         | 2026-08-08 04:21:53.120000
+  ID:58c81ca8-7394-447d-b166-f5dde87a448c | entrada | Ferramentas Enferrujadas       | qty:    14 | origem:doacao:cmsjvay5x0064s60172kzv6sr         | 2026-08-08 04:22:32.284000
+  ID:3818288d-de79-439d-95f1-fd3c24bd6c9f | entrada | Peças de Bicicleta             | qty:   403 | origem:doacao:cmsjvccd40066s601ovonsyo2         | 2026-08-08 04:23:37.352000
+  ID:bf2e1911-3477-489a-ab89-4766b7b14d85 | entrada | Peças de Motocicleta           | qty:    35 | origem:doacao:cmsjvdizc0068s601y8vcbe5c         | 2026-08-08 04:24:32.578000
+  ID:010e93cd-d907-4d1d-89e3-44c53af597a0 | entrada | Autopeças                      | qty:    23 | origem:doacao:cmsjvedje006as601aywwcsrj         | 2026-08-08 04:25:12.201000
+  ID:9347de9f-ab45-438f-bed7-2d59ca5373b3 | entrada | Moto de Serra Elétrica         | qty:     8 | origem:doacao:cmsjvfcyl006cs6013fcfm9u0         | 2026-08-08 04:25:58.090000
+  ID:f4c8c042-9dbf-4e2a-9515-ca895cf82fbe | entrada | Motor Elétrico                 | qty:     8 | origem:doacao:cmsjvgbfg006es601gx90d5mn         | 2026-08-08 04:26:43.435000
+  ID:cc74eb26-1128-4797-b591-acb694544b2c | entrada | Cimento                        | qty:    50 | origem:doacao:cmsjvhljj006gs601oelfmhg3         | 2026-08-08 04:27:42.522000
+  ID:ed5d501f-f36d-4ceb-8b43-13771e7e6b4e | entrada | Ouro                           | qty:     7 | origem:doacao:cmsjvjtkx006ks601njtbowak         | 2026-08-08 04:29:25.954000
+  ID:1c07fbe2-d2d1-4aa9-b585-1ea46a8e4c79 | entrada | Água Limpa                     | qty:   350 | origem:doacao:cmsjvll7o006ms60142lrvw66         | 2026-08-08 04:30:48.422000
+  ID:d78e677c-56db-41d2-8385-12fac0a2049e | entrada | Torno                          | qty:     1 | origem:doacao:cmsjvm2s0006os60120md5sar         | 2026-08-08 04:31:11.191000
+  ID:b0584e73-92ec-45a7-a3f9-97e75d55ca53 | entrada | Salitre                        | qty: 20000 | origem:doacao:cmsjvmsy3006qs601t1iyxmvm         | 2026-08-08 04:31:45.114000
+  ID:dc65489c-685c-4c5d-bcba-a62db96f55a8 | entrada | Quitina                        | qty:   100 | origem:doacao:cmsjvnh2b006ss601zv5pw6zg         | 2026-08-08 04:32:16.452000
+  ID:bfbb9299-4dac-429e-aa36-ddb4524194b3 | entrada | Munição de Pistola             | qty:   100 | origem:doacao:cmsjvo3qy006us601mqih65w2         | 2026-08-08 04:32:45.755000
+  ID:11e72e84-eb90-4fc8-b09c-ff108c896657 | entrada | Cartucho de Escopeta           | qty:    50 | origem:doacao:cmsjvp0r9006ws6018vun702e         | 2026-08-08 04:33:28.550000
+  ID:fb2dbde7-51ba-4195-8ab4-92c41746df7d | entrada | Munição de Fuzil de Assalto    | qty:    51 | origem:doacao:cmsjvpu9l006ys6012r1q63u2         | 2026-08-08 04:34:06.843000
+  ID:c41e9c99-17e3-4f14-a1eb-023a56713c05 | entrada | Munição de Fuzil               | qty:    20 | origem:doacao:cmsjvqtdq0070s6017k83v167         | 2026-08-08 04:34:52.282000
+  ID:9c1bcc12-68a2-4254-b1bc-e1f0d817960d | entrada | Chumbo                         | qty: 10000 | origem:doacao:cmsjvrldp0072s601ymu4kyh4         | 2026-08-08 04:35:28.565000
+  ID:c10d6633-e848-46f9-b8f7-8e5c462e3568 | entrada | Moto de Serra Elétrica         | qty:   100 | origem:doacao:cmsjvsvfr0074s6016yz7pig0         | 2026-08-08 04:36:28.270000
+  ID:b08997fc-a504-4eef-a1e2-af48b81c4eae | entrada | Sucata de Alumínio             | qty: 10000 | origem:doacao:cmsjvu5880076s601p67aurnj         | 2026-08-08 04:37:27.606000
+  ID:da55cd07-bf6d-435d-bc87-b56cf520bb57 | entrada | Machado de Aço                 | qty:    50 | origem:doacao:cmsjvut2c0078s601ieykq3ui         | 2026-08-08 04:37:58.491000
+  ID:57cf219c-6fc5-425b-bbaa-deb2facd5a9d | entrada | Serrinha                       | qty:   600 | origem:doacao:cmsjvwosg007as60176hdso7b         | 2026-08-08 04:39:26.566000
+  ID:2e4c0e04-3acf-479d-be97-0ed47b94469c | entrada | Pau                            | qty:  1000 | origem:doacao:cmsjvx6uq007cs601xfiqgxki         | 2026-08-08 04:39:49.999000
+  ID:4d916cdc-9739-473a-9f59-fbfef4521d51 | entrada | Lenha                          | qty: 10000 | origem:doacao:cmsjvxquf007es601w0aid1jc         | 2026-08-08 04:40:15.892000
+  ID:e1140b0c-9a6b-4f61-997c-16cc701c69b0 | entrada | Tábua                          | qty:  1000 | origem:doacao:cmsjvydpz007gs601kvn5sc83         | 2026-08-08 04:40:45.539000
+  ID:0d8ec160-be2c-419d-a9e4-29c8ae6c24cb | entrada | Munição de Fuzil de Assalto    | qty:  1000 | origem:doacao:cmsjw09hn007is601f1oignvo         | 2026-08-08 04:42:13.365000
+  ID:e0ab01f5-1f3e-4302-93de-d19e8aabaf1f | entrada | Atadura Esterilizada           | qty:   500 | origem:doacao:cmsjw19n9007ks601vj66io8q         | 2026-08-08 04:43:00.223000
+  ID:b718193f-1d67-436b-beb8-17e7499c7bab | entrada | Cigarros Russos                | qty:   200 | origem:doacao:cmsjw221o007ms601n412s6xl         | 2026-08-08 04:43:37.041000
+  ID:473dcb53-0641-47e8-b1e8-bae561d43cd1 | entrada | Cigarros                       | qty:  1000 | origem:doacao:cmsjw2l5d007os601s5qoaigu         | 2026-08-08 04:44:01.778000
+  ID:796e22a7-9eeb-438e-a678-1afd52feed36 | entrada | Kompot                         | qty:  5000 | origem:doacao:cmsjw35k5007qs601ay52swt3         | 2026-08-08 04:44:28.233000
+  ID:a160188e-86ad-447f-bc2d-2c046a8d1275 | entrada | Vinho Caseiro                  | qty:   600 | origem:doacao:cmsjw3xp4007ss6015y6u4b5z         | 2026-08-08 04:45:04.712000
+  ID:4c337d1e-dd51-42d7-9aa3-bc85d68fcce9 | entrada | Agulha Enferrujada             | qty:     6 | origem:doacao:cmsjw6yol007us601rstpej0y         | 2026-08-08 04:47:25.962000
+  ID:ef753f00-e3eb-4cd5-bade-df9a6d663d6d | entrada | Agulha de Costura              | qty:     5 | origem:doacao:cmsjw7sub007ws6011lvc3jcu         | 2026-08-08 04:48:05.037000
+  ID:9d83070d-5357-422c-9f38-ac0ded9d52c4 | entrada | Fundidor                       | qty:     1 | origem:doacao:cmsjw8b0r007ys601ax3d5mil         | 2026-08-08 04:48:28.595000
+  ID:8729ad1e-db3b-4822-9b05-4f7a027672f4 | entrada | Isqueiro Artesanal             | qty:     1 | origem:doacao:cmsjw997r0080s601lahqtcjt         | 2026-08-08 04:49:12.596000
+  ID:1c7fbaa3-5fc0-4a98-9036-0e3094dd8b58 | entrada | Fogareiro Artesanal            | qty:     1 | origem:doacao:cmsjwaf3g0082s6018enm9wou         | 2026-08-08 04:50:06.870000
+  ID:419478fc-dcd1-4733-a101-14adca173f2e | entrada | Maçarico (sem combustível)     | qty:     4 | origem:doacao:cmsjwbte10084s601klbhnx6t         | 2026-08-08 04:51:12.072000
+  ID:b6ac12ef-e55f-4b39-ad97-498b64c7f4f6 | entrada | Maçarico                       | qty:     1 | origem:doacao:cmsjwca4c0086s601zaaimhxb         | 2026-08-08 04:51:33.746000
+  ID:8f36e072-37a6-4898-abad-54313149941c | entrada | Munição de Pistola             | qty:   800 | origem:doacao:cmsjwdgmh0088s601eo8t8j82         | 2026-08-08 04:52:28.842000
+  ID:9d7ff6f5-e3b4-4a8a-822c-02e39adb8451 | entrada | Kvass                          | qty:  1103 | origem:doacao:cmsjwebxf008as601exuaip6r         | 2026-08-08 04:53:09.390000
+  ID:0e989113-b65e-4249-8f12-36f89680c7b0 | entrada | Poção Energizante              | qty:  1000 | origem:doacao:cmsjwfty8008cs601r2mht3e1         | 2026-08-08 04:54:19.415000
+  ID:b17ca60c-49a9-4acf-ae6b-c33b9889ef38 | entrada | Poção Desintoxicante           | qty:   100 | origem:doacao:cmsjwgx4m008es601llt0dnek         | 2026-08-08 04:55:10.207000
+  ID:855406ce-b110-4a20-aa28-d3dd50892ec7 | entrada | Barraca (desmontada)           | qty:     8 | origem:doacao:cmsjwi7ip008gs6011ao869s2         | 2026-08-08 04:56:10.313000
+  ID:f52c066d-00f8-4f9a-8b81-6f3ba349b09b | entrada | Furadeira                      | qty:     2 | origem:doacao:cmsjwj3an008is6014q4k9j4h         | 2026-08-08 04:56:51.496000
+  ID:2740f5f0-9a3e-4518-a75b-533896134823 | entrada | Açúcar                         | qty:  1300 | origem:troca                                    | 2026-08-08 19:34:21.824000
+  ID:8c7780f6-b838-479a-99d6-8a7b0b9f1109 | entrada | Sal                            | qty:  2400 | origem:troca                                    | 2026-08-08 19:36:07.693000
+  ID:bdecd968-37ad-452d-a4a3-e1c3039fbbee | entrada | Açúcar                         | qty: 10000 | origem:troca                                    | 2026-08-08 19:37:34.430000
+  ID:3eee5036-e560-49a1-9cad-8bf51aa760b5 | entrada | Lixa                           | qty:  2500 | origem:troca                                    | 2026-08-08 19:38:36.959000
+  ID:cabdb6a2-0743-421d-aa63-3f39478c1a76 | entrada | Sabão em Pó                    | qty:  8000 | origem:troca                                    | 2026-08-08 19:39:19.823000
+  ID:db34865b-aca2-4d43-a68f-1c9c65fd17de | entrada | Bateria de Carro Quebrada      | qty:  1000 | origem:troca                                    | 2026-08-08 19:40:34.161000
+  ID:7fba35a6-6d87-44e3-b352-fce398c0d4a0 | entrada | Sal                            | qty:   930 | origem:troca                                    | 2026-08-08 19:41:51.969000
+  ID:4ff38ad7-e9d3-4650-a16a-db2420091bd1 | entrada | Bateria de Carro Quebrada      | qty:  1000 | origem:troca                                    | 2026-08-08 19:42:56.086000
+  ID:aa3fc3c2-d157-4345-8d8e-79a7a41fba18 | entrada | Sal                            | qty:  3000 | origem:troca                                    | 2026-08-08 19:44:16.642000
+  ID:5b9402cf-4cf7-4095-a6b3-820ca47edae6 | entrada | Carvão Preto                   | qty:  1464 | origem:troca                                    | 2026-08-08 19:50:05.240000
+  ID:f47f3973-a82a-4982-973f-a0902d686c25 | entrada | Trapos                         | qty:  2400 | origem:troca                                    | 2026-08-08 19:51:57.454000
+  ID:b6a9e8ba-3269-4525-aad5-8d6110086117 | entrada | Salitre                        | qty:  4500 | origem:troca                                    | 2026-08-08 19:53:19.009000
+  ID:0370ed51-cf26-42ad-96b5-e466bf1b6298 | entrada | Linfa                          | qty:  5000 | origem:troca                                    | 2026-08-08 19:55:10.996000
+  ID:e17ac3bc-f206-4895-aa67-5071c8a529e3 | entrada | Enxofre                        | qty: 21000 | origem:troca                                    | 2026-08-08 19:55:59.081000
+  ID:c609d058-b7e1-4999-8522-bd94d0c269f5 | entrada | Peças Elétricas                | qty:   102 | origem:troca                                    | 2026-08-08 19:56:40.056000
+  ID:84f76ad3-d50b-4d28-8c23-36fdb90933c3 | saida   | Bateria de Carro Quebrada      | qty:  1000 | origem:compra_venda                             | 2026-08-08 19:59:19.132000
+  ID:5b6d6777-3912-4704-a7f2-bac21e4f1547 | entrada | Cimento                        | qty:   750 | origem:compra_venda                             | 2026-08-08 19:59:19.628000
+  ID:0a0884d7-7e30-4701-b0e7-80d721e0f29b | saida   | Quitina                        | qty:  3000 | origem:compra_venda                             | 2026-08-08 20:00:42.034000
+  ID:43bd5918-cd21-45f4-b040-c485ecb8c87b | entrada | Aço                            | qty:  2000 | origem:compra_venda                             | 2026-08-08 20:00:42.530000
+  ID:1efe7d7d-5c3d-42d1-a4bd-404a44f2f568 | saida   | Gelo                           | qty: 10000 | origem:compra_venda                             | 2026-08-08 20:02:55.250000
+  ID:2421b57b-e01a-4958-8938-b5bf8bcd9585 | entrada | Aço                            | qty:  1000 | origem:compra_venda                             | 2026-08-08 20:02:55.487000
+  ID:9b0ed038-3b17-4179-b9e7-d65f613a7602 | saida   | Bateria de Carro Quebrada      | qty:  1000 | origem:compra_venda                             | 2026-08-08 20:04:28.509000
+  ID:651af098-2d78-4338-86f5-afc95d331416 | entrada | Aço                            | qty:  1500 | origem:compra_venda                             | 2026-08-08 20:04:28.702000
+  ID:5ce308f5-7675-4890-8f14-015b620a1e0e | saida   | Lixa                           | qty:  2500 | origem:compra_venda                             | 2026-08-08 20:05:31.327000
+  ID:0a0ffe9f-6d16-475b-aa5d-2a1f78b72fc6 | entrada | Aço                            | qty:   625 | origem:compra_venda                             | 2026-08-08 20:05:31.527000
+  ID:c6ec7e30-f8d0-4abf-99b4-3dab6597f866 | saida   | Bateria de Carro Quebrada      | qty:  2000 | origem:compra_venda                             | 2026-08-08 20:07:56.950000
+  ID:aec1d699-bb09-42bd-891f-1ef35ea760cc | entrada | Aço                            | qty:  3000 | origem:compra_venda                             | 2026-08-08 20:07:57.124000
+  ID:5908dcbf-ab61-4efc-aad1-e6f4c880baf5 | saida   | Bateria de Carro Quebrada      | qty:  2000 | origem:compra_venda                             | 2026-08-08 20:09:22.308000
+  ID:b8b04e97-a3ce-457a-9f71-c9ec26261cbc | entrada | Carvão Preto                   | qty:  6000 | origem:compra_venda                             | 2026-08-08 20:09:22.490000
+  ID:e975a9a0-7446-4c16-8493-34681a2000e9 | saida   | Trapos                         | qty: 13500 | origem:compra_venda                             | 2026-08-08 20:10:41.322000
+  ID:3e1897ae-2bea-40b7-984d-a2e4ca5ae49b | entrada | Aço                            | qty:   900 | origem:compra_venda                             | 2026-08-08 20:10:41.503000
+  ID:ecb63649-1ece-46c9-b817-6658bfd4ce4a | saida   | Bateria de Carro Quebrada      | qty: 50000 | origem:compra_venda                             | 2026-08-08 20:11:47.090000
+  ID:cbfce791-80ef-4ffa-b8ba-c8be8f834c4f | entrada | Cimento                        | qty: 37500 | origem:compra_venda                             | 2026-08-08 20:11:47.613000
+  ID:976e32bb-8433-445a-9221-949629450495 | entrada | Trapos                         | qty:  1100 | origem:doacao:cmskta3an00b3s6016anpjfrs         | 2026-08-08 20:13:39.861000
+  ID:d175211e-fceb-4e6b-a22b-2702ddb55755 | saida   | Massa                          | qty:100000 | origem:troca_banco                              | 2026-08-19 13:33:42.423000
+  ID:2fdf7f2d-5d17-4432-a810-477f0d110974 | entrada | Bateria de Carro Quebrada      | qty:100000 | origem:troca_banco                              | 2026-08-19 13:33:42.423000
+  ID:9204ca55-853c-45f9-a1a1-02ff9c3f01bc | saida   | Água Limpa                     | qty: 10000 | origem:troca_banco                              | 2026-08-19 13:35:51.469000
+  ID:a23a990a-c260-4a31-a329-5652a124d7b7 | entrada | Gelo                           | qty: 10000 | origem:troca_banco                              | 2026-08-19 13:35:51.469000
+
+
+=== Checking if backup saida entries exist in DB ===
+Backup saida entries: 10
+  MISSING: cmsjrm7gm0001s601l8mdqdfk
+  MISSING: cmsksro0r00ads601emyuph4u
+  MISSING: cmskstfzl00ags60110mutqrv
+  MISSING: cmskswas100ajs601sjueyp31
+  MISSING: cmsksyaql00ams601xtjn7w41
+  MISSING: cmskszn7j00aps601gve3rh7g
+  MISSING: cmskt2rkm00ass601k49n4xy6
+  MISSING: cmskt4lfo00avs601b7zua8ek
+  MISSING: cmskt6aei00ays6012s2j57hg
+  MISSING: cmskt7p5e00b1s601og88uppt
+
+
+=== CORRECT INVENTORY (backup entries only) ===
+Massa                                    | ent:  100000 | sai:       0 | saldo:  100000
+Cimento                                  | ent:   93300 | sai:       0 | saldo:   93300
+Sucata de Cobre                          | ent:   91000 | sai:       0 | saldo:   91000
+Enxofre                                  | ent:   89000 | sai:       0 | saldo:   89000
+Aço                                      | ent:   69125 | sai:       0 | saldo:   69125
+Quitina                                  | ent:   50100 | sai:    3000 | saldo:   47100
+Sal                                      | ent:   43563 | sai:       0 | saldo:   43563
+Salitre                                  | ent:   35500 | sai:       0 | saldo:   35500
+Água Limpa                               | ent:   30350 | sai:       0 | saldo:   30350
+Tijolo                                   | ent:   30000 | sai:       0 | saldo:   30000
+Moedas Velhas                            | ent:   25770 | sai:       0 | saldo:   25770
+Açúcar                                   | ent:   21300 | sai:       0 | saldo:   21300
+Sucata de Alumínio                       | ent:   21000 | sai:       0 | saldo:   21000
+Parafuso                                 | ent:   21000 | sai:       0 | saldo:   21000
+Cartucho de Escopeta                     | ent:   20050 | sai:       0 | saldo:   20050
+Óleo de Máquina                          | ent:   20000 | sai:       0 | saldo:   20000
+Chumbo                                   | ent:   20000 | sai:       0 | saldo:   20000
+Primer                                   | ent:   11189 | sai:       0 | saldo:   11189
+Munição de Fuzil de Assalto              | ent:   11051 | sai:       0 | saldo:   11051
+Prego                                    | ent:   11000 | sai:       0 | saldo:   11000
+Munição de Pistola                       | ent:   10900 | sai:       0 | saldo:   10900
+Tronco                                   | ent:   10234 | sai:       0 | saldo:   10234
+Lenha                                    | ent:   10213 | sai:       0 | saldo:   10213
+Álcool                                   | ent:   10000 | sai:       0 | saldo:   10000
+Tijolo Refratário                        | ent:   10000 | sai:       0 | saldo:   10000
+Sementes (Tangerina)                     | ent:   10000 | sai:       0 | saldo:   10000
+Carvão Preto                             | ent:    9464 | sai:       0 | saldo:    9464
+Sabão em Pó                              | ent:    9000 | sai:       0 | saldo:    9000
+Sucatear                                 | ent:    6442 | sai:       0 | saldo:    6442
+Linfa                                    | ent:    6000 | sai:       0 | saldo:    6000
+Kompot                                   | ent:    5100 | sai:       0 | saldo:    5100
+Projétil de Fuzil de Assalto             | ent:    4758 | sai:       0 | saldo:    4758
+Cobre                                    | ent:    4161 | sai:       0 | saldo:    4161
+Cano de Ferro                            | ent:    3427 | sai:       0 | saldo:    3427
+Pólvora                                  | ent:    3000 | sai:       0 | saldo:    3000
+Carvão                                   | ent:    3000 | sai:       0 | saldo:    3000
+Carvão Infernal                          | ent:    2592 | sai:       0 | saldo:    2592
+Mola                                     | ent:    2000 | sai:       0 | saldo:    2000
+Eletrodos                                | ent:    2000 | sai:       0 | saldo:    2000
+Pneus                                    | ent:    2000 | sai:       0 | saldo:    2000
+Chocolate                                | ent:    2000 | sai:       0 | saldo:    2000
+Móveis                                   | ent:    1700 | sai:       0 | saldo:    1700
+Festim                                   | ent:    1300 | sai:       0 | saldo:    1300
+Kvass                                    | ent:    1103 | sai:       0 | saldo:    1103
+Poção Energizante                        | ent:    1100 | sai:       0 | saldo:    1100
+Cabo Eletrico                            | ent:    1100 | sai:       0 | saldo:    1100
+Veneno                                   | ent:    1012 | sai:       0 | saldo:    1012
+Lidiacida-34                             | ent:    1000 | sai:       0 | saldo:    1000
+Vinho Caseiro V                          | ent:    1000 | sai:       0 | saldo:    1000
+Torradinha                               | ent:    1000 | sai:       0 | saldo:    1000
+Banha                                    | ent:    1000 | sai:       0 | saldo:    1000
+Vinho Tinto                              | ent:    1000 | sai:       0 | saldo:    1000
+Bengala Doce                             | ent:    1000 | sai:       0 | saldo:    1000
+Cartucho em Branco                       | ent:    1000 | sai:       0 | saldo:    1000
+Munição de Treinamento                   | ent:    1000 | sai:       0 | saldo:    1000
+Analgésico                               | ent:    1000 | sai:       0 | saldo:    1000
+Lata                                     | ent:    1000 | sai:       0 | saldo:    1000
+Pau                                      | ent:    1000 | sai:       0 | saldo:    1000
+Tábua                                    | ent:    1000 | sai:       0 | saldo:    1000
+Cigarros                                 | ent:    1000 | sai:       0 | saldo:    1000
+Serrinha                                 | ent:     610 | sai:       0 | saldo:     610
+Vinho Caseiro                            | ent:     600 | sai:       0 | saldo:     600
+Panela Enferrujada                       | ent:     500 | sai:       0 | saldo:     500
+Atadura Esterilizada                     | ent:     500 | sai:       0 | saldo:     500
+Uísque                                   | ent:     462 | sai:       0 | saldo:     462
+Peças de Bicicleta                       | ent:     403 | sai:       0 | saldo:     403
+Autopeças                                | ent:     373 | sai:       0 | saldo:     373
+Munição de Fuzil                         | ent:     320 | sai:       0 | saldo:     320
+Dados de Jogo                            | ent:     239 | sai:       0 | saldo:     239
+Relógio de Pulso                         | ent:     233 | sai:       0 | saldo:     233
+Máquina de Escrever                      | ent:     215 | sai:       0 | saldo:     215
+Peças Elétricas                          | ent:     202 | sai:       0 | saldo:     202
+Poção Desintoxicante                     | ent:     200 | sai:       0 | saldo:     200
+Cigarros Russos                          | ent:     200 | sai:       0 | saldo:     200
+Tapete                                   | ent:     146 | sai:       0 | saldo:     146
+Cartas de Jogo                           | ent:     130 | sai:       0 | saldo:     130
+Barra de Chocolate                       | ent:     124 | sai:       0 | saldo:     124
+Moto de Serra Elétrica                   | ent:     108 | sai:       0 | saldo:     108
+Fole                                     | ent:     102 | sai:       0 | saldo:     102
+Ração Expedicionária                     | ent:     100 | sai:       0 | saldo:     100
+Uísque XL                                | ent:     100 | sai:       0 | saldo:     100
+Isqueiro                                 | ent:     100 | sai:       0 | saldo:     100
+Esqueleto Humano                         | ent:     100 | sai:       0 | saldo:     100
+Refrigerante                             | ent:     100 | sai:       0 | saldo:     100
+Geleia                                   | ent:     100 | sai:       0 | saldo:     100
+Canja Enlatada                           | ent:     100 | sai:       0 | saldo:     100
+Carne Enlatada                           | ent:     100 | sai:       0 | saldo:     100
+Alumínio                                 | ent:     100 | sai:       0 | saldo:     100
+Ferro                                    | ent:     100 | sai:       0 | saldo:     100
+Couro Curtido                            | ent:     100 | sai:       0 | saldo:     100
+Couro Grosso                             | ent:     100 | sai:       0 | saldo:     100
+Couro de Qualidade                       | ent:     100 | sai:       0 | saldo:     100
+Sofá                                     | ent:      88 | sai:       0 | saldo:      88
+Bigorna de Aço                           | ent:      85 | sai:       0 | saldo:      85
+Projétil de Fuzil                        | ent:      80 | sai:       0 | saldo:      80
+Cartas de Jogo Raras                     | ent:      73 | sai:       0 | saldo:      73
+Machado de Aço                           | ent:      60 | sai:       0 | saldo:      60
+Colchão                                  | ent:      47 | sai:       0 | saldo:      47
+Poltrona                                 | ent:      45 | sai:       0 | saldo:      45
+Fogão Elétrico                           | ent:      37 | sai:       0 | saldo:      37
+Peças de Motocicleta                     | ent:      35 | sai:       0 | saldo:      35
+Aspirador de Pó                          | ent:      34 | sai:       0 | saldo:      34
+Máquina de Lavar Roupa                   | ent:      30 | sai:       0 | saldo:      30
+Violão                                   | ent:      26 | sai:       0 | saldo:      26
+Bayan                                    | ent:      24 | sai:       0 | saldo:      24
+Samovar                                  | ent:      22 | sai:       0 | saldo:      22
+Máquina de Costura                       | ent:      20 | sai:       0 | saldo:      20
+Geladeira                                | ent:      20 | sai:       0 | saldo:      20
+Projétil de Escopeta                     | ent:      18 | sai:       0 | saldo:      18
+Ouro                                     | ent:      17 | sai:       0 | saldo:      17
+Relógio Raro                             | ent:      14 | sai:       0 | saldo:      14
+Espelho                                  | ent:      14 | sai:       0 | saldo:      14
+Piano                                    | ent:      14 | sai:       0 | saldo:      14
+Ferramentas Enferrujadas                 | ent:      14 | sai:       0 | saldo:      14
+Fundidor                                 | ent:      13 | sai:       0 | saldo:      13
+Solução de Curtimento                    | ent:      11 | sai:       0 | saldo:      11
+Faca de Aço                              | ent:      10 | sai:       0 | saldo:      10
+Pá de Aço                                | ent:      10 | sai:       0 | saldo:      10
+Pé de Cabra de Aço                       | ent:      10 | sai:       0 | saldo:      10
+Ferramentas de Aço                       | ent:      10 | sai:       0 | saldo:      10
+Dados de Jogo Raros                      | ent:      10 | sai:       0 | saldo:      10
+Motor Elétrico                           | ent:       8 | sai:       0 | saldo:       8
+Barraca (desmontada)                     | ent:       8 | sai:       0 | saldo:       8
+Agulha Enferrujada                       | ent:       7 | sai:       0 | saldo:       7
+Joias                                    | ent:       7 | sai:       0 | saldo:       7
+Balança                                  | ent:       6 | sai:       0 | saldo:       6
+Agulha de Costura                        | ent:       5 | sai:       0 | saldo:       5
+Urso Mau                                 | ent:       4 | sai:       0 | saldo:       4
+Ovo de Páscoa                            | ent:       4 | sai:       0 | saldo:       4
+Maçarico (sem combustível)               | ent:       4 | sai:       0 | saldo:       4
+Agulha Artesanal                         | ent:       3 | sai:       0 | saldo:       3
+Agulha de Aço                            | ent:       3 | sai:       0 | saldo:       3
+Barril                                   | ent:       2 | sai:       0 | saldo:       2
+Fogareiro Artesanal                      | ent:       2 | sai:       0 | saldo:       2
+Maçarico                                 | ent:       2 | sai:       0 | saldo:       2
+Projétil de Pistola                      | ent:       2 | sai:       0 | saldo:       2
+Furadeira                                | ent:       2 | sai:       0 | saldo:       2
+Panela de Ferro                          | ent:       1 | sai:       0 | saldo:       1
+Reator Químico                           | ent:       1 | sai:       0 | saldo:       1
+Fogareiro                                | ent:       1 | sai:       0 | saldo:       1
+Fogareiro Artesanal (sem combustível)    | ent:       1 | sai:       0 | saldo:       1
+Moinho Manual                            | ent:       1 | sai:       0 | saldo:       1
+Colher de Gelo                           | ent:       1 | sai:       0 | saldo:       1
+Torno                                    | ent:       1 | sai:       0 | saldo:       1
+Isqueiro Artesanal                       | ent:       1 | sai:       0 | saldo:       1
+
+
+=== CURRENT DB INVENTORY vs CORRECT (backup) ===
+Item                                     |     Backup |   DB atual |  Diferença
+--------------------------------------------------------------------------------
+Bateria de Carro Quebrada                |     -53624 |      46376 |    +100000
+Gelo                                     |     -10000 |          0 |     +10000
+Massa                                    |     100000 |          0 |    -100000
+Água Limpa                               |      30350 |      20350 |     -10000

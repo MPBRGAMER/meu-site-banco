@@ -1,0 +1,783 @@
+    55→    55→      case "listCaixa": {
+    56→    56→        const data = await db.caixaRegistro.findMany({
+    57→    57→          orderBy: { data: "desc" },
+    58→    58→        });
+    59→    59→        return json(data);
+    60→    60→      }
+    61→    61→      case "listDoadores": {
+    62→    62→        const data = await db.doador.findMany({
+    63→    63→          orderBy: { ordem: "desc" },
+    64→    64→        });
+    65→    65→        return json(data);
+    66→    66→      }
+    67→    67→      case "listLeiloes": {
+    68→    68→        const data = await db.leilao.findMany({
+    69→    69→          orderBy: { dataCriacao: "desc" },
+    70→    70→        });
+    71→    71→        return json(data);
+    72→    72→      }
+    73→    73→      case "listLances": {
+    74→    74→        const leilaoId = searchParams.get("leilaoId");
+    75→    75→        if (!leilaoId) return err("leilaoId obrigatório");
+    76→    76→        const data = await db.lance.findMany({
+    77→    77→          where: { leilaoId },
+    78→    78→          orderBy: { valor: "desc" },
+    79→    79→        });
+    80→    80→        return json(data);
+    81→    81→      }
+    82→    82→      case "listAllLances": {
+    83→    83→        const data = await db.lance.findMany({
+    84→    84→          orderBy: { valor: "desc" },
+    85→    85→        });
+    86→    86→        return json(data);
+    87→    87→      }
+    88→    88→      case "listSorteios": {
+    89→    89→        const data = await db.sorteio.findMany({
+    90→    90→          orderBy: { dataCriacao: "desc" },
+    91→    91→        });
+    92→    92→        return json(data);
+    93→    93→      }
+    94→    94→      case "getHistoricoSorteios": {
+    95→    95→        const sorteios = await db.sorteio.findMany({
+    96→    96→          where: { status: "finalizado" },
+    97→    97→          orderBy: { dataCriacao: "desc" },
+    98→    98→        });
+    99→    99→        const historico = await Promise.all(
+   100→   100→          sorteios.map(async (s) => {
+   101→   101→            const count = await db.participanteSorteio.count({
+   102→   102→              where: { sorteioId: s.id },
+   103→   103→            });
+   104→   104→            return { ...s, totalParticipantes: count };
+   105→   105→          })
+   106→   106→        );
+   107→   107→        return json(historico);
+   108→   108→      }
+   109→   109→      case "listParticipantes": {
+   110→   110→        const sorteioId = searchParams.get("sorteioId");
+   111→   111→        if (!sorteioId) return err("sorteioId obrigatório");
+   112→   112→        const data = await db.participanteSorteio.findMany({
+   113→   113→          where: { sorteioId },
+   114→   114→          orderBy: { data: "desc" },
+   115→   115→        });
+   116→   116→        return json(data);
+   117→   117→      }
+   118→   118→      case "getLoterica": {
+   119→   119→        const data = await db.loterica.findMany({
+   120→   120→          where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
+   121→   121→          orderBy: { dataCriacao: "desc" },
+   122→   122→          take: 1,
+   123→   123→        });
+   124→   124→        return json(data);
+   125→   125→      }
+   126→   126→      case "getAllLoterica": {
+   127→   127→        const data = await db.loterica.findMany({
+   128→   128→          orderBy: { dataCriacao: "desc" },
+   129→   129→        });
+   130→   130→        const historico = await Promise.all(
+   131→   131→          data.map(async (l) => {
+   132→   132→            const numsVendidos = await db.numeroLoterica.count({
+   133→   133→              where: { lotericaId: l.id, comprador: { not: null } },
+   134→   134→            });
+   135→   135→            return { ...l, totalVendidos: numsVendidos };
+   136→   136→          })
+   137→   137→        );
+   138→   138→        return json(historico);
+   139→   139→      }
+   140→   140→      case "getNumerosLoterica": {
+   141→   141→        const lotericaId = searchParams.get("lotericaId");
+   142→   142→        if (!lotericaId) return err("lotericaId obrigatório");
+   143→   143→        const data = await db.numeroLoterica.findMany({
+   144→   144→          where: { lotericaId },
+   145→   145→          orderBy: { numero: "asc" },
+   146→   146→        });
+   147→   147→        return json(data);
+   148→   148→      }
+   149→   149→      case "getPriceReports": {
+   150→   150→        const itemId = searchParams.get("itemId");
+   151→   151→        const where = itemId ? { itemId } : {};
+   152→   152→        const data = await db.priceReport.findMany({
+   153→   153→          where,
+   154→   154→          orderBy: { data: "desc" },
+   155→   155→          take: 200,
+   156→   156→        });
+   157→   157→        return json(data);
+   158→   158→      }
+   159→   159→      case "getReporterRanking": {
+   160→   160→        const reports = await db.priceReport.findMany({
+   161→   161→          orderBy: { data: "desc" },
+   162→   162→        });
+   163→   163→        const grouped: Record<string, { nickname: string; count: number; lastReport: string }> = {};
+   164→   164→        for (const r of reports) {
+   165→   165→          const key = r.nickname.toLowerCase();
+   166→   166→          if (!grouped[key]) {
+   167→   167→            grouped[key] = { nickname: r.nickname, count: 0, lastReport: r.data.toISOString() };
+   168→   168→          }
+   169→   169→          grouped[key].count++;
+   170→   170→          if (r.data > new Date(grouped[key].lastReport)) {
+   171→   171→            grouped[key].lastReport = r.data.toISOString();
+   172→   172→          }
+   173→   173→        }
+   174→   174→        const ranking = Object.values(grouped)
+   175→   175→          .sort((a, b) => b.count - a.count)
+   176→   176→          .slice(0, 10);
+   177→   177→        return json(ranking);
+   178→   178→      }
+   179→   179→      case "getAd": {
+   180→   180→        const slotId = searchParams.get("slotId");
+   181→   181→        if (!slotId) return err("slotId obrigatório");
+   182→   182→        const ad = await db.propaganda.findUnique({ where: { slotId } });
+   183→   183→        return json({ slotId, codigo: ad?.codigo || "" });
+   184→   184→      }
+   185→   185→      case "getAllAds": {
+   186→   186→        const ads = await db.propaganda.findMany();
+   187→   187→        const map: Record<string, string> = {};
+   188→   188→        for (const a of ads) {
+   189→   189→          if (a.codigo) map[a.slotId] = a.codigo;
+   190→   190→        }
+   191→   191→        return json(map);
+   192→   192→      }
+   193→   193→      case "events": {
+   194→   194→        // Server-Sent Events for real-time updates
+   195→   195→        const stream = new ReadableStream({
+   196→   196→          start(controller) {
+   197→   197→            const interval = setInterval(() => {
+   198→   198→              try {
+   199→   199→                controller.enqueue(`data: ${JSON.stringify({ t: Date.now() })}\n\n`);
+   200→   200→              } catch {
+   201→   201→                clearInterval(interval);
+   202→   202→                controller.close();
+   203→   203→              }
+   204→   204→            }, 5000);
+   205→   205→            // Clean up on close
+   206→   206→        req.signal.addEventListener("abort", () => {
+   207→   207→              clearInterval(interval);
+   208→   208→              controller.close();
+   209→   209→            });
+   210→   210→          },
+   211→   211→        });
+   212→   212→        return new Response(stream, {
+   213→   213→          headers: {
+   214→   214→            "Content-Type": "text/event-stream",
+   215→   215→            "Cache-Control": "no-cache",
+   216→   216→            "Connection": "keep-alive",
+   217→   217→          },
+   218→   218→        });
+   219→   219→      }
+   220→   220→      default:
+   221→   221→        return err("Ação GET desconhecida: " + action);
+   222→   222→    }
+   223→   223→  } catch (e: unknown) {
+   224→   224→    const msg = e instanceof Error ? e.message : "Erro interno";
+   225→   225→    return err(msg, 500);
+   226→   226→  }
+   227→   227→}
+   228→   228→
+   229→   229→export async function POST(req: NextRequest) {
+   230→   230→  try {
+   231→   231→    const body = await req.json();
+   232→   232→    const { action, ...data } = body;
+   233→   233→
+   234→   234→    if (!action) return err("Campo 'action' é obrigatório");
+   235→   235→
+   236→   236→    // Ações públicas que não precisam de admin
+   237→   237→    const PUBLIC_ACTIONS = new Set([
+   238→   238→      "participarSorteio",
+   239→   239→      "comprarNumero",
+   240→   240→      "addLance",
+   241→   241→      "reportPrice",
+   242→   242→    ]);
+   243→   243→
+   244→   244→    // Todas as outras ações POST exigem autenticação de admin
+   245→   245→    if (!PUBLIC_ACTIONS.has(action)) {
+   246→   246→      const pwd = req.headers.get("x-admin-password");
+   247→   247→      if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+   248→   248→    }
+   249→   249→
+   250→   250→    switch (action) {
+   251→   251→      // === EMPRÉSTIMOS ===
+   252→   252→      case "addEmprestimo": {
+   253→   253→        const { player, item, quantidade, dataEmprestimo, tipoMembro, status } = data;
+   254→   254→        if (!player || !item || !quantidade) return err("Campos obrigatórios: player, item, quantidade");
+   255→   255→        const emp = await db.emprestimo.create({
+   256→   256→          data: {
+   257→   257→            player,
+   258→   258→            item,
+   259→   259→            quantidade: Number(quantidade),
+   260→   260→            dataEmprestimo: dataEmprestimo ? new Date(dataEmprestimo) : new Date(),
+   261→   261→            tipoMembro: tipoMembro || "comum",
+   262→   262→            status: status || "pendente",
+   263→   263→          },
+   264→   264→        });
+   265→   265→        return json(emp);
+   266→   266→      }
+   267→   267→      case "updateEmprestimo": {
+   268→   268→        const { id, status, dataPagamento, itemPagamento, quantidadePaga } = data;
+   269→   269→        if (!id) return err("id obrigatório");
+   270→   270→        const updateData: Record<string, unknown> = {};
+   271→   271→        if (status) updateData.status = status;
+   272→   272→        if (dataPagamento) updateData.dataPagamento = new Date(dataPagamento);
+   273→   273→        if (itemPagamento) updateData.itemPagamento = itemPagamento;
+   274→   274→        if (quantidadePaga !== undefined) updateData.quantidadePaga = Number(quantidadePaga);
+   275→   275→        const emp = await db.emprestimo.update({
+   276→   276→          where: { id },
+   277→   277→          data: updateData,
+   278→   278→        });
+   279→   279→        return json(emp);
+   280→   280→      }
+   281→   281→
+   282→   282→      // === INVESTIDORES ===
+   283→   283→      case "addInvestidor": {
+   284→   284→        const { nome, observacao } = data;
+   285→   285→        if (!nome) return err("nome obrigatório");
+   286→   286→        const inv = await db.investidor.create({
+   287→   287→          data: { nome, observacao: observacao || null, ordem: 0 },
+   288→   288→        });
+   289→   289→        return json(inv);
+   290→   290→      }
+   291→   291→      case "removeInvestidor": {
+   292→   292→        const { id } = data;
+   293→   293→        if (!id) return err("id obrigatório");
+   294→   294→        await db.investidor.delete({ where: { id } });
+   295→   295→        return json({ success: true });
+   296→   296→      }
+   297→   297→      case "reorderInvestidores": {
+   298→   298→        const { updates } = data;
+   299→   299→        if (!Array.isArray(updates)) return err("updates deve ser array");
+   300→   300→        for (const u of updates) {
+   301→   301→          await db.investidor.update({
+   302→   302→            where: { id: u.id },
+   303→   303→            data: { ordem: u.ordem },
+   304→   304→          });
+   305→   305→        }
+   306→   306→        return json({ success: true });
+   307→   307→      }
+   308→   308→
+   309→   309→      // === TABELAS DE TROCA ===
+   310→   310→      case "addTabelaTroca": {
+   311→   311→        const { itemBase, quantidadeBase, itemResultado, quantidadeResultado, categoria } = data;
+   312→   312→        if (!itemBase || !quantidadeBase || !itemResultado || !quantidadeResultado) {
+   313→   313→          return err("Campos obrigatórios: itemBase, quantidadeBase, itemResultado, quantidadeResultado");
+   314→   314→        }
+   315→   315→        const tab = await db.tabelaTroca.create({
+   316→   316→          data: {
+   317→   317→            itemBase,
+   318→   318→            quantidadeBase: Number(quantidadeBase),
+   319→   319→            itemResultado,
+   320→   320→            quantidadeResultado: Number(quantidadeResultado),
+   321→   321→            categoria: categoria || null,
+   322→   322→          },
+   323→   323→        });
+   324→   324→        return json(tab);
+   325→   325→      }
+   326→   326→      case "removeTabelaTroca": {
+   327→   327→        const { id } = data;
+   328→   328→        if (!id) return err("id obrigatório");
+   329→   329→        await db.tabelaTroca.delete({ where: { id } });
+   330→   330→        return json({ success: true });
+   331→   331→      }
+   332→   332→
+   333→   333→      // === TROCAS ===
+   334→   334→      case "addTroca": {
+   335→   335→        const { player, itemEnviado, quantidadeEnviada, itemRecebido, quantidadeRecebida, tipoMembro, taxaAplicada, lucroBanco } = data;
+   336→   336→        if (!player || !itemEnviado || !quantidadeEnviada || !itemRecebido || !quantidadeRecebida) {
+   337→   337→          return err("Campos obrigatórios: player, itemEnviado, quantidadeEnviada, itemRecebido, quantidadeRecebida");
+   338→   338→        }
+   339→   339→        const troca = await db.trocaRegistro.create({
+   340→   340→          data: {
+   341→   341→            player,
+   342→   342→            itemEnviado,
+   343→   343→            quantidadeEnviada: Number(quantidadeEnviada),
+   344→   344→            itemRecebido,
+   345→   345→            quantidadeRecebida: Number(quantidadeRecebida),
+   346→   346→            tipoMembro: tipoMembro || "comum",
+   347→   347→            taxaAplicada: Number(taxaAplicada) || 0,
+   348→   348→            lucroBanco: Number(lucroBanco) || 0,
+   349→   349→          },
+   350→   350→        });
+   351→   351→        return json(troca);
+   352→   352→      }
+   353→   353→      case "removeTroca": {
+   354→   354→        const { id } = data;
+   355→   355→        if (!id) return err("id obrigatório");
+   356→   356→        await db.trocaRegistro.delete({ where: { id } });
+   357→   357→        return json({ success: true });
+   358→   358→      }
+   359→   359→
+   360→   360→      // === COMPRAS E VENDAS ===
+   361→   361→      case "addCompraVenda": {
+   362→   362→        const { tipo, player, item, quantidade, itemPagamento, valor, observacao } = data;
+   363→   363→        if (!tipo || !player || !item || !quantidade || valor === undefined) {
+   364→   364→          return err("Campos obrigatórios: tipo, player, item, quantidade, valor");
+   365→   365→        }
+   366→   366→        const cv = await db.compraVenda.create({
+   367→   367→          data: {
+   368→   368→            tipo,
+   369→   369→            player,
+   370→   370→            item,
+   371→   371→            quantidade: Number(quantidade),
+   372→   372→            itemPagamento: itemPagamento || null,
+   373→   373→            valor: Number(valor),
+   374→   374→            observacao: observacao || null,
+   375→   375→          },
+   376→   376→        });
+   377→   377→        return json(cv);
+   378→   378→      }
+   379→   379→
+   380→   380→      // === CAIXA ===
+   381→   381→      case "addCaixa": {
+   382→   382→        const { tipo, descricao, item, quantidade, valor, origem } = data;
+   383→   383→        if (!tipo || !descricao || !item || !quantidade || !origem) {
+   384→   384→          return err("Campos obrigatórios: tipo, descricao, item, quantidade, origem");
+   385→   385→        }
+   386→   386→        const reg = await db.caixaRegistro.create({
+   387→   387→          data: {
+   388→   388→            tipo,
+   389→   389→            descricao,
+   390→   390→            item,
+   391→   391→            quantidade: Number(quantidade),
+   392→   392→            valor: valor !== undefined ? Number(valor) : null,
+   393→   393→            origem,
+   394→   394→          },
+   395→   395→        });
+   396→   396→        return json(reg);
+   397→   397→      }
+   398→   398→      case "resetCaixa": {
+   399→   399→        await db.caixaRegistro.deleteMany();
+   400→   400→        await db.emprestimo.deleteMany();
+   401→   401→        await db.trocaRegistro.deleteMany();
+   402→   402→        await db.compraVenda.deleteMany();
+   403→   403→        await db.doador.deleteMany();
+   404→   404→        return json({ success: true });
+   405→   405→      }
+   406→   406→
+   407→   407→      // === DOADORES ===
+   408→   408→      case "addDoador": {
+   409→   409→        const { nome, item, quantidade } = data;
+   410→   410→        if (!nome || !item || !quantidade) return err("Campos obrigatórios: nome, item, quantidade");
+   411→   411→        const doador = await db.doador.create({
+   412→   412→          data: { nome, item, quantidade: Number(quantidade), ordem: 0 },
+   413→   413→        });
+   414→   414→        return json(doador);
+   415→   415→      }
+   416→   416→      case "reorderDoadores": {
+   417→   417→        const { updates } = data;
+   418→   418→        if (!Array.isArray(updates)) return err("updates deve ser array");
+   419→   419→        for (const u of updates) {
+   420→   420→          await db.doador.update({
+   421→   421→            where: { id: u.id },
+   422→   422→            data: { ordem: u.ordem },
+   423→   423→          });
+   424→   424→        }
+   425→   425→        return json({ success: true });
+   426→   426→      }
+   427→   427→      case "removeDoador": {
+   428→   428→        const { id } = data;
+   429→   429→        if (!id) return err("id obrigatório");
+   430→   430→        // Buscar doador para estornar estoque
+   431→   431→        const doador = await db.doador.findUnique({ where: { id } });
+   432→   432→        if (doador) {
+   433→   433→          await db.caixaRegistro.create({
+   434→   434→            data: {
+   435→   435→              tipo: "saida",
+   436→   436→              descricao: `Estorno doação removida - ${doador.nome}`,
+   437→   437→              item: doador.item,
+   438→   438→              quantidade: doador.quantidade,
+   439→   439→              origem: `estorno_doacao:${doador.id}`,
+   440→   440→            },
+   441→   441→          });
+   442→   442→        }
+   443→   443→        await db.doador.delete({ where: { id } });
+   444→   444→        return json({ success: true });
+   445→   445→      }
+   446→   446→
+   447→   447→      // === LEILÕES ===
+   448→   448→      case "addLeilao": {
+   449→   449→        const { donoItem, nomeItem, imagemUrl, quantidade, valorInicial, moedaAceita, taxaCasa, dataExpiracao, tipoOrigem } = data;
+   450→   450→        if (!donoItem || !nomeItem || valorInicial === undefined || !moedaAceita || !dataExpiracao) {
+   451→   451→          return err("Campos obrigatórios: donoItem, nomeItem, valorInicial, moedaAceita, dataExpiracao");
+   452→   452→        }
+   453→   453→        const leilao = await db.leilao.create({
+   454→   454→          data: {
+   455→   455→            donoItem,
+   456→   456→            nomeItem,
+   457→   457→            imagemUrl: imagemUrl || null,
+   458→   458→            quantidade: Number(quantidade) || 1,
+   459→   459→            valorInicial: Number(valorInicial),
+   460→   460→            moedaAceita,
+   461→   461→            taxaCasa: Number(taxaCasa) || 15,
+   462→   462→            dataExpiracao: new Date(dataExpiracao),
+   463→   463→            tipoOrigem: tipoOrigem || "comum",
+   464→   464→          },
+   465→   465→        });
+   466→   466→        return json(leilao);
+   467→   467→      }
+   468→   468→      case "updateLeilao": {
+   469→   469→        const { id, ...updateData } = data;
+   470→   470→        if (!id) return err("id obrigatório");
+   471→   471→        const cleaned: Record<string, unknown> = {};
+   472→   472→        for (const [k, v] of Object.entries(updateData)) {
+   473→   473→          if (v !== undefined && v !== null) {
+   474→   474→            if (k === "valorVencedor") cleaned[k] = Number(v);
+   475→   475→            else cleaned[k] = v;
+   476→   476→          }
+   477→   477→        }
+   478→   478→        const leilao = await db.leilao.update({ where: { id }, data: cleaned });
+   479→   479→        return json(leilao);
+   480→   480→      }
+   481→   481→      case "removeLeilao": {
+   482→   482→        const { id } = data;
+   483→   483→        if (!id) return err("id obrigatório");
+   484→   484→        await db.leilao.delete({ where: { id } });
+   485→   485→        return json({ success: true });
+   486→   486→      }
+   487→   487→
+   488→   488→      // === LANCES ===
+   489→   489→      case "addLance": {
+   490→   490→        const { leilaoId, jogador, valor } = data;
+   491→   491→        if (!leilaoId || !jogador || valor === undefined) {
+   492→   492→          return err("Campos obrigatórios: leilaoId, jogador, valor");
+   493→   493→        }
+   494→   494→        const leilao = await db.leilao.findUnique({ where: { id: leilaoId } });
+   495→   495→        if (!leilao) return err("Leilão não encontrado", 404);
+   496→   496→        if (leilao.status === "finalizado") return err("Leilão já finalizado");
+   497→   497→        // Bloqueia lances em espera quando o tempo +1min já expirou
+   498→   498→        if (leilao.status === "espera" && new Date() >= new Date(leilao.dataExpiracao)) {
+   499→   499→          return err("O tempo de disputa acabou. Aguardando finalização.");
+   500→   500→        }
+   501→   501→
+   502→   502→        const lances = await db.lance.findMany({
+   503→   503→          where: { leilaoId },
+   504→   504→          orderBy: { valor: "desc" },
+   505→   505→        });
+   506→   506→        const maiorLance = lances.length > 0 ? lances[0] : null;
+   507→   507→        const valorMinimo = maiorLance ? maiorLance.valor : leilao.valorInicial;
+   508→   508→
+   509→   509→        if (Number(valor) <= valorMinimo) {
+   510→   510→          return err(`O lance deve ser maior que ${valorMinimo} ${leilao.moedaAceita}`);
+   511→   511→        }
+   512→   512→
+   513→   513→        const lance = await db.lance.create({
+   514→   514→          data: { leilaoId, jogador, valor: Number(valor) },
+   515→   515→        });
+   516→   516→
+   517→   517→        // Se o tempo original já passou, qualquer lance adiciona +1min e vai para espera
+   518→   518→        const now = new Date();
+   519→   519→        const originalExpired = now >= new Date(leilao.dataExpiracao);
+   520→   520→        if (originalExpired || leilao.status === "espera") {
+   521→   521→          const newDeadline = new Date(now.getTime() + 60000);
+   522→   522→          await db.leilao.update({
+   523→   523→            where: { id: leilaoId },
+   524→   524→            data: { dataUltimoLance: new Date(), dataExpiracao: newDeadline, status: "espera" },
+   525→   525→          });
+   526→   526→        } else {
+   527→   527→          await db.leilao.update({
+   528→   528→            where: { id: leilaoId },
+   529→   529→            data: { dataUltimoLance: new Date() },
+   530→   530→          });
+   531→   531→        }
+   532→   532→
+   533→   533→        return json(lance);
+   534→   534→      }
+   535→   535→
+   536→   536→      // === SORTEIOS ===
+   537→   537→      case "addSorteio": {
+   538→   538→        const { nomeItem, quantidade, duracaoMinutos } = data;
+   539→   539→        if (!nomeItem || !quantidade || !duracaoMinutos) {
+   540→   540→          return err("Campos obrigatórios: nomeItem, quantidade, duracaoMinutos");
+   541→   541→        }
+   542→   542→        const dataFim = new Date(Date.now() + Number(duracaoMinutos) * 60 * 1000);
+   543→   543→        const sorteio = await db.sorteio.create({
+   544→   544→          data: { nomeItem, quantidade: Number(quantidade), duracaoMinutos: Number(duracaoMinutos), dataFim },
+   545→   545→        });
+   546→   546→        return json(sorteio);
+   547→   547→      }
+   548→   548→      case "participarSorteio": {
+   549→   549→        const { sorteioId, jogador } = data;
+   550→   550→        if (!sorteioId || !jogador) return err("Campos obrigatórios: sorteioId, jogador");
+   551→   551→        const sorteio = await db.sorteio.findUnique({ where: { id: sorteioId } });
+   552→   552→        if (!sorteio) return err("Sorteio não encontrado", 404);
+   553→   553→        if (sorteio.status !== "ativo") return err("Sorteio não está ativo");
+   554→   554→        if (sorteio.dataFim && new Date(sorteio.dataFim) < new Date()) {
+   555→   555→          return err("O tempo do sorteio acabou");
+   556→   556→        }
+   557→   557→        const existing = await db.participanteSorteio.findFirst({
+   558→   558→          where: { sorteioId, jogador },
+   559→   559→        });
+   560→   560→        if (existing) return err("Você já está participando deste sorteio");
+   561→   561→        const p = await db.participanteSorteio.create({ data: { sorteioId, jogador } });
+   562→   562→        return json(p);
+   563→   563→      }
+   564→   564→      case "sortear": {
+   565→   565→        const { sorteioId } = data;
+   566→   566→        if (!sorteioId) return err("sorteioId obrigatório");
+   567→   567→        const participantes = await db.participanteSorteio.findMany({ where: { sorteioId } });
+   568→   568→        if (participantes.length === 0) return err("Nenhum participante no sorteio");
+   569→   569→        const randomIndex = Math.floor(Math.random() * participantes.length);
+   570→   570→        const ganhador = participantes[randomIndex];
+   571→   571→        const updated = await db.sorteio.update({
+   572→   572→          where: { id: sorteioId },
+   573→   573→          data: { status: "finalizado", ganhador: ganhador.jogador, dataFim: new Date() },
+   574→   574→        });
+   575→   575→        return json({ sucesso: true, ganhador: ganhador.jogador });
+   576→   576→      }
+   577→   577→      case "removeSorteio": {
+   578→   578→        const { id } = data;
+   579→   579→        if (!id) return err("id obrigatório");
+   580→   580→        await db.sorteio.delete({ where: { id } });
+   581→   581→        return json({ success: true });
+   582→   582→      }
+   583→   583→
+   584→   584→      // === LOTÉRICA ===
+   585→   585→      case "criarLoterica": {
+   586→   586→        const { valorNumero, moedaAceita, premioMinimo, duracaoMinutos } = data;
+   587→   587→        if (!valorNumero || !moedaAceita) return err("Campos obrigatórios: valorNumero, moedaAceita");
+   588→   588→        // Verificar se ja existe loterica ativa (nao finalizada)
+   589→   589→        const ativa = await db.loterica.findFirst({
+   590→   590→          where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
+   591→   591→        });
+   592→   592→        if (ativa) return err("Já existe lotérica ativa. Finalize a atual antes de criar uma nova.");
+   593→   593→
+   594→   594→        const dur = Number(duracaoMinutos) || 60;
+   595→   595→        const prem = Number(premioMinimo) || 0;
+   596→   596→        const dataFimVendas = new Date(Date.now() + dur * 60 * 1000);
+   597→   597→
+   598→   598→        // Buscar premio acumulado da ultima loterica sem ganhador
+   599→   599→        let acumulado = 0;
+   600→   600→        const ultimaSemGanhador = await db.loterica.findFirst({
+   601→   601→          where: { ganhador: null, valorPremio: { gt: 0 } },
+   602→   602→          orderBy: { dataCriacao: "desc" },
+   603→   603→        });
+   604→   604→        if (ultimaSemGanhador) {
+   605→   605→          acumulado = ultimaSemGanhador.valorPremio || 0;
+   606→   606→        }
+   607→   607→
+   608→   608→        const lot = await db.loterica.create({
+   609→   609→          data: {
+   610→   610→            valorNumero: Number(valorNumero),
+   611→   611→            moedaAceita,
+   612→   612→            premioMinimo: prem,
+   613→   613→            premioAcumulado: acumulado,
+   614→   614→            duracaoMinutos: dur,
+   615→   615→            dataFimVendas,
+   616→   616→            status: "vendas_abertas",
+   617→   617→          },
+   618→   618→        });
+   619→   619→        // Create 1000 numbers
+   620→   620→        const nums = Array.from({ length: 1000 }, (_, i) => ({
+   621→   621→          lotericaId: lot.id,
+   622→   622→          numero: i + 1,
+   623→   623→        }));
+   624→   624→        await db.numeroLoterica.createMany({ data: nums });
+   625→   625→        return json({ success: true, lotericaId: lot.id, acumulado });
+   626→   626→      }
+   627→   627→      case "comprarNumero": {
+   628→   628→        const { lotericaId, numero, comprador } = data;
+   629→   629→        if (!lotericaId || numero === undefined || !comprador) {
+   630→   630→          return err("Campos obrigatórios: lotericaId, numero, comprador");
+   631→   631→        }
+   632→   632→        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+   633→   633→        if (!lotData) return err("Lotérica não encontrada", 404);
+   634→   634→        if (lotData.status !== "vendas_abertas") return err("Vendas não estão abertas");
+   635→   635→        if (lotData.dataFimVendas && new Date(lotData.dataFimVendas) < new Date()) {
+   636→   636→          return err("Tempo de vendas encerrado");
+   637→   637→        }
+   638→   638→        const numEntry = await db.numeroLoterica.findFirst({
+   639→   639→          where: { lotericaId, numero: Number(numero) },
+   640→   640→        });
+   641→   641→        if (!numEntry) return err("Número inválido");
+   642→   642→        if (numEntry.comprador) return err("Número já vendido");
+   643→   643→
+   644→   644→        await db.numeroLoterica.update({
+   645→   645→          where: { id: numEntry.id },
+   646→   646→          data: { comprador, dataCompra: new Date() },
+   647→   647→        });
+   648→   648→
+   649→   649→        // Arrecadado total aumenta, mas NAO credita no estoque ainda
+   650→   650→        const novoArrecadado = (lotData.arrecadadoTotal || 0) + lotData.valorNumero;
+   651→   651→        await db.loterica.update({
+   652→   652→          where: { id: lotericaId },
+   653→   653→          data: { arrecadadoTotal: novoArrecadado },
+   654→   654→        });
+   655→   655→
+   656→   656→        return json({ success: true });
+   657→   657→      }
+   658→   658→      case "iniciarSorteioLoterica": {
+   659→   659→        const { lotericaId } = data;
+   660→   660→        if (!lotericaId) return err("lotericaId obrigatório");
+   661→   661→        const numeros = await db.numeroLoterica.findMany({ where: { lotericaId } });
+   662→   662→        const numerosVendidos = numeros.filter((n) => n.comprador);
+   663→   663→        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+   664→   664→        if (!lotData) return err("Lotérica não encontrada", 404);
+   665→   665→        if (numerosVendidos.length === 0) return err("Nenhum número vendido");
+   666→   666→
+   667→   667→        const numeroSorteado = Math.floor(Math.random() * 1000) + 1;
+   668→   668→        const ganhador = numeros.find((n) => n.numero === numeroSorteado && n.comprador);
+   669→   669→
+   670→   670→        // Calcular premio: acumulado SUBSTITUI o minimo (nao soma)
+   671→   671→        // Ex: minimo 100, acumulado 160 → minimo efetivo = 160
+   672→   672→        const effectiveMin = Math.max(lotData.premioMinimo, lotData.premioAcumulado || 0);
+   673→   673→        const premio80 = lotData.arrecadadoTotal * 0.8;
+   674→   674→        const premioFinal = Math.max(premio80, effectiveMin);
+   675→   675→        const taxaBanco = lotData.arrecadadoTotal * 0.2;
+   676→   676→
+   677→   677→        await db.loterica.update({
+   678→   678→          where: { id: lotericaId },
+   679→   679→          data: {
+   680→   680→            status: "sorteio_realizado",
+   681→   681→            numeroSorteado,
+   682→   682→            ganhador: ganhador ? ganhador.comprador : null,
+   683→   683→            valorPremio: premioFinal,
+   684→   684→            dataSorteio: new Date(),
+   685→   685→          },
+   686→   686→        });
+   687→   687→
+   688→   688→        // Creditar 20% das vendas no estoque do banco
+   689→   689→        if (taxaBanco > 0) {
+   690→   690→          await db.caixaRegistro.create({
+   691→   691→            data: {
+   692→   692→              tipo: "entrada",
+   693→   693→              descricao: `Taxa bancária Lotérica (20% das vendas)`,
+   694→   694→              item: lotData.moedaAceita,
+   695→   695→              quantidade: Math.round(taxaBanco),
+   696→   696→              valor: Math.round(taxaBanco),
+   697→   697→              origem: "loterica",
+   698→   698→            },
+   699→   699→          });
+   700→   700→        }
+   701→   701→
+   702→   702→        // Se teve ganhador, registrar saida do premio
+   703→   703→        if (ganhador) {
+   704→   704→          await db.caixaRegistro.create({
+   705→   705→            data: {
+   706→   706→              tipo: "saida",
+   707→   707→              descricao: `Prêmio Lotérica - Número ${numeroSorteado} (${ganhador.comprador})`,
+   708→   708→              item: lotData.moedaAceita,
+   709→   709→              quantidade: Math.round(premioFinal),
+   710→   710→              valor: Math.round(premioFinal),
+   711→   711→              origem: "loterica_premio",
+   712→   712→            },
+   713→   713→          });
+   714→   714→        } else {
+   715→   715→          // Ninguem acertou - o premio vira o novo minimo para a proxima
+   716→   716→          await db.loterica.update({
+   717→   717→            where: { id: lotericaId },
+   718→   718→            data: { premioAcumulado: Math.round(premioFinal) },
+   719→   719→          });
+   720→   720→        }
+   721→   721→
+   722→   722→        return json({
+   723→   723→          success: true,
+   724→   724→          numeroSorteado,
+   725→   725→          ganhador: ganhador ? ganhador.comprador : null,
+   726→   726→          premioFinal: Math.round(premioFinal),
+   727→   727→          taxaBanco: Math.round(taxaBanco),
+   728→   728→          acumulou: !ganhador,
+   729→   729→        });
+   730→   730→      }
+   731→   731→      case "finalizarLoterica": {
+   732→   732→        const { lotericaId } = data;
+   733→   733→        if (!lotericaId) return err("lotericaId obrigatório");
+   734→   734→        const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
+   735→   735→        if (!lotData) return err("Lotérica não encontrada", 404);
+   736→   736→        if (lotData.status !== "sorteio_realizado") return err("Sorteio ainda não foi realizado");
+   737→   737→
+   738→   738→        // Marca como finalizada - pronto para criar proxima
+   739→   739→        await db.loterica.update({
+   740→   740→          where: { id: lotericaId },
+   741→   741→          data: { status: "finalizada" },
+   742→   742→        });
+   743→   743→
+   744→   744→        return json({ success: true, acumuladoProxima: lotData.premioAcumulado || 0 });
+   745→   745→      }
+   746→   746→
+   747→   747→      // === PRICE REPORTS ===
+   748→   748→      case "reportPrice": {
+   749→   749→        const { itemId, itemName, nickname, steelQty, steelPrice, cementQty, cementPrice } = data;
+   750→   750→        if (!itemId || !itemName || !nickname || steelQty === undefined || cementQty === undefined) {
+   751→   751→          return err("Campos obrigatorios: itemId, itemName, nickname, steelQty, cementQty");
+   752→   752→        }
+   753→   753→        const report = await db.priceReport.create({
+   754→   754→          data: {
+   755→   755→            itemId,
+   756→   756→            itemName,
+   757→   757→            nickname,
+   758→   758→            steelQty: Number(steelQty),
+   759→   759→            steelPrice: Number(steelPrice) || 1,
+   760→   760→            cementQty: Number(cementQty),
+   761→   761→            cementPrice: Number(cementPrice) || 1,
+   762→   762→          },
+   763→   763→        });
+   764→   764→        return json(report);
+   765→   765→      }
+   766→   766→
+   767→   767→      // === PROPAGANDA ===
+   768→   768→      case "setAd": {
+   769→   769→        const { slotId, codigo } = data;
+   770→   770→        if (!slotId) return err("slotId obrigatório");
+   771→   771→        const pwd = req.headers.get("x-admin-password");
+   772→   772→        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+   773→   773→        const ad = await db.propaganda.upsert({
+   774→   774→          where: { slotId },
+   775→   775→          create: { slotId, codigo: codigo || "" },
+   776→   776→          update: { codigo: codigo || "" },
+   777→   777→        });
+   778→   778→        return json({ success: true, id: ad.id });
+   779→   779→      }
+   780→   780→      case "deleteAd": {
+   781→   781→        const { slotId } = data;
+   782→   782→        if (!slotId) return err("slotId obrigatório");
+   783→   783→        const pwd = req.headers.get("x-admin-password");
+   784→   784→        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+   785→   785→        await db.propaganda.delete({ where: { slotId } });
+   786→   786→        return json({ success: true });
+   787→   787→      }
+   788→   788→
+   789→   789→      // === BACKUP ===
+   790→   790→      case "backup": {
+   791→   791→        const pwd = req.headers.get("x-admin-password");
+   792→   792→        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+   793→   793→        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens] = await Promise.all([
+   794→   794→          db.emprestimo.findMany(),
+   795→   795→          db.investidor.findMany(),
+   796→   796→          db.tabelaTroca.findMany(),
+   797→   797→          db.trocaRegistro.findMany(),
+   798→   798→          db.compraVenda.findMany(),
+   799→   799→          db.caixaRegistro.findMany(),
+   800→   800→          db.doador.findMany(),
+   801→   801→          db.leilao.findMany(),
+   802→   802→          db.lance.findMany(),
+   803→   803→          db.sorteio.findMany(),
+   804→   804→          db.participanteSorteio.findMany(),
+   805→   805→          db.loterica.findMany(),
+   806→   806→          db.numeroLoterica.findMany(),
+   807→   807→          db.priceReport.findMany(),
+   808→   808→          db.itemOverride.findMany(),
+   809→   809→          db.propaganda.findMany(),
+   810→   810→          db.chatSala.findMany(),
+   811→   811→          db.chatMensagem.findMany(),
+   812→   812→        ]);
+   813→   813→        const backup = JSON.stringify({
+   814→   814→          version: 1,
+   815→   815→          exportDate: new Date().toISOString(),
+   816→   816→          emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
+   817→   817→          leiloes, lances, sorteios, participantes, lotericas, numeros,
+   818→   818→          priceReports, itemOverrides, propagandas, chatSalas, chatMensagens,
+   819→   819→        }, null, 2);
+   820→   820→        const filename = `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
+   821→   821→        return new Response(backup, {
+   822→   822→          headers: {
+   823→   823→            'Content-Type': 'application/json',
+   824→   824→            'Content-Disposition': `attachment; filename="${filename}"`,
+   825→   825→          },
+   826→   826→        });
+   827→   827→      }
+   828→   828→
+   829→   829→      default:
+   830→   830→        return err("Ação POST desconhecida: " + action);
+   831→   831→    }
+   832→   832→  } catch (e: unknown) {
+   833→   833→    const msg = e instanceof Error ? e.message : "Erro interno";
+   834→   834→    return err(msg, 500);
+   835→   835→  }
+   836→   836→}
+   837→   837→
