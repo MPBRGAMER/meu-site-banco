@@ -62,3 +62,19 @@ Stage Summary:
 - Translation dictionary is comprehensive for static text
 - Dynamic strings (window.confirm, template literal toasts) cannot be fully translated by DOM walker
 - Date locale now respects user language selection in Tabela reports
+---
+Task ID: 3
+Agent: main
+Task: Restore backup and fix API
+
+Work Log:
+- Imported 531 records from backup to new Neon DB
+- Discovered raw SQL queries used snake_case table names (price_report, sorteio, loterica) but Neon tables use PascalCase (PriceReport, Sorteio, Loterica)
+- Replaced all 3 raw SQL queries with Prisma standard API (groupBy, count) to avoid table name issues entirely
+- Verified loadAll API returns all data correctly: 6 investidores, 25 tabelasTroca, 18 trocas, 9 comprasVendas, 245 caixa, 212 doadores, 16 priceReports
+- Pushed fix to GitHub (commit 7197d01)
+
+Stage Summary:
+- Root cause: raw SQL queries had wrong table names for Neon PostgreSQL
+- Fix: replaced $queryRaw with Prisma groupBy/count API
+- All data restored and API working locally
