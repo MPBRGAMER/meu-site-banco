@@ -3,22 +3,12 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { toast } from "sonner";
 
 export interface ChatMsg {
-  id: string;
-  canal: string;
-  salaId: string | null;
-  autor: string;
-  conteudo: string;
-  data: string;
-  isAdmin: boolean;
+  id: string; canal: string; salaId: string | null;
+  autor: string; conteudo: string; data: string; isAdmin: boolean;
 }
-
 export interface ChatSala {
-  id: string;
-  nome: string;
-  criadoPor: string;
-  senha: boolean;
-  dataCriacao: string;
-  totalMensagens: number;
+  id: string; nome: string; criadoPor: string;
+  senha: boolean; dataCriacao: string; totalMensagens: number;
 }
 
 function getAdminPwd(): string {
@@ -29,11 +19,7 @@ function getAdminPwd(): string {
 async function chatGet(action: string, params?: Record<string, string>) {
   const url = new URL("/api/chat", window.location.origin);
   url.searchParams.set("action", action);
-  if (params) {
-    for (const [k, v] of Object.entries(params)) {
-      if (v) url.searchParams.set(k, v);
-    }
-  }
+  if (params) for (const [k, v] of Object.entries(params)) if (v) url.searchParams.set(k, v);
   const res = await fetch(url.toString());
   const data = await res.json();
   if ("error" in data) throw new Error(data.error as string);
@@ -60,25 +46,22 @@ export function useChat() {
   const mountedRef = useRef(true);
   const lastIdRef = useRef<string | null>(null);
   const autoScrollRef = useRef(true);
+  const visibilityRef = useRef(true);
 
   const loadMensagens = useCallback(async () => {
+    if (!mountedRef.current) return;
+    // Skip polling when tab is not visible
+    if (!visibilityRef.current) return;
     try {
       const params: Record<string, string> = { canal: salaAtiva ? "sala" : canalAtivo };
       if (salaAtiva) params.salaId = salaAtiva;
       if (lastIdRef.current) params.lastId = lastIdRef.current;
-
       const data = await chatGet("listMensagens", params);
       const msgs = (data as ChatMsg[]).map((m) => ({
-        ...m,
-        data: m.data instanceof Date ? m.data.toISOString() : m.data,
+        ...m, data: m.data instanceof Date ? m.data.toISOString() : m.data,
       }));
-
       if (!mountedRef.current) return;
-
-      if (msgs.length > 0) {
-        lastIdRef.current = msgs[msgs.length - 1].id;
-      }
-
+      if (msgs.length > 0) lastIdRef.current = msgs[msgs.length - 1].id;
       setMensagens((prev) => {
         if (lastIdRef.current && prev.length > 0) {
           const prevIds = new Set(prev.map((m) => m.id));
@@ -87,27 +70,25 @@ export function useChat() {
         }
         return msgs;
       });
-    } catch {
-      // silent
-    }
+    } catch { /* silent */ }
   }, [canalAtivo, salaAtiva]);
 
   const loadSalas = useCallback(async () => {
+    if (!mountedRef.current || !visibilityRef.current) return;
     try {
       const data = await chatGet("listSalas");
       if (!mountedRef.current) return;
-      setSalas(
-        (data as ChatSala[]).map((s) => ({
-          ...s,
-          dataCriacao:
-            s.dataCriacao instanceof Date
-              ? s.dataCriacao.toISOString()
-              : s.dataCriacao,
-        }))
-      );
-    } catch {
-      // silent
-    }
+      setSalas((data as ChatSala[]).map((s) => ({
+        ...s, dataCriacao: s.dataCriacao instanceof Date ? s.dataCriacao.toISOString() : s.dataCriacao,
+      })));
+    } catch { /* silent */ }
+  }, []);
+
+  // Track tab visibility to pause polling when tab is hidden
+  useEffect(() => {
+    const onVis = () => { visibilityRef.current = !document.hidden; };
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
   }, []);
 
   useEffect(() => {
@@ -116,16 +97,15 @@ export function useChat() {
     setMensagens([]);
     autoScrollRef.current = true;
     loadMensagens();
-    const interval = setInterval(loadMensagens, 3000);
-    return () => {
-      mountedRef.current = false;
-      clearInterval(interval);
-    };
+    // 8 seconds instead of 3 seconds
+    const interval = setInterval(loadMensagens, 8000);
+    return () => { mountedRef.current = false; clearInterval(interval); };
   }, [canalAtivo, salaAtiva, loadMensagens]);
 
   useEffect(() => {
     loadSalas();
-    const interval = setInterval(loadSalas, 10000);
+    // 30 seconds instead of 10 seconds
+    const interval = setInterval(loadSalas, 30000);
     return () => clearInterval(interval);
   }, [loadSalas]);
 
@@ -138,104 +118,61 @@ export function useChat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
-  const sendMessage = useCallback(
-    async (conteudo: string, autor: string) => {
-      if (!conteudo.trim()) return;
-      try {
-        await chatPost("sendMessage", {
-          canal: salaAtiva ? "sala" : canalAtivo,
-          salaId: salaAtiva || undefined,
-          conteudo: conteudo.trim(),
-          autor: autor.trim(),
-          isAdmin: !!getAdminPwd(),
-        });
-        loadMensagens();
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : "Erro ao enviar");
-      }
-    },
-    [canalAtivo, salaAtiva, loadMensagens]
-  );
+  const sendMessage = useCallback(async (conteudo: string, autor: string) => {
+    if (!conteudo.trim()) return;
+    try {
+      await chatPost("sendMessage", {
+        canal: salaAtiva ? "sala" : canalAtivo,
+        salaId: salaAtiva || undefined,
+        conteudo: conteudo.trim(), autor: autor.trim(), isAdmin: !!getAdminPwd(),
+      });
+      loadMensagens();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao enviar");
+    }
+  }, [canalAtivo, salaAtiva, loadMensagens]);
 
-  const createSala = useCallback(
-    async (nome: string, criadoPor: string, senha?: string) => {
-      try {
-        const result = await chatPost("createSala", {
-          nome: nome.trim(),
-          criadoPor: criadoPor.trim(),
-          senha: senha || undefined,
-        });
-        toast.success("Sala criada!");
-        loadSalas();
-        return result as ChatSala;
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : "Erro ao criar sala");
-        throw e;
-      }
-    },
-    [loadSalas]
-  );
+  const createSala = useCallback(async (nome: string, criadoPor: string, senha?: string) => {
+    try {
+      const result = await chatPost("createSala", {
+        nome: nome.trim(), criadoPor: criadoPor.trim(), senha: senha || undefined,
+      });
+      toast.success("Sala criada!"); loadSalas();
+      return result as ChatSala;
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao criar sala"); throw e;
+    }
+  }, [loadSalas]);
 
-  const deleteMensagem = useCallback(
-    async (id: string) => {
-      try {
-        await chatPost("deleteMensagem", { id, adminPassword: getAdminPwd() });
-        setMensagens((prev) => prev.filter((m) => m.id !== id));
-        toast.success("Mensagem removida.");
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : "Erro ao deletar");
-      }
-    },
-    []
-  );
+  const deleteMensagem = useCallback(async (id: string) => {
+    try {
+      await chatPost("deleteMensagem", { id, adminPassword: getAdminPwd() });
+      setMensagens((prev) => prev.filter((m) => m.id !== id));
+      toast.success("Mensagem removida.");
+    } catch (e) { toast.error(e instanceof Error ? e.message : "Erro ao deletar"); }
+  }, []);
 
-  const deleteSala = useCallback(
-    async (id: string) => {
-      try {
-        await chatPost("deleteSala", { id, adminPassword: getAdminPwd() });
-        if (salaAtiva === id) {
-          setSalaAtiva(null);
-          setCanalAtivo("geral");
-        }
-        toast.success("Sala removida.");
-        loadSalas();
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : "Erro ao deletar sala");
-      }
-    },
-    [salaAtiva, loadSalas]
-  );
+  const deleteSala = useCallback(async (id: string) => {
+    try {
+      await chatPost("deleteSala", { id, adminPassword: getAdminPwd() });
+      if (salaAtiva === id) { setSalaAtiva(null); setCanalAtivo("geral"); }
+      toast.success("Sala removida."); loadSalas();
+    } catch (e) { toast.error(e instanceof Error ? e.message : "Erro ao deletar"); }
+  }, [salaAtiva, loadSalas]);
 
   const joinSala = useCallback((salaId: string, _senha?: string) => {
-    lastIdRef.current = null;
-    setSalaAtiva(salaId);
+    lastIdRef.current = null; setSalaAtiva(salaId);
   }, []);
-
   const leaveSala = useCallback(() => {
-    lastIdRef.current = null;
-    setSalaAtiva(null);
+    lastIdRef.current = null; setSalaAtiva(null);
   }, []);
-
   const switchCanal = useCallback((canal: string) => {
-    lastIdRef.current = null;
-    setSalaAtiva(null);
-    setCanalAtivo(canal);
+    lastIdRef.current = null; setSalaAtiva(null); setCanalAtivo(canal);
   }, []);
 
   return {
-    mensagens,
-    salas,
-    canalAtivo,
-    salaAtiva,
-    isLoading,
-    autoScrollRef,
-    sendMessage,
-    createSala,
-    deleteMensagem,
-    deleteSala,
-    joinSala,
-    leaveSala,
-    switchCanal,
-    setMensagens,
+    mensagens, salas, canalAtivo, salaAtiva, isLoading, autoScrollRef,
+    sendMessage, createSala, deleteMensagem, deleteSala,
+    joinSala, leaveSala, switchCanal, setMensagens,
   };
 }
