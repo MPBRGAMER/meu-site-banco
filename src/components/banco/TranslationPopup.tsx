@@ -432,6 +432,11 @@ const EN: Record<string, string> = {
   "Backup baixado com sucesso!": "Backup downloaded successfully!",
   "Erro ao baixar o backup.": "Error downloading backup.",
 
+  "Erro ao verificar senha.": "Error verifying password.",
+  "Baixar backup completo do banco": "Download full database backup",
+  "Clique para sair do modo Admin": "Click to exit Admin mode",
+  "Entrar como Admin (requer senha)": "Enter as Admin (password required)",
+
   // ---- Translation Popup ----
   "Traduzir o Site": "Translate Site",
   "Selecione seu idioma": "Select your language",
