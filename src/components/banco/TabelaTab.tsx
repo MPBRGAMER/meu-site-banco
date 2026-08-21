@@ -3,17 +3,15 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
   MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
-  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save,
+  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save, ImageOff,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { pricesData } from "@/data/prices";
 import { priceTrends } from "@/data/price-trends";
-import { getFallbackEmoji } from "@/data/item-icons";
 import { useBank } from "@/lib/useBank";
 import { toast } from "sonner";
 import AdSlot from "@/components/AdSlot";
-import { getDateLocale } from "./TranslationPopup";
 
 interface PriceItem {
   id: string;
@@ -113,15 +111,17 @@ function Sparkline({ itemId }: { itemId: string }) {
 }
 
 function ItemIcon({ itemId, imgPath }: { itemId: string; imgPath?: string }) {
+  const resolvedPath = imgPath || `/items/${itemId}.png`;
   const [imgError, setImgError] = useState(false);
-  if (imgError || !imgPath) {
-    return <span className="text-base leading-none">{getFallbackEmoji(itemId)}</span>;
+  useEffect(() => setImgError(false), [resolvedPath]);
+  if (imgError) {
+    return <span className="inline-flex w-7 h-7 items-center justify-center rounded-sm bg-muted/40" title={`Imagem indisponível para ${itemId}`}><ImageOff className="w-4 h-4 text-muted-foreground" /></span>;
   }
   return (
     <img
-      src={imgPath}
+      src={resolvedPath}
       alt={itemId}
-      className="w-6 h-6 object-contain"
+      className="w-7 h-7 object-contain rounded-sm"
       style={{ imageRendering: "pixelated" }}
       onError={() => setImgError(true)}
       loading="lazy"
@@ -343,10 +343,10 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
   const [newItemRarity, setNewItemRarity] = useState("common");
   const [newItemNotes, setNewItemNotes] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [editForm, setEditForm] = useState({ name: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "", categoryId: "" });
+  const [editForm, setEditForm] = useState({ name: "", img: "", steel: "", cement: "", demand: "", wikiLink: "", notes: "", categoryId: "" });
   const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
   const [isSaving, setIsSaving] = useState(false);
-
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const categories = mergedCategories;
   const removeSet = new Set(itemOverrides.filter(o => o.action === "remove").map(o => o.itemId));
   const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))));
@@ -422,7 +422,51 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
 
   const startEdit = (item: typeof allItems[0]) => {
     setEditingId(item.id);
-    setEditForm({ name: item.name, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes, categoryId: item.categoryId });
+    setEditForm({ name: item.name, img: item.img || `/items/${item.id}.png`, steel: item.steel, cement: item.cement, demand: item.demand, wikiLink: item.wikiLink || "", notes: item.notes, categoryId: item.categoryId });
+  };
+
+  const uploadItemImage = async (file: File, itemId: string) => {
+    setIsUploadingImage(true);
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("itemId", itemId);
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "x-admin-password": getAdminPwd() },
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Erro ao enviar imagem");
+      return data.url as string;
+    } finally {
+      setIsUploadingImage(false);
+    }
+  };
+
+  const handleImageUpload = async (file: File) => {
+    if (!editingId) return;
+    try {
+      const url = await uploadItemImage(file, editingId);
+      setEditForm((current) => ({ ...current, img: url }));
+      toast.success("Imagem enviada. Clique em Salvar para aplicar ao item.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Erro ao enviar imagem.");
+    }
+  };
+
+  const handleNewImageUpload = async (file: File) => {
+    if (!newItemId.trim()) {
+      toast.error("Informe o nome do item para gerar o ID antes de enviar a imagem.");
+      return;
+    }
+    try {
+      const url = await uploadItemImage(file, newItemId.trim());
+      setNewItemImg(url);
+      toast.success("Imagem enviada. Ela será salva junto com o novo item.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Erro ao enviar imagem.");
+    }
   };
 
   const handleSaveEdit = async () => {
@@ -530,8 +574,14 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
                   </select>
                 </div>
                 <div>
-                  <label className="text-[11px] text-muted-foreground">Imagem (caminho)</label>
-                  <Input value={newItemImg} onChange={(e) => setNewItemImg(e.target.value)} placeholder="/items/nome.png" className="text-sm mt-1 h-8 font-mono" />
+                  <label className="text-[11px] text-muted-foreground">Imagem do item</label>
+                  <div className="flex items-center gap-2 mt-1">
+                    {newItemImg ? <img src={newItemImg} alt="Prévia do novo item" className="w-9 h-9 rounded border border-border object-contain bg-muted/20" /> : <div className="w-9 h-9 rounded border border-dashed border-border flex items-center justify-center"><ImageOff className="w-3.5 h-3.5 text-muted-foreground" /></div>}
+                    <label className="flex-1 cursor-pointer text-center text-[10px] py-1.5 rounded border border-border hover:bg-muted/30 text-foreground">
+                      {isUploadingImage ? "Enviando..." : "Escolher imagem"}
+                      <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" className="sr-only" disabled={isUploadingImage} onChange={(e) => { const file = e.target.files?.[0]; if (file) void handleNewImageUpload(file); e.currentTarget.value = ""; }} />
+                    </label>
+                  </div>
                 </div>
               </div>
               <div>
@@ -595,6 +645,14 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
                           <div>
                             <label className="text-[9px] text-muted-foreground">Nome</label>
                             <Input value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} className="text-xs h-7 mt-0.5" />
+                            <label className="text-[10px] text-muted-foreground mt-2 block">Imagem do item</label>
+                            <div className="flex items-center gap-2 mt-1">
+                              {editForm.img ? <img src={editForm.img} alt="Prévia do item" className="w-9 h-9 rounded border border-border object-contain bg-muted/20" /> : <div className="w-9 h-9 rounded border border-dashed border-border" />}
+                              <label className="flex-1 cursor-pointer text-center text-[10px] py-1.5 rounded border border-border hover:bg-muted/30 text-foreground">
+                                {isUploadingImage ? "Enviando..." : "Escolher imagem"}
+                                <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" className="sr-only" disabled={isUploadingImage} onChange={(e) => { const file = e.target.files?.[0]; if (file) void handleImageUpload(file); e.currentTarget.value = ""; }} />
+                              </label>
+                            </div>
                           </div>
                           <div>
                             <label className="text-[9px] text-muted-foreground">Categoria</label>
@@ -1100,13 +1158,13 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
               {priceReports.slice(0, 20).map((r) => (
                 <div key={r.id} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted/20 transition-colors text-[11px]">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="text-primary font-semibold shrink-0">{r.nickname}</span>
+                    <span className="text-primary font-semibold shrink-0" data-no-translate translate="no">{r.nickname}</span>
                     <span className="text-muted-foreground truncate">reportou {r.itemName}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
                     <span className="font-mono font-semibold text-green-400">{r.steelQty}:{r.steelPrice}$</span>
                     <span className="font-mono font-semibold text-foreground/80">{r.cementQty}:{r.cementPrice}c</span>
-                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString(getDateLocale())}</span>
+                    <span className="font-mono text-muted-foreground text-[10px]">{new Date(r.data).toLocaleDateString("pt-BR")}</span>
                   </div>
                 </div>
               ))}

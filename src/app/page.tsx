@@ -2,7 +2,7 @@
 import { useState, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,8 @@ import LotericaTab from "@/components/banco/LotericaTab";
 import TabelaTab from "@/components/banco/TabelaTab";
 import ChatTab from "@/components/banco/ChatTab";
 import { TranslationPopup } from "@/components/banco/TranslationPopup";
+import SiteProtection from "@/components/SiteProtection";
+import { Toaster } from "@/components/ui/sonner";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -48,6 +50,7 @@ export default function HomePage() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [adminPwd, setAdminPwd] = useState("");
   const [isVerifying, setIsVerifying] = useState(false);
+  const [isDownloadingBackup, setIsDownloadingBackup] = useState(false);
   const { isLoading } = useBank();
   const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
 
@@ -58,6 +61,45 @@ export default function HomePage() {
     }
     setShowAdminLogin(true);
     setAdminPwd("");
+  };
+
+  const handleDownloadBackup = async () => {
+    const password = sessionStorage.getItem("adminPwd");
+    if (!password) {
+      toast.error("Entre no modo Admin para baixar o backup.");
+      return;
+    }
+    setIsDownloadingBackup(true);
+    try {
+      const response = await fetch("/api/banco", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": password,
+        },
+        body: JSON.stringify({ action: "backup" }),
+      });
+      if (!response.ok) {
+        throw new Error("Não foi possível gerar o backup.");
+      }
+      const blob = await response.blob();
+      const disposition = response.headers.get("Content-Disposition") || "";
+      const filenameMatch = disposition.match(/filename="?([^\"]+)"?/i);
+      const filename = filenameMatch?.[1] || `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      toast.success("Backup baixado com sucesso!");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Erro ao baixar o backup.");
+    } finally {
+      setIsDownloadingBackup(false);
+    }
   };
 
   const handleAdminLogin = async () => {
@@ -144,6 +186,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SiteProtection />
+      <Toaster theme="dark" richColors position="top-right" />
       {/* Header */}
       <header className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
@@ -164,7 +208,18 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            {isAdmin && (
+              <button
+                onClick={handleDownloadBackup}
+                disabled={isDownloadingBackup}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 disabled:opacity-60"
+                title="Baixar backup completo do banco"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{isDownloadingBackup ? "Gerando..." : "Backup"}</span>
+              </button>
+            )}
             <button
               onClick={handleAdminToggle}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border ${

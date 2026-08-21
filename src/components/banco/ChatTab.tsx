@@ -74,6 +74,8 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const scrollLockRef = useRef(false);
+  const scrollTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const saved = localStorage.getItem("chatNickname");
@@ -84,15 +86,21 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   }, []);
 
   useEffect(() => {
-    if (autoScrollRef.current && messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (autoScrollRef.current && messagesContainerRef.current) {
+      scrollLockRef.current = true;
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+      requestAnimationFrame(() => { scrollLockRef.current = false; });
     }
   }, [mensagens]);
 
   const handleScroll = () => {
     const el = messagesContainerRef.current;
-    if (!el) return;
-    autoScrollRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    if (!el || scrollLockRef.current) return;
+    if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+    scrollTimerRef.current = setTimeout(() => {
+      if (!el) return;
+      autoScrollRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    }, 100);
   };
 
   const handleSend = () => {
@@ -191,7 +199,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               {CANAIS.map((canal) => (
                 <button
                   key={canal.id}
-                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); }}
+                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); autoScrollRef.current = true; }}
                   className={cn(
                     "w-full flex items-center gap-2 px-2 py-1.5 rounded-md text-sm transition-colors text-left",
                     canalAtivo === canal.id && !isSala
@@ -249,7 +257,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               {CANAIS.map((canal) => (
                 <button
                   key={canal.id}
-                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); }}
+                  onClick={() => { switchCanal(canal.id); setShowWelcome(false); autoScrollRef.current = true; }}
                   title={canal.nome}
                   className={cn(
                     "w-full flex items-center justify-center p-1.5 rounded-md transition-colors",
@@ -284,7 +292,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                 {nomeUsuario.charAt(0).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs font-medium text-foreground truncate">{nomeUsuario}</p>
+                <p className="text-xs font-medium text-foreground truncate" data-no-translate translate="no">{nomeUsuario}</p>
                 <p className="text-[10px] text-muted-foreground">{isAdmin ? "Admin" : "Membro"}</p>
               </div>
               {isAdmin && <Shield className="w-3 h-3 text-primary" />}
@@ -300,7 +308,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               <>
                 <Lock className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm font-bold text-foreground">{currentSala?.nome || "Sala"}</span>
-                <span className="text-[10px] text-muted-foreground">por {currentSala?.criadoPor}</span>
+                <span className="text-[10px] text-muted-foreground">por <span data-no-translate translate="no">{currentSala?.criadoPor}</span></span>
               </>
             ) : (
               <>
@@ -366,7 +374,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-baseline gap-2">
-                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")}>
+                          <span className={cn("text-xs font-bold", msg.isAdmin ? "text-primary" : "text-foreground")} data-no-translate translate="no">
                             {msg.autor}
                             {msg.isAdmin && <Shield className="w-2.5 h-2.5 inline ml-1 text-primary" />}
                           </span>

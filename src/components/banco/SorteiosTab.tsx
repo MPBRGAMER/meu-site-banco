@@ -61,7 +61,7 @@ function SorteioCard({ sorteio, isAdmin }: { sorteio: { id: string; nomeItem: st
           <div className="text-center"><p className="text-xs text-muted-foreground">Participantes</p><p className="text-sm font-bold text-foreground flex items-center gap-1"><Users className="w-3 h-3" /> {participantes.length}</p></div>
           <div className="text-center"><p className="text-xs text-muted-foreground">Criado</p><p className="text-xs font-mono text-foreground">{new Date(sorteio.dataCriacao).toLocaleDateString(getDateLocale())}</p></div>
         </div>
-        {participantes.length > 0 && <div className="mb-3 max-h-20 overflow-y-auto space-y-1">{participantes.map((p) => (<div key={p.id} className="flex items-center gap-2 text-xs"><Users className="w-3 h-3 text-primary" /><span className="text-foreground">{p.jogador}</span></div>))}</div>}
+        {participantes.length > 0 && <div className="mb-3 max-h-20 overflow-y-auto space-y-1">{participantes.map((p) => (<div key={p.id} className="flex items-center gap-2 text-xs"><Users className="w-3 h-3 text-primary" /><span className="text-foreground" data-no-translate translate="no">{p.jogador}</span></div>))}</div>}
         <div className="mt-3">
           {showPart ? (
             <div className="flex gap-2"><Input placeholder="Seu nome" value={jogadorNome} onChange={(e) => setJogadorNome(e.target.value)} className="text-sm flex-1" onKeyDown={(e) => e.key === "Enter" && handlePart()} /><Button size="sm" onClick={handlePart} className="bg-primary text-primary-foreground">Entrar</Button><Button size="sm" variant="ghost" onClick={() => { setShowPart(false); setJogadorNome(""); }}>X</Button></div>
@@ -117,7 +117,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
           </div>
           <div className="text-right">
             <p className="text-xs text-muted-foreground">Ganhador</p>
-            <p className="text-sm font-bold text-yellow-400">{entry.ganhador || "-"}</p>
+            <p className="text-sm font-bold text-yellow-400" data-no-translate translate="no">{entry.ganhador || "-"}</p>
           </div>
           {expanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
         </div>
@@ -144,7 +144,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
           </div>
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/5 p-3 mb-3">
             <p className="text-xs text-muted-foreground mb-1">Ganhador</p>
-            <p className="text-base font-bold text-yellow-400 flex items-center gap-2"><Trophy className="w-4 h-4" /> {entry.ganhador || "Nenhum"}</p>
+            <p className="text-base font-bold text-yellow-400 flex items-center gap-2"><Trophy className="w-4 h-4" /> {entry.ganhador ? <span data-no-translate translate="no">{entry.ganhador}</span> : "Nenhum"}</p>
           </div>
           {participantes.length > 0 && (
             <div>
@@ -153,7 +153,7 @@ function HistoricoEntry({ entry, index }: { entry: { id: string; nomeItem: strin
                 {participantes.map((p) => (
                   <div key={p.id} className={`flex items-center gap-2 text-xs py-1 px-2 rounded ${p.jogador === entry.ganhador ? "bg-yellow-500/10 border border-yellow-500/30" : ""}`}>
                     {p.jogador === entry.ganhador && <Trophy className="w-3 h-3 text-yellow-400" />}
-                    <span className={p.jogador === entry.ganhador ? "text-yellow-400 font-bold" : "text-foreground"}>{p.jogador}</span>
+                    <span className={p.jogador === entry.ganhador ? "text-yellow-400 font-bold" : "text-foreground"} data-no-translate translate="no">{p.jogador}</span>
                   </div>
                 ))}
               </div>

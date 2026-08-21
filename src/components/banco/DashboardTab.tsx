@@ -144,7 +144,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                 <div className="w-4 h-4 flex items-center justify-center shrink-0">
                   {idx === 0 ? <Crown className="w-3 h-3 text-yellow-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-gray-300" /> : idx === 2 ? <Medal className="w-3 h-3 text-orange-600" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                 </div>
-                <p className="text-[11px] font-semibold text-foreground truncate">{d.nome}</p>
+                <p className="text-[11px] font-semibold text-foreground truncate" data-no-translate translate="no">{d.nome}</p>
               </div>
             ))}
           </div>
@@ -168,7 +168,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                     {idx === 0 ? <Crown className="w-3 h-3 text-blue-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-indigo-400" /> : idx === 2 ? <Medal className="w-3 h-3 text-violet-400" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-semibold text-foreground truncate">{inv.nome}</p>
+                    <p className="text-[11px] font-semibold text-foreground truncate" data-no-translate translate="no">{inv.nome}</p>
                     <p className="text-[9px] text-muted-foreground font-mono">desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                     {idx === 0 ? <Crown className="w-3 h-3 text-green-400" /> : idx === 1 ? <Medal className="w-3 h-3 text-emerald-400" /> : idx === 2 ? <Medal className="w-3 h-3 text-teal-400" /> : <span className="text-[10px] font-bold text-muted-foreground">#{idx + 1}</span>}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1">{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
+                    <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1" data-no-translate translate="no">{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
                     <p className="text-[9px] text-muted-foreground font-mono">{r.count} contribuicoes</p>
                   </div>
                 </div>

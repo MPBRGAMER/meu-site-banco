@@ -1,52 +1,64 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const LANG_MAP: Record<string, string> = { en: "en", es: "es", fr: "fr", de: "de", ru: "ru" };
 const cache = new Map<string, string>();
 const MAX_CACHE = 5000;
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { texts, targetLang } = body as { texts: string[]; targetLang: string };
-    if (!texts?.length || !targetLang || targetLang === "pt") return NextResponse.json({ translations: texts || [] });
-    const ltLang = LANG_MAP[targetLang];
-    if (!ltLang) return NextResponse.json({ translations: texts });
-
-    const results: string[] = [];
-    const toTranslate: { idx: number; text: string }[] = [];
-    for (let i = 0; i < texts.length; i++) {
-      const t = texts[i];
-      if (!t || t.trim().length === 0) { results.push(t); }
-      else if (cache.has(`pt:${ltLang}:${t}`)) { results.push(cache.get(`pt:${ltLang}:${t}`)!); }
-      else { results.push(t); toTranslate.push({ idx: i, text: t }); }
+    const { texts, targetLang } = await req.json();
+    if (!texts || !Array.isArray(texts) || !targetLang) {
+      return NextResponse.json({ translations: {} }, { status: 400 });
     }
-    if (toTranslate.length === 0) return NextResponse.json({ translations: results });
 
-    try {
-      const uniqueTexts = [...new Set(toTranslate.map(t => t.text))];
-      const responses = await Promise.allSettled(
-        uniqueTexts.map(async (text) => {
-          if (text.length > 500) return text;
-          const resp = await fetch(
-            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${ltLang}`,
-            { signal: AbortSignal.timeout(6000) }
-          );
-          if (!resp.ok) return text;
-          const data = await resp.json();
-          return data?.responseData?.translatedText || text;
-        })
-      );
-      const translationMap = new Map<string, string>();
-      uniqueTexts.forEach((text, i) => {
-        const result = responses[i];
-        if (result.status === "fulfilled") {
-          translationMap.set(text, result.value);
-          cache.set(`pt:${ltLang}:${text}`, result.value);
-          if (cache.size > MAX_CACHE) { const first = cache.keys().next().value; if (first) cache.delete(first); }
+    const langMap: Record<string, string> = {
+      en: "en", es: "es", fr: "fr", de: "de", ru: "ru",
+    };
+    const target = langMap[targetLang] || "en";
+    const translations: Record<string, string> = {};
+    const toFetch: string[] = [];
+
+    for (const text of texts) {
+      const key = `${target}:${text}`;
+      if (cache.has(key)) {
+        translations[text] = cache.get(key)!;
+      } else {
+        toFetch.push(text);
+      }
+    }
+
+    if (toFetch.length > 0) {
+      try {
+        const pairs = toFetch
+          .map((t) => `pt|${encodeURIComponent(t)}|${target}`)
+          .join("&pair=");
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 6000);
+        const res = await fetch(
+          `https://api.mymemory.translated.net/get?q=${pairs}`,
+          { signal: controller.signal }
+        );
+        clearTimeout(timeout);
+        const data = await res.json();
+        const responseData = data.responseData || [];
+        for (const item of responseData) {
+          const translated = item.translatedText;
+          if (translated && translated !== item.query) {
+            translations[item.query] = translated;
+            const cacheKey = `${target}:${item.query}`;
+            cache.set(cacheKey, translated);
+            if (cache.size > MAX_CACHE) {
+              const firstKey = cache.keys().next().value;
+              if (firstKey) cache.delete(firstKey);
+            }
+          }
         }
-      });
-      for (const { idx, text } of toTranslate) results[idx] = translationMap.get(text) || text;
-    } catch { /* API failed */ }
-    return NextResponse.json({ translations: results });
-  } catch { return NextResponse.json({ error: "Translation failed" }, { status: 500 }); }
+      } catch {
+        // API failed, just return what we have from cache
+      }
+    }
+
+    return NextResponse.json({ translations });
+  } catch {
+    return NextResponse.json({ translations: {} }, { status: 500 });
+  }
 }

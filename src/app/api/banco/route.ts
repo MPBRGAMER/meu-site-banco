@@ -23,6 +23,126 @@ export async function GET(req: NextRequest) {
         if (pwd !== ADMIN_PASSWORD) return err("Senha incorreta", 403);
         return json({ success: true });
       }
+
+      // === UNIFIED LOAD ALL - 1 request instead of 14+ ===
+      case "loadAll": {
+        const sinceParam = searchParams.get("since");
+        const since = sinceParam ? new Date(sinceParam) : null;
+
+        // If no 'since' param, return all data (full load)
+        // If 'since' provided, only return data changed after that timestamp
+        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, lotericaActive, allLoterica, reporterRanking] =
+          await Promise.all([
+            db.emprestimo.findMany({
+              orderBy: { dataEmprestimo: "desc" },
+            }),
+            db.investidor.findMany({
+              where: { status: "ativo" },
+              orderBy: { ordem: "desc" },
+            }),
+            db.tabelaTroca.findMany(),
+            db.trocaRegistro.findMany({
+              orderBy: { data: "desc" },
+            }),
+            db.compraVenda.findMany({
+              orderBy: { data: "desc" },
+            }),
+            db.caixaRegistro.findMany({
+              orderBy: { data: "desc" },
+            }),
+            db.doador.findMany({
+              orderBy: { ordem: "desc" },
+            }),
+            db.leilao.findMany({
+              orderBy: { dataCriacao: "desc" },
+            }),
+            db.lance.findMany({
+              orderBy: { valor: "desc" },
+            }),
+            db.sorteio.findMany({
+              orderBy: { dataCriacao: "desc" },
+            }),
+            db.loterica.findMany({
+              where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
+              orderBy: { dataCriacao: "desc" },
+              take: 1,
+            }),
+            db.loterica.findMany({
+              orderBy: { dataCriacao: "desc" },
+            }),
+            // Optimized reporter ranking with SQL grouping
+            db.$queryRaw<Array<{ nickname: string; count: bigint; lastreport: string }>>`
+              SELECT "nickname", COUNT(*)::int as count, MAX("data")::text as lastreport
+              FROM "price_report"
+              GROUP BY LOWER("nickname"), "nickname"
+              ORDER BY count DESC
+              LIMIT 10
+            `,
+          ]);
+
+        // Build historico with counts (avoid N+1 by using includes or parallel counts)
+        const [historicoSorteios, lotericaWithCounts] = await Promise.all([
+          // Use a single aggregate query for sorteio participant counts
+          db.$queryRaw<Array<{ id: string; totalparticipantes: number }>>`
+            SELECT s.id, COUNT(ps."sorteioId")::int as totalparticipantes
+            FROM "sorteio" s
+            LEFT JOIN "participante_sorteio" ps ON ps."sorteioId" = s.id
+            WHERE s.status = 'finalizado'
+            GROUP BY s.id
+          `.then((counts) => {
+            const countMap = new Map(counts.map((c) => [c.id, c.totalparticipantes]));
+            return sorteios
+              .filter((s) => s.status === "finalizado")
+              .map((s) => ({ ...s, totalParticipantes: countMap.get(s.id) || 0 }));
+          }),
+          // Use a single aggregate query for loterica sold counts
+          db.$queryRaw<Array<{ id: string; totalvendidos: number }>>`
+            SELECT l.id, COUNT(n.id)::int as totalvendidos
+            FROM "loterica" l
+            LEFT JOIN "numero_loterica" n ON n."lotericaId" = l.id AND n."comprador" IS NOT NULL
+            GROUP BY l.id
+          `.then((counts) => {
+            const countMap = new Map(counts.map((c) => [c.id, c.totalvendidos]));
+            return allLoterica.map((l) => ({ ...l, totalVendidos: countMap.get(l.id) || 0 }));
+          }),
+        ]);
+
+        // Get loterica numeros if there's an active loterica
+        let lotericaNumeros: unknown[] = [];
+        if (lotericaActive.length > 0) {
+          lotericaNumeros = await db.numeroLoterica.findMany({
+            where: { lotericaId: lotericaActive[0].id },
+            orderBy: { numero: "asc" },
+          });
+        }
+
+        // Compute server timestamp for delta polling
+        const serverNow = new Date().toISOString();
+
+        return json({
+          emprestimos,
+          investidores,
+          tabelasTroca,
+          trocas,
+          comprasVendas,
+          caixa,
+          doadores,
+          leiloes,
+          lances,
+          sorteios,
+          loterica: lotericaActive.length > 0 ? lotericaActive[0] : null,
+          lotericaNumeros,
+          historicoSorteios,
+          historicoLoterica: lotericaWithCounts,
+          reporterRanking: reporterRanking.map((r) => ({
+            nickname: r.nickname,
+            count: Number(r.count),
+            lastReport: r.lastreport,
+          })),
+          _ts: serverNow,
+        });
+      }
+
       case "listEmprestimos": {
         const data = await db.emprestimo.findMany({
           orderBy: { dataEmprestimo: "desc" },
@@ -190,6 +310,32 @@ export async function GET(req: NextRequest) {
         }
         return json(map);
       }
+      // SSE kept for compatibility but no longer triggers full reloads
+      case "events": {
+        const stream = new ReadableStream({
+          start(controller) {
+            const interval = setInterval(() => {
+              try {
+                controller.enqueue(`data: ${JSON.stringify({ t: Date.now() })}\n\n`);
+              } catch {
+                clearInterval(interval);
+                controller.close();
+              }
+            }, 30000); // Reduced from 5s to 30s
+            req.signal.addEventListener("abort", () => {
+              clearInterval(interval);
+              controller.close();
+            });
+          },
+        });
+        return new Response(stream, {
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+          },
+        });
+      }
       default:
         return err("Ação GET desconhecida: " + action);
     }
@@ -206,15 +352,25 @@ export async function POST(req: NextRequest) {
 
     if (!action) return err("Campo 'action' é obrigatório");
 
+    const PUBLIC_ACTIONS = new Set([
+      "participarSorteio",
+      "comprarNumero",
+      "addLance",
+      "reportPrice",
+    ]);
+
+    if (!PUBLIC_ACTIONS.has(action)) {
+      const pwd = req.headers.get("x-admin-password");
+      if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+    }
+
     switch (action) {
-      // === EMPRÉSTIMOS ===
       case "addEmprestimo": {
         const { player, item, quantidade, dataEmprestimo, tipoMembro, status } = data;
         if (!player || !item || !quantidade) return err("Campos obrigatórios: player, item, quantidade");
         const emp = await db.emprestimo.create({
           data: {
-            player,
-            item,
+            player, item,
             quantidade: Number(quantidade),
             dataEmprestimo: dataEmprestimo ? new Date(dataEmprestimo) : new Date(),
             tipoMembro: tipoMembro || "comum",
@@ -231,14 +387,9 @@ export async function POST(req: NextRequest) {
         if (dataPagamento) updateData.dataPagamento = new Date(dataPagamento);
         if (itemPagamento) updateData.itemPagamento = itemPagamento;
         if (quantidadePaga !== undefined) updateData.quantidadePaga = Number(quantidadePaga);
-        const emp = await db.emprestimo.update({
-          where: { id },
-          data: updateData,
-        });
+        const emp = await db.emprestimo.update({ where: { id }, data: updateData });
         return json(emp);
       }
-
-      // === INVESTIDORES ===
       case "addInvestidor": {
         const { nome, observacao } = data;
         if (!nome) return err("nome obrigatório");
@@ -257,15 +408,10 @@ export async function POST(req: NextRequest) {
         const { updates } = data;
         if (!Array.isArray(updates)) return err("updates deve ser array");
         for (const u of updates) {
-          await db.investidor.update({
-            where: { id: u.id },
-            data: { ordem: u.ordem },
-          });
+          await db.investidor.update({ where: { id: u.id }, data: { ordem: u.ordem } });
         }
         return json({ success: true });
       }
-
-      // === TABELAS DE TROCA ===
       case "addTabelaTroca": {
         const { itemBase, quantidadeBase, itemResultado, quantidadeResultado, categoria } = data;
         if (!itemBase || !quantidadeBase || !itemResultado || !quantidadeResultado) {
@@ -273,10 +419,8 @@ export async function POST(req: NextRequest) {
         }
         const tab = await db.tabelaTroca.create({
           data: {
-            itemBase,
-            quantidadeBase: Number(quantidadeBase),
-            itemResultado,
-            quantidadeResultado: Number(quantidadeResultado),
+            itemBase, quantidadeBase: Number(quantidadeBase),
+            itemResultado, quantidadeResultado: Number(quantidadeResultado),
             categoria: categoria || null,
           },
         });
@@ -288,8 +432,6 @@ export async function POST(req: NextRequest) {
         await db.tabelaTroca.delete({ where: { id } });
         return json({ success: true });
       }
-
-      // === TROCAS ===
       case "addTroca": {
         const { player, itemEnviado, quantidadeEnviada, itemRecebido, quantidadeRecebida, tipoMembro, taxaAplicada, lucroBanco } = data;
         if (!player || !itemEnviado || !quantidadeEnviada || !itemRecebido || !quantidadeRecebida) {
@@ -297,11 +439,8 @@ export async function POST(req: NextRequest) {
         }
         const troca = await db.trocaRegistro.create({
           data: {
-            player,
-            itemEnviado,
-            quantidadeEnviada: Number(quantidadeEnviada),
-            itemRecebido,
-            quantidadeRecebida: Number(quantidadeRecebida),
+            player, itemEnviado, quantidadeEnviada: Number(quantidadeEnviada),
+            itemRecebido, quantidadeRecebida: Number(quantidadeRecebida),
             tipoMembro: tipoMembro || "comum",
             taxaAplicada: Number(taxaAplicada) || 0,
             lucroBanco: Number(lucroBanco) || 0,
@@ -309,8 +448,12 @@ export async function POST(req: NextRequest) {
         });
         return json(troca);
       }
-
-      // === COMPRAS E VENDAS ===
+      case "removeTroca": {
+        const { id } = data;
+        if (!id) return err("id obrigatório");
+        await db.trocaRegistro.delete({ where: { id } });
+        return json({ success: true });
+      }
       case "addCompraVenda": {
         const { tipo, player, item, quantidade, itemPagamento, valor, observacao } = data;
         if (!tipo || !player || !item || !quantidade || valor === undefined) {
@@ -318,19 +461,13 @@ export async function POST(req: NextRequest) {
         }
         const cv = await db.compraVenda.create({
           data: {
-            tipo,
-            player,
-            item,
-            quantidade: Number(quantidade),
+            tipo, player, item, quantidade: Number(quantidade),
             itemPagamento: itemPagamento || null,
-            valor: Number(valor),
-            observacao: observacao || null,
+            valor: Number(valor), observacao: observacao || null,
           },
         });
         return json(cv);
       }
-
-      // === CAIXA ===
       case "addCaixa": {
         const { tipo, descricao, item, quantidade, valor, origem } = data;
         if (!tipo || !descricao || !item || !quantidade || !origem) {
@@ -338,12 +475,8 @@ export async function POST(req: NextRequest) {
         }
         const reg = await db.caixaRegistro.create({
           data: {
-            tipo,
-            descricao,
-            item,
-            quantidade: Number(quantidade),
-            valor: valor !== undefined ? Number(valor) : null,
-            origem,
+            tipo, descricao, item, quantidade: Number(quantidade),
+            valor: valor !== undefined ? Number(valor) : null, origem,
           },
         });
         return json(reg);
@@ -356,8 +489,6 @@ export async function POST(req: NextRequest) {
         await db.doador.deleteMany();
         return json({ success: true });
       }
-
-      // === DOADORES ===
       case "addDoador": {
         const { nome, item, quantidade } = data;
         if (!nome || !item || !quantidade) return err("Campos obrigatórios: nome, item, quantidade");
@@ -370,15 +501,27 @@ export async function POST(req: NextRequest) {
         const { updates } = data;
         if (!Array.isArray(updates)) return err("updates deve ser array");
         for (const u of updates) {
-          await db.doador.update({
-            where: { id: u.id },
-            data: { ordem: u.ordem },
-          });
+          await db.doador.update({ where: { id: u.id }, data: { ordem: u.ordem } });
         }
         return json({ success: true });
       }
-
-      // === LEILÕES ===
+      case "removeDoador": {
+        const { id } = data;
+        if (!id) return err("id obrigatório");
+        const doador = await db.doador.findUnique({ where: { id } });
+        if (doador) {
+          await db.caixaRegistro.create({
+            data: {
+              tipo: "saida",
+              descricao: `Estorno doação removida - ${doador.nome}`,
+              item: doador.item, quantidade: doador.quantidade,
+              origem: `estorno_doacao:${doador.id}`,
+            },
+          });
+        }
+        await db.doador.delete({ where: { id } });
+        return json({ success: true });
+      }
       case "addLeilao": {
         const { donoItem, nomeItem, imagemUrl, quantidade, valorInicial, moedaAceita, taxaCasa, dataExpiracao, tipoOrigem } = data;
         if (!donoItem || !nomeItem || valorInicial === undefined || !moedaAceita || !dataExpiracao) {
@@ -386,12 +529,9 @@ export async function POST(req: NextRequest) {
         }
         const leilao = await db.leilao.create({
           data: {
-            donoItem,
-            nomeItem,
-            imagemUrl: imagemUrl || null,
+            donoItem, nomeItem, imagemUrl: imagemUrl || null,
             quantidade: Number(quantidade) || 1,
-            valorInicial: Number(valorInicial),
-            moedaAceita,
+            valorInicial: Number(valorInicial), moedaAceita,
             taxaCasa: Number(taxaCasa) || 15,
             dataExpiracao: new Date(dataExpiracao),
             tipoOrigem: tipoOrigem || "comum",
@@ -418,8 +558,6 @@ export async function POST(req: NextRequest) {
         await db.leilao.delete({ where: { id } });
         return json({ success: true });
       }
-
-      // === LANCES ===
       case "addLance": {
         const { leilaoId, jogador, valor } = data;
         if (!leilaoId || !jogador || valor === undefined) {
@@ -428,27 +566,21 @@ export async function POST(req: NextRequest) {
         const leilao = await db.leilao.findUnique({ where: { id: leilaoId } });
         if (!leilao) return err("Leilão não encontrado", 404);
         if (leilao.status === "finalizado") return err("Leilão já finalizado");
-        // Bloqueia lances em espera quando o tempo +1min já expirou
         if (leilao.status === "espera" && new Date() >= new Date(leilao.dataExpiracao)) {
           return err("O tempo de disputa acabou. Aguardando finalização.");
         }
-
         const lances = await db.lance.findMany({
           where: { leilaoId },
           orderBy: { valor: "desc" },
         });
         const maiorLance = lances.length > 0 ? lances[0] : null;
         const valorMinimo = maiorLance ? maiorLance.valor : leilao.valorInicial;
-
         if (Number(valor) <= valorMinimo) {
           return err(`O lance deve ser maior que ${valorMinimo} ${leilao.moedaAceita}`);
         }
-
         const lance = await db.lance.create({
           data: { leilaoId, jogador, valor: Number(valor) },
         });
-
-        // Se o tempo original já passou, qualquer lance adiciona +1min e vai para espera
         const now = new Date();
         const originalExpired = now >= new Date(leilao.dataExpiracao);
         if (originalExpired || leilao.status === "espera") {
@@ -463,11 +595,8 @@ export async function POST(req: NextRequest) {
             data: { dataUltimoLance: new Date() },
           });
         }
-
         return json(lance);
       }
-
-      // === SORTEIOS ===
       case "addSorteio": {
         const { nomeItem, quantidade, duracaoMinutos } = data;
         if (!nomeItem || !quantidade || !duracaoMinutos) {
@@ -502,7 +631,7 @@ export async function POST(req: NextRequest) {
         if (participantes.length === 0) return err("Nenhum participante no sorteio");
         const randomIndex = Math.floor(Math.random() * participantes.length);
         const ganhador = participantes[randomIndex];
-        const updated = await db.sorteio.update({
+        await db.sorteio.update({
           where: { id: sorteioId },
           data: { status: "finalizado", ganhador: ganhador.jogador, dataFim: new Date() },
         });
@@ -514,22 +643,16 @@ export async function POST(req: NextRequest) {
         await db.sorteio.delete({ where: { id } });
         return json({ success: true });
       }
-
-      // === LOTÉRICA ===
       case "criarLoterica": {
         const { valorNumero, moedaAceita, premioMinimo, duracaoMinutos } = data;
         if (!valorNumero || !moedaAceita) return err("Campos obrigatórios: valorNumero, moedaAceita");
-        // Verificar se ja existe loterica ativa (nao finalizada)
         const ativa = await db.loterica.findFirst({
           where: { status: { in: ["vendas_abertas", "sorteio_realizado"] } },
         });
         if (ativa) return err("Já existe lotérica ativa. Finalize a atual antes de criar uma nova.");
-
         const dur = Number(duracaoMinutos) || 60;
         const prem = Number(premioMinimo) || 0;
         const dataFimVendas = new Date(Date.now() + dur * 60 * 1000);
-
-        // Buscar premio acumulado da ultima loterica sem ganhador
         let acumulado = 0;
         const ultimaSemGanhador = await db.loterica.findFirst({
           where: { ganhador: null, valorPremio: { gt: 0 } },
@@ -538,22 +661,15 @@ export async function POST(req: NextRequest) {
         if (ultimaSemGanhador) {
           acumulado = ultimaSemGanhador.valorPremio || 0;
         }
-
         const lot = await db.loterica.create({
           data: {
-            valorNumero: Number(valorNumero),
-            moedaAceita,
-            premioMinimo: prem,
-            premioAcumulado: acumulado,
-            duracaoMinutos: dur,
-            dataFimVendas,
-            status: "vendas_abertas",
+            valorNumero: Number(valorNumero), moedaAceita,
+            premioMinimo: prem, premioAcumulado: acumulado,
+            duracaoMinutos: dur, dataFimVendas, status: "vendas_abertas",
           },
         });
-        // Create 1000 numbers
         const nums = Array.from({ length: 1000 }, (_, i) => ({
-          lotericaId: lot.id,
-          numero: i + 1,
+          lotericaId: lot.id, numero: i + 1,
         }));
         await db.numeroLoterica.createMany({ data: nums });
         return json({ success: true, lotericaId: lot.id, acumulado });
@@ -574,19 +690,15 @@ export async function POST(req: NextRequest) {
         });
         if (!numEntry) return err("Número inválido");
         if (numEntry.comprador) return err("Número já vendido");
-
         await db.numeroLoterica.update({
           where: { id: numEntry.id },
           data: { comprador, dataCompra: new Date() },
         });
-
-        // Arrecadado total aumenta, mas NAO credita no estoque ainda
         const novoArrecadado = (lotData.arrecadadoTotal || 0) + lotData.valorNumero;
         await db.loterica.update({
           where: { id: lotericaId },
           data: { arrecadadoTotal: novoArrecadado },
         });
-
         return json({ success: true });
       }
       case "iniciarSorteioLoterica": {
@@ -597,65 +709,47 @@ export async function POST(req: NextRequest) {
         const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
         if (!lotData) return err("Lotérica não encontrada", 404);
         if (numerosVendidos.length === 0) return err("Nenhum número vendido");
-
         const numeroSorteado = Math.floor(Math.random() * 1000) + 1;
         const ganhador = numeros.find((n) => n.numero === numeroSorteado && n.comprador);
-
-        // Calcular premio: acumulado SUBSTITUI o minimo (nao soma)
-        // Ex: minimo 100, acumulado 160 → minimo efetivo = 160
         const effectiveMin = Math.max(lotData.premioMinimo, lotData.premioAcumulado || 0);
         const premio80 = lotData.arrecadadoTotal * 0.8;
         const premioFinal = Math.max(premio80, effectiveMin);
         const taxaBanco = lotData.arrecadadoTotal * 0.2;
-
         await db.loterica.update({
           where: { id: lotericaId },
           data: {
-            status: "sorteio_realizado",
-            numeroSorteado,
+            status: "sorteio_realizado", numeroSorteado,
             ganhador: ganhador ? ganhador.comprador : null,
-            valorPremio: premioFinal,
-            dataSorteio: new Date(),
+            valorPremio: premioFinal, dataSorteio: new Date(),
           },
         });
-
-        // Creditar 20% das vendas no estoque do banco
         if (taxaBanco > 0) {
           await db.caixaRegistro.create({
             data: {
               tipo: "entrada",
-              descricao: `Taxa bancária Lotérica (20% das vendas)`,
-              item: lotData.moedaAceita,
-              quantidade: Math.round(taxaBanco),
-              valor: Math.round(taxaBanco),
-              origem: "loterica",
+              descricao: "Taxa bancária Lotérica (20% das vendas)",
+              item: lotData.moedaAceita, quantidade: Math.round(taxaBanco),
+              valor: Math.round(taxaBanco), origem: "loterica",
             },
           });
         }
-
-        // Se teve ganhador, registrar saida do premio
         if (ganhador) {
           await db.caixaRegistro.create({
             data: {
               tipo: "saida",
               descricao: `Prêmio Lotérica - Número ${numeroSorteado} (${ganhador.comprador})`,
-              item: lotData.moedaAceita,
-              quantidade: Math.round(premioFinal),
-              valor: Math.round(premioFinal),
-              origem: "loterica_premio",
+              item: lotData.moedaAceita, quantidade: Math.round(premioFinal),
+              valor: Math.round(premioFinal), origem: "loterica_premio",
             },
           });
         } else {
-          // Ninguem acertou - o premio vira o novo minimo para a proxima
           await db.loterica.update({
             where: { id: lotericaId },
             data: { premioAcumulado: Math.round(premioFinal) },
           });
         }
-
         return json({
-          success: true,
-          numeroSorteado,
+          success: true, numeroSorteado,
           ganhador: ganhador ? ganhador.comprador : null,
           premioFinal: Math.round(premioFinal),
           taxaBanco: Math.round(taxaBanco),
@@ -668,17 +762,12 @@ export async function POST(req: NextRequest) {
         const lotData = await db.loterica.findUnique({ where: { id: lotericaId } });
         if (!lotData) return err("Lotérica não encontrada", 404);
         if (lotData.status !== "sorteio_realizado") return err("Sorteio ainda não foi realizado");
-
-        // Marca como finalizada - pronto para criar proxima
         await db.loterica.update({
           where: { id: lotericaId },
           data: { status: "finalizada" },
         });
-
         return json({ success: true, acumuladoProxima: lotData.premioAcumulado || 0 });
       }
-
-      // === PRICE REPORTS ===
       case "reportPrice": {
         const { itemId, itemName, nickname, steelQty, steelPrice, cementQty, cementPrice } = data;
         if (!itemId || !itemName || !nickname || steelQty === undefined || cementQty === undefined) {
@@ -686,19 +775,13 @@ export async function POST(req: NextRequest) {
         }
         const report = await db.priceReport.create({
           data: {
-            itemId,
-            itemName,
-            nickname,
-            steelQty: Number(steelQty),
-            steelPrice: Number(steelPrice) || 1,
-            cementQty: Number(cementQty),
-            cementPrice: Number(cementPrice) || 1,
+            itemId, itemName, nickname,
+            steelQty: Number(steelQty), steelPrice: Number(steelPrice) || 1,
+            cementQty: Number(cementQty), cementPrice: Number(cementPrice) || 1,
           },
         });
         return json(report);
       }
-
-      // === PROPAGANDA ===
       case "setAd": {
         const { slotId, codigo } = data;
         if (!slotId) return err("slotId obrigatório");
@@ -719,7 +802,31 @@ export async function POST(req: NextRequest) {
         await db.propaganda.delete({ where: { slotId } });
         return json({ success: true });
       }
-
+      case "backup": {
+        const pwd = req.headers.get("x-admin-password");
+        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens] = await Promise.all([
+          db.emprestimo.findMany(), db.investidor.findMany(), db.tabelaTroca.findMany(),
+          db.trocaRegistro.findMany(), db.compraVenda.findMany(), db.caixaRegistro.findMany(),
+          db.doador.findMany(), db.leilao.findMany(), db.lance.findMany(),
+          db.sorteio.findMany(), db.participanteSorteio.findMany(), db.loterica.findMany(),
+          db.numeroLoterica.findMany(), db.priceReport.findMany(), db.itemOverride.findMany(),
+          db.propaganda.findMany(), db.chatSala.findMany(), db.chatMensagem.findMany(),
+        ]);
+        const backup = JSON.stringify({
+          version: 1, exportDate: new Date().toISOString(),
+          emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
+          leiloes, lances, sorteios, participantes, lotericas, numeros,
+          priceReports, itemOverrides, propagandas, chatSalas, chatMensagens,
+        }, null, 2);
+        const filename = `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
+        return new Response(backup, {
+          headers: {
+            "Content-Type": "application/json",
+            "Content-Disposition": `attachment; filename="${filename}"`,
+          },
+        });
+      }
       default:
         return err("Ação POST desconhecida: " + action);
     }
@@ -728,3 +835,4 @@ export async function POST(req: NextRequest) {
     return err(msg, 500);
   }
 }
+// Build fix

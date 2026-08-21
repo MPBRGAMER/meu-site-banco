@@ -4,7 +4,7 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save, Shield } from "lucide-react";
+import { Heart, Plus, Trophy, Crown, Medal, ArrowUp, ArrowDown, Save, Shield, Trash2 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
 import { getDateLocale } from "./TranslationPopup";
@@ -12,7 +12,7 @@ import { getDateLocale } from "./TranslationPopup";
 interface DoadoresTabProps { isAdmin: boolean; }
 
 export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
-  const { doadores, addDoador, reorderDoadores, isLoading } = useBank();
+  const { doadores, addDoador, removeDoador, reorderDoadores, isLoading } = useBank();
   const [nome, setNome] = useState("");
   const [item, setItem] = useState("");
   const [quantidade, setQuantidade] = useState("");
@@ -24,6 +24,17 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
     addDoador(nome.trim(), item.trim(), parseInt(quantidade));
     toast.success(`Doação de ${nome} registrada!`);
     setNome(""); setItem(""); setQuantidade("");
+  };
+
+  const handleDelete = async (doador: { id: string; nome: string; item: string; quantidade: number }) => {
+    const confirmed = window.confirm(`Excluir a doação de ${doador.nome}?\n\n${doador.quantidade}x ${doador.item} será estornado do estoque.`);
+    if (!confirmed) return;
+    try {
+      await removeDoador(doador.id);
+      toast.success("Doação excluída e estoque estornado.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Não foi possível excluir a doação.");
+    }
   };
 
   const buildRanking = () => {
@@ -75,7 +86,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
               <div key={d.nome} className={`rounded-md border p-3 flex items-center justify-between ${i === 0 ? "border-yellow-500/40 bg-yellow-500/5" : i === 1 ? "border-gray-300/30 bg-gray-300/5" : i === 2 ? "border-orange-700/30 bg-orange-700/5" : "border-border bg-card"}`}>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 flex items-center justify-center">{i === 0 ? <Crown className="w-5 h-5 text-yellow-400" /> : i === 1 ? <Medal className="w-5 h-5 text-gray-300" /> : i === 2 ? <Medal className="w-5 h-5 text-orange-600" /> : <span className="text-sm font-bold text-muted-foreground">#{i + 1}</span>}</div>
-                  <div><p className="text-sm font-bold text-foreground">{d.nome}</p><p className="text-xs text-muted-foreground">{d.itens.join(", ")}</p></div>
+                  <div><p className="text-sm font-bold text-foreground" data-no-translate translate="no">{d.nome}</p><p className="text-xs text-muted-foreground">{d.itens.join(", ")}</p></div>
                 </div>
                 <div className="text-right"><p className="text-lg font-bold font-mono text-primary">{d.totalQuantidade.toLocaleString()}</p><p className="text-xs text-muted-foreground">total</p></div>
               </div>
@@ -92,7 +103,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
           <div className="space-y-2 max-h-80 overflow-y-auto">{orderedList.map((d, i) => (
             <div key={d.nome} className="flex items-center gap-2 p-2 rounded-md border border-border bg-muted/30">
               <div className="flex flex-col gap-1"><button onClick={() => moveUp(i)} className="text-muted-foreground hover:text-primary disabled:opacity-30" disabled={i === 0}><ArrowUp className="w-4 h-4" /></button><button onClick={() => moveDown(i)} className="text-muted-foreground hover:text-primary disabled:opacity-30" disabled={i === orderedList.length - 1}><ArrowDown className="w-4 h-4" /></button></div>
-              <div className="flex items-center gap-2 flex-1"><span className="text-sm font-bold text-muted-foreground w-6">{i + 1}º</span><Heart className="w-4 h-4 text-red-400" /><span className="text-sm font-semibold text-foreground">{d.nome}</span></div>
+              <div className="flex items-center gap-2 flex-1"><span className="text-sm font-bold text-muted-foreground w-6">{i + 1}º</span><Heart className="w-4 h-4 text-red-400" /><span className="text-sm font-semibold text-foreground" data-no-translate translate="no">{d.nome}</span></div>
             </div>
           ))}</div>
           <div className="flex gap-2 mt-3"><Button onClick={saveOrder} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Save className="w-4 h-4 mr-1" /> Salvar</Button><Button onClick={() => setIsReorderMode(false)} variant="outline">Cancelar</Button></div>
@@ -111,7 +122,7 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
       <div>
         <h3 className="text-sm font-bold text-foreground mb-2">Histórico ({doadores.length})</h3>
         {doadores.length === 0 ? (<div className="rounded-md border border-border bg-card p-4 text-center text-muted-foreground text-sm">Nenhuma doação.</div>) : (
-          <div className="space-y-2">{[...doadores].reverse().map((d) => (<div key={d.id} className="rounded-md border border-border bg-card p-3 flex items-center gap-3 hover:border-primary/20"><Heart className="w-4 h-4 text-red-400" /><div><p className="text-sm font-bold text-foreground">{d.nome}</p><p className="text-xs text-muted-foreground">{d.quantidade}x {d.item} - {new Date(d.data).toLocaleDateString(getDateLocale())}</p></div></div>))}</div>
+          <div className="space-y-2">{[...doadores].reverse().map((d) => (<div key={d.id} className="rounded-md border border-border bg-card p-3 flex items-center gap-3 hover:border-primary/20"><Heart className="w-4 h-4 text-red-400" /><div className="min-w-0 flex-1"><p className="text-sm font-bold text-foreground" data-no-translate translate="no">{d.nome}</p><p className="text-xs text-muted-foreground">{d.quantidade}x {d.item} - {new Date(d.data).toLocaleDateString(getDateLocale())}</p></div>{isAdmin && <Button type="button" variant="outline" size="sm" onClick={() => void handleDelete(d)} className="shrink-0 border-red-500/30 text-red-400 hover:bg-red-500/10 hover:text-red-300" aria-label={`Excluir doação de ${d.nome}`}><Trash2 className="w-4 h-4" /></Button>}</div>))}</div>
         )}
       </div>
       <AdSlot size="banner" id="doadores-bottom" isAdmin={isAdmin} className="my-3" />
