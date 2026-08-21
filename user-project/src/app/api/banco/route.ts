@@ -70,41 +70,32 @@ export async function GET(req: NextRequest) {
             db.loterica.findMany({
               orderBy: { dataCriacao: "desc" },
             }),
-            // Optimized reporter ranking with SQL grouping
-            db.$queryRaw<Array<{ nickname: string; count: bigint; lastreport: string }>>`
-              SELECT "nickname", COUNT(*)::int as count, MAX("data")::text as lastreport
-              FROM "price_report"
-              GROUP BY LOWER("nickname"), "nickname"
-              ORDER BY count DESC
-              LIMIT 10
-            `,
+            // Reporter ranking via Prisma (avoid raw SQL table name issues)
+            db.priceReport.groupBy({
+              by: ["nickname"],
+              _count: { id: true },
+              _max: { data: true },
+              orderBy: { _count: { id: "desc" } },
+              take: 10,
+            }),
           ]);
 
         // Build historico with counts (avoid N+1 by using includes or parallel counts)
         const [historicoSorteios, lotericaWithCounts] = await Promise.all([
-          // Use a single aggregate query for sorteio participant counts
-          db.$queryRaw<Array<{ id: string; totalparticipantes: number }>>`
-            SELECT s.id, COUNT(ps."sorteioId")::int as totalparticipantes
-            FROM "sorteio" s
-            LEFT JOIN "participante_sorteio" ps ON ps."sorteioId" = s.id
-            WHERE s.status = 'finalizado'
-            GROUP BY s.id
-          `.then((counts) => {
-            const countMap = new Map(counts.map((c) => [c.id, c.totalparticipantes]));
-            return sorteios
-              .filter((s) => s.status === "finalizado")
-              .map((s) => ({ ...s, totalParticipantes: countMap.get(s.id) || 0 }));
-          }),
-          // Use a single aggregate query for loterica sold counts
-          db.$queryRaw<Array<{ id: string; totalvendidos: number }>>`
-            SELECT l.id, COUNT(n.id)::int as totalvendidos
-            FROM "loterica" l
-            LEFT JOIN "numero_loterica" n ON n."lotericaId" = l.id AND n."comprador" IS NOT NULL
-            GROUP BY l.id
-          `.then((counts) => {
-            const countMap = new Map(counts.map((c) => [c.id, c.totalvendidos]));
-            return allLoterica.map((l) => ({ ...l, totalVendidos: countMap.get(l.id) || 0 }));
-          }),
+          // Sorteio participant counts via Prisma
+          Promise.all(
+            sorteios.filter((s) => s.status === "finalizado").map(async (s) => {
+              const count = await db.participanteSorteio.count({ where: { sorteioId: s.id } });
+              return { ...s, totalParticipantes: count };
+            })
+          ),
+          // Loterica sold counts via Prisma
+          Promise.all(
+            allLoterica.map(async (l) => {
+              const count = await db.numeroLoterica.count({ where: { lotericaId: l.id, comprador: { not: null } } });
+              return { ...l, totalVendidos: count };
+            })
+          ),
         ]);
 
         // Get loterica numeros if there's an active loterica
@@ -134,10 +125,10 @@ export async function GET(req: NextRequest) {
           lotericaNumeros,
           historicoSorteios,
           historicoLoterica: lotericaWithCounts,
-          reporterRanking: reporterRanking.map((r) => ({
+          reporterRanking: reporterRanking.map((r: any) => ({
             nickname: r.nickname,
-            count: Number(r.count),
-            lastReport: r.lastreport,
+            count: r._count.id,
+            lastReport: r._max.data?.toISOString?.() || "",
           })),
           _ts: serverNow,
         });
