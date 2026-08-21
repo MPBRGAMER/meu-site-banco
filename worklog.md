@@ -25,3 +25,21 @@ Stage Summary:
 - New content added to the site will auto-translate via the API fallback (no manual dictionary updates needed)
 - Client-side cache means repeat visitors get instant translations without API calls
 - All 6 languages supported: PT, EN, ES, FR, DE, RU
+---
+Task ID: 1
+Agent: main
+Task: Fix Vercel build failure
+
+Work Log:
+- Diagnosed build error: root src/ had stale TranslationPopup.tsx with duplicate translatePage function (lines 34 and 896)
+- Root cause: Vercel builds from git root, which had old code; correct code was in user-project/
+- Synced root src/ with user-project/src/ (deleted root src/, copied from user-project/)
+- Updated root package.json build script to include prisma generate
+- Removed .env (with local SQLite URL) from git tracking
+- Verified build passes locally from root directory
+- Pushed fix to GitHub (commit 5dd8305)
+
+Stage Summary:
+- Build error was duplicate translatePage in stale root TranslationPopup.tsx, not import paths
+- Vercel deploys from repo root, not user-project/ subdirectory
+- Fix committed and pushed, ready for Vercel redeploy
