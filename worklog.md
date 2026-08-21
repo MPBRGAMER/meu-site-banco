@@ -43,3 +43,22 @@ Stage Summary:
 - Build error was duplicate translatePage in stale root TranslationPopup.tsx, not import paths
 - Vercel deploys from repo root, not user-project/ subdirectory
 - Fix committed and pushed, ready for Vercel redeploy
+---
+Task ID: 2
+Agent: main
+Task: Fix untranslated strings and date locale
+
+Work Log:
+- Audited all component files for strings missing from EN dictionary
+- Added 4 missing EN dictionary entries: Erro ao verificar senha., Baixar backup completo do banco, Clique para sair do modo Admin, Entrar como Admin (requer senha)
+- Fixed TabelaTab.tsx line 1167: hardcoded pt-BR locale replaced with getDateLocale()
+- Added getDateLocale import to TabelaTab.tsx
+- Verified translation system handles text nodes, placeholders, and title attributes
+- Confirmed 846+ EN dictionary keys cover all static visible text
+- Remaining untranslated text is dynamic (toasts/confirms with interpolation) - needs larger refactor
+- Build passes, pushed to GitHub (commit fd694af)
+
+Stage Summary:
+- Translation dictionary is comprehensive for static text
+- Dynamic strings (window.confirm, template literal toasts) cannot be fully translated by DOM walker
+- Date locale now respects user language selection in Tabela reports
