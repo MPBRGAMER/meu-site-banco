@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-"""Add 8 new language dictionaries to TranslationPopup.tsx"""
-
-import re
+"""Add 8 new language dictionaries to TranslationPopup.tsx - comprehensive approach"""
 
 FILE = "/home/z/my-project/user-project/src/components/banco/TranslationPopup.tsx"
 
 with open(FILE, "r", encoding="utf-8") as f:
     content = f.read()
 
-# ======================================================
-# 1) New LANGUAGES array
-# ======================================================
-new_languages = '''const LANGUAGES = [
+# ============================================================
+# 1) Update LANGUAGES array
+# ============================================================
+old_langs = '''const LANGUAGES = [
+  { code: "pt", label: "Portugu\u00eas", flag: "\u{1F1E7}\u{1F1F7}" },
+  { code: "en", label: "English", flag: "\u{1F1FA}\u{1F1F8}" },
+  { code: "es", label: "Espa\u00f1ol", flag: "\u{1F1EA}\u{1F1F8}" },
+  { code: "fr", label: "Fran\u00e7ais", flag: "\u{1F1EB}\u{1F1F7}" },
+  { code: "de", label: "Deutsch", flag: "\u{1F1E9}\u{1F1EA}" },
+  { code: "ru", label: "\u0420\u0443\u0441\u0441\u043a\u0438\u0439", flag: "\u{1F1F7}\u{1F1FA}" },
+];'''
+
+new_langs = '''const LANGUAGES = [
   { code: "pt", label: "Portugu\u00eas", flag: "\u{1F1E7}\u{1F1F7}" },
   { code: "en", label: "English", flag: "\u{1F1FA}\u{1F1F8}" },
   { code: "es", label: "Espa\u00f1ol", flag: "\u{1F1EA}\u{1F1F8}" },
@@ -27,22 +34,19 @@ new_languages = '''const LANGUAGES = [
   { code: "tr", label: "T\u00fcrk\u00e7e", flag: "\u{1F1F9}\u{1F1F7}" },
 ];'''
 
-old_languages_pattern = r'const LANGUAGES = \[[\s\S]*?\];'
-content = re.sub(old_languages_pattern, new_languages, content, count=1)
+content = content.replace(old_langs, new_langs)
+print("1/5 - LANGUAGES array updated")
 
-# ======================================================
-# 2) New language dictionaries (insert before const dictionaries)
-# ======================================================
+# ============================================================
+# 2) Add 8 new dictionaries before "const dictionaries"
+# ============================================================
 
-IT = r'''const IT: Record<string, string> = {
-  // ---- Tabs ----
+NEW_DICTS = r'''const IT: Record<string, string> = {
   "Dashboard": "Cruscotto", "Tabela": "Tabella Prezzi", "Empr\u00e9stimos": "Prestiti",
   "Trocas": "Scambi", "Doadores": "Donatori", "Leil\u00f5es": "Aste",
   "Sorteios": "Estrazioni", "Lot\u00e9rica": "Loteria", "Investidores": "Investitori",
   "Config Trocas": "Config. Scambi", "Compras & Vendas": "Acquisti e Vendite",
   "Estoque & Caixa": "Magazzino e Cassa", "Chat": "Chat",
-
-  // ---- Common ----
   "Carregando...": "Caricamento...", "Carregando dados do banco...": "Caricamento dati banca...",
   "Carregando chat...": "Caricamento chat...", "Cancelar": "Annulla",
   "Entrar": "Entra", "Salvar": "Salva", "Fechar": "Chiudi",
@@ -61,8 +65,6 @@ IT = r'''const IT: Record<string, string> = {
   "Lucro": "Profitto", "Bruto:": "Lordo:", "Descri\u00e7\u00e3o": "Descrizione",
   "Origem": "Origine", "A\u00e7\u00e3o": "Azione", "Dispon\u00edvel": "Disponibile",
   "Disponivel": "Disponibile",
-
-  // ---- Dashboard ----
   "Empr\u00e9stimos Pendentes": "Prestiti in sospeso", "Empr\u00e9stimos Pagos": "Prestiti pagati",
   "Investidores Ativos": "Investitori attivi", "Trocas Realizadas": "Scambi effettuati",
   "Registros no Caixa": "Registri in cassa", "Leil\u00f5es Ativos": "Aste attive",
@@ -76,13 +78,8 @@ IT = r'''const IT: Record<string, string> = {
   "Nenhum item encontrado.": "Nessun oggetto trovato.",
   "Estoque vazio.": "Magazzino vuoto.", "Nenhum registro ainda.": "Nessun registro ancora.",
   "desde": "dal", "contribuicoes": "contributi",
-
-  // ---- Header ----
   "Posto de Trocas": "Posto di Scambio",
   "Sistema de gestao para sobreviventes": "Sistema di gestione per sopravvissuti",
-  "Carregando dados do banco...": "Caricamento dati banca...",
-
-  // ---- Chat ----
   "Canais": "Canali", "Salas Privadas": "Stanze Private",
   "Geral": "Generale", "Atendimento": "Supporto", "Guias": "Guide",
   "Cl\u00e3s": "Clan", "Com\u00e9rcio": "Commercio",
@@ -99,8 +96,6 @@ IT = r'''const IT: Record<string, string> = {
   "Sala": "Stanza", "Mensagem": "Messaggio",
   "Evento": "Evento", "Sobreviventes": "Sopravvissuti",
   "Deletar sala": "Elimina stanza", "Deletar mensagem?": "Eliminare messaggio?",
-
-  // ---- Doadores ----
   "\u2764\ufe0f Doadores": "\u2764\ufe0f Donatori",
   "Ranking": "Classifica", "Reordenar": "Riordina",
   "Nova Doa\u00e7\u00e3o": "Nuova Donazione", "Registrar Doa\u00e7\u00e3o": "Registra Donazione",
@@ -108,8 +103,6 @@ IT = r'''const IT: Record<string, string> = {
   "Doa\u00e7\u00e3o registrada!": "Donazione registrata!",
   "Excluir a doa\u00e7\u00e3o de": "Elimina donazione di",
   "Excluir doa\u00e7\u00e3o de": "Elimina donazione di",
-
-  // ---- Investidores ----
   "\ud83d\udc8e Membros Investidores": "\ud83d\udc8e Membri Investitori",
   "Benef\u00edcio:": "Vantaggio:",
   "em empr\u00e9stimos e trocas": "su prestiti e scambi",
@@ -124,8 +117,6 @@ IT = r'''const IT: Record<string, string> = {
   "Status": "Stato", "Ativo": "Attivo", "Inativo": "Inattivo",
   "Investidor cadastrado!": "Investitore registrato!",
   "Investidor adicionado!": "Investitore aggiunto!",
-
-  // ---- Trocas ----
   "Registro de Trocas": "Registro Scambi", "Nova Troca": "Nuovo Scambio",
   "Selecione": "Seleziona", "Nenhuma tabela": "Nessuna tabella",
   "Preencha o formul\u00e1rio ao lado.": "Compila il modulo accanto.",
@@ -153,8 +144,6 @@ IT = r'''const IT: Record<string, string> = {
   "\ud83d\udc8e Investidor (10%)": "\ud83d\udc8e Investitore (10%)",
   "\ud83d\udc64 Comum (15%)": "\ud83d\udc64 Comune (15%)",
   "\u26a0\ufe0f N\u00e3o Contribuinte (20%)": "\u26a0\ufe0f Non Contributore (20%)",
-
-  // ---- Compras & Vendas ----
   "\ud83d\uded2 Compras e Vendas": "\ud83d\uded2 Acquisti e Vendite",
   "COMPRA:": "ACQUISTO:", "Voc\u00ea paga \u2192 Recebe do player": "Tu paghi \u2192 Ricevi dal giocatore",
   "VENDA:": "VENDITA:", "Voc\u00ea entrega \u2192 Recebe do player": "Tu consegni \u2192 Ricevi dal giocatore",
@@ -163,8 +152,6 @@ IT = r'''const IT: Record<string, string> = {
   "Nenhuma compra ou venda.": "Nessun acquisto o vendita.",
   "Registrar Compra": "Registra Acquisto", "Registrar Venda": "Registra Vendita",
   "Compra registrada!": "Acquisto registrato!", "Venda registrada!": "Vendita registrata!",
-
-  // ---- Caixa ----
   "\ud83d\udcb0 Caixa do Banco": "\ud83d\udcb0 Cassa della Banca",
   "Sa\u00edda por Leil\u00e3o do Banco (100%)": "Uscita per Asta della Banca (100%)",
   "Registro Manual": "Registrazione Manuale",
@@ -176,8 +163,6 @@ IT = r'''const IT: Record<string, string> = {
   "Resetar": "Resetta", "Resetar TUDO?": "Resettare TUTTO?",
   "\ud83d\udce6 ENTRADA": "\ud83d\udce6 ENTRATA", "\ud83d\udce4 SA\u00cdDA": "\ud83d\udce4 USCITA",
   "Nenhum registro.": "Nessun registro.",
-
-  // ---- Leil\u00f5es ----
   "\ud83d\udd28 Leil\u00f5es": "\ud83d\udd28 Aste", "Como Funciona": "Come Funziona",
   "Novo Leil\u00e3o": "Nuova Asta", "Criar Leil\u00e3o": "Crea Asta",
   "Dura\u00e7\u00e3o": "Durata", "Fila de Espera": "Coda d\u2019attesa",
@@ -187,8 +172,6 @@ IT = r'''const IT: Record<string, string> = {
   "Leil\u00e3o criado!": "Asta creata!",
   "Lance deve ser > ": "L\u2019offerta deve essere > ",
   "Lance de ": "Offerta di ", " registrado!": " registrata!",
-
-  // ---- Sorteios ----
   "Novo Sorteio": "Nuova Estrazione", "Nenhum.": "Nessuno.",
   "Participar": "Partecipa", "Sortear": "Estrai",
   "Encerrado": "Chiuso", "ENCERRADO": "CHIUSO",
@@ -198,8 +181,6 @@ IT = r'''const IT: Record<string, string> = {
   "Nenhum": "Nessuno", "Participar do Sorteio": "Partecipa all\u2019Estrazione",
   "Participa\u00e7\u00e3o registrada!": "Partecipazione registrata!",
   "Sorteio finalizado!": "Estrazione finalizzata!",
-
-  // ---- Lot\u00e9rica ----
   "Lot\u00e9rica Ativa": "Loteria Attiva", "Vendas abiertas": "Vendite aperte",
   "Sorteio realizado": "Estrazione effettuata", "Finalizada": "Finalizzata",
   "Configurando": "Configurazione", "Vendidos": "Venduti",
@@ -214,8 +195,6 @@ IT = r'''const IT: Record<string, string> = {
   "Criar Lot\u00e9rica": "Crea Lotteria",
   "Nenhuma lot\u00e9rica ativa. Crie uma nova acima.": "Nessuna lotteria attiva. Creane una nuova sopra.",
   "Nenhuma lot\u00e9rica ativa no momento.": "Nessuna lotteria attiva al momento.",
-
-  // ---- Empr\u00e9stimos ----
   "Regras do Banco": "Regole della Banca",
   "Membro Especial": "Membro Speciale", "Membro Comum": "Membro Comune",
   "N\u00e3o Contribuinte": "Non Contributore",
@@ -230,8 +209,6 @@ IT = r'''const IT: Record<string, string> = {
   "Pagamento registrado!": "Pagamento registrato!",
   "Empr\u00e9stimo exclu\u00eddo!": "Prestito eliminato!",
   "Excluir empr\u00e9stimo?": "Eliminare il prestito?",
-
-  // ---- Tabela ----
   "Tabela de Precos": "Tabella Prezzi", "Tabela de Pre\u00e7os": "Tabella Prezzi",
   "Reportar Precos": "Segnala Prezzi", "Reportar Pre\u00e7os": "Segnala Prezzi",
   "Alta": "Alta", "Media": "Media", "Baixa": "Bassa",
@@ -242,8 +219,6 @@ IT = r'''const IT: Record<string, string> = {
   "Nome do Item *": "Nome Oggetto *", "Categoria *": "Categoria *",
   "Selecionar...": "Seleziona...", "Wiki Link": "Link Wiki",
   "Adicionar Item": "Aggiungi Oggetto",
-
-  // ---- Admin ----
   "Login Admin": "Login Admin", "Verificando...": "Verifica...",
   "Backup": "Backup", "Gerando...": "Generazione...",
   "Senha incorreta!": "Password errata!",
@@ -251,39 +226,30 @@ IT = r'''const IT: Record<string, string> = {
   "Continuar em Portugu\u00eas": "Continua in Portoghese",
   "Traduzir o Site": "Traduci il Sito", "Selecione seu idioma": "Seleziona la lingua",
   "Traduzir para": "Traduci in", "Traduzir site": "Traduci sito",
-
-  // ---- Toasts ----
   "Registro adicionado!": "Registro aggiunto!",
   "Ordem atualizada!": "Ordine aggiornato!",
   "Preencha os obrigat\u00f3rios.": "Compila i campi obbligatori.",
   "Preencha todos os campos.": "Compila tutti i campi.",
   "Preencha nome e valor.": "Compila nome e valore.",
   "Preencha o item e a quantidade.": "Compila oggetto e quantit\u00e0.",
-  "Preencha todos.": "Compila tutto.",
-  "Remover?": "Rimuovere?",
+  "Preencha todos.": "Compila tutto.", "Remover?": "Rimuovere?",
   "Erro ao verificar senha.": "Errore nella verifica della password.",
   "Sem spam": "Niente spam",
   "Respeite todos os participantes": "Rispetta tutti i partecipanti",
   "Sem spam ou flood": "Niente spam o flood",
-
-  // ---- Config Trocas ----
   "Configura\u00e7\u00e3o de Tabelas de Troca": "Configurazione Tabelle di Scambio",
   "Nova Regra": "Nuova Regola",
   "Nenhuma regra configurada.": "Nessuna regola configurata.",
   "Como funciona:": "Come funziona:",
   "Configura\u00e7\u00e3o salva!": "Configurazione salvata!",
 };
-'''
 
-ZH_CN = r'''const ZH_CN: Record<string, string> = {
-  // ---- Tabs ----
+const ZH_CN: Record<string, string> = {
   "Dashboard": "\u4eea\u8868\u76d8", "Tabela": "\u4ef7\u683c\u8868", "Empr\u00e9stimos": "\u501f\u8d37",
   "Trocas": "\u4ea4\u6613", "Doadores": "\u6350\u8d60\u8005", "Leil\u00f5es": "\u62cd\u5356",
   "Sorteios": "\u62bd\u5956", "Lot\u00e9rica": "\u5f69\u7968", "Investidores": "\u6295\u8d44\u8005",
   "Config Trocas": "\u4ea4\u6613\u8bbe\u7f6e", "Compras & Vendas": "\u4e70\u5356",
   "Estoque & Caixa": "\u5e93\u5b58\u4e0e\u8d26\u6237", "Chat": "\u804a\u5929",
-
-  // ---- Common ----
   "Carregando...": "\u52a0\u8f7d\u4e2d...", "Carregando dados do banco...": "\u52a0\u8f7d\u94f6\u884c\u6570\u636e...",
   "Carregando chat...": "\u52a0\u8f7d\u804a\u5929...", "Cancelar": "\u53d6\u6d88",
   "Entrar": "\u8fdb\u5165", "Salvar": "\u4fdd\u5b58", "Fechar": "\u5173\u95ed",
@@ -302,10 +268,8 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Lucro": "\u5229\u6da6", "Bruto:": "\u603b\u989d:", "Descri\u00e7\u00e3o": "\u63cf\u8ff0",
   "Origem": "\u6765\u6e90", "A\u00e7\u00e3o": "\u64cd\u4f5c", "Dispon\u00edvel": "\u53ef\u7528",
   "Disponivel": "\u53ef\u7528",
-
-  // ---- Dashboard ----
   "Empr\u00e9stimos Pendentes": "\u5f85\u8fd8\u501f\u8d37", "Empr\u00e9stimos Pagos": "\u5df2\u8fd8\u501f\u8d37",
-  "Investidores Ativos": "\u6d3b\u8dc3\u6295\u8d44\u8005", "Trocas Realizadas": "\u5df2\u5b8c\u6210\u4ea4\u6613",
+  "Investidores Ativos": "\u6d3b\u8dc3\u6295\u8d44\u8005", "Trocas Realizadas": "\u5df2\u5b8c\6210\u4ea4\u6613",
   "Registros no Caixa": "\u8d26\u6237\u8bb0\u5f55", "Leil\u00f5es Ativos": "\u8fdb\u884c\u4e2d\u62cd\u5356",
   "Sorteios Ativos": "\u8fdb\u884c\u4e2d\u62bd\u5956", "Top 10 Doadores": "\u6350\u8d60\u699c Top 10",
   "Top 10 Investidores": "\u6295\u8d44\u8005 Top 10", "Top 10 Contribuintes": "\u8d21\u732e\u8005 Top 10",
@@ -313,16 +277,12 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Eventos Ativos": "\u8fdb\u884c\u4e2d\u6d3b\u52a8",
   "Nenhum doador cadastrado.": "\u6ca1\u6709\u6ce8\u518c\u7684\u6350\u8d60\u8005\u3002",
   "Nenhum investidor cadastrado.": "\u6ca1\u6709\u6ce8\u518c\u7684\u6295\u8d44\u8005\u3002",
-  "Nenhum contribuinte ainda. Contribua reportando precos na aba Tabela!": "\u8fd8\u6ca1\u6709\u8d21\u732e\u8005\u3002\u5728\u4ef7\u683c\u8868\u9009\u9879\u5361\u4e0a\u62a5\u544a\u4ef7\u683c\u6765\u8d21\u732e\u5427\uff01",
+  "Nenhum contribuinte ainda. Contribua reportando precos na aba Tabela!": "\u8fd8\u6ca1\u6709\u8d21\u732e\u8005\u3002\u5728\u4ef7\u683c\u8868\u4e0a\u62a5\u544a\u4ef7\u683c\u6765\u8d21\u732e\u5427\uff01",
   "Nenhum item encontrado.": "\u672a\u627e\u5230\u7269\u54c1\u3002",
   "Estoque vazio.": "\u5e93\u5b58\u4e3a\u7a7a\u3002", "Nenhum registro ainda.": "\u8fd8\u6ca1\u6709\u8bb0\u5f55\u3002",
   "desde": "\u81ea", "contribuicoes": "\u6b21\u8d21\u732e",
-
-  // ---- Header ----
   "Posto de Trocas": "\u4ea4\u6613\u7ad9",
   "Sistema de gestao para sobreviventes": "\u5e78\u5b58\u8005\u7ba1\u7406\u7cfb\u7edf",
-
-  // ---- Chat ----
   "Canais": "\u9891\u9053", "Salas Privadas": "\u79c1\u4eba\u623f\u95f4",
   "Geral": "\u7efc\u5408", "Atendimento": "\u5ba2\u670d", "Guias": "\u6307\u5357",
   "Cl\u00e3s": "\u516c\u4f1a", "Com\u00e9rcio": "\u8d38\u6613",
@@ -339,8 +299,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Sala": "\u623f\u95f4", "Mensagem": "\u6d88\u606f",
   "Evento": "\u4e8b\u4ef6", "Sobreviventes": "\u5e78\u5b58\u8005",
   "Deletar sala": "\u5220\u9664\u623f\u95f4", "Deletar mensagem?": "\u5220\u9664\u6d88\u606f\uff1f",
-
-  // ---- Doadores ----
   "\u2764\ufe0f Doadores": "\u2764\ufe0f \u6350\u8d60\u8005",
   "Ranking": "\u6392\u884c\u699c", "Reordenar": "\u91cd\u65b0\u6392\u5e8f",
   "Nova Doa\u00e7\u00e3o": "\u65b0\u6350\u8d60", "Registrar Doa\u00e7\u00e3o": "\u6ce8\u518c\u6350\u8d60",
@@ -348,8 +306,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Doa\u00e7\u00e3o registrada!": "\u6350\u8d60\u5df2\u6ce8\u518c\uff01",
   "Excluir a doa\u00e7\u00e3o de": "\u5220\u9664\u6350\u8d60\uff1a",
   "Excluir doa\u00e7\u00e3o de": "\u5220\u9664\u6350\u8d60\uff1a",
-
-  // ---- Investidores ----
   "\ud83d\udc8e Membros Investidores": "\ud83d\udc8e \u6295\u8d44\u8005\u6210\u5458",
   "Benef\u00edcio:": "\u4f18\u60e0\uff1a",
   "em empr\u00e9stimos e trocas": "\u501f\u8d37\u548c\u4ea4\u6613",
@@ -364,8 +320,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Status": "\u72b6\u6001", "Ativo": "\u6d3b\u8dc3", "Inativo": "\u975e\u6d3b\u8dc3",
   "Investidor cadastrado!": "\u6295\u8d44\u8005\u5df2\u6ce8\u518c\uff01",
   "Investidor adicionado!": "\u6295\u8d44\u8005\u5df2\u6dfb\u52a0\uff01",
-
-  // ---- Trocas ----
   "Registro de Trocas": "\u4ea4\u6613\u8bb0\u5f55", "Nova Troca": "\u65b0\u4ea4\u6613",
   "Selecione": "\u9009\u62e9", "Nenhuma tabela": "\u6ca1\u6709\u8868",
   "Preencha o formul\u00e1rio ao lado.": "\u8bf7\u586b\u5199\u65c1\u8fb9\u7684\u8868\u5355\u3002",
@@ -393,18 +347,14 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "\ud83d\udc8e Investidor (10%)": "\ud83d\udc8e \u6295\u8d44\u8005 (10%)",
   "\ud83d\udc64 Comum (15%)": "\ud83d\udc64 \u666e\u901a (15%)",
   "\u26a0\ufe0f N\u00e3o Contribuinte (20%)": "\u26a0\ufe0f \u975e\u8d21\u732e\u8005 (20%)",
-
-  // ---- Compras & Vendas ----
   "\ud83d\uded2 Compras e Vendas": "\ud83d\uded2 \u4e70\u5356",
   "COMPRA:": "\u8d2d\u4e70\uff1a", "Voc\u00ea paga \u2192 Recebe do player": "\u60a8\u4ed8\u6b3e \u2192 \u4ece\u73a9\u5bb6\u6536\u5230",
-  "VENDA:": "\u51fa\u552e\uff1a", "Voc\u00ea entrega \u2192 Recebe do player": "\u60a8\u4ea4\u4ed8 \u2192 \u4ece\u73a9\u5bb6\u6536到",
+  "VENDA:": "\u51fa\u552e\uff1a", "Voc\u00ea entrega \u2192 Recebe do player": "\u60a8\u4ea4\u4ed8 \u2192 \u4ece\u73a9\u5bb6\u6536\u5230",
   "Entra": "\u5165\u5e93", "Sai": "\u51fa\u5e93", "Paga": "\u4ed8\u6b3e", "Recebe": "\u6536\u5230",
   "Compras": "\u8d2d\u4e70", "Vendas": "\u51fa\u552e",
   "Nenhuma compra ou venda.": "\u6ca1\u6709\u4e70\u5356\u8bb0\u5f55\u3002",
   "Registrar Compra": "\u6ce8\u518c\u8d2d\u4e70", "Registrar Venda": "\u6ce8\u518c\u51fa\u552e",
   "Compra registrada!": "\u8d2d\u4e70\u5df2\u6ce8\u518c\uff01", "Venda registrada!": "\u51fa\u552e\u5df2\u6ce8\u518c\uff01",
-
-  // ---- Caixa ----
   "\ud83d\udcb0 Caixa do Banco": "\ud83d\udcb0 \u94f6\u884c\u8d26\u6237",
   "Sa\u00edda por Leil\u00e3o do Banco (100%)": "\u94f6\u884c\u62cd\u5356\u652f\u51fa (100%)",
   "Registro Manual": "\u624b\u52a8\u8bb0\u5f55",
@@ -416,8 +366,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Resetar": "\u91cd\u7f6e", "Resetar TUDO?": "\u91cd\u7f6e\u5168\u90e8\uff1f",
   "\ud83d\udce6 ENTRADA": "\ud83d\udce6 \u6536\u5165", "\ud83d\udce4 SA\u00cdDA": "\ud83d\udce4 \u652f\u51fa",
   "Nenhum registro.": "\u6ca1\u6709\u8bb0\u5f55\u3002",
-
-  // ---- Leil\u00f5es ----
   "\ud83d\udd28 Leil\u00f5es": "\ud83d\udd28 \u62cd\u5356", "Como Funciona": "\u5982\u4f55\u8fd0\u4f5c",
   "Novo Leil\u00e3o": "\u65b0\u62cd\u5356", "Criar Leil\u00e3o": "\u521b\u5efa\u62cd\u5356",
   "Dura\u00e7\u00e3o": "\u6301\u7eed\u65f6\u95f4", "Fila de Espera": "\u7b49\u5f85\u961f\u5217",
@@ -427,8 +375,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Leil\u00e3o criado!": "\u62cd\u5356\u5df2\u521b\u5efa\uff01",
   "Lance deve ser > ": "\u51fa\u4ef7\u5fc5\u987b > ",
   "Lance de ": "\u51fa\u4ef7 ", " registrado!": " \u5df2\u6ce8\u518c\uff01",
-
-  // ---- Sorteios ----
   "Novo Sorteio": "\u65b0\u62bd\u5956", "Nenhum.": "\u65e0\u3002",
   "Participar": "\u53c2\u4e0e", "Sortear": "\u62bd\u5956",
   "Encerrado": "\u5df2\u7ed3\u675f", "ENCERRADO": "\u5df2\u7ed3\u675f",
@@ -438,8 +384,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Nenhum": "\u65e0", "Participar do Sorteio": "\u53c2\u4e0e\u62bd\u5956",
   "Participa\u00e7\u00e3o registrada!": "\u53c2\u4e0e\u5df2\u6ce8\u518c\uff01",
   "Sorteio finalizado!": "\u62bd\u5956\u5df2\u7ed3\u675f\uff01",
-
-  // ---- Lot\u00e9rica ----
   "Lot\u00e9rica Ativa": "\u8fdb\u884c\u4e2d\u5f69\u7968", "Vendas abiertas": "\u9500\u552e\u4e2d",
   "Sorteio realizado": "\u5df2\u5f00\u5956", "Finalizada": "\u5df2\u7ed3\u675f",
   "Configurando": "\u914d\u7f6e\u4e2d", "Vendidos": "\u5df2\u552e",
@@ -454,8 +398,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Criar Lot\u00e9rica": "\u521b\u5efa\u5f69\u7968",
   "Nenhuma lot\u00e9rica ativa. Crie uma nova acima.": "\u6ca1\u6709\u8fdb\u884c\u4e2d\u7684\u5f69\u7968\u3002\u8bf7\u5728\u4e0a\u65b9\u521b\u5efa\u3002",
   "Nenhuma lot\u00e9rica ativa no momento.": "\u76ee\u524d\u6ca1\u6709\u8fdb\u884c\u4e2d\u7684\u5f69\u7968\u3002",
-
-  // ---- Empr\u00e9stimos ----
   "Regras do Banco": "\u94f6\u884c\u89c4\u5219",
   "Membro Especial": "\u7279\u6b8a\u6210\u5458", "Membro Comum": "\u666e\u901a\u6210\u5458",
   "N\u00e3o Contribuinte": "\u975e\u8d21\u732e\u8005",
@@ -470,8 +412,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Pagamento registrado!": "\u8fd8\u6b3e\u5df2\u6ce8\u518c\uff01",
   "Empr\u00e9stimo exclu\u00eddo!": "\u501f\u8d37\u5df2\u5220\u9664\uff01",
   "Excluir empr\u00e9stimo?": "\u5220\u9664\u501f\u8d37\uff1f",
-
-  // ---- Tabela ----
   "Tabela de Precos": "\u4ef7\u683c\u8868", "Tabela de Pre\u00e7os": "\u4ef7\u683c\u8868",
   "Reportar Precos": "\u62a5\u544a\u4ef7\u683c", "Reportar Pre\u00e7os": "\u62a5\u544a\u4ef7\u683c",
   "Alta": "\u9ad8", "Media": "\u4e2d", "Baixa": "\u4f4e",
@@ -482,8 +422,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Nome do Item *": "\u7269\u54c1\u540d\u79f0 *", "Categoria *": "\u5206\u7c7b *",
   "Selecionar...": "\u9009\u62e9...", "Wiki Link": "Wiki \u94fe\u63a5",
   "Adicionar Item": "\u6dfb\u52a0\u7269\u54c1",
-
-  // ---- Admin ----
   "Login Admin": "\u7ba1\u7406\u5458\u767b\u5f55", "Verificando...": "\u9a8c\u8bc1\u4e2d...",
   "Backup": "\u5907\u4efd", "Gerando...": "\u751f\u6210\u4e2d...",
   "Senha incorreta!": "\u5bc6\u7801\u9519\u8bef\uff01",
@@ -491,8 +429,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Continuar em Portugu\u00eas": "\u7ee7\u7eed\u4f7f\u7528\u8461\u8404\u7259\u8bed",
   "Traduzir o Site": "\u7ffb\u8bd1\u7f51\u7ad9", "Selecione seu idioma": "\u9009\u62e9\u8bed\u8a00",
   "Traduzir para": "\u7ffb\u8bd1\u4e3a", "Traduzir site": "\u7ffb\u8bd1\u7f51\u7ad9",
-
-  // ---- Toasts ----
   "Registro adicionado!": "\u8bb0\u5f55\u5df2\u6dfb\u52a0\uff01",
   "Ordem atualizada!": "\u987a\u5e8f\u5df2\u66f4\u65b0\uff01",
   "Preencha os obrigat\u00f3rios.": "\u8bf7\u586b\u5199\u5fc5\u586b\u5b57\u6bb5\u3002",
@@ -505,8 +441,6 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
   "Sem spam": "\u7981\u6b62\u5783\u573e\u4fe1\u606f",
   "Respeite todos os participantes": "\u5c0a\u91cd\u6240\u6709\u53c2\u4e0e\u8005",
   "Sem spam ou flood": "\u7981\u6b62\u5783\u573e\u4fe1\u606f\u548c\u5237\u5c4f",
-
-  // ---- Config Trocas ----
   "Configura\u00e7\u00e3o de Tabelas de Troca": "\u4ea4\u6613\u8868\u914d\u7f6e",
   "Nova Regra": "\u65b0\u89c4\u5219",
   "Nenhuma regra configurada.": "\u6ca1\u6709\u914d\u7f6e\u89c4\u5219\u3002",
@@ -515,23 +449,18 @@ ZH_CN = r'''const ZH_CN: Record<string, string> = {
 };
 '''
 
-# I'll create the remaining 6 languages similarly - let me write them all in the script
-# For brevity and correctness, I'll write each one
+# Now I need to write the remaining 6 languages as well.
+# Let me save what I have so far and continue in a second script to keep it manageable.
 
-ZH_TW = ZH_CN.replace('const ZH_CN', 'const ZH_TW').replace('\\u7b80\\u4f53\\u4e2d\\u6587', '\\u7e41\\u9ad4\\u4e2d\\u6587')
-# Actually ZH-TW needs Traditional Chinese translations, not just a rename
-# Let me write it properly
+# Insert before "const dictionaries"
+content = content.replace(
+    'const dictionaries: Record<string, Record<string, string>> = { en: EN, es: ES, fr: FR, de: DE, ru: RU };',
+    NEW_DICTS + '\nconst dictionaries: Record<string, Record<string, string>> = { en: EN, es: ES, fr: FR, de: DE, ru: RU, it: IT, "zh-cn": ZH_CN };'
+)
 
-print("Script setup complete. Will generate dictionaries...")
-print(f"File length before: {len(content)} chars")
+print("2/5 - IT and ZH-CN dictionaries added")
 
-# For now, just test the LANGUAGES replacement
-new_content = re.sub(r'const LANGUAGES = \[[\s\S]*?\];', new_languages, content, count=1)
-print(f"File length after LANGUAGES update: {len(new_content)} chars")
-print("LANGUAGES array updated successfully")
-
-# Write back
 with open(FILE, "w", encoding="utf-8") as f:
-    f.write(new_content)
+    f.write(content)
 
-print("Done - LANGUAGES updated")
+print(f"Done - File saved ({len(content)} chars)")
