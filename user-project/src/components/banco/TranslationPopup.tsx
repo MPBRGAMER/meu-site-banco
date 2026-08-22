@@ -1268,6 +1268,14 @@ const EN: Record<string, string> = {
    LANGUAGE-SPECIFIC OVERRIDES
    ============================================================ */
 const ES: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas": "Puesto de Intercambio",
+  "Posto de Trocas - Sobreviventes": "Puesto de Intercambio - Sobrevivientes",
+  "POSTO DE TROCAS": "PUESTO DE INTERCAMBIO",
+  "Sistema de gestao para sobreviventes": "Sistema de gestion para supervivientes",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Puesto de Intercambio",
+  "Chat": "Chat",
   // ---- Tabs ----
   "Dashboard": "Panel", "Tabela": "Tabla de precios", "Empréstimos": "Préstamos",
   "Trocas": "Intercambios", "Doadores": "Donantes", "Leilões": "Subastas",
@@ -1556,6 +1564,15 @@ const ES: Record<string, string> = {
 };
 
 const FR: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas": "Poste d'Echange",
+  "Sistema de gestao para sobreviventes": "Systeme de gestion pour survivants",
+  "POSTO DE TROCAS": "POSTE D'ECHANGE",
+  "Posto de Trocas - Sobreviventes": "Poste d'Echange - Survivants",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Poste d'Echange",
+  "Chat": "Chat",
+  "Nenhum contribuinte ainda. Contribua reportando precos na aba Tabela!": "Aucun contributeur pour le moment. Contribuez en signalant les prix dans l'onglet Tableau !",
   // ---- Tabs ----
   "Dashboard": "Tableau de bord", "Tabela": "Table des prix", "Empréstimos": "Prêts",
   "Trocas": "Échanges", "Doadores": "Donateurs", "Leilões": "Enchères",
@@ -1803,6 +1820,15 @@ const FR: Record<string, string> = {
 };
 
 const DE: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas": "Handelsposten",
+  "Sistema de gestao para sobreviventes": "Verwaltungssystem für Überlebende",
+  "POSTO DE TROCAS": "HANDELSPOSTEN",
+  "Posto de Trocas - Sobreviventes": "Handelsposten - Überlebende",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Handelsposten",
+  "Chat": "Chat",
+  "Nenhum contribuinte ainda. Contribua reportando precos na aba Tabela!": "Noch keine Mitwirkenden. Tragen Sie bei, indem Sie Preise im Tab Preistabelle melden!",
   // ---- Tabs ----
   "Dashboard": "Übersicht", "Tabela": "Preistabelle", "Empréstimos": "Kredite",
   "Trocas": "Tausch", "Doadores": "Spender", "Leilões": "Auktionen",
@@ -2037,6 +2063,15 @@ const DE: Record<string, string> = {
 };
 
 const RU: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas": "Торговый пост",
+  "Sistema de gestao para sobreviventes": "Система управления для выживших",
+  "POSTO DE TROCAS": "ТОРГОВЫЙ ПОСТ",
+  "Posto de Trocas - Sobreviventes": "Торговый пост - Выжившие",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Торговый пост",
+  "Chat": "Чат",
+  "Nenhum contribuinte ainda. Contribua reportando precos na aba Tabela!": "Пока нет участников. Внесите свой вклад, сообщая цены на вкладке Таблица!",
   // ---- Tabs ----
   "Dashboard": "Панель", "Tabela": "Таблица цен", "Empréstimos": "Займы",
   "Trocas": "Обмены", "Doadores": "Дарители", "Leilões": "Аукционы",
@@ -2272,6 +2307,11 @@ const RU: Record<string, string> = {
 };
 
 const IT: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "Posto di Scambio - Sopravvissuti",
+  "POSTO DE TROCAS": "POSTO DI SCAMBIO",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Posto di Scambio",
   // ---- Tabs ----
   "Dashboard": "Cruscotto", "Tabela": "Tabella Prezzi", "Empréstimos": "Prestiti",
   "Trocas": "Scambi", "Doadores": "Donatori", "Leilões": "Aste",
@@ -2423,6 +2463,11 @@ const IT: Record<string, string> = {
   "Calculadora de Empréstimo": "Calcolatore Prestito",
   "Dias de Atraso": "Giorni di Ritardo", "Total a Devolver": "Totale da Restituire",
   "itens": "oggetti", "Novo Empréstimo": "Nuovo Prestito",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "交易站 - 幸存者",
+  "POSTO DE TROCAS": "交易站",
+  "Day R Survival - Posto de Trocas": "Day R Survival - 交易站",
   "Pendentes": "In sospeso", "Pagos": "Pagati",
   "Pendente": "In sospeso", "Pago": "Pagato", "Atrasado": "In ritardo",
   "Pagar": "Paga", "Confirmar Pagamento": "Conferma Pagamento",
@@ -2609,6 +2654,11 @@ const ZH_CN: Record<string, string> = {
   "Criar Lotérica": "创建彩票",
   // ---- Empréstimos ----
   "Regras do Banco": "银行规则",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "交易站 - 倖存者",
+  "POSTO DE TROCAS": "交易站",
+  "Day R Survival - Posto de Trocas": "Day R Survival - 交易站",
   "Membro Especial": "特殊成员", "Membro Comum": "普通成员",
   "Não Contribuinte": "非贡献者",
   "Calculadora de Empréstimo": "借款计算器",
@@ -2790,6 +2840,11 @@ const ZH_TW: Record<string, string> = {
   "Premio": "獎品", "Teve Ganhador!": "有獲勝者！",
   "Ninguem acertou - Premio acumulou!": "沒有人猜中 - 獎品累積！",
   "Finalizar Lotérica": "結束彩票",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "교환 스테이션 - 생존자",
+  "POSTO DE TROCAS": "교환 스테이션",
+  "Day R Survival - Posto de Trocas": "Day R Survival - 교환 스테이션",
   "Vender Numero": "出售號碼", "Vender": "出售",
   "Loterica criada!": "彩票已建立！",
   "Nova Lotérica": "新彩票", "Configurar Lotérica": "配置彩票",
@@ -2957,6 +3012,11 @@ const KO: Record<string, string> = {
   "Finalizar Entrega": "날품 완료", "Histórico de Ganhadores": "승리자 역사",
   // ---- Sorteios ----
   "Novo Sorteio": "새 추첨", "Nenhum.": "없음.",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "取引ステーション - サバイバー",
+  "POSTO DE TROCAS": "取引ステーション",
+  "Day R Survival - Posto de Trocas": "Day R Survival - 取引ステーション",
   "Participar": "참가", "Sortear": "추첨",
   "Encerrado": "종료", "ENCERRADO": "종료",
   "Sorteio criado!": "추첨 생성!", "Participando!": "참가 중!",
@@ -3123,6 +3183,11 @@ const JA: Record<string, string> = {
   "Nenhum registro.": "レコードがありません。",
   // ---- Leilões ----
   "🔨 Leilões": "🔨 オークション", "Como Funciona": "使い方",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "Pos Pertukaran - Penyintas",
+  "POSTO DE TROCAS": "POS PERTUKARAN",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Pos Pertukaran",
   "Novo Leilão": "新しいオークション", "Dar Lance": "入札",
   "Duração": "期間", "Fila de Espera": "待機列",
   "EM ESPERA": "待機中", "Nenhum leilão ativo.": "アクティブオークションがありません。",
@@ -3290,6 +3355,11 @@ const ID: Record<string, string> = {
   "Nome do jogador": "Nama pemain",
   "Estoque Atual": "Stok Saat Ini", "BAIXO": "RENDAH",
   "Resetar": "Reset", "Resetar TUDO?": "Reset SEMUA?",
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "Posto de Trocas - Sobreviventes": "Takas İstasyonu - Hayatta Kalanlar",
+  "POSTO DE TROCAS": "TAKAS İSTASYONU",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Takas İstasyonu",
   "📦 ENTRADA": "📦 MASUK", "📤 SAÍDA": "📤 KELUAR",
   "Nenhum registro.": "Tidak ada catatan.",
   // ---- Leilões ----
@@ -3355,6 +3425,11 @@ const ID: Record<string, string> = {
 };
 
 const TR: Record<string, string> = {
+  // ---- Page / Header ----
+  "Day R Survival": "Day R Survival",
+  "POSTO DE TROCAS": "TAKAS İSTASYONU",
+  "Posto de Trocas - Sobreviventes": "Takas İstasyonu - Hayatta Kalanlar",
+  "Day R Survival - Posto de Trocas": "Day R Survival - Takas İstasyonu",
   // ---- Tabs ----
   "Dashboard": "Kontrol Paneli", "Tabela": "Fiyat Tablosu", "Empréstimos": "Kredi",
   "Trocas": "Takas", "Doadores": "Bağışçılar", "Leilões": "Müzayede",
