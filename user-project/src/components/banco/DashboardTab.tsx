@@ -232,7 +232,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
               <div key={c.id} className="flex items-center justify-between py-1.5 px-2 rounded border-b border-border/30 text-xs">
                 <div className="flex items-center gap-2">
                   <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${c.tipo === "entrada" ? "bg-green-400" : "bg-red-400"}`} />
-                  <div><span className="text-foreground text-[11px]">{c.descricao}</span><p className="text-[9px] text-muted-foreground">{c.origem}</p></div>
+                  <div><span className="text-foreground text-[11px]" data-no-translate translate="no">{c.descricao}</span><p className="text-[9px] text-muted-foreground" data-no-translate translate="no">{c.origem}</p></div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <span className="font-mono text-muted-foreground text-[10px]">{new Date(c.data).toLocaleDateString(getDateLocale())}</span>
