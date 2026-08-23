@@ -26,22 +26,22 @@ import SiteProtection from "@/components/SiteProtection";
 import { Toaster } from "@/components/ui/sonner";
 
 const publicTabs = [
-  { id: "dashboard", label: "⚔️ Dashboard", icon: LayoutDashboard },
-  { id: "chat", label: "⚔️ Chat", icon: MessageCircle },
-  { id: "tabela", label: "⚔️ Tabela", icon: Table2 },
-  { id: "emprestimos", label: "⚔️ Empréstimos", icon: HandCoins },
-  { id: "trocas", label: "⚔️ Trocas", icon: ArrowLeftRight },
-  { id: "doadores", label: "⚔️ Doadores", icon: Heart },
-  { id: "leiloes", label: "⚔️ Leilões", icon: Gavel },
-  { id: "sorteios", label: "⚔️ Sorteios", icon: Dices },
-  { id: "loterica", label: "⚔️ Lotérica", icon: Dices },
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "chat", label: "Chat", icon: MessageCircle },
+  { id: "tabela", label: "Tabela", icon: Table2 },
+  { id: "emprestimos", label: "Empréstimos", icon: HandCoins },
+  { id: "trocas", label: "Trocas", icon: ArrowLeftRight },
+  { id: "doadores", label: "Doadores", icon: Heart },
+  { id: "leiloes", label: "Leilões", icon: Gavel },
+  { id: "sorteios", label: "Sorteios", icon: Dices },
+  { id: "loterica", label: "Lotérica", icon: Dices },
 ];
 
 const adminTabs = [
-  { id: "investidores", label: "⚔️ Investidores", icon: Users },
-  { id: "config-trocas", label: "⚔️ Config Trocas", icon: Settings },
-  { id: "compras-vendas", label: "⚔️ Compras & Vendas", icon: ShoppingCart },
-  { id: "caixa", label: "⚔️ Estoque & Caixa", icon: Wallet },
+  { id: "investidores", label: "Investidores", icon: Users },
+  { id: "config-trocas", label: "Config Trocas", icon: Settings },
+  { id: "compras-vendas", label: "Compras & Vendas", icon: ShoppingCart },
+  { id: "caixa", label: "Estoque & Caixa", icon: Wallet },
 ];
 
 export default function HomePage() {
