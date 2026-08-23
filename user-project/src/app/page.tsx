@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -51,6 +51,8 @@ export default function HomePage() {
   const [adminPwd, setAdminPwd] = useState("");
   const [isVerifying, setIsVerifying] = useState(false);
   const [isDownloadingBackup, setIsDownloadingBackup] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
   const { isLoading } = useBank();
   const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
 
@@ -109,6 +111,33 @@ export default function HomePage() {
       toast.error(error instanceof Error ? error.message : "Erro ao baixar o backup.");
     } finally {
       setIsDownloadingBackup(false);
+    }
+  };
+
+  const handleResetDatabase = async () => {
+    const password = sessionStorage.getItem("adminPwd");
+    if (!password) {
+      toast.error("Entre no modo Admin para resetar.");
+      return;
+    }
+    setIsResetting(true);
+    try {
+      const res = await fetch("/api/banco", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": password,
+        },
+        body: JSON.stringify({ action: "resetAll" }),
+      });
+      if (!res.ok) throw new Error("Erro ao resetar.");
+      toast.success("Banco de dados resetado! Recarregando...");
+      setShowResetConfirm(false);
+      setTimeout(() => window.location.reload(), 1500);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao resetar o banco.");
+    } finally {
+      setIsResetting(false);
     }
   };
 
@@ -220,15 +249,25 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-2">
             {isAdmin && (
-              <button
-                onClick={handleDownloadBackup}
-                disabled={isDownloadingBackup}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 disabled:opacity-60"
-                title="Baixar backup completo do banco"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{isDownloadingBackup ? "Gerando..." : "Backup"}</span>
-              </button>
+              <>
+                <button
+                  onClick={handleDownloadBackup}
+                  disabled={isDownloadingBackup}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 disabled:opacity-60"
+                  title="Baixar backup completo do banco"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">{isDownloadingBackup ? "Gerando..." : "Backup"}</span>
+                </button>
+                <button
+                  onClick={() => setShowResetConfirm(true)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20"
+                  title="Resetar todo o banco de dados"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Resetar BD</span>
+                </button>
+              </>
             )}
             <button
               onClick={handleAdminToggle}
@@ -319,6 +358,36 @@ export default function HomePage() {
                   {isVerifying ? "Verificando..." : "Entrar"}
                 </Button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Reset Database Confirm Modal */}
+      {showResetConfirm && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60" onClick={() => setShowResetConfirm(false)}>
+          <div className="rounded-lg border border-red-500/30 bg-card p-5 w-full max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-bold text-red-400 flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4" /> Resetar Banco de Dados
+              </h3>
+              <button onClick={() => setShowResetConfirm(false)} className="text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+            </div>
+            <p className="text-xs text-muted-foreground mb-2">Essa acao vai apagar <b className="text-red-400">TODOS</b> os dados do banco:</p>
+            <ul className="text-[11px] text-muted-foreground mb-4 space-y-0.5 list-disc list-inside">
+              <li>Emprestimos, Investidores, Trocas</li>
+              <li>Compras/Vendas, Caixa, Doadores</li>
+              <li>Leiloes e Lances</li>
+              <li>Sorteios e Loterica</li>
+              <li>Chat, Tabela de Trocas</li>
+              <li>Relatorios e Itens Customizados</li>
+            </ul>
+            <p className="text-[11px] text-red-400 font-semibold mb-4">Essa acao nao pode ser desfeita! Faca um backup antes se necessario.</p>
+            <div className="flex gap-2">
+              <Button variant="outline" onClick={() => setShowResetConfirm(false)} className="flex-1 text-xs h-8" disabled={isResetting}>Cancelar</Button>
+              <Button onClick={handleResetDatabase} disabled={isResetting} className="flex-1 bg-red-600 hover:bg-red-700 text-white text-xs h-8">
+                {isResetting ? "Resetando..." : "Sim, Resetar Tudo"}
+              </Button>
             </div>
           </div>
         </div>

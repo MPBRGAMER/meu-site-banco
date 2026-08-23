@@ -857,6 +857,28 @@ export async function POST(req: NextRequest) {
         await db.itemCatalogo.delete({ where: { id } });
         return json({ success: true });
       }
+      case "resetAll": {
+        await db.chatMensagem.deleteMany();
+        await db.chatSala.deleteMany();
+        await db.numeroLoterica.deleteMany();
+        await db.loterica.deleteMany();
+        await db.participanteSorteio.deleteMany();
+        await db.sorteio.deleteMany();
+        await db.lance.deleteMany();
+        await db.leilao.deleteMany();
+        await db.priceReport.deleteMany();
+        await db.itemOverride.deleteMany();
+        await db.itemCatalogo.deleteMany();
+        await db.propaganda.deleteMany();
+        await db.doador.deleteMany();
+        await db.compraVenda.deleteMany();
+        await db.trocaRegistro.deleteMany();
+        await db.tabelaTroca.deleteMany();
+        await db.investidor.deleteMany();
+        await db.emprestimo.deleteMany();
+        await db.caixaRegistro.deleteMany();
+        return json({ success: true, message: "Banco de dados resetado com sucesso!" });
+      }
       case "backup": {
         const pwd = req.headers.get("x-admin-password");
         if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
