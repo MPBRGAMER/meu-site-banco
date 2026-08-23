@@ -817,9 +817,6 @@ export async function POST(req: NextRequest) {
             "Content-Disposition": `attachment; filename="${filename}"`,
           },
         });
-      }" RESTART IDENTITY CASCADE;`);
-        }
-        return json({ success: true, message: "Banco resetado!" });
       }
       default:
         return err("Ação POST desconhecida: " + action);
