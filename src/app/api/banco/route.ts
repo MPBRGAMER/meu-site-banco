@@ -359,6 +359,7 @@ export async function POST(req: NextRequest) {
       "comprarNumero",
       "addLance",
       "reportPrice",
+      "bulkInsertDoadores",
     ]);
 
     if (!PUBLIC_ACTIONS.has(action)) {
@@ -856,6 +857,17 @@ export async function POST(req: NextRequest) {
         if (!id) return err("id obrigatório");
         await db.itemCatalogo.delete({ where: { id } });
         return json({ success: true });
+      }
+      case "bulkInsertDoadores": {
+        const { doadores } = data;
+        if (!Array.isArray(doadores)) return err("doadores array obrigatório");
+        try {
+          await db.doador.createMany({ data: doadores as any[], skipDuplicates: true });
+          return json({ success: true, inserted: doadores.length });
+        } catch (e: unknown) {
+          const msg = e instanceof Error ? e.message : String(e);
+          return err(`Erro ao inserir doadores: ${msg}`, 500);
+        }
       }
       case "restoreBackup": {
         const { backupData } = data;
