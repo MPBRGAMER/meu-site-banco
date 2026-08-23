@@ -147,25 +147,57 @@ function LanceModal({ leilao, onClose }: { leilao: Leilao; onClose: () => void }
 
 interface LeiloesTabProps {
   isAdmin: boolean;
+  adminPwd: string;
 }
 
-/* Seletor visual de itens com busca e imagens */
+/* Seletor visual de itens com busca, imagens e opção de adicionar novo */
 function ItemPicker({
   ptItems,
+  adminPwd,
   onSelect,
 }: {
   ptItems: PtItemMap[];
+  adminPwd: string;
   onSelect: (item: PtItemMap) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState<"select" | "add">("select");
   const [search, setSearch] = useState("");
+  const [newName, setNewName] = useState("");
+  const [imgSearch, setImgSearch] = useState("");
+  const [customItems, setCustomItems] = useState<PtItemMap[]>([]);
+  const [saving, setSaving] = useState(false);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLDivElement>(null);
 
+  // Itens combinados: estáticos + personalizados do DB
+  const allItems = [...ptItems, ...customItems];
+  const uniqueItems = allItems.filter(
+    (item, idx, arr) => arr.findIndex((i) => i.pt.toLowerCase() === item.pt.toLowerCase()) === idx
+  );
   const filtered = search.trim()
-    ? ptItems.filter((p) => p.pt.toLowerCase().includes(search.trim().toLowerCase()))
-    : ptItems;
+    ? uniqueItems.filter((p) => p.pt.toLowerCase().includes(search.trim().toLowerCase()))
+    : uniqueItems;
+
+  // Imagens disponíveis para o modo "adicionar" (usa todas as imagens existentes)
+  const allImages = ptItems; // todos os 332 items com file
+  const filteredImages = imgSearch.trim()
+    ? allImages.filter((p) => p.pt.toLowerCase().includes(imgSearch.trim().toLowerCase()) || p.file.toLowerCase().includes(imgSearch.trim().toLowerCase()))
+    : allImages;
+
+  // Carregar itens personalizados do DB
+  useEffect(() => {
+    if (!open) return;
+    fetch("/api/banco?action=listItemCatalogo")
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setCustomItems(data.map((d: { nome: string; arquivo: string }) => ({ pt: d.nome, file: d.arquivo, id: d.arquivo })));
+        }
+      })
+      .catch(() => {});
+  }, [open]);
 
   // Fechar ao clicar fora
   useEffect(() => {
@@ -173,6 +205,10 @@ function ItemPicker({
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
         setSearch("");
+        setMode("select");
+        setNewName("");
+        setImgSearch("");
+        setSelectedImg(null);
       }
     };
     if (open) document.addEventListener("mousedown", handler);
@@ -181,13 +217,36 @@ function ItemPicker({
 
   // Focar no input ao abrir
   useEffect(() => {
-    if (open) inputRef.current?.focus();
-  }, [open]);
+    if (open) setTimeout(() => inputRef.current?.focus(), 50);
+  }, [open, mode]);
 
   const handleSelect = (item: PtItemMap) => {
     onSelect(item);
     setOpen(false);
     setSearch("");
+    setMode("select");
+  };
+
+  const handleAddCustom = async () => {
+    if (!newName.trim() || !selectedImg) return;
+    setSaving(true);
+    try {
+      const res = await fetch("/api/banco", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": adminPwd },
+        body: JSON.stringify({ action: "addItemCatalogo", nome: newName.trim(), arquivo: selectedImg }),
+      });
+      if (res.ok) {
+        const created = { pt: newName.trim(), file: selectedImg, id: selectedImg };
+        setCustomItems((prev) => [...prev, created]);
+        handleSelect(created);
+      } else {
+        toast.error("Erro ao salvar item.");
+      }
+    } catch {
+      toast.error("Erro de conexão.");
+    }
+    setSaving(false);
   };
 
   return (
@@ -201,50 +260,142 @@ function ItemPicker({
         <span className="text-muted-foreground truncate">Clique para escolher o item...</span>
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 w-72 max-h-80 flex flex-col rounded-md border border-primary/30 bg-card shadow-lg overflow-hidden">
-          <div className="p-2 border-b border-border">
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Buscar item..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm outline-none focus:border-primary"
-            />
+        <div className="absolute z-50 mt-1 w-80 max-h-96 flex flex-col rounded-md border border-primary/30 bg-card shadow-lg overflow-hidden">
+          {/* Tabs: Selecionar | Adicionar Novo */}
+          <div className="flex border-b border-border">
+            <button
+              type="button"
+              onClick={() => setMode("select")}
+              className={`flex-1 px-3 py-2 text-xs font-bold transition-colors ${mode === "select" ? "text-primary border-b-2 border-primary bg-primary/5" : "text-muted-foreground hover:text-foreground"}`}
+            >Selecionar Item</button>
+            <button
+              type="button"
+              onClick={() => setMode("add")}
+              className={`flex-1 px-3 py-2 text-xs font-bold transition-colors ${mode === "add" ? "text-green-400 border-b-2 border-green-400 bg-green-400/5" : "text-muted-foreground hover:text-foreground"}`}
+            >+ Adicionar Novo</button>
           </div>
-          <div ref={listRef} className="overflow-y-auto flex-1">
-            {filtered.length === 0 ? (
-              <div className="p-4 text-center text-xs text-muted-foreground">Nenhum item encontrado.</div>
-            ) : (
-              filtered.map((item) => (
-                <button
-                  key={item.file}
-                  type="button"
-                  onClick={() => handleSelect(item)}
-                  className="w-full flex items-center gap-2 px-3 py-1.5 text-sm text-left hover:bg-primary/10 transition-colors"
-                >
-                  <img
-                    src={`/items/${item.file}.png`}
-                    alt={item.pt}
-                    className="w-6 h-6 rounded object-contain shrink-0"
-                    style={{ imageRendering: "pixelated" }}
-                    loading="lazy"
+
+          {mode === "select" ? (
+            <>
+              <div className="p-2 border-b border-border">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  placeholder="Buscar item..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm outline-none focus:border-primary"
+                />
+              </div>
+              <div className="overflow-y-auto flex-1">
+                {filtered.length === 0 ? (
+                  <div className="p-4 text-center text-xs text-muted-foreground">
+                    Nenhum item encontrado.<br />
+                    <button type="button" onClick={() => { setMode("add"); setNewName(search); }} className="text-primary underline hover:no-underline mt-1">Adicionar "{search}"?</button>
+                  </div>
+                ) : (
+                  filtered.map((item) => (
+                    <button
+                      key={`${item.file}-${item.pt}`}
+                      type="button"
+                      onClick={() => handleSelect(item)}
+                      className="w-full flex items-center gap-2 px-3 py-1.5 text-sm text-left hover:bg-primary/10 transition-colors"
+                    >
+                      <img
+                        src={`/items/${item.file}.png`}
+                        alt={item.pt}
+                        className="w-6 h-6 rounded object-contain shrink-0"
+                        style={{ imageRendering: "pixelated" }}
+                        loading="lazy"
+                      />
+                      <span className="truncate text-foreground">{item.pt}</span>
+                      {!ptItems.find((p) => p.file === item.file) && (
+                        <span className="ml-auto text-[9px] text-green-400 bg-green-400/10 px-1 rounded">novo</span>
+                      )}
+                    </button>
+                  ))
+                )}
+              </div>
+              <div className="p-1.5 border-t border-border text-[10px] text-muted-foreground text-center">
+                {filtered.length} item{filtered.length !== 1 ? "s" : ""}{search.trim() ? ` encontrado${filtered.length !== 1 ? "s" : ""}` : ` no total (${ptItems.length} padrão + ${customItems.length} personalizado${customItems.length !== 1 ? "s" : ""})`}
+              </div>
+            </>
+          ) : (
+            /* Modo: Adicionar Novo Item */
+            <>
+              <div className="p-3 border-b border-border space-y-3">
+                <div>
+                  <label className="text-xs text-muted-foreground font-bold block mb-1">Nome do item</label>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Ex: Água Radiotiva"
+                    value={newName}
+                    onChange={(e) => setNewName(e.target.value)}
+                    className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm outline-none focus:border-primary"
                   />
-                  <span className="truncate text-foreground">{item.pt}</span>
+                </div>
+                <div>
+                  <label className="text-xs text-muted-foreground font-bold block mb-1">Escolha a imagem (reuse uma existente)</label>
+                  <input
+                    type="text"
+                    placeholder="Filtrar imagens..."
+                    value={imgSearch}
+                    onChange={(e) => setImgSearch(e.target.value)}
+                    className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm outline-none focus:border-primary mb-1"
+                  />
+                </div>
+              </div>
+              <div className="overflow-y-auto flex-1">
+                {selectedImg && (
+                  <div className="px-3 py-2 border-b border-border bg-primary/5 flex items-center gap-2">
+                    <span className="text-[10px] text-primary font-bold">Imagem escolhida:</span>
+                    <img src={`/items/${selectedImg}.png`} alt="" className="w-6 h-6 rounded object-contain" style={{ imageRendering: "pixelated" }} />
+                    <span className="text-xs text-foreground truncate">{selectedImg}.png</span>
+                  </div>
+                )}
+                <div className="grid grid-cols-4 gap-0.5 p-1">
+                  {filteredImages.slice(0, 60).map((item) => (
+                    <button
+                      key={item.file}
+                      type="button"
+                      onClick={() => setSelectedImg(item.file)}
+                      title={`${item.pt}\n${item.file}.png`}
+                      className={`aspect-square rounded flex items-center justify-center p-1 transition-colors ${selectedImg === item.file ? "bg-primary/20 ring-1 ring-primary" : "hover:bg-accent"}`}
+                    >
+                      <img
+                        src={`/items/${item.file}.png`}
+                        alt={item.pt}
+                        className="w-7 h-7 object-contain"
+                        style={{ imageRendering: "pixelated" }}
+                        loading="lazy"
+                      />
+                    </button>
+                  ))}
+                </div>
+                {filteredImages.length > 60 && (
+                  <p className="text-[10px] text-muted-foreground text-center py-1">Filtre para ver mais ({filteredImages.length} imagens)</p>
+                )}
+              </div>
+              <div className="p-2 border-t border-border">
+                <button
+                  type="button"
+                  onClick={handleAddCustom}
+                  disabled={!newName.trim() || !selectedImg || saving}
+                  className="w-full rounded bg-green-600 hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-bold py-2 transition-colors"
+                >
+                  {saving ? "Salvando..." : "Adicionar Item"}
                 </button>
-              ))
-            )}
-          </div>
-          <div className="p-1.5 border-t border-border text-[10px] text-muted-foreground text-center">
-            {filtered.length} item{filtered.length !== 1 ? "s" : ""}{search.trim() ? ` encontrado${filtered.length !== 1 ? "s" : ""}` : " no total"}
-          </div>
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
   );
 }
 
-export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
+export default function LeiloesTab({ isAdmin, adminPwd }: LeiloesTabProps) {
   const { leiloes, addLeilao, getLancesByLeilao, finalizarLeilao, removeLeilao } = useBank();
   const [showForm, setShowForm] = useState(false);
   const [lanceLeilao, setLanceLeilao] = useState<Leilao | null>(null);
@@ -332,7 +483,7 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                 <div><Label className="text-xs text-muted-foreground">Dono</Label><Input placeholder="Nome" value={donoItem} onChange={(e) => setDonoItem(e.target.value)} className="text-sm" /></div>
                 <div>
                   <Label className="text-xs text-muted-foreground">Item</Label>
-                  <ItemPicker ptItems={ptItems} onSelect={handleItemSelect} />
+                  <ItemPicker ptItems={ptItems} adminPwd={adminPwd} onSelect={handleItemSelect} />
                 </div>
                 <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" placeholder="1" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="text-sm font-mono" /></div>
                 <div><Label className="text-xs text-muted-foreground">Valor Inicial (total do lote)</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>

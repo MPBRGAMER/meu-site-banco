@@ -196,6 +196,17 @@ export async function GET(req: NextRequest) {
         });
         return json(data);
       }
+      case "listItemCatalogo": {
+        try {
+          const data = await db.itemCatalogo.findMany({
+            orderBy: { nome: "asc" },
+          });
+          return json(data);
+        } catch {
+          // Tabela pode ainda não existir
+          return json([]);
+        }
+      }
       case "listSorteios": {
         const data = await db.sorteio.findMany({
           orderBy: { dataCriacao: "desc" },
@@ -793,22 +804,49 @@ export async function POST(req: NextRequest) {
         await db.propaganda.delete({ where: { slotId } });
         return json({ success: true });
       }
+      case "addItemCatalogo": {
+        const { nome, arquivo } = data;
+        if (!nome || !arquivo) return err("nome e arquivo obrigatórios");
+        // Criar tabela se não existir
+        try {
+          await db.$executeRawUnsafe(`
+            CREATE TABLE IF NOT EXISTS "ItemCatalogo" (
+              "id" TEXT NOT NULL PRIMARY KEY,
+              "nome" TEXT NOT NULL,
+              "arquivo" TEXT NOT NULL,
+              "data" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+              CONSTRAINT "ItemCatalogo_nome_key" UNIQUE("nome")
+            );
+          `);
+        } catch { /* tabela já existe */ }
+        const item = await db.itemCatalogo.create({
+          data: { nome: nome.trim(), arquivo: arquivo.trim() },
+        });
+        return json(item);
+      }
+      case "removeItemCatalogo": {
+        const { id } = data;
+        if (!id) return err("id obrigatório");
+        await db.itemCatalogo.delete({ where: { id } });
+        return json({ success: true });
+      }
       case "backup": {
         const pwd = req.headers.get("x-admin-password");
         if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
-        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens] = await Promise.all([
+        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo] = await Promise.all([
           db.emprestimo.findMany(), db.investidor.findMany(), db.tabelaTroca.findMany(),
           db.trocaRegistro.findMany(), db.compraVenda.findMany(), db.caixaRegistro.findMany(),
           db.doador.findMany(), db.leilao.findMany(), db.lance.findMany(),
           db.sorteio.findMany(), db.participanteSorteio.findMany(), db.loterica.findMany(),
           db.numeroLoterica.findMany(), db.priceReport.findMany(), db.itemOverride.findMany(),
           db.propaganda.findMany(), db.chatSala.findMany(), db.chatMensagem.findMany(),
+          db.itemCatalogo.findMany(),
         ]);
         const backup = JSON.stringify({
           version: 1, exportDate: new Date().toISOString(),
           emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
           leiloes, lances, sorteios, participantes, lotericas, numeros,
-          priceReports, itemOverrides, propagandas, chatSalas, chatMensagens,
+          priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo,
         }, null, 2);
         const filename = `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
         return new Response(backup, {

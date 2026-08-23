@@ -207,6 +207,13 @@ model ChatSala {
   mensagens   ChatMensagem[]
 }
 
+model ItemCatalogo {
+  id        String   @id @default(cuid())
+  nome      String   @unique
+  arquivo   String
+  data      DateTime @default(now())
+}
+
 model Propaganda {
   id        String   @id @default(cuid())
   slotId    String   @unique
