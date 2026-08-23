@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Globe, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
   { code: "pt", label: "Português", flag: "🇧🇷" },
@@ -116,7 +117,7 @@ export function TranslationPopup() {
                   onClick={() => choose(lang.code)}
                   className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border border-border hover:border-primary/40 text-left transition-colors"
                 >
-                  <span>{lang.flag}</span>
+                  <span data-no-translate translate="no">{lang.flag}</span>
                   <span className="text-xs font-medium">{lang.label}</span>
                 </button>
               ))}
@@ -139,7 +140,16 @@ export function TranslationPopup() {
 
 function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }) {
   const [open, setOpen] = useState(false);
+  const [currentFlag, setCurrentFlag] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("dayr-language") || "pt";
+    if (saved !== "pt") {
+      const lang = LANGUAGES.find((l) => l.code === saved);
+      if (lang) setCurrentFlag(lang.flag);
+    }
+  }, []);
 
   useEffect(() => {
     const close = (e: MouseEvent) => {
@@ -149,6 +159,8 @@ function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }
     return () => document.removeEventListener("mousedown", close);
   }, [open]);
 
+  const currentLang = typeof window !== "undefined" ? (localStorage.getItem("dayr-language") || "pt") : "pt";
+
   return (
     <div className="fixed bottom-4 right-4 z-[90]" ref={menuRef}>
       <button
@@ -156,7 +168,7 @@ function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }
         className="w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center border-2 border-primary/50 transition-colors"
         title="Traduzir site"
       >
-        {open ? <X className="w-5 h-5" /> : <Globe className="w-5 h-5" />}
+        {open ? <X className="w-5 h-5" /> : currentFlag ? <span className="text-xl" data-no-translate translate="no">{currentFlag}</span> : <Globe className="w-5 h-5" />}
       </button>
       {open && (
         <div className="absolute bottom-14 right-0 w-52 rounded-xl border border-primary/30 bg-card shadow-2xl overflow-hidden">
@@ -168,10 +180,14 @@ function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }
               <button
                 key={lang.code}
                 onClick={() => { onChoose(lang.code); setOpen(false); }}
-                className="w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-primary/10 transition-colors"
+                className={cn(
+                  "w-full flex items-center gap-2.5 px-3 py-2 text-left transition-colors",
+                  currentLang === lang.code ? "bg-primary/15 text-primary" : "hover:bg-primary/10"
+                )}
               >
-                <span>{lang.flag}</span>
+                <span data-no-translate translate="no">{lang.flag}</span>
                 <span className="text-xs font-medium">{lang.label}</span>
+                {currentLang === lang.code && <span className="ml-auto text-[10px] text-primary">✓</span>}
               </button>
             ))}
           </div>
