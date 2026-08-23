@@ -817,12 +817,7 @@ export async function POST(req: NextRequest) {
             "Content-Disposition": `attachment; filename="${filename}"`,
           },
         });
-      }
-      // === TEMP RESET DB ===
-      case "resetDB": {
-        const tableNames = ["Emprestimo","Investidor","TabelaTroca","TrocaRegistro","CompraVenda","CaixaRegistro","Doador","Leilao","LanceLeilao","Sorteio","ParticipanteSorteio","Loterica","BilheteLoterica","ResultadoLoterica","MensagemChat","SalaChat","PriceReport"];
-        for (const t of tableNames) {
-          await db.$executeRawUnsafe(`TRUNCATE TABLE "${t}" RESTART IDENTITY CASCADE;`);
+      }" RESTART IDENTITY CASCADE;`);
         }
         return json({ success: true, message: "Banco resetado!" });
       }
