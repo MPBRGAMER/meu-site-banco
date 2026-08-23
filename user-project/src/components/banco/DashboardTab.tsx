@@ -169,7 +169,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-[11px] font-semibold text-foreground truncate" data-no-translate translate="no">{inv.nome}</p>
-                    <p className="text-[9px] text-muted-foreground font-mono">desde {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p>
+                    <p className="text-[9px] text-muted-foreground font-mono"><span>desde</span> {new Date(inv.dataEntrada).toLocaleDateString(getDateLocale())}</p>
                   </div>
                 </div>
               ))}
@@ -192,7 +192,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-[11px] font-semibold text-foreground truncate flex items-center gap-1" data-no-translate translate="no">{r.nickname}{isRecent && <Flame className="w-3 h-3 text-orange-400 shrink-0" />}</p>
-                    <p className="text-[9px] text-muted-foreground font-mono">{r.count} contribuicoes</p>
+                    <p className="text-[9px] text-muted-foreground font-mono">{r.count} <span>contribuicoes</span></p>
                   </div>
                 </div>
               );
@@ -223,7 +223,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
         )}
       </div>
       <div className="rounded-md border border-border bg-card p-3">
-        <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-emerald-400" /> Movimentos do Caixa <span className="text-[10px] text-muted-foreground font-normal">({caixaCompleto.length} registros)</span></h3>
+        <h3 className="text-xs font-bold text-foreground mb-2 flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-emerald-400" /> Movimentos do Caixa <span className="text-[10px] text-muted-foreground font-normal">({caixaCompleto.length} <span>registros</span>)</span></h3>
         {caixaCompleto.length === 0 ? (
           <p className="text-xs text-muted-foreground">Nenhum registro ainda.</p>
         ) : (
