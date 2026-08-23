@@ -4,19 +4,19 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { Globe, X } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "pt", label: "Português", flag: "F1E7F1F7" },
-  { code: "en", label: "English", flag: "F1FAF1F8" },
-  { code: "es", label: "Español", flag: "F1EAF1F8" },
-  { code: "fr", label: "Français", flag: "F1EBF1F7" },
-  { code: "de", label: "Deutsch", flag: "F1E9F1EA" },
-  { code: "ru", label: "Русский", flag: "F1F7F1FA" },
-  { code: "it", label: "Italiano", flag: "F1EEF1F9" },
-  { code: "zh-cn", label: "简体中文", flag: "F1E8F1F3" },
-  { code: "zh-tw", label: "繁體中文", flag: "F1F8F1ED" },
-  { code: "ko", label: "한국어", flag: "F1F0F1F7" },
-  { code: "ja", label: "日本語", flag: "F1EFF1F5" },
-  { code: "id", label: "Indonesia", flag: "F1EEF1E9" },
-  { code: "tr", label: "Türkçe", flag: "F1F9F1F7" },
+  { code: "pt", label: "Português", flag: "🇧🇷" },
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "ru", label: "Русский", flag: "🇷🇺" },
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
+  { code: "zh-cn", label: "简体中文", flag: "🇨🇳" },
+  { code: "zh-tw", label: "繁體中文", flag: "🇹🇼" },
+  { code: "ko", label: "한국어", flag: "🇰🇷" },
+  { code: "ja", label: "日本語", flag: "🇯🇵" },
+  { code: "id", label: "Indonesia", flag: "🇮🇩" },
+  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
 ];
 
 /* Map our codes to Google Translate language codes */
