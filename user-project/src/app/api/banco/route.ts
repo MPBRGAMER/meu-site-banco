@@ -713,10 +713,25 @@ export async function POST(req: NextRequest) {
         if (numerosVendidos.length === 0) return err("Nenhum número vendido");
         const numeroSorteado = Math.floor(Math.random() * 1000) + 1;
         const ganhador = numeros.find((n) => n.numero === numeroSorteado && n.comprador);
-        const effectiveMin = Math.max(lotData.premioMinimo, lotData.premioAcumulado || 0);
+
+        // Nova lógica: 80% das vendas precisa ultrapassar o prêmio mínimo para o split 20/80
         const premio80 = lotData.arrecadadoTotal * 0.8;
-        const premioFinal = Math.max(premio80, effectiveMin);
-        const taxaBanco = lotData.arrecadadoTotal * 0.2;
+        const effectiveMin = Math.max(lotData.premioMinimo, lotData.premioAcumulado || 0);
+        const alcancaMinimo = premio80 > lotData.premioMinimo;
+
+        let taxaBanco: number;
+        let premioFinal: number;
+
+        if (alcancaMinimo) {
+          // Vendas suficientes: split normal 20% banco / 80% prêmio
+          taxaBanco = lotData.arrecadadoTotal * 0.2;
+          premioFinal = Math.max(premio80, effectiveMin);
+        } else {
+          // Vendas insuficientes: banco fica com 100%
+          taxaBanco = lotData.arrecadadoTotal;
+          premioFinal = effectiveMin; // prêmio vem do acumulado/mínimo, não das vendas
+        }
+
         await db.loterica.update({
           where: { id: lotericaId },
           data: {
@@ -725,17 +740,23 @@ export async function POST(req: NextRequest) {
             valorPremio: premioFinal, dataSorteio: new Date(),
           },
         });
+
+        // Entrada no caixa: taxa do banco (20% ou 100%)
         if (taxaBanco > 0) {
           await db.caixaRegistro.create({
             data: {
               tipo: "entrada",
-              descricao: "Taxa bancária Lotérica (20% das vendas)",
+              descricao: alcancaMinimo
+                ? "Taxa bancária Lotérica (20% das vendas)"
+                : "Lotérica - Banco ficou com 100% (80% não ultrapassou o mínimo)",
               item: lotData.moedaAceita, quantidade: Math.round(taxaBanco),
               valor: Math.round(taxaBanco), origem: "loterica",
             },
           });
         }
+
         if (ganhador) {
+          // Tem ganhador: registra saída do prêmio no caixa
           await db.caixaRegistro.create({
             data: {
               tipo: "saida",
@@ -745,17 +766,23 @@ export async function POST(req: NextRequest) {
             },
           });
         } else {
-          await db.loterica.update({
-            where: { id: lotericaId },
-            data: { premioAcumulado: Math.round(premioFinal) },
-          });
+          // Sem ganhador: acumula o prêmio APENAS se as vendas alcançaram o mínimo
+          if (alcancaMinimo) {
+            await db.loterica.update({
+              where: { id: lotericaId },
+              data: { premioAcumulado: Math.round(premioFinal) },
+            });
+          }
+          // Se !alcancaMinimo, o prêmio NÃO acumula (dinheiro ficou com o banco)
         }
+
         return json({
           success: true, numeroSorteado,
           ganhador: ganhador ? ganhador.comprador : null,
           premioFinal: Math.round(premioFinal),
           taxaBanco: Math.round(taxaBanco),
           acumulou: !ganhador,
+          alcancaMinimo,
         });
       }
       case "finalizarLoterica": {

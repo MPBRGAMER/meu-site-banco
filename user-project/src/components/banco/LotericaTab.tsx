@@ -36,11 +36,12 @@ function HistoricoLotericaEntry({ entry, index }: {
 }) {
   const [expanded, setExpanded] = useState(false);
 
-  const taxaBanco = Math.round(entry.arrecadadoTotal * 0.2);
-  const premio80 = Math.max(entry.arrecadadoTotal * 0.8, entry.premioMinimo);
+  const alcMin = (entry.arrecadadoTotal * 0.8) > entry.premioMinimo;
+  const taxaBanco = Math.round(alcMin ? entry.arrecadadoTotal * 0.2 : entry.arrecadadoTotal);
+  const premio80 = entry.arrecadadoTotal * 0.8;
   const acerto = entry.ganhador ? true : false;
   // Usa valorPremio direto (ja calculado no sorteio)
-  const premioFinal = entry.valorPremio || premio80;
+  const premioFinal = entry.valorPremio || Math.max(premio80, Math.max(entry.premioMinimo, entry.premioAcumulado || 0));
 
   return (
     <div className="rounded-md border border-border bg-card overflow-hidden">
@@ -113,9 +114,10 @@ function HistoricoLotericaEntry({ entry, index }: {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-3">
-            <div className="text-center p-2 rounded-md border border-border bg-card">
-              <p className="text-[10px] text-muted-foreground">Taxa Banco (20%)</p>
-              <p className="text-xs font-bold font-mono text-primary">{taxaBanco}</p>
+            <div className={`text-center p-2 rounded-md border bg-card ${!alcMin ? "border-red-500/30" : "border-border"}`}>
+              <p className="text-[10px] text-muted-foreground">Taxa Banco ({alcMin ? "20%" : "100%"})</p>
+              <p className={`text-xs font-bold font-mono ${!alcMin ? "text-red-400" : "text-primary"}`}>{taxaBanco}</p>
+              {!alcMin && <p className="text-[9px] text-red-400">80% &lt; minimo</p>}
             </div>
             <div className="text-center p-2 rounded-md border border-border bg-card">
               <p className="text-[10px] text-muted-foreground">Premio Min.</p>
@@ -175,9 +177,11 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   // Ex: minimo 100, acumulado 160 → minimo efetivo = 160
   const premio80 = loterica ? (loterica.arrecadadoTotal || 0) * 0.8 : 0;
   const effectiveMin = loterica ? Math.max(loterica.premioMinimo, loterica.premioAcumulado || 0) : 0;
-  const premioEstimado = Math.max(premio80, effectiveMin);
-  const taxaBanco = loterica ? Math.round((loterica.arrecadadoTotal || 0) * 0.2) : 0;
+  const alcancaMinimo = loterica ? premio80 > loterica.premioMinimo : false;
+  const premioEstimado = alcancaMinimo ? Math.max(premio80, effectiveMin) : effectiveMin;
+  const taxaBanco = loterica ? Math.round(alcancaMinimo ? (loterica.arrecadadoTotal || 0) * 0.2 : (loterica.arrecadadoTotal || 0)) : 0;
   const temAcumulado = loterica ? (loterica.premioAcumulado || 0) > loterica.premioMinimo : false;
+  const bancoFicaCom100 = loterica && (loterica.arrecadadoTotal || 0) > 0 && !alcancaMinimo;
 
   const filteredNumeros = searchNumero
     ? lotericaNumeros.filter((n) => n.numero.toString().includes(searchNumero) || (n.comprador && n.comprador.toLowerCase().includes(searchNumero.toLowerCase())))
@@ -205,9 +209,10 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
         <h3 className="text-sm font-bold text-primary mb-2 flex items-center gap-2"><AlertCircle className="w-4 h-4" /> Como Funciona</h3>
         <ul className="text-xs text-muted-foreground space-y-1">
           <li><span className="text-foreground font-semibold">1000 numeros</span> (001-1000), preco fixo por numero.</li>
-          <li><span className="text-red-400 font-semibold">20%</span> das vendas vai pro banco, <span className="text-yellow-400 font-semibold">80%</span> vai pro premio.</li>
-          <li>Premio = <span className="text-foreground font-semibold">maior entre 80% das vendas e o minimo</span>.</li>
-          <li>Se ninguem acertar, o premio <span className="text-orange-400 font-semibold">vira o novo minimo</span> da proxima.</li>
+          <li>Se <span className="text-yellow-400 font-semibold">80% das vendas ultrapassar o minimo</span>: <span className="text-red-400 font-semibold">20%</span> banco + <span className="text-yellow-400 font-semibold">80%</span> premio.</li>
+          <li>Se <span className="text-red-400 font-semibold">80% das vendas NAO ultrapassar o minimo</span>: banco fica com <span className="text-red-400 font-bold">100%</span> das vendas.</li>
+          <li>Premio = <span className="text-foreground font-semibold">maior entre 80% das vendas e o minimo efetivo</span>.</li>
+          <li>Se ninguem acertar e 80% ultrapassar o minimo, o premio <span className="text-orange-400 font-semibold">acumula</span>. Senao, <span className="text-red-400 font-semibold">nao acumula</span>.</li>
           <li>So reseta quando sair um <span className="text-green-400 font-semibold">ganhador</span>!</li>
         </ul>
       </div>
@@ -264,20 +269,20 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                 <p className="text-lg font-bold font-mono text-yellow-400">{Math.round(premioEstimado)}</p>
                 {temAcumulado && <p className="text-[10px] text-orange-400 flex items-center justify-center gap-0.5"><TrendingUp className="w-2.5 h-2.5" /> Min. acumulado</p>}
               </div>
-              <div className="text-center p-2 rounded-md border border-border bg-muted/30">
-                <p className="text-xs text-muted-foreground">Taxa Banco (20%)</p>
-                <p className="text-lg font-bold font-mono text-red-400">{taxaBanco}</p>
-                <p className="text-[10px] text-muted-foreground">Credita ao finalizar</p>
+              <div className={`text-center p-2 rounded-md border ${bancoFicaCom100 ? "border-red-500/40 bg-red-500/5" : "border-border bg-muted/30"}`}>
+                <p className="text-xs text-muted-foreground">Taxa Banco {alcancaMinimo ? "(20%)" : "(100%)"}</p>
+                <p className={`text-lg font-bold font-mono ${bancoFicaCom100 ? "text-red-500" : "text-red-400"}`}>{taxaBanco}</p>
+                {bancoFicaCom100 ? <p className="text-[10px] text-red-400 font-bold">80% nao ultrapassou o minimo!</p> : <p className="text-[10px] text-muted-foreground">Credita ao finalizar</p>}
               </div>
             </div>
 
             {/* Detalhes do premio */}
-            <div className="rounded-md border border-border bg-muted/20 p-3 mb-4">
+            <div className={`rounded-md border p-3 mb-4 ${bancoFicaCom100 ? "border-red-500/30 bg-red-500/5" : "border-border bg-muted/20"}`}>
               <p className="text-xs font-bold text-muted-foreground mb-2">Calculo do Premio</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-                <div className="flex justify-between p-1.5 rounded bg-card border border-border">
+                <div className={`flex justify-between p-1.5 rounded bg-card border ${premio80 > loterica.premioMinimo ? "border-green-500/30" : "border-red-500/30"}`}>
                   <span className="text-muted-foreground">80% arrecadado</span>
-                  <span className="font-mono text-foreground">{Math.round(premio80)}</span>
+                  <span className={`font-mono ${premio80 > loterica.premioMinimo ? "text-green-400" : "text-red-400"}`}>{Math.round(premio80)}</span>
                 </div>
                 <div className="flex justify-between p-1.5 rounded bg-card border border-border">
                   <span className="text-muted-foreground">Minimo original</span>
@@ -288,7 +293,11 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                   <span className={`font-mono ${temAcumulado ? "text-orange-400 font-bold" : "text-foreground"}`}>{Math.round(effectiveMin)}</span>
                 </div>
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1.5">Premio = maior entre 80% do arrecadado e o minimo efetivo{temAcumulado ? " (que veio do acumulado)" : ""}.</p>
+              {alcancaMinimo ? (
+                <p className="text-[10px] text-green-400 mt-1.5">80% ({Math.round(premio80)}) &gt; minimo ({Math.round(loterica.premioMinimo)}) = Split 20/80 ativado.</p>
+              ) : (
+                <p className="text-[10px] text-red-400 mt-1.5 font-bold">80% ({Math.round(premio80)}) NAO ultrapassou o minimo ({Math.round(loterica.premioMinimo)}) = Banco fica com 100%!</p>
+              )}
             </div>
 
             {/* Resultado do sorteio */}
@@ -306,7 +315,10 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                       {!loterica.ganhador && <> - Nao foi vendido - <span className="font-bold text-orange-400">{Math.round(loterica.valorPremio || 0)} {loterica.moedaAceita} acumulados</span></>}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      20% das vendas ({taxaBanco} {loterica.moedaAceita}) creditado no estoque.
+                      {alcancaMinimo
+                        ? `20% das vendas (${taxaBanco} ${loterica.moedaAceita}) creditado no estoque.`
+                        : `Banco ficou com 100% das vendas (${taxaBanco} ${loterica.moedaAceita}) - 80% nao ultrapassou o minimo.`
+                      }
                     </p>
                   </div>
                 </div>
