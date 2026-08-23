@@ -262,11 +262,14 @@ export function useBank() {
   }) => {
     await apiPost("addTroca", d);
     if (d.tipoMembro === "banco") {
+      // Banco: itens saem e entram do estoque do banco (sem taxa)
       await addCaixa({ tipo: "saida", descricao: `Troca interna banco: saiu ${d.quantidadeEnviada}x ${d.itemEnviado}`, item: d.itemEnviado, quantidade: d.quantidadeEnviada, origem: "troca_banco" });
       await addCaixa({ tipo: "entrada", descricao: `Troca interna banco: entrou ${d.quantidadeRecebida}x ${d.itemRecebido}`, item: d.itemRecebido, quantidade: d.quantidadeRecebida, origem: "troca_banco" });
     } else {
-      await addCaixa({ tipo: "entrada", descricao: `Troca de ${d.player}: recebeu ${d.quantidadeEnviada}x ${d.itemEnviado}`, item: d.itemEnviado, quantidade: d.quantidadeEnviada, origem: `troca:${d.player}` });
-      await addCaixa({ tipo: "saida", descricao: `Troca para ${d.player}: entregou ${d.quantidadeRecebida}x ${d.itemRecebido}`, item: d.itemRecebido, quantidade: d.quantidadeRecebida, origem: `troca:${d.player}` });
+      // Player: só registra o lucro (taxa) no caixa do banco
+      if (d.lucroBanco > 0) {
+        await addCaixa({ tipo: "entrada", descricao: `Lucro troca de ${d.player} (${d.taxaAplicada}%)`, item: d.itemRecebido, quantidade: d.lucroBanco, origem: `troca:${d.player}` });
+      }
     }
     loadAll();
   }, [addCaixa, loadAll]);
@@ -274,11 +277,14 @@ export function useBank() {
     const troca = trocas.find((t) => t.id === id);
     if (troca) {
       if (troca.tipoMembro === "banco") {
+        // Estorno banco: reverte entrada e saída completa
         await addCaixa({ tipo: "entrada", descricao: `Estorno troca interna: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`, item: troca.itemEnviado, quantidade: troca.quantidadeEnviada, origem: "estorno_troca_banco" });
         await addCaixa({ tipo: "saida", descricao: `Estorno troca interna: removeu ${troca.quantidadeRecebida}x ${troca.itemRecebido}`, item: troca.itemRecebido, quantidade: troca.quantidadeRecebida, origem: "estorno_troca_banco" });
       } else {
-        await addCaixa({ tipo: "saida", descricao: `Estorno troca de ${troca.player}: devolveu ${troca.quantidadeEnviada}x ${troca.itemEnviado}`, item: troca.itemEnviado, quantidade: troca.quantidadeEnviada, origem: `estorno_troca:${troca.player}` });
-        await addCaixa({ tipo: "entrada", descricao: `Estorno troca para ${troca.player}: recuperou ${troca.quantidadeRecebida}x ${troca.itemRecebido}`, item: troca.itemRecebido, quantidade: troca.quantidadeRecebida, origem: `estorno_troca:${troca.player}` });
+        // Estorno player: só reverte o lucro
+        if (troca.lucroBanco > 0) {
+          await addCaixa({ tipo: "saida", descricao: `Estorno lucro troca de ${troca.player} (${troca.taxaAplicada}%)`, item: troca.itemRecebido, quantidade: troca.lucroBanco, origem: `estorno_troca:${troca.player}` });
+        }
       }
     }
     await apiPost("removeTroca", { id });
