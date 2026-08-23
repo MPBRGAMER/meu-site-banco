@@ -857,6 +857,79 @@ export async function POST(req: NextRequest) {
         await db.itemCatalogo.delete({ where: { id } });
         return json({ success: true });
       }
+      case "restoreBackup": {
+        const { backupData } = data;
+        if (!backupData) return err("backupData obrigatório");
+
+        // Handle both backup formats (old wrapped in .data, new flat)
+        let d = backupData;
+        if (d.format && d.data) d = d.data;
+        else if (!d.emprestimos && d.data) d = d.data;
+
+        // First clear all tables (same as resetAll)
+        const clearTables = [
+          () => db.chatMensagem.deleteMany(),
+          () => db.chatSala.deleteMany(),
+          () => db.numeroLoterica.deleteMany(),
+          () => db.loterica.deleteMany(),
+          () => db.participanteSorteio.deleteMany(),
+          () => db.sorteio.deleteMany(),
+          () => db.lance.deleteMany(),
+          () => db.leilao.deleteMany(),
+          () => db.priceReport.deleteMany(),
+          () => db.itemOverride.deleteMany(),
+          () => db.itemCatalogo.deleteMany(),
+          () => db.propaganda.deleteMany(),
+          () => db.doador.deleteMany(),
+          () => db.compraVenda.deleteMany(),
+          () => db.trocaRegistro.deleteMany(),
+          () => db.tabelaTroca.deleteMany(),
+          () => db.investidor.deleteMany(),
+          () => db.emprestimo.deleteMany(),
+          () => db.caixaRegistro.deleteMany(),
+        ];
+        for (const fn of clearTables) {
+          try { await fn(); } catch {}
+        }
+
+        // Helper: safely insert records into a table
+        async function safeInsert(model: { createMany: (args: { data: Record<string, unknown>[]; skipDuplicates?: boolean }) => Promise<unknown> }, records: unknown[]) {
+          if (!records || records.length === 0) return;
+          try {
+            await model.createMany({ data: records as Record<string, unknown>[], skipDuplicates: true });
+          } catch (e: unknown) {
+            const msg = e instanceof Error ? e.message : String(e);
+            console.error(`Restore table error: ${msg}`);
+          }
+        }
+
+        // Restore each table (SKIP trocas and troca-related caixa entries)
+        const skipCaixa = (d.caixa as Record<string, string>[] || []).filter((c) =>
+          !(c.origem || "").startsWith("troca") && !(c.origem || "").startsWith("estorno_troca")
+        );
+
+        await safeInsert(db.investidor, d.investidores || []);
+        await safeInsert(db.emprestimo, d.emprestimos || []);
+        await safeInsert(db.tabelaTroca, d.tabelasTroca || []);
+        // trocas SKIPPED intentionally
+        await safeInsert(db.compraVenda, d.comprasVendas || []);
+        await safeInsert(db.caixaRegistro, skipCaixa);
+        await safeInsert(db.doador, d.doadores || []);
+        await safeInsert(db.leilao, d.leiloes || []);
+        await safeInsert(db.lance, d.lances || []);
+        await safeInsert(db.sorteio, d.sorteios || []);
+        await safeInsert(db.participanteSorteio, d.participantes || d.participantesSorteio || []);
+        await safeInsert(db.loterica, d.lotericas || []);
+        await safeInsert(db.numeroLoterica, d.numeros || d.numerosLoterica || []);
+        await safeInsert(db.priceReport, d.priceReports || []);
+        await safeInsert(db.itemOverride, d.itemOverrides || []);
+        await safeInsert(db.chatSala, d.chatSalas || []);
+        await safeInsert(db.chatMensagem, d.chatMensagens || []);
+        await safeInsert(db.propaganda, d.propagandas || []);
+        await safeInsert(db.itemCatalogo, d.itemCatalogo || []);
+
+        return json({ success: true, message: "Backup restaurado (trocas ignoradas)!" });
+      }
       case "resetAll": {
         const tables = [
           () => db.chatMensagem.deleteMany(),

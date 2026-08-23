@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle, Upload,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -53,6 +53,8 @@ export default function HomePage() {
   const [isDownloadingBackup, setIsDownloadingBackup] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
+  const [isRestoring, setIsRestoring] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { isLoading } = useBank();
   const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
 
@@ -139,6 +141,48 @@ export default function HomePage() {
     } finally {
       setIsResetting(false);
     }
+  };
+
+  const handleRestoreBackup = async (file: File) => {
+    const password = sessionStorage.getItem("adminPwd");
+    if (!password) {
+      toast.error("Entre no modo Admin para restaurar.");
+      return;
+    }
+    setIsRestoring(true);
+    try {
+      const text = await file.text();
+      const backupData = JSON.parse(text);
+      const res = await fetch("/api/banco", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": password,
+        },
+        body: JSON.stringify({ action: "restoreBackup", backupData }),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Erro ao restaurar.");
+      }
+      toast.success("Backup restaurado! (trocas ignoradas). Recarregando...");
+      setTimeout(() => window.location.reload(), 1500);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao restaurar o backup.");
+    } finally {
+      setIsRestoring(false);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.name.endsWith(".json")) {
+      toast.error("Selecione um arquivo .json de backup.");
+      return;
+    }
+    handleRestoreBackup(file);
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const handleAdminLogin = async () => {
@@ -259,6 +303,22 @@ export default function HomePage() {
                   <Download className="w-3.5 h-3.5" />
                   <span className="hidden sm:inline">{isDownloadingBackup ? "Gerando..." : "Backup"}</span>
                 </button>
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isRestoring}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-blue-500/10 text-blue-400 border-blue-500/30 hover:bg-blue-500/20 disabled:opacity-60"
+                  title="Restaurar backup (ignora trocas)"
+                >
+                  <Upload className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">{isRestoring ? "Restaurando..." : "Restaurar"}</span>
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json"
+                  className="hidden"
+                  onChange={handleFileSelect}
+                />
                 <button
                   onClick={() => setShowResetConfirm(true)}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 border bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20"
