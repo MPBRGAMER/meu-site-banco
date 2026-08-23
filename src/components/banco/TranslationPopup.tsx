@@ -5,19 +5,19 @@ import { Globe, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
-  { code: "pt", label: "Português", flag: "🇧🇷" },
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "ru", label: "Русский", flag: "🇷🇺" },
-  { code: "it", label: "Italiano", flag: "🇮🇹" },
-  { code: "zh-cn", label: "简体中文", flag: "🇨🇳" },
-  { code: "zh-tw", label: "繁體中文", flag: "🇹🇼" },
-  { code: "ko", label: "한국어", flag: "🇰🇷" },
-  { code: "ja", label: "日本語", flag: "🇯🇵" },
-  { code: "id", label: "Indonesia", flag: "🇮🇩" },
-  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
+  { code: "pt", label: "Português", flag: "br" },
+  { code: "en", label: "English", flag: "us" },
+  { code: "es", label: "Español", flag: "es" },
+  { code: "fr", label: "Français", flag: "fr" },
+  { code: "de", label: "Deutsch", flag: "de" },
+  { code: "ru", label: "Русский", flag: "ru" },
+  { code: "it", label: "Italiano", flag: "it" },
+  { code: "zh-cn", label: "简体中文", flag: "cn" },
+  { code: "zh-tw", label: "繁體中文", flag: "tw" },
+  { code: "ko", label: "한국어", flag: "kr" },
+  { code: "ja", label: "日本語", flag: "jp" },
+  { code: "id", label: "Indonesia", flag: "id" },
+  { code: "tr", label: "Türkçe", flag: "tr" },
 ];
 
 /* Map our codes to Google Translate language codes */
@@ -117,7 +117,7 @@ export function TranslationPopup() {
                   onClick={() => choose(lang.code)}
                   className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border border-border hover:border-primary/40 text-left transition-colors"
                 >
-                  <span data-no-translate translate="no">{lang.flag}</span>
+                  <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt="" width="20" height="15" className="rounded-sm" />
                   <span className="text-xs font-medium">{lang.label}</span>
                 </button>
               ))}
@@ -168,7 +168,7 @@ function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }
         className="w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg flex items-center justify-center border-2 border-primary/50 transition-colors"
         title="Traduzir site"
       >
-        {open ? <X className="w-5 h-5" /> : currentFlag ? <span className="text-xl" data-no-translate translate="no">{currentFlag}</span> : <Globe className="w-5 h-5" />}
+        {open ? <X className="w-5 h-5" /> : currentFlag ? <img src={`https://flagcdn.com/w20/${currentFlag}.png`} alt="" width="24" height="18" className="rounded-sm" /> : <Globe className="w-5 h-5" />}
       </button>
       {open && (
         <div className="absolute bottom-14 right-0 w-52 rounded-xl border border-primary/30 bg-card shadow-2xl overflow-hidden">
@@ -185,7 +185,7 @@ function TranslateFloatButton({ onChoose }: { onChoose: (code: string) => void }
                   currentLang === lang.code ? "bg-primary/15 text-primary" : "hover:bg-primary/10"
                 )}
               >
-                <span data-no-translate translate="no">{lang.flag}</span>
+                <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt="" width="20" height="15" className="rounded-sm" />
                 <span className="text-xs font-medium">{lang.label}</span>
                 {currentLang === lang.code && <span className="ml-auto text-[10px] text-primary">✓</span>}
               </button>
