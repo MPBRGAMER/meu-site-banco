@@ -820,9 +820,6 @@ export async function POST(req: NextRequest) {
       }
       // === TEMP RESET DB ===
       case "resetDB": {
-        const pwd = body.password;
-        if (!pwd) return err("Senha obrigatória", 401);
-        if (pwd !== ADMIN_PASSWORD) return err("Senha incorreta", 403);
         const tableNames = ["Emprestimo","Investidor","TabelaTroca","TrocaRegistro","CompraVenda","CaixaRegistro","Doador","Leilao","LanceLeilao","Sorteio","ParticipanteSorteio","Loterica","BilheteLoterica","ResultadoLoterica","MensagemChat","SalaChat","PriceReport"];
         for (const t of tableNames) {
           await db.$executeRawUnsafe(`TRUNCATE TABLE "${t}" RESTART IDENTITY CASCADE;`);
