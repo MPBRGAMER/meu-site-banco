@@ -328,7 +328,7 @@ export function useBank() {
     await addCaixa(d); loadAll();
   }, [addCaixa, loadAll]);
   const resetBanco = useCallback(async () => {
-    await apiPost("resetCaixa", {});
+    await apiPost("resetAll", {});
     toast.success("Banco resetado com sucesso!");
     loadAll();
   }, [loadAll]);
