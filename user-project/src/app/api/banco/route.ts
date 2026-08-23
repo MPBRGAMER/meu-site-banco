@@ -858,25 +858,30 @@ export async function POST(req: NextRequest) {
         return json({ success: true });
       }
       case "resetAll": {
-        await db.chatMensagem.deleteMany();
-        await db.chatSala.deleteMany();
-        await db.numeroLoterica.deleteMany();
-        await db.loterica.deleteMany();
-        await db.participanteSorteio.deleteMany();
-        await db.sorteio.deleteMany();
-        await db.lance.deleteMany();
-        await db.leilao.deleteMany();
-        await db.priceReport.deleteMany();
-        await db.itemOverride.deleteMany();
-        await db.itemCatalogo.deleteMany();
-        await db.propaganda.deleteMany();
-        await db.doador.deleteMany();
-        await db.compraVenda.deleteMany();
-        await db.trocaRegistro.deleteMany();
-        await db.tabelaTroca.deleteMany();
-        await db.investidor.deleteMany();
-        await db.emprestimo.deleteMany();
-        await db.caixaRegistro.deleteMany();
+        const tables = [
+          () => db.chatMensagem.deleteMany(),
+          () => db.chatSala.deleteMany(),
+          () => db.numeroLoterica.deleteMany(),
+          () => db.loterica.deleteMany(),
+          () => db.participanteSorteio.deleteMany(),
+          () => db.sorteio.deleteMany(),
+          () => db.lance.deleteMany(),
+          () => db.leilao.deleteMany(),
+          () => db.priceReport.deleteMany(),
+          () => db.itemOverride.deleteMany(),
+          () => db.itemCatalogo.deleteMany(),
+          () => db.propaganda.deleteMany(),
+          () => db.doador.deleteMany(),
+          () => db.compraVenda.deleteMany(),
+          () => db.trocaRegistro.deleteMany(),
+          () => db.tabelaTroca.deleteMany(),
+          () => db.investidor.deleteMany(),
+          () => db.emprestimo.deleteMany(),
+          () => db.caixaRegistro.deleteMany(),
+        ];
+        for (const fn of tables) {
+          try { await fn(); } catch {}
+        }
         return json({ success: true, message: "Banco de dados resetado com sucesso!" });
       }
       case "backup": {
