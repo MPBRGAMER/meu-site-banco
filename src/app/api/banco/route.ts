@@ -359,7 +359,6 @@ export async function POST(req: NextRequest) {
       "comprarNumero",
       "addLance",
       "reportPrice",
-      "restoreBackup",
     ]);
 
     if (!PUBLIC_ACTIONS.has(action)) {
