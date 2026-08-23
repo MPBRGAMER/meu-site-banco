@@ -54,6 +54,16 @@ export default function HomePage() {
   const { isLoading } = useBank();
   const allTabs = [...publicTabs, ...(isAdmin ? adminTabs : [])];
 
+  // Auto-restore admin session on page load
+  useEffect(() => {
+    const savedPwd = sessionStorage.getItem("adminPwd");
+    if (savedPwd) {
+      fetch(`/api/banco?action=verifyAdmin&password=${encodeURIComponent(savedPwd)}`)
+        .then((res) => { if (res.ok) setIsAdmin(true); else sessionStorage.removeItem("adminPwd"); })
+        .catch(() => {});
+    }
+  }, []);
+
   const handleAdminToggle = async () => {
     if (isAdmin) {
       setIsAdmin(false);
