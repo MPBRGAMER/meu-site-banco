@@ -149,6 +149,101 @@ interface LeiloesTabProps {
   isAdmin: boolean;
 }
 
+/* Seletor visual de itens com busca e imagens */
+function ItemPicker({
+  ptItems,
+  onSelect,
+}: {
+  ptItems: PtItemMap[];
+  onSelect: (item: PtItemMap) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const filtered = search.trim()
+    ? ptItems.filter((p) => p.pt.toLowerCase().includes(search.trim().toLowerCase()))
+    : ptItems;
+
+  // Fechar ao clicar fora
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+        setSearch("");
+      }
+    };
+    if (open) document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  // Focar no input ao abrir
+  useEffect(() => {
+    if (open) inputRef.current?.focus();
+  }, [open]);
+
+  const handleSelect = (item: PtItemMap) => {
+    onSelect(item);
+    setOpen(false);
+    setSearch("");
+  };
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm text-left hover:border-primary/50 transition-colors"
+      >
+        <ImageIcon className="w-4 h-4 text-muted-foreground shrink-0" />
+        <span className="text-muted-foreground truncate">Clique para escolher o item...</span>
+      </button>
+      {open && (
+        <div className="absolute z-50 mt-1 w-72 max-h-80 flex flex-col rounded-md border border-primary/30 bg-card shadow-lg overflow-hidden">
+          <div className="p-2 border-b border-border">
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Buscar item..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full rounded border border-border bg-background px-2 py-1.5 text-sm outline-none focus:border-primary"
+            />
+          </div>
+          <div ref={listRef} className="overflow-y-auto flex-1">
+            {filtered.length === 0 ? (
+              <div className="p-4 text-center text-xs text-muted-foreground">Nenhum item encontrado.</div>
+            ) : (
+              filtered.map((item) => (
+                <button
+                  key={item.file}
+                  type="button"
+                  onClick={() => handleSelect(item)}
+                  className="w-full flex items-center gap-2 px-3 py-1.5 text-sm text-left hover:bg-primary/10 transition-colors"
+                >
+                  <img
+                    src={`/items/${item.file}.png`}
+                    alt={item.pt}
+                    className="w-6 h-6 rounded object-contain shrink-0"
+                    style={{ imageRendering: "pixelated" }}
+                    loading="lazy"
+                  />
+                  <span className="truncate text-foreground">{item.pt}</span>
+                </button>
+              ))
+            )}
+          </div>
+          <div className="p-1.5 border-t border-border text-[10px] text-muted-foreground text-center">
+            {filtered.length} item{filtered.length !== 1 ? "s" : ""}{search.trim() ? ` encontrado${filtered.length !== 1 ? "s" : ""}` : " no total"}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const { leiloes, addLeilao, getLancesByLeilao, finalizarLeilao, removeLeilao } = useBank();
   const [showForm, setShowForm] = useState(false);
@@ -162,21 +257,16 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
   const [quantidade, setQuantidade] = useState("1");
   const [ptItems, setPtItems] = useState<PtItemMap[]>([]);
 
-  const imgPreview = imagemUrl.trim() ? `/items/${imagemUrl.trim()}.png` : (nomeItem.trim() ? `/items/${nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png` : null);
+  const imgPreview = nomeItem.trim() ? `/items/${imagemUrl.trim() || nomeItem.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_")}.png` : null;
   const [tipoOrigem, setTipoOrigem] = useState("comum");
   const [duracaoIdx, setDuracaoIdx] = useState(4); // default 24h
 
   const taxaCasa = getTaxaFromTipo(tipoOrigem);
 
-  // Busca pt-BR: quando o nome do item muda, procura no mapa pt-BR
-  const handleNomeItemChange = (val: string) => {
-    setNomeItem(val);
-    if (!imagemUrl.trim() && val.trim()) {
-      const match = ptItems.find(
-        (p) => p.pt.toLowerCase() === val.trim().toLowerCase()
-      );
-      if (match) setImagemUrl(match.file);
-    }
+  // Quando seleciona um item no picker visual
+  const handleItemSelect = (item: PtItemMap) => {
+    setNomeItem(item.pt);
+    setImagemUrl(item.file);
   };
 
   useEffect(() => {
@@ -241,13 +331,8 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 <div><Label className="text-xs text-muted-foreground">Dono</Label><Input placeholder="Nome" value={donoItem} onChange={(e) => setDonoItem(e.target.value)} className="text-sm" /></div>
                 <div>
-                  <Label className="text-xs text-muted-foreground">Item (nome em pt-BR)</Label>
-                  <Input list="pt-items-list" placeholder="Ex: Água Tóxica" value={nomeItem} onChange={(e) => handleNomeItemChange(e.target.value)} className="text-sm" />
-                  <datalist id="pt-items-list">
-                    {ptItems.map((p) => (
-                      <option key={p.file} value={p.pt} />
-                    ))}
-                  </datalist>
+                  <Label className="text-xs text-muted-foreground">Item</Label>
+                  <ItemPicker ptItems={ptItems} onSelect={handleItemSelect} />
                 </div>
                 <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" placeholder="1" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} className="text-sm font-mono" /></div>
                 <div><Label className="text-xs text-muted-foreground">Valor Inicial (total do lote)</Label><Input type="number" placeholder="1000" value={valorInicial} onChange={(e) => setValorInicial(e.target.value)} className="text-sm font-mono" /></div>
@@ -271,11 +356,21 @@ export default function LeiloesTab({ isAdmin }: LeiloesTabProps) {
                   </Select>
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3">
-                  <Label className="text-xs text-muted-foreground">Imagem (preenche sozinho pelo nome do item)</Label>
-                  <div className="flex gap-2 items-center">
-                    <Input placeholder="Auto-preenchido" value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} className="text-sm flex-1" />
-                    {imgPreview && <LeilaoImg src={imgPreview} alt="preview" className="w-8 h-8 rounded object-contain border border-border bg-accent/50" />}
-                  </div>
+                  <Label className="text-xs text-muted-foreground">Item selecionado</Label>
+                  {nomeItem.trim() ? (
+                    <div className="flex items-center gap-3 rounded-md border border-primary/30 bg-primary/5 px-3 py-2">
+                      {imgPreview && <LeilaoImg src={imgPreview} alt={nomeItem} className="w-10 h-10 rounded object-contain border border-border bg-accent/50" />}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-foreground truncate">{nomeItem}</p>
+                        <p className="text-[10px] text-muted-foreground font-mono truncate">{imagemUrl}.png</p>
+                      </div>
+                      <button type="button" onClick={() => { setNomeItem(""); setImagemUrl(""); }} className="text-muted-foreground hover:text-red-400 transition-colors shrink-0" title="Remover item">
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground italic py-1">Nenhum item selecionado. Use o seletor acima.</p>
+                  )}
                 </div>
               </div>
               <div className="mt-3"><Button onClick={handleAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground"><Gavel className="w-4 h-4 mr-1" /> Criar Leilão</Button></div>
