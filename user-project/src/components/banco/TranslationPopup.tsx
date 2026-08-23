@@ -42,13 +42,6 @@ export function getDateLocale(): string {
 }
 
 /**
- * Exported helper — apply translation from other components.
- */
-export function setTranslationLanguage(code: string) {
-  applyLanguage(code);
-}
-
-/**
  * Core function: set cookie + reload so Google Translate picks it up.
  */
 function applyLanguage(code: string) {
