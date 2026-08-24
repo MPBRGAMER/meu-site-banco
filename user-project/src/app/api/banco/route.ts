@@ -396,7 +396,6 @@ export async function POST(req: NextRequest) {
       "loginModerador",
       "logoutModerador",
       "setModeradorSenha",
-      "setupModeradores",
     ]);
 
     if (!PUBLIC_ACTIONS.has(action)) {
