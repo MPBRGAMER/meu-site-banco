@@ -220,3 +220,15 @@ model Propaganda {
   codigo    String   @default("")
   updatedAt DateTime @updatedAt
 }
+
+model Moderador {
+  id          String    @id @default(cuid())
+  nome        String
+  usuario     String    @unique
+  senha       String
+  permissoes  String
+  token       String?
+  tokenExpira DateTime?
+  ativo       Boolean   @default(true)
+  criadoEm    DateTime  @default(now())
+}

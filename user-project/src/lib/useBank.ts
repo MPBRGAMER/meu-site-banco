@@ -100,15 +100,17 @@ async function apiGet(action: string, params?: Record<string, string>): Promise<
 }
 
 async function apiPost(action: string, body: Record<string, unknown>): Promise<unknown> {
-  const adminPassword = typeof window !== "undefined" ? sessionStorage.getItem("adminPwd") : null;
-  const headers: Record<string, string> = { "Content-Type": "application/json" };
-  if (adminPassword) headers["x-admin-password"] = adminPassword;
-  const res = await fetch("/api/banco", {
-    method: "POST", headers,
+  const adminPassword = sessionStorage.getItem('adminPwd');
+  const modToken = sessionStorage.getItem('modToken');
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (adminPassword) headers['x-admin-password'] = adminPassword;
+  else if (modToken) headers['x-moderador-token'] = modToken;
+  const res = await fetch('/api/banco', {
+    method: 'POST', headers,
     body: JSON.stringify({ action, ...body }),
   });
   const data = await res.json();
-  if ("error" in data) throw new Error(data.error as string);
+  if ('error' in data) throw new Error(data.error as string);
   return data;
 }
 
