@@ -6,25 +6,37 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
-function createPrismaClient() {
+function createPrismaClient(): PrismaClient {
   const connectionString = process.env.DATABASE_URL
   if (!connectionString) {
-    throw new Error('DATABASE_URL environment variable is not set')
+    throw new Error('DATABASE_URL is not set. Value: ' + JSON.stringify(process.env.DATABASE_URL))
   }
   const sql = neon(connectionString)
   const adapter = new PrismaNeon(sql)
   return new PrismaClient({ adapter })
 }
 
-function getDb() {
-  if (!globalForPrisma.prisma) {
-    globalForPrisma.prisma = createPrismaClient()
+let _db: PrismaClient | null = null
+
+function getDb(): PrismaClient {
+  if (_db) return _db
+  if (globalForPrisma.prisma) {
+    _db = globalForPrisma.prisma
+    return _db
   }
-  return globalForPrisma.prisma
+  _db = createPrismaClient()
+  globalForPrisma.prisma = _db
+  return _db
 }
 
+// Lazy proxy that defers connection until first actual DB call
 export const db = new Proxy({} as PrismaClient, {
-  get(_target, prop) {
-    return (getDb() as unknown as Record<string | symbol, unknown>)[prop]
+  get(_, prop) {
+    const client = getDb()
+    const value = (client as unknown as Record<string | symbol, unknown>)[prop]
+    if (typeof value === 'function') {
+      return value.bind(client)
+    }
+    return value
   },
 })
