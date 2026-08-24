@@ -1059,20 +1059,18 @@ export async function POST(req: NextRequest) {
       // === MODERADORES ===
       case "setupModeradores": {
         try {
-          await db.$executeRawUnsafe(`
-            CREATE TABLE IF NOT EXISTS "Moderador" (
-              "id" TEXT NOT NULL PRIMARY KEY,
-              "nome" TEXT NOT NULL,
-              "usuario" TEXT NOT NULL,
-              "senha" TEXT NOT NULL,
-              "permissoes" TEXT NOT NULL,
-              "token" TEXT,
-              "tokenExpira" TIMESTAMP(3),
-              "ativo" BOOLEAN NOT NULL DEFAULT true,
-              "criadoEm" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
-            );
-            CREATE UNIQUE INDEX IF NOT EXISTS "Moderador_usuario_key" ON "Moderador"("usuario");
-          `);
+          await db.$executeRawUnsafe(`CREATE TABLE IF NOT EXISTS "Moderador" (
+            "id" TEXT NOT NULL PRIMARY KEY,
+            "nome" TEXT NOT NULL,
+            "usuario" TEXT NOT NULL,
+            "senha" TEXT NOT NULL,
+            "permissoes" TEXT NOT NULL,
+            "token" TEXT,
+            "tokenExpira" TIMESTAMP(3),
+            "ativo" BOOLEAN NOT NULL DEFAULT true,
+            "criadoEm" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+          )`);
+          await db.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "Moderador_usuario_key" ON "Moderador"("usuario")`);
           return json({ success: true, message: "Tabela Moderador criada!" });
         } catch (e: unknown) { return err(e instanceof Error ? e.message : "Erro ao criar tabela"); }
       }
