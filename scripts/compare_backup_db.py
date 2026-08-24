@@ -2,7 +2,7 @@ import psycopg2
 import json
 from collections import defaultdict
 
-DATABASE_URL = "postgresql://neondb_owner:npg_p8Gh2dWDSKcz@ep-empty-term-acoe3q5m-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = "postgresql://neondb_owner:npg_emS5JCcNK7tW@ep-soft-mouse-acta9yhb-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 # Load backup
 with open('/home/z/my-project/upload/Pasted Content_1787112930191.txt') as f:

@@ -2,7 +2,7 @@
 import json, uuid, psycopg2
 from psycopg2.extras import execute_values
 
-DB_URL = 'postgresql://neondb_owner:npg_p8Gh2dWDSKcz@ep-empty-term-acoe3q5m-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require'
+DB_URL = 'postgresql://neondb_owner:npg_emS5JCcNK7tW@ep-soft-mouse-acta9yhb-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
 with open('upload/Pasted Content_1787112930191.txt','r') as f:
     backup = json.load(f)

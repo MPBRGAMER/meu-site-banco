@@ -2,7 +2,7 @@ import psycopg2
 import json
 from collections import defaultdict
 
-DATABASE_URL = "postgresql://neondb_owner:npg_p8Gh2dWDSKcz@ep-empty-term-acoe3q5m-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = "postgresql://neondb_owner:npg_emS5JCcNK7tW@ep-soft-mouse-acta9yhb-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 conn = psycopg2.connect(DATABASE_URL)
 cur = conn.cursor()
