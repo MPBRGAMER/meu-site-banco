@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
+export const maxDuration = 10;
+
 function json(data: unknown, status = 200) {
   return NextResponse.json(data, { status });
 }
@@ -310,7 +312,9 @@ export async function GET(req: NextRequest) {
         for (const a of ads) {
           if (a.codigo) map[a.slotId] = a.codigo;
         }
-        return json(map);
+        return NextResponse.json(map, {
+          headers: { "Cache-Control": "public, s-maxage=10, stale-while-revalidate=30" },
+        });
       }
       // SSE kept for compatibility but no longer triggers full reloads
       case "events": {

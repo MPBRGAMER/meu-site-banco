@@ -1,6 +1,8 @@
 import { db } from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const maxDuration = 10;
+
 function json(data: unknown, status = 200) {
   return NextResponse.json(data, { status });
 }

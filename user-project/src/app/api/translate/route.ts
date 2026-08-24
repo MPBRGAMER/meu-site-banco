@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const maxDuration = 5;
+
 const cache = new Map<string, string>();
 const MAX_CACHE = 5000;
 
