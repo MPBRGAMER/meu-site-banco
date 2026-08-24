@@ -38,6 +38,10 @@ export async function GET(req: NextRequest) {
 
   try {
     switch (action) {
+      case "debugEnv": {
+        const url = process.env.DATABASE_URL || "";
+        return json({ hasDbUrl: !!url, prefix: url.substring(0, 30) + "...", nodeEnv: process.env.NODE_ENV });
+      }
       case "verifyAdmin": {
         const pwd = searchParams.get("password");
         if (!pwd) return err("Senha obrigatória", 401);
