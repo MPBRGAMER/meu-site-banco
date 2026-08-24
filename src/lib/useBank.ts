@@ -169,21 +169,32 @@ export function useBank() {
     }
   }, []);
 
-  // Schedule next load with adaptive delay
-  const scheduleNextLoad = useCallback(() => {
-    if (loadTimerRef.current) clearTimeout(loadTimerRef.current);
-    loadTimerRef.current = setTimeout(loadAll, 30000); // 30s instead of 10s
+  // Polling: 60s interval, pauses when tab is hidden
+  const POLL_INTERVAL = 60000;
+  const isVisibleRef = useRef(true);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.hidden) {
+        isVisibleRef.current = false;
+      } else {
+        isVisibleRef.current = true;
+        loadAll();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+    return () => document.removeEventListener('visibilitychange', handleVisibility);
   }, [loadAll]);
 
   useEffect(() => {
     mountedRef.current = true;
     loadAll();
-    // Single polling interval: 30 seconds (was 10s + SSE every 5s)
-    const interval = setInterval(loadAll, 30000);
+    const interval = setInterval(() => {
+      if (isVisibleRef.current) loadAll();
+    }, POLL_INTERVAL);
     return () => {
       mountedRef.current = false;
       clearInterval(interval);
-      if (loadTimerRef.current) clearTimeout(loadTimerRef.current);
     };
   }, [loadAll]);
 
