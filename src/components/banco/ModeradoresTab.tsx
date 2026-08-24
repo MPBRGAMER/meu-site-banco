@@ -42,8 +42,10 @@ export default function ModeradoresTab() {
 
   const loadMods = async () => {
     try {
-      const res = await fetch("/api/banco?action=listModeradores", {
-        headers: { "x-admin-password": sessionStorage.getItem("adminPwd") || "" },
+      const res = await fetch("/api/banco", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": sessionStorage.getItem("adminPwd") || "" },
+        body: JSON.stringify({ action: "listModeradores" }),
       });
       if (res.ok) {
         const data = await res.json();
