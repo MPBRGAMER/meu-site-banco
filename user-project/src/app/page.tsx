@@ -108,23 +108,28 @@ export default function HomePage() {
     }
     const savedToken = sessionStorage.getItem("modToken");
     if (savedToken) {
-      setAuthMode("moderador");
-      setModNome(sessionStorage.getItem("modNome") || "");
-      try { setModPermissoes(JSON.parse(sessionStorage.getItem("modPermissoes") || "[]")); } catch {}
-      // Validate token
-      fetch("/api/banco", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-moderador-token": savedToken },
-        body: JSON.stringify({ action: "loginModerador" }),
+      fetch("/api/banco?action=verifyModerador", {
+        headers: { "x-moderador-token": savedToken },
       }).then(res => {
-        if (!res.ok) {
+        if (res.ok) {
+          return res.json().then(data => {
+            setAuthMode("moderador");
+            setModNome(data.nome);
+            setModPermissoes(data.permissoes);
+          });
+        } else {
           sessionStorage.removeItem("modToken");
           sessionStorage.removeItem("modNome");
           sessionStorage.removeItem("modPermissoes");
           setAuthMode("none");
           toast.error("Sessão expirada. Faça login novamente.");
         }
-      }).catch(() => {});
+      }).catch(() => {
+        sessionStorage.removeItem("modToken");
+        sessionStorage.removeItem("modNome");
+        sessionStorage.removeItem("modPermissoes");
+        setAuthMode("none");
+      });
     }
   }, []);
 

@@ -12,6 +12,25 @@ function err(msg: string, status = 400) {
 }
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
+const ACTION_PERMISSIONS: Record<string, string> = {
+  addEmprestimo: "emprestimos", updateEmprestimo: "emprestimos", deleteEmprestimo: "emprestimos",
+  addInvestidor: "investidores", removeInvestidor: "investidores", reorderInvestidores: "investidores",
+  addTabelaTroca: "config-trocas", removeTabelaTroca: "config-trocas",
+  addTroca: "trocas", removeTroca: "trocas",
+  addCompraVenda: "compras-vendas",
+  addDoador: "doadores", removeDoador: "doadores", reorderDoadores: "doadores",
+  addCaixaManual: "caixa",
+  addLeilao: "leiloes", updateLeilao: "leiloes", removeLeilao: "leiloes",
+  addSorteio: "sorteios", sortear: "sorteios", removeSorteio: "sorteios",
+  criarLoterica: "loterica", iniciarSorteioLoterica: "loterica", finalizarLoterica: "loterica",
+};
+
+const SUPER_ADMIN_ONLY = new Set(["resetAll","backup","restoreBackup","bulkInsertDoadores","createModerador","updateModerador","removeModerador","setupModeradores"]);
+
+function generateToken() {
+  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+}
+
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
@@ -24,6 +43,17 @@ export async function GET(req: NextRequest) {
         if (!pwd) return err("Senha obrigatória", 401);
         if (pwd !== ADMIN_PASSWORD) return err("Senha incorreta", 403);
         return json({ success: true });
+      }
+
+      case "verifyModerador": {
+        const token = req.headers.get("x-moderador-token");
+        if (!token) return err("Token obrigatório", 401);
+        const mod = await db.moderador.findFirst({
+          where: { token, ativo: true, tokenExpira: { gt: new Date() } },
+          select: { id: true, nome: true, permissoes: true },
+        });
+        if (!mod) return err("Sessão expirada", 401);
+        return json({ success: true, nome: mod.nome, permissoes: JSON.parse(mod.permissoes) });
       }
 
       // === UNIFIED LOAD ALL - 1 request instead of 14+ ===
@@ -363,11 +393,38 @@ export async function POST(req: NextRequest) {
       "comprarNumero",
       "addLance",
       "reportPrice",
+      "loginModerador",
+      "logoutModerador",
+      "setModeradorSenha",
     ]);
 
     if (!PUBLIC_ACTIONS.has(action)) {
-      const pwd = req.headers.get("x-admin-password");
-      if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+      const adminPwd = req.headers.get("x-admin-password");
+      const modToken = req.headers.get("x-moderador-token");
+      let isSuperAdmin = false;
+      let modPermissoes: string[] | null = null;
+
+      if (adminPwd && adminPwd === ADMIN_PASSWORD) {
+        isSuperAdmin = true;
+      } else if (modToken) {
+        try {
+          const mod = await db.moderador.findFirst({ where: { token: modToken, ativo: true, tokenExpira: { gt: new Date() } } });
+          if (!mod) return err("Sessão expirada. Faça login novamente.", 401);
+          modPermissoes = JSON.parse(mod.permissoes);
+        } catch { return err("Sessão inválida.", 401); }
+      } else {
+        return err("Não autorizado", 403);
+      }
+
+      if (SUPER_ADMIN_ONLY.has(action) && !isSuperAdmin) {
+        return err("Apenas o Super Admin pode fazer isso.", 403);
+      }
+      if (!isSuperAdmin && modPermissoes) {
+        const requiredPerm = ACTION_PERMISSIONS[action];
+        if (requiredPerm && !modPermissoes.includes(requiredPerm)) {
+          return err("Sem permissão para: " + action, 403);
+        }
+      }
     }
 
     switch (action) {
@@ -998,6 +1055,95 @@ export async function POST(req: NextRequest) {
           },
         });
       }
+      // === MODERADORES ===
+      case "setupModeradores": {
+        try {
+          await db.$executeRawUnsafe(`
+            CREATE TABLE IF NOT EXISTS "Moderador" (
+              "id" TEXT NOT NULL PRIMARY KEY,
+              "nome" TEXT NOT NULL,
+              "usuario" TEXT NOT NULL,
+              "senha" TEXT NOT NULL,
+              "permissoes" TEXT NOT NULL,
+              "token" TEXT,
+              "tokenExpira" TIMESTAMP(3),
+              "ativo" BOOLEAN NOT NULL DEFAULT true,
+              "criadoEm" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE UNIQUE INDEX IF NOT EXISTS "Moderador_usuario_key" ON "Moderador"("usuario");
+          `);
+          return json({ success: true, message: "Tabela Moderador criada!" });
+        } catch (e: unknown) { return err(e instanceof Error ? e.message : "Erro ao criar tabela"); }
+      }
+
+      case "loginModerador": {
+        const { usuario, senha } = data;
+        if (!usuario || !senha) return err("Usuário e senha obrigatórios");
+        const mod = await db.moderador.findFirst({ where: { usuario, senha, ativo: true } });
+        if (!mod) return err("Usuário ou senha incorretos", 401);
+        const token = generateToken();
+        const expira = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        await db.moderador.update({ where: { id: mod.id }, data: { token, tokenExpira: expira } });
+        return json({ success: true, nome: mod.nome, permissoes: JSON.parse(mod.permissoes), token });
+      }
+
+      case "logoutModerador": {
+        const { token } = data;
+        if (token) {
+          await db.moderador.updateMany({ where: { token }, data: { token: null, tokenExpira: null } });
+        }
+        return json({ success: true });
+      }
+
+      case "setModeradorSenha": {
+        const { senhaAtual, senhaNova } = data;
+        if (!senhaAtual || !senhaNova) return err("Senhas obrigatórias");
+        const modToken = req.headers.get("x-moderador-token");
+        if (!modToken) return err("Não autorizado", 401);
+        const mod = await db.moderador.findFirst({ where: { token: modToken, ativo: true } });
+        if (!mod) return err("Sessão inválida", 401);
+        if (mod.senha !== senhaAtual) return err("Senha atual incorreta", 403);
+        await db.moderador.update({ where: { id: mod.id }, data: { senha: senhaNova, token: null, tokenExpira: null } });
+        return json({ success: true, message: "Senha alterada! Faça login novamente." });
+      }
+
+      case "listModeradores": {
+        const mods = await db.moderador.findMany({ orderBy: { criadoEm: "desc" } });
+        return json(mods.map(m => ({ id: m.id, nome: m.nome, usuario: m.usuario, permissoes: JSON.parse(m.permissoes), ativo: m.ativo, criadoEm: m.criadoEm })));
+      }
+
+      case "createModerador": {
+        const { nome, usuario, senha, permissoes } = data;
+        if (!nome || !usuario || !senha) return err("Nome, usuário e senha obrigatórios");
+        if (!Array.isArray(permissoes)) return err("Permissões deve ser um array");
+        try {
+          const mod = await db.moderador.create({ data: { nome, usuario, senha, permissoes: JSON.stringify(permissoes) } });
+          return json({ success: true, id: mod.id, message: `Moderador "${nome}" criado!` });
+        } catch (e: unknown) {
+          if (e instanceof Error && e.message.includes("Unique")) return err("Usuário já existe");
+          return err(e instanceof Error ? e.message : "Erro ao criar moderador");
+        }
+      }
+
+      case "updateModerador": {
+        const { id, permissoes, ativo, nome } = data;
+        if (!id) return err("id obrigatório");
+        const updateData: Record<string, unknown> = {};
+        if (Array.isArray(permissoes)) updateData.permissoes = JSON.stringify(permissoes);
+        if (typeof ativo === "boolean") updateData.ativo = ativo;
+        if (nome) updateData.nome = nome;
+        const mod = await db.moderador.update({ where: { id }, data: updateData });
+        return json({ success: true, message: "Moderador atualizado!" });
+      }
+
+      case "removeModerador": {
+        const { id } = data;
+        if (!id) return err("id obrigatório");
+        await db.moderador.delete({ where: { id } });
+        return json({ success: true, message: "Moderador removido!" });
+      }
+
+
       default:
         return err("Ação POST desconhecida: " + action);
     }

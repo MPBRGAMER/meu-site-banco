@@ -45,6 +45,17 @@ export async function GET(req: NextRequest) {
         return json({ success: true });
       }
 
+      case "verifyModerador": {
+        const token = req.headers.get("x-moderador-token");
+        if (!token) return err("Token obrigatório", 401);
+        const mod = await db.moderador.findFirst({
+          where: { token, ativo: true, tokenExpira: { gt: new Date() } },
+          select: { id: true, nome: true, permissoes: true },
+        });
+        if (!mod) return err("Sessão expirada", 401);
+        return json({ success: true, nome: mod.nome, permissoes: JSON.parse(mod.permissoes) });
+      }
+
       // === UNIFIED LOAD ALL - 1 request instead of 14+ ===
       case "loadAll": {
         const sinceParam = searchParams.get("since");
