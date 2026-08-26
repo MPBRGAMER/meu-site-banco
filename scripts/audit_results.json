@@ -1,0 +1,7255 @@
+[
+  {
+    "id": "canned_water",
+    "name": "Agua Enlatada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Canned_Water",
+    "wiki_title": "Canned Water",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "clean_water",
+    "name": "Agua Limpa",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Clean_Water",
+    "wiki_title": "Clean Water",
+    "wiki_cats": [
+      "Food",
+      "Items",
+      "Material",
+      "Medicine",
+      "Pages using Tabber parser tag",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "moonshine",
+    "name": "Aguardente",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Moonshine",
+    "wiki_title": "Moonshine",
+    "wiki_cats": [
+      "Alcohol",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "chocolate_bar",
+    "name": "Barra de Chocolate",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chocolate_Bar",
+    "wiki_title": "Chocolate Bar",
+    "wiki_cats": [
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "candy_cane",
+    "name": "Bengala Doce",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Candy_Cane",
+    "wiki_title": "Candy Cane",
+    "wiki_cats": [
+      "Consumables",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bio_energy_drink",
+    "name": "Bioenergetico",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bio-energy_Drink",
+    "wiki_title": "Bio-energy Drink",
+    "wiki_cats": [
+      "Event items",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "blini",
+    "name": "Blini",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blini",
+    "wiki_title": "Blini",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "cake",
+    "name": "Bolo",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cake",
+    "wiki_title": "Cake",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "strawberry_cake",
+    "name": "Bolo de Morango",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strawberry_cake",
+    "wiki_title": "Strawberry cake",
+    "wiki_cats": [
+      "Food",
+      "Pages with broken file links"
+    ],
+    "found": true
+  },
+  {
+    "id": "coffee",
+    "name": "Cafe",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Coffee",
+    "wiki_title": "Coffee",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "cold_coffee",
+    "name": "Cafe Frio",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cold_coffee",
+    "wiki_title": "Cold coffee",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "hot_coffee",
+    "name": "Cafe Quente",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hot_coffee",
+    "wiki_title": "Hot coffee",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "simple_chowder",
+    "name": "Caldo Simples",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Simple_chowder",
+    "wiki_title": "Simple chowder",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "hearty_chowder",
+    "name": "Caldo Sustancioso",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hearty_chowder",
+    "wiki_title": "Hearty chowder",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chanterelle",
+    "name": "Cantarela",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chanterelle",
+    "wiki_title": "Chanterelle",
+    "wiki_cats": [
+      "Food",
+      "Inventory health",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "roasted_chanterelle",
+    "name": "Cantarela Assada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Roasted_Chanterelle",
+    "wiki_title": "Roasted Chanterelle",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "contaminated_meat",
+    "name": "Carne Contaminada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Contaminated_Meat",
+    "wiki_title": "Contaminated Meat",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "fried_tainted_meat",
+    "name": "Carne Contaminada Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_tainted_meat",
+    "wiki_title": "Fried tainted meat",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "canned_beef",
+    "name": "Carne Enlatada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Canned_beef",
+    "wiki_title": "Canned beef",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "minced_meat",
+    "name": "Carne Moida",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Minced_Meat",
+    "wiki_title": "Minced Meat",
+    "wiki_cats": [
+      "All Items",
+      "Bait",
+      "Food",
+      "Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "rotten_meat",
+    "name": "Carne Podre",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rotten_Meat",
+    "wiki_title": "Rotten Meat",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "dried_meat",
+    "name": "Carne Seca",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dried_meat",
+    "wiki_title": "Dried meat",
+    "wiki_cats": [
+      "Food",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_rat_meat",
+    "name": "Carne de Rato Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_rat_meat",
+    "wiki_title": "Fried rat meat",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "caviar",
+    "name": "Caviar",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Caviar",
+    "wiki_title": "Caviar",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "cold_tea",
+    "name": "Cha Frio",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cold_tea",
+    "wiki_title": "Cold tea",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "hot_tea",
+    "name": "Cha Quente",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hot_tea",
+    "wiki_title": "Hot tea",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "dandelion_tea",
+    "name": "Cha de Dente-de-leao",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dandelion_Tea",
+    "wiki_title": "Dandelion Tea",
+    "wiki_cats": [
+      "All Items",
+      "Food",
+      "Items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "champagne",
+    "name": "Champanhe",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Champagne",
+    "wiki_title": "Champagne",
+    "wiki_cats": [
+      "Alcohol",
+      "Food",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "cuban_cigar",
+    "name": "Charuto Cubano",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cuban_Cigar",
+    "wiki_title": "Cuban Cigar",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "chinese_energy_drink",
+    "name": "Energético Chinês",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chinese_energy_drink",
+    "wiki_title": "Chinese energy drink",
+    "wiki_cats": [
+      "Event items",
+      "Events",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "chocolate",
+    "name": "Chocolate",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chocolate",
+    "wiki_title": "Chocolate",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "shashlik",
+    "name": "Churrasco Espetado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shashlik",
+    "wiki_title": "Shashlik",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "cigarettes",
+    "name": "Cigarros",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cigarettes",
+    "wiki_title": "Cigarettes",
+    "wiki_cats": [
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chocolate_bunny",
+    "name": "Coelho de Chocolate",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chocolate_Bunny",
+    "wiki_title": "Chocolate Bunny",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "condensed_milk",
+    "name": "Leite Condensado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Condensed_Milk",
+    "wiki_title": "Condensed Milk",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "cooked_pasta",
+    "name": "Massa Cozida",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cooked_Pasta",
+    "wiki_title": "Cooked Pasta",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "cooked_rice",
+    "name": "Arroz Cozido",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cooked_rice",
+    "wiki_title": "Cooked rice",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "apple_cordial",
+    "name": "Cordial de Maca",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Apple_Cordial",
+    "wiki_title": "Apple Cordial",
+    "wiki_cats": [
+      "Alcohol",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "corn",
+    "name": "Milho",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Corn",
+    "wiki_title": "Corn",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "coulibiac",
+    "name": "Coulibiac",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Coulibiac",
+    "wiki_title": "Coulibiac",
+    "wiki_cats": [
+      "Food",
+      "Recipes"
+    ],
+    "found": true
+  },
+  {
+    "id": "cranberry",
+    "name": "Oxicoco",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cranberry",
+    "wiki_title": "Cranberry",
+    "wiki_cats": [
+      "Food",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "dirty_water",
+    "name": "Água Suja",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dirty_Water",
+    "wiki_title": "Dirty Water",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "easter_cake",
+    "name": "Bolo de Páscoa",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Easter_Cake",
+    "wiki_title": "Easter Cake",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "easter_egg",
+    "name": "Ovo de Páscoa",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Easter_Egg",
+    "wiki_title": "Easter Egg",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "egg",
+    "name": "Ovo",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Egg",
+    "wiki_title": "Egg",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "spooky_energy_drink",
+    "name": "Energetico Assustador",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Spooky_Energy_Drink",
+    "wiki_title": "Spooky Energy Drink",
+    "wiki_cats": [
+      "Event Items",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "knock_off_energy_drink",
+    "name": "Energetico Falsificado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Knock-Off_Energy_Drink",
+    "wiki_title": "Knock-Off Energy Drink",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "energy_drink",
+    "name": "Energético",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Energy_drink",
+    "wiki_title": "Energy drink",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "fatty_meat",
+    "name": "Carne Gordurosa",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fatty_Meat",
+    "wiki_title": "Fatty Meat",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "canned_beans",
+    "name": "Feijao Enlatado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Canned_Beans",
+    "wiki_title": "Canned Beans",
+    "wiki_cats": [
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "flatbread",
+    "name": "Pao Achatado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flatbread",
+    "wiki_title": "Flatbread",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "flour",
+    "name": "Farinha",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flour",
+    "wiki_title": "Flour",
+    "wiki_cats": [
+      "Food",
+      "Pages using Tabber parser tag"
+    ],
+    "found": true
+  },
+  {
+    "id": "fresh_fish",
+    "name": "Peixe Fresco",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fresh_fish",
+    "wiki_title": "Fresh fish",
+    "wiki_cats": [
+      "Food",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_tough_meat",
+    "name": "Carne Dura Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_Tough_Meat",
+    "wiki_title": "Fried Tough Meat",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_fatty_meat",
+    "name": "Carne Gordurosa Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_fatty_meat",
+    "wiki_title": "Fried fatty meat",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_mutant_meat",
+    "name": "Carne de Mutante Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_mutant_meat",
+    "wiki_title": "Fried mutant meat",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_potato",
+    "name": "Batata Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_potato",
+    "wiki_title": "Fried potato",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gingerbread",
+    "name": "Bolo de Gengibre",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gingerbread",
+    "wiki_title": "Gingerbread",
+    "wiki_cats": [
+      "Consumables",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "golden_easter_egg",
+    "name": "Ovo de Páscoa Dourado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Golden_Easter_Egg",
+    "wiki_title": "Golden Easter Egg",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "buckwheat_grains",
+    "name": "Graos de Trigo-sarraceno",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Buckwheat_grains",
+    "wiki_title": "Buckwheat grains",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "grilled_meat",
+    "name": "Carne Grelhada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Grilled_Meat",
+    "wiki_title": "Grilled Meat",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "bunny_treat",
+    "name": "Guloseima de Coelho",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bunny_Treat",
+    "wiki_title": "Bunny Treat",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "holiday_energy_drink",
+    "name": "Energético de Feriado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Holiday_Energy_Drink",
+    "wiki_title": "Holiday Energy Drink",
+    "wiki_cats": [
+      "Event items",
+      "Events",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_wine",
+    "name": "Vinho Artesanal",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_Wine",
+    "wiki_title": "Homemade Wine",
+    "wiki_cats": [
+      "Alcohol",
+      "Food",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "honey",
+    "name": "Mel",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Honey",
+    "wiki_title": "Honey",
+    "wiki_cats": [
+      "Food",
+      "Medicine",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "jam",
+    "name": "Geleia",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Jam",
+    "wiki_title": "Jam",
+    "wiki_cats": [
+      "Food",
+      "Inventory health"
+    ],
+    "found": true
+  },
+  {
+    "id": "kholodets",
+    "name": "Kholodets",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kholodets",
+    "wiki_title": "Kholodets",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "kvass",
+    "name": "Kvass",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kvass",
+    "wiki_title": "Kvass",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "vegetables",
+    "name": "Legumes",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vegetables",
+    "wiki_title": "Vegetables",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "boiled_condensed_milk",
+    "name": "Leite Condensado Cozido",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Boiled_condensed_milk",
+    "wiki_title": "Boiled condensed milk",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "apple",
+    "name": "Maca",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Apple",
+    "wiki_title": "Apple",
+    "wiki_cats": [
+      "Food",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "candy_apple",
+    "name": "Maca do Amor",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Candy_apple",
+    "wiki_title": "Candy apple",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "mushroom_pasta",
+    "name": "Macarrao com Cogumelos",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mushroom_pasta",
+    "wiki_title": "Mushroom pasta",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "boiled_corn",
+    "name": "Milho Cozido",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Boiled_Corn",
+    "wiki_title": "Boiled Corn",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "milk",
+    "name": "Leite",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Milk",
+    "wiki_title": "Milk",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "mulled_wine",
+    "name": "Vinho Quente Especiado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mulled_Wine",
+    "wiki_title": "Mulled Wine",
+    "wiki_cats": [
+      "Alcohol",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "moss",
+    "name": "Musgo",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Moss",
+    "wiki_title": "Moss",
+    "wiki_cats": [
+      "Food",
+      "Inventory components",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "mutant_meat",
+    "name": "Carne de Mutante",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mutant_Meat",
+    "wiki_title": "Mutant Meat",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "nettle",
+    "name": "Urtiga",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nettle",
+    "wiki_title": "Nettle",
+    "wiki_cats": [
+      "Inventory components",
+      "Material",
+      "Pages using Tabber parser tag",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "old_canned_meat",
+    "name": "Carne Enlatada Velha",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Old_Canned_Meat",
+    "wiki_title": "Old Canned Meat",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "boiled_egg",
+    "name": "Ovo Cozido",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Boiled_Egg",
+    "wiki_title": "Boiled Egg",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_egg",
+    "name": "Ovo Frito",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_egg",
+    "wiki_title": "Fried egg",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bread",
+    "name": "Pao",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bread",
+    "wiki_title": "Bread",
+    "wiki_cats": [
+      "Consumables",
+      "Cooking",
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "canned_porridge",
+    "name": "Papas Enlatadas",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Canned_porridge",
+    "wiki_title": "Canned porridge",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rotten_porridge",
+    "name": "Papas Podres",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rotten_porridge",
+    "wiki_title": "Rotten porridge",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pasta",
+    "name": "Pasta",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pasta",
+    "wiki_title": "Pasta",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pasta_with_ground_beef",
+    "name": "Massa com Carne Moida",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pasta_With_Ground_Beef",
+    "wiki_title": "Pasta With Ground Beef",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_fish",
+    "name": "Peixe Frito",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_fish",
+    "wiki_title": "Fried fish",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rotten_fish",
+    "name": "Peixe Podre",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rotten_fish",
+    "wiki_title": "Rotten fish",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "dried_fish",
+    "name": "Peixe Seco",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dried_fish",
+    "wiki_title": "Dried fish",
+    "wiki_cats": [
+      "Food",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "infected_dried_fish",
+    "name": "Peixe Seco Infectado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Infected_Dried_Fish",
+    "wiki_title": "Infected Dried Fish",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "peking_duck",
+    "name": "Pato Laqueado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Peking_Duck",
+    "wiki_title": "Peking Duck",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with broken file links",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pelmeni",
+    "name": "Pelmeni",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pelmeni",
+    "wiki_title": "Pelmeni",
+    "wiki_cats": [
+      "Food",
+      "Recipes"
+    ],
+    "found": true
+  },
+  {
+    "id": "pepsi",
+    "name": "Pepsi",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pepsi",
+    "wiki_title": "Pepsi",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pickled_vegetables",
+    "name": "Legumes em Conserva",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pickled_Vegetables",
+    "wiki_title": "Pickled Vegetables",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "pilaf",
+    "name": "Pilaf",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pilaf",
+    "wiki_title": "Pilaf",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "canned_pork",
+    "name": "Porco Enlatado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Canned_pork",
+    "wiki_title": "Canned pork",
+    "wiki_cats": [
+      "Archives",
+      "Food",
+      "Food (Archives)"
+    ],
+    "found": true
+  },
+  {
+    "id": "potato",
+    "name": "Batata",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Potato",
+    "wiki_title": "Potato",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "potato_pancakes",
+    "name": "Panquecas de Batata",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Potato_Pancakes",
+    "wiki_title": "Potato Pancakes",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "stale_pryanik",
+    "name": "Pryanik Velho",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stale_Pryanik",
+    "wiki_title": "Stale Pryanik",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "pumpkin",
+    "name": "Abobora",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pumpkin",
+    "wiki_title": "Pumpkin",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "mashed_potatoes",
+    "name": "Pure de Batatas",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mashed_Potatoes",
+    "wiki_title": "Mashed Potatoes",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "cheese",
+    "name": "Queijo",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cheese",
+    "wiki_title": "Cheese",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "rat_meat",
+    "name": "Carne de Rato",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rat_Meat",
+    "wiki_title": "Rat Meat",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rice_bun",
+    "name": "Pao de Arroz",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rice_Bun",
+    "wiki_title": "Rice Bun",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rice_grains",
+    "name": "Graos de Arroz",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rice_grains",
+    "wiki_title": "Rice grains",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rich_chowder",
+    "name": "Caldo Rico",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rich_Chowder",
+    "wiki_title": "Rich Chowder",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "meat_rissole",
+    "name": "Risole de Carne",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Meat_Rissole",
+    "wiki_title": "Meat Rissole",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "tailed_rissole",
+    "name": "Risole",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tailed_Rissole",
+    "wiki_title": "Tailed Rissole",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "rotten_vegetables",
+    "name": "Legumes Podres",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rotten_vegetables",
+    "wiki_title": "Rotten vegetables",
+    "wiki_cats": [
+      "Bait",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "russian_cigarettes",
+    "name": "Cigarros Russos",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Russian_Cigarettes",
+    "wiki_title": "Russian Cigarettes",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "saltpeter",
+    "name": "Salitre",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Saltpeter",
+    "wiki_title": "Saltpeter",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "salt",
+    "name": "Sal",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Salt",
+    "wiki_title": "Salt",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "salted_fish",
+    "name": "Peixe Salgado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Salted_Fish",
+    "wiki_title": "Salted Fish",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "salted_meat",
+    "name": "Carne Salgada",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Salted_Meat",
+    "wiki_title": "Salted Meat",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "caviar_sandwich",
+    "name": "Sanduiche de Caviar",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Caviar_Sandwich",
+    "wiki_title": "Caviar Sandwich",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "sausage",
+    "name": "Salsicha",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sausage",
+    "wiki_title": "Sausage",
+    "wiki_cats": [
+      "All Items",
+      "Food",
+      "Items",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "shawarma",
+    "name": "Churrasco Grego",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shawarma",
+    "wiki_title": "Shawarma",
+    "wiki_cats": [
+      "Consumables",
+      "Cooking",
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "shchi",
+    "name": "Shchi",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shchi",
+    "wiki_title": "Shchi",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "smuggled_energy_drink",
+    "name": "Energético Contrabandeado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Smuggled_Energy_Drink",
+    "wiki_title": "Smuggled Energy Drink",
+    "wiki_cats": [
+      "Event items",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "snake_meat",
+    "name": "Carne de Cobra",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Snake_Meat",
+    "wiki_title": "Snake Meat",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pumpkin_soup",
+    "name": "Sopa de Abobora",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pumpkin_Soup",
+    "wiki_title": "Pumpkin Soup",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "mushroom_soup",
+    "name": "Sopa de Cogumelos",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mushroom_soup",
+    "wiki_title": "Mushroom soup",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "stew_meat",
+    "name": "Carne para Ensopado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stew_meat",
+    "wiki_title": "Stew meat",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "strawberry",
+    "name": "Morango",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strawberry",
+    "wiki_title": "Strawberry",
+    "wiki_cats": [
+      "Food",
+      "Fruit",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "beetle_juice",
+    "name": "Suco de Besouro",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Beetle_Juice",
+    "wiki_title": "Beetle Juice",
+    "wiki_cats": [
+      "Event items",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "sugar",
+    "name": "Acucar",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sugar",
+    "wiki_title": "Sugar",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Cooking",
+      "Food",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "sushi",
+    "name": "Sushi",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sushi",
+    "wiki_title": "Sushi",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tea",
+    "name": "Cha",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tea",
+    "wiki_title": "Tea",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pie",
+    "name": "Torta",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pie",
+    "wiki_title": "Pie",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tough_meat",
+    "name": "Carne Dura",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tough_Meat",
+    "wiki_title": "Tough Meat",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "toxic_water",
+    "name": "Agua Toxica",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Toxic_Water",
+    "wiki_title": "Toxic Water",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "treats",
+    "name": "Guloseimas",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Treats",
+    "wiki_title": "Treats",
+    "wiki_cats": [
+      "Event items",
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "cooked_buckwheat",
+    "name": "Trigo-sarraceno Cozido",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cooked_Buckwheat",
+    "wiki_title": "Cooked Buckwheat",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ukha",
+    "name": "Ukha",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ukha",
+    "wiki_title": "Ukha",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "whiskey",
+    "name": "Usque",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Whiskey",
+    "wiki_title": "Whiskey",
+    "wiki_cats": [
+      "Alcohol",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "red_wine",
+    "name": "Vinho Tinto",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Red_wine",
+    "wiki_title": "Red wine",
+    "wiki_cats": [
+      "Alcohol",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rice_wine",
+    "name": "Vinho de Arroz",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rice_wine",
+    "wiki_title": "Rice wine",
+    "wiki_cats": [
+      "Alcohol",
+      "Event Items",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "vodka",
+    "name": "Vodka",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vodka",
+    "wiki_title": "Vodka",
+    "wiki_cats": [
+      "Alcohol",
+      "Food",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bowl_of_rice",
+    "name": "Tigela de Arroz",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bowl_of_rice",
+    "wiki_title": "Bowl of rice",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with broken file links",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "flesh",
+    "name": "Carne",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flesh",
+    "wiki_title": "Flesh",
+    "wiki_cats": [
+      "Assault rifle",
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "ice_cream",
+    "name": "Sorvete",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ice_Cream",
+    "wiki_title": "Ice Cream",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Event weapons",
+      "Food",
+      "Items",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "fried_snake",
+    "name": "Cobra Frita",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fried_snake",
+    "wiki_title": "Fried snake",
+    "wiki_cats": [
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "olivier_salad",
+    "name": "Salada Olivier",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Olivier_Salad",
+    "wiki_title": "Olivier Salad",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "grouse",
+    "name": "Galo-da-serra",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Grouse",
+    "wiki_title": "Grouse",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "trophy_cognac",
+    "name": "Conhaque Trofeu",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Trophy_Cognac",
+    "wiki_title": "Trophy Cognac",
+    "wiki_cats": [
+      "Alcohol",
+      "Event Items",
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "smoked_fatback",
+    "name": "Toucinho Defumado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Smoked_Fatback",
+    "wiki_title": "Smoked Fatback",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "tangerine",
+    "name": "Tangerina",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tangerine",
+    "wiki_title": "Tangerine",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "cabbage_roll",
+    "name": "Rolinho de Repolho",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cabbage_roll",
+    "wiki_title": "Cabbage roll",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "broadleaf_plantain",
+    "name": "Tanchagem",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Broadleaf_plantain",
+    "wiki_title": "Broadleaf plantain",
+    "wiki_cats": [
+      "Inventory health",
+      "Material",
+      "Pages using Tabber parser tag",
+      "Plants and herbs",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rainbow_easter_egg",
+    "name": "Ovo de Pascoa Arco-Iris",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rainbow_Easter_Egg",
+    "wiki_title": "Rainbow Easter Egg",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusks",
+    "name": "Biscoitos Duros",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusks",
+    "wiki_title": "Rusks",
+    "wiki_cats": [
+      "Bait",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "infected_rusk",
+    "name": "Biscoito Duro Infectado",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Infected_rusk",
+    "wiki_title": "Infected rusk",
+    "wiki_cats": [
+      "All Items",
+      "Bait",
+      "Food",
+      "Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "ration_pack",
+    "name": "Racao",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ration_pack",
+    "wiki_title": "Ration pack",
+    "wiki_cats": [
+      "Food",
+      "Inventory survival",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "expeditionary_ration",
+    "name": "Racao de Expedicao",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Expeditionary_Ration",
+    "wiki_title": "Expeditionary Ration",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with broken file links"
+    ],
+    "found": true
+  },
+  {
+    "id": "smuggler_s_flask",
+    "name": "Frasco do Contrabandista",
+    "our_cat": "food",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Smuggler%27s_Flask",
+    "wiki_title": "Smuggler's Flask",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "potato_seeds",
+    "name": "Sementes de Batata",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Potato_seeds",
+    "wiki_title": "Potato seeds",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "strawberry_seed",
+    "name": "Semente de Morango",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strawberry_seed",
+    "wiki_title": "Strawberry seed",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "pumpkin_seeds",
+    "name": "Sementes de Abobora",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pumpkin_seeds",
+    "wiki_title": "Pumpkin seeds",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "apple_seeds",
+    "name": "Sementes de Maca",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Apple_seeds",
+    "wiki_title": "Apple seeds",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "corn_seeds",
+    "name": "Sementes de Milho",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Corn_seeds",
+    "wiki_title": "Corn seeds",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "tangerine_seeds",
+    "name": "Sementes de Tangerina",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tangerine_seeds",
+    "wiki_title": "Tangerine seeds",
+    "wiki_cats": [
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "wheat_seeds",
+    "name": "Sementes de Trigo",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Wheat_seeds",
+    "wiki_title": "Wheat seeds",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "vegetable_seeds",
+    "name": "Sementes de Legumes",
+    "our_cat": "seeds_herbs",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vegetable_seeds",
+    "wiki_title": "Vegetable seeds",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Seeds"
+    ],
+    "found": true
+  },
+  {
+    "id": "diy_nets",
+    "name": "Redes Artesanais",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/%22DIY_Nets%22",
+    "wiki_title": "\"DIY Nets\"",
+    "wiki_cats": [
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "silage_mincer",
+    "name": "Moidor de Silagem",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/%22Silage%22_Mincer",
+    "wiki_title": "\"Silage\" Mincer",
+    "wiki_cats": [
+      "All Items",
+      "Event items",
+      "Items",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "aluminum",
+    "name": "Aluminio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Aluminum",
+    "wiki_title": "Aluminum",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "antelope",
+    "name": "Antilope",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Antelope",
+    "wiki_title": "Antelope",
+    "wiki_cats": [
+      "Guns",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "ave_maria",
+    "name": "Ave Maria",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ave_Maria",
+    "wiki_title": "Ave Maria",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Pages with broken file links",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "barrel",
+    "name": "Barril",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Barrel",
+    "wiki_title": "Barrel",
+    "wiki_cats": [
+      "Archives",
+      "Constructions",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "blank",
+    "name": "Espacador",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blank",
+    "wiki_title": "Blank",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "boiled_leather",
+    "name": "Couro Fervido",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Boiled_Leather",
+    "wiki_title": "Boiled Leather",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rubber",
+    "name": "Borracha",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rubber",
+    "wiki_title": "Rubber",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bryocarm",
+    "name": "Bryocarm",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bryocarm",
+    "wiki_title": "Bryocarm",
+    "wiki_cats": [
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "c_3_cologne",
+    "name": "Colonia C-3",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/C-3_Cologne",
+    "wiki_title": "C-3 Cologne",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Items",
+      "Medicine",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "cpe_leader",
+    "name": "CPE Leader",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/CPE_Leader",
+    "wiki_title": "CPE Leader",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "electrical_cable",
+    "name": "Cabo Eletrico",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Electrical_Cable",
+    "wiki_title": "Electrical Cable",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "iron_pipe",
+    "name": "Cano de Ferro",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iron_pipe",
+    "wiki_title": "Iron pipe",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "black_coal",
+    "name": "Carvao Negro",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Black_coal",
+    "wiki_title": "Black coal",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "coal",
+    "name": "Carvao Preto",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Coal",
+    "wiki_title": "Coal",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "catalysis_e",
+    "name": "Catalysis-E",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Catalysis-E",
+    "wiki_title": "Catalysis-E",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Machine gun",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "cement",
+    "name": "Cimento",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cement",
+    "wiki_title": "Cement",
+    "wiki_cats": [
+      "Material",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "wax",
+    "name": "Cera",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Wax",
+    "wiki_title": "Wax",
+    "wiki_cats": [
+      "Components",
+      "Items",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "bone_glue",
+    "name": "Cola de Osso",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bone_glue",
+    "wiki_title": "Bone glue",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rope",
+    "name": "Corda",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rope",
+    "wiki_title": "Rope",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "diesel",
+    "name": "Diesel",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Diesel",
+    "wiki_title": "Diesel",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "diluted_spirits",
+    "name": "Alcool Diluido",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Diluted_spirits",
+    "wiki_title": "Diluted spirits",
+    "wiki_cats": [
+      "Alcohol",
+      "All Items",
+      "Food",
+      "Items",
+      "Pages with broken file links",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "dragon_scale",
+    "name": "Escama de Dragao",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dragon_Scale",
+    "wiki_title": "Dragon Scale",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "sulfur",
+    "name": "Enxofre",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sulfur",
+    "wiki_title": "Sulfur",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "spice",
+    "name": "Especiaria",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Spice",
+    "wiki_title": "Spice",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "fat",
+    "name": "Gordura",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fat",
+    "wiki_title": "Fat",
+    "wiki_cats": [
+      "Components",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "wire",
+    "name": "Fio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Wire",
+    "wiki_title": "Wire",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fire_brick",
+    "name": "Tijolo Refratario",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fire_brick",
+    "wiki_title": "Fire brick",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "Pages using Tabber parser tag"
+    ],
+    "found": true
+  },
+  {
+    "id": "gaz_24_broken",
+    "name": "GAZ-24 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Garage",
+    "wiki_title": "Garage",
+    "wiki_cats": [
+      "Buildings"
+    ],
+    "found": true
+  },
+  {
+    "id": "gasoline",
+    "name": "Gasolina",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gasoline",
+    "wiki_title": "Gasoline",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "glue_tape",
+    "name": "Fita Adesiva",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Glue/tape",
+    "wiki_title": "Glue/tape",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "high_performance_capacitor",
+    "name": "Capacitor de Alta Performance",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/High_performance_capacitor",
+    "wiki_title": "High performance capacitor",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "ir_190",
+    "name": "IR-190",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/IR-190",
+    "wiki_title": "IR-190",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "insulating_tape",
+    "name": "Fita Isolante",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Insulating_Tape",
+    "wiki_title": "Insulating Tape",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "iron",
+    "name": "Ferro",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iron",
+    "wiki_title": "Iron",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "iron_pot",
+    "name": "Panela de Ferro",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iron_pot",
+    "wiki_title": "Iron pot",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "kamaz_broken",
+    "name": "KamAZ (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/KamAZ_(Broken)",
+    "wiki_title": "KamAZ (Broken)",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "first_aid_kit",
+    "name": "Kit de Primeiros Socorros",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/First_Aid_Kit",
+    "wiki_title": "First Aid Kit",
+    "wiki_cats": [
+      "Archives",
+      "Event items",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "can",
+    "name": "Lata",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Can",
+    "wiki_title": "Can",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "firewood",
+    "name": "Lenha",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Firewood",
+    "wiki_title": "Firewood",
+    "wiki_cats": [
+      "Material",
+      "Source of fire"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_alloy",
+    "name": "Liga de Titanio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_Alloy",
+    "wiki_title": "Titanium Alloy",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "lymph",
+    "name": "Linfa",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Lymph",
+    "wiki_title": "Lymph",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "log",
+    "name": "Tronco",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Log",
+    "wiki_title": "Log",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Event Items",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "matches",
+    "name": "Fosforos",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Matches",
+    "wiki_title": "Matches",
+    "wiki_cats": [
+      "Material",
+      "Source of fire"
+    ],
+    "found": true
+  },
+  {
+    "id": "metal_plate",
+    "name": "Chapa de Metal",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Metal_Plate",
+    "wiki_title": "Metal Plate",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "Pages using Tabber parser tag"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_ore",
+    "name": "Minerio de Titanio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_ore",
+    "wiki_title": "Titanium ore",
+    "wiki_cats": [
+      "Components",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "motorcycle_spare_parts",
+    "name": "Pecas Sobressalentes de Moto",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Motorcycle_spare_parts",
+    "wiki_title": "Motorcycle spare parts",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "nail",
+    "name": "Prego",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nail",
+    "wiki_title": "Nail",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "nailed_box",
+    "name": "Caixa Pregada",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nailed_box",
+    "wiki_title": "Nailed box",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "oar",
+    "name": "Remo",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Oar",
+    "wiki_title": "Oar",
+    "wiki_cats": [
+      "Rifle",
+      "See also template",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "machine_oil",
+    "name": "Oleo de Maquina",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Machine_Oil",
+    "wiki_title": "Machine Oil",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "fresh_bones",
+    "name": "Ossos Frescos",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fresh_bones",
+    "wiki_title": "Fresh bones",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "flint",
+    "name": "Pederneira",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flint",
+    "wiki_title": "Flint",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tires",
+    "name": "Pneus",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tires",
+    "wiki_title": "Tires",
+    "wiki_cats": [
+      "Components",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "plank",
+    "name": "Prancha",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Plank",
+    "wiki_title": "Plank",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "quality_hide",
+    "name": "Pele de Qualidade",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Quality_Hide",
+    "wiki_title": "Quality Hide",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "quality_leather",
+    "name": "Couro de Qualidade",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Quality_Leather",
+    "wiki_title": "Quality Leather",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chitin",
+    "name": "Quitina",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chitin",
+    "wiki_title": "Chitin",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "raw_hide",
+    "name": "Pele Crua",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Raw_Hide",
+    "wiki_title": "Raw Hide",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "raw_fatback",
+    "name": "Toucinho Cru",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Raw_fatback",
+    "wiki_title": "Raw fatback",
+    "wiki_cats": [
+      "Bait",
+      "Components",
+      "Food",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "rawhide",
+    "name": "Couro Cru",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rawhide",
+    "wiki_title": "Rawhide",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "king_of_jokers",
+    "name": "Rei dos Coringas",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/King_of_Jokers",
+    "wiki_title": "King of Jokers",
+    "wiki_cats": [
+      "Alcohol",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rubber_parts",
+    "name": "Peças de Borracha",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rubber_Parts",
+    "wiki_title": "Rubber Parts",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "rusted_saucepan",
+    "name": "Panela Enferrujada",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_Saucepan",
+    "wiki_title": "Rusted Saucepan",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "sr_delirium",
+    "name": "SR Delirium",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/SR_Delirium",
+    "wiki_title": "SR Delirium",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "soap",
+    "name": "Sabao",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Soap",
+    "wiki_title": "Soap",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "saucepan",
+    "name": "Panela",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Saucepan",
+    "wiki_title": "Saucepan",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "spare_weapon_parts",
+    "name": "Pecas Sobressalentes de Arma",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Spare_Weapon_Parts",
+    "wiki_title": "Spare Weapon Parts",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "spark_plug",
+    "name": "Vela de Ignicao",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Spark_Plug",
+    "wiki_title": "Spark Plug",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "steel",
+    "name": "Aco",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel",
+    "wiki_title": "Steel",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_pot",
+    "name": "Panela de Aço",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_pot",
+    "wiki_title": "Steel pot",
+    "wiki_cats": [
+      "Archives",
+      "Equipment",
+      "Inventory survival",
+      "Material",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "stick",
+    "name": "Graveto",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stick",
+    "wiki_title": "Stick",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Event Items",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "scrap_metal",
+    "name": "Sucata Metalica",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Scrap_metal",
+    "wiki_title": "Scrap metal",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "aluminum_scrap",
+    "name": "Sucata de Aluminio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Aluminum_Scrap",
+    "wiki_title": "Aluminum Scrap",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "copper_scrap",
+    "name": "Sucata de Cobre",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Copper_Scrap",
+    "wiki_title": "Copper Scrap",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "support_box",
+    "name": "Caixa de Suporte",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Support_Box",
+    "wiki_title": "Support Box",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "Pages using Tabber parser tag",
+      "Pages with broken file links"
+    ],
+    "found": true
+  },
+  {
+    "id": "survivor_s_cache",
+    "name": "Cache do Sobrevivente",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Survivor%27s_Cache",
+    "wiki_title": "Survivor's Cache",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Material",
+      "Premium"
+    ],
+    "found": true
+  },
+  {
+    "id": "tanned_leather",
+    "name": "Couro Curtido",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tanned_Leather",
+    "wiki_title": "Tanned Leather",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "tanning_mixture",
+    "name": "Mistura de Curtimento",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tanning_mixture",
+    "wiki_title": "Tanning mixture",
+    "wiki_cats": [
+      "Archives",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "cloth",
+    "name": "Tecido",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cloth",
+    "wiki_title": "Cloth",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "thick_hide",
+    "name": "Pele Grossa",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Thick_Hide",
+    "wiki_title": "Thick Hide",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "thick_leather",
+    "name": "Couro Grosso",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Thick_Leather",
+    "wiki_title": "Thick Leather",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "threads",
+    "name": "Linhas",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Threads",
+    "wiki_title": "Threads",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "brick",
+    "name": "Tijolo",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Brick",
+    "wiki_title": "Brick",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_pot",
+    "name": "Panela de Titânio",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_pot",
+    "wiki_title": "Titanium pot",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Material",
+      "Utensils"
+    ],
+    "found": true
+  },
+  {
+    "id": "toxigen",
+    "name": "Toxigen",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Toxigen",
+    "wiki_title": "Toxigen",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Pages with image sizes containing extra px",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "rags",
+    "name": "Trapos",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rags",
+    "wiki_title": "Rags",
+    "wiki_cats": [
+      "Material",
+      "Pages using Tabber parser tag",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "uaz_452_broken",
+    "name": "UAZ-452 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/UAZ-452_(Broken)",
+    "wiki_title": "UAZ-452 (Broken)",
+    "wiki_cats": [
+      "Material",
+      "Transport"
+    ],
+    "found": true
+  },
+  {
+    "id": "uaz_469_broken",
+    "name": "UAZ-469 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/UAZ-469_(Broken)",
+    "wiki_title": "UAZ-469 (Broken)",
+    "wiki_cats": [
+      "Material",
+      "Transport"
+    ],
+    "found": true
+  },
+  {
+    "id": "vaz_2101_broken",
+    "name": "VAZ-2101 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Car_workshop",
+    "wiki_title": "Car workshop",
+    "wiki_cats": [
+      "Buildings",
+      "Locations"
+    ],
+    "found": true
+  },
+  {
+    "id": "weapon_box",
+    "name": "Caixa de Armas",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Weapon_box",
+    "wiki_title": "Weapon box",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "wheat",
+    "name": "Trigo",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Wheat",
+    "wiki_title": "Wheat",
+    "wiki_cats": [
+      "Food"
+    ],
+    "found": true
+  },
+  {
+    "id": "zaz_968_broken",
+    "name": "ZAZ-968 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Car_workshop",
+    "wiki_title": "Car workshop",
+    "wiki_cats": [
+      "Buildings",
+      "Locations"
+    ],
+    "found": true
+  },
+  {
+    "id": "zil_130_broken",
+    "name": "ZIL-130 (Quebrado)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Military_base",
+    "wiki_title": "Military base",
+    "wiki_cats": [
+      "Buildings"
+    ],
+    "found": true
+  },
+  {
+    "id": "broken_car_battery",
+    "name": "Bateria de Carro Quebrada",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Broken_car_battery",
+    "wiki_title": "Broken car battery",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "car_battery",
+    "name": "Bateria de Carro",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Car_battery",
+    "wiki_title": "Car battery",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "nuclear_battery",
+    "name": "Bateria Nuclear",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nuclear_battery",
+    "wiki_title": "Nuclear battery",
+    "wiki_cats": [
+      "Components",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "pistol_parts",
+    "name": "Pecas de Pistola",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pistol_parts",
+    "wiki_title": "Pistol parts",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Weapon parts"
+    ],
+    "found": true
+  },
+  {
+    "id": "revolver_parts",
+    "name": "Pecas de Revolver",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Revolver_parts",
+    "wiki_title": "Revolver parts",
+    "wiki_cats": [
+      "Archives",
+      "Material",
+      "See also template",
+      "Weapon parts"
+    ],
+    "found": true
+  },
+  {
+    "id": "rifle_parts",
+    "name": "Pecas de Rifle",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rifle_parts",
+    "wiki_title": "Rifle parts",
+    "wiki_cats": [
+      "Archives",
+      "Material",
+      "See also template",
+      "Weapon parts"
+    ],
+    "found": true
+  },
+  {
+    "id": "assault_rifle_parts",
+    "name": "Pecas de Fuzil de Assalto",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Assault_rifle_parts",
+    "wiki_title": "Assault rifle parts",
+    "wiki_cats": [
+      "Archives",
+      "Material",
+      "See also template",
+      "Weapon parts"
+    ],
+    "found": true
+  },
+  {
+    "id": "machine_gun_parts",
+    "name": "Pecas de Metralhadora",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Machine_gun_parts",
+    "wiki_title": "Machine gun parts",
+    "wiki_cats": [
+      "Archives",
+      "Material",
+      "See also template",
+      "Weapon parts"
+    ],
+    "found": true
+  },
+  {
+    "id": "bamboo_steamer",
+    "name": "Cesteiro de Bambu",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bamboo_Steamer",
+    "wiki_title": "Bamboo Steamer",
+    "wiki_cats": [
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Quest Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "mushroom_with_eyes",
+    "name": "Cogumelo com Olhos",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mushroom_with_eyes",
+    "wiki_title": "Mushroom with eyes",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "stearin",
+    "name": "Estearina",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stearin",
+    "wiki_title": "Stearin",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Pages using Tabber parser tag",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_black",
+    "name": "Cogumelo Estranho (Preto)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Black)",
+    "wiki_title": "Strange Mushroom (Black)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_blue",
+    "name": "Cogumelo Estranho (Azul)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Blue)",
+    "wiki_title": "Strange Mushroom (Blue)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_green",
+    "name": "Cogumelo Estranho (Verde)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Green)",
+    "wiki_title": "Strange Mushroom (Green)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_light_blue",
+    "name": "Cogumelo Estranho (Azul Claro)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Light_Blue)",
+    "wiki_title": "Strange Mushroom (Light Blue)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_red",
+    "name": "Cogumelo Estranho (Vermelho)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Red)",
+    "wiki_title": "Strange Mushroom (Red)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_violet",
+    "name": "Cogumelo Estranho (Violeta)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Violet)",
+    "wiki_title": "Strange Mushroom (Violet)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_white",
+    "name": "Cogumelo Estranho (Branco)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(White)",
+    "wiki_title": "Strange Mushroom (White)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "strange_mushroom_yellow",
+    "name": "Cogumelo Estranho (Amarelo)",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Yellow)",
+    "wiki_title": "Strange Mushroom (Yellow)",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "acid_gland",
+    "name": "Glandula Acida",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Acid_gland",
+    "wiki_title": "Acid gland",
+    "wiki_cats": [
+      "All Items",
+      "Components",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "vial_of_amine",
+    "name": "Frasco de Amina",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vial_of_%22...amine%22",
+    "wiki_title": "Vial of \"...amine\"",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Items",
+      "Medicine",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "radioactive_mushroom",
+    "name": "Cogumelo Radioativo",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Radioactive_mushroom",
+    "wiki_title": "Radioactive mushroom",
+    "wiki_cats": [
+      "Food",
+      "Mushrooms"
+    ],
+    "found": true
+  },
+  {
+    "id": "amanita",
+    "name": "Amanita",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Amanita",
+    "wiki_title": "Amanita",
+    "wiki_cats": [
+      "Food",
+      "Plants and herbs"
+    ],
+    "found": true
+  },
+  {
+    "id": "blood_mold",
+    "name": "Bolor de Sangue",
+    "our_cat": "materials",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blood_Mold",
+    "wiki_title": "Blood Mold",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "acidoemitter",
+    "name": "Acidoemitter",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Acidoemitter",
+    "wiki_title": "Acidoemitter",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "activated_charcoal",
+    "name": "Carvao Ativado",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Activated_charcoal",
+    "wiki_title": "Activated charcoal",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "aqua_vitae",
+    "name": "Agua Vitae",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Aqua_Vitae",
+    "wiki_title": "Aqua Vitae",
+    "wiki_cats": [
+      "Food",
+      "Material",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "alcohol",
+    "name": "Alcool",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Alcohol",
+    "wiki_title": "Alcohol",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "antibiotics",
+    "name": "Antibioticos",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Antibiotics",
+    "wiki_title": "Antibiotics",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "Medicine",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "antidote",
+    "name": "Antidoto",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Antidote",
+    "wiki_title": "Antidote",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "antirad",
+    "name": "Antirad",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Antirad",
+    "wiki_title": "Antirad",
+    "wiki_cats": [
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "biotonic",
+    "name": "Biotonico",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Biotonic",
+    "wiki_title": "Biotonic",
+    "wiki_cats": [
+      "Consumables",
+      "Event items",
+      "Items",
+      "Medicine",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "detoxifying_potion",
+    "name": "Pocao Desintoxicante",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Detoxifying_Potion",
+    "wiki_title": "Detoxifying Potion",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "energizing_potion",
+    "name": "Pocao Energizante",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Energizing_Potion",
+    "wiki_title": "Energizing Potion",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "eurekognasol_stimulant",
+    "name": "Estimulante Eurekognasol",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Eurekognasol_Stimulant",
+    "wiki_title": "Eurekognasol Stimulant",
+    "wiki_cats": [
+      "Event Items",
+      "Items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "injector",
+    "name": "Injector",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Injector",
+    "wiki_title": "Injector",
+    "wiki_cats": [
+      "Event items",
+      "Material",
+      "Medicine",
+      "Pages using Tabber parser tag",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "lidiacide_34",
+    "name": "Lidiacide-34",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Lidiacide-34",
+    "wiki_title": "Lidiacide-34",
+    "wiki_cats": [
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "metocaine",
+    "name": "Metocaina",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Metocaine",
+    "wiki_title": "Metocaine",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "painkiller",
+    "name": "Analgésico",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Painkiller",
+    "wiki_title": "Painkiller",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "poisoned_flask",
+    "name": "Frasco Envenenado",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Poisoned_Flask",
+    "wiki_title": "Poisoned Flask",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "protection_potion",
+    "name": "Pocao de Protecao",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Protection_Potion",
+    "wiki_title": "Protection Potion",
+    "wiki_cats": [
+      "Event items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "sterile_bandage",
+    "name": "Bandagem Esteril",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sterile_Bandage",
+    "wiki_title": "Sterile Bandage",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "stimulant",
+    "name": "Estimulante",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stimulant",
+    "wiki_title": "Stimulant",
+    "wiki_cats": [
+      "Event items",
+      "Material",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "sulfuric_acid",
+    "name": "Acido Sulfurico",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sulfuric_Acid",
+    "wiki_title": "Sulfuric Acid",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "poison",
+    "name": "Veneno",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Poison",
+    "wiki_title": "Poison",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bioblocade_inhaler",
+    "name": "Inalador Bioblocade",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bioblocade_Inhaler",
+    "wiki_title": "Bioblocade Inhaler",
+    "wiki_cats": [
+      "Event items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bye_bye_rad",
+    "name": "Bye-Bye Rad",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bye-Bye_Rad",
+    "wiki_title": "Bye-Bye Rad",
+    "wiki_cats": [
+      "Event items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "healing_salve",
+    "name": "Balsamo Curativo",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Healing_Salve",
+    "wiki_title": "Healing Salve",
+    "wiki_cats": [
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "comcon_3_paste",
+    "name": "Pasta ComCon-3",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/ComCon-3_Paste",
+    "wiki_title": "ComCon-3 Paste",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Food",
+      "Items",
+      "Pages with broken file links",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pill_of_immortality",
+    "name": "Pilula da Imortalidade",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pill_of_Immortality",
+    "wiki_title": "Pill of Immortality",
+    "wiki_cats": [
+      "Event items",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "caustic_distillate",
+    "name": "Destilado Caustico",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Caustic_Distillate",
+    "wiki_title": "Caustic Distillate",
+    "wiki_cats": [
+      "Alcohol",
+      "Consumables",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chlorcystamine",
+    "name": "Clorcistamina",
+    "our_cat": "medicine",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chlorcystamine",
+    "wiki_title": "Chlorcystamine",
+    "wiki_cats": [
+      "All Items",
+      "Inventory health",
+      "Inventory survival",
+      "Items",
+      "Medicine"
+    ],
+    "found": true
+  },
+  {
+    "id": "7_62x25mm_tt_shell",
+    "name": "Cartucho 7.62x25mm TT",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/7.62x25mm_TT_Shell",
+    "wiki_title": "7.62x25mm TT Shell",
+    "wiki_cats": [
+      "Ammunition",
+      "Archives",
+      "Material",
+      "Shells"
+    ],
+    "found": true
+  },
+  {
+    "id": "assault_rifle_ammo",
+    "name": "Munição de Fuzil de Assalto",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Assault_Rifle_Ammo",
+    "wiki_title": "Assault Rifle Ammo",
+    "wiki_cats": [
+      "Ammunition"
+    ],
+    "found": true
+  },
+  {
+    "id": "assault_rifle_shell",
+    "name": "Cartucho de Fuzil de Assalto",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Assault_rifle_shell",
+    "wiki_title": "Assault rifle shell",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "handmade_cartridge",
+    "name": "Cartucho Artesanal",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Handmade_cartridge",
+    "wiki_title": "Handmade cartridge",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "blank_cartridge",
+    "name": "Cartucho em Branco",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blank_Cartridge",
+    "wiki_title": "Blank Cartridge",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "crossbow_bolt_poison",
+    "name": "Virote de Besta (Venenoso)",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Crossbow_bolt",
+    "wiki_title": "Crossbow bolt",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "primer",
+    "name": "Espoleta",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Primer",
+    "wiki_title": "Primer",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "grenade_launcher_round",
+    "name": "Granada de Lançador",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Grenade_Launcher_Round",
+    "wiki_title": "Grenade Launcher Round",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "handmade_rocket",
+    "name": "Foguete Artesanal",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Handmade_rocket",
+    "wiki_title": "Handmade rocket",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "lead_bullet",
+    "name": "Bala de Chumbo",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Lead_bullet",
+    "wiki_title": "Lead bullet",
+    "wiki_cats": [
+      "Ammunition",
+      "Archives",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pistol_ammo",
+    "name": "Municao de Pistola",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pistol_Ammo",
+    "wiki_title": "Pistol Ammo",
+    "wiki_cats": [
+      "Ammunition"
+    ],
+    "found": true
+  },
+  {
+    "id": "pistol_shell",
+    "name": "Cartucho de Pistola",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pistol_shell",
+    "wiki_title": "Pistol shell",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "plastic_explosives",
+    "name": "Explosivos Plasticos",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Plastic_explosives",
+    "wiki_title": "Plastic explosives",
+    "wiki_cats": [
+      "Explosive",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "gunpowder",
+    "name": "Polvora",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gunpowder",
+    "wiki_title": "Gunpowder",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pyrolytic_grenade",
+    "name": "Granada Pirolitica",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pyrolytic_Grenade",
+    "wiki_title": "Pyrolytic Grenade",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "revolver_ammo",
+    "name": "Municao de Revolver",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Revolver_Ammo",
+    "wiki_title": "Revolver Ammo",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "revolver_shell",
+    "name": "Cartucho de Revolver",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Revolver_shell",
+    "wiki_title": "Revolver shell",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rifle_ammo",
+    "name": "Municao de Rifle",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rifle_Ammo",
+    "wiki_title": "Rifle Ammo",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "rifle_shell",
+    "name": "Cartucho de Rifle",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rifle_shell",
+    "wiki_title": "Rifle shell",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "training_ammo",
+    "name": "Municao de Treinamento",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Training_Ammo",
+    "wiki_title": "Training Ammo",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "crossbow_bolt",
+    "name": "Virote de Besta",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Crossbow_bolt",
+    "wiki_title": "Crossbow bolt",
+    "wiki_cats": [
+      "Ammunition",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pineapple",
+    "name": "Granada F-1 (Abacaxi)",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pineapple",
+    "wiki_title": "Pineapple",
+    "wiki_cats": [
+      "Explosive",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "shotgun_round",
+    "name": "Cartucho de Escopeta",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shotgun_Round",
+    "wiki_title": "Shotgun Round",
+    "wiki_cats": [
+      "Ammunition"
+    ],
+    "found": true
+  },
+  {
+    "id": "chinese_fireworks",
+    "name": "Fogos de Artificio Chineses",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chinese_fireworks",
+    "wiki_title": "Chinese fireworks",
+    "wiki_cats": [
+      "Event weapons",
+      "Explosive",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "termite",
+    "name": "Termite",
+    "our_cat": "ammo",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Termite",
+    "wiki_title": "Termite",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "alien_blaster",
+    "name": "Blaster Alienigena",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Alien_Blaster",
+    "wiki_title": "Alien Blaster",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "berdan_rifle",
+    "name": "Rifle Berdan",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Berdan_Rifle",
+    "wiki_title": "Berdan Rifle",
+    "wiki_cats": [
+      "Rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "borschevik_flamethrower",
+    "name": "Lancachamas Borschevik",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Borschevik_Flamethrower",
+    "wiki_title": "Borschevik Flamethrower",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Event weapons",
+      "Items",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "butterfly_knife",
+    "name": "Faca Borboleta",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Butterfly_Knife",
+    "wiki_title": "Butterfly Knife",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Melee weapons",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "chemist_crossbow",
+    "name": "Besta do Quimico",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chemist_Crossbow",
+    "wiki_title": "Chemist Crossbow",
+    "wiki_cats": [
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "chitin_spear",
+    "name": "Lanca de Quitina",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chitin_spear",
+    "wiki_title": "Chitin spear",
+    "wiki_cats": [
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "cypress_smg",
+    "name": "SMG Cypress",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cypress_SMG",
+    "wiki_title": "Cypress SMG",
+    "wiki_cats": [
+      "Assault rifle",
+      "See also template",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "flamethrower",
+    "name": "Lancachamas",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flamethrower",
+    "wiki_title": "Flamethrower",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "flint_knife",
+    "name": "Faca de Pedra",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flint_knife",
+    "wiki_title": "Flint knife",
+    "wiki_cats": [
+      "Inventory survival",
+      "Melee weapons",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "forged_knife",
+    "name": "Faca Forjada",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Forged_knife",
+    "wiki_title": "Forged knife",
+    "wiki_cats": [
+      "Melee weapons",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "formalin_gas_pistol",
+    "name": "Pistola de Gás Formalina",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Formalin_Gas_Pistol",
+    "wiki_title": "Formalin Gas Pistol",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "heavy_machine_gun",
+    "name": "Metralhadora Pesada",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Heavy_Machine_Gun",
+    "wiki_title": "Heavy Machine Gun",
+    "wiki_cats": [
+      "Items",
+      "Machine gun",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_pistol",
+    "name": "Pistola Artesanal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_Pistol",
+    "wiki_title": "Homemade Pistol",
+    "wiki_cats": [
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_revolver",
+    "name": "Revolver Artesanal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_Revolver",
+    "wiki_title": "Homemade Revolver",
+    "wiki_cats": [
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_smg",
+    "name": "SMG Artesanal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_SMG",
+    "wiki_title": "Homemade SMG",
+    "wiki_cats": [
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "hunter_s_rifle",
+    "name": "Rifle do Cacador",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hunter%27s_Rifle",
+    "wiki_title": "Hunter's Rifle",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "hunting_bow",
+    "name": "Arco de Caca",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hunting_Bow",
+    "wiki_title": "Hunting Bow",
+    "wiki_cats": [
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "jack_o_launcher",
+    "name": "Lancador Jack O'",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Jack_O%27_Launcher",
+    "wiki_title": "Jack O' Launcher",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "kitchen_knife",
+    "name": "Faca de Cozinha",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kitchen_Knife",
+    "wiki_title": "Kitchen Knife",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "light_machine_gun",
+    "name": "Metralhadora Leve",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Light_Machine_Gun",
+    "wiki_title": "Light Machine Gun",
+    "wiki_cats": [
+      "Machine gun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "makarov_handgun_broken",
+    "name": "Pistola Makarov (Quebrada)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Makarov_handgun_(broken)",
+    "wiki_title": "Makarov handgun (broken)",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "mosin_nagant_rifle_broken",
+    "name": "Rifle Mosin-Nagant (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mosin-Nagant_rifle_(broken)",
+    "wiki_title": "Mosin-Nagant rifle (broken)",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "multi_shot_rifle",
+    "name": "Rifle Multi-Tiro",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Multi-Shot_Rifle",
+    "wiki_title": "Multi-Shot Rifle",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "nagant_revolver_broken",
+    "name": "Revolver Nagant (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nagant_Revolver_(Broken)",
+    "wiki_title": "Nagant Revolver (Broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "physicist_crossbow",
+    "name": "Besta do Fisico",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Physicist_Crossbow",
+    "wiki_title": "Physicist Crossbow",
+    "wiki_cats": [
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "pistol_silent",
+    "name": "Pistola Silenciosa",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pistol_Silent",
+    "wiki_title": "Pistol Silent",
+    "wiki_cats": [
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "popgun",
+    "name": "Arma de Brinquedo",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Popgun",
+    "wiki_title": "Popgun",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "revolving_gun",
+    "name": "Arma Rotativa",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Revolving_Gun",
+    "wiki_title": "Revolving Gun",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusted_axe",
+    "name": "Machado Enferrujado",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_axe",
+    "wiki_title": "Rusted axe",
+    "wiki_cats": [
+      "Axes",
+      "Equipment",
+      "Melee weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "single_shot_rifle",
+    "name": "Rifle de Tiro Unico",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Single-Shot_Rifle",
+    "wiki_title": "Single-Shot Rifle",
+    "wiki_cats": [
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "standard_crossbow",
+    "name": "Besta Padrao",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Standard_Crossbow",
+    "wiki_title": "Standard Crossbow",
+    "wiki_cats": [
+      "Crossbows",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_axe",
+    "name": "Machado de Aco",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_axe",
+    "wiki_title": "Steel axe",
+    "wiki_cats": [
+      "Equipment",
+      "Melee weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_knife",
+    "name": "Faca de Aco",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_Knife",
+    "wiki_title": "Steel Knife",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "storm_snowball_launcher",
+    "name": "Lancador de Bolas de Neve Tempestade",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Storm_Snowball_Launcher",
+    "wiki_title": "Storm Snowball Launcher",
+    "wiki_cats": [
+      "All Items",
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "strong_bat",
+    "name": "Taco Forte",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strong_bat",
+    "wiki_title": "Strong bat",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "strychnine_gas_revolver",
+    "name": "Revolver de Gas Estricnina",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Strychnine_Gas_Revolver",
+    "wiki_title": "Strychnine Gas Revolver",
+    "wiki_cats": [
+      "All Items",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_axe",
+    "name": "Machado de Titanio",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_Axe",
+    "wiki_title": "Titanium Axe",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Melee weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_knife",
+    "name": "Faca de Titanio",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_Knife",
+    "wiki_title": "Titanium Knife",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Melee weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "tube_rifle",
+    "name": "Rifle de Tubo",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tube_Rifle",
+    "wiki_title": "Tube Rifle",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "akm_c",
+    "name": "AKM-C",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/AKM-C",
+    "wiki_title": "AKM-C",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "abakan",
+    "name": "Abakan",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Abakan",
+    "wiki_title": "Abakan",
+    "wiki_cats": [
+      "Assault rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "all_in",
+    "name": "All-In",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/All-In",
+    "wiki_title": "All-In",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "alphacelone",
+    "name": "Alphacelone",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Alphacelone",
+    "wiki_title": "Alphacelone",
+    "wiki_cats": [
+      "All Items",
+      "Inventory health",
+      "Items",
+      "Medicine",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "biathlon_84",
+    "name": "Biathlon-84",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Biathlon-84",
+    "wiki_title": "Biathlon-84",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "bingo",
+    "name": "Bingo",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bingo",
+    "wiki_title": "Bingo",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "blackjack",
+    "name": "Blackjack",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blackjack",
+    "wiki_title": "Blackjack",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "cho_ko_nu",
+    "name": "Cho-ko-nu",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cho-ko-nu",
+    "wiki_title": "Cho-ko-nu",
+    "wiki_cats": [
+      "Crossbows",
+      "Event weapons",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "crouching_tiger",
+    "name": "Tigre Agachado",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Crouching_Tiger",
+    "wiki_title": "Crouching Tiger",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "cybermitten",
+    "name": "Cybermitten",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Cybermitten",
+    "wiki_title": "Cybermitten",
+    "wiki_cats": [
+      "All Items",
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "d_eagle",
+    "name": "Desert Eagle",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/D-Eagle",
+    "wiki_title": "D-Eagle",
+    "wiki_cats": [
+      "Equipment",
+      "Pages using Tabber parser tag",
+      "Pistol",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "degtyar",
+    "name": "Degtyar",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Degtyar",
+    "wiki_title": "Degtyar",
+    "wiki_cats": [
+      "Machine gun",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "double_barrel",
+    "name": "Escopeta de Cano Duplo",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Double-Barrel",
+    "wiki_title": "Double-Barrel",
+    "wiki_cats": [
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "dragon_s_roar",
+    "name": "Rugido do Dragao",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dragon%27s_Roar",
+    "wiki_title": "Dragon's Roar",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "ea_spectrum",
+    "name": "EA Spectrum",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/EA_Spectrum",
+    "wiki_title": "EA Spectrum",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "erebus_273",
+    "name": "Erebus-273",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Erebus-273",
+    "wiki_title": "Erebus-273",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "fatum_e_93",
+    "name": "FATUM E-93",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/FATUM_E-93",
+    "wiki_title": "FATUM E-93",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fear",
+    "name": "Fear",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fear",
+    "wiki_title": "Fear",
+    "wiki_cats": [
+      "Ammunition",
+      "Event Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "fist_of_the_sky",
+    "name": "Punho do Ceo",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Fist_of_the_Sky",
+    "wiki_title": "Fist of the Sky",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "flying_spaghetti_monster",
+    "name": "Monstro Espaguete Voador",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flying_spaghetti_monster",
+    "wiki_title": "Flying spaghetti monster",
+    "wiki_cats": [
+      "Food",
+      "Recipes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gangster",
+    "name": "Gangster",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gangster",
+    "wiki_title": "Gangster",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "gehenna",
+    "name": "Gehenna",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gehenna",
+    "wiki_title": "Gehenna",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "gigawattor",
+    "name": "Gigawattor",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gigawattor",
+    "wiki_title": "Gigawattor",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "guandao",
+    "name": "Guandao",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Guandao",
+    "wiki_title": "Guandao",
+    "wiki_cats": [
+      "All Items",
+      "Event weapons",
+      "Items",
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "hidden_dragon",
+    "name": "Dragao Oculto",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hidden_Dragon",
+    "wiki_title": "Hidden Dragon",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Pages with image sizes containing extra px",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "iceberg",
+    "name": "Iceberg",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iceberg",
+    "wiki_title": "Iceberg",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "icicle_thrower",
+    "name": "Lancador de Estalactites",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Icicle_Thrower",
+    "wiki_title": "Icicle Thrower",
+    "wiki_cats": [
+      "All Items",
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "infernal_coal",
+    "name": "Infernal Coal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Infernal_Coal",
+    "wiki_title": "Infernal Coal",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "infernal_prophet",
+    "name": "Profeta Infernal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Infernal_Prophet",
+    "wiki_title": "Infernal Prophet",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Pages with broken file links",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "joker",
+    "name": "Coringa",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Joker",
+    "wiki_title": "Joker",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "joy",
+    "name": "Joy",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Joy",
+    "wiki_title": "Joy",
+    "wiki_cats": [
+      "All Items",
+      "Ammunition",
+      "Event Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "kalash_m",
+    "name": "Kalash-M",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kalash-M",
+    "wiki_title": "Kalash-M",
+    "wiki_cats": [
+      "Assault rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "kalash_s",
+    "name": "Kalash-S",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kalash-S",
+    "wiki_title": "Kalash-S",
+    "wiki_cats": [
+      "Assault rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "law_guardian",
+    "name": "Guardiao da Lei",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Law_Guardian",
+    "wiki_title": "Law Guardian",
+    "wiki_cats": [
+      "Pistol",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "lmg_qilin",
+    "name": "LMG \"Qilin\"",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Year_of_the_Dragon",
+    "wiki_title": "Year of the Dragon",
+    "wiki_cats": [
+      "Events",
+      "Pages with broken file links",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "lotus_of_death",
+    "name": "Lotus da Morte",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Lotus_of_Death",
+    "wiki_title": "Lotus of Death",
+    "wiki_cats": [
+      "All Items",
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "Items",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "makar",
+    "name": "Makar",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Makar",
+    "wiki_title": "Makar",
+    "wiki_cats": [
+      "Guns",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "mauser",
+    "name": "Mauser",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mauser",
+    "wiki_title": "Mauser",
+    "wiki_cats": [
+      "Guns",
+      "Pistol",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "mayhem",
+    "name": "Mayhem",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mayhem",
+    "wiki_title": "Mayhem",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Machine gun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "midas",
+    "name": "Midas",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Midas",
+    "wiki_title": "Midas",
+    "wiki_cats": [
+      "Assault rifle",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "mosinka",
+    "name": "Mosinka",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mosinka",
+    "wiki_title": "Mosinka",
+    "wiki_cats": [
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "murmur",
+    "name": "Murmurio",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Murmur",
+    "wiki_title": "Murmur",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Pages with image sizes containing extra px",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "nagant",
+    "name": "Nagant",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Nagant",
+    "wiki_title": "Nagant",
+    "wiki_cats": [
+      "Guns",
+      "Pistol",
+      "See also template",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "pas_weaver",
+    "name": "PAS Weaver",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/PAS_Weaver",
+    "wiki_title": "PAS Weaver",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "pepperbox",
+    "name": "Pepperbox",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Pepperbox",
+    "wiki_title": "Pepperbox",
+    "wiki_cats": [
+      "See also template",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "pk_7_62_kraken",
+    "name": "PK 7.62 Kraken",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/PK_7.62_Kraken",
+    "wiki_title": "PK 7.62 Kraken",
+    "wiki_cats": [
+      "All Items",
+      "Event Items",
+      "Event weapons",
+      "Items",
+      "Machine gun",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "posh",
+    "name": "Posh",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Posh",
+    "wiki_title": "Posh",
+    "wiki_cats": [
+      "Assault rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "revenge",
+    "name": "Vinganca",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Revenge",
+    "wiki_title": "Revenge",
+    "wiki_cats": [
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "rpg_vesuvius",
+    "name": "Lancador RPG Vesuvio",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/RPG_Vesuvius",
+    "wiki_title": "RPG Vesuvius",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "rpo_m_eye_of_the_storm",
+    "name": "RPO-M Olho da Tempestade",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/RPO-M_Eye_of_the_Storm",
+    "wiki_title": "RPO-M Eye of the Storm",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "Grenade Launcher",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "sabre",
+    "name": "Sabre",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sabre",
+    "wiki_title": "Sabre",
+    "wiki_cats": [
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "sanguinary_masha",
+    "name": "Masha Sanguinaria",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sanguinary_Masha",
+    "wiki_title": "Sanguinary Masha",
+    "wiki_cats": [
+      "Alcohol",
+      "Event items",
+      "Food",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "schmeisser",
+    "name": "Schmeisser",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Schmeisser",
+    "wiki_title": "Schmeisser",
+    "wiki_cats": [
+      "Assault rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "shmel",
+    "name": "Shmel",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shmel",
+    "wiki_title": "Shmel",
+    "wiki_cats": [
+      "Explosive",
+      "Grenade Launcher",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "shock_bludgeon",
+    "name": "Tacapao de Choque",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Shock_bludgeon",
+    "wiki_title": "Shock bludgeon",
+    "wiki_cats": [
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "sipuha",
+    "name": "Sipuha",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sipuha",
+    "wiki_title": "Sipuha",
+    "wiki_cats": [
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "skorpion",
+    "name": "Skorpion",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Skorpion",
+    "wiki_title": "Skorpion",
+    "wiki_cats": [
+      "Pistol",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "sniper_s_mosin",
+    "name": "Mosin do Sniper",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sniper%27s_Mosin",
+    "wiki_title": "Sniper's Mosin",
+    "wiki_cats": [
+      "Rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "stake_thrower",
+    "name": "Lancador de Estacas",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stake_Thrower",
+    "wiki_title": "Stake Thrower",
+    "wiki_cats": [
+      "Crossbows",
+      "Event items",
+      "Event weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "stecha",
+    "name": "Stecha",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Stecha",
+    "wiki_title": "Stecha",
+    "wiki_cats": [
+      "Guns",
+      "Pistol",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "sudayev",
+    "name": "Sudayev",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sudayev",
+    "wiki_title": "Sudayev",
+    "wiki_cats": [
+      "Assault rifle",
+      "Guns",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "svetka",
+    "name": "Svetka",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Svetka",
+    "wiki_title": "Svetka",
+    "wiki_cats": [
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "svyokr",
+    "name": "Svyokr",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Svyokr",
+    "wiki_title": "Svyokr",
+    "wiki_cats": [
+      "Rifle",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "ulcer_amr",
+    "name": "Ulcer AMR",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ulcer_AMR",
+    "wiki_title": "Ulcer AMR",
+    "wiki_cats": [
+      "All Items",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "vector_a",
+    "name": "Vector-A",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vector-A",
+    "wiki_title": "Vector-A",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "vintorez",
+    "name": "Vintorez",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vintorez",
+    "wiki_title": "Vintorez",
+    "wiki_cats": [
+      "Rifle",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "witch_s_punch",
+    "name": "Soco da Bruxa",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Witch%27s_punch",
+    "wiki_title": "Witch's punch",
+    "wiki_cats": [
+      "Alcohol",
+      "Event Items",
+      "Food",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "wolfsbane_1",
+    "name": "Wolfsbane-1",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Wolfsbane-1",
+    "wiki_title": "Wolfsbane-1",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Explosive",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "pkm_broken",
+    "name": "PKM (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/PKM_(broken)",
+    "wiki_title": "PKM (broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pps_43_broken",
+    "name": "PPS-43 (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/PPS-43_(broken)",
+    "wiki_title": "PPS-43 (broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ppsh_41_broken",
+    "name": "PPSh-41 (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/PPSh-41_(broken)",
+    "wiki_title": "PPSh-41 (broken)",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "rpk_74_broken",
+    "name": "RPK-74 (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/RPK-74_(broken)",
+    "wiki_title": "RPK-74 (broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "svd_broken",
+    "name": "SVD (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/SVD_(broken)",
+    "wiki_title": "SVD (broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "svt_40_broken",
+    "name": "SVT-40 (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/SVT-40_(broken)",
+    "wiki_title": "SVT-40 (broken)",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "tt_33_broken",
+    "name": "TT-33 (Quebrado)",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/TT-33_(Broken)",
+    "wiki_title": "TT-33 (Broken)",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_rocket_launcher",
+    "name": "Lancador de Foguetes Artesanal",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_rocket_launcher",
+    "wiki_title": "Homemade rocket launcher",
+    "wiki_cats": [
+      "Explosive",
+      "Grenade Launcher",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "collector",
+    "name": "Colecionador",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Collector",
+    "wiki_title": "Collector",
+    "wiki_cats": [
+      "Assault rifle",
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "ksyukha",
+    "name": "Ksyukha",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ksyukha",
+    "wiki_title": "Ksyukha",
+    "wiki_cats": [
+      "Assault rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "mukha",
+    "name": "Mukha",
+    "our_cat": "weapons",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Mukha",
+    "wiki_title": "Mukha",
+    "wiki_cats": [
+      "Explosive",
+      "Grenade Launcher",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "arctic_armor",
+    "name": "Armadura Artica",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Arctic_Armor",
+    "wiki_title": "Arctic Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "combined_armor",
+    "name": "Armadura Combinada",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Combined_Armor",
+    "wiki_title": "Combined Armor",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "tactical_armor",
+    "name": "Armadura Tatica",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tactical_Armor",
+    "wiki_title": "Tactical Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_armor",
+    "name": "Armadura de Aco",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_Armor",
+    "wiki_title": "Steel Armor",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "leather_armor",
+    "name": "Armadura de Couro",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Leather_Armor",
+    "wiki_title": "Leather Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "highway_armor",
+    "name": "Armadura de Estrada",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Highway_Armor",
+    "wiki_title": "Highway Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "iron_armor",
+    "name": "Armadura de Ferro",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iron_Armor",
+    "wiki_title": "Iron Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "smuggler_s_armor",
+    "name": "Armadura do Contrabandista",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Smuggler%27s_Armor",
+    "wiki_title": "Smuggler's Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "prospector_s_armor",
+    "name": "Armadura do Prospetor",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sverdlovsk_Survivor_Camp",
+    "wiki_title": "Sverdlovsk Survivor Camp",
+    "wiki_cats": [
+      "Stub article",
+      "Survivor Camps"
+    ],
+    "found": true
+  },
+  {
+    "id": "armored_uniform",
+    "name": "Uniforme Blindado",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Armored_Uniform",
+    "wiki_title": "Armored Uniform",
+    "wiki_cats": [
+      "All Items",
+      "Armor",
+      "Equipment",
+      "Items",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "armorpiercer",
+    "name": "Perfurador de Blindagem",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Armorpiercer",
+    "wiki_title": "Armorpiercer",
+    "wiki_cats": [
+      "Guns",
+      "Pistol",
+      "See also template",
+      "Stub article",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "bs_4_power_armor",
+    "name": "Armadura Energetica BS-4",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/BS-4_Power_Armor",
+    "wiki_title": "BS-4 Power Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chitin_armor",
+    "name": "Armadura de Quitina",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chitin_Armor",
+    "wiki_title": "Chitin Armor",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "kevlar_vest",
+    "name": "Colete Kevlar",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kevlar_Vest",
+    "wiki_title": "Kevlar Vest",
+    "wiki_cats": [
+      "Body Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "bone_vest",
+    "name": "Colete de Osso",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bone_Vest",
+    "wiki_title": "Bone Vest",
+    "wiki_cats": [
+      "Body Armor",
+      "Equipment",
+      "Event Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ghost_suit",
+    "name": "Traje Fantasma",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ghost_suit",
+    "wiki_title": "Ghost suit",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "armor_plate",
+    "name": "Placa de Blindagem",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Armor_Plate",
+    "wiki_title": "Armor Plate",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "polar_armor",
+    "name": "Armadura Polar",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Polar_Armor",
+    "wiki_title": "Polar Armor",
+    "wiki_cats": [
+      "Armor",
+      "Event items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tank_armor",
+    "name": "Armadura de Tanque",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tank_armor",
+    "wiki_title": "Tank armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tester_armor",
+    "name": "Armadura de Teste",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tester_Armor",
+    "wiki_title": "Tester Armor",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chemical_suit",
+    "name": "Traje Quimico",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chemical_suit",
+    "wiki_title": "Chemical suit",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "ghillie_suit",
+    "name": "Traje de Camuflagem",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ghillie_Suit",
+    "wiki_title": "Ghillie Suit",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "bulletproof_vest",
+    "name": "Colete Balistico",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bulletproof_vest",
+    "wiki_title": "Bulletproof vest",
+    "wiki_cats": [
+      "All Items",
+      "Backpack",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_bulletproof_vest",
+    "name": "Colete Balistico Artesanal",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_Bulletproof_Vest",
+    "wiki_title": "Homemade Bulletproof Vest",
+    "wiki_cats": [
+      "All Items",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ceramic_bulletproof_vest",
+    "name": "Colete Balistico Ceramico",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ceramic_bulletproof_vest",
+    "wiki_title": "Ceramic bulletproof vest",
+    "wiki_cats": [
+      "All Items",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chinese_bulletproof_vest",
+    "name": "Colete Balistico Chines",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chinese_bulletproof_vest",
+    "wiki_title": "Chinese bulletproof vest",
+    "wiki_cats": [
+      "Body Armor",
+      "Equipment",
+      "Event items"
+    ],
+    "found": true
+  },
+  {
+    "id": "army_bulletproof_vest",
+    "name": "Colete Balistico Militar",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Army_Bulletproof_Vest",
+    "wiki_title": "Army Bulletproof Vest",
+    "wiki_cats": [
+      "All Items",
+      "Backpack",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "modern_bulletproof_vest",
+    "name": "Colete Balistico Moderno",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Modern_bulletproof_vest",
+    "wiki_title": "Modern bulletproof vest",
+    "wiki_cats": [
+      "All Items",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "primitive_bulletproof_vest",
+    "name": "Colete Balistico Primitivo",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Primitive_Bulletproof_Vest",
+    "wiki_title": "Primitive Bulletproof Vest",
+    "wiki_cats": [
+      "All Items",
+      "Backpack",
+      "Body Armor",
+      "Equipment",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "progress_bulletproof_vest",
+    "name": "Colete Balistico Progresso",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Progress_Bulletproof_Vest",
+    "wiki_title": "Progress Bulletproof Vest",
+    "wiki_cats": [
+      "Body Armor",
+      "Equipment",
+      "Event items"
+    ],
+    "found": true
+  },
+  {
+    "id": "t_800_bulletproof_vest",
+    "name": "Colete Balistico T-800",
+    "our_cat": "armor",
+    "wiki_url": "https://dayr.wiki.gg/wiki/T-800_Bulletproof_Vest",
+    "wiki_title": "T-800 Bulletproof Vest",
+    "wiki_cats": [
+      "Body Armor",
+      "Equipment",
+      "Event items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "flashlight_10",
+    "name": "Lanterna (10%)",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flashlight_(10%25)",
+    "wiki_title": "Flashlight (10%)",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Light sources",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "flashlight_20",
+    "name": "Lanterna (20%)",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flashlight_(20%25)",
+    "wiki_title": "Flashlight (20%)",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Light sources",
+      "See also template",
+      "Stub article"
+    ],
+    "found": true
+  },
+  {
+    "id": "flashlight_30",
+    "name": "Lanterna (30%)",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Flashlight_(30%25)",
+    "wiki_title": "Flashlight (30%)",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Light sources",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "glutton_s_bag",
+    "name": "Bolsa do Gula",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Glutton%27s_Bag",
+    "wiki_title": "Glutton's Bag",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "Event Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "lighter",
+    "name": "Isqueiro",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Lighter",
+    "wiki_title": "Lighter",
+    "wiki_cats": [
+      "Material",
+      "See also template",
+      "Source of fire"
+    ],
+    "found": true
+  },
+  {
+    "id": "invisibility_cloak",
+    "name": "Manta de Invisibilidade",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Invisibility_Cloak",
+    "wiki_title": "Invisibility Cloak",
+    "wiki_cats": [
+      "All Items",
+      "Backpack",
+      "Equipment",
+      "Event items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ermak_backpack",
+    "name": "Mochila Ermak",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ermak_backpack",
+    "wiki_title": "Ermak backpack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "refrigerator_backpack",
+    "name": "Mochila Geladeira",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Refrigerator_Backpack",
+    "wiki_title": "Refrigerator Backpack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "rucksack",
+    "name": "Mochila Grande",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rucksack",
+    "wiki_title": "Rucksack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "medical_backpack",
+    "name": "Mochila Medica",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Medical_Backpack",
+    "wiki_title": "Medical Backpack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "Event items"
+    ],
+    "found": true
+  },
+  {
+    "id": "tourist_backpack",
+    "name": "Mochila de Turista",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tourist_backpack",
+    "wiki_title": "Tourist backpack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "butcher_s_backpack",
+    "name": "Mochila do Acougueiro",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Butcher%27s_Backpack",
+    "wiki_title": "Butcher's Backpack",
+    "wiki_cats": [
+      "Backpack",
+      "Equipment",
+      "Event items",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "handmade_clothes",
+    "name": "Roupa Artesanal",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Handmade_clothes",
+    "wiki_title": "Handmade clothes",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "tattered_clothes",
+    "name": "Roupa Esfarrapada",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tattered_clothes",
+    "wiki_title": "Tattered clothes",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "normal_clothes",
+    "name": "Roupa Normal",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Normal_Clothes",
+    "wiki_title": "Normal Clothes",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "hunter_s_garb",
+    "name": "Traje do Cacador",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Hunter%27s_Garb",
+    "wiki_title": "Hunter's Garb",
+    "wiki_cats": [
+      "All Items",
+      "Armor",
+      "Equipment",
+      "Event items",
+      "Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "master_s_garb",
+    "name": "Traje do Mestre",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Master%27s_Garb",
+    "wiki_title": "Master's Garb",
+    "wiki_cats": [
+      "Armor",
+      "Equipment",
+      "Event items"
+    ],
+    "found": true
+  },
+  {
+    "id": "military_uniform",
+    "name": "Uniforme Militar",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Military_uniform",
+    "wiki_title": "Military uniform",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "reinforced_uniform",
+    "name": "Uniforme Reforçado",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Reinforced_Uniform",
+    "wiki_title": "Reinforced Uniform",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "field_uniform",
+    "name": "Uniforme de Campanha",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Field_Uniform",
+    "wiki_title": "Field Uniform",
+    "wiki_cats": [
+      "Armor",
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "battery_flashlight",
+    "name": "Lanterna com Bateria",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Battery_Flashlight",
+    "wiki_title": "Battery Flashlight",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "kettlebell",
+    "name": "Peso Russo",
+    "our_cat": "equipment",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Kettlebell",
+    "wiki_title": "Kettlebell",
+    "wiki_cats": [
+      "Melee weapons",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "chimney",
+    "name": "Chamine",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chimney",
+    "wiki_title": "Chimney",
+    "wiki_cats": [
+      "Equipment",
+      "Event Items",
+      "Event weapons",
+      "Shotgun",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "electrodes",
+    "name": "Eletrodos",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Electrodes",
+    "wiki_title": "Electrodes",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "bellows",
+    "name": "Fole",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Bellows",
+    "wiki_title": "Bellows",
+    "wiki_cats": [
+      "Archives",
+      "Forging",
+      "Inventory survival",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "handmade_needle",
+    "name": "Agulha Artesanal",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Handmade_needle",
+    "wiki_title": "Handmade needle",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Sewing tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "rodkin",
+    "name": "Rodkin",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rodkin",
+    "wiki_title": "Rodkin",
+    "wiki_cats": [
+      "Archives",
+      "Characters",
+      "Material",
+      "NPC"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusted_crowbar",
+    "name": "Pe de Cabra Enferrujado",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_Crowbar",
+    "wiki_title": "Rusted Crowbar",
+    "wiki_cats": [
+      "Equipment",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusted_hacksaw",
+    "name": "Serra Enferrujada",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_hacksaw",
+    "wiki_title": "Rusted hacksaw",
+    "wiki_cats": [
+      "Inventory survival",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusted_needle",
+    "name": "Agulha Enferrujada",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_needle",
+    "wiki_title": "Rusted needle",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Sewing tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "rusted_shovel",
+    "name": "Pa Enferrujada",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Rusted_shovel",
+    "wiki_title": "Rusted shovel",
+    "wiki_cats": [
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "sewing_needle",
+    "name": "Agulha de Costura",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sewing_Needle",
+    "wiki_title": "Sewing Needle",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "steel_crowbar",
+    "name": "Pé de Cabra de Aço",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_crowbar",
+    "wiki_title": "Steel crowbar",
+    "wiki_cats": [
+      "Equipment",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_needle",
+    "name": "Agulha de Aco",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_needle",
+    "wiki_title": "Steel needle",
+    "wiki_cats": [
+      "Archives",
+      "Inventory survival",
+      "Material",
+      "Sewing tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "steel_shovel",
+    "name": "Pa de Aco",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Steel_shovel",
+    "wiki_title": "Steel shovel",
+    "wiki_cats": [
+      "Equipment"
+    ],
+    "found": true
+  },
+  {
+    "id": "sturdy_needle",
+    "name": "Agulha Resistente",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Sturdy_Needle",
+    "wiki_title": "Sturdy Needle",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "titanium_shovel",
+    "name": "Pa de Titanio",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_Shovel",
+    "wiki_title": "Titanium Shovel",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival"
+    ],
+    "found": true
+  },
+  {
+    "id": "titanium_crowbar",
+    "name": "Pe de Cabra de Titanio",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Titanium_crowbar",
+    "wiki_title": "Titanium crowbar",
+    "wiki_cats": [
+      "Equipment",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "tool_kit",
+    "name": "Kit de Ferramentas",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Tool_Kit",
+    "wiki_title": "Tool Kit",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "welder",
+    "name": "Soldador",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Welder",
+    "wiki_title": "Welder",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Stub article",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "chainsaw",
+    "name": "Motosserra",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chainsaw",
+    "wiki_title": "Chainsaw",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "chainsaw_motor",
+    "name": "Motor de Motosserra",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chainsaw_Motor",
+    "wiki_title": "Chainsaw Motor",
+    "wiki_cats": [],
+    "found": true
+  },
+  {
+    "id": "crane",
+    "name": "Guindaste",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Crane",
+    "wiki_title": "Crane",
+    "wiki_cats": [
+      "Event items",
+      "Event weapons",
+      "Items",
+      "Pages with DRUID infoboxes",
+      "Rifle",
+      "See also template",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "electric_motor",
+    "name": "Motor Elétrico",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Electric_Motor",
+    "wiki_title": "Electric Motor",
+    "wiki_cats": [
+      "Components",
+      "Material",
+      "Quest Items"
+    ],
+    "found": true
+  },
+  {
+    "id": "gasoline_engine",
+    "name": "Motor a Gasolina",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gasoline_Engine",
+    "wiki_title": "Gasoline Engine",
+    "wiki_cats": [
+      "Components",
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "transport_repair_kit",
+    "name": "Kit de Reparo de Transporte",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Transport_repair_kit",
+    "wiki_title": "Transport repair kit",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "vehicle_repair_kit",
+    "name": "Kit de Reparo de Veículo",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Vehicle_repair_kit",
+    "wiki_title": "Vehicle repair kit",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "weapon_repair_kit",
+    "name": "Kit de Reparo de Arma",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Weapon_repair_kit",
+    "wiki_title": "Weapon repair kit",
+    "wiki_cats": [
+      "Material",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "chemistry_set",
+    "name": "Kit de Quimica",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chemistry_set",
+    "wiki_title": "Chemistry set",
+    "wiki_cats": [
+      "Inventory survival",
+      "Material",
+      "See also template",
+      "Tools"
+    ],
+    "found": true
+  },
+  {
+    "id": "chitin_torch",
+    "name": "Tocha de Quitina",
+    "our_cat": "tools",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Chitin_torch",
+    "wiki_title": "Chitin torch",
+    "wiki_cats": [
+      "Equipment",
+      "Inventory survival",
+      "Light sources",
+      "Melee weapons",
+      "Tools",
+      "Weapons"
+    ],
+    "found": true
+  },
+  {
+    "id": "comfortable_gas_mask",
+    "name": "Mascara de Gas Confortavel",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Comfortable_Gas_Mask",
+    "wiki_title": "Comfortable Gas Mask",
+    "wiki_cats": [
+      "Equipment",
+      "Gas mask",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gas_mask_filter",
+    "name": "Filtro de Mascara de Gas",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Gas_Mask_Filter",
+    "wiki_title": "Gas Mask Filter",
+    "wiki_cats": [
+      "Material"
+    ],
+    "found": true
+  },
+  {
+    "id": "demon_mask",
+    "name": "Mascara de Demonio",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Demon_mask",
+    "wiki_title": "Demon mask",
+    "wiki_cats": [
+      "All Items",
+      "Equipment",
+      "Event items",
+      "Gas mask",
+      "Inventory survival",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "old_faithful_gas_mask",
+    "name": "Mascara de Gas Fiel Velha",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Old_Faithful_Gas_Mask",
+    "wiki_title": "Old Faithful Gas Mask",
+    "wiki_cats": [
+      "Equipment",
+      "Event items",
+      "Gas mask",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gp_2000_gas_mask",
+    "name": "Mascara de Gas GP-2000",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/GP-2000_Gas_Mask",
+    "wiki_title": "GP-2000 Gas Mask",
+    "wiki_cats": [
+      "All Items",
+      "Equipment",
+      "Gas mask",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gp_4_gas_mask",
+    "name": "Mascara de Gas GP-4",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blueprint",
+    "wiki_title": "Blueprint",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gp_5_gas_mask",
+    "name": "Mascara de Gas GP-5",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blueprint",
+    "wiki_title": "Blueprint",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "gp_7_gas_mask",
+    "name": "Mascara de Gas GP-7",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blueprint",
+    "wiki_title": "Blueprint",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "ionica_gas_mask",
+    "name": "Mascara de Gas Ionica",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Ionica_Gas_Mask",
+    "wiki_title": "Ionica Gas Mask",
+    "wiki_cats": [
+      "Equipment",
+      "Event items",
+      "Gas mask"
+    ],
+    "found": true
+  },
+  {
+    "id": "mm_1_gas_mask",
+    "name": "Mascara de Gas MM-1",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blueprint",
+    "wiki_title": "Blueprint",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "pmg_gas_mask",
+    "name": "Mascara de Gas PMG",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Blueprint",
+    "wiki_title": "Blueprint",
+    "wiki_cats": [
+      "All Items",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "iron_gas_mask",
+    "name": "Mascara de Gas de Ferro",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Iron_Gas_Mask",
+    "wiki_title": "Iron Gas Mask",
+    "wiki_cats": [
+      "All Items",
+      "Equipment",
+      "Gas mask",
+      "Inventory survival",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "dust_mask",
+    "name": "Mascara de Poeira",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Dust_mask",
+    "wiki_title": "Dust mask",
+    "wiki_cats": [
+      "Archives",
+      "Equipment",
+      "Gas mask"
+    ],
+    "found": true
+  },
+  {
+    "id": "plague_doctor_s_mask",
+    "name": "Mascara do Medico da Peste",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Plague_Doctor%27s_Mask",
+    "wiki_title": "Plague Doctor's Mask",
+    "wiki_cats": [
+      "All Items",
+      "Equipment",
+      "Event items",
+      "Gas mask",
+      "Inventory survival",
+      "Items",
+      "See also template"
+    ],
+    "found": true
+  },
+  {
+    "id": "respirator",
+    "name": "Respirador",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Respirator",
+    "wiki_title": "Respirator",
+    "wiki_cats": [
+      "Equipment",
+      "Gas mask"
+    ],
+    "found": true
+  },
+  {
+    "id": "homemade_respirator",
+    "name": "Respirador Artesanal",
+    "our_cat": "gas_masks",
+    "wiki_url": "https://dayr.wiki.gg/wiki/Homemade_respirator",
+    "wiki_title": "Homemade respirator",
+    "wiki_cats": [
+      "Equipment",
+      "Gas mask"
+    ],
+    "found": true
+  }
+]
