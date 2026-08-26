@@ -58,14 +58,22 @@ export default function DoadoresTab({ isAdmin }: DoadoresTabProps) {
   const moveDown = (i: number) => { if (i === orderedList.length - 1) return; const n = [...orderedList]; [n[i], n[i + 1]] = [n[i + 1], n[i]]; setOrderedList(n); };
 
   const saveOrder = async () => {
-    const updates: { id: string; ordem: number }[] = [];
-    for (const d of orderedList) {
-      const dds = doadores.filter((dd) => dd.nome.toLowerCase() === d.nome.toLowerCase());
-      dds.forEach((dd) => updates.push({ id: dd.id, ordem: orderedList.length - orderedList.indexOf(d) }));
+    try {
+      const updates: { id: string; ordem: number }[] = [];
+      // Usa o índice do loop diretamente em vez de indexOf (mais confiável)
+      for (let i = 0; i < orderedList.length; i++) {
+        const d = orderedList[i];
+        const dds = doadores.filter((dd) => dd.nome.toLowerCase() === d.nome.toLowerCase());
+        const ordem = orderedList.length - i; // 1o = maior ordem
+        dds.forEach((dd) => updates.push({ id: dd.id, ordem }));
+      }
+      if (updates.length === 0) { toast.error("Nenhum doador para reordenar."); return; }
+      await reorderDoadores(updates);
+      toast.success("Ordem atualizada!");
+      setIsReorderMode(false);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Erro ao salvar ordem.");
     }
-    await reorderDoadores(updates);
-    toast.success("Ordem atualizada!");
-    setIsReorderMode(false);
   };
 
   if (isLoading) return <div className="flex items-center justify-center h-64 text-muted-foreground">Carregando...</div>;

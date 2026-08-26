@@ -470,9 +470,9 @@ export async function POST(req: NextRequest) {
       case "reorderInvestidores": {
         const { updates } = data;
         if (!Array.isArray(updates)) return err("updates deve ser array");
-        for (const u of updates) {
-          await db.investidor.update({ where: { id: u.id }, data: { ordem: u.ordem } });
-        }
+        await Promise.all(updates.map((u: { id: string; ordem: number }) =>
+          db.investidor.update({ where: { id: u.id }, data: { ordem: u.ordem } })
+        ));
         return json({ success: true });
       }
       case "addTabelaTroca": {
@@ -563,9 +563,9 @@ export async function POST(req: NextRequest) {
       case "reorderDoadores": {
         const { updates } = data;
         if (!Array.isArray(updates)) return err("updates deve ser array");
-        for (const u of updates) {
-          await db.doador.update({ where: { id: u.id }, data: { ordem: u.ordem } });
-        }
+        await Promise.all(updates.map((u: { id: string; ordem: number }) =>
+          db.doador.update({ where: { id: u.id }, data: { ordem: u.ordem } })
+        ));
         return json({ success: true });
       }
       case "removeDoador": {
