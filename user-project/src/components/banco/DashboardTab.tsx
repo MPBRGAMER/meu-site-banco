@@ -78,7 +78,7 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
     return list;
   })();
 
-  function normalize(s: string) { return s.toLowerCase().replace(/[.‑‐‒–—―-/\[\](){}]/g, ""); }
+  function normalize(s: string) { return s.toLowerCase().replace(/[.‑‐‒–—―/\[\](){}\-]/g, ""); }
   const inventoryFiltered = Object.entries(inventory)
     .filter(([, qtd]) => qtd !== 0)
     .filter(([item]) => normalize(item).includes(normalize(inventorySearch)))
