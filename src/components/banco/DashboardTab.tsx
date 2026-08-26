@@ -78,9 +78,10 @@ export default function DashboardTab({ isAdmin = false }: DashboardTabProps) {
     return list;
   })();
 
+  function normalize(s: string) { return s.toLowerCase().replace(/[.‑‐‒–—―-/\[\](){}]/g, ""); }
   const inventoryFiltered = Object.entries(inventory)
     .filter(([, qtd]) => qtd !== 0)
-    .filter(([item]) => item.toLowerCase().includes(inventorySearch.toLowerCase()))
+    .filter(([item]) => normalize(item).includes(normalize(inventorySearch)))
     .sort(([a], [b]) => a.localeCompare(b));
 
   const caixaCompleto = [...caixa].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime());
