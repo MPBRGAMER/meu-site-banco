@@ -204,9 +204,10 @@ export function useBank() {
   const inventory = useMemo(() => {
     const inv: Record<string, number> = {};
     caixa.forEach((reg) => {
-      if (!inv[reg.item]) inv[reg.item] = 0;
-      if (reg.tipo === "entrada") inv[reg.item] += reg.quantidade;
-      else inv[reg.item] -= reg.quantidade;
+      const item = reg.item.trim();
+      if (!inv[item]) inv[item] = 0;
+      if (reg.tipo === "entrada") inv[item] += reg.quantidade;
+      else inv[item] -= reg.quantidade;
     });
     return inv;
   }, [caixa]);
