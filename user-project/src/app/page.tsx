@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle, Upload, UserCog, KeyRound, LogOut,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle, Upload, UserCog, KeyRound, LogOut, Archive,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -234,7 +234,30 @@ export default function HomePage() {
     finally { setloading(false); }
   };
   const handleBackupDB = () => downloadBackup("backupDB", "Backup do Banco", setIsDownloadingDB);
-  const handleBackupFull = () => downloadBackup("backupFull", "Backup Completo", setIsDownloadingFull);
+  const handleBackupFull = async () => {
+    const password = sessionStorage.getItem("adminPwd");
+    if (!password) { toast.error("Apenas Super Admin."); return; }
+    setIsDownloadingFull(true);
+    try {
+      const response = await fetch("/api/backup-full", {
+        method: "POST", headers: { "Content-Type": "application/json", "x-admin-password": password },
+      });
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({ error: "Erro desconhecido" }));
+        throw new Error(errData.error || "Não foi possível gerar o backup completo.");
+      }
+      const blob = await response.blob();
+      const disposition = response.headers.get("Content-Disposition") || "";
+      const filenameMatch = disposition.match(/filename=\"?([^\"]+)\"?/i);
+      const filename = filenameMatch?.[1] || `backup-site-completo-${new Date().toISOString().slice(0, 10)}.zip`;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url; link.download = filename;
+      document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+      toast.success("Backup completo baixado!");
+    } catch (error) { toast.error(error instanceof Error ? error.message : "Erro ao baixar backup completo."); }
+    finally { setIsDownloadingFull(false); }
+  };
 
   const handleResetDatabase = async () => {
     const password = sessionStorage.getItem("adminPwd");
@@ -355,8 +378,8 @@ export default function HomePage() {
                 </button>
                 <button onClick={handleBackupFull} disabled={isDownloadingFull}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/20 disabled:opacity-60"
-                  title="Backup completo do site (banco + chat + moderadores + config)">
-                  <Download className="w-3.5 h-3.5" /><span className="hidden sm:inline">{isDownloadingFull ? "Gerando..." : "Completo"}</span>
+                  title="Backup completo do site (código + banco + configs) - ZIP para outra hospedagem">
+                  <Archive className="w-3.5 h-3.5" /><span className="hidden sm:inline">{isDownloadingFull ? "Gerando..." : "Site"}</span>
                 </button>
                 <button onClick={() => fileInputRef.current?.click()} disabled={isRestoring}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all border bg-blue-500/10 text-blue-400 border-blue-500/30 hover:bg-blue-500/20 disabled:opacity-60"
