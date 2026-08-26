@@ -443,7 +443,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
       formData.append("itemId", itemId);
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "x-admin-password": getAuthHeaders()["x-admin-password"] || "" },
+        headers: getAuthHeaders(),
         body: formData,
       });
       const data = await res.json();
@@ -496,7 +496,8 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
         setEditingId(null);
         onSaved?.();
       } else {
-        toast.error("Erro ao salvar.");
+        const data = await res.json().catch(() => ({}));
+        toast.error(data.error || "Erro ao salvar.");
       }
     } catch {
       toast.error("Erro de conexao.");
@@ -521,17 +522,22 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     setIsSaving(true);
     try {
       for (const item of removedItems) {
-        await fetch("/api/items", {
+        const itemRes = await fetch("/api/items", {
           method: "POST",
           headers: { "Content-Type": "application/json", ...getAuthHeaders() },
           body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.category } }),
         });
+        if (!itemRes.ok) {
+          const errData = await itemRes.json().catch(() => ({}));
+          toast.error(`Erro ao remover "${item.name}": ${errData.error || "Erro desconhecido"}`);
+          return;
+        }
       }
       toast.success(`${removedItems.length} itens removidos!`);
       setRemovedItems([]);
       onSaved?.();
     } catch {
-      toast.error("Erro ao remover.");
+      toast.error("Erro de conexao ao remover.");
     } finally {
       setIsSaving(false);
     }
@@ -774,18 +780,10 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   const baseCategories = pricesData.categories as Category[];
   const metadata = pricesData.metadata;
 
-  // Fetch item overrides from DB
+  // Fetch item overrides from DB (public endpoint - all users see updated table)
   const fetchOverrides = useCallback(async () => {
     try {
-      const headers: Record<string, string> = {};
-      const pwd = sessionStorage.getItem("adminPwd");
-      if (pwd) headers["x-admin-password"] = pwd;
-      else {
-        const token = sessionStorage.getItem("modToken");
-        if (token) headers["x-moderador-token"] = token;
-        else return;
-      }
-      const res = await fetch("/api/items", { headers });
+      const res = await fetch("/api/items");
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) setOverrides(data);

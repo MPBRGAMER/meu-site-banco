@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
       }
 
       case "edit": {
-        const { itemId, name, categoryId, wikiLink, steel, cement, demand, notes } = item;
+        const { itemId, name, categoryId, img, wikiLink, steel, cement, demand, notes } = item;
         if (!itemId) {
           return err("itemId obrigatorio");
         }
@@ -87,6 +87,7 @@ export async function POST(req: NextRequest) {
         const updateData: Record<string, unknown> = { action: "edit" };
         if (name !== undefined) updateData.name = name;
         if (categoryId !== undefined) updateData.categoryId = categoryId;
+        if (img !== undefined) updateData.img = img || null;
         if (wikiLink !== undefined) updateData.wikiLink = wikiLink || null;
         if (steel !== undefined) updateData.steel = steel;
         if (cement !== undefined) updateData.cement = cement;
@@ -94,6 +95,8 @@ export async function POST(req: NextRequest) {
         if (notes !== undefined) updateData.notes = notes;
 
         if (existing) {
+          // Preserve the original action ("add" or "edit") so added items don't disappear
+          delete updateData.action;
           const updated = await db.itemOverride.update({ where: { itemId }, data: updateData });
           return json(updated);
         } else {
@@ -133,10 +136,8 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest) {
-  const auth = await verifyAuth(req);
-  if (!auth.ok) return err(auth.error || "Nao autorizado", 403);
-
+export async function GET() {
+  // Public: anyone can read overrides so all users see the updated table
   try {
     const overrides = await db.itemOverride.findMany({
       orderBy: { data: "desc" },
