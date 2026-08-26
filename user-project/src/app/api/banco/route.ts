@@ -25,7 +25,7 @@ const ACTION_PERMISSIONS: Record<string, string> = {
   criarLoterica: "loterica", iniciarSorteioLoterica: "loterica", finalizarLoterica: "loterica",
 };
 
-const SUPER_ADMIN_ONLY = new Set(["resetAll","backup","restoreBackup","bulkInsertDoadores","createModerador","updateModerador","removeModerador","setupModeradores"]);
+const SUPER_ADMIN_ONLY = new Set(["resetAll","backupDB","backupFull","restoreBackup","bulkInsertDoadores","createModerador","updateModerador","removeModerador","setupModeradores"]);
 
 function generateToken() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -1029,31 +1029,66 @@ export async function POST(req: NextRequest) {
         }
         return json({ success: true, message: "Banco de dados resetado com sucesso!" });
       }
-      case "backup": {
+      case "backupDB": {
         const pwd = req.headers.get("x-admin-password");
         if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
-        const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo] = await Promise.all([
-          db.emprestimo.findMany(), db.investidor.findMany(), db.tabelaTroca.findMany(),
-          db.trocaRegistro.findMany(), db.compraVenda.findMany(), db.caixaRegistro.findMany(),
-          db.doador.findMany(), db.leilao.findMany(), db.lance.findMany(),
-          db.sorteio.findMany(), db.participanteSorteio.findMany(), db.loterica.findMany(),
-          db.numeroLoterica.findMany(), db.priceReport.findMany(), db.itemOverride.findMany(),
-          db.propaganda.findMany(), db.chatSala.findMany(), db.chatMensagem.findMany(),
-          db.itemCatalogo.findMany(),
-        ]);
-        const backup = JSON.stringify({
-          version: 1, exportDate: new Date().toISOString(),
-          emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
-          leiloes, lances, sorteios, participantes, lotericas, numeros,
-          priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo,
-        }, null, 2);
-        const filename = `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
-        return new Response(backup, {
-          headers: {
-            "Content-Type": "application/json",
-            "Content-Disposition": `attachment; filename="${filename}"`,
-          },
-        });
+        try {
+          const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros] = await Promise.all([
+            db.emprestimo.findMany(), db.investidor.findMany(), db.tabelaTroca.findMany(),
+            db.trocaRegistro.findMany(), db.compraVenda.findMany(), db.caixaRegistro.findMany(),
+            db.doador.findMany(), db.leilao.findMany(), db.lance.findMany(),
+            db.sorteio.findMany(), db.participanteSorteio.findMany(), db.loterica.findMany(),
+            db.numeroLoterica.findMany(),
+          ]);
+          const backup = JSON.stringify({
+            version: 2, type: "banco", exportDate: new Date().toISOString(),
+            emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
+            leiloes, lances, sorteios, participantes, lotericas, numeros,
+          }, null, 2);
+          const filename = `backup-banco-${new Date().toISOString().slice(0, 10)}.json`;
+          return new Response(backup, {
+            headers: { "Content-Type": "application/json", "Content-Disposition": `attachment; filename="${filename}"` },
+          });
+        } catch (e: unknown) { return err(e instanceof Error ? e.message : "Erro ao gerar backup do banco"); }
+      }
+      case "backupFull": {
+        const pwd = req.headers.get("x-admin-password");
+        if (!pwd || pwd !== ADMIN_PASSWORD) return err("Não autorizado", 403);
+        try {
+          const results = await Promise.all([
+            db.emprestimo.findMany().catch(() => []),
+            db.investidor.findMany().catch(() => []),
+            db.tabelaTroca.findMany().catch(() => []),
+            db.trocaRegistro.findMany().catch(() => []),
+            db.compraVenda.findMany().catch(() => []),
+            db.caixaRegistro.findMany().catch(() => []),
+            db.doador.findMany().catch(() => []),
+            db.leilao.findMany().catch(() => []),
+            db.lance.findMany().catch(() => []),
+            db.sorteio.findMany().catch(() => []),
+            db.participanteSorteio.findMany().catch(() => []),
+            db.loterica.findMany().catch(() => []),
+            db.numeroLoterica.findMany().catch(() => []),
+            db.priceReport.findMany().catch(() => []),
+            db.itemOverride.findMany().catch(() => []),
+            db.propaganda.findMany().catch(() => []),
+            db.chatSala.findMany().catch(() => []),
+            db.chatMensagem.findMany().catch(() => []),
+            db.itemCatalogo.findMany().catch(() => []),
+            db.moderador.findMany().catch(() => []),
+          ]);
+          const [emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores, leiloes, lances, sorteios, participantes, lotericas, numeros, priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo, moderadores] = results;
+          const backup = JSON.stringify({
+            version: 2, type: "completo", exportDate: new Date().toISOString(),
+            emprestimos, investidores, tabelasTroca, trocas, comprasVendas, caixa, doadores,
+            leiloes, lances, sorteios, participantes, lotericas, numeros,
+            priceReports, itemOverrides, propagandas, chatSalas, chatMensagens, itemCatalogo, moderadores,
+          }, null, 2);
+          const filename = `backup-completo-${new Date().toISOString().slice(0, 10)}.json`;
+          return new Response(backup, {
+            headers: { "Content-Type": "application/json", "Content-Disposition": `attachment; filename="${filename}"` },
+          });
+        } catch (e: unknown) { return err(e instanceof Error ? e.message : "Erro ao gerar backup completo"); }
       }
       // === MODERADORES ===
       case "setupModeradores": {

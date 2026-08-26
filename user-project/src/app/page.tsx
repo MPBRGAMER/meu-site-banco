@@ -65,7 +65,8 @@ export default function HomePage() {
   const [modUsuario, setModUsuario] = useState("");
   const [modSenha, setModSenha] = useState("");
   const [isVerifying, setIsVerifying] = useState(false);
-  const [isDownloadingBackup, setIsDownloadingBackup] = useState(false);
+  const [isDownloadingDB, setIsDownloadingDB] = useState(false);
+  const [isDownloadingFull, setIsDownloadingFull] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
   const [isRestoring, setIsRestoring] = useState(false);
@@ -207,28 +208,33 @@ export default function HomePage() {
     } catch { toast.error("Erro ao alterar senha."); }
   };
 
-  const handleDownloadBackup = async () => {
+  const downloadBackup = async (action: string, label: string, setloading: (v: boolean) => void) => {
     const password = sessionStorage.getItem("adminPwd");
     if (!password) { toast.error("Apenas Super Admin."); return; }
-    setIsDownloadingBackup(true);
+    setloading(true);
     try {
       const response = await fetch("/api/banco", {
         method: "POST", headers: { "Content-Type": "application/json", "x-admin-password": password },
-        body: JSON.stringify({ action: "backup" }),
+        body: JSON.stringify({ action }),
       });
-      if (!response.ok) throw new Error("Não foi possível gerar o backup.");
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({ error: "Erro desconhecido" }));
+        throw new Error(errData.error || "Não foi possível gerar o backup.");
+      }
       const blob = await response.blob();
       const disposition = response.headers.get("Content-Disposition") || "";
       const filenameMatch = disposition.match(/filename=\"?([^\"]+)\"?/i);
-      const filename = filenameMatch?.[1] || `backup-dayr-${new Date().toISOString().slice(0, 10)}.json`;
+      const filename = filenameMatch?.[1] || `backup-${new Date().toISOString().slice(0, 10)}.json`;
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url; link.download = filename;
       document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
-      toast.success("Backup baixado!");
-    } catch (error) { toast.error(error instanceof Error ? error.message : "Erro ao baixar backup."); }
-    finally { setIsDownloadingBackup(false); }
+      toast.success(`${label} baixado!`);
+    } catch (error) { toast.error(error instanceof Error ? error.message : `Erro ao baixar ${label.toLowerCase()}.`); }
+    finally { setloading(false); }
   };
+  const handleBackupDB = () => downloadBackup("backupDB", "Backup do Banco", setIsDownloadingDB);
+  const handleBackupFull = () => downloadBackup("backupFull", "Backup Completo", setIsDownloadingFull);
 
   const handleResetDatabase = async () => {
     const password = sessionStorage.getItem("adminPwd");
@@ -342,10 +348,15 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             {isSuperAdmin && (
               <>
-                <button onClick={handleDownloadBackup} disabled={isDownloadingBackup}
+                <button onClick={handleBackupDB} disabled={isDownloadingDB}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all border bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 disabled:opacity-60"
-                  title="Baixar backup">
-                  <Download className="w-3.5 h-3.5" /><span className="hidden sm:inline">{isDownloadingBackup ? "Gerando..." : "Backup"}</span>
+                  title="Backup apenas dos dados do banco">
+                  <Download className="w-3.5 h-3.5" /><span className="hidden sm:inline">{isDownloadingDB ? "Gerando..." : "Banco"}</span>
+                </button>
+                <button onClick={handleBackupFull} disabled={isDownloadingFull}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/20 disabled:opacity-60"
+                  title="Backup completo do site (banco + chat + moderadores + config)">
+                  <Download className="w-3.5 h-3.5" /><span className="hidden sm:inline">{isDownloadingFull ? "Gerando..." : "Completo"}</span>
                 </button>
                 <button onClick={() => fileInputRef.current?.click()} disabled={isRestoring}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all border bg-blue-500/10 text-blue-400 border-blue-500/30 hover:bg-blue-500/20 disabled:opacity-60"
