@@ -21,7 +21,8 @@ async function verifyAuth(req: NextRequest): Promise<{ ok: boolean; error?: stri
     const { db } = await import("@/lib/db");
     const mod = await db.moderador.findFirst({ where: { token: modToken, ativo: true, tokenExpira: { gt: new Date() } } });
     if (mod) {
-      const perms = (mod.permissoes || "").split(",");
+      let perms: string[] = [];
+      try { perms = JSON.parse(mod.permissoes || "[]"); } catch {}
       if (perms.includes("tabela")) return { ok: true };
       return { ok: false, error: "Sem permissao para gerenciar itens" };
     }
