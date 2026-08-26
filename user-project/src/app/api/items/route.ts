@@ -11,18 +11,27 @@ function err(msg: string, status = 400) {
   return NextResponse.json({ error: msg }, { status });
 }
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "dayr2024";
 
-function verifyAdmin(req: NextRequest): boolean {
+async function verifyAuth(req: NextRequest): Promise<{ ok: boolean; error?: string }> {
   const pwd = req.headers.get("x-admin-password");
-  if (!pwd || pwd !== ADMIN_PASSWORD) return false;
-  return true;
+  if (pwd && pwd === ADMIN_PASSWORD) return { ok: true };
+  const modToken = req.headers.get("x-moderador-token");
+  if (modToken) {
+    const { db } = await import("@/lib/db");
+    const mod = await db.moderador.findFirst({ where: { token: modToken, ativo: true, tokenExpira: { gt: new Date() } } });
+    if (mod) {
+      const perms = (mod.permissoes || "").split(",");
+      if (perms.includes("tabela")) return { ok: true };
+      return { ok: false, error: "Sem permissao para gerenciar itens" };
+    }
+  }
+  return { ok: false, error: "Nao autorizado" };
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAdmin(req)) {
-    return err("Senha de admin invalida", 403);
-  }
+  const auth = await verifyAuth(req);
+  if (!auth.ok) return err(auth.error || "Nao autorizado", 403);
 
   try {
     const data = await req.json();
@@ -125,9 +134,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdmin(req)) {
-    return err("Senha de admin invalida", 403);
-  }
+  const auth = await verifyAuth(req);
+  if (!auth.ok) return err(auth.error || "Nao autorizado", 403);
 
   try {
     const overrides = await db.itemOverride.findMany({

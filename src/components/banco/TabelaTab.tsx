@@ -365,7 +365,16 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     return allItems.filter((i) => i.name.toLowerCase().includes(gerenciarSearch.toLowerCase()) || i.id.includes(gerenciarSearch.toLowerCase())).slice(0, 100);
   }, [gerenciarSearch, allItems]);
 
-  const getAdminPwd = () => sessionStorage.getItem("adminPwd") || "";
+  const getAuthHeaders = () => {
+    const headers: Record<string, string> = {};
+    const pwd = sessionStorage.getItem("adminPwd");
+    if (pwd) headers["x-admin-password"] = pwd;
+    else {
+      const token = sessionStorage.getItem("modToken");
+      if (token) headers["x-moderador-token"] = token;
+    }
+    return headers;
+  };
 
   const handleAddItem = async () => {
     if (!newItemName.trim() || !newItemId.trim() || !newItemCategory) {
@@ -381,7 +390,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     try {
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify({
           action: "add",
           item: {
@@ -434,7 +443,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
       formData.append("itemId", itemId);
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "x-admin-password": getAdminPwd() },
+        headers: { "x-admin-password": getAuthHeaders()["x-admin-password"] || "" },
         body: formData,
       });
       const data = await res.json();
@@ -476,7 +485,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     try {
       const res = await fetch("/api/items", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify({
           action: "edit",
           item: { itemId: editingId, ...editForm },
@@ -514,7 +523,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
       for (const item of removedItems) {
         await fetch("/api/items", {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-admin-password": getAdminPwd() },
+          headers: { "Content-Type": "application/json", ...getAuthHeaders() },
           body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.category } }),
         });
       }
@@ -768,9 +777,15 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
   // Fetch item overrides from DB
   const fetchOverrides = useCallback(async () => {
     try {
+      const headers: Record<string, string> = {};
       const pwd = sessionStorage.getItem("adminPwd");
-      if (!pwd) return;
-      const res = await fetch("/api/items", { headers: { "x-admin-password": pwd } });
+      if (pwd) headers["x-admin-password"] = pwd;
+      else {
+        const token = sessionStorage.getItem("modToken");
+        if (token) headers["x-moderador-token"] = token;
+        else return;
+      }
+      const res = await fetch("/api/items", { headers });
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data)) setOverrides(data);
