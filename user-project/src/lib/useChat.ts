@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { toast } from "sonner";
+import { correctText } from "./spellchecker";
 
 export interface ChatMsg {
   id: string; canal: string; salaId: string | null;
@@ -120,11 +121,12 @@ export function useChat() {
 
   const sendMessage = useCallback(async (conteudo: string, autor: string) => {
     if (!conteudo.trim()) return;
+    const corrigido = correctText(conteudo.trim());
     try {
       await chatPost("sendMessage", {
         canal: salaAtiva ? "sala" : canalAtivo,
         salaId: salaAtiva || undefined,
-        conteudo: conteudo.trim(), autor: autor.trim(), isAdmin: !!getAdminPwd(),
+        conteudo: corrigido, autor: autor.trim(), isAdmin: !!getAdminPwd(),
       });
       loadMensagens();
     } catch (e) {
