@@ -1,10 +1,11 @@
 import { QUICK_FIXES, VOCATIVE_RULES, type VocativeRule } from "./spellcheck-dicts";
 
 /**
- * Regex que casa palavras nos 13 idiomas suportados.
- * Cobertura: Latin, Extended Latin, Cyrillic, Arabic, Devanagari, Hiragana, Katakana, CJK, Hangul.
+ * Regex que casa palavras em qualquer idioma.
+ * Usa \p{L} (Unicode Letter) — cobre Latin, Cyrillic, Arabic, Devanagari, CJK, Hangul, etc.
+ * Suportado em todos os browsers modernos.
  */
-const WORD_RE = /[A-Za-zÀ-ɏḀ-ỿЀ-ӿ؀-ۿऀ-ॿ぀-ゟ゠-ヿ一-鿿가-힯'’]+/g;
+const WORD_RE = /[\p{L}']+/gu;
 
 /**
  * Deteta o idioma dominante de um texto.

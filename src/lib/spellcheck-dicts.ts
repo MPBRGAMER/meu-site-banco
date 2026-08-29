@@ -21,7 +21,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "ngm": "ninguém",
   "nds": "nada",
   "qdo": "quando",
-  "q": "que",
+
   "ta": "tá",
   "to": "tô",
   "mt": "muito",
@@ -35,7 +35,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "msg": "mensagem",
   "aki": "aqui",
   "eh": "é",
-  "n": "não",
+
   "nao": "não",
   "ninguem": "ninguém",
   "ninguen": "ninguém",
@@ -51,6 +51,8 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "cla": "clã",
   "npc": "NPC",
   "pvp": "PvP",
+  "q": "que",
+  "n": "não",
   "pve": "PvE",
   "hp": "HP",
   "xp": "XP",
@@ -133,12 +135,12 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "adm": "admin",
   "regra": "regra",
   "regras": "regras",
-  "a": "ã",
-  "e": "ê",
-  "i": "í",
-  "o": "õ",
-  "u": "ú",
-  "c": "ç",
+
+
+
+
+
+
   "ai": "aí",
   "alem": "além",
   "alguem": "alguém",
@@ -1324,9 +1326,9 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "wat": "what",
   "wut": "what",
   "ur": "your",
-  "u": "you",
-  "r": "are",
-  "y": "why",
+
+
+
   "pls": "please",
   "plz": "please",
   "thx": "thanks",
@@ -1592,12 +1594,12 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "ns": "no sabemos",
   "nt": "no te",
   "ntr": "no te rompas",
-  "x": "por",
-  "q": "que",
-  "d": "de",
+
+
+
   "dl": "del",
   "xa": "ya",
-  "k": "que",
+
   "bss": "besos",
   "tt": "también",
   " tqm": "te quiero mucho",
@@ -1924,7 +1926,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "tt": "tout",
   "vs": "vous",
   "ns": "nous",
-  "c": "ç",
+
   "c ca": "c'est ça",
   "kom": "comment",
   "mtn": "maintenant",
@@ -1935,7 +1937,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "apres": "après",
   "eventuellement": "éventuellement",
   "etre": "être",
-  "a": "ä",
+
   "ou": "où",
   "la": "là",
   "deja": "déjà",
@@ -1951,10 +1953,10 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "période": "période",
   "principe": "principe",
   "méthode": "méthode",
-  "e": "ë",
-  "i": "ï",
-  "o": "ö",
-  "u": "ü",
+
+
+
+
   "abimer": "abîmer",
   "abandonne": "abandonné",
   "abime": "abîme",
@@ -2298,9 +2300,9 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "hauptsache": "hauptsache",
   "sowieso": "sowieso",
   "auf jeden fall": "auf jeden Fall",
-  "a": "Ä",
-  "o": "Ö",
-  "u": "Ü",
+
+
+
   "anderung": "Änderung",
   "aquator": "Äquator",
   "argerlich": "ärgerlich",
@@ -2886,7 +2888,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "nn": "no",
   "ms": "ma",
   "sn": "sono",
-  "x": "per",
+
   "ke": "che",
   "grz": "grazie",
   "prego": "prego",
@@ -2917,11 +2919,11 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "speciale": "speciale",
   "bellissimo": "bellissimo",
   "bellissima": "bellissima",
-  "a": "à",
-  "e": "é",
-  "i": "í",
-  "o": "ó",
-  "u": "ú",
+
+
+
+
+
   "abilita": "abilità",
   "accessibilita": "accessibilità",
   "affidabilita": "affidabilità",
@@ -3955,7 +3957,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
 
 export const VOCATIVE_RULES: Record<string, VocativeRule[]> = {
   pt: [
-  [/(^|\s)([A-Z][a-záàãâéêíóôõúç]+)(\s+(?:cara|mano|brother|pessoa|gente|amor|querido|querida|amigo|amiga|filho|filha|mãe|pai|chefe|chefe|senhor|senhora|doutor|doutora|professor|professora|moço|moça))([^,.!?\s]|$)/g, "$1$2,$3$4"],
+  [/(^|\s)([A-Za-zà-ÿ][a-zà-ÿ]+)(\s+(?:cara|mano|brother|pessoa|gente|amor|querido|querida|amigo|amiga|filho|filha|mãe|pai|chefe|senhor|senhora|doutor|doutora|professor|professora|moço|moça))([^,.!?]|$)/g, "$1$2,$3$4"],
 ],
   en: [],
   es: [],
