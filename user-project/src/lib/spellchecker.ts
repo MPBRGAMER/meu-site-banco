@@ -98,7 +98,14 @@ export function correctText(text: string, lang?: string): string {
   if (fixes) {
     result = result.replace(WORD_RE, (word) => {
       const lower = word.toLowerCase();
-      return fixes[lower] || word;
+      const fix = fixes[lower];
+      if (!fix) return word;
+      // Preserva maiúscula: se a palavra original começa com maiúscula,
+      // aplica a mesma capitalização na correção.
+      if (word[0] !== word[0].toLowerCase() && fix[0]) {
+        return fix[0].toUpperCase() + fix.slice(1);
+      }
+      return fix;
     });
   }
 
