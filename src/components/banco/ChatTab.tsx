@@ -75,7 +75,7 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   const correctedPreview = useMemo(() => {
     if (!inputMsg.trim()) return null;
-    const corrected = correctTextPreview(inputMsg);
+    const corrected = correctTextPreview(inputMsg).trim();
     if (corrected === inputMsg.trim()) return null;
     return corrected;
   }, [inputMsg]);
