@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useChat, ChatSala } from "@/lib/useChat";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
+import { correctTextPreview, detectLang } from "@/lib/spellchecker";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -71,6 +72,13 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   const [salaParaEntrar, setSalaParaEntrar] = useState<ChatSala | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
+
+  const correctedPreview = useMemo(() => {
+    if (!inputMsg.trim()) return null;
+    const corrected = correctTextPreview(inputMsg);
+    if (corrected === inputMsg.trim()) return null;
+    return corrected;
+  }, [inputMsg]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
@@ -404,18 +412,26 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="border-t border-border px-4 py-2 flex gap-2 shrink-0 bg-card">
-              <Input
-                placeholder={isSala ? `Mensagem em ${currentSala?.nome || "sala"}...` : `Mensagem em #${currentCanalInfo?.nome || canalAtivo}...`}
-                value={inputMsg}
-                onChange={(e) => setInputMsg(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
-                className="flex-1 text-sm h-9"
-                maxLength={2000}
-              />
-              <Button onClick={handleSend} size="sm" className="bg-primary text-primary-foreground h-9 px-3" disabled={!inputMsg.trim()}>
-                <Send className="w-4 h-4" />
-              </Button>
+            <div className="border-t border-border px-4 py-2 shrink-0 bg-card">
+              <div className="flex gap-2">
+                <Input
+                  placeholder={isSala ? `Mensagem em ${currentSala?.nome || "sala"}...` : `Mensagem em #${currentCanalInfo?.nome || canalAtivo}...`}
+                  value={inputMsg}
+                  onChange={(e) => setInputMsg(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
+                  className="flex-1 text-sm h-9"
+                  maxLength={2000}
+                />
+                <Button onClick={handleSend} size="sm" className="bg-primary text-primary-foreground h-9 px-3" disabled={!inputMsg.trim()}>
+                  <Send className="w-4 h-4" />
+                </Button>
+              </div>
+              {correctedPreview && (
+                <div className="mt-1.5 px-1 flex items-center gap-1.5">
+                  <span className="text-[10px] text-muted-foreground shrink-0">Corrigido:</span>
+                  <p className="text-[11px] text-green-500/80 truncate" data-no-translate translate="no">{correctedPreview}</p>
+                </div>
+              )}
             </div>
           </>
         )}
