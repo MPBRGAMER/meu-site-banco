@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
-import { correctTextPreview, detectLang } from "@/lib/spellchecker";
+import { correctTextPreview, correctText, detectLang } from "@/lib/spellchecker";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -113,7 +113,8 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   const handleSend = () => {
     if (!inputMsg.trim()) return;
-    sendMessage(inputMsg, nomeUsuario);
+    const corrected = correctText(inputMsg);
+    sendMessage(corrected, nomeUsuario);
     setInputMsg("");
     autoScrollRef.current = true;
   };
