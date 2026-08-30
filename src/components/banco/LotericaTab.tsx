@@ -149,6 +149,32 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   const [compradorNome, setCompradorNome] = useState("");
   const [showComprar, setShowComprar] = useState(false);
   const [searchNumero, setSearchNumero] = useState("");
+  const [vendendo, setVendendo] = useState(false);
+
+  // Parseia entrada de números: "1, 5, 10-15, 20" → [1, 5, 10, 11, 12, 13, 14, 15, 20]
+  function parseNumeros(input: string): number[] {
+    const nums = new Set<number>();
+    const parts = input.split(",").map((s) => s.trim()).filter(Boolean);
+    for (const part of parts) {
+      if (part.includes("-")) {
+        const [a, b] = part.split("-").map((s) => parseInt(s.trim()));
+        if (!isNaN(a) && !isNaN(b) && a >= 1 && b <= 1000 && a <= b) {
+          for (let i = a; i <= b; i++) nums.add(i);
+        }
+      } else {
+        const n = parseInt(part);
+        if (!isNaN(n) && n >= 1 && n <= 1000) nums.add(n);
+      }
+    }
+    return Array.from(nums).sort((a, b) => a - b);
+  }
+
+  const parsedNumeros = parseNumeros(numeroInput);
+  const numerosJaVendidos = loterica
+    ? parsedNumeros.filter((n) => lotericaNumeros.some((ln) => ln.numero === n && ln.comprador))
+    : [];
+  const numerosValidos = parsedNumeros.filter((n) => !numerosJaVendidos.includes(n));
+  const custoTotal = numerosValidos.length * (loterica?.valorNumero || 0);
 
   const handleCriar = async () => {
     if (!valorNumero || !moedaAceita.trim()) { toast.error("Preencha valor e moeda."); return; }
@@ -163,11 +189,25 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   };
 
   const handleComprar = async () => {
-    if (!numeroInput.trim() || !compradorNome.trim()) { toast.error("Numero e nome obrigatorios."); return; }
-    const num = parseInt(numeroInput.trim());
-    if (num < 1 || num > 1000) { toast.error("Numero entre 1 e 1000."); return; }
+    if (!compradorNome.trim()) { toast.error("Nome do comprador e obrigatorio."); return; }
     if (!loterica) { toast.error("Sem loterica ativa."); return; }
-    try { await comprarNumero(loterica.id, num, compradorNome.trim()); setNumeroInput(""); setCompradorNome(""); setShowComprar(false); } catch { /* handled */ }
+    if (parsedNumeros.length === 0) { toast.error("Digite pelo menos um numero (ex: 5, 10-15, 20)."); return; }
+    if (numerosJaVendidos.length > 0) {
+      toast.error(`${numerosJaVendidos.length} numero(s) ja vendido(s): ${numerosJaVendidos.map(String).join(", ")}`);
+      return;
+    }
+    setVendendo(true);
+    let erros = 0;
+    for (const num of numerosValidos) {
+      try { await comprarNumero(loterica.id, num, compradorNome.trim()); } catch { erros++; }
+    }
+    setVendendo(false);
+    if (erros === 0) {
+      toast.success(`${numerosValidos.length} numero(s) vendido(s) para ${compradorNome.trim()}!`);
+      setNumeroInput(""); setCompradorNome(""); setShowComprar(false);
+    } else {
+      toast.error(`${erros} erro(s) ao vender. ${numerosValidos.length - erros} vendido(s).`);
+    }
   };
 
   const numerosVendidos = lotericaNumeros.filter((n) => n.comprador);
@@ -334,15 +374,44 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
             {/* Acoes admin - Vender e Sortear */}
             {isAdmin && loterica.status === "vendas_abertas" && (
               <>
-                <Button size="sm" variant="outline" onClick={() => setShowComprar(!showComprar)} className="border-primary/30 text-primary hover:bg-primary/10"><Dices className="w-3 h-3 mr-1" /> Vender Numero</Button>
+                <Button size="sm" variant="outline" onClick={() => setShowComprar(!showComprar)} className="border-primary/30 text-primary hover:bg-primary/10"><Dices className="w-3 h-3 mr-1" /> Vender Numeros</Button>
                 {showComprar && (
                   <div className="rounded-md border border-border bg-muted/30 p-3 mb-4">
-                    <h4 className="text-xs font-bold text-foreground mb-2">Vender Numero</h4>
-                    <div className="flex gap-3">
-                      <div className="flex-1"><Label className="text-xs text-muted-foreground">Numero (1-1000)</Label><Input type="number" placeholder="042" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" min={1} max={1000} /></div>
-                      <div className="flex-1"><Label className="text-xs text-muted-foreground">Nome do Comprador</Label><Input placeholder="Player" value={compradorNome} onChange={(e) => setCompradorNome(e.target.value)} className="text-sm" /></div>
-                      <div className="flex items-end"><Button size="sm" onClick={handleComprar} className="bg-primary text-primary-foreground">Vender</Button></div>
+                    <h4 className="text-xs font-bold text-foreground mb-2">Vender Numeros</h4>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <div className="flex-1">
+                        <Label className="text-xs text-muted-foreground">Numeros <span className="text-muted-foreground/60">(ex: 5, 10-15, 20, 100-102)</span></Label>
+                        <Input placeholder="5, 10-15, 20" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" />
+                      </div>
+                      <div className="flex-1">
+                        <Label className="text-xs text-muted-foreground">Nome do Comprador</Label>
+                        <Input placeholder="Player" value={compradorNome} onChange={(e) => setCompradorNome(e.target.value)} className="text-sm" />
+                      </div>
+                      <div className="flex items-end">
+                        <Button size="sm" onClick={handleComprar} disabled={vendendo || numerosValidos.length === 0 || !compradorNome.trim()} className="bg-primary text-primary-foreground">
+                          {vendendo ? "Vendendo..." : `Vender${numerosValidos.length > 1 ? ` (${numerosValidos.length})` : ""}`}
+                        </Button>
+                      </div>
                     </div>
+                    {parsedNumeros.length > 0 && (
+                      <div className="mt-2 flex flex-wrap items-center gap-3 text-xs">
+                        <span className="text-muted-foreground">
+                          <span className="font-mono font-bold text-foreground">{numerosValidos.length}</span> valido(s)
+                          {numerosJaVendidos.length > 0 && <span className="text-red-400 ml-1">| <span className="font-mono font-bold">{numerosJaVendidos.length}</span> ja vendido(s)</span>}
+                        </span>
+                        {loterica && numerosValidos.length > 0 && (
+                          <span className="text-muted-foreground">
+                            Custo: <span className="font-mono font-bold text-yellow-400">{Math.round(custoTotal)}</span> {loterica.moedaAceita}
+                          </span>
+                        )}
+                        {numerosValidos.length > 0 && numerosValidos.length <= 20 && (
+                          <span className="font-mono text-primary">[{numerosValidos.map((n) => String(n).padStart(3, "0")).join(", ")}]</span>
+                        )}
+                        {numerosValidos.length > 20 && (
+                          <span className="font-mono text-primary text-[10px]">{numerosValidos.slice(0, 10).map((n) => String(n).padStart(3, "0")).join(", ")}... (+{numerosValidos.length - 10})</span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
                 {vendasExpiradas && numerosVendidos.length > 0 && (
