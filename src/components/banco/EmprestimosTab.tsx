@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield } from "lucide-react";
+import { Calculator, Plus, CheckCircle, AlertTriangle, X, Info, HandCoins, Shield, Trash2 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import AdSlot from "@/components/AdSlot";
 import { getDateLocale } from "./TranslationPopup";
@@ -63,7 +63,7 @@ function CalcWidget({ show }: { show: boolean }) {
 }
 
 function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean }) {
-  const { pagarEmprestimo } = useBank();
+  const { pagarEmprestimo, deleteEmprestimo } = useBank();
   const [showPayment, setShowPayment] = useState(false);
   const [itemPagamento, setItemPagamento] = useState("");
   const [qtdPagamento, setQtdPagamento] = useState("");
@@ -93,9 +93,17 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
           {estaAtrasado && <span className="text-xs px-2 py-0.5 rounded-full border border-red-400/30 bg-red-400/10 text-red-400">Atrasado</span>}
           <span className="text-xs text-muted-foreground">{getTipoLabel(emp.tipoMembro)}</span>
         </div>
-        {emp.status === "pendente" && isAdmin && (
-          <Button size="sm" variant="outline" onClick={() => setShowPayment(!showPayment)}><CheckCircle className="w-3 h-3 mr-1" /> Pagar</Button>
-        )}
+        <div className="flex items-center gap-1">
+          {emp.status === "pendente" && isAdmin && (
+            <Button size="sm" variant="outline" onClick={() => setShowPayment(!showPayment)}><CheckCircle className="w-3 h-3 mr-1" /> Pagar</Button>
+          )}
+          {isAdmin && (
+            <Button size="sm" variant="outline" className="text-red-400 border-red-400/30 hover:bg-red-400/10 hover:text-red-300" onClick={async () => {
+              if (!confirm(`Deletar empréstimo de ${emp.quantidade}x ${emp.item} para ${emp.player}?`)) return;
+              try { await deleteEmprestimo(emp.id); } catch (e) { toast.error(`Erro ao deletar: ${e instanceof Error ? e.message : "erro"}`); }
+            }}><Trash2 className="w-3 h-3" /></Button>
+          )}
+        </div>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
         <div><span className="text-muted-foreground">Item:</span> <span className="font-mono text-foreground">{emp.item}</span></div>

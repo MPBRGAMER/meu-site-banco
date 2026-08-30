@@ -236,6 +236,12 @@ export function useBank() {
     loadAll();
   }, []);
 
+  const deleteEmprestimo = useCallback(async (id: string) => {
+    await apiPost("deleteEmprestimo", { id });
+    toast.success("Empréstimo removido!");
+    loadAll();
+  }, [loadAll]);
+
   // === INVESTIDORES ===
   const addInvestidor = useCallback(async (nome: string, observacao?: string) => {
     await apiPost("addInvestidor", { nome, observacao }); loadAll();
@@ -459,7 +465,7 @@ export function useBank() {
     caixa, doadores, leiloes, lances, sorteios, loterica, lotericaNumeros,
     historicoSorteios, historicoLoterica, reporterRanking,
     inventory, isLoading,
-    addEmprestimo, pagarEmprestimo,
+    addEmprestimo, pagarEmprestimo, deleteEmprestimo,
     addInvestidor, removeInvestidor, reorderInvestidores,
     addTabelaTroca, removeTabelaTroca,
     addTroca, removeTroca,

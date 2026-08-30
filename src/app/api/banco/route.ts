@@ -480,6 +480,36 @@ export async function POST(req: NextRequest) {
         const result = await db.$transaction(txOps);
         return json(result[0]);
       }
+      case "deleteEmprestimo": {
+        const { id } = data;
+        if (!id) return err("id obrigatório");
+        const emp = await db.emprestimo.findUnique({ where: { id } });
+        if (!emp) return err("Empréstimo não encontrado");
+        // Deletar o registro de caixa (saida) criado junto com o empréstimo
+        await db.caixaRegistro.deleteMany({
+          where: {
+            origem: "emprestimo",
+            tipo: "saida",
+            descricao: `Empréstimo para ${emp.player}`,
+            item: emp.item,
+            quantidade: emp.quantidade,
+          },
+        });
+        // Se o empréstimo foi pago, também deletar o registro de entrada do pagamento
+        if (emp.status === "pago" && emp.itemPagamento && emp.quantidadePaga) {
+          await db.caixaRegistro.deleteMany({
+            where: {
+              origem: "emprestimo",
+              tipo: "entrada",
+              descricao: `Pagamento de empréstimo - ${emp.player}`,
+              item: emp.itemPagamento,
+              quantidade: emp.quantidadePaga,
+            },
+          });
+        }
+        await db.emprestimo.delete({ where: { id } });
+        return json({ success: true });
+      }
       case "addInvestidor": {
         const { nome, observacao } = data;
         if (!nome) return err("nome obrigatório");
