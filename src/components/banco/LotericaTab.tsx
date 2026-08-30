@@ -150,6 +150,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   const [showComprar, setShowComprar] = useState(false);
   const [searchNumero, setSearchNumero] = useState("");
   const [vendendo, setVendendo] = useState(false);
+  const [filtroNumeros, setFiltroNumeros] = useState<"disponiveis" | "vendidos" | "todos">("disponiveis");
 
   // Parseia entrada de números: "1, 5, 10-15, 20" → [1, 5, 10, 11, 12, 13, 14, 15, 20]
   function parseNumeros(input: string): number[] {
@@ -223,9 +224,17 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
   const temAcumulado = loterica ? (loterica.premioAcumulado || 0) > loterica.premioMinimo : false;
   const bancoFicaCom100 = loterica && (loterica.arrecadadoTotal || 0) > 0 && !alcancaMinimo;
 
-  const filteredNumeros = searchNumero
-    ? lotericaNumeros.filter((n) => n.numero.toString().includes(searchNumero) || (n.comprador && n.comprador.toLowerCase().includes(searchNumero.toLowerCase())))
-    : [];
+  const numerosDisponiveis = lotericaNumeros.filter((n) => !n.comprador);
+
+  const filteredNumeros = (() => {
+    let base = filtroNumeros === "disponiveis" ? numerosDisponiveis
+      : filtroNumeros === "vendidos" ? numerosVendidos
+      : lotericaNumeros;
+    if (searchNumero) {
+      base = base.filter((n) => n.numero.toString().includes(searchNumero) || (n.comprador && n.comprador.toLowerCase().includes(searchNumero.toLowerCase())));
+    }
+    return base;
+  })();
 
   // Historico: todas as lotericas que ja tiveram sorteio realizado ou finalizada (excluindo a ativa)
   const historico = historicoLoterica.filter(
@@ -428,10 +437,19 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
               </>
             )}
 
-            {/* Busca e lista de numeros */}
-            <div className="flex gap-2 mb-3"><Input placeholder="Buscar numero ou comprador..." value={searchNumero} onChange={(e) => setSearchNumero(e.target.value)} className="text-sm flex-1" /><Button variant="outline" size="sm" onClick={() => setSearchNumero("")}><Search className="w-3 h-3" /></Button></div>
+            {/* Filtros e busca */}
+            <div className="flex flex-col sm:flex-row gap-2 mb-3">
+              <div className="flex gap-1">
+                {(["disponiveis", "vendidos", "todos"] as const).map((f) => (
+                  <Button key={f} size="sm" variant={filtroNumeros === f ? "default" : "outline"} onClick={() => setFiltroNumeros(f)} className="text-xs h-7 px-2">
+                    {f === "disponiveis" ? `Disponiveis (${numerosDisponiveis.length})` : f === "vendidos" ? `Vendidos (${numerosVendidos.length})` : `Todos (${lotericaNumeros.length})`}
+                  </Button>
+                ))}
+              </div>
+              <Input placeholder="Buscar numero ou comprador..." value={searchNumero} onChange={(e) => setSearchNumero(e.target.value)} className="text-sm flex-1" />
+            </div>
             <div className="max-h-64 overflow-y-auto">
-              {(filteredNumeros.length > 0 ? filteredNumeros : lotericaNumeros.slice(0, 50)).map((n) => (
+              {filteredNumeros.map((n) => (
                 <div key={n.id} className={`flex items-center justify-between py-1.5 px-2 rounded text-xs border-b border-border/30 ${n.comprador ? "bg-green-500/5" : ""}`}>
                   <div className="flex items-center gap-2">
                     <span className={`font-mono font-bold w-10 ${n.comprador ? "text-green-400" : "text-muted-foreground"}`}>{String(n.numero).padStart(3, "0")}</span>
