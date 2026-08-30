@@ -11,7 +11,8 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
-import { correctTextPreview, correctText, detectLang } from "@/lib/spellchecker";
+import { correctTextPreview, correctText, detectLang, getCorrectionDiff, getDictStats } from "@/lib/spellchecker";
+import type { DiffSegment } from "@/lib/spellchecker";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -73,11 +74,11 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
 
-  const correctedPreview = useMemo(() => {
+  const correctionDiff = useMemo((): DiffSegment[] | null => {
     if (!inputMsg.trim()) return null;
     const corrected = correctTextPreview(inputMsg).trim();
     if (corrected === inputMsg.trim()) return null;
-    return corrected;
+    return getCorrectionDiff(inputMsg.trim(), corrected);
   }, [inputMsg]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -427,10 +428,14 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                   <Send className="w-4 h-4" />
                 </Button>
               </div>
-              {correctedPreview && (
-                <div className="mt-1.5 px-1 flex items-center gap-1.5">
-                  <span className="text-[10px] text-muted-foreground shrink-0">Corrigido:</span>
-                  <p className="text-[11px] text-green-500/80 truncate" data-no-translate translate="no">{correctedPreview}</p>
+              {correctionDiff && (
+                <div className="mt-1.5 px-2 py-1.5 rounded-md bg-green-500/8 border border-green-500/20 flex items-center gap-1.5">
+                  <span className="text-[10px] font-bold text-green-500/70 shrink-0">Corrigido:</span>
+                  <p className="text-[11px] leading-relaxed" data-no-translate translate="no">
+                    {correctionDiff.map((seg, i) => (
+                      <span key={i} className={seg.changed ? "text-green-400 font-semibold" : "text-muted-foreground"}>{seg.text}</span>
+                    ))}
+                  </p>
                 </div>
               )}
             </div>
