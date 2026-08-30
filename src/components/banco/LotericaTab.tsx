@@ -159,7 +159,7 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
       if (part.includes("-")) {
         const [a, b] = part.split("-").map((s) => parseInt(s.trim()));
         if (!isNaN(a) && !isNaN(b) && a >= 1 && b <= 1000 && a <= b) {
-          for (let i = a; i < b; i++) nums.add(i);
+          for (let i = a; i <= b; i++) nums.add(i);
         }
       } else {
         const n = parseInt(part);
@@ -380,8 +380,8 @@ export default function LotericaTab({ isAdmin }: LotericaTabProps) {
                     <h4 className="text-xs font-bold text-foreground mb-2">Vender Numeros</h4>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <div className="flex-1">
-                        <Label className="text-xs text-muted-foreground">Numeros <span className="text-muted-foreground/60">(ex: 1-51, 100-151, 200, 300)</span></Label>
-                        <Input placeholder="1-51, 100-151, 200, 300" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" />
+                        <Label className="text-xs text-muted-foreground">Numeros <span className="text-muted-foreground/60">(ex: 5, 10-15, 20, 100-102)</span></Label>
+                        <Input placeholder="5, 10-15, 20" value={numeroInput} onChange={(e) => setNumeroInput(e.target.value)} className="text-sm font-mono" />
                       </div>
                       <div className="flex-1">
                         <Label className="text-xs text-muted-foreground">Nome do Comprador</Label>
