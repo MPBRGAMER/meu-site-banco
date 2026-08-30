@@ -431,27 +431,54 @@ export async function POST(req: NextRequest) {
       case "addEmprestimo": {
         const { player, item, quantidade, dataEmprestimo, tipoMembro, status } = data;
         if (!player || !item || !quantidade) return err("Campos obrigatórios: player, item, quantidade");
-        const emp = await db.emprestimo.create({
-          data: {
-            player, item,
-            quantidade: Number(quantidade),
-            dataEmprestimo: dataEmprestimo ? new Date(dataEmprestimo) : new Date(),
-            tipoMembro: tipoMembro || "comum",
-            status: status || "pendente",
-          },
-        });
-        return json(emp);
+        const result = await db.$transaction([
+          db.emprestimo.create({
+            data: {
+              player, item,
+              quantidade: Number(quantidade),
+              dataEmprestimo: dataEmprestimo ? new Date(dataEmprestimo) : new Date(),
+              tipoMembro: tipoMembro || "comum",
+              status: status || "pendente",
+            },
+          }),
+          db.caixaRegistro.create({
+            data: {
+              tipo: "saida",
+              descricao: `Empréstimo para ${player}`,
+              item: String(item),
+              quantidade: Number(quantidade),
+              origem: "emprestimo",
+            },
+          }),
+        ]);
+        return json(result[0]);
       }
       case "updateEmprestimo": {
         const { id, status, dataPagamento, itemPagamento, quantidadePaga } = data;
         if (!id) return err("id obrigatório");
+        const emp = await db.emprestimo.findUnique({ where: { id } });
+        if (!emp) return err("Empréstimo não encontrado");
         const updateData: Record<string, unknown> = {};
         if (status) updateData.status = status;
         if (dataPagamento) updateData.dataPagamento = new Date(dataPagamento);
         if (itemPagamento) updateData.itemPagamento = itemPagamento;
         if (quantidadePaga !== undefined) updateData.quantidadePaga = Number(quantidadePaga);
-        const emp = await db.emprestimo.update({ where: { id }, data: updateData });
-        return json(emp);
+        const txOps: unknown[] = [
+          db.emprestimo.update({ where: { id }, data: updateData }),
+        ];
+        if (status === "pago" && itemPagamento && quantidadePaga) {
+          txOps.push(db.caixaRegistro.create({
+            data: {
+              tipo: "entrada",
+              descricao: `Pagamento de empréstimo - ${emp.player}`,
+              item: String(itemPagamento),
+              quantidade: Number(quantidadePaga),
+              origem: "emprestimo",
+            },
+          }));
+        }
+        const result = await db.$transaction(txOps);
+        return json(result[0]);
       }
       case "addInvestidor": {
         const { nome, observacao } = data;

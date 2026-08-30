@@ -226,25 +226,15 @@ export function useBank() {
     tipoMembro: string; dataEmprestimo: string; status: string;
   }) => {
     await apiPost("addEmprestimo", d);
-    await addCaixa({
-      tipo: "saida", descricao: `Empréstimo para ${d.player}`,
-      item: d.item, quantidade: d.quantidade, origem: "emprestimo",
-    });
     loadAll();
-  }, [addCaixa, loadAll]);
+  }, [loadAll]);
 
   const pagarEmprestimo = useCallback(async (id: string, pagamento: { itemPagamento: string; quantidadePaga: number }) => {
-    const emp = emprestimos.find((e) => e.id === id);
-    if (!emp) return;
     await apiPost("updateEmprestimo", {
       id, status: "pago", dataPagamento: new Date().toISOString(), ...pagamento,
     });
-    await addCaixa({
-      tipo: "entrada", descricao: `Pagamento de empréstimo - ${emp.player}`,
-      item: pagamento.itemPagamento, quantidade: pagamento.quantidadePaga, origem: "emprestimo",
-    });
     loadAll();
-  }, [emprestimos, addCaixa, loadAll]);
+  }, []);
 
   // === INVESTIDORES ===
   const addInvestidor = useCallback(async (nome: string, observacao?: string) => {

@@ -73,11 +73,15 @@ function EmprestimoCard({ emp, isAdmin }: { emp: Emprestimo; isAdmin: boolean })
   venc.setDate(venc.getDate() + 1);
   const estaAtrasado = now > venc && emp.status === "pendente";
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     if (!itemPagamento || !qtdPagamento) { toast.error("Preencha o item e a quantidade."); return; }
-    pagarEmprestimo(emp.id, { itemPagamento, quantidadePaga: parseInt(qtdPagamento) });
-    toast.success(`Empréstimo de ${emp.player} marcado como pago!`);
-    setShowPayment(false); setItemPagamento(""); setQtdPagamento("");
+    try {
+      await pagarEmprestimo(emp.id, { itemPagamento, quantidadePaga: parseInt(qtdPagamento) });
+      toast.success(`Empréstimo de ${emp.player} marcado como pago!`);
+      setShowPayment(false); setItemPagamento(""); setQtdPagamento("");
+    } catch (e) {
+      toast.error(`Erro ao registrar pagamento: ${e instanceof Error ? e.message : "erro desconhecido"}`);
+    }
   };
 
   return (
@@ -128,11 +132,15 @@ export default function EmprestimosTab({ isAdmin }: EmprestimosTabProps) {
   const [tipo, setTipo] = useState<string>("comum");
   const [showCalc, setShowCalc] = useState(false);
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
     if (!player || !item || !quantidade) { toast.error("Preencha todos os campos."); return; }
-    addEmprestimo({ player, item, quantidade: parseInt(quantidade), tipoMembro: tipo, dataEmprestimo: new Date().toISOString(), status: "pendente" });
-    toast.success(`Empréstimo para ${player} registrado!`);
-    setPlayer(""); setItem(""); setQuantidade("");
+    try {
+      await addEmprestimo({ player, item, quantidade: parseInt(quantidade), tipoMembro: tipo, dataEmprestimo: new Date().toISOString(), status: "pendente" });
+      toast.success(`Empréstimo para ${player} registrado!`);
+      setPlayer(""); setItem(""); setQuantidade("");
+    } catch (e) {
+      toast.error(`Erro ao registrar empréstimo: ${e instanceof Error ? e.message : "erro desconhecido"}`);
+    }
   };
 
   if (isLoading) return <div className="flex items-center justify-center h-64 text-muted-foreground">Carregando...</div>;
