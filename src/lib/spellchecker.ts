@@ -119,18 +119,11 @@ export function correctText(text: string, lang?: string): string {
 }
 
 /**
- * Versão lightweight para preview (só primeiras N palavras).
+ * Versão para preview — aplica correção completa ao texto inteiro.
+ * Não trunca mais: o preview deve mostrar todas as correções visíveis.
  */
-export function correctTextPreview(text: string, lang?: string, maxWords = 30): string {
-  const words = text.split(/(\s+)/);
-  let count = 0;
-  let preview = "";
-  for (const w of words) {
-    preview += w;
-    if (/\S/.test(w)) count++;
-    if (count >= maxWords) break;
-  }
-  return correctText(preview, lang);
+export function correctTextPreview(text: string, lang?: string): string {
+  return correctText(text, lang);
 }
 
 /**
@@ -223,11 +216,21 @@ function universalPostProcess(text: string): string {
   // Primeira letra maiúscula após ponto final, !, ?
   result = result.replace(/([.!?]\s+)([a-zà-ÿ])/g, (_, punct, letter) => punct + letter.toUpperCase());
 
+  // Primeira letra maiúscula no início do texto
+  if (result.length > 0) {
+    result = result[0].toUpperCase() + result.slice(1);
+  }
+
   // Remover espaço no início
   result = result.trimStart();
 
   // Remover espaços múltiplos antes de pontuação final
   result = result.replace(/\s+([.!?]+)$/g, "$1");
+
+  // Vírgula antes de "e"/"ou" quando há 3+ itens na frase (heurística simples)
+  // Ex: "x y e z" com padrão de lista → não mexer (pode ser ambíguo)
+  // Mas adiciona vírgula depois de "Sim" "Não" etc. no início
+  result = result.replace(/^(Sim|Não|Bem|Ora|Então|Agora|Pois|Claro|Certo|Exato)(\s+[A-Z])/gm, "$1,$2");
 
   return result;
 }

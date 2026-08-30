@@ -81,6 +81,17 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
     return getCorrectionDiff(inputMsg.trim(), corrected);
   }, [inputMsg]);
 
+  const correctedText = useMemo((): string | null => {
+    if (!correctionDiff) return null;
+    return correctTextPreview(inputMsg).trim();
+  }, [correctionDiff, inputMsg]);
+
+  const applyCorrection = () => {
+    if (correctedText) {
+      setInputMsg(correctedText);
+    }
+  };
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const scrollLockRef = useRef(false);
@@ -429,13 +440,27 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                 </Button>
               </div>
               {correctionDiff && (
-                <div className="mt-1.5 px-2 py-1.5 rounded-md bg-green-500/8 border border-green-500/20 flex items-center gap-1.5">
-                  <span className="text-[10px] font-bold text-green-500/70 shrink-0">Corrigido:</span>
-                  <p className="text-[11px] leading-relaxed" data-no-translate translate="no">
-                    {correctionDiff.map((seg, i) => (
-                      <span key={i} className={seg.changed ? "text-green-400 font-semibold" : "text-muted-foreground"}>{seg.text}</span>
-                    ))}
-                  </p>
+                <div className="mt-2 px-3 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-2">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-[11px] font-bold text-emerald-400">Correções sugeridas:</span>
+                    </div>
+                    <p className="text-sm leading-relaxed" data-no-translate translate="no">
+                      {correctionDiff.map((seg, i) => (
+                        <span key={i} className={
+                          seg.changed
+                            ? "text-emerald-300 font-semibold bg-emerald-500/20 px-0.5 rounded"
+                            : "text-muted-foreground"
+                        }>{seg.text}</span>
+                      ))}
+                    </p>
+                  </div>
+                  <button
+                    onClick={applyCorrection}
+                    className="shrink-0 text-[11px] font-bold text-emerald-400 hover:text-emerald-300 bg-emerald-500/20 hover:bg-emerald-500/30 px-2.5 py-1 rounded-md transition-colors"
+                  >
+                    Aplicar
+                  </button>
                 </div>
               )}
             </div>

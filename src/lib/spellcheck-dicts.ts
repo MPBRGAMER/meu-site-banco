@@ -15,7 +15,6 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "tbm": "também",
   "pq": "porque",
   "q": "que",
-  " tq": "te quiero",
   "blz": "beleza",
   "flw": "falou",
   "vlw": "valeu",
@@ -50,8 +49,7 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "bjs": "beijos",
   "abs": "abraços",
   "porem": "porém",
-  "contanto": "contudo",
-  "tudo": "tudo",
+  
   "cla": "clã",
   "regiao": "região",
   "remedio": "remédio",
@@ -577,8 +575,68 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
   "desconfiavel": "desconfiável",
   "amavel": "amável",
   "sociavel": "sociável",
-  "apatico": "apático",
-},
+
+  // === Erros comuns de digitação ===
+  "muinto": "muito",
+  "muitoo": "muito",
+  "parabens": "parabéns",
+  "parabem": "parabéns",
+  "dinherio": "dinheiro",
+  "dinhero": "dinheiro",
+  "dinehiro": "dinheiro",
+  "numca": "nunca",
+  "numcara": "nunca",
+  "pesoal": "pessoal",
+  "tabem": "também",
+  "tanbem": "também",
+  "tambemm": "também",
+  "vocees": "vocês",
+  "voçe": "você",
+  "naum": "não",
+  "nam": "não",
+  "algm": "alguém",
+  "nao": "não",
+  "jah": "já",
+  "soh": "só",
+  "nah": "não",
+  "tah": "tá",
+  "toh": "tô",
+  "sla": "sei lá",
+  "sld": "sei lá",
+  "nsei": "não sei",
+  "nsa": "não sei",
+  "qdo": "quando",
+  "qndo": "quando",
+  "kdo": "quando",
+  "pfv": "por favor",
+  "fds": "fim de semana",
+  "tao": "tão",
+  "hifen": "hífen",
+  "comentario": "comentário",
+  "situacao": "situação",
+  "profissao": "profissão",
+  "horario": "horário",
+  "comeco": "começo",
+  "comecar": "começar",
+  "comecou": "começou",
+  "discussao": "discussão",
+  "reuniao": "reunião",
+  // === Gaming ===
+  "pvp": "PvP",
+  "pve": "PvE",
+  "npc": "NPC",
+  "dmg": "dano",
+  "xp": "XP",
+  // === Palavras comuns sem acento ===
+  "entao": "então",
+  "la": "lá",
+  "eai": "e aí",
+  "eaí": "e aí",
+  "tav": "tava",
+  "kem": "quem",
+  "qro": "quero",
+  "bora": "bora",
+  },
 
   en: {
   "dont": "don't", "doesnt": "doesn't", "cant": "can't",
@@ -2107,19 +2165,34 @@ export const QUICK_FIXES: Record<string, Record<string, string>> = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const GRAMMAR_RULES: Record<string, any[]> = {
   pt: [
-    // Vírgula antes de conjunções adversativas (mas, porém, contudo...)
+    // === Vírgula antes de adversativas ===
     [/([A-Za-z\u00C0-\u024F])(\s+)(mas|por\u00E9m|contudo|todavia|entretanto)\b/gi, "$1,$2$3"],
-    // Vírgula antes de conclusivas (portanto, logo)
-    [/([A-Za-z\u00C0-\u024F])(\s+)(portanto|logo|consequentemente)\b/gi, "$1,$2$3"],
-    // Vírgula em vocativos (oi cara blz → oi, cara blz)
-    [/(^|\s)([A-Za-z\u00C0-\u024F][a-z\u00C0-\u024F]+)(\s+(?:cara|mano|brother|pessoa|gente|amor|querido|querida|amigo|amiga|filho|filha|m\u00E3e|pai|chefe|senhor|senhora|doutor|doutora|professor|professora|mo\u00E7o|mo\u00E7a|garoto|garota|rapaz))([^,.!?]|$)/g, "$1$2,$3$4"],
-    // Espaço depois de vírgula
+    // === Vírgula antes de "no entanto" ===
+    [/([A-Za-z\u00C0-\u024F])(\s+)(no\s+entanto)\b/gi, "$1,$2$3"],
+    // === Vírgula antes de conclusivas ===
+    [/([A-Za-zÀ-\u024F])(\s+)(portanto|logo|consequentemente|então)\b/gi, "$1,$2$3"],
+    // === Vírgula antes de "pois" explicativo (no meio/fim da frase) ===
+    [/([A-Za-z\u00C0-\u024F])(\s+)(pois)\b(?=\s+[a-z\u00E0-\u00FF])/gi, "$1,$2$3"],
+    // === Vírgula antes de aditivas fortes ===
+    [/([A-Za-z\u00C0-\u024F])(\s+)(ademais|al\u00E9m\s+disso|al\u00E9m\s+do\s+mais|outrossim|inclusive)\b/gi, "$1,$2$3"],
+    // === Vírgula antes de explicativas/expressões ===
+    [/([A-Za-z\u00C0-\u024F])(\s+)(ou\s+seja|isto\s+\u00E9|por\s+exemplo|a\s+saber|quer\s+dizer|digo|ou\s+ent\u00E3o)\b/gi, "$1,$2$3"],
+    // === Vírgula em vocativos (apenas no início da frase ou após pontuação) ===
+    [/(^|[.!?]\s+)([A-Za-z\u00C0-\u024F][a-z\u00E0-\u00FF]+)(\s+(?:cara|mano|brother|amor|querido|querida|amigo|amiga|filho|filha|m\u00E3e|pai|chefe|senhor|senhora|doutor|doutora|professor|professora|mo\u00E7o|mo\u00E7a|garoto|garota|rapaz|molecada|turma|galera))(?=[^,.!?]|$)/g, "$1$2,$3"],
+    // === Vírgula quando vocativo É a primeira palavra ===
+    [/^(Cara|Mano|Amigo|Irmão|Irmã|Mãe|Pai|Chefe|Gente)(\s+[a-z])/gi, "$1,$2"],
+    // === Vírgula depois de "Sim"/"Não"/"Bem"/"Ora" no início ===
+    [/(^|[.!?]\s+)(Sim|N\u00E3o|Bem|Ora|Ent\u00E3o|Agora|Pois|Talvez|Claro|Certo|Exato)(\s+[A-Za-z])/g, "$1$2,$3"],
+    // === Crase: "a a" → "\u00E0" (quando o segundo "a" \u00E9 artigo feminino) ===
+    [/\ba\s+a\b(?=\s+[A-Za-z\u00C0-\u024F])/gi, "\u00E0"],
+    // === Crase: "a aquele/aquela/aquilo" → "\u00E0quele/\u00E0quela/\u00E0quilo" ===
+    [/\ba\s+aqu(ele|ela|eles|elas|ilo)\b/gi, "\u00E0qu$1"],
+    // === Espa\u00E7o depois de v\u00EDrgula ===
     [/,(?=[A-Za-z\u00C0-\u024F0-9])/g, ", "],
-    // Espaço depois de ponto-e-vírgula
+    // === Espa\u00E7o depois de ponto-e-v\u00EDrgula ===
     [/;(?=[A-Za-z\u00C0-\u024F0-9])/g, "; "],
   ],
   en: [
-    // Comma before conjunctions
     [/([A-Za-z])(\s+)(but|however|nevertheless|therefore|furthermore|moreover|consequently|meanwhile)\b(?=\s+[a-z])/gi, "$1,$2$3"],
     [/,(?=[A-Za-z0-9])/g, ", "],
   ],
@@ -2143,4 +2216,4 @@ export const GRAMMAR_RULES: Record<string, any[]> = {
   ko: [],
   ar: [],
   hi: [],
-};;;
+};
