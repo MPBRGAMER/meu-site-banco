@@ -503,13 +503,25 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
             </div>
 
             <div className="border-t border-border px-4 py-2 shrink-0 bg-card">
-              <div className="flex items-center gap-2 mb-1.5 px-1">
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500/15 shrink-0">
-                  <span className="text-[10px]">✍️</span>
+              <div className="flex items-center justify-between gap-2 mb-1.5 px-1">
+                <div className="flex items-center gap-2 min-w-0">
+                  <div className="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500/15 shrink-0">
+                    <span className="text-[10px]">✍️</span>
+                  </div>
+                  <p className="text-[10px] text-amber-300/80 leading-tight font-medium">
+                    Escreva corretamente com acentos, vírgulas e pontuação para que a tradução para outros idiomas seja perfeita!
+                  </p>
                 </div>
-                <p className="text-[10px] text-amber-300/80 leading-tight font-medium">
-                  Escreva corretamente com acentos, vírgulas e pontuação para que a tradução para outros idiomas seja perfeita!
-                </p>
+                <a
+                  href="https://languagetool.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[10px] text-primary/70 hover:text-primary bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded-md transition-colors shrink-0 font-medium"
+                  data-no-translate
+                  translate="no"
+                >
+                  <span className="text-[9px]">🔍</span> LanguageTool
+                </a>
               </div>
               <div className="flex gap-2">
                 <Input
