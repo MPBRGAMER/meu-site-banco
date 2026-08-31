@@ -61,19 +61,33 @@ export async function POST(req: NextRequest) {
       suggestions: ((m.replacements || []) as Array<Record<string, string>>).map((r) => r.value).slice(0, 3),
     }));
 
-    // Apply corrections: sort by offset descending to replace from end
+    // Apply corrections: sort by offset descending, skip overlapping matches, replace from end to start
     let corrected = trimmed;
-    const sorted = [...(data.matches || [])].sort(
-      (a: Record<string, number>, b: Record<string, number>) => b.offset - a.offset
-    );
+    const sorted = [...(data.matches || [])]
+      .map((m: Record<string, number>) => ({
+        offset: m.offset as number,
+        length: m.length as number,
+        replacement: (((m.replacements || []) as Array<Record<string, string>>)[0] || {}).value || "",
+      }))
+      .filter((m) => m.replacement !== "")
+      .sort((a, b) => b.offset - a.offset);
+
+    // Build non-overlapping list by processing from end to start
+    const nonOverlapping: typeof sorted = [];
+    let boundary = trimmed.length;
     for (const m of sorted) {
-      const replacements = (m.replacements || []) as Array<Record<string, string>>;
-      if (replacements.length > 0) {
-        corrected =
-          corrected.slice(0, m.offset as number) +
-          replacements[0].value +
-          corrected.slice((m.offset as number) + (m.length as number));
+      if (m.offset + m.length <= boundary) {
+        nonOverlapping.push(m);
+        boundary = m.offset;
       }
+    }
+
+    // Apply from end to start so offsets remain valid
+    for (const m of nonOverlapping) {
+      corrected =
+        corrected.slice(0, m.offset) +
+        m.replacement +
+        corrected.slice(m.offset + m.length);
     }
 
     // Cache result
