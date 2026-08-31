@@ -55,7 +55,10 @@ const TAB_PERMISSIONS: Record<string, string> = {
 type AuthMode = "none" | "superadmin" | "moderador";
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState("dashboard");
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window !== "undefined") return localStorage.getItem("bancoActiveTab") || "dashboard";
+    return "dashboard";
+  });
   const [authMode, setAuthMode] = useState<AuthMode>("none");
   const [modNome, setModNome] = useState("");
   const [modPermissoes, setModPermissoes] = useState<string[]>([]);
@@ -428,7 +431,7 @@ export default function HomePage() {
               const isActive = activeTab === tab.id;
               const Icon = tab.icon;
               return (
-                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                <button key={tab.id} onClick={() => { localStorage.setItem("bancoActiveTab", tab.id); setActiveTab(tab.id); }}
                   className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
                     isActive ? "bg-primary/20 text-primary border border-primary/30" : "text-muted-foreground hover:text-foreground hover:bg-accent border border-transparent"
                   }`}>
