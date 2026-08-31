@@ -513,6 +513,29 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     toast.success(`"${item.name}" marcado para remocao.`);
   };
 
+  const handleRemovePermanently = async (item: typeof allItems[0]) => {
+    if (!confirm(`Remover "${item.name}" permanentemente?`)) return;
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify({ action: "remove", item: { itemId: item.id, name: item.name, categoryId: item.categoryName } }),
+      });
+      if (res.ok) {
+        toast.success(`"${item.name}" removido permanentemente!`);
+        onSaved?.();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        toast.error(data.error || "Erro ao remover.");
+      }
+    } catch {
+      toast.error("Erro de conexao.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   const handleRestoreLocal = (id: string) => {
     setRemovedItems(removedItems.filter((r) => r.id !== id));
     toast.success("Item restaurado.");
@@ -743,6 +766,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
                         <div className="flex items-center gap-1.5 shrink-0">
                           <button onClick={() => startEdit(item)} className="text-[10px] text-yellow-400 hover:text-yellow-300">Editar</button>
                           <button onClick={() => handleRemove(item)} className="text-[10px] text-red-400 hover:text-red-300">Remover</button>
+                          <button onClick={() => handleRemovePermanently(item)} disabled={isSaving} className="text-[10px] text-red-500 hover:text-red-400 font-bold disabled:opacity-50">Remover de Vez</button>
                         </div>
                       </div>
                     )}
