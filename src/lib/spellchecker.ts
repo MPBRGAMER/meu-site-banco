@@ -1,17 +1,14 @@
-import { QUICK_FIXES, GRAMMAR_RULES } from "./spellcheck-dicts";
-
 /**
- * Regex que casa palavras em qualquer idioma.
- * Usa \p{L} (Unicode Letter) — cobre Latin, Cyrillic, Arabic, Devanagari, CJK, Hangul, etc.
+ * Corretor ortográfico usando LanguageTool API.
+ * Mantém: detectLang, getCorrectionDiff, resolveLang, getLangOptions.
+ * Correção principal via /api/spellcheck (LanguageTool).
  */
-const WORD_RE = /[\p{L}']+/gu;
 
 /**
  * Deteta o idioma dominante de um texto.
  */
 export function detectLang(text: string): string {
-  const len = text.length;
-  if (!len) return "pt";
+  if (!text.length) return "pt";
 
   let counts: Record<string, number> = {
     ja: 0, zh: 0, ko: 0, ar: 0, hi: 0, ru: 0,
@@ -54,6 +51,7 @@ export function resolveLang(code: string): string {
 
 export function getLangOptions(): { value: string; label: string }[] {
   return [
+    { value: "auto", label: "Auto" },
     { value: "pt", label: "Português" },
     { value: "en", label: "English" },
     { value: "es", label: "Español" },
@@ -71,59 +69,23 @@ export function getLangOptions(): { value: string; label: string }[] {
 }
 
 /**
- * Retorna estatísticas do dicionário (para debug no browser).
+ * Chama a API /api/spellcheck (LanguageTool) e retorna o texto corrigido.
  */
-export function getDictStats(): Record<string, number> {
-  const stats: Record<string, number> = {};
-  for (const [lang, fixes] of Object.entries(QUICK_FIXES)) {
-    stats[lang] = Object.keys(fixes).length;
-  }
-  return stats;
-}
-
-/**
- * Correção completa com múltiplos passes:
- * 1. Quick fixes (dicionário O(1))
- * 2. Regras gramaticais (vírgulas, crase, maiúsculas, pontuação)
- */
-export function correctText(text: string, lang?: string): string {
+export async function correctText(text: string, lang?: string): Promise<string> {
+  if (!text.trim()) return text;
   const language = lang || detectLang(text);
-  let result = text;
-
-  // 1. Quick Fixes — substituição de palavras
-  const fixes = QUICK_FIXES[language];
-  if (fixes && Object.keys(fixes).length > 0) {
-    result = result.replace(WORD_RE, (word) => {
-      const lower = word.toLowerCase();
-      const fix = fixes[lower];
-      if (!fix) return word;
-      if (word[0] !== word[0].toLowerCase() && fix[0]) {
-        return fix[0].toUpperCase() + fix.slice(1);
-      }
-      return fix;
+  try {
+    const res = await fetch("/api/spellcheck", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: text.trim(), language }),
     });
-  }
-
-  // 2. Regras Gramaticais
-  const rules = GRAMMAR_RULES[language];
-  if (rules?.length) {
-    for (const [regex, replacement] of rules) {
-      result = result.replace(regex, replacement);
+    if (res.ok) {
+      const data = await res.json();
+      if (data.corrected) return data.corrected;
     }
-  }
-
-  // 3. Pós-processamento universal (aplica a todos os idiomas)
-  result = universalPostProcess(result);
-
-  return result;
-}
-
-/**
- * Versão para preview — aplica correção completa ao texto inteiro.
- * Não trunca mais: o preview deve mostrar todas as correções visíveis.
- */
-export function correctTextPreview(text: string, lang?: string): string {
-  return correctText(text, lang);
+  } catch { /* fallback */ }
+  return text;
 }
 
 /**
@@ -144,7 +106,6 @@ export function getCorrectionDiff(original: string, corrected: string): DiffSegm
 
   while (i < original.length || j < corrected.length) {
     if (i < original.length && j < corrected.length && original[i] === corrected[j]) {
-      // Encontrar trecho igual
       let end = 0;
       while (
         i + end < original.length &&
@@ -159,12 +120,9 @@ export function getCorrectionDiff(original: string, corrected: string): DiffSegm
         j += end;
       }
     } else {
-      // Encontrar trecho diferente
       let origEnd = i;
       let corrEnd = j;
-      // Avançar até encontrar o próximo caractere igual
       while (origEnd < original.length && corrEnd < corrected.length && original[origEnd] !== corrected[corrEnd]) {
-        // Tentar encontrar ponto de reencontro
         const origNext = corrected.slice(corrEnd).indexOf(original[origEnd]);
         if (origNext >= 0) {
           corrEnd += origNext;
@@ -174,7 +132,6 @@ export function getCorrectionDiff(original: string, corrected: string): DiffSegm
         }
       }
       if (origEnd === i && corrEnd === j) {
-        // Fallback: avançar 1 caractere em cada
         if (i < original.length) origEnd = i + 1;
         if (j < corrected.length) corrEnd = j + 1;
       }
@@ -183,7 +140,6 @@ export function getCorrectionDiff(original: string, corrected: string): DiffSegm
         i = origEnd;
         j = corrEnd;
       } else {
-        // Caractere removido no original
         if (i < original.length) {
           segments.push({ text: original[i], changed: true });
           i++;
@@ -193,44 +149,4 @@ export function getCorrectionDiff(original: string, corrected: string): DiffSegm
   }
 
   return segments.length > 0 ? segments : null;
-}
-
-/**
- * Pós-processamento universal aplicado a todos os idiomas.
- */
-function universalPostProcess(text: string): string {
-  let result = text;
-
-  // Espaços duplos → espaço simples
-  result = result.replace(/  +/g, " ");
-
-  // Espaço antes de pontuação → remover
-  result = result.replace(/\s+([.,!?;:])/g, "$1");
-
-  // Sem espaço depois de vírgula/ponto-e-vírgula → adicionar
-  result = result.replace(/([,;])([\S])/g, "$1 $2");
-
-  // Espaço depois de ponto final se seguido de letra (nova frase)
-  result = result.replace(/\.([A-Za-zÀ-ÿ])/g, ". $1");
-
-  // Primeira letra maiúscula após ponto final, !, ?
-  result = result.replace(/([.!?]\s+)([a-zà-ÿ])/g, (_, punct, letter) => punct + letter.toUpperCase());
-
-  // Primeira letra maiúscula no início do texto
-  if (result.length > 0) {
-    result = result[0].toUpperCase() + result.slice(1);
-  }
-
-  // Remover espaço no início
-  result = result.trimStart();
-
-  // Remover espaços múltiplos antes de pontuação final
-  result = result.replace(/\s+([.!?]+)$/g, "$1");
-
-  // Vírgula antes de "e"/"ou" quando há 3+ itens na frase (heurística simples)
-  // Ex: "x y e z" com padrão de lista → não mexer (pode ser ambíguo)
-  // Mas adiciona vírgula depois de "Sim" "Não" etc. no início
-  result = result.replace(/^(Sim|Não|Bem|Ora|Então|Agora|Pois|Claro|Certo|Exato)(\s+[A-Z])/gm, "$1,$2");
-
-  return result;
 }

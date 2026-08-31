@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
-import { correctTextPreview, correctText, detectLang, getCorrectionDiff, getDictStats } from "@/lib/spellchecker";
+import { correctText, detectLang, getCorrectionDiff } from "@/lib/spellchecker";
 import type { DiffSegment } from "@/lib/spellchecker";
 
 const CANAIS = [
@@ -74,17 +74,52 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
 
-  const correctionDiff = useMemo((): DiffSegment[] | null => {
-    if (!inputMsg.trim()) return null;
-    const corrected = correctTextPreview(inputMsg).trim();
-    if (corrected === inputMsg.trim()) return null;
-    return getCorrectionDiff(inputMsg.trim(), corrected);
-  }, [inputMsg]);
+  const [correctionDiff, setCorrectionDiff] = useState<DiffSegment[] | null>(null);
+  const [correctedText, setCorrectedText] = useState<string | null>(null);
+  const [isChecking, setIsChecking] = useState(false);
+  const spellCheckRef = useRef<ReturnType<typeof setTimeout>>();
 
-  const correctedText = useMemo((): string | null => {
-    if (!correctionDiff) return null;
-    return correctTextPreview(inputMsg).trim();
-  }, [correctionDiff, inputMsg]);
+  // Debounced spell check via LanguageTool API
+  useEffect(() => {
+    const trimmed = inputMsg.trim();
+    if (!trimmed) {
+      setCorrectionDiff(null);
+      setCorrectedText(null);
+      return;
+    }
+    if (spellCheckRef.current) clearTimeout(spellCheckRef.current);
+    setIsChecking(true);
+    spellCheckRef.current = setTimeout(async () => {
+      try {
+        const lang = detectLang(trimmed);
+        const res = await fetch("/api/spellcheck", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: trimmed, language: lang }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const corrected = data.corrected || trimmed;
+          if (corrected !== trimmed) {
+            setCorrectionDiff(getCorrectionDiff(trimmed, corrected));
+            setCorrectedText(corrected);
+          } else {
+            setCorrectionDiff(null);
+            setCorrectedText(null);
+          }
+        } else {
+          setCorrectionDiff(null);
+          setCorrectedText(null);
+        }
+      } catch {
+        setCorrectionDiff(null);
+        setCorrectedText(null);
+      } finally {
+        setIsChecking(false);
+      }
+    }, 600);
+    return () => { if (spellCheckRef.current) clearTimeout(spellCheckRef.current); };
+  }, [inputMsg]);
 
   const applyCorrection = () => {
     if (correctedText) {
@@ -123,11 +158,22 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
     }, 100);
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!inputMsg.trim()) return;
-    const corrected = correctText(inputMsg);
-    sendMessage(corrected, nomeUsuario);
+    let textToSend = inputMsg.trim();
+    // Use corrected text if available, otherwise call API
+    if (correctedText) {
+      textToSend = correctedText;
+    } else {
+      try {
+        const corrected = await correctText(textToSend);
+        textToSend = corrected;
+      } catch { /* send original */ }
+    }
+    sendMessage(textToSend, nomeUsuario);
     setInputMsg("");
+    setCorrectionDiff(null);
+    setCorrectedText(null);
     autoScrollRef.current = true;
   };
 
@@ -439,6 +485,12 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                   <Send className="w-4 h-4" />
                 </Button>
               </div>
+              {isChecking && !correctionDiff && inputMsg.trim().length > 3 && (
+                <div className="mt-2 px-3 py-2 rounded-lg bg-muted/50 border border-border flex items-center gap-2">
+                  <div className="w-3 h-3 border-2 border-muted-foreground/30 border-t-emerald-400 rounded-full animate-spin" />
+                  <span className="text-[11px] text-muted-foreground">Verificando ortografia...</span>
+                </div>
+              )}
               {correctionDiff && (
                 <div className="mt-2 px-3 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-2">
                   <div className="flex-1 min-w-0">
