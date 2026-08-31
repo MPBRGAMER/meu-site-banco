@@ -350,6 +350,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const categories = mergedCategories;
   const removeSet = new Set(itemOverrides.filter(o => o.action === "remove").map(o => o.itemId));
+  const dbRemovedItems = useMemo(() => itemOverrides.filter(o => o.action === "remove").map(o => ({ id: o.itemId, name: o.name || o.itemId, category: o.categoryId || "?" })), [itemOverrides]);
   const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))));
 
   const slugify = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -512,9 +513,31 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     toast.success(`"${item.name}" marcado para remocao.`);
   };
 
-  const handleRestore = (id: string) => {
+  const handleRestoreLocal = (id: string) => {
     setRemovedItems(removedItems.filter((r) => r.id !== id));
     toast.success("Item restaurado.");
+  };
+
+  const handleRestoreDb = async (id: string) => {
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify({ action: "restore", item: { itemId: id } }),
+      });
+      if (res.ok) {
+        toast.success("Item restaurado no banco!");
+        onSaved?.();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        toast.error(data.error || "Erro ao restaurar.");
+      }
+    } catch {
+      toast.error("Erro de conexao.");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const handleSaveRemoved = async () => {
@@ -561,7 +584,7 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
             <button key={tab} onClick={() => setActiveTab(tab)} className={`px-3 py-2 text-xs font-medium rounded-t-md transition-colors ${activeTab === tab ? "bg-primary/10 text-primary border-b-2 border-primary" : "text-muted-foreground hover:text-foreground"}`}>
               {tab === "add" && <span className="flex items-center gap-1"><PlusCircle className="w-3 h-3" /> Adicionar</span>}
               {tab === "edit" && <span className="flex items-center gap-1"><Pencil className="w-3 h-3" /> Editar/Remover</span>}
-              {tab === "removed" && <span className="flex items-center gap-1"><Trash2 className="w-3 h-3" /> Removidos ({removedItems.length})</span>}
+              {tab === "removed" && <span className="flex items-center gap-1"><Trash2 className="w-3 h-3" /> Removidos ({dbRemovedItems.length + removedItems.length})</span>}
             </button>
           ))}
         </div>
@@ -732,20 +755,45 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
           {/* REMOVED TAB */}
           {activeTab === "removed" && (
             <div className="space-y-3">
-              <p className="text-[10px] text-muted-foreground">Itens marcados para remocao nesta sessao.</p>
-              {removedItems.length === 0 ? (
-                <p className="text-xs text-muted-foreground text-center py-4">Nenhum item removido.</p>
-              ) : (
+              {/* DB-removed items */}
+              {dbRemovedItems.length > 0 && (
                 <>
+                  <p className="text-[10px] text-yellow-400 font-medium">Removidos no banco ({dbRemovedItems.length}) - clique para restaurar:</p>
+                  {dbRemovedItems.length > 1 && (
+                    <button onClick={async () => { setIsSaving(true); let ok = 0; for (const item of dbRemovedItems) { try { const r = await fetch("/api/items", { method: "POST", headers: { "Content-Type": "application/json", ...getAuthHeaders() }, body: JSON.stringify({ action: "restore", item: { itemId: item.id } }) }); if (r.ok) ok++; } catch {} } setIsSaving(false); toast.success(`${ok} itens restaurados!`); onSaved?.(); }} disabled={isSaving} className="text-[10px] text-green-400 hover:text-green-300 underline disabled:opacity-50">
+                      {isSaving ? "Restaurando..." : "Restaurar Todos"}
+                    </button>
+                  )}
                   <div className="space-y-1">
-                    {removedItems.map((item) => (
+                    {dbRemovedItems.map((item) => (
                       <div key={item.id} className="flex items-center justify-between rounded-md border border-red-500/20 bg-red-500/5 px-3 py-2">
                         <div className="flex items-center gap-2 min-w-0">
                           <Trash2 className="w-3 h-3 text-red-400 shrink-0" />
                           <span className="text-xs text-foreground truncate">{item.name}</span>
                           <span className="text-[9px] text-muted-foreground shrink-0">({item.category})</span>
                         </div>
-                        <button onClick={() => handleRestore(item.id)} className="text-[10px] text-green-400 hover:text-green-300 flex items-center gap-0.5 shrink-0"><RotateCcw className="w-3 h-3" /> Restaurar</button>
+                        <button onClick={() => handleRestoreDb(item.id)} disabled={isSaving} className="text-[10px] text-green-400 hover:text-green-300 flex items-center gap-0.5 shrink-0 disabled:opacity-50"><RotateCcw className="w-3 h-3" /> Restaurar</button>
+                      </div>
+                    ))}
+                  </div>
+                  {removedItems.length > 0 && <div className="border-t border-border my-2" />}
+                </>
+              )}
+              {/* Pending removal items (local) */}
+              <p className="text-[10px] text-muted-foreground">Itens marcados para remocao nesta sessao.</p>
+              {removedItems.length === 0 && dbRemovedItems.length === 0 ? (
+                <p className="text-xs text-muted-foreground text-center py-4">Nenhum item removido.</p>
+              ) : removedItems.length === 0 ? null : (
+                <>
+                  <div className="space-y-1">
+                    {removedItems.map((item) => (
+                      <div key={item.id} className="flex items-center justify-between rounded-md border border-orange-500/20 bg-orange-500/5 px-3 py-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <AlertCircle className="w-3 h-3 text-orange-400 shrink-0" />
+                          <span className="text-xs text-foreground truncate">{item.name}</span>
+                          <span className="text-[9px] text-muted-foreground shrink-0">({item.category})</span>
+                        </div>
+                        <button onClick={() => handleRestoreLocal(item.id)} className="text-[10px] text-green-400 hover:text-green-300 flex items-center gap-0.5 shrink-0"><RotateCcw className="w-3 h-3" /> Desfazer</button>
                       </div>
                     ))}
                   </div>
