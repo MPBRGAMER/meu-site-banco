@@ -1,281 +1,694 @@
 {
   "metadata": {
-    "version": "2026-08-31-v3-sementes-ervas-cultivo-split",
+    "version": "2026-08-31-v4-ordered",
     "game_version": "v.827+",
     "last_updated": "2026-08-06",
     "exchange_rate": "1 Aco ($) = 2 Cimentos (€)",
-    "note": "Sementes, Ervas e Cultivo separados. Cogumelos ja existia. Itens e imagens do wiki oficial (dayr.wiki.gg). Nomes em PT-BR.",
+    "note": "Categorias por importancia + itens em ordem alfabetica. Itens e imagens do wiki oficial (dayr.wiki.gg). Nomes em PT-BR.",
     "source": "dayr.wiki.gg"
   },
   "categories": [
     {
-      "id": "sementes",
-      "name": "Sementes",
+      "id": "armas",
+      "name": "Armas",
       "items": [
         {
-          "id": "potato_seeds",
-          "name": "Sementes de Batata",
-          "img": "/items/potato_seeds.png",
+          "id": "blackjack",
+          "name": "Blackjack",
+          "img": "/items/blackjack.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Potato_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Blackjack"
         },
         {
-          "id": "strawberry_seed",
-          "name": "Semente de Morango",
-          "img": "/items/strawberry_seed.png",
+          "id": "steel_knife",
+          "name": "Faca de Aco",
+          "img": "/items/steel_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_knife"
         },
         {
-          "id": "pumpkin_seeds",
-          "name": "Sementes de Abobora",
-          "img": "/items/pumpkin_seeds.png",
+          "id": "kitchen_knife",
+          "name": "Faca de Cozinha",
+          "img": "/items/kitchen_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pumpkin_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Kitchen_knife"
         },
         {
-          "id": "apple_seeds",
-          "name": "Sementes de Maca",
-          "img": "/items/apple_seeds.png",
+          "id": "flint_knife",
+          "name": "Faca de Pedra",
+          "img": "/items/flint_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Apple_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Flint_knife"
         },
         {
-          "id": "corn_seeds",
-          "name": "Sementes de Milho",
-          "img": "/items/corn_seeds.png",
+          "id": "titanium_knife",
+          "name": "Faca de Titanio",
+          "img": "/items/titanium_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Corn_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_knife"
         },
         {
-          "id": "tangerine_seeds",
-          "name": "Sementes de Tangerina",
-          "img": "/items/tangerine_seeds.png",
+          "id": "forged_knife",
+          "name": "Faca Forjada",
+          "img": "/items/forged_knife.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Forged_knife"
         },
         {
-          "id": "wheat_seeds",
-          "name": "Sementes de Trigo",
-          "img": "/items/wheat_seeds.png",
+          "id": "steel_axe",
+          "name": "Machado de Aco",
+          "img": "/items/steel_axe.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Wheat_seeds"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_axe"
         },
         {
-          "id": "vegetable_seeds",
-          "name": "Sementes de Legumes",
-          "img": "/items/vegetable_seeds.png",
+          "id": "titanium_axe",
+          "name": "Machado de Titanio",
+          "img": "/items/titanium_axe.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_axe"
+        },
+        {
+          "id": "rusted_axe",
+          "name": "Machado Enferrujado",
+          "img": "/items/rusted_axe.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_axe"
+        },
+        {
+          "id": "flying_spaghetti_monster",
+          "name": "Monstro Espaguete Voador",
+          "img": "/items/flying_spaghetti_monster.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Flying_spaghetti_monster"
+        },
+        {
+          "id": "makarov_handgun_broken",
+          "name": "Pistola Makarov (Quebrada)",
+          "img": "/items/makarov_handgun_broken.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Vegetable_seeds"
-        }
-      ]
-    },
-    {
-      "id": "ervas",
-      "name": "Ervas",
-      "items": [
-        {
-          "id": "moss",
-          "name": "Musgo",
-          "img": "/items/moss.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Planta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Moss"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Makarov_handgun_broken"
         },
         {
-          "id": "nettle",
-          "name": "Urtiga",
-          "img": "/items/nettle.png",
-          "steel": "5:1",
-          "cement": "10:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Erva",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Nettle"
-        },
-        {
-          "id": "broadleaf_plantain",
-          "name": "Orelha-de-veado",
-          "img": "/items/broadleaf_plantain.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Broadleaf_plantain"
-        }
-      ]
-    },
-    {
-      "id": "cultivo",
-      "name": "Cultivo",
-      "items": [
-        {
-          "id": "corn",
-          "name": "Milho",
-          "img": "/items/corn.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Cultivo",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Corn"
-        },
-        {
-          "id": "cranberry",
-          "name": "Amora",
-          "img": "/items/cranberry.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Fruta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Cranberry"
-        },
-        {
-          "id": "buckwheat_grains",
-          "name": "Graos de Trigo-sarraceno",
-          "img": "/items/buckwheat_grains.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Buckwheat_grains"
-        },
-        {
-          "id": "vegetables",
-          "name": "Legumes",
-          "img": "/items/vegetables.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Vegetal",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Vegetables"
-        },
-        {
-          "id": "apple",
-          "name": "Maca",
-          "img": "/items/apple.png",
-          "steel": "5:1",
-          "cement": "10:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Fruta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Apple"
-        },
-        {
-          "id": "potato",
-          "name": "Batata",
-          "img": "/items/potato.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Potato"
-        },
-        {
-          "id": "pumpkin",
-          "name": "Abobora",
-          "img": "/items/pumpkin.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Cultivo",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pumpkin"
-        },
-        {
-          "id": "rice_grains",
-          "name": "Graos de Arroz",
-          "img": "/items/rice_grains.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Ingrediente de receitas",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_grains"
-        },
-        {
-          "id": "rotten_vegetables",
-          "name": "Legumes Podres",
-          "img": "/items/rotten_vegetables.png",
+          "id": "pkm_broken",
+          "name": "PKM (Quebrado)",
+          "img": "/items/pkm_broken.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_vegetables"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pkm_broken"
         },
         {
-          "id": "strawberry",
-          "name": "Morango",
-          "img": "/items/strawberry.png",
-          "steel": "5:1",
-          "cement": "10:1",
+          "id": "witch_s_punch",
+          "name": "Ponche de Bruxa",
+          "img": "/items/witch_s_punch.png",
+          "steel": "?:?",
+          "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Fruta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Witch's_punch"
         },
         {
-          "id": "tangerine",
-          "name": "Tangerina",
-          "img": "/items/tangerine.png",
+          "id": "pps_43_broken",
+          "name": "PPS-43 (Quebrado)",
+          "img": "/items/pps_43_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pps_43_broken"
+        },
+        {
+          "id": "ppsh_41_broken",
+          "name": "PPSh-41 (Quebrado)",
+          "img": "/items/ppsh_41_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Ppsh_41_broken"
+        },
+        {
+          "id": "nagant_revolver_broken",
+          "name": "Revolver Nagant (Quebrado)",
+          "img": "/items/nagant_revolver_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Nagant_Revolver_(Broken)"
+        },
+        {
+          "id": "mosin_nagant_rifle_broken",
+          "name": "Rifle Mosin-Nagant (Quebrado)",
+          "img": "/items/mosin_nagant_rifle_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mosin_nagant_rifle_broken"
+        },
+        {
+          "id": "rpk_74_broken",
+          "name": "RPK-74 (Quebrado)",
+          "img": "/items/rpk_74_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rpk_74_broken"
+        },
+        {
+          "id": "svd_broken",
+          "name": "SVD (Quebrado)",
+          "img": "/items/svd_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Svd_broken"
+        },
+        {
+          "id": "svt_40_broken",
+          "name": "SVT-40 (Quebrado)",
+          "img": "/items/svt_40_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Svt_40_broken"
+        },
+        {
+          "id": "shock_bludgeon",
+          "name": "Tacapao de Choque",
+          "img": "/items/shock_bludgeon.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Shock_bludgeon"
+        },
+        {
+          "id": "strong_bat",
+          "name": "Taco Forte",
+          "img": "/items/strong_bat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strong_bat"
+        },
+        {
+          "id": "tt_33_broken",
+          "name": "TT-33 (Quebrado)",
+          "img": "/items/tt_33_broken.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tt_33_broken"
+        }
+      ]
+    },
+    {
+      "id": "municoes",
+      "name": "Municoes",
+      "items": [
+        {
+          "id": "lead_bullet",
+          "name": "Bala de Chumbo",
+          "img": "/items/lead_bullet.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Lead_bullet"
+        },
+        {
+          "id": "7_62x25mm_tt_shell",
+          "name": "Cartucho 7.62x25mm TT",
+          "img": "/items/7_62x25mm_tt_shell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/7.62x25mm_TT_Shell"
+        },
+        {
+          "id": "handmade_cartridge",
+          "name": "Cartucho Artesanal",
+          "img": "/items/handmade_cartridge.png",
           "steel": "3:1",
           "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cartucho caseiro",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_cartridge"
+        },
+        {
+          "id": "shotgun_round",
+          "name": "Cartucho de Escopeta",
+          "img": "/items/shotgun_round.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Shotgun_round"
+        },
+        {
+          "id": "assault_rifle_shell",
+          "name": "Cartucho de Fuzil de Assalto",
+          "img": "/items/assault_rifle_shell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_shell"
+        },
+        {
+          "id": "pistol_shell",
+          "name": "Cartucho de Pistola",
+          "img": "/items/pistol_shell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_shell"
+        },
+        {
+          "id": "revolver_shell",
+          "name": "Cartucho de Revolver",
+          "img": "/items/revolver_shell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_shell"
+        },
+        {
+          "id": "rifle_shell",
+          "name": "Cartucho de Rifle",
+          "img": "/items/rifle_shell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_shell"
+        },
+        {
+          "id": "blank_cartridge",
+          "name": "Cartucho em Branco",
+          "img": "/items/blank_cartridge.png",
+          "steel": "10:1",
+          "cement": "20:1",
           "rarity": "common",
           "demand": "low",
-          "notes": "Fruta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine"
+          "notes": "Cartucho",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Blank_cartridge"
         },
         {
-          "id": "wheat",
-          "name": "Trigo",
-          "img": "/items/wheat.png",
+          "id": "primer",
+          "name": "Espoleta",
+          "img": "/items/primer.png",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Componente de munição",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Primer"
+        },
+        {
+          "id": "pistol_ammo",
+          "name": "Municao de Pistola",
+          "img": "/items/pistol_ammo.png",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Munição",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_ammo"
+        },
+        {
+          "id": "revolver_ammo",
+          "name": "Municao de Revolver",
+          "img": "/items/revolver_ammo.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_ammo"
+        },
+        {
+          "id": "rifle_ammo",
+          "name": "Municao de Rifle",
+          "img": "/items/rifle_ammo.png",
           "steel": "3:1",
           "cement": "6:1",
           "rarity": "common",
+          "demand": "high",
+          "notes": "Munição",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_ammo"
+        },
+        {
+          "id": "training_ammo",
+          "name": "Municao de Treinamento",
+          "img": "/items/training_ammo.png",
+          "steel": "1:6",
+          "cement": "1:3",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Munição de treinamento",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Training_ammo"
+        },
+        {
+          "id": "assault_rifle_ammo",
+          "name": "Munição de Fuzil de Assalto",
+          "img": "/items/assault_rifle_ammo.png",
+          "steel": "6:1",
+          "cement": "12:1",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Munição de alto valor",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_ammo"
+        },
+        {
+          "id": "crossbow_bolt",
+          "name": "Virote de Besta",
+          "img": "/items/crossbow_bolt.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Munição de besta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt"
+        },
+        {
+          "id": "crossbow_bolt_poison",
+          "name": "Virote de Besta (Venenoso)",
+          "img": "/items/crossbow_bolt_poison.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
           "demand": "medium",
-          "notes": "Cultivo",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Wheat"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt_(poison)"
+        }
+      ]
+    },
+    {
+      "id": "explosivos",
+      "name": "Explosivos",
+      "items": [
+        {
+          "id": "plastic_explosives",
+          "name": "Explosivos Plasticos",
+          "img": "/items/plastic_explosives.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Plastic_explosives"
+        },
+        {
+          "id": "handmade_rocket",
+          "name": "Foguete Artesanal",
+          "img": "/items/handmade_rocket.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_rocket"
+        },
+        {
+          "id": "gunpowder",
+          "name": "Polvora",
+          "img": "/items/gunpowder.png",
+          "steel": "25:1",
+          "cement": "50:1",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Ingrediente para munição",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Gunpowder"
+        },
+        {
+          "id": "termite",
+          "name": "Termite",
+          "img": "/items/termite.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Thermite"
+        }
+      ]
+    },
+    {
+      "id": "medicamentos",
+      "name": "Medicamentos",
+      "items": [
+        {
+          "id": "aqua_vitae",
+          "name": "Agua Vitae",
+          "img": "/items/aqua_vitae.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Aqua_vitae"
+        },
+        {
+          "id": "painkiller",
+          "name": "Analgésico",
+          "img": "/items/painkiller.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Painkiller"
+        },
+        {
+          "id": "antibiotics",
+          "name": "Antibioticos",
+          "img": "/items/antibiotics.png",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Medicamento",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Antibiotics"
+        },
+        {
+          "id": "antirad",
+          "name": "Antirad",
+          "img": "/items/antirad.png",
+          "steel": "1:6",
+          "cement": "1:3",
+          "rarity": "uncommon",
+          "demand": "high",
+          "notes": "Proteção contra radiação",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Antirad"
+        },
+        {
+          "id": "healing_salve",
+          "name": "Balsamo Curativo",
+          "img": "/items/healing_salve.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Healing_salve"
+        },
+        {
+          "id": "sterile_bandage",
+          "name": "Bandagem Esteril",
+          "img": "/items/sterile_bandage.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Item médico",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Sterile_bandage"
+        },
+        {
+          "id": "biotonic",
+          "name": "Biotonico",
+          "img": "/items/biotonic.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Biotonic"
+        },
+        {
+          "id": "bye_bye_rad",
+          "name": "Bye-Bye Rad",
+          "img": "/items/bye_bye_rad.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bye-Bye_Rad"
+        },
+        {
+          "id": "activated_charcoal",
+          "name": "Carvao Ativado",
+          "img": "/items/activated_charcoal.png",
+          "steel": "10:1",
+          "cement": "20:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Desintoxicante",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Activated_charcoal"
+        },
+        {
+          "id": "eurekognasol_stimulant",
+          "name": "Estimulante Eurekognasol",
+          "img": "/items/eurekognasol_stimulant.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Eurekognasol_stimulant"
+        },
+        {
+          "id": "ir_190",
+          "name": "IR-190",
+          "img": "/items/ir_190.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/IR-190"
+        },
+        {
+          "id": "first_aid_kit",
+          "name": "Kit de Primeiros Socorros",
+          "img": "/items/first_aid_kit.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/First_aid_kit"
+        },
+        {
+          "id": "metocaine",
+          "name": "Metocaina",
+          "img": "/items/metocaine.png",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Anestésico",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Metocaine"
+        },
+        {
+          "id": "comcon_3_paste",
+          "name": "Pasta ComCon-3",
+          "img": "/items/comcon_3_paste.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/ComCon-3_Paste"
+        },
+        {
+          "id": "detoxifying_potion",
+          "name": "Pocao Desintoxicante",
+          "img": "/items/detoxifying_potion.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Detoxifying_potion"
+        },
+        {
+          "id": "energizing_potion",
+          "name": "Pocao Energizante",
+          "img": "/items/energizing_potion.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Energizing_potion"
         }
       ]
     },
@@ -283,6 +696,17 @@
       "id": "comida",
       "name": "Comida",
       "items": [
+        {
+          "id": "cooked_rice",
+          "name": "Arroz Cozido",
+          "img": "/items/cooked_rice.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cooked_rice"
+        },
         {
           "id": "chocolate_bar",
           "name": "Barra de Chocolate",
@@ -295,6 +719,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Chocolate_bar"
         },
         {
+          "id": "fried_potato",
+          "name": "Batata Frita",
+          "img": "/items/fried_potato.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_potato"
+        },
+        {
           "id": "candy_cane",
           "name": "Bengala Doce",
           "img": "/items/candy_cane.png",
@@ -304,6 +739,28 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Candy_cane"
+        },
+        {
+          "id": "infected_rusk",
+          "name": "Biscoito Duro Infectado",
+          "img": "/items/infected_rusk.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Infected_rusk"
+        },
+        {
+          "id": "rusks",
+          "name": "Biscoitos Duros",
+          "img": "/items/rusks.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusks"
         },
         {
           "id": "blini",
@@ -328,6 +785,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Cake"
         },
         {
+          "id": "gingerbread",
+          "name": "Bolo de Gengibre",
+          "img": "/items/gingerbread.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Gingerbread"
+        },
+        {
           "id": "strawberry_cake",
           "name": "Bolo de Morango",
           "img": "/items/strawberry_cake.png",
@@ -337,6 +805,28 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry_cake"
+        },
+        {
+          "id": "easter_cake",
+          "name": "Bolo de Páscoa",
+          "img": "/items/easter_cake.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Easter_cake"
+        },
+        {
+          "id": "rich_chowder",
+          "name": "Caldo Rico",
+          "img": "/items/rich_chowder.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rich_chowder"
         },
         {
           "id": "simple_chowder",
@@ -383,6 +873,83 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Fried_tainted_meat"
         },
         {
+          "id": "snake_meat",
+          "name": "Carne de Cobra",
+          "img": "/items/snake_meat.png",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Carne",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Snake_meat"
+        },
+        {
+          "id": "mutant_meat",
+          "name": "Carne de Mutante",
+          "img": "/items/mutant_meat.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Carne mutante",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mutant_meat"
+        },
+        {
+          "id": "fried_mutant_meat",
+          "name": "Carne de Mutante Frita",
+          "img": "/items/fried_mutant_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_mutant_meat"
+        },
+        {
+          "id": "rat_meat",
+          "name": "Carne de Rato",
+          "img": "/items/rat_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rat_meat"
+        },
+        {
+          "id": "fried_rat_meat",
+          "name": "Carne de Rato Frita",
+          "img": "/items/fried_rat_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_rat_meat"
+        },
+        {
+          "id": "tough_meat",
+          "name": "Carne Dura",
+          "img": "/items/tough_meat.png",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Carne",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tough_meat"
+        },
+        {
+          "id": "fried_tough_meat",
+          "name": "Carne Dura Frita",
+          "img": "/items/fried_tough_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_tough_meat"
+        },
+        {
           "id": "canned_beef",
           "name": "Carne Enlatada",
           "img": "/items/canned_beef.png",
@@ -392,6 +959,50 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Canned_beef"
+        },
+        {
+          "id": "old_canned_meat",
+          "name": "Carne Enlatada Velha",
+          "img": "/items/old_canned_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Old_canned_meat"
+        },
+        {
+          "id": "stew_meat",
+          "name": "Carne Ensopada",
+          "img": "/items/stew_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Stew_meat"
+        },
+        {
+          "id": "fried_fatty_meat",
+          "name": "Carne Gordurosa Frita",
+          "img": "/items/fried_fatty_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_fatty_meat"
+        },
+        {
+          "id": "grilled_meat",
+          "name": "Carne Grelhada",
+          "img": "/items/grilled_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Grilled_meat"
         },
         {
           "id": "minced_meat",
@@ -414,17 +1025,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_meat"
-        },
-        {
-          "id": "fried_rat_meat",
-          "name": "Carne de Rato Frita",
-          "img": "/items/fried_rat_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_rat_meat"
         },
         {
           "id": "caviar",
@@ -471,6 +1071,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Shashlik"
         },
         {
+          "id": "shawarma",
+          "name": "Churrasco Grego",
+          "img": "/items/shawarma.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Shawarma"
+        },
+        {
           "id": "cigarettes",
           "name": "Cigarros",
           "img": "/items/cigarettes.png",
@@ -480,6 +1091,28 @@
           "demand": "medium",
           "notes": "Tabaco",
           "wikiLink": "https://dayr.wiki.gg/wiki/Cigarettes"
+        },
+        {
+          "id": "russian_cigarettes",
+          "name": "Cigarros Russos",
+          "img": "/items/russian_cigarettes.png",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Tabaco",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Russian_cigarettes"
+        },
+        {
+          "id": "fried_snake",
+          "name": "Cobra Frita",
+          "img": "/items/fried_snake.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_snake"
         },
         {
           "id": "chocolate_bunny",
@@ -493,28 +1126,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Chocolate_bunny"
         },
         {
-          "id": "cooked_pasta",
-          "name": "Massa Cozida",
-          "img": "/items/cooked_pasta.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Cooked_pasta"
-        },
-        {
-          "id": "cooked_rice",
-          "name": "Arroz Cozido",
-          "img": "/items/cooked_rice.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Cooked_rice"
-        },
-        {
           "id": "coulibiac",
           "name": "Coulibiac",
           "img": "/items/coulibiac.png",
@@ -524,28 +1135,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Coulibiac"
-        },
-        {
-          "id": "easter_cake",
-          "name": "Bolo de Páscoa",
-          "img": "/items/easter_cake.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Easter_cake"
-        },
-        {
-          "id": "easter_egg",
-          "name": "Ovo de Páscoa",
-          "img": "/items/easter_egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Easter_egg"
         },
         {
           "id": "canned_beans",
@@ -559,94 +1148,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Canned_beans"
         },
         {
-          "id": "flatbread",
-          "name": "Pao Achatado",
-          "img": "/items/flatbread.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Flatbread"
-        },
-        {
-          "id": "fried_tough_meat",
-          "name": "Carne Dura Frita",
-          "img": "/items/fried_tough_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_tough_meat"
-        },
-        {
-          "id": "fried_fatty_meat",
-          "name": "Carne Gordurosa Frita",
-          "img": "/items/fried_fatty_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_fatty_meat"
-        },
-        {
-          "id": "fried_mutant_meat",
-          "name": "Carne de Mutante Frita",
-          "img": "/items/fried_mutant_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_mutant_meat"
-        },
-        {
-          "id": "fried_potato",
-          "name": "Batata Frita",
-          "img": "/items/fried_potato.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_potato"
-        },
-        {
-          "id": "gingerbread",
-          "name": "Bolo de Gengibre",
-          "img": "/items/gingerbread.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Gingerbread"
-        },
-        {
-          "id": "golden_easter_egg",
-          "name": "Ovo de Páscoa Dourado",
-          "img": "/items/golden_easter_egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Golden_easter_egg"
-        },
-        {
-          "id": "grilled_meat",
-          "name": "Carne Grelhada",
-          "img": "/items/grilled_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Grilled_meat"
-        },
-        {
           "id": "bunny_treat",
           "name": "Guloseima de Coelho",
           "img": "/items/bunny_treat.png",
@@ -658,6 +1159,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Bunny_treat"
         },
         {
+          "id": "treats",
+          "name": "Guloseimas",
+          "img": "/items/treats.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Treats"
+        },
+        {
           "id": "kholodets",
           "name": "Kholodets",
           "img": "/items/kholodets.png",
@@ -667,6 +1179,17 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Kholodets"
+        },
+        {
+          "id": "pickled_vegetables",
+          "name": "Legumes em Conserva",
+          "img": "/items/pickled_vegetables.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pickled_vegetables"
         },
         {
           "id": "candy_apple",
@@ -691,6 +1214,39 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_pasta"
         },
         {
+          "id": "pasta",
+          "name": "Massa",
+          "img": "/items/pasta.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Alimento pronto",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pasta"
+        },
+        {
+          "id": "pasta_with_ground_beef",
+          "name": "Massa com Carne Moida",
+          "img": "/items/pasta_with_ground_beef.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pasta_with_ground_beef"
+        },
+        {
+          "id": "cooked_pasta",
+          "name": "Massa Cozida",
+          "img": "/items/cooked_pasta.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cooked_pasta"
+        },
+        {
           "id": "boiled_corn",
           "name": "Milho Cozido",
           "img": "/items/boiled_corn.png",
@@ -700,61 +1256,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_corn"
-        },
-        {
-          "id": "mutant_meat",
-          "name": "Carne de Mutante",
-          "img": "/items/mutant_meat.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "uncommon",
-          "demand": "low",
-          "notes": "Carne mutante",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Mutant_meat"
-        },
-        {
-          "id": "old_canned_meat",
-          "name": "Carne Enlatada Velha",
-          "img": "/items/old_canned_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Old_canned_meat"
-        },
-        {
-          "id": "boiled_egg",
-          "name": "Ovo Cozido",
-          "img": "/items/boiled_egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_egg"
-        },
-        {
-          "id": "fried_egg",
-          "name": "Ovo Frito",
-          "img": "/items/fried_egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_egg"
-        },
-        {
-          "id": "bread",
-          "name": "Pao",
-          "img": "/items/bread.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Bread"
         },
         {
           "id": "canned_porridge",
@@ -779,26 +1280,114 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_porridge"
         },
         {
-          "id": "pasta",
-          "name": "Massa",
-          "img": "/items/pasta.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Alimento pronto",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pasta"
-        },
-        {
-          "id": "pasta_with_ground_beef",
-          "name": "Massa com Carne Moida",
-          "img": "/items/pasta_with_ground_beef.png",
+          "id": "boiled_egg",
+          "name": "Ovo Cozido",
+          "img": "/items/boiled_egg.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pasta_with_ground_beef"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_egg"
+        },
+        {
+          "id": "rainbow_easter_egg",
+          "name": "Ovo de Pascoa Arco-Iris",
+          "img": "/items/rainbow_easter_egg.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rainbow_easter_egg"
+        },
+        {
+          "id": "easter_egg",
+          "name": "Ovo de Páscoa",
+          "img": "/items/easter_egg.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Easter_egg"
+        },
+        {
+          "id": "golden_easter_egg",
+          "name": "Ovo de Páscoa Dourado",
+          "img": "/items/golden_easter_egg.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Golden_easter_egg"
+        },
+        {
+          "id": "fried_egg",
+          "name": "Ovo Frito",
+          "img": "/items/fried_egg.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_egg"
+        },
+        {
+          "id": "potato_pancakes",
+          "name": "Panquecas de Batata",
+          "img": "/items/potato_pancakes.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Potato_pancakes"
+        },
+        {
+          "id": "bread",
+          "name": "Pao",
+          "img": "/items/bread.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bread"
+        },
+        {
+          "id": "flatbread",
+          "name": "Pao Achatado",
+          "img": "/items/flatbread.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Flatbread"
+        },
+        {
+          "id": "rice_bun",
+          "name": "Pao de Arroz",
+          "img": "/items/rice_bun.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_bun"
+        },
+        {
+          "id": "peking_duck",
+          "name": "Pato Laqueado",
+          "img": "/items/peking_duck.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Peking_duck"
         },
         {
           "id": "fried_fish",
@@ -823,17 +1412,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_fish"
         },
         {
-          "id": "peking_duck",
-          "name": "Pato Laqueado",
-          "img": "/items/peking_duck.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Peking_duck"
-        },
-        {
           "id": "pelmeni",
           "name": "Pelmeni",
           "img": "/items/pelmeni.png",
@@ -843,17 +1421,6 @@
           "demand": "medium",
           "notes": "",
           "wikiLink": "https://dayr.wiki.gg/wiki/Pelmeni"
-        },
-        {
-          "id": "pickled_vegetables",
-          "name": "Legumes em Conserva",
-          "img": "/items/pickled_vegetables.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pickled_vegetables"
         },
         {
           "id": "pilaf",
@@ -876,17 +1443,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Canned_pork"
-        },
-        {
-          "id": "potato_pancakes",
-          "name": "Panquecas de Batata",
-          "img": "/items/potato_pancakes.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Potato_pancakes"
         },
         {
           "id": "stale_pryanik",
@@ -922,37 +1478,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Cheese"
         },
         {
-          "id": "rat_meat",
-          "name": "Carne de Rato",
-          "img": "/items/rat_meat.png",
+          "id": "tailed_rissole",
+          "name": "Risole",
+          "img": "/items/tailed_rissole.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rat_meat"
-        },
-        {
-          "id": "rice_bun",
-          "name": "Pao de Arroz",
-          "img": "/items/rice_bun.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_bun"
-        },
-        {
-          "id": "rich_chowder",
-          "name": "Caldo Rico",
-          "img": "/items/rich_chowder.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rich_chowder"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tailed_rissole"
         },
         {
           "id": "meat_rissole",
@@ -966,37 +1500,26 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Meat_rissole"
         },
         {
-          "id": "tailed_rissole",
-          "name": "Risole",
-          "img": "/items/tailed_rissole.png",
+          "id": "cabbage_roll",
+          "name": "Rolinho de Repolho",
+          "img": "/items/cabbage_roll.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tailed_rissole"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cabbage_roll"
         },
         {
-          "id": "russian_cigarettes",
-          "name": "Cigarros Russos",
-          "img": "/items/russian_cigarettes.png",
-          "steel": "1:2",
-          "cement": "1:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Tabaco",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Russian_cigarettes"
-        },
-        {
-          "id": "caviar_sandwich",
-          "name": "Sanduiche de Caviar",
-          "img": "/items/caviar_sandwich.png",
+          "id": "olivier_salad",
+          "name": "Salada Olivier",
+          "img": "/items/olivier_salad.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Caviar_sandwich"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Olivier_salad"
         },
         {
           "id": "sausage",
@@ -1010,15 +1533,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Sausage"
         },
         {
-          "id": "shawarma",
-          "name": "Churrasco Grego",
-          "img": "/items/shawarma.png",
+          "id": "caviar_sandwich",
+          "name": "Sanduiche de Caviar",
+          "img": "/items/caviar_sandwich.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Shawarma"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Caviar_sandwich"
         },
         {
           "id": "shchi",
@@ -1030,17 +1553,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Shchi"
-        },
-        {
-          "id": "snake_meat",
-          "name": "Carne de Cobra",
-          "img": "/items/snake_meat.png",
-          "steel": "3:2",
-          "cement": "3:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Carne",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Snake_meat"
         },
         {
           "id": "pumpkin_soup",
@@ -1065,15 +1577,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_soup"
         },
         {
-          "id": "stew_meat",
-          "name": "Carne Ensopada",
-          "img": "/items/stew_meat.png",
+          "id": "ice_cream",
+          "name": "Sorvete",
+          "img": "/items/ice_cream.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Stew_meat"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Ice_cream"
         },
         {
           "id": "sushi",
@@ -1087,6 +1599,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Sushi"
         },
         {
+          "id": "bowl_of_rice",
+          "name": "Tigela de Arroz",
+          "img": "/items/bowl_of_rice.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bowl_of_rice"
+        },
+        {
           "id": "pie",
           "name": "Torta",
           "img": "/items/pie.png",
@@ -1096,28 +1619,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Pie"
-        },
-        {
-          "id": "tough_meat",
-          "name": "Carne Dura",
-          "img": "/items/tough_meat.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Carne",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tough_meat"
-        },
-        {
-          "id": "treats",
-          "name": "Guloseimas",
-          "img": "/items/treats.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Treats"
         },
         {
           "id": "cooked_buckwheat",
@@ -1140,94 +1641,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Ukha"
-        },
-        {
-          "id": "bowl_of_rice",
-          "name": "Tigela de Arroz",
-          "img": "/items/bowl_of_rice.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Bowl_of_rice"
-        },
-        {
-          "id": "ice_cream",
-          "name": "Sorvete",
-          "img": "/items/ice_cream.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Ice_cream"
-        },
-        {
-          "id": "fried_snake",
-          "name": "Cobra Frita",
-          "img": "/items/fried_snake.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fried_snake"
-        },
-        {
-          "id": "olivier_salad",
-          "name": "Salada Olivier",
-          "img": "/items/olivier_salad.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Olivier_salad"
-        },
-        {
-          "id": "cabbage_roll",
-          "name": "Rolinho de Repolho",
-          "img": "/items/cabbage_roll.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Cabbage_roll"
-        },
-        {
-          "id": "rainbow_easter_egg",
-          "name": "Ovo de Pascoa Arco-Iris",
-          "img": "/items/rainbow_easter_egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rainbow_easter_egg"
-        },
-        {
-          "id": "rusks",
-          "name": "Biscoitos Duros",
-          "img": "/items/rusks.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusks"
-        },
-        {
-          "id": "infected_rusk",
-          "name": "Biscoito Duro Infectado",
-          "img": "/items/infected_rusk.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Infected_rusk"
         }
       ]
     },
@@ -1256,6 +1669,17 @@
           "demand": "high",
           "notes": "Essencial para sobrevivência",
           "wikiLink": "https://dayr.wiki.gg/wiki/Clean_water"
+        },
+        {
+          "id": "toxic_water",
+          "name": "Agua Toxica",
+          "img": "/items/toxic_water.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Toxic_water"
         },
         {
           "id": "moonshine",
@@ -1313,6 +1737,28 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Hot_coffee"
         },
         {
+          "id": "tea",
+          "name": "Cha",
+          "img": "/items/tea.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Bebida",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tea"
+        },
+        {
+          "id": "dandelion_tea",
+          "name": "Cha de Dente-de-leao",
+          "img": "/items/dandelion_tea.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Dandelion_tea"
+        },
+        {
           "id": "cold_tea",
           "name": "Cha Frio",
           "img": "/items/cold_tea.png",
@@ -1335,17 +1781,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Hot_tea"
         },
         {
-          "id": "dandelion_tea",
-          "name": "Cha de Dente-de-leao",
-          "img": "/items/dandelion_tea.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Dandelion_tea"
-        },
-        {
           "id": "champagne",
           "name": "Champanhe",
           "img": "/items/champagne.png",
@@ -1357,15 +1792,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Champagne"
         },
         {
-          "id": "chinese_energy_drink",
-          "name": "Energético Chinês",
-          "img": "/items/chinese_energy_drink.png",
+          "id": "trophy_cognac",
+          "name": "Conhaque Trofeu",
+          "img": "/items/trophy_cognac.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Chinese_energy_drink"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Trophy_cognac"
         },
         {
           "id": "apple_cordial",
@@ -1377,17 +1812,6 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Apple_cordial"
-        },
-        {
-          "id": "dirty_water",
-          "name": "Água Suja",
-          "img": "/items/dirty_water.png",
-          "steel": "20:1",
-          "cement": "40:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Requer purificação",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Dirty_water"
         },
         {
           "id": "spooky_energy_drink",
@@ -1423,59 +1847,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Energy_drink"
         },
         {
-          "id": "holiday_energy_drink",
-          "name": "Energético de Feriado",
-          "img": "/items/holiday_energy_drink.png",
+          "id": "chinese_energy_drink",
+          "name": "Energético Chinês",
+          "img": "/items/chinese_energy_drink.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Holiday_energy_drink"
-        },
-        {
-          "id": "homemade_wine",
-          "name": "Vinho Artesanal",
-          "img": "/items/homemade_wine.png",
-          "steel": "1:5",
-          "cement": "2:5",
-          "rarity": "uncommon",
-          "demand": "low",
-          "notes": "Bebida alcoólica",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Homemade_wine"
-        },
-        {
-          "id": "kvass",
-          "name": "Kvass",
-          "img": "/items/kvass.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Bebida",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Kvass"
-        },
-        {
-          "id": "mulled_wine",
-          "name": "Vinho Quente Especiado",
-          "img": "/items/mulled_wine.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Mulled_wine"
-        },
-        {
-          "id": "pepsi",
-          "name": "Pepsi",
-          "img": "/items/pepsi.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pepsi"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Chinese_energy_drink"
         },
         {
           "id": "smuggled_energy_drink",
@@ -1489,6 +1869,39 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Smuggled_energy_drink"
         },
         {
+          "id": "holiday_energy_drink",
+          "name": "Energético de Feriado",
+          "img": "/items/holiday_energy_drink.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Holiday_energy_drink"
+        },
+        {
+          "id": "kvass",
+          "name": "Kvass",
+          "img": "/items/kvass.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Bebida",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Kvass"
+        },
+        {
+          "id": "pepsi",
+          "name": "Pepsi",
+          "img": "/items/pepsi.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pepsi"
+        },
+        {
           "id": "beetle_juice",
           "name": "Suco de Besouro",
           "img": "/items/beetle_juice.png",
@@ -1498,28 +1911,6 @@
           "demand": "low",
           "notes": "Bebida",
           "wikiLink": "https://dayr.wiki.gg/wiki/Beetle_juice"
-        },
-        {
-          "id": "tea",
-          "name": "Cha",
-          "img": "/items/tea.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Bebida",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tea"
-        },
-        {
-          "id": "toxic_water",
-          "name": "Agua Toxica",
-          "img": "/items/toxic_water.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Toxic_water"
         },
         {
           "id": "whiskey",
@@ -1533,15 +1924,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Whiskey"
         },
         {
-          "id": "red_wine",
-          "name": "Vinho Tinto",
-          "img": "/items/red_wine.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Red_wine"
+          "id": "homemade_wine",
+          "name": "Vinho Artesanal",
+          "img": "/items/homemade_wine.png",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Bebida alcoólica",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Homemade_wine"
         },
         {
           "id": "rice_wine",
@@ -1555,6 +1946,28 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Rice_wine"
         },
         {
+          "id": "mulled_wine",
+          "name": "Vinho Quente Especiado",
+          "img": "/items/mulled_wine.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Mulled_wine"
+        },
+        {
+          "id": "red_wine",
+          "name": "Vinho Tinto",
+          "img": "/items/red_wine.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Red_wine"
+        },
+        {
           "id": "vodka",
           "name": "Vodka",
           "img": "/items/vodka.png",
@@ -1566,15 +1979,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Vodka"
         },
         {
-          "id": "trophy_cognac",
-          "name": "Conhaque Trofeu",
-          "img": "/items/trophy_cognac.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "dirty_water",
+          "name": "Água Suja",
+          "img": "/items/dirty_water.png",
+          "steel": "20:1",
+          "cement": "40:1",
           "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Trophy_cognac"
+          "demand": "low",
+          "notes": "Requer purificação",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Dirty_water"
         }
       ]
     },
@@ -1583,37 +1996,15 @@
       "name": "Ingredientes",
       "items": [
         {
-          "id": "dried_meat",
-          "name": "Carne Seca",
-          "img": "/items/dried_meat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Dried_meat"
-        },
-        {
-          "id": "condensed_milk",
-          "name": "Leite Condensado",
-          "img": "/items/condensed_milk.png",
-          "steel": "2:1",
-          "cement": "4:1",
+          "id": "sugar",
+          "name": "Acucar",
+          "img": "/items/sugar.png",
+          "steel": "5:1",
+          "cement": "10:1",
           "rarity": "common",
           "demand": "medium",
           "notes": "Ingrediente de receitas",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Condensed_milk"
-        },
-        {
-          "id": "egg",
-          "name": "Ovo",
-          "img": "/items/egg.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Egg"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Sugar"
         },
         {
           "id": "fatty_meat",
@@ -1627,6 +2018,28 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Fatty_meat"
         },
         {
+          "id": "salted_meat",
+          "name": "Carne Salgada",
+          "img": "/items/salted_meat.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Ótimo para lucro inicial",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Salted_meat"
+        },
+        {
+          "id": "dried_meat",
+          "name": "Carne Seca",
+          "img": "/items/dried_meat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Dried_meat"
+        },
+        {
           "id": "flour",
           "name": "Farinha",
           "img": "/items/flour.png",
@@ -1636,28 +2049,6 @@
           "demand": "medium",
           "notes": "Ingrediente de receitas",
           "wikiLink": "https://dayr.wiki.gg/wiki/Flour"
-        },
-        {
-          "id": "fresh_fish",
-          "name": "Peixe Fresco",
-          "img": "/items/fresh_fish.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fresh_fish"
-        },
-        {
-          "id": "honey",
-          "name": "Mel",
-          "img": "/items/honey.png",
-          "steel": "1:5",
-          "cement": "2:5",
-          "rarity": "uncommon",
-          "demand": "medium",
-          "notes": "Ingrediente raro de receitas",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Honey"
         },
         {
           "id": "jam",
@@ -1671,6 +2062,28 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Jam"
         },
         {
+          "id": "milk",
+          "name": "Leite",
+          "img": "/items/milk.png",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Milk"
+        },
+        {
+          "id": "condensed_milk",
+          "name": "Leite Condensado",
+          "img": "/items/condensed_milk.png",
+          "steel": "2:1",
+          "cement": "4:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Condensed_milk"
+        },
+        {
           "id": "boiled_condensed_milk",
           "name": "Leite Condensado Cozido",
           "img": "/items/boiled_condensed_milk.png",
@@ -1682,15 +2095,48 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_condensed_milk"
         },
         {
-          "id": "milk",
-          "name": "Leite",
-          "img": "/items/milk.png",
-          "steel": "2:1",
-          "cement": "4:1",
+          "id": "honey",
+          "name": "Mel",
+          "img": "/items/honey.png",
+          "steel": "1:5",
+          "cement": "2:5",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Ingrediente raro de receitas",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Honey"
+        },
+        {
+          "id": "egg",
+          "name": "Ovo",
+          "img": "/items/egg.png",
+          "steel": "?:?",
+          "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Ingrediente de receitas",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Milk"
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Egg"
+        },
+        {
+          "id": "fresh_fish",
+          "name": "Peixe Fresco",
+          "img": "/items/fresh_fish.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fresh_fish"
+        },
+        {
+          "id": "salted_fish",
+          "name": "Peixe Salgado",
+          "img": "/items/salted_fish.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Ótimo para lucro inicial",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Salted_fish"
         },
         {
           "id": "dried_fish",
@@ -1715,17 +2161,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Infected_dried_fish"
         },
         {
-          "id": "saltpeter",
-          "name": "Salitre",
-          "img": "/items/saltpeter.png",
-          "steel": "30:1",
-          "cement": "60:1",
-          "rarity": "uncommon",
-          "demand": "high",
-          "notes": "Ingrediente para pólvora",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Saltpeter"
-        },
-        {
           "id": "salt",
           "name": "Sal",
           "img": "/items/salt.png",
@@ -1737,37 +2172,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Salt"
         },
         {
-          "id": "salted_fish",
-          "name": "Peixe Salgado",
-          "img": "/items/salted_fish.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
+          "id": "saltpeter",
+          "name": "Salitre",
+          "img": "/items/saltpeter.png",
+          "steel": "30:1",
+          "cement": "60:1",
+          "rarity": "uncommon",
           "demand": "high",
-          "notes": "Ótimo para lucro inicial",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Salted_fish"
-        },
-        {
-          "id": "salted_meat",
-          "name": "Carne Salgada",
-          "img": "/items/salted_meat.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Ótimo para lucro inicial",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Salted_meat"
-        },
-        {
-          "id": "sugar",
-          "name": "Acucar",
-          "img": "/items/sugar.png",
-          "steel": "5:1",
-          "cement": "10:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Ingrediente de receitas",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Sugar"
+          "notes": "Ingrediente para pólvora",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Saltpeter"
         },
         {
           "id": "smoked_fatback",
@@ -1786,6 +2199,17 @@
       "id": "materiais",
       "name": "Materiais",
       "items": [
+        {
+          "id": "steel",
+          "name": "Aco",
+          "img": "/items/steel.png",
+          "steel": "1:1",
+          "cement": "1:2",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Moeda principal de troca",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel"
+        },
         {
           "id": "aluminum",
           "name": "Aluminio",
@@ -1807,39 +2231,6 @@
           "demand": "medium",
           "notes": "",
           "wikiLink": "https://dayr.wiki.gg/wiki/Barrel"
-        },
-        {
-          "id": "blank",
-          "name": "Espacador",
-          "img": "/items/blank.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Blank"
-        },
-        {
-          "id": "boiled_leather",
-          "name": "Couro Fervido",
-          "img": "/items/boiled_leather.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_leather"
-        },
-        {
-          "id": "c_3_cologne",
-          "name": "Colonia C-3",
-          "img": "/items/c_3_cologne.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/C-3_Cologne"
         },
         {
           "id": "iron_pipe",
@@ -1875,17 +2266,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Coal"
         },
         {
-          "id": "cement",
-          "name": "Cimento",
-          "img": "/items/cement.png",
-          "steel": "1:2",
-          "cement": "1:1",
-          "rarity": "common",
-          "demand": "very_high",
-          "notes": "Moeda secundária de troca",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Cement"
-        },
-        {
           "id": "wax",
           "name": "Cera",
           "img": "/items/wax.png",
@@ -1895,6 +2275,39 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Wax"
+        },
+        {
+          "id": "bamboo_steamer",
+          "name": "Cesteiro de Bambu",
+          "img": "/items/bamboo_steamer.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bamboo_steamer"
+        },
+        {
+          "id": "metal_plate",
+          "name": "Chapa de Metal",
+          "img": "/items/metal_plate.png",
+          "steel": "3:2",
+          "cement": "3:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Material",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Metal_plate"
+        },
+        {
+          "id": "cement",
+          "name": "Cimento",
+          "img": "/items/cement.png",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "common",
+          "demand": "very_high",
+          "notes": "Moeda secundária de troca",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cement"
         },
         {
           "id": "bone_glue",
@@ -1908,6 +2321,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Bone_glue"
         },
         {
+          "id": "c_3_cologne",
+          "name": "Colonia C-3",
+          "img": "/items/c_3_cologne.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/C-3_Cologne"
+        },
+        {
           "id": "rope",
           "name": "Corda",
           "img": "/items/rope.png",
@@ -1917,6 +2341,72 @@
           "demand": "medium",
           "notes": "Material",
           "wikiLink": "https://dayr.wiki.gg/wiki/Rope"
+        },
+        {
+          "id": "rawhide",
+          "name": "Couro Cru",
+          "img": "/items/rawhide.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rawhide"
+        },
+        {
+          "id": "tanned_leather",
+          "name": "Couro Curtido",
+          "img": "/items/tanned_leather.png",
+          "steel": "1:3",
+          "cement": "2:3",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Material de qualidade",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tanned_leather"
+        },
+        {
+          "id": "quality_leather",
+          "name": "Couro de Qualidade",
+          "img": "/items/quality_leather.png",
+          "steel": "1:30",
+          "cement": "1:15",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Quality_leather"
+        },
+        {
+          "id": "boiled_leather",
+          "name": "Couro Fervido",
+          "img": "/items/boiled_leather.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Boiled_leather"
+        },
+        {
+          "id": "thick_leather",
+          "name": "Couro Grosso",
+          "img": "/items/thick_leather.png",
+          "steel": "1:20",
+          "cement": "1:10",
+          "rarity": "rare",
+          "demand": "low",
+          "notes": "Material raro",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Thick_leather"
+        },
+        {
+          "id": "blank",
+          "name": "Espacador",
+          "img": "/items/blank.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Blank"
         },
         {
           "id": "spice",
@@ -1930,26 +2420,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Spice"
         },
         {
-          "id": "fat",
-          "name": "Gordura",
-          "img": "/items/fat.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "iron",
+          "name": "Ferro",
+          "img": "/items/iron.png",
+          "steel": "1:1",
+          "cement": "2:1",
           "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fat"
-        },
-        {
-          "id": "fire_brick",
-          "name": "Tijolo Refratario",
-          "img": "/items/fire_brick.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Fire_brick"
+          "demand": "high",
+          "notes": "Material de construção",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Iron"
         },
         {
           "id": "insulating_tape",
@@ -1963,15 +2442,37 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Insulating_tape"
         },
         {
-          "id": "iron",
-          "name": "Ferro",
-          "img": "/items/iron.png",
-          "steel": "1:1",
-          "cement": "2:1",
+          "id": "matches",
+          "name": "Fosforos",
+          "img": "/items/matches.png",
+          "steel": "?:?",
+          "cement": "?:?",
           "rarity": "common",
-          "demand": "high",
-          "notes": "Material de construção",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Iron"
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Matches"
+        },
+        {
+          "id": "fat",
+          "name": "Gordura",
+          "img": "/items/fat.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fat"
+        },
+        {
+          "id": "stick",
+          "name": "Graveto",
+          "img": "/items/stick.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Combustível",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Stick"
         },
         {
           "id": "firewood",
@@ -1996,59 +2497,26 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Lymph"
         },
         {
-          "id": "log",
-          "name": "Tronco",
-          "img": "/items/log.png",
-          "steel": "3:1",
-          "cement": "6:1",
+          "id": "threads",
+          "name": "Linhas",
+          "img": "/items/threads.png",
+          "steel": "?:?",
+          "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Material de construção",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Log"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Threads"
         },
         {
-          "id": "matches",
-          "name": "Fosforos",
-          "img": "/items/matches.png",
+          "id": "tanning_mixture",
+          "name": "Mistura de Curtimento",
+          "img": "/items/tanning_mixture.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Matches"
-        },
-        {
-          "id": "metal_plate",
-          "name": "Chapa de Metal",
-          "img": "/items/metal_plate.png",
-          "steel": "3:2",
-          "cement": "3:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Material",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Metal_plate"
-        },
-        {
-          "id": "nail",
-          "name": "Prego",
-          "img": "/items/nail.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Nail"
-        },
-        {
-          "id": "oar",
-          "name": "Remo",
-          "img": "/items/oar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Oar"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tanning_mixture"
         },
         {
           "id": "machine_oil",
@@ -2084,26 +2552,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Flint"
         },
         {
-          "id": "tires",
-          "name": "Pneus",
-          "img": "/items/tires.png",
-          "steel": "1:4",
-          "cement": "1:2",
-          "rarity": "uncommon",
-          "demand": "medium",
-          "notes": "Peça de veículo",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tires"
-        },
-        {
-          "id": "plank",
-          "name": "Tabua",
-          "img": "/items/plank.png",
+          "id": "raw_hide",
+          "name": "Pele Crua",
+          "img": "/items/raw_hide.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Plank"
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Raw_hide"
         },
         {
           "id": "quality_hide",
@@ -2117,15 +2574,37 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Quality_hide"
         },
         {
-          "id": "quality_leather",
-          "name": "Couro de Qualidade",
-          "img": "/items/quality_leather.png",
-          "steel": "1:30",
-          "cement": "1:15",
-          "rarity": "rare",
-          "demand": "low",
-          "notes": "Material raro",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Quality_leather"
+          "id": "thick_hide",
+          "name": "Pele Grossa",
+          "img": "/items/thick_hide.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Thick_hide"
+        },
+        {
+          "id": "tires",
+          "name": "Pneus",
+          "img": "/items/tires.png",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de veículo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tires"
+        },
+        {
+          "id": "nail",
+          "name": "Prego",
+          "img": "/items/nail.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Nail"
         },
         {
           "id": "chitin",
@@ -2139,39 +2618,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Chitin"
         },
         {
-          "id": "raw_hide",
-          "name": "Pele Crua",
-          "img": "/items/raw_hide.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Raw_hide"
-        },
-        {
-          "id": "raw_fatback",
-          "name": "Toucinho Cru",
-          "img": "/items/raw_fatback.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Raw_fatback"
-        },
-        {
-          "id": "rawhide",
-          "name": "Couro Cru",
-          "img": "/items/rawhide.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rawhide"
-        },
-        {
           "id": "king_of_jokers",
           "name": "Rei dos Coringas",
           "img": "/items/king_of_jokers.png",
@@ -2183,6 +2629,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/King_of_Jokers"
         },
         {
+          "id": "oar",
+          "name": "Remo",
+          "img": "/items/oar.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Oar"
+        },
+        {
           "id": "soap",
           "name": "Sabao",
           "img": "/items/soap.png",
@@ -2192,39 +2649,6 @@
           "demand": "low",
           "notes": "Item de higiene",
           "wikiLink": "https://dayr.wiki.gg/wiki/Soap"
-        },
-        {
-          "id": "steel",
-          "name": "Aco",
-          "img": "/items/steel.png",
-          "steel": "1:1",
-          "cement": "1:2",
-          "rarity": "common",
-          "demand": "very_high",
-          "notes": "Moeda principal de troca",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel"
-        },
-        {
-          "id": "stick",
-          "name": "Graveto",
-          "img": "/items/stick.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Combustível",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Stick"
-        },
-        {
-          "id": "scrap_metal",
-          "name": "Sucata de Metal",
-          "img": "/items/scrap_metal.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Scrap_metal"
         },
         {
           "id": "aluminum_scrap",
@@ -2249,26 +2673,26 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Copper_scrap"
         },
         {
-          "id": "tanned_leather",
-          "name": "Couro Curtido",
-          "img": "/items/tanned_leather.png",
-          "steel": "1:3",
-          "cement": "2:3",
-          "rarity": "uncommon",
-          "demand": "medium",
-          "notes": "Material de qualidade",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tanned_leather"
-        },
-        {
-          "id": "tanning_mixture",
-          "name": "Mistura de Curtimento",
-          "img": "/items/tanning_mixture.png",
+          "id": "scrap_metal",
+          "name": "Sucata de Metal",
+          "img": "/items/scrap_metal.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tanning_mixture"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Scrap_metal"
+        },
+        {
+          "id": "plank",
+          "name": "Tabua",
+          "img": "/items/plank.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Plank"
         },
         {
           "id": "cloth",
@@ -2282,39 +2706,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Cloth"
         },
         {
-          "id": "thick_hide",
-          "name": "Pele Grossa",
-          "img": "/items/thick_hide.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Thick_hide"
-        },
-        {
-          "id": "thick_leather",
-          "name": "Couro Grosso",
-          "img": "/items/thick_leather.png",
-          "steel": "1:20",
-          "cement": "1:10",
-          "rarity": "rare",
-          "demand": "low",
-          "notes": "Material raro",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Thick_leather"
-        },
-        {
-          "id": "threads",
-          "name": "Linhas",
-          "img": "/items/threads.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Threads"
-        },
-        {
           "id": "brick",
           "name": "Tijolo",
           "img": "/items/brick.png",
@@ -2324,6 +2715,28 @@
           "demand": "medium",
           "notes": "Material de construção",
           "wikiLink": "https://dayr.wiki.gg/wiki/Brick"
+        },
+        {
+          "id": "fire_brick",
+          "name": "Tijolo Refratario",
+          "img": "/items/fire_brick.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Fire_brick"
+        },
+        {
+          "id": "raw_fatback",
+          "name": "Toucinho Cru",
+          "img": "/items/raw_fatback.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Raw_fatback"
         },
         {
           "id": "rags",
@@ -2337,15 +2750,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Rags"
         },
         {
-          "id": "bamboo_steamer",
-          "name": "Cesteiro de Bambu",
-          "img": "/items/bamboo_steamer.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "log",
+          "name": "Tronco",
+          "img": "/items/log.png",
+          "steel": "3:1",
+          "cement": "6:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Bamboo_steamer"
+          "notes": "Material de construção",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Log"
         }
       ]
     },
@@ -2354,114 +2767,15 @@
       "name": "Componentes",
       "items": [
         {
-          "id": "electrical_cable",
-          "name": "Cabo Eletrico",
-          "img": "/items/electrical_cable.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Electrical_cable"
-        },
-        {
-          "id": "wire",
-          "name": "Fio",
-          "img": "/items/wire.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Wire"
-        },
-        {
-          "id": "iron_pot",
-          "name": "Panela de Ferro",
-          "img": "/items/iron_pot.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Iron_pot"
-        },
-        {
-          "id": "motorcycle_spare_parts",
-          "name": "Pecas Sobressalentes de Moto",
-          "img": "/items/motorcycle_spare_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Motorcycle_spare_parts"
-        },
-        {
-          "id": "rusted_saucepan",
-          "name": "Panela Enferrujada",
-          "img": "/items/rusted_saucepan.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_saucepan"
-        },
-        {
-          "id": "saucepan",
-          "name": "Panela",
-          "img": "/items/saucepan.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Saucepan"
-        },
-        {
-          "id": "spare_weapon_parts",
-          "name": "Pecas Sobressalentes de Arma",
-          "img": "/items/spare_weapon_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Spare_weapon_parts"
-        },
-        {
-          "id": "spark_plug",
-          "name": "Vela de Ignicao",
-          "img": "/items/spark_plug.png",
-          "steel": "1:4",
-          "cement": "1:2",
-          "rarity": "uncommon",
-          "demand": "medium",
-          "notes": "Peça de motor",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Spark_plug"
-        },
-        {
-          "id": "steel_pot",
-          "name": "Panela de Aço",
-          "img": "/items/steel_pot.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_pot"
-        },
-        {
-          "id": "titanium_pot",
-          "name": "Panela de Titânio",
-          "img": "/items/titanium_pot.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_pot"
+          "id": "car_battery",
+          "name": "Bateria de Carro",
+          "img": "/items/car_battery.png",
+          "steel": "1:20",
+          "cement": "1:10",
+          "rarity": "rare",
+          "demand": "high",
+          "notes": "Item de alto valor",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Car_battery"
         },
         {
           "id": "broken_car_battery",
@@ -2475,15 +2789,114 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Broken_car_battery"
         },
         {
-          "id": "car_battery",
-          "name": "Bateria de Carro",
-          "img": "/items/car_battery.png",
-          "steel": "1:20",
-          "cement": "1:10",
+          "id": "electrical_cable",
+          "name": "Cabo Eletrico",
+          "img": "/items/electrical_cable.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Electrical_cable"
+        },
+        {
+          "id": "gas_mask_filter",
+          "name": "Filtro de Mascara de Gas",
+          "img": "/items/gas_mask_filter.png",
+          "steel": "1:10",
+          "cement": "1:5",
           "rarity": "rare",
-          "demand": "high",
-          "notes": "Item de alto valor",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Car_battery"
+          "demand": "medium",
+          "notes": "Item de proteção",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Gas_mask_filter"
+        },
+        {
+          "id": "wire",
+          "name": "Fio",
+          "img": "/items/wire.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Wire"
+        },
+        {
+          "id": "saucepan",
+          "name": "Panela",
+          "img": "/items/saucepan.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Saucepan"
+        },
+        {
+          "id": "steel_pot",
+          "name": "Panela de Aço",
+          "img": "/items/steel_pot.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_pot"
+        },
+        {
+          "id": "iron_pot",
+          "name": "Panela de Ferro",
+          "img": "/items/iron_pot.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Iron_pot"
+        },
+        {
+          "id": "titanium_pot",
+          "name": "Panela de Titânio",
+          "img": "/items/titanium_pot.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_pot"
+        },
+        {
+          "id": "rusted_saucepan",
+          "name": "Panela Enferrujada",
+          "img": "/items/rusted_saucepan.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_saucepan"
+        },
+        {
+          "id": "assault_rifle_parts",
+          "name": "Pecas de Fuzil de Assalto",
+          "img": "/items/assault_rifle_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_parts"
+        },
+        {
+          "id": "machine_gun_parts",
+          "name": "Pecas de Metralhadora",
+          "img": "/items/machine_gun_parts.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Machine_gun_parts"
         },
         {
           "id": "pistol_parts",
@@ -2519,219 +2932,252 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_parts"
         },
         {
-          "id": "assault_rifle_parts",
-          "name": "Pecas de Fuzil de Assalto",
-          "img": "/items/assault_rifle_parts.png",
+          "id": "spare_weapon_parts",
+          "name": "Pecas Sobressalentes de Arma",
+          "img": "/items/spare_weapon_parts.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_parts"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Spare_weapon_parts"
         },
         {
-          "id": "machine_gun_parts",
-          "name": "Pecas de Metralhadora",
-          "img": "/items/machine_gun_parts.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Machine_gun_parts"
-        },
-        {
-          "id": "gas_mask_filter",
-          "name": "Filtro de Mascara de Gas",
-          "img": "/items/gas_mask_filter.png",
-          "steel": "1:10",
-          "cement": "1:5",
-          "rarity": "rare",
-          "demand": "medium",
-          "notes": "Item de proteção",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Gas_mask_filter"
-        }
-      ]
-    },
-    {
-      "id": "medicamentos",
-      "name": "Medicamentos",
-      "items": [
-        {
-          "id": "activated_charcoal",
-          "name": "Carvao Ativado",
-          "img": "/items/activated_charcoal.png",
-          "steel": "10:1",
-          "cement": "20:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Desintoxicante",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Activated_charcoal"
-        },
-        {
-          "id": "aqua_vitae",
-          "name": "Agua Vitae",
-          "img": "/items/aqua_vitae.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Aqua_vitae"
-        },
-        {
-          "id": "antibiotics",
-          "name": "Antibioticos",
-          "img": "/items/antibiotics.png",
-          "steel": "1:2",
-          "cement": "1:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Medicamento",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Antibiotics"
-        },
-        {
-          "id": "antirad",
-          "name": "Antirad",
-          "img": "/items/antirad.png",
-          "steel": "1:6",
-          "cement": "1:3",
-          "rarity": "uncommon",
-          "demand": "high",
-          "notes": "Proteção contra radiação",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Antirad"
-        },
-        {
-          "id": "biotonic",
-          "name": "Biotonico",
-          "img": "/items/biotonic.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Biotonic"
-        },
-        {
-          "id": "detoxifying_potion",
-          "name": "Pocao Desintoxicante",
-          "img": "/items/detoxifying_potion.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Detoxifying_potion"
-        },
-        {
-          "id": "energizing_potion",
-          "name": "Pocao Energizante",
-          "img": "/items/energizing_potion.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Energizing_potion"
-        },
-        {
-          "id": "eurekognasol_stimulant",
-          "name": "Estimulante Eurekognasol",
-          "img": "/items/eurekognasol_stimulant.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Eurekognasol_stimulant"
-        },
-        {
-          "id": "metocaine",
-          "name": "Metocaina",
-          "img": "/items/metocaine.png",
-          "steel": "1:5",
-          "cement": "2:5",
-          "rarity": "uncommon",
-          "demand": "medium",
-          "notes": "Anestésico",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Metocaine"
-        },
-        {
-          "id": "painkiller",
-          "name": "Analgésico",
-          "img": "/items/painkiller.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Painkiller"
-        },
-        {
-          "id": "sterile_bandage",
-          "name": "Bandagem Esteril",
-          "img": "/items/sterile_bandage.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Item médico",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Sterile_bandage"
-        },
-        {
-          "id": "bye_bye_rad",
-          "name": "Bye-Bye Rad",
-          "img": "/items/bye_bye_rad.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Bye-Bye_Rad"
-        },
-        {
-          "id": "healing_salve",
-          "name": "Balsamo Curativo",
-          "img": "/items/healing_salve.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Healing_salve"
-        },
-        {
-          "id": "comcon_3_paste",
-          "name": "Pasta ComCon-3",
-          "img": "/items/comcon_3_paste.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/ComCon-3_Paste"
-        },
-        {
-          "id": "ir_190",
-          "name": "IR-190",
-          "img": "/items/ir_190.png",
+          "id": "motorcycle_spare_parts",
+          "name": "Pecas Sobressalentes de Moto",
+          "img": "/items/motorcycle_spare_parts.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/IR-190"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Motorcycle_spare_parts"
         },
         {
-          "id": "first_aid_kit",
-          "name": "Kit de Primeiros Socorros",
-          "img": "/items/first_aid_kit.png",
+          "id": "spark_plug",
+          "name": "Vela de Ignicao",
+          "img": "/items/spark_plug.png",
+          "steel": "1:4",
+          "cement": "1:2",
+          "rarity": "uncommon",
+          "demand": "medium",
+          "notes": "Peça de motor",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Spark_plug"
+        }
+      ]
+    },
+    {
+      "id": "ferramentas",
+      "name": "Ferramentas",
+      "items": [
+        {
+          "id": "handmade_needle",
+          "name": "Agulha Artesanal",
+          "img": "/items/handmade_needle.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/First_aid_kit"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_needle"
+        },
+        {
+          "id": "steel_needle",
+          "name": "Agulha de Aco",
+          "img": "/items/steel_needle.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_needle"
+        },
+        {
+          "id": "sewing_needle",
+          "name": "Agulha de Costura",
+          "img": "/items/sewing_needle.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Sewing_needle"
+        },
+        {
+          "id": "rusted_needle",
+          "name": "Agulha Enferrujada",
+          "img": "/items/rusted_needle.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_needle"
+        },
+        {
+          "id": "sturdy_needle",
+          "name": "Agulha Resistente",
+          "img": "/items/sturdy_needle.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Sturdy_needle"
+        },
+        {
+          "id": "electrodes",
+          "name": "Eletrodos",
+          "img": "/items/electrodes.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Electrodes"
+        },
+        {
+          "id": "bellows",
+          "name": "Fole",
+          "img": "/items/bellows.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Bellows"
+        },
+        {
+          "id": "lighter",
+          "name": "Isqueiro",
+          "img": "/items/lighter.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Lighter"
+        },
+        {
+          "id": "tool_kit",
+          "name": "Kit de Ferramentas",
+          "img": "/items/tool_kit.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tool_kit"
+        },
+        {
+          "id": "chemistry_set",
+          "name": "Kit de Quimica",
+          "img": "/items/chemistry_set.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Chemistry_set"
+        },
+        {
+          "id": "chainsaw_motor",
+          "name": "Motor de Motosserra",
+          "img": "/items/chainsaw_motor.png",
+          "steel": "1:2",
+          "cement": "1:1",
+          "rarity": "uncommon",
+          "demand": "low",
+          "notes": "Motor",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Chainsaw_motor"
+        },
+        {
+          "id": "steel_shovel",
+          "name": "Pa de Aco",
+          "img": "/items/steel_shovel.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_shovel"
+        },
+        {
+          "id": "titanium_shovel",
+          "name": "Pa de Titanio",
+          "img": "/items/titanium_shovel.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_shovel"
+        },
+        {
+          "id": "rusted_shovel",
+          "name": "Pa Enferrujada",
+          "img": "/items/rusted_shovel.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_shovel"
+        },
+        {
+          "id": "titanium_crowbar",
+          "name": "Pe de Cabra de Titanio",
+          "img": "/items/titanium_crowbar.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_crowbar"
+        },
+        {
+          "id": "rusted_crowbar",
+          "name": "Pe de Cabra Enferrujado",
+          "img": "/items/rusted_crowbar.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_crowbar"
+        },
+        {
+          "id": "kettlebell",
+          "name": "Peso Russo",
+          "img": "/items/kettlebell.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Kettlebell"
+        },
+        {
+          "id": "steel_crowbar",
+          "name": "Pé de Cabra de Aço",
+          "img": "/items/steel_crowbar.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_crowbar"
+        },
+        {
+          "id": "rusted_hacksaw",
+          "name": "Serra Enferrujada",
+          "img": "/items/rusted_hacksaw.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_hacksaw"
         }
       ]
     },
@@ -2739,6 +3185,17 @@
       "id": "quimicos",
       "name": "Quimicos",
       "items": [
+        {
+          "id": "sulfuric_acid",
+          "name": "Acido Sulfurico",
+          "img": "/items/sulfuric_acid.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "high",
+          "notes": "Química/Bateria",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Sulfuric_acid"
+        },
         {
           "id": "acidoemitter",
           "name": "Acidoemitter",
@@ -2762,48 +3219,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Alcohol"
         },
         {
-          "id": "lidiacide_34",
-          "name": "Lidiacide-34",
-          "img": "/items/lidiacide_34.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Lidiacide-34"
-        },
-        {
-          "id": "sulfuric_acid",
-          "name": "Acido Sulfurico",
-          "img": "/items/sulfuric_acid.png",
-          "steel": "1:1",
-          "cement": "2:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Química/Bateria",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Sulfuric_acid"
-        },
-        {
-          "id": "poison",
-          "name": "Veneno",
-          "img": "/items/poison.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "uncommon",
-          "demand": "low",
-          "notes": "Tóxico",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Poison"
-        },
-        {
-          "id": "caustic_distillate",
-          "name": "Destilado Caustico",
-          "img": "/items/caustic_distillate.png",
+          "id": "diluted_spirits",
+          "name": "Alcool Diluido",
+          "img": "/items/diluted_spirits.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Caustic_distillate"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Diluted_spirits"
         },
         {
           "id": "chlorcystamine",
@@ -2817,15 +3241,15 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Chlorcystamine"
         },
         {
-          "id": "diluted_spirits",
-          "name": "Alcool Diluido",
-          "img": "/items/diluted_spirits.png",
+          "id": "caustic_distillate",
+          "name": "Destilado Caustico",
+          "img": "/items/caustic_distillate.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Diluted_spirits"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Caustic_distillate"
         },
         {
           "id": "sulfur",
@@ -2850,6 +3274,17 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Stearin"
         },
         {
+          "id": "vial_of_amine",
+          "name": "Frasco de \"...amina\"",
+          "img": "/items/vial_of_amine.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Vial_of_\"...amine\""
+        },
+        {
           "id": "acid_gland",
           "name": "Glandula Acida",
           "img": "/items/acid_gland.png",
@@ -2861,258 +3296,26 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Acid_gland"
         },
         {
-          "id": "vial_of_amine",
-          "name": "Frasco de \"...amina\"",
-          "img": "/items/vial_of_amine.png",
+          "id": "lidiacide_34",
+          "name": "Lidiacide-34",
+          "img": "/items/lidiacide_34.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Vial_of_\"...amine\""
-        }
-      ]
-    },
-    {
-      "id": "municoes",
-      "name": "Municoes",
-      "items": [
-        {
-          "id": "7_62x25mm_tt_shell",
-          "name": "Cartucho 7.62x25mm TT",
-          "img": "/items/7_62x25mm_tt_shell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/7.62x25mm_TT_Shell"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Lidiacide-34"
         },
         {
-          "id": "assault_rifle_ammo",
-          "name": "Munição de Fuzil de Assalto",
-          "img": "/items/assault_rifle_ammo.png",
-          "steel": "6:1",
-          "cement": "12:1",
-          "rarity": "common",
-          "demand": "very_high",
-          "notes": "Munição de alto valor",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_ammo"
-        },
-        {
-          "id": "assault_rifle_shell",
-          "name": "Cartucho de Fuzil de Assalto",
-          "img": "/items/assault_rifle_shell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Assault_rifle_shell"
-        },
-        {
-          "id": "handmade_cartridge",
-          "name": "Cartucho Artesanal",
-          "img": "/items/handmade_cartridge.png",
+          "id": "poison",
+          "name": "Veneno",
+          "img": "/items/poison.png",
           "steel": "3:1",
           "cement": "6:1",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Cartucho caseiro",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_cartridge"
-        },
-        {
-          "id": "blank_cartridge",
-          "name": "Cartucho em Branco",
-          "img": "/items/blank_cartridge.png",
-          "steel": "10:1",
-          "cement": "20:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Cartucho",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Blank_cartridge"
-        },
-        {
-          "id": "crossbow_bolt_poison",
-          "name": "Virote de Besta (Venenoso)",
-          "img": "/items/crossbow_bolt_poison.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt_(poison)"
-        },
-        {
-          "id": "primer",
-          "name": "Espoleta",
-          "img": "/items/primer.png",
-          "steel": "10:1",
-          "cement": "20:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Componente de munição",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Primer"
-        },
-        {
-          "id": "lead_bullet",
-          "name": "Bala de Chumbo",
-          "img": "/items/lead_bullet.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Lead_bullet"
-        },
-        {
-          "id": "pistol_ammo",
-          "name": "Municao de Pistola",
-          "img": "/items/pistol_ammo.png",
-          "steel": "6:1",
-          "cement": "12:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Munição",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_ammo"
-        },
-        {
-          "id": "pistol_shell",
-          "name": "Cartucho de Pistola",
-          "img": "/items/pistol_shell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pistol_shell"
-        },
-        {
-          "id": "revolver_ammo",
-          "name": "Municao de Revolver",
-          "img": "/items/revolver_ammo.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_ammo"
-        },
-        {
-          "id": "revolver_shell",
-          "name": "Cartucho de Revolver",
-          "img": "/items/revolver_shell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Revolver_shell"
-        },
-        {
-          "id": "rifle_ammo",
-          "name": "Municao de Rifle",
-          "img": "/items/rifle_ammo.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "common",
-          "demand": "high",
-          "notes": "Munição",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_ammo"
-        },
-        {
-          "id": "rifle_shell",
-          "name": "Cartucho de Rifle",
-          "img": "/items/rifle_shell.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rifle_shell"
-        },
-        {
-          "id": "training_ammo",
-          "name": "Municao de Treinamento",
-          "img": "/items/training_ammo.png",
-          "steel": "1:6",
-          "cement": "1:3",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Munição de treinamento",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Training_ammo"
-        },
-        {
-          "id": "crossbow_bolt",
-          "name": "Virote de Besta",
-          "img": "/items/crossbow_bolt.png",
-          "steel": "4:1",
-          "cement": "8:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Munição de besta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Crossbow_bolt"
-        },
-        {
-          "id": "shotgun_round",
-          "name": "Cartucho de Escopeta",
-          "img": "/items/shotgun_round.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Shotgun_round"
-        }
-      ]
-    },
-    {
-      "id": "explosivos",
-      "name": "Explosivos",
-      "items": [
-        {
-          "id": "handmade_rocket",
-          "name": "Foguete Artesanal",
-          "img": "/items/handmade_rocket.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_rocket"
-        },
-        {
-          "id": "plastic_explosives",
-          "name": "Explosivos Plasticos",
-          "img": "/items/plastic_explosives.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Plastic_explosives"
-        },
-        {
-          "id": "gunpowder",
-          "name": "Polvora",
-          "img": "/items/gunpowder.png",
-          "steel": "25:1",
-          "cement": "50:1",
           "rarity": "uncommon",
-          "demand": "high",
-          "notes": "Ingrediente para munição",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Gunpowder"
-        },
-        {
-          "id": "termite",
-          "name": "Termite",
-          "img": "/items/termite.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Thermite"
+          "demand": "low",
+          "notes": "Tóxico",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Poison"
         }
       ]
     },
@@ -3120,6 +3323,39 @@
       "id": "cogumelos",
       "name": "Cogumelos",
       "items": [
+        {
+          "id": "amanita",
+          "name": "Amanita",
+          "img": "/items/amanita.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Amanita"
+        },
+        {
+          "id": "chanterelle",
+          "name": "Cantarela",
+          "img": "/items/chanterelle.png",
+          "steel": "4:1",
+          "cement": "8:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cogumelo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Chanterelle"
+        },
+        {
+          "id": "roasted_chanterelle",
+          "name": "Cantarela Assada",
+          "img": "/items/roasted_chanterelle.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Roasted_chanterelle"
+        },
         {
           "id": "mushroom_with_eyes",
           "name": "Cogumelo com Olhos",
@@ -3132,15 +3368,26 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Mushroom_with_eyes"
         },
         {
-          "id": "strange_mushroom_black",
-          "name": "Cogumelo Estranho (Preto)",
-          "img": "/items/strange_mushroom_black.png",
+          "id": "strange_mushroom_yellow",
+          "name": "Cogumelo Estranho (Amarelo)",
+          "img": "/items/strange_mushroom_yellow.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Black)"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Yellow)"
+        },
+        {
+          "id": "strange_mushroom_light_blue",
+          "name": "Cogumelo Estranho (Azul Claro)",
+          "img": "/items/strange_mushroom_light_blue.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Light_Blue)"
         },
         {
           "id": "strange_mushroom_blue",
@@ -3154,6 +3401,28 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Blue)"
         },
         {
+          "id": "strange_mushroom_white",
+          "name": "Cogumelo Estranho (Branco)",
+          "img": "/items/strange_mushroom_white.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(White)"
+        },
+        {
+          "id": "strange_mushroom_black",
+          "name": "Cogumelo Estranho (Preto)",
+          "img": "/items/strange_mushroom_black.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Black)"
+        },
+        {
           "id": "strange_mushroom_green",
           "name": "Cogumelo Estranho (Verde)",
           "img": "/items/strange_mushroom_green.png",
@@ -3163,17 +3432,6 @@
           "demand": "medium",
           "notes": "",
           "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Green)"
-        },
-        {
-          "id": "strange_mushroom_light_blue",
-          "name": "Cogumelo Estranho (Azul Claro)",
-          "img": "/items/strange_mushroom_light_blue.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Light_Blue)"
         },
         {
           "id": "strange_mushroom_red",
@@ -3198,28 +3456,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Violet)"
         },
         {
-          "id": "strange_mushroom_white",
-          "name": "Cogumelo Estranho (Branco)",
-          "img": "/items/strange_mushroom_white.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(White)"
-        },
-        {
-          "id": "strange_mushroom_yellow",
-          "name": "Cogumelo Estranho (Amarelo)",
-          "img": "/items/strange_mushroom_yellow.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strange_Mushroom_(Yellow)"
-        },
-        {
           "id": "radioactive_mushroom",
           "name": "Cogumelo Radioativo",
           "img": "/items/radioactive_mushroom.png",
@@ -3231,17 +3467,6 @@
           "wikiLink": "https://dayr.wiki.gg/wiki/Radioactive_mushroom"
         },
         {
-          "id": "amanita",
-          "name": "Amanita",
-          "img": "/items/amanita.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Amanita"
-        },
-        {
           "id": "blood_mold",
           "name": "Mofo Sangrento",
           "img": "/items/blood_mold.png",
@@ -3251,502 +3476,277 @@
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
           "wikiLink": "https://dayr.wiki.gg/wiki/Blood_mold"
+        }
+      ]
+    },
+    {
+      "id": "cultivo",
+      "name": "Cultivo",
+      "items": [
+        {
+          "id": "pumpkin",
+          "name": "Abobora",
+          "img": "/items/pumpkin.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Cultivo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pumpkin"
         },
         {
-          "id": "chanterelle",
-          "name": "Cantarela",
-          "img": "/items/chanterelle.png",
+          "id": "cranberry",
+          "name": "Amora",
+          "img": "/items/cranberry.png",
           "steel": "4:1",
           "cement": "8:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Cogumelo",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Chanterelle"
+          "notes": "Fruta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Cranberry"
         },
         {
-          "id": "roasted_chanterelle",
-          "name": "Cantarela Assada",
-          "img": "/items/roasted_chanterelle.png",
+          "id": "potato",
+          "name": "Batata",
+          "img": "/items/potato.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Roasted_chanterelle"
-        }
-      ]
-    },
-    {
-      "id": "armas",
-      "name": "Armas",
-      "items": [
+          "wikiLink": "https://dayr.wiki.gg/wiki/Potato"
+        },
         {
-          "id": "flint_knife",
-          "name": "Faca de Pedra",
-          "img": "/items/flint_knife.png",
+          "id": "rice_grains",
+          "name": "Graos de Arroz",
+          "img": "/items/rice_grains.png",
+          "steel": "1:1",
+          "cement": "2:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Ingrediente de receitas",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rice_grains"
+        },
+        {
+          "id": "buckwheat_grains",
+          "name": "Graos de Trigo-sarraceno",
+          "img": "/items/buckwheat_grains.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Flint_knife"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Buckwheat_grains"
         },
         {
-          "id": "forged_knife",
-          "name": "Faca Forjada",
-          "img": "/items/forged_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "vegetables",
+          "name": "Legumes",
+          "img": "/items/vegetables.png",
+          "steel": "4:1",
+          "cement": "8:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Forged_knife"
+          "notes": "Vegetal",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Vegetables"
         },
         {
-          "id": "kitchen_knife",
-          "name": "Faca de Cozinha",
-          "img": "/items/kitchen_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Kitchen_knife"
-        },
-        {
-          "id": "makarov_handgun_broken",
-          "name": "Pistola Makarov (Quebrada)",
-          "img": "/items/makarov_handgun_broken.png",
+          "id": "rotten_vegetables",
+          "name": "Legumes Podres",
+          "img": "/items/rotten_vegetables.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Makarov_handgun_broken"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Rotten_vegetables"
         },
         {
-          "id": "mosin_nagant_rifle_broken",
-          "name": "Rifle Mosin-Nagant (Quebrado)",
-          "img": "/items/mosin_nagant_rifle_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "apple",
+          "name": "Maca",
+          "img": "/items/apple.png",
+          "steel": "5:1",
+          "cement": "10:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Mosin_nagant_rifle_broken"
+          "notes": "Fruta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Apple"
         },
         {
-          "id": "nagant_revolver_broken",
-          "name": "Revolver Nagant (Quebrado)",
-          "img": "/items/nagant_revolver_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "corn",
+          "name": "Milho",
+          "img": "/items/corn.png",
+          "steel": "4:1",
+          "cement": "8:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Nagant_Revolver_(Broken)"
+          "notes": "Cultivo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Corn"
         },
         {
-          "id": "rusted_axe",
-          "name": "Machado Enferrujado",
-          "img": "/items/rusted_axe.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "strawberry",
+          "name": "Morango",
+          "img": "/items/strawberry.png",
+          "steel": "5:1",
+          "cement": "10:1",
           "rarity": "common",
           "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_axe"
+          "notes": "Fruta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry"
         },
         {
-          "id": "steel_axe",
-          "name": "Machado de Aco",
-          "img": "/items/steel_axe.png",
-          "steel": "?:?",
-          "cement": "?:?",
+          "id": "tangerine",
+          "name": "Tangerina",
+          "img": "/items/tangerine.png",
+          "steel": "3:1",
+          "cement": "6:1",
           "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_axe"
-        },
-        {
-          "id": "steel_knife",
-          "name": "Faca de Aco",
-          "img": "/items/steel_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_knife"
-        },
-        {
-          "id": "strong_bat",
-          "name": "Taco Forte",
-          "img": "/items/strong_bat.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Strong_bat"
-        },
-        {
-          "id": "titanium_axe",
-          "name": "Machado de Titanio",
-          "img": "/items/titanium_axe.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_axe"
-        },
-        {
-          "id": "titanium_knife",
-          "name": "Faca de Titanio",
-          "img": "/items/titanium_knife.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_knife"
-        },
-        {
-          "id": "blackjack",
-          "name": "Blackjack",
-          "img": "/items/blackjack.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Blackjack"
-        },
-        {
-          "id": "flying_spaghetti_monster",
-          "name": "Monstro Espaguete Voador",
-          "img": "/items/flying_spaghetti_monster.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Flying_spaghetti_monster"
-        },
-        {
-          "id": "shock_bludgeon",
-          "name": "Tacapao de Choque",
-          "img": "/items/shock_bludgeon.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Shock_bludgeon"
-        },
-        {
-          "id": "witch_s_punch",
-          "name": "Ponche de Bruxa",
-          "img": "/items/witch_s_punch.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Witch's_punch"
-        },
-        {
-          "id": "pkm_broken",
-          "name": "PKM (Quebrado)",
-          "img": "/items/pkm_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pkm_broken"
-        },
-        {
-          "id": "pps_43_broken",
-          "name": "PPS-43 (Quebrado)",
-          "img": "/items/pps_43_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Pps_43_broken"
-        },
-        {
-          "id": "ppsh_41_broken",
-          "name": "PPSh-41 (Quebrado)",
-          "img": "/items/ppsh_41_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Ppsh_41_broken"
-        },
-        {
-          "id": "rpk_74_broken",
-          "name": "RPK-74 (Quebrado)",
-          "img": "/items/rpk_74_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rpk_74_broken"
-        },
-        {
-          "id": "svd_broken",
-          "name": "SVD (Quebrado)",
-          "img": "/items/svd_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Svd_broken"
-        },
-        {
-          "id": "svt_40_broken",
-          "name": "SVT-40 (Quebrado)",
-          "img": "/items/svt_40_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Svt_40_broken"
-        },
-        {
-          "id": "tt_33_broken",
-          "name": "TT-33 (Quebrado)",
-          "img": "/items/tt_33_broken.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tt_33_broken"
-        }
-      ]
-    },
-    {
-      "id": "ferramentas",
-      "name": "Ferramentas",
-      "items": [
-        {
-          "id": "electrodes",
-          "name": "Eletrodos",
-          "img": "/items/electrodes.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Electrodes"
-        },
-        {
-          "id": "bellows",
-          "name": "Fole",
-          "img": "/items/bellows.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Bellows"
-        },
-        {
-          "id": "handmade_needle",
-          "name": "Agulha Artesanal",
-          "img": "/items/handmade_needle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Handmade_needle"
-        },
-        {
-          "id": "rusted_crowbar",
-          "name": "Pe de Cabra Enferrujado",
-          "img": "/items/rusted_crowbar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_crowbar"
-        },
-        {
-          "id": "rusted_hacksaw",
-          "name": "Serra Enferrujada",
-          "img": "/items/rusted_hacksaw.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_hacksaw"
-        },
-        {
-          "id": "rusted_needle",
-          "name": "Agulha Enferrujada",
-          "img": "/items/rusted_needle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_needle"
-        },
-        {
-          "id": "rusted_shovel",
-          "name": "Pa Enferrujada",
-          "img": "/items/rusted_shovel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Rusted_shovel"
-        },
-        {
-          "id": "sewing_needle",
-          "name": "Agulha de Costura",
-          "img": "/items/sewing_needle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Sewing_needle"
-        },
-        {
-          "id": "steel_crowbar",
-          "name": "Pé de Cabra de Aço",
-          "img": "/items/steel_crowbar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_crowbar"
-        },
-        {
-          "id": "steel_needle",
-          "name": "Agulha de Aco",
-          "img": "/items/steel_needle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_needle"
-        },
-        {
-          "id": "steel_shovel",
-          "name": "Pa de Aco",
-          "img": "/items/steel_shovel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Steel_shovel"
-        },
-        {
-          "id": "sturdy_needle",
-          "name": "Agulha Resistente",
-          "img": "/items/sturdy_needle.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Sturdy_needle"
-        },
-        {
-          "id": "titanium_shovel",
-          "name": "Pa de Titanio",
-          "img": "/items/titanium_shovel.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_shovel"
-        },
-        {
-          "id": "titanium_crowbar",
-          "name": "Pe de Cabra de Titanio",
-          "img": "/items/titanium_crowbar.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Titanium_crowbar"
-        },
-        {
-          "id": "tool_kit",
-          "name": "Kit de Ferramentas",
-          "img": "/items/tool_kit.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Tool_kit"
-        },
-        {
-          "id": "chainsaw_motor",
-          "name": "Motor de Motosserra",
-          "img": "/items/chainsaw_motor.png",
-          "steel": "1:2",
-          "cement": "1:1",
-          "rarity": "uncommon",
           "demand": "low",
-          "notes": "Motor",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Chainsaw_motor"
+          "notes": "Fruta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine"
         },
         {
-          "id": "chemistry_set",
-          "name": "Kit de Quimica",
-          "img": "/items/chemistry_set.png",
+          "id": "wheat",
+          "name": "Trigo",
+          "img": "/items/wheat.png",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Cultivo",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Wheat"
+        }
+      ]
+    },
+    {
+      "id": "sementes",
+      "name": "Sementes",
+      "items": [
+        {
+          "id": "strawberry_seed",
+          "name": "Semente de Morango",
+          "img": "/items/strawberry_seed.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Chemistry_set"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Strawberry_seeds"
         },
         {
-          "id": "lighter",
-          "name": "Isqueiro",
-          "img": "/items/lighter.png",
+          "id": "pumpkin_seeds",
+          "name": "Sementes de Abobora",
+          "img": "/items/pumpkin_seeds.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Lighter"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Pumpkin_seeds"
         },
         {
-          "id": "kettlebell",
-          "name": "Peso Russo",
-          "img": "/items/kettlebell.png",
+          "id": "potato_seeds",
+          "name": "Sementes de Batata",
+          "img": "/items/potato_seeds.png",
           "steel": "?:?",
           "cement": "?:?",
           "rarity": "common",
           "demand": "medium",
           "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Kettlebell"
+          "wikiLink": "https://dayr.wiki.gg/wiki/Potato_seeds"
+        },
+        {
+          "id": "vegetable_seeds",
+          "name": "Sementes de Legumes",
+          "img": "/items/vegetable_seeds.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Vegetable_seeds"
+        },
+        {
+          "id": "apple_seeds",
+          "name": "Sementes de Maca",
+          "img": "/items/apple_seeds.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Apple_seeds"
+        },
+        {
+          "id": "corn_seeds",
+          "name": "Sementes de Milho",
+          "img": "/items/corn_seeds.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Corn_seeds"
+        },
+        {
+          "id": "tangerine_seeds",
+          "name": "Sementes de Tangerina",
+          "img": "/items/tangerine_seeds.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine_seeds"
+        },
+        {
+          "id": "wheat_seeds",
+          "name": "Sementes de Trigo",
+          "img": "/items/wheat_seeds.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Wheat_seeds"
+        }
+      ]
+    },
+    {
+      "id": "ervas",
+      "name": "Ervas",
+      "items": [
+        {
+          "id": "moss",
+          "name": "Musgo",
+          "img": "/items/moss.png",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Planta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Moss"
+        },
+        {
+          "id": "broadleaf_plantain",
+          "name": "Orelha-de-veado",
+          "img": "/items/broadleaf_plantain.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Broadleaf_plantain"
+        },
+        {
+          "id": "nettle",
+          "name": "Urtiga",
+          "img": "/items/nettle.png",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Erva",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Nettle"
         }
       ]
     }
