@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "version": "2026-08-31-v2-categories-split",
+    "version": "2026-08-31-v3-sementes-ervas-cultivo-split",
     "game_version": "v.827+",
     "last_updated": "2026-08-06",
     "exchange_rate": "1 Aco ($) = 2 Cimentos (€)",
-    "note": "Categorias separadas + Cultivo adicionado. Itens e imagens do wiki oficial (dayr.wiki.gg). Nomes em PT-BR.",
+    "note": "Sementes, Ervas e Cultivo separados. Cogumelos ja existia. Itens e imagens do wiki oficial (dayr.wiki.gg). Nomes em PT-BR.",
     "source": "dayr.wiki.gg"
   },
   "categories": [
     {
-      "id": "cultivo",
-      "name": "Cultivo",
+      "id": "sementes",
+      "name": "Sementes",
       "items": [
         {
           "id": "potato_seeds",
@@ -99,7 +99,52 @@
           "demand": "medium",
           "notes": "",
           "wikiLink": "https://dayr.wiki.gg/wiki/Vegetable_seeds"
+        }
+      ]
+    },
+    {
+      "id": "ervas",
+      "name": "Ervas",
+      "items": [
+        {
+          "id": "moss",
+          "name": "Musgo",
+          "img": "/items/moss.png",
+          "steel": "3:1",
+          "cement": "6:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Planta",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Moss"
         },
+        {
+          "id": "nettle",
+          "name": "Urtiga",
+          "img": "/items/nettle.png",
+          "steel": "5:1",
+          "cement": "10:1",
+          "rarity": "common",
+          "demand": "low",
+          "notes": "Erva",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Nettle"
+        },
+        {
+          "id": "broadleaf_plantain",
+          "name": "Orelha-de-veado",
+          "img": "/items/broadleaf_plantain.png",
+          "steel": "?:?",
+          "cement": "?:?",
+          "rarity": "common",
+          "demand": "medium",
+          "notes": "Preco pendente - reporte para ajudar!",
+          "wikiLink": "https://dayr.wiki.gg/wiki/Broadleaf_plantain"
+        }
+      ]
+    },
+    {
+      "id": "cultivo",
+      "name": "Cultivo",
+      "items": [
         {
           "id": "corn",
           "name": "Milho",
@@ -154,28 +199,6 @@
           "demand": "medium",
           "notes": "Fruta",
           "wikiLink": "https://dayr.wiki.gg/wiki/Apple"
-        },
-        {
-          "id": "moss",
-          "name": "Musgo",
-          "img": "/items/moss.png",
-          "steel": "3:1",
-          "cement": "6:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Planta",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Moss"
-        },
-        {
-          "id": "nettle",
-          "name": "Urtiga",
-          "img": "/items/nettle.png",
-          "steel": "5:1",
-          "cement": "10:1",
-          "rarity": "common",
-          "demand": "low",
-          "notes": "Erva",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Nettle"
         },
         {
           "id": "potato",
@@ -242,17 +265,6 @@
           "demand": "low",
           "notes": "Fruta",
           "wikiLink": "https://dayr.wiki.gg/wiki/Tangerine"
-        },
-        {
-          "id": "broadleaf_plantain",
-          "name": "Orelha-de-veado",
-          "img": "/items/broadleaf_plantain.png",
-          "steel": "?:?",
-          "cement": "?:?",
-          "rarity": "common",
-          "demand": "medium",
-          "notes": "Preco pendente - reporte para ajudar!",
-          "wikiLink": "https://dayr.wiki.gg/wiki/Broadleaf_plantain"
         },
         {
           "id": "wheat",
