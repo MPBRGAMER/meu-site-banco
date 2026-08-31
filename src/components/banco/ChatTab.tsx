@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
-import { detectLang } from "@/lib/spellchecker";
+import { detectLang, getSiteSpellLang } from "@/lib/spellchecker";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -93,7 +93,8 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
     setIsChecking(true);
     spellCheckRef.current = setTimeout(async () => {
       try {
-        const lang = detectLang(trimmed);
+        // Prioridade: idioma do site > detecção por conteúdo > "auto"
+        const lang = getSiteSpellLang() || detectLang(trimmed);
         const res = await fetch("/api/spellcheck", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
