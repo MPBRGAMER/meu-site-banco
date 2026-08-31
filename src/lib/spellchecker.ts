@@ -1,7 +1,7 @@
 /**
  * Corretor ortográfico usando LanguageTool API.
- * Mantém: detectLang, getCorrectionDiff, resolveLang, getLangOptions.
- * Correção principal via /api/spellcheck (LanguageTool).
+ * A correção é feita no cliente via /api/spellcheck.
+ * Este arquivo mantém apenas: detectLang, resolveLang, getLangOptions.
  */
 
 /**
@@ -66,87 +66,4 @@ export function getLangOptions(): { value: string; label: string }[] {
     { value: "ar", label: "العربية" },
     { value: "hi", label: "हिन्दी" },
   ];
-}
-
-/**
- * Chama a API /api/spellcheck (LanguageTool) e retorna o texto corrigido.
- */
-export async function correctText(text: string, lang?: string): Promise<string> {
-  if (!text.trim()) return text;
-  const language = lang || detectLang(text);
-  try {
-    const res = await fetch("/api/spellcheck", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: text.trim(), language }),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.corrected) return data.corrected;
-    }
-  } catch { /* fallback */ }
-  return text;
-}
-
-/**
- * Retorna um diff entre original e corrigido para highlight no UI.
- * Retorna null se não há diferença.
- */
-export interface DiffSegment {
-  text: string;
-  changed: boolean;
-}
-
-export function getCorrectionDiff(original: string, corrected: string): DiffSegment[] | null {
-  if (original === corrected) return null;
-
-  const segments: DiffSegment[] = [];
-  let i = 0;
-  let j = 0;
-
-  while (i < original.length || j < corrected.length) {
-    if (i < original.length && j < corrected.length && original[i] === corrected[j]) {
-      let end = 0;
-      while (
-        i + end < original.length &&
-        j + end < corrected.length &&
-        original[i + end] === corrected[j + end]
-      ) {
-        end++;
-      }
-      if (end > 0) {
-        segments.push({ text: original.slice(i, i + end), changed: false });
-        i += end;
-        j += end;
-      }
-    } else {
-      let origEnd = i;
-      let corrEnd = j;
-      while (origEnd < original.length && corrEnd < corrected.length && original[origEnd] !== corrected[corrEnd]) {
-        const origNext = corrected.slice(corrEnd).indexOf(original[origEnd]);
-        if (origNext >= 0) {
-          corrEnd += origNext;
-        } else {
-          origEnd++;
-          corrEnd++;
-        }
-      }
-      if (origEnd === i && corrEnd === j) {
-        if (i < original.length) origEnd = i + 1;
-        if (j < corrected.length) corrEnd = j + 1;
-      }
-      if (corrEnd > j) {
-        segments.push({ text: corrected.slice(j, corrEnd), changed: true });
-        i = origEnd;
-        j = corrEnd;
-      } else {
-        if (i < original.length) {
-          segments.push({ text: original[i], changed: true });
-          i++;
-        }
-      }
-    }
-  }
-
-  return segments.length > 0 ? segments : null;
 }

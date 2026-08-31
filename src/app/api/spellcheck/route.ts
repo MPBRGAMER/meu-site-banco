@@ -4,9 +4,9 @@ export const maxDuration = 10;
 
 const LT_API = "https://api.languagetool.org/v2/check";
 
-// Simple in-memory cache to avoid hammering LT on repeated texts
-const cache = new Map<string, { corrected: string; ts: number }>();
-const CACHE_TTL = 30_000; // 30s
+// Simple in-memory cache
+const cache = new Map<string, { matches: MatchData[]; ts: number }>();
+const CACHE_TTL = 30_000;
 
 function cleanCache() {
   const now = Date.now();
@@ -15,24 +15,30 @@ function cleanCache() {
   }
 }
 
+export interface MatchData {
+  offset: number;
+  length: number;
+  original: string;
+  message: string;
+  suggestions: string[];
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { text, language } = await req.json();
     if (!text || !text.trim()) {
-      return NextResponse.json({ corrected: "", matches: [] });
+      return NextResponse.json({ matches: [] });
     }
 
     const trimmed = text.trim();
     const cacheKey = `${language || "auto"}:${trimmed}`;
 
-    // Check cache
     cleanCache();
     const cached = cache.get(cacheKey);
     if (cached) {
-      return NextResponse.json({ corrected: cached.corrected, fromCache: true });
+      return NextResponse.json({ matches: cached.matches, fromCache: true });
     }
 
-    // Call LanguageTool API
     const formData = new URLSearchParams();
     formData.append("text", trimmed);
     formData.append("language", language || "auto");
@@ -45,56 +51,33 @@ export async function POST(req: NextRequest) {
     });
 
     if (!res.ok) {
-      return NextResponse.json({ corrected: trimmed, matches: [], error: "LT API error" });
+      return NextResponse.json({ matches: [], error: "LT API error" });
     }
 
     const data = await res.json();
-    const matches: Array<{
-      offset: number; length: number; message: string;
-      rule: { id: string; description: string };
-      suggestions: string[];
-    }> = (data.matches || []).map((m: Record<string, unknown>) => ({
-      offset: m.offset as number,
-      length: m.length as number,
-      message: (m.message as string).slice(0, 120),
-      rule: { id: (m.rule as Record<string, string>).id, description: (m.rule as Record<string, string>).description },
-      suggestions: ((m.replacements || []) as Array<Record<string, string>>).map((r) => r.value).slice(0, 3),
-    }));
+    const allMatches = (data.matches || []) as Array<Record<string, unknown>>;
 
-    // Apply corrections: sort by offset descending, skip overlapping matches, replace from end to start
-    let corrected = trimmed;
-    const sorted = [...(data.matches || [])]
-      .map((m: Record<string, number>) => ({
-        offset: m.offset as number,
-        length: m.length as number,
-        replacement: (((m.replacements || []) as Array<Record<string, string>>)[0] || {}).value || "",
-      }))
-      .filter((m) => m.replacement !== "")
-      .sort((a, b) => b.offset - a.offset);
+    // Filter to only spelling/grammar errors that have suggestions
+    const matches: MatchData[] = allMatches
+      .filter((m) => {
+        const reps = (m.replacements || []) as Array<Record<string, string>>;
+        return reps.length > 0;
+      })
+      .map((m) => {
+        const reps = (m.replacements || []) as Array<Record<string, string>>;
+        return {
+          offset: m.offset as number,
+          length: m.length as number,
+          original: trimmed.slice(m.offset as number, (m.offset as number) + (m.length as number)),
+          message: (m.message as string).slice(0, 100),
+          suggestions: reps.map((r) => r.value).slice(0, 6),
+        };
+      });
 
-    // Build non-overlapping list by processing from end to start
-    const nonOverlapping: typeof sorted = [];
-    let boundary = trimmed.length;
-    for (const m of sorted) {
-      if (m.offset + m.length <= boundary) {
-        nonOverlapping.push(m);
-        boundary = m.offset;
-      }
-    }
+    cache.set(cacheKey, { matches, ts: Date.now() });
 
-    // Apply from end to start so offsets remain valid
-    for (const m of nonOverlapping) {
-      corrected =
-        corrected.slice(0, m.offset) +
-        m.replacement +
-        corrected.slice(m.offset + m.length);
-    }
-
-    // Cache result
-    cache.set(cacheKey, { corrected, ts: Date.now() });
-
-    return NextResponse.json({ corrected, matches });
+    return NextResponse.json({ matches });
   } catch {
-    return NextResponse.json({ corrected: text || "", matches: [], error: "Failed to check text" });
+    return NextResponse.json({ matches: [], error: "Failed to check text" });
   }
 }

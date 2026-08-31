@@ -11,8 +11,7 @@ import { cn } from "@/lib/utils";
 import AdSlot from "@/components/AdSlot";
 import ChatMessageContent from "./ChatMessageContent";
 import { getDateLocale } from "./TranslationPopup";
-import { correctText, detectLang, getCorrectionDiff } from "@/lib/spellchecker";
-import type { DiffSegment } from "@/lib/spellchecker";
+import { detectLang } from "@/lib/spellchecker";
 
 const CANAIS = [
   { id: "geral", nome: "Geral", icon: "💬", cor: "text-blue-400" },
@@ -74,17 +73,20 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
 
-  const [correctionDiff, setCorrectionDiff] = useState<DiffSegment[] | null>(null);
-  const [correctedText, setCorrectedText] = useState<string | null>(null);
+  const [spellErrors, setSpellErrors] = useState<Array<{
+    offset: number; length: number; original: string;
+    message: string; suggestions: string[];
+  }>>([]);
+  const [selectedSuggestions, setSelectedSuggestions] = useState<Record<number, string>>({});
   const [isChecking, setIsChecking] = useState(false);
-  const spellCheckRef = useRef<ReturnType<typeof setTimeout>>();
+  const spellCheckRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   // Debounced spell check via LanguageTool API
   useEffect(() => {
     const trimmed = inputMsg.trim();
     if (!trimmed) {
-      setCorrectionDiff(null);
-      setCorrectedText(null);
+      setSpellErrors([]);
+      setSelectedSuggestions({});
       return;
     }
     if (spellCheckRef.current) clearTimeout(spellCheckRef.current);
@@ -99,21 +101,21 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
         });
         if (res.ok) {
           const data = await res.json();
-          const corrected = data.corrected || trimmed;
-          if (corrected !== trimmed) {
-            setCorrectionDiff(getCorrectionDiff(trimmed, corrected));
-            setCorrectedText(corrected);
-          } else {
-            setCorrectionDiff(null);
-            setCorrectedText(null);
+          const matches: typeof spellErrors = data.matches || [];
+          setSpellErrors(matches);
+          // Auto-select first suggestion for each error
+          const autoSel: Record<number, string> = {};
+          for (const m of matches) {
+            if (m.suggestions.length > 0) autoSel[m.offset] = m.suggestions[0];
           }
+          setSelectedSuggestions(autoSel);
         } else {
-          setCorrectionDiff(null);
-          setCorrectedText(null);
+          setSpellErrors([]);
+          setSelectedSuggestions({});
         }
       } catch {
-        setCorrectionDiff(null);
-        setCorrectedText(null);
+        setSpellErrors([]);
+        setSelectedSuggestions({});
       } finally {
         setIsChecking(false);
       }
@@ -121,16 +123,49 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
     return () => { if (spellCheckRef.current) clearTimeout(spellCheckRef.current); };
   }, [inputMsg]);
 
-  const applyCorrection = () => {
-    if (correctedText) {
-      setInputMsg(correctedText);
+  const applyCorrections = () => {
+    if (spellErrors.length === 0) return;
+    const text = inputMsg;
+    // Build replacements: sort by offset desc, apply non-overlapping from end
+    type R = { offset: number; length: number; replacement: string };
+    const raw: R[] = spellErrors
+      .map(m => ({ offset: m.offset, length: m.length, replacement: selectedSuggestions[m.offset] || "" }))
+      .filter(r => r.replacement !== "")
+      .sort((a, b) => b.offset - a.offset);
+    const nonOverlap: R[] = [];
+    let boundary = text.length;
+    for (const r of raw) {
+      if (r.offset + r.length <= boundary) {
+        nonOverlap.push(r);
+        boundary = r.offset;
+      }
     }
+    let corrected = text;
+    for (const r of nonOverlap) {
+      corrected = corrected.slice(0, r.offset) + r.replacement + corrected.slice(r.offset + r.length);
+    }
+    setInputMsg(corrected);
+    setSpellErrors([]);
+    setSelectedSuggestions({});
+  };
+
+  const pickSuggestion = (offset: number, suggestion: string) => {
+    setSelectedSuggestions(prev => ({ ...prev, [offset]: suggestion }));
+  };
+
+  const dismissError = (offset: number) => {
+    setSpellErrors(prev => prev.filter(m => m.offset !== offset));
+    setSelectedSuggestions(prev => {
+      const next = { ...prev };
+      delete next[offset];
+      return next;
+    });
   };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const scrollLockRef = useRef(false);
-  const scrollTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     const saved = localStorage.getItem("chatNickname");
@@ -160,20 +195,15 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
 
   const handleSend = async () => {
     if (!inputMsg.trim()) return;
-    let textToSend = inputMsg.trim();
-    // Use corrected text if available, otherwise call API
-    if (correctedText) {
-      textToSend = correctedText;
-    } else {
-      try {
-        const corrected = await correctText(textToSend);
-        textToSend = corrected;
-      } catch { /* send original */ }
+    // If there are pending corrections, apply them first
+    if (spellErrors.length > 0) {
+      applyCorrections();
+      return;
     }
-    sendMessage(textToSend, nomeUsuario);
+    sendMessage(inputMsg.trim(), nomeUsuario);
     setInputMsg("");
-    setCorrectionDiff(null);
-    setCorrectedText(null);
+    setSpellErrors([]);
+    setSelectedSuggestions({});
     autoScrollRef.current = true;
   };
 
@@ -485,34 +515,61 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
                   <Send className="w-4 h-4" />
                 </Button>
               </div>
-              {isChecking && !correctionDiff && inputMsg.trim().length > 3 && (
+              {isChecking && spellErrors.length === 0 && inputMsg.trim().length > 3 && (
                 <div className="mt-2 px-3 py-2 rounded-lg bg-muted/50 border border-border flex items-center gap-2">
                   <div className="w-3 h-3 border-2 border-muted-foreground/30 border-t-emerald-400 rounded-full animate-spin" />
                   <span className="text-[11px] text-muted-foreground">Verificando ortografia...</span>
                 </div>
               )}
-              {correctionDiff && (
-                <div className="mt-2 px-3 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-2">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <span className="text-[11px] font-bold text-emerald-400">Correções sugeridas:</span>
+              {spellErrors.length > 0 && (
+                <div className="mt-2 px-3 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-emerald-400">Correções sugeridas:</span>
+                    <div className="flex gap-1.5">
+                      <button
+                        onClick={applyCorrections}
+                        className="text-[11px] font-bold text-emerald-400 hover:text-emerald-300 bg-emerald-500/20 hover:bg-emerald-500/30 px-2.5 py-1 rounded-md transition-colors"
+                      >
+                        Aplicar
+                      </button>
+                      <button
+                        onClick={() => { setSpellErrors([]); setSelectedSuggestions({}); }}
+                        className="text-[11px] text-muted-foreground hover:text-foreground bg-muted/30 hover:bg-muted/50 px-2 py-1 rounded-md transition-colors"
+                      >
+                        Ignorar
+                      </button>
                     </div>
-                    <p className="text-sm leading-relaxed" data-no-translate translate="no">
-                      {correctionDiff.map((seg, i) => (
-                        <span key={i} className={
-                          seg.changed
-                            ? "text-emerald-300 font-semibold bg-emerald-500/20 px-0.5 rounded"
-                            : "text-muted-foreground"
-                        }>{seg.text}</span>
-                      ))}
-                    </p>
                   </div>
-                  <button
-                    onClick={applyCorrection}
-                    className="shrink-0 text-[11px] font-bold text-emerald-400 hover:text-emerald-300 bg-emerald-500/20 hover:bg-emerald-500/30 px-2.5 py-1 rounded-md transition-colors"
-                  >
-                    Aplicar
-                  </button>
+                  {spellErrors.map((err) => (
+                    <div key={err.offset} className="flex items-center gap-2">
+                      <button
+                        onClick={() => dismissError(err.offset)}
+                        className="text-muted-foreground/50 hover:text-red-400 transition-colors shrink-0"
+                        title="Descartar"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                      <span className="text-xs text-red-400 line-through decoration-red-400/50 shrink-0 font-medium" data-no-translate translate="no">{err.original}</span>
+                      <span className="text-muted-foreground/50 shrink-0">→</span>
+                      <div className="flex flex-wrap gap-1">
+                        {err.suggestions.map((sug) => (
+                          <button
+                            key={sug}
+                            onClick={() => pickSuggestion(err.offset, sug)}
+                            className={cn(
+                              "text-[11px] px-2 py-0.5 rounded-md transition-colors font-medium",
+                              selectedSuggestions[err.offset] === sug
+                                ? "bg-emerald-500/30 text-emerald-300 ring-1 ring-emerald-500/50"
+                                : "bg-muted/40 text-foreground/70 hover:bg-muted/60 hover:text-foreground"
+                            )}
+                            data-no-translate translate="no"
+                          >
+                            {sug}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
