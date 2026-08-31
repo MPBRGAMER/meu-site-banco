@@ -505,9 +505,9 @@ export default function ChatTab({ isAdmin }: ChatTabProps) {
             <div className="border-t border-border px-4 py-2 shrink-0 bg-card">
               <div className="flex items-center gap-2 mb-1.5 px-1">
                 <div className="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500/15 shrink-0">
-                  <span className="text-[10px]" translate="no">✍️</span>
+                  <span className="text-[10px]">✍️</span>
                 </div>
-                <p className="text-[10px] text-amber-300/80 leading-tight font-medium" translate="no">
+                <p className="text-[10px] text-amber-300/80 leading-tight font-medium">
                   Escreva corretamente com acentos, vírgulas e pontuação para que a tradução para outros idiomas seja perfeita!
                 </p>
               </div>
