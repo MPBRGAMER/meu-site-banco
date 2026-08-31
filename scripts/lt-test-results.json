@@ -1,0 +1,1349 @@
+[
+  {
+    "word": "voce",
+    "expected": "voce",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "você"
+    ],
+    "rule": "PT_SIMPLE_REPLACE_ORTHOGRAPHY_VOCE",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "vc",
+    "expected": "voce",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "você"
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "nao",
+    "expected": "nao",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "não"
+    ],
+    "rule": "PT_SIMPLE_REPLACE_ORTHOGRAPHY_NAO",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "tambem",
+    "expected": "tambem",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "também",
+      "tandem",
+      "lambem",
+      "tangem",
+      "bambem"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "ja",
+    "expected": "ja",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "já"
+    ],
+    "rule": "PT_SIMPLE_REPLACE_ORTHOGRAPHY_JA",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "so",
+    "expected": "so",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "só",
+      "sou",
+      "sô",
+      "SO",
+      "o"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": false
+  },
+  {
+    "word": "ate",
+    "expected": "ate",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "até"
+    ],
+    "rule": "CONFUSÃO_ATE_ATÉ",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "ninguem",
+    "expected": "ninguem",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "ninguém",
+      "minguem",
+      "mínguem",
+      "amínguem",
+      "binguem"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "alguem",
+    "expected": "alguem",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "alguém",
+      "auguem",
+      "algum",
+      "algoz",
+      "árgon"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "porem",
+    "expected": "porem",
+    "category": "sem_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "tá",
+    "expected": "ta",
+    "category": "sem_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "to",
+    "expected": "to",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "To"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "celebre",
+    "expected": "celebre",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "célebre"
+    ],
+    "rule": "DIACRITICS",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "numero",
+    "expected": "numero",
+    "category": "sem_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "facil",
+    "expected": "facil",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "fácil",
+      "facial",
+      "faliu",
+      "facie",
+      "Fadil"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "util",
+    "expected": "util",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "útil",
+      "uniu",
+      "UTI",
+      "fútil",
+      "sutil"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "possivel",
+    "expected": "possivel",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "Possível",
+      "Passível",
+      "Possíbil"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "necessario",
+    "expected": "necessario",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "necessário",
+      "necessária",
+      "necessários",
+      "inecessário"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "dificil",
+    "expected": "dificil",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "difícil"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "rapido",
+    "expected": "rapido",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "rápido",
+      "rápida",
+      "rápidos",
+      "rapado",
+      "lapidou"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "pratico",
+    "expected": "pratico",
+    "category": "sem_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "publico",
+    "expected": "publico",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "Publico"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "genero",
+    "expected": "genero",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "gênero",
+      "gêneros",
+      "genro",
+      "gêmeo",
+      "Genaro"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "misterio",
+    "expected": "misterio",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "mistério",
+      "mistérios",
+      "histério",
+      "místrio",
+      "miste rio"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "experiencia",
+    "expected": "experiencia",
+    "category": "sem_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "diferenca",
+    "expected": "diferenca",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "diferença",
+      "diferenças",
+      "diferencia",
+      "diferençam",
+      "diferençar"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "informacao",
+    "expected": "informacao",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "Informação",
+      "Informarão",
+      "Enformação",
+      "Enfornação",
+      "Infernação"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "situacao",
+    "expected": "situacao",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "situação",
+      "siglação",
+      "situadão",
+      "situarão"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "opiniao",
+    "expected": "opiniao",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "opinião",
+      "opilião",
+      "opimiano",
+      "opímia",
+      "opímias"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "coracao",
+    "expected": "coracao",
+    "category": "sem_acento",
+    "detected": true,
+    "suggestions": [
+      "coração",
+      "oração",
+      "coroação",
+      "cotação",
+      "couraçado"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "irmão",
+    "expected": "irmao",
+    "category": "com_acento",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "pão",
+    "expected": "pao",
+    "category": "sem_tilde",
+    "detected": true,
+    "suggestions": [
+      "Pão"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "não",
+    "expected": "nao",
+    "category": "sem_tilde",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "informação",
+    "expected": "informacao",
+    "category": "sem_tilde",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "tbm",
+    "expected": "tambem",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "também"
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "pq",
+    "expected": "porque",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "porque",
+      "por que"
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "kd",
+    "expected": "cade",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "Que",
+      "Km",
+      "CD",
+      "Cm",
+      "Kg"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "blz",
+    "expected": "beleza",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "beleza"
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "td",
+    "expected": "tudo",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "TV",
+      "CD",
+      "te",
+      "HD",
+      "tu"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "cmg",
+    "expected": "comigo",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "cm",
+      "BMG",
+      "CMS",
+      "ng",
+      "CMP"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "flw",
+    "expected": "falou",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "Flu",
+      "flui",
+      "fui",
+      "flua",
+      "flux"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "vlw",
+    "expected": "valeu",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "Viu",
+      "VW",
+      "Vou",
+      "Blau",
+      "Véu"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "nmr",
+    "expected": "numero",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "mar",
+      "mm",
+      "mor",
+      "nm",
+      "mór"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "q",
+    "expected": "que",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "que",
+      "\"q\""
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "c",
+    "expected": "que",
+    "category": "abreviacao",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "add",
+    "expected": "adicionar",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "AMD",
+      "ADC",
+      "ADH",
+      "ADM",
+      "CDD"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "msg",
+    "expected": "mensagem",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "MST",
+      "PSG",
+      "Ng",
+      "ESG",
+      "ISG"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "pv",
+    "expected": "privado",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "PV",
+      "TV",
+      "pé",
+      "PC",
+      "PR"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "fds",
+    "expected": "fim de semana",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "faz",
+      "fez",
+      "fãs",
+      "foz",
+      "CDs"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "tmj",
+    "expected": "tamo junto",
+    "category": "abreviacao",
+    "detected": true,
+    "suggestions": [
+      "TJ",
+      "ng",
+      "TMP",
+      "Tag",
+      "Taj"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "supermercado",
+    "expected": "supermercado",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "subermercado",
+    "expected": "supermercado",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "Supermercado"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "meracdo",
+    "expected": "mercado",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "mercado",
+      "meraço"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "amiggo",
+    "expected": "amigo",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "amigo",
+      "amigão"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "esocla",
+    "expected": "escola",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "escola",
+      "Escola"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "probelma",
+    "expected": "problema",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "problema",
+      "proveu-a"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "dinherio",
+    "expected": "dinheiro",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "Dinheiro"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "comdia",
+    "expected": "comida",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "condia",
+      "condira",
+      "condirá",
+      "comédia",
+      "comida"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": false
+  },
+  {
+    "word": "fazre",
+    "expected": "fazer",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "fase",
+      "fazer",
+      "faze",
+      "faire",
+      "fare"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": false
+  },
+  {
+    "word": "qeur",
+    "expected": "quer",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "quer",
+      "EUR"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "agroa",
+    "expected": "agora",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "agora",
+      "agro",
+      "ágora",
+      "garoa",
+      "agorá"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "qundo",
+    "expected": "quando",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "Quando",
+      "Mundo",
+      "Fundo",
+      "Fundou",
+      "Jundo"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "hojee",
+    "expected": "hoje",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "hoje",
+      "hoje e"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "tudso",
+    "expected": "tudo",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "tudo",
+      "tudro",
+      "tusso"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "bebr",
+    "expected": "beber",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "ver",
+      "beber",
+      "bebê",
+      "bebe",
+      "bebia"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": false
+  },
+  {
+    "word": "pesssoa",
+    "expected": "pessoa",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "pessoa",
+      "pesca",
+      "páscoa",
+      "escoa",
+      "pascoa"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "bonitoo",
+    "expected": "bonito",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "Bonito",
+      "Bonitos",
+      "Vômito",
+      "Vômitos",
+      "Bonitão"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "carrro",
+    "expected": "carro",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "carro",
+      "carreou",
+      "carrão",
+      "Carro",
+      "caruro"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "mulhér",
+    "expected": "mulher",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "mulher",
+      "Müller"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "homém",
+    "expected": "homem",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "homem",
+      "homens",
+      "home",
+      "Homer",
+      "comem"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "criánça",
+    "expected": "crianca",
+    "category": "typo",
+    "detected": true,
+    "suggestions": [
+      "criança",
+      "Chianca",
+      "crianção",
+      "acriança",
+      "caiança"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "aonde",
+    "expected": "aonde",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "Aonde"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "mal",
+    "expected": "mal",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "mau",
+    "expected": "mau",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "mas",
+    "expected": "mas",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "mais",
+    "expected": "mais",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "tem",
+    "expected": "tem",
+    "category": "correto",
+    "detected": true,
+    "suggestions": [
+      "Tem"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "tém",
+    "expected": "tem",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "tem",
+      "têm",
+      "em",
+      "bem",
+      "sem"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "vio",
+    "expected": "viu",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "virou",
+      "bio",
+      "birô",
+      "viro",
+      "biró"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "fazio",
+    "expected": "fiz",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "fazia",
+      "vazio",
+      "Fábio",
+      "Faso",
+      "fastio"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "traser",
+    "expected": "trazer",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "trazer",
+      "prazer",
+      "trazem",
+      "trazê",
+      "traze"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "intao",
+    "expected": "entao",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "Então",
+      "Irmão",
+      "Inato",
+      "Antão",
+      "Intrão"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "penas",
+    "expected": "penas",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "pessoas",
+    "expected": "pessoas",
+    "category": "correto",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "concerteza",
+    "expected": "com certeza",
+    "category": "gramatica",
+    "detected": true,
+    "suggestions": [
+      "com certeza"
+    ],
+    "rule": "CONCERTEZA_BR",
+    "correct_in_list": true,
+    "first_is_correct": true
+  },
+  {
+    "word": "demais",
+    "expected": "demais",
+    "category": "gramatica",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "de mais",
+    "expected": "demais",
+    "category": "gramatica",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "kkkk",
+    "expected": "kkkk",
+    "category": "slang",
+    "detected": true,
+    "suggestions": [
+      "haha"
+    ],
+    "rule": "INTERNET_ABBREVIATIONS",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "rsrs",
+    "expected": "rsrs",
+    "category": "slang",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "haha",
+    "expected": "haha",
+    "category": "slang",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "vlw",
+    "expected": "vlw",
+    "category": "slang",
+    "detected": true,
+    "suggestions": [
+      "viu",
+      "VW",
+      "vou",
+      "blau",
+      "véu"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "flw",
+    "expected": "flw",
+    "category": "slang",
+    "detected": true,
+    "suggestions": [
+      "Flu",
+      "Flui",
+      "Fui",
+      "Flua",
+      "Flux"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "tmj",
+    "expected": "tmj",
+    "category": "slang",
+    "detected": true,
+    "suggestions": [
+      "TJ",
+      "ng",
+      "TMP",
+      "Tag",
+      "Taj"
+    ],
+    "rule": "MORFOLOGIK_RULE_PT_BR",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "voce",
+    "expected": "voce",
+    "category": "correto",
+    "detected": true,
+    "suggestions": [
+      "você"
+    ],
+    "rule": "PT_SIMPLE_REPLACE_ORTHOGRAPHY_VOCE",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "também",
+    "expected": "tambem",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "não",
+    "expected": "nao",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "já",
+    "expected": "ja",
+    "category": "correto_acentuado",
+    "detected": true,
+    "suggestions": [
+      "Já"
+    ],
+    "rule": "UPPERCASE_SENTENCE_START",
+    "correct_in_list": false,
+    "first_is_correct": false
+  },
+  {
+    "word": "só",
+    "expected": "so",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "até",
+    "expected": "ate",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "é",
+    "expected": "e",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  },
+  {
+    "word": "óbvio",
+    "expected": "obvio",
+    "category": "correto_acentuado",
+    "detected": false,
+    "suggestions": [],
+    "rule": null,
+    "correct_in_list": false,
+    "first_is_correct": []
+  }
+]
