@@ -844,7 +844,11 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       catMap.set(cat.id, []);
     }
     for (const item of editedItems) {
-      const catId = item._overrideCategoryId || baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
+      let catId = item._overrideCategoryId;
+      // If override categoryId doesn't exist in current categories, fall back to base lookup
+      if (!catId || !catMap.has(catId)) {
+        catId = baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
+      }
       if (catId && catMap.has(catId)) {
         catMap.get(catId)!.push(item);
       }
