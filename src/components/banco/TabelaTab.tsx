@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   Search, ArrowUpDown, ChevronDown, ChevronRight, X, TrendingUp, TrendingDown,
   MessageSquarePlus, Pencil, BookOpen, Users, BarChart3, AlertCircle, Check,
-  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save, ImageOff,
+  ExternalLink, PlusCircle, Settings2, Trash2, RotateCcw, Save, ImageOff, FolderPlus, Info,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -331,7 +331,7 @@ function GuiaModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 }
 
 function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overrides: itemOverrides }: { isOpen: boolean; onClose: () => void; onSaved?: () => void; mergedCategories: Category[]; overrides: Array<{ itemId: string; action: string; name?: string; categoryId?: string }> }) {
-  const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed">("add");
+  const [activeTab, setActiveTab] = useState<"add" | "edit" | "removed" | "categories">("add");
   const [gerenciarSearch, setGerenciarSearch] = useState("");
   const [newItemName, setNewItemName] = useState("");
   const [newItemId, setNewItemId] = useState("");
@@ -348,7 +348,9 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
   const [removedItems, setRemovedItems] = useState<Array<{ id: string; name: string; category: string }>>([]);
   const [isSaving, setIsSaving] = useState(false);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [newCatName, setNewCatName] = useState("");
   const categories = mergedCategories;
+  const baseCategoryIds = new Set((pricesData.categories as Array<{id:string}>).map(c => c.id));
   const removeSet = new Set(itemOverrides.filter(o => o.action === "remove").map(o => o.itemId));
   const dbRemovedItems = useMemo(() => itemOverrides.filter(o => o.action === "remove").map(o => ({ id: o.itemId, name: o.name || o.itemId, category: o.categoryId || "?" })), [itemOverrides]);
   const allItems = useMemo(() => categories.flatMap((c) => c.items.map((i) => ({ ...i, categoryId: c.id, categoryName: c.name }))));
@@ -589,6 +591,60 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
     }
   };
 
+  const handleAddCategory = async () => {
+    if (!newCatName.trim()) return;
+    const catId = slugify(newCatName);
+    if (categories.some(c => c.id === catId)) {
+      toast.error(`Categoria "${newCatName}" ja existe!`);
+      return;
+    }
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify({
+          action: "add",
+          item: { itemId: `__cat_${catId}`, name: `__cat_${catId}`, categoryId: catId, steel: "?:?", cement: "?:?", rarity: "common", demand: "medium" },
+        }),
+      });
+      if (res.ok) {
+        toast.success(`Categoria "${newCatName}" criada!`);
+        setNewCatName("");
+        onSaved?.();
+      } else {
+        const data = await res.json();
+        toast.error(data.error || "Erro ao criar categoria.");
+      }
+    } catch { toast.error("Erro de conexao."); }
+    finally { setIsSaving(false); }
+  };
+
+  const handleDeleteCategory = async (catId: string, catName: string) => {
+    if (baseCategoryIds.has(catId)) {
+      toast.error("Categorias base nao podem ser apagadas. Use Editar/Remover para esconder itens.");
+      return;
+    }
+    const catItems = itemOverrides.filter(o => o.action === "add" && o.categoryId === catId && !o.itemId.startsWith("__cat_"));
+    if (catItems.length > 0 && !confirm(`Apagar categoria "${catName}" e seus ${catItems.length} itens?`)) return;
+    setIsSaving(true);
+    try {
+      const toDelete = itemOverrides.filter(o => o.action === "add" && o.categoryId === catId);
+      let ok = 0;
+      for (const item of toDelete) {
+        const r = await fetch("/api/items", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+          body: JSON.stringify({ action: "restore", item: { itemId: item.itemId } }),
+        });
+        if (r.ok) ok++;
+      }
+      toast.success(`Categoria "${catName}" apagada!`);
+      onSaved?.();
+    } catch { toast.error("Erro de conexao."); }
+    finally { setIsSaving(false); }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -603,11 +659,12 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
 
         {/* Tabs */}
         <div className="flex border-b border-border px-4 pt-2 gap-1">
-          {(["add", "edit", "removed"] as const).map((tab) => (
+          {(["add", "edit", "removed", "categories"] as const).map((tab) => (
             <button key={tab} onClick={() => setActiveTab(tab)} className={`px-3 py-2 text-xs font-medium rounded-t-md transition-colors ${activeTab === tab ? "bg-primary/10 text-primary border-b-2 border-primary" : "text-muted-foreground hover:text-foreground"}`}>
               {tab === "add" && <span className="flex items-center gap-1"><PlusCircle className="w-3 h-3" /> Adicionar</span>}
               {tab === "edit" && <span className="flex items-center gap-1"><Pencil className="w-3 h-3" /> Editar/Remover</span>}
               {tab === "removed" && <span className="flex items-center gap-1"><Trash2 className="w-3 h-3" /> Removidos ({dbRemovedItems.length + removedItems.length})</span>}
+              {tab === "categories" && <span className="flex items-center gap-1"><FolderPlus className="w-3 h-3" /> Categorias</span>}
             </button>
           ))}
         </div>
@@ -828,6 +885,41 @@ function GerenciarItensModal({ isOpen, onClose, onSaved, mergedCategories, overr
               )}
             </div>
           )}
+          {/* CATEGORIES TAB */}
+          {activeTab === "categories" && (
+            <div className="space-y-3">
+              <p className="text-[10px] text-muted-foreground">Crie novas categorias ou apague as que voce adicionou. Categorias originais do jogo nao podem ser apagadas.</p>
+              <div className="flex gap-2">
+                <Input value={newCatName} onChange={(e) => setNewCatName(e.target.value)} placeholder="Nova categoria..." className="text-sm flex-1 h-8" onKeyDown={(e) => e.key === "Enter" && handleAddCategory()} />
+                <button onClick={handleAddCategory} disabled={isSaving || !newCatName.trim()} className="px-3 py-1.5 rounded-md text-xs font-semibold border border-green-500/30 text-green-400 bg-green-500/5 hover:bg-green-500/15 disabled:opacity-50 transition-colors shrink-0">
+                  <FolderPlus className="w-3.5 h-3.5 inline mr-1" /> Criar
+                </button>
+              </div>
+              <div className="space-y-1.5 mt-2">
+                {categories.map((cat) => {
+                  const isBase = baseCategoryIds.has(cat.id);
+                  const realItems = cat.items.filter(i => !i.id.startsWith("__cat_"));
+                  return (
+                    <div key={cat.id} className={`flex items-center justify-between rounded-md border px-3 py-2 ${isBase ? "border-border bg-muted/10" : "border-primary/20 bg-primary/5"}`}>
+                      <div className="flex items-center gap-2 min-w-0">
+                        <FolderPlus className={`w-3.5 h-3.5 shrink-0 ${isBase ? "text-muted-foreground" : "text-primary"}`} />
+                        <div className="min-w-0">
+                          <span className="text-xs font-medium text-foreground">{cat.name}</span>
+                          <span className="text-[10px] text-muted-foreground ml-2">{realItems.length} itens</span>
+                          {isBase && <span className="text-[9px] text-muted-foreground/60 ml-1">(original)</span>}
+                        </div>
+                      </div>
+                      {!isBase && (
+                        <button onClick={() => handleDeleteCategory(cat.id, cat.name)} disabled={isSaving} className="text-[10px] text-red-400 hover:text-red-300 flex items-center gap-0.5 shrink-0 disabled:opacity-50">
+                          <Trash2 className="w-3 h-3" /> Apagar
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -940,7 +1032,11 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
     for (const [catId, catName] of extraCats) {
       baseResult.push({ id: catId, name: catName, items: catMap.get(catId) || [] });
     }
-    return baseResult;
+    // Filter out category placeholder items from display
+    return baseResult.map(cat => ({
+      ...cat,
+      items: cat.items.filter(i => !i.id.startsWith("__cat_")),
+    }));
   }, [baseCategories, overrides]);
 
   const allItems = useMemo(() => {
@@ -1078,6 +1174,16 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
             <BookOpen className="w-3.5 h-3.5" /> Guia
           </button>
         </div>
+      </div>
+
+      {/* ═══ Price Disclaimer ═══ */}
+      <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl border border-blue-500/20 bg-blue-500/5">
+        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/15 shrink-0">
+          <Info className="w-4 h-4 text-blue-400" />
+        </div>
+        <p className="text-[11px] text-blue-300/90 leading-tight font-medium">
+          Os precos desta tabela sao apenas uma sugestao baseada na comunidade e wiki. Negocie livremente com outros jogadores!
+        </p>
       </div>
 
       {/* ═══ Stat Cards ═══ */}
