@@ -912,6 +912,7 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
     }
     // Rebuild categories
     const catMap = new Map<string, (PriceItem & { _overrideCategoryId?: string })[]>();
+    const extraCats = new Map<string, string>(); // track new category names added by overrides
     for (const cat of baseCategories) {
       catMap.set(cat.id, []);
     }
@@ -921,14 +922,25 @@ export default function TabelaTab({ isAdmin: isAdminProp }: { isAdmin: boolean }
       if (!catId || !catMap.has(catId)) {
         catId = baseCategories.find(c => c.items.some(i => i.id === item.id))?.id;
       }
-      if (catId && catMap.has(catId)) {
-        catMap.get(catId)!.push(item);
+      // If still no category (new item with unknown categoryId), create a bucket for it
+      if (!catId || !catMap.has(catId)) {
+        catId = item._overrideCategoryId || "outros";
+        if (!catMap.has(catId)) {
+          catMap.set(catId, []);
+          extraCats.set(catId, catId.charAt(0).toUpperCase() + catId.slice(1));
+        }
       }
+      catMap.get(catId)!.push(item);
     }
-    return baseCategories.map(cat => ({
+    const baseResult = baseCategories.map(cat => ({
       ...cat,
       items: catMap.get(cat.id) || [],
     }));
+    // Append any extra categories created by added items
+    for (const [catId, catName] of extraCats) {
+      baseResult.push({ id: catId, name: catName, items: catMap.get(catId) || [] });
+    }
+    return baseResult;
   }, [baseCategories, overrides]);
 
   const allItems = useMemo(() => {
