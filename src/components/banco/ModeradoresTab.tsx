@@ -24,6 +24,7 @@ export const ALL_PERMISSIONS = [
   { id: "loterica", label: "Lotérica" },
   { id: "chat", label: "Chat Admin" },
   { id: "tabela", label: "Tabela" },
+  { id: "blacklist", label: "Blacklist" },
   { id: "investidores", label: "Investidores" },
   { id: "config-trocas", label: "Config Trocas" },
   { id: "compras-vendas", label: "Compras & Vendas" },

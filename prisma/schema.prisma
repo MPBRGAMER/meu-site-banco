@@ -232,3 +232,15 @@ model Moderador {
   ativo       Boolean   @default(true)
   criadoEm    DateTime  @default(now())
 }
+
+model BlacklistEntry {
+  id           String    @id @default(cuid())
+  reporterName String
+  targetName   String
+  reason       String
+  status       String    @default("pending")
+  reviewedBy   String?
+  reviewNote   String?
+  dataCriacao  DateTime  @default(now())
+  dataReview   DateTime?
+}

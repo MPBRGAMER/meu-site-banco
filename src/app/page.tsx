@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   LayoutDashboard, HandCoins, Users, ArrowLeftRight, ShoppingCart,
-  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle, Upload, UserCog, KeyRound, LogOut, Archive,
+  Wallet, Heart, Settings, Gavel, Dices, Shield, Table2, X, Lock, MessageCircle, Download, Trash2, AlertTriangle, Upload, UserCog, KeyRound, LogOut, Archive, ShieldAlert,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,7 @@ import SorteiosTab from "@/components/banco/SorteiosTab";
 import LotericaTab from "@/components/banco/LotericaTab";
 import TabelaTab from "@/components/banco/TabelaTab";
 import ChatTab from "@/components/banco/ChatTab";
+import BlacklistTab from "@/components/banco/BlacklistTab";
 import ModeradoresTab, { ALL_PERMISSIONS } from "@/components/banco/ModeradoresTab";
 import { TranslationPopup } from "@/components/banco/TranslationPopup";
 import SiteProtection from "@/components/SiteProtection";
@@ -28,6 +29,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "blacklist", label: "Blacklist", icon: ShieldAlert },
   { id: "chat", label: "Chat", icon: MessageCircle },
   { id: "tabela", label: "Tabela", icon: Table2 },
   { id: "emprestimos", label: "Empréstimos", icon: HandCoins },
@@ -49,7 +51,7 @@ const adminTabs = [
 const TAB_PERMISSIONS: Record<string, string> = {
   emprestimos: "emprestimos", trocas: "trocas", doadores: "doadores",
   leiloes: "leiloes", sorteios: "sorteios", loterica: "loterica",
-  chat: "chat", tabela: "tabela",
+  chat: "chat", tabela: "tabela", blacklist: "blacklist",
 };
 
 type AuthMode = "none" | "superadmin" | "moderador";
@@ -344,6 +346,7 @@ export default function HomePage() {
       case "leiloes": return <LeiloesTab isAdmin={canAdminTab("leiloes")} />;
       case "sorteios": return <SorteiosTab isAdmin={canAdminTab("sorteios")} />;
       case "loterica": return <LotericaTab isAdmin={canAdminTab("loterica")} />;
+      case "blacklist": return <BlacklistTab isAdmin={canAdminTab("blacklist")} />;
       case "chat": return <ChatTab isAdmin={canAdminTab("chat")} />;
       case "tabela": return <TabelaTab isAdmin={canAdminTab("tabela")} />;
       case "moderadores": return isSuperAdmin ? <ModeradoresTab /> : <DashboardTab />;
