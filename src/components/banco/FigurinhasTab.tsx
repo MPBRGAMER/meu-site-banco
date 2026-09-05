@@ -570,17 +570,11 @@ export default function FigurinhasTab({ isAdmin = false }: FigurinhasTabProps) {
               {/* Create Figurinha */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 space-y-3">
                 <h4 className="text-sm font-bold text-amber-400 flex items-center gap-2"><Plus className="w-4 h-4" /> Criar Figurinha</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="space-y-1">
                     <label className="text-xs font-medium text-muted-foreground">Nome</label>
                     <Input value={newFigNome} onChange={(e) => setNewFigNome(e.target.value)} placeholder="Ex: Katana Rara" className="h-9 text-sm" />
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-medium text-muted-foreground">Preço</label>
-                    <Input type="number" value={newFigPreco} onChange={(e) => setNewFigPreco(e.target.value)} placeholder="0" className="h-9 text-sm" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <label className="text-xs font-medium text-muted-foreground">Quantidade de códigos</label>
                     <Input type="number" value={newFigQtyCodes} onChange={(e) => setNewFigQtyCodes(e.target.value)} placeholder="10" min="1" max="1000" className="h-9 text-sm" />
