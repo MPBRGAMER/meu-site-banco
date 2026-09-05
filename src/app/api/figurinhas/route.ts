@@ -57,12 +57,37 @@ export async function GET(req: NextRequest) {
       case "figurinhaDetail": {
         const id = url.searchParams.get("id");
         if (!id) return err("ID obrigatorio");
+
+        // Check if admin
+        const auth = await verifyAuth(req);
+
+        if (auth.ok) {
+          // Admin sees full details with all codes
+          const fig = await db.figurinha.findUnique({
+            where: { id },
+            include: { codigos: { orderBy: { data: "desc" } } },
+          });
+          if (!fig) return err("Figurinha nao encontrada");
+          return json(fig);
+        }
+
+        // Public sees figurinha with code counts only
         const fig = await db.figurinha.findUnique({
           where: { id },
-          include: { codigos: { orderBy: { data: "desc" } } },
+          include: { codigos: { select: { status: true } } },
         });
         if (!fig) return err("Figurinha nao encontrada");
-        return json(fig);
+        const available = fig.codigos.filter(c => c.status === "available").length;
+        const redeemed = fig.codigos.filter(c => c.status === "redeemed").length;
+        return json({
+          id: fig.id,
+          nome: fig.nome,
+          imageData: fig.imageData,
+          preco: fig.preco,
+          data: fig.data,
+          codigos: [], // Don't expose codes to public
+          _count: { available, redeemed, total: fig.codigos.length },
+        });
       }
 
       case "album": {

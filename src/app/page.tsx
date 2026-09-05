@@ -31,7 +31,7 @@ import { Toaster } from "@/components/ui/sonner";
 const publicTabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { id: "blacklist", label: "Blacklist", icon: ShieldAlert },
-  { id: "figurinhas", label: "Figurinhas", icon: BookImage },
+  { id: "figurinhas", label: "Álbum", icon: BookImage },
   { id: "chat", label: "Chat", icon: MessageCircle },
   { id: "tabela", label: "Tabela", icon: Table2 },
   { id: "emprestimos", label: "Empréstimos", icon: HandCoins },
