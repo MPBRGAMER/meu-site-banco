@@ -3,10 +3,18 @@ import { useBank } from "@/lib/useBank";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel, Dices } from "lucide-react";
-import { useState } from "react";
+import { Plus, ArrowDownCircle, ArrowUpCircle, Search, Package, AlertTriangle, RefreshCw, Gavel, Dices, BookImage, ShoppingCart } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { getDateLocale } from "./TranslationPopup";
+
+interface FigurinhaForSale {
+  id: string;
+  nome: string;
+  imageData: string;
+  preco: number;
+  _count?: { codigos: number };
+}
 
 export default function CaixaTab() {
   const { caixa, inventory, addCaixaManual, resetBanco, isLoading } = useBank();
@@ -23,6 +31,21 @@ export default function CaixaTab() {
   const [sorteioItem, setSorteioItem] = useState("");
   const [sorteioQtd, setSorteioQtd] = useState("");
   const [sorteioGanhador, setSorteioGanhador] = useState("");
+
+  // Figurinha sales
+  const [figurinhas, setFigurinhas] = useState<FigurinhaForSale[]>([]);
+  const [showFigSales, setShowFigSales] = useState(false);
+  const [figSaleId, setFigSaleId] = useState("");
+  const [figSaleQty, setFigSaleQty] = useState("1");
+  const [figSaleValor, setFigSaleValor] = useState("");
+  const [figSaleComprador, setFigSaleComprador] = useState("");
+
+  useEffect(() => {
+    fetch("/api/figurinhas?action=figurinhas")
+      .then(res => res.ok ? res.json() : [])
+      .then(data => setFigurinhas(data))
+      .catch(() => {});
+  }, []);
 
   const handleManual = () => {
     if (!descManual || !itemManual || !qtdManual) { toast.error("Preencha os obrigatórios."); return; }
@@ -46,6 +69,50 @@ export default function CaixaTab() {
     addCaixaManual({ tipo: "saida", descricao: `Sorteio: ${sorteioItem.trim()} (ganhador: ${sorteioGanhador.trim()})`, item: sorteioItem.trim(), quantidade: parseInt(sorteioQtd), valor: parseInt(sorteioQtd), origem: "sorteio" });
     toast.success(`Saída de sorteio registrada: ${sorteioQtd}x ${sorteioItem.trim()} para ${sorteioGanhador.trim()}`);
     setSorteioItem(""); setSorteioQtd(""); setSorteioGanhador("");
+  };
+
+  const getAuthHeaders = () => {
+    const pwd = sessionStorage.getItem("adminPwd");
+    const modToken = sessionStorage.getItem("modToken");
+    const headers: Record<string, string> = {};
+    if (pwd) headers["x-admin-password"] = pwd;
+    else if (modToken) headers["x-moderador-token"] = modToken;
+    return headers;
+  };
+
+  const handleFigSale = async () => {
+    if (!figSaleId || !figSaleValor || !figSaleComprador.trim()) { toast.error("Preencha figurinha, valor e comprador."); return; }
+    const fig = figurinhas.find(f => f.id === figSaleId);
+    if (!fig) { toast.error("Figurinha não encontrada."); return; }
+    try {
+      const res = await fetch("/api/figurinhas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify({
+          action: "addSale",
+          figurinhaId: figSaleId,
+          figurinhaNome: fig.nome,
+          quantidade: parseInt(figSaleQty) || 1,
+          valorPago: parseFloat(figSaleValor),
+          comprador: figSaleComprador.trim(),
+        }),
+      });
+      const data = await res.json();
+      if ("error" in data) { toast.error(data.error); return; }
+      // Also register in caixa
+      addCaixaManual({
+        tipo: "entrada",
+        descricao: `Venda figurinha: ${fig.nome} (x${figSaleQty}) para ${figSaleComprador.trim()}`,
+        item: `Figurinha: ${fig.nome}`,
+        quantidade: parseInt(figSaleQty) || 1,
+        valor: parseFloat(figSaleValor),
+        origem: "figurinha_venda",
+      });
+      toast.success(`Venda de figurinha "${fig.nome}" registrada!`);
+      setFigSaleId(""); setFigSaleQty("1"); setFigSaleValor(""); setFigSaleComprador("");
+    } catch {
+      toast.error("Erro ao registrar venda.");
+    }
   };
 
   const caixaFiltrado = caixa
@@ -75,6 +142,41 @@ export default function CaixaTab() {
           <div><Label className="text-xs text-muted-foreground">Ganhador</Label><Input placeholder="Nome do jogador" value={sorteioGanhador} onChange={(e) => setSorteioGanhador(e.target.value)} className="text-sm" /></div>
           <div className="flex items-end"><Button onClick={handleSorteioSaida} className="bg-purple-600 hover:bg-purple-700 text-white w-full"><Dices className="w-4 h-4 mr-1" /> Registrar Prêmio</Button></div>
         </div>
+      </div>
+      {/* Figurinha Sales Section */}
+      <div className="rounded-md border border-primary/20 bg-primary/5 p-4">
+        <button onClick={() => setShowFigSales(!showFigSales)} className="flex items-center justify-between w-full">
+          <h3 className="text-sm font-bold text-foreground flex items-center gap-2"><BookImage className="w-4 h-4 text-primary" /> Venda de Figurinhas</h3>
+          {showFigSales ? <ArrowUpCircle className="w-4 h-4 text-primary" /> : <ArrowDownCircle className="w-4 h-4 text-primary" />}
+        </button>
+        {showFigSales && (
+          <div className="mt-3 space-y-3">
+            <p className="text-xs text-muted-foreground">Registre a venda de figurinhas e o valor pago pelo comprador para entrar no estoque do caixa.</p>
+            {figurinhas.length === 0 ? (
+              <p className="text-xs text-muted-foreground italic">Nenhuma figurinha cadastrada ainda.</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                <div>
+                  <Label className="text-xs text-muted-foreground">Figurinha</Label>
+                  <select value={figSaleId} onChange={(e) => {
+                    setFigSaleId(e.target.value);
+                    const fig = figurinhas.find(f => f.id === e.target.value);
+                    if (fig && fig.preco > 0) setFigSaleValor(String(fig.preco));
+                  }} className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm">
+                    <option value="">Selecione...</option>
+                    {figurinhas.map(f => (
+                      <option key={f.id} value={f.id}>{f.nome} ({f._count?.codigos || 0} códigos)</option>
+                    ))}
+                  </select>
+                </div>
+                <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" value={figSaleQty} onChange={(e) => setFigSaleQty(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Valor pago</Label><Input type="number" placeholder="0" value={figSaleValor} onChange={(e) => setFigSaleValor(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Comprador</Label><Input placeholder="Nome do jogador" value={figSaleComprador} onChange={(e) => setFigSaleComprador(e.target.value)} className="text-sm" /></div>
+                <div className="flex items-end"><Button onClick={handleFigSale} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full gap-1"><ShoppingCart className="w-4 h-4" /> Registrar Venda</Button></div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
       <div className="rounded-md border border-border bg-card p-4">
         <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2"><Plus className="w-4 h-4 text-primary" /> Registro Manual</h3>

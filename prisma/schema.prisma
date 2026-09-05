@@ -244,3 +244,49 @@ model BlacklistEntry {
   dataCriacao  DateTime  @default(now())
   dataReview   DateTime?
 }
+
+model Figurinha {
+  id        String   @id @default(cuid())
+  nome      String
+  imageData String   // base64 data URL
+  preco     Float    @default(0)
+  codigos   FigurinhaCodigo[]
+  data      DateTime @default(now())
+}
+
+model FigurinhaCodigo {
+  id          String   @id @default(cuid())
+  figurinhaId String
+  codigo      String   @unique
+  status      String   @default("available") // available, redeemed
+  figurinha   Figurinha @relation(fields: [figurinhaId], references: [id], onDelete: Cascade)
+  albumItem   AlbumFigurinha?
+  data        DateTime @default(now())
+}
+
+model Album {
+  id          String   @id @default(cuid())
+  playerName  String
+  senha       String
+  figurinhas  AlbumFigurinha[]
+  data        DateTime @default(now())
+}
+
+model AlbumFigurinha {
+  id               String   @id @default(cuid())
+  albumId          String
+  figurinhaCodigoId String  @unique
+  album            Album   @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  figurinhaCodigo  FigurinhaCodigo @relation(fields: [figurinhaCodigoId], references: [id], onDelete: Cascade)
+  data             DateTime @default(now())
+}
+
+model FigurinhaVenda {
+  id          String   @id @default(cuid())
+  figurinhaId String
+  figurinhaNome String
+  quantidade  Int
+  valorPago   Float
+  comprador   String
+  data        DateTime @default(now())
+}
