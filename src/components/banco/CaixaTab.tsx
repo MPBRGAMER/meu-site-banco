@@ -37,7 +37,6 @@ export default function CaixaTab() {
   const [showFigSales, setShowFigSales] = useState(false);
   const [figSaleId, setFigSaleId] = useState("");
   const [figSaleQty, setFigSaleQty] = useState("1");
-  const [figSaleValor, setFigSaleValor] = useState("");
   const [figSaleComprador, setFigSaleComprador] = useState("");
   const [figSalePagItem, setFigSalePagItem] = useState("");
   const [figSalePagQtd, setFigSalePagQtd] = useState("");
@@ -83,7 +82,7 @@ export default function CaixaTab() {
   };
 
   const handleFigSale = async () => {
-    if (!figSaleId || !figSaleValor || !figSaleComprador.trim()) { toast.error("Preencha figurinha, valor e comprador."); return; }
+    if (!figSaleId || !figSaleComprador.trim() || !figSalePagItem.trim() || !figSalePagQtd) { toast.error("Preencha figurinha, comprador, item e qtd pagamento."); return; }
     const fig = figurinhas.find(f => f.id === figSaleId);
     if (!fig) { toast.error("Figurinha não encontrada."); return; }
     try {
@@ -95,36 +94,34 @@ export default function CaixaTab() {
           figurinhaId: figSaleId,
           figurinhaNome: fig.nome,
           quantidade: parseInt(figSaleQty) || 1,
-          valorPago: parseFloat(figSaleValor),
+          valorPago: parseInt(figSalePagQtd) || 0,
           comprador: figSaleComprador.trim(),
-          itemPagamento: figSalePagItem.trim() || undefined,
-          quantidadePagamento: figSalePagQtd ? parseInt(figSalePagQtd) : undefined,
+          itemPagamento: figSalePagItem.trim(),
+          quantidadePagamento: parseInt(figSalePagQtd) || 0,
         }),
       });
       const data = await res.json();
       if ("error" in data) { toast.error(data.error); return; }
-      // Also register in caixa
+      // Register figurinha sale in caixa
       addCaixaManual({
         tipo: "entrada",
         descricao: `Venda figurinha: ${fig.nome} (x${figSaleQty}) para ${figSaleComprador.trim()}`,
         item: `Figurinha: ${fig.nome}`,
         quantidade: parseInt(figSaleQty) || 1,
-        valor: parseFloat(figSaleValor),
+        valor: parseInt(figSaleQty) || 1,
         origem: "figurinha_venda",
       });
       // Register payment item in caixa
-      if (figSalePagItem.trim() && figSalePagQtd) {
-        addCaixaManual({
-          tipo: "entrada",
-          descricao: `Pagamento figurinha: ${fig.nome} por ${figSaleComprador.trim()}`,
-          item: figSalePagItem.trim(),
-          quantidade: parseInt(figSalePagQtd) || 1,
-          valor: parseInt(figSalePagQtd) || 1,
-          origem: "figurinha_pagamento",
-        });
-      }
+      addCaixaManual({
+        tipo: "entrada",
+        descricao: `Pagamento figurinha: ${fig.nome} por ${figSaleComprador.trim()}`,
+        item: figSalePagItem.trim(),
+        quantidade: parseInt(figSalePagQtd) || 1,
+        valor: parseInt(figSalePagQtd) || 1,
+        origem: "figurinha_pagamento",
+      });
       toast.success(`Venda de figurinha "${fig.nome}" registrada!`);
-      setFigSaleId(""); setFigSaleQty("1"); setFigSaleValor(""); setFigSaleComprador(""); setFigSalePagItem(""); setFigSalePagQtd("");
+      setFigSaleId(""); setFigSaleQty("1"); setFigSaleComprador(""); setFigSalePagItem(""); setFigSalePagQtd("");
     } catch {
       toast.error("Erro ao registrar venda.");
     }
@@ -166,34 +163,25 @@ export default function CaixaTab() {
         </button>
         {showFigSales && (
           <div className="mt-3 space-y-3">
-            <p className="text-xs text-muted-foreground">Registre a venda de figurinhas e o valor pago pelo comprador para entrar no estoque do caixa.</p>
+            <p className="text-xs text-muted-foreground">Registre a venda de figurinhas — informe com qual item e quantidade o comprador vai pagar.</p>
             {figurinhas.length === 0 ? (
               <p className="text-xs text-muted-foreground italic">Nenhuma figurinha cadastrada ainda.</p>
             ) : (
-              <div className="space-y-3">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  <div>
-                    <Label className="text-xs text-muted-foreground">Figurinha</Label>
-                    <select value={figSaleId} onChange={(e) => {
-                      setFigSaleId(e.target.value);
-                      const fig = figurinhas.find(f => f.id === e.target.value);
-                      if (fig && fig.preco > 0) setFigSaleValor(String(fig.preco));
-                    }} className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm">
-                      <option value="">Selecione...</option>
-                      {figurinhas.map(f => (
-                        <option key={f.id} value={f.id}>{f.nome} ({f._count?.codigos || 0} códigos)</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" value={figSaleQty} onChange={(e) => setFigSaleQty(e.target.value)} className="text-sm font-mono" /></div>
-                  <div><Label className="text-xs text-muted-foreground">Valor pago</Label><Input type="number" placeholder="0" value={figSaleValor} onChange={(e) => setFigSaleValor(e.target.value)} className="text-sm font-mono" /></div>
-                  <div><Label className="text-xs text-muted-foreground">Comprador</Label><Input placeholder="Nome do jogador" value={figSaleComprador} onChange={(e) => setFigSaleComprador(e.target.value)} className="text-sm" /></div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                <div>
+                  <Label className="text-xs text-muted-foreground">Figurinha</Label>
+                  <select value={figSaleId} onChange={(e) => setFigSaleId(e.target.value)} className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm">
+                    <option value="">Selecione...</option>
+                    {figurinhas.map(f => (
+                      <option key={f.id} value={f.id}>{f.nome} ({f._count?.codigos || 0} códigos)</option>
+                    ))}
+                  </select>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div><Label className="text-xs text-muted-foreground">Item Pagamento</Label><Input placeholder="Ex: Moeda, Aço, Cimento" value={figSalePagItem} onChange={(e) => setFigSalePagItem(e.target.value)} className="text-sm" /></div>
-                  <div><Label className="text-xs text-muted-foreground">Qtd Pagamento</Label><Input type="number" placeholder="5000" value={figSalePagQtd} onChange={(e) => setFigSalePagQtd(e.target.value)} className="text-sm font-mono" /></div>
-                  <div className="flex items-end"><Button onClick={handleFigSale} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full gap-1"><ShoppingCart className="w-4 h-4" /> Registrar Venda</Button></div>
-                </div>
+                <div><Label className="text-xs text-muted-foreground">Quantidade</Label><Input type="number" min="1" value={figSaleQty} onChange={(e) => setFigSaleQty(e.target.value)} className="text-sm font-mono" /></div>
+                <div><Label className="text-xs text-muted-foreground">Comprador</Label><Input placeholder="Nome do jogador" value={figSaleComprador} onChange={(e) => setFigSaleComprador(e.target.value)} className="text-sm" /></div>
+                <div><Label className="text-xs text-muted-foreground">Item Pagamento</Label><Input placeholder="Ex: Moeda, Aço" value={figSalePagItem} onChange={(e) => setFigSalePagItem(e.target.value)} className="text-sm" /></div>
+                <div><Label className="text-xs text-muted-foreground">Qtd Pagamento</Label><Input type="number" placeholder="5000" value={figSalePagQtd} onChange={(e) => setFigSalePagQtd(e.target.value)} className="text-sm font-mono" /></div>
+                <div className="flex items-end"><Button onClick={handleFigSale} className="bg-primary hover:bg-primary/90 text-primary-foreground w-full gap-1"><ShoppingCart className="w-4 h-4" /> Registrar Venda</Button></div>
               </div>
             )}
           </div>
