@@ -295,12 +295,16 @@ export async function POST(req: NextRequest) {
       case "addSale": {
         const auth = await verifyAuth(req);
         if (!auth.ok) return err(auth.error || "Nao autorizado", 403);
-        const { figurinhaId, figurinhaNome, quantidade, valorPago, comprador } = data;
+        const { figurinhaId, figurinhaNome, quantidade, valorPago, comprador, itemPagamento, quantidadePagamento } = data;
         if (!figurinhaId || !figurinhaNome || !quantidade || valorPago === undefined || !comprador) {
           return err("Campos obrigatorios: figurinhaId, figurinhaNome, quantidade, valorPago, comprador");
         }
         const sale = await db.figurinhaVenda.create({
-          data: { figurinhaId, figurinhaNome, quantidade: parseInt(quantidade), valorPago: parseFloat(valorPago), comprador },
+          data: {
+            figurinhaId, figurinhaNome, quantidade: parseInt(quantidade), valorPago: parseFloat(valorPago), comprador,
+            itemPagamento: itemPagamento || null,
+            quantidadePagamento: quantidadePagamento ? parseInt(quantidadePagamento) : null,
+          },
         });
         return json(sale, 201);
       }
